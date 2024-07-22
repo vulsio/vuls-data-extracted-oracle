@@ -1,0 +1,155 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100866",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100866",
+			"title": "\nELSA-2010-0866:  cups security update (IMPORTANT)\n",
+			"description": "\n\n[1:1.4.2-35:.1]\n- Applied patch to fix cupsd memory corruption vulnerability\n  (CVE-2010-2941, STR #3648, bug #624438).\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2941.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0866.html"
+				}
+			],
+			"published": "2011-02-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-2941",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2941.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-35.el6_0.1"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-35.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-35.el6_0.1"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-35.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-35.el6_0.1"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-35.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-lpd",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-35.el6_0.1"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-35.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-php",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-35.el6_0.1"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-35.el6_0.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

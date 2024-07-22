@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20236661",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20236661",
+			"title": "\nELSA-2023-6661:  gmp security and enhancement update (LOW)\n",
+			"description": "\n[1:6.2.0-13]\n- Fix: previous commit removed one function from the library and thus broke the ABI\n- function gmpn_preinv_divrem_1 should now not be removed\nRelated: rhbz#2044216\n\n[1:6.2.0-12]\n- Add SIMD optimization patches for s390x (provided by the IBM)\nResolves: rhbz#2044216\n\n[1:6.2.0-11]\nFix: Integer overflow and resultant buffer overflow via crafted input\nResolves: CVE-2021-43618\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-43618.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-6661.html"
+				}
+			],
+			"published": "2023-11-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-43618",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-43618.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gmp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:6.2.0-13.el9"
+								}
+							],
+							"fixed": [
+								"1:6.2.0-13.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gmp-c++",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:6.2.0-13.el9"
+								}
+							],
+							"fixed": [
+								"1:6.2.0-13.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gmp-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:6.2.0-13.el9"
+								}
+							],
+							"fixed": [
+								"1:6.2.0-13.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

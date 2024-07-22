@@ -1,0 +1,138 @@
+{
+	"id": "oval:com.oracle.elsa:def:20229142",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20229142",
+			"title": "\nELSA-2022-9142:  Unbreakable Enterprise kernel-container security update (IMPORTANT)\n",
+			"description": "\n[5.4.17-2136.302.7.2.3]\n- cgroup-v1: Require capabilities to set release_agent (Eric W. Biederman)\n  [Orabug: 33832574]  {CVE-2022-0492}\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-0492.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-9142.html"
+				}
+			],
+			"published": "2022-02-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-0492",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-0492.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.4.17-2136.302.7.2.3.el7"
+								}
+							],
+							"fixed": [
+								"0:5.4.17-2136.302.7.2.3.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.4.17-2136.302.7.2.3.el7"
+								}
+							],
+							"fixed": [
+								"0:5.4.17-2136.302.7.2.3.el7"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.4.17-2136.302.7.2.3.el8"
+								}
+							],
+							"fixed": [
+								"0:5.4.17-2136.302.7.2.3.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.4.17-2136.302.7.2.3.el8"
+								}
+							],
+							"fixed": [
+								"0:5.4.17-2136.302.7.2.3.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

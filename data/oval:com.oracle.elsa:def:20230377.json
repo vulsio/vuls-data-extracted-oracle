@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20230377",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20230377",
+			"title": "\nELSA-2023-0377:  libXpm security update (IMPORTANT)\n",
+			"description": "\n[3.5.12-2]\n- Fix CVE-2022-4883: compression commands depends on /usr/local/bin:/usr/bin (#2161715)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-4883.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-0377.html"
+				}
+			],
+			"published": "2023-01-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-4883",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-4883.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libXpm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.5.12-2.el7_9"
+								}
+							],
+							"fixed": [
+								"0:3.5.12-2.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libXpm-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.5.12-2.el7_9"
+								}
+							],
+							"fixed": [
+								"0:3.5.12-2.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

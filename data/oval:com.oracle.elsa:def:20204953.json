@@ -1,0 +1,257 @@
+{
+	"id": "oval:com.oracle.elsa:def:20204953",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20204953",
+			"title": "\nELSA-2020-4953:  xorg-x11-server security update (IMPORTANT)\n",
+			"description": "\n[1.17.4-18.0.1]\n- Fix regression from the patch for Orabug 27204421 which crashes Xvfb [Orabug: 28485058]\n- Fix X consumes 100% CPU if messagebus restarted [Orabug: 27204421]\n- Fix X server failure in FIPS mode [Orabug: 22866111]\n\n[1.17.4-18]\n- CVE fixes for: CVE-2020-14345 (#1872388), CVE-2020-14346 (#1872392),\n  CVE-2020-14361 (#1872399), CVE-2020-14362 (#1872406)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-14345.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-14346.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-14361.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-14362.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-4953.html"
+				}
+			],
+			"published": "2020-11-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-14345",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-14345.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-14346",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-14346.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-14361",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-14361.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-14362",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-14362.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xorg-x11-server-Xdmx",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.4-18.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:1.17.4-18.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xorg-x11-server-Xephyr",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.4-18.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:1.17.4-18.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xorg-x11-server-Xnest",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.4-18.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:1.17.4-18.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xorg-x11-server-Xorg",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.4-18.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:1.17.4-18.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xorg-x11-server-Xvfb",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.4-18.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:1.17.4-18.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xorg-x11-server-common",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.4-18.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:1.17.4-18.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xorg-x11-server-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.4-18.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:1.17.4-18.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xorg-x11-server-source",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.4-18.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:1.17.4-18.0.1.el6_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,139 @@
+{
+	"id": "oval:com.oracle.elsa:def:20191279",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20191279",
+			"title": "\nELSA-2019-1279:  pacemaker security and bug fix update (IMPORTANT)\n",
+			"description": "\n[2.0.1-4.3]\n- New build with fixed test in gating.yaml\n- Resolves: rhbz#1694557\n- Resolves: rhbz#1695247\n- Resolves: rhbz#1697264\n- Resolves: rhbz#1697265\n\n[2.0.1-4.2]\n- New build to apply z-stream tag\n- Resolves: rhbz#1694557\n- Resolves: rhbz#1695247\n- Resolves: rhbz#1697264\n- Resolves: rhbz#1697265\n\n[2.0.1-4.1]\n- Improve clients' authentication of IPC servers (CVE-2018-16877)\n- Fix use-after-free with potential information disclosure (CVE-2019-3885)\n- Improve pacemakerd authentication of running subdaemons (CVE-2018-16878)\n- Restore correct behavior when live migration is interrupted\n- Resolves: rhbz#1694557\n- Resolves: rhbz#1695247\n- Resolves: rhbz#1697264\n- Resolves: rhbz#1697265\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16877.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16878.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3885.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-1279.html"
+				}
+			],
+			"published": "2019-07-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-16877",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16877.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-16878",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16878.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-3885",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3885.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pacemaker-cluster-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.1-4.el8_0.3"
+								}
+							],
+							"fixed": [
+								"0:2.0.1-4.el8_0.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pacemaker-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.1-4.el8_0.3"
+								}
+							],
+							"fixed": [
+								"0:2.0.1-4.el8_0.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pacemaker-schemas",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.1-4.el8_0.3"
+								}
+							],
+							"fixed": [
+								"0:2.0.1-4.el8_0.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

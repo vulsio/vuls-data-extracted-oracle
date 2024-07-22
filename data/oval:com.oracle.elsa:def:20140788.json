@@ -1,0 +1,84 @@
+{
+	"id": "oval:com.oracle.elsa:def:20140788",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20140788",
+			"title": "\nELSA-2014-0788:  mod_wsgi security update (IMPORTANT)\n",
+			"description": "\n[3.2-6]\n- fix for CVE-2014-0242 (#1104685)\n\n[3.2-4]\n- fix for CVE-2014-0240 (#1104687)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0240.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0242.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0788.html"
+				}
+			],
+			"published": "2014-06-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-0240",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0240.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0242",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0242.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_wsgi",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.2-6.el6_5"
+								}
+							],
+							"fixed": [
+								"0:3.2-6.el6_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

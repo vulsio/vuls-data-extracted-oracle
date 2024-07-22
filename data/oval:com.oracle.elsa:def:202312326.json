@@ -1,0 +1,130 @@
+{
+	"id": "oval:com.oracle.elsa:def:202312326",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:202312326",
+			"title": "\nELSA-2023-12326:  openssl security update (IMPORTANT)\n",
+			"description": "\n[1.0.1e-59.0.4]\n- Backport fixes for CVE-2023-0286 [Orabug: 35212597]\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-0286.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-12326.html"
+				}
+			],
+			"published": "2023-05-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-0286",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-0286.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-59.0.4.ksplice1.el6_10"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-59.0.4.ksplice1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-59.0.4.ksplice1.el6_10"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-59.0.4.ksplice1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-59.0.4.ksplice1.el6_10"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-59.0.4.ksplice1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-59.0.4.ksplice1.el6_10"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-59.0.4.ksplice1.el6_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

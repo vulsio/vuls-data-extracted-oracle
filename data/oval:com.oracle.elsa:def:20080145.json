@@ -1,0 +1,225 @@
+{
+	"id": "oval:com.oracle.elsa:def:20080145",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20080145",
+			"title": "\nELSA-2008-0145:  ImageMagick security update (MODERATE)\n",
+			"description": "\n\n[6.2.8.0-4.el5_1.1]\n- backport functionality for CVE patches\n- Add patch for CVE-2007-1797 (#235071)\n- Add patch for CVE-2007-4988 (#310081)\n- Add patch for CVE-2007-4985 (#310091)\n- Add patch for CVE-2007-4986 (#310121)\n- Add patch for CVE-2008-1096 (#286411)\n- Add patch for CVE-2008-1097 (#285861)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-1797.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4985.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4986.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4988.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1096.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1097.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2008-0145.html"
+				}
+			],
+			"published": "2008-04-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-1797",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-1797.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-4985",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4985.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-4986",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4986.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-4988",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4988.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-1096",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1096.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-1097",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1097.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ImageMagick",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.8.0-4.el5_1.1"
+								}
+							],
+							"fixed": [
+								"0:6.2.8.0-4.el5_1.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ImageMagick-c++",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.8.0-4.el5_1.1"
+								}
+							],
+							"fixed": [
+								"0:6.2.8.0-4.el5_1.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ImageMagick-c++-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.8.0-4.el5_1.1"
+								}
+							],
+							"fixed": [
+								"0:6.2.8.0-4.el5_1.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ImageMagick-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.8.0-4.el5_1.1"
+								}
+							],
+							"fixed": [
+								"0:6.2.8.0-4.el5_1.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ImageMagick-perl",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.8.0-4.el5_1.1"
+								}
+							],
+							"fixed": [
+								"0:6.2.8.0-4.el5_1.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

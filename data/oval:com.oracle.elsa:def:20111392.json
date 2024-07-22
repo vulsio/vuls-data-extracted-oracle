@@ -1,0 +1,138 @@
+{
+	"id": "oval:com.oracle.elsa:def:20111392",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20111392",
+			"title": "\nELSA-2011-1392:  httpd security and bug fix update (MODERATE)\n",
+			"description": "\n[2.2.3-53.0.2.el5_7.3]\n- Fix mod_ssl always performing full renegotiation (orabug 12423387)\n- replace index.html with Oracle's index page oracle_index.html\n- update vstring and distro in specfile\n\n[2.2.3-53.3]\n- add security fix for CVE-2011-3368 (#743903)\n- fix regressions in byterange handling (#736593)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3368.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1392.html"
+				}
+			],
+			"published": "2011-10-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-3368",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3368.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.3-53.0.2.el5_7.3"
+								}
+							],
+							"fixed": [
+								"0:2.2.3-53.0.2.el5_7.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.3-53.0.2.el5_7.3"
+								}
+							],
+							"fixed": [
+								"0:2.2.3-53.0.2.el5_7.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-manual",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.3-53.0.2.el5_7.3"
+								}
+							],
+							"fixed": [
+								"0:2.2.3-53.0.2.el5_7.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_ssl",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.3-53.0.2.el5_7.3"
+								}
+							],
+							"fixed": [
+								"1:2.2.3-53.0.2.el5_7.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

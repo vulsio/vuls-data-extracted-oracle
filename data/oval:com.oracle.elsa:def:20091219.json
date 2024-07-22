@@ -1,0 +1,94 @@
+{
+	"id": "oval:com.oracle.elsa:def:20091219",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20091219",
+			"title": "\nELSA-2009-1219:  libvorbis security update (IMPORTANT)\n",
+			"description": "\n[1:1.1.2-3.el5.3]\n- fix CVE-2009-2663\nResolves: #516348\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2663.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-1219.html"
+				}
+			],
+			"published": "2009-08-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-2663",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2663.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvorbis",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.2-3.el5_3.3"
+								}
+							],
+							"fixed": [
+								"1:1.1.2-3.el5_3.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvorbis-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.2-3.el5_3.3"
+								}
+							],
+							"fixed": [
+								"1:1.1.2-3.el5_3.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,210 @@
+{
+	"id": "oval:com.oracle.elsa:def:20170907",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20170907",
+			"title": "\nELSA-2017-0907:  util-linux security and bug fix update (MODERATE)\n",
+			"description": "\n[2.23.2-33.0.1.el7_u3.2]\n- fix Oracle bug 23001516 - backport lscpu: correct the Virtualization type on Xen DomU PV guest\n- Reviewed-by: Joe Jin <joe.jin@oracle.com>\n\n[2.23.2-33.el7_3.2]\n* fix CVE-2017-2616 - Sending SIGKILL to other processes with root privileges via su\n\n[2.23.2-33.el7_3.1]\n- fix #1405238 - findmnt --target behaviour changed in 7.3, shows all mount-points in chroot\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-2616.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0907.html"
+				}
+			],
+			"published": "2017-04-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-2616",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-2616.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libblkid",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.23.2-33.0.1.el7_3.2"
+								}
+							],
+							"fixed": [
+								"0:2.23.2-33.0.1.el7_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libblkid-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.23.2-33.0.1.el7_3.2"
+								}
+							],
+							"fixed": [
+								"0:2.23.2-33.0.1.el7_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libmount",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.23.2-33.0.1.el7_3.2"
+								}
+							],
+							"fixed": [
+								"0:2.23.2-33.0.1.el7_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libmount-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.23.2-33.0.1.el7_3.2"
+								}
+							],
+							"fixed": [
+								"0:2.23.2-33.0.1.el7_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libuuid",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.23.2-33.0.1.el7_3.2"
+								}
+							],
+							"fixed": [
+								"0:2.23.2-33.0.1.el7_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libuuid-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.23.2-33.0.1.el7_3.2"
+								}
+							],
+							"fixed": [
+								"0:2.23.2-33.0.1.el7_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "util-linux",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.23.2-33.0.1.el7_3.2"
+								}
+							],
+							"fixed": [
+								"0:2.23.2-33.0.1.el7_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "uuidd",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.23.2-33.0.1.el7_3.2"
+								}
+							],
+							"fixed": [
+								"0:2.23.2-33.0.1.el7_3.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

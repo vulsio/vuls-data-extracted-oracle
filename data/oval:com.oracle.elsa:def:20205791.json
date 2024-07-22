@@ -1,0 +1,275 @@
+{
+	"id": "oval:com.oracle.elsa:def:20205791",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20205791",
+			"title": "\nELSA-2020-5791: Unbreakable Enterprise kernel security update (IMPORTANT)\n",
+			"description": "\n[4.14.35-1902.304.6.3]\n- Revert 'uek-rpm: Move grub boot menu update to posttrans stage.' (Somasundaram Krishnasamy)  [Orabug: 31358100]\n\n[4.14.35-1902.304.6.2]\n- certs: Remove Oracle cert compiled into the kernel (Eric Snowberg)  [Orabug: 31668611] \n- efi: Restrict efivar_ssdt_load when the kernel is locked down (Matthew Garrett)  [Orabug: 31662729]  {CVE-2019-20908}\n\n[4.14.35-1902.304.6.1]\n- IB/sa: Resolv use-after-free in ib_nl_make_request() (Divya Indi)  [Orabug: 31652801]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-20908.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-5791.html"
+				}
+			],
+			"published": "2020-07-29T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-20908",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-20908.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.304.6.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.304.6.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.304.6.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.304.6.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.304.6.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.304.6.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.304.6.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.304.6.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.304.6.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.304.6.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-headers",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.304.6.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.304.6.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.304.6.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.304.6.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools-libs",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.304.6.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.304.6.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools-libs-devel",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.304.6.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.304.6.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.304.6.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.304.6.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.304.6.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.304.6.3.el7uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

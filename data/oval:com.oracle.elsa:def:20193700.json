@@ -1,0 +1,160 @@
+{
+	"id": "oval:com.oracle.elsa:def:20193700",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20193700",
+			"title": "\nELSA-2019-3700:  openssl security, bug fix, and enhancement update (LOW)\n",
+			"description": "\n[1.1.1c-2]\n- do not try to use EC groups disallowed in FIPS mode\n  in TLS\n- fix Valgrind regression with constant-time code\n\n[1.1.1c-1]\n- update to the 1.1.1c release\n\n[1.1.1b-6]\n- adjust the default cert pbe algorithm for pkcs12 -export\n  in the FIPS mode\n\n[1.1.1b-5]\n- Fix small regressions related to the rebase\n\n[1.1.1b-3]\n- FIPS compliance fixes\n\n[1.1.1b-1]\n- update to the 1.1.1b release\n- EVP_KDF API backport from master\n- SSH KDF implementation for EVP_KDF API backport from master\n- add S390x chacha20-poly1305 assembler support from master branch\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0734.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0735.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-1543.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-3700.html"
+				}
+			],
+			"published": "2019-11-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-0734",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0734.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-0735",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0735.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-1543",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-1543.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1c-2.el8"
+								}
+							],
+							"fixed": [
+								"1:1.1.1c-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1c-2.el8"
+								}
+							],
+							"fixed": [
+								"1:1.1.1c-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1c-2.el8"
+								}
+							],
+							"fixed": [
+								"1:1.1.1c-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1c-2.el8"
+								}
+							],
+							"fixed": [
+								"1:1.1.1c-2.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

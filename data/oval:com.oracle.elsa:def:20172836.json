@@ -1,0 +1,157 @@
+{
+	"id": "oval:com.oracle.elsa:def:20172836",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20172836",
+			"title": "\nELSA-2017-2836:  dnsmasq security update (CRITICAL)\n",
+			"description": "\n[2.76-2.2]\n- Small correction of CVE-2017-14491\n\n[2.76-2.1]\n- Fix CVE-2017-14491\n- Fix CVE-2017-14492\n- Fix CVE-2017-14493\n- Fix CVE-2017-14494\n- Fix CVE-2017-14496\n- Fix CVE-2017-14495\n- extra fixes\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14491.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14492.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14493.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14494.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14495.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14496.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-2836.html"
+				}
+			],
+			"published": "2017-10-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-14491",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14491.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-14492",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14492.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-14493",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14493.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-14494",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14494.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-14495",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14495.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-14496",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14496.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dnsmasq",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.76-2.el7_4.2"
+								}
+							],
+							"fixed": [
+								"0:2.76-2.el7_4.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dnsmasq-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.76-2.el7_4.2"
+								}
+							],
+							"fixed": [
+								"0:2.76-2.el7_4.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

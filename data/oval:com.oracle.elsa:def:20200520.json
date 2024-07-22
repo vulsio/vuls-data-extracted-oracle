@@ -1,0 +1,97 @@
+{
+	"id": "oval:com.oracle.elsa:def:20200520",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20200520",
+			"title": "\nELSA-2020-0520:  firefox security update (IMPORTANT)\n",
+			"description": "\n[68.5.0-2.0.1]\n- Remove upstream references [Orabug: 30143292]\n- Update distribution for Oracle Linux [Orabug: 30143292]\n- Add firefox-oracle-default-prefs.js and remove the corresponding Red Hat file\n\n* Fri Feb 07 2020 Jan Horak <jhorak@redhat.com>\n- Update to 68.5.0 build2\n\n* Wed Feb 05 2020 Jan Horak <jhorak@redhat.com>\n- Update to 68.5.0 build1\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-6796.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-6798.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-6800.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-0520.html"
+				}
+			],
+			"published": "2020-02-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-6796",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-6796.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-6798",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-6798.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-6800",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-6800.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:68.5.0-2.0.1.el7_7"
+								}
+							],
+							"fixed": [
+								"0:68.5.0-2.0.1.el7_7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

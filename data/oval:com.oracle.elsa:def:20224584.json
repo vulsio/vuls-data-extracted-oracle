@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20224584",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20224584",
+			"title": "\nELSA-2022-4584:  zlib security update (IMPORTANT)\n",
+			"description": "\n[1.2.11-31.1]\n- Fix CVE-2018-25032\n  Resolves: CVE-2018-25032\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-25032.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-4584.html"
+				}
+			],
+			"published": "2022-06-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-25032",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-25032.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "zlib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.11-31.el9_0.1"
+								}
+							],
+							"fixed": [
+								"0:1.2.11-31.el9_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "zlib-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.11-31.el9_0.1"
+								}
+							],
+							"fixed": [
+								"0:1.2.11-31.el9_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "zlib-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.11-31.el9_0.1"
+								}
+							],
+							"fixed": [
+								"0:1.2.11-31.el9_0.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

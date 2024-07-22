@@ -1,0 +1,110 @@
+{
+	"id": "oval:com.oracle.elsa:def:20184303",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20184303",
+			"title": "\nELSA-2018-4303:  kubernetes security update (IMPORTANT)\n",
+			"description": "\n[1.9.11-2.1.1]\n- Fix kubeadm-registry.sh\n- Use golang 1.9.3\n- [CVE-2018-1002105] Handle error responses from backends\n- Bump to v1.9.11\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-1002105.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-4303.html"
+				}
+			],
+			"published": "2018-12-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-1002105",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-1002105.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubeadm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.11-2.1.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.9.11-2.1.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubectl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.11-2.1.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.9.11-2.1.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubelet",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.11-2.1.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.9.11-2.1.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

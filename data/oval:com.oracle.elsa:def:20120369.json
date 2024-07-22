@@ -1,0 +1,72 @@
+{
+	"id": "oval:com.oracle.elsa:def:20120369",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20120369",
+			"title": "\nELSA-2012-0369:  python-sqlalchemy security update (MODERATE)\n",
+			"description": "\n[0.5.5-3]\n- sanitize inputs to limit() and offset()\nResolves: CVE-2012-0805\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0805.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-0369.html"
+				}
+			],
+			"published": "2012-03-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-0805",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0805.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-sqlalchemy",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.5.5-3.el6_2"
+								}
+							],
+							"fixed": [
+								"0:0.5.5-3.el6_2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

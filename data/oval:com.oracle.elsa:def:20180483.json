@@ -1,0 +1,163 @@
+{
+	"id": "oval:com.oracle.elsa:def:20180483",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20180483",
+			"title": "\nELSA-2018-0483:  dhcp security update (IMPORTANT)\n",
+			"description": "\n[12:4.2.5-58.0.1]\n- Added oracle-errwarn-message.patch\n\n[12:4.2.5-68]\n- Resolves: #1550000 - CVE-2018-5733  Avoid buffer overflow reference counter\n\n[12:4.2.5-58.2]\n- Resolves: #1549979 - CVE-2018-5732  Avoid buffer overflow in options parser\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-5732.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-5733.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-0483.html"
+				}
+			],
+			"published": "2018-03-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-5732",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-5732.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-5733",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-5733.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhclient",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-58.0.1.el7_4.3"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-58.0.1.el7_4.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-58.0.1.el7_4.3"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-58.0.1.el7_4.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-common",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-58.0.1.el7_4.3"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-58.0.1.el7_4.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-58.0.1.el7_4.3"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-58.0.1.el7_4.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-58.0.1.el7_4.3"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-58.0.1.el7_4.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

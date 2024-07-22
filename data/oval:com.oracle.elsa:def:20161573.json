@@ -1,0 +1,72 @@
+{
+	"id": "oval:com.oracle.elsa:def:20161573",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20161573",
+			"title": "\nELSA-2016-1573:  squid security update (MODERATE)\n",
+			"description": "\n[7:3.1.23-16.6]\n- Resolves: #1359204 - CVE-2016-5408 squid: Buffer overflow vulnerability\n  in cachemgr.cgi tool\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5408.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-1573.html"
+				}
+			],
+			"published": "2016-08-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-5408",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5408.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:3.1.23-16.el6_8.6"
+								}
+							],
+							"fixed": [
+								"7:3.1.23-16.el6_8.6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

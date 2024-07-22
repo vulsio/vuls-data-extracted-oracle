@@ -1,0 +1,110 @@
+{
+	"id": "oval:com.oracle.elsa:def:20232784",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20232784",
+			"title": "\nELSA-2023-2784:  grafana security update (MODERATE)\n",
+			"description": "\n[7.5.15-4]\n- resolve CVE-2022-39229 grafana: using email as a username can block other users from signing in\n- resolve CVE-2022-27664 golang: net/http: handle server errors after sending GOAWAY\n- resolve CVE-2022-41715 golang: regexp/syntax: limit memory used by parsing regexps\n- resolve CVE-2022-2880 golang: net/http/httputil: ReverseProxy should not forward unparseable query parameters\n- run integration tests in check phase\n- update FIPS patch with latest changes in Go packaging\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-27664.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2880.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39229.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-41715.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-2784.html"
+				}
+			],
+			"published": "2023-05-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-27664",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-27664.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2880",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2880.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-39229",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39229.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-41715",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-41715.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "grafana",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.5.15-4.el8"
+								}
+							],
+							"fixed": [
+								"0:7.5.15-4.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20225326",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20225326",
+			"title": "\nELSA-2022-5326:  compat-openssl10 security update (LOW)\n",
+			"description": "\n[1:1.0.2o-4]\n- Fix CVE-2022-0778: Infinite loop in BN_mod_sqrt() reachable when parsing certificates\n  Resolves: rhbz#2077417\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-0778.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-5326.html"
+				}
+			],
+			"published": "2022-07-01T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-0778",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-0778.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "compat-openssl10",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2o-4.el8_6"
+								}
+							],
+							"fixed": [
+								"1:1.0.2o-4.el8_6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

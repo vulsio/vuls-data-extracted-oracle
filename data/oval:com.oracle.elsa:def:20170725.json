@@ -1,0 +1,120 @@
+{
+	"id": "oval:com.oracle.elsa:def:20170725",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20170725",
+			"title": "\nELSA-2017-0725:  bash security and bug fix update (MODERATE)\n",
+			"description": "\n[4.1.2-48]\n- Fix signal handling in read builtin\n  Resolves: #1421926\n\n[4.1.2-47]\n- CVE-2016-9401 - Fix crash when '-' is passed as second sign to popd\n  Resolves: #1396383\n\n[4.1.2-46]\n- CVE-2016-7543 - Fix for arbitrary code execution via SHELLOPTS+PS4 variables\n  Resolves: #1379630\n\n[4.1.2-45]\n- CVE-2016-0634 - Fix for arbitrary code execution via malicious hostname\n  Resolves: #1377613\n\n[4.1.2-44]\n- Avoid crash in parameter expansion while expanding long strings\n  Resolves: #1359142\n\n[4.1.2-43]\n- Stop reading input when SIGHUP is received\n  Resolves: #1325753\n\n[4.1.2-42]\n- Bash leaks memory while doing pattern removal in parameter expansion\n  Resolves: #1283829\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0634.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-7543.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9401.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0725.html"
+				}
+			],
+			"published": "2017-03-27T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-0634",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0634.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-7543",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-7543.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-9401",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9401.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bash",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.2-48.el6"
+								}
+							],
+							"fixed": [
+								"0:4.1.2-48.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bash-doc",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.2-48.el6"
+								}
+							],
+							"fixed": [
+								"0:4.1.2-48.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

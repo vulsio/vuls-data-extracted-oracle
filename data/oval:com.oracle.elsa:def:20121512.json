@@ -1,0 +1,208 @@
+{
+	"id": "oval:com.oracle.elsa:def:20121512",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20121512",
+			"title": "\nELSA-2012-1512:  libxml2 security update (IMPORTANT)\n",
+			"description": "\n[2.7.6-8.0.1.el6_3.4 ]\n- Update doc/redhat.gif in tarball\n- Add libxml2-oracle-enterprise.patch and update logos in tarball\n\n[2.7.6-8.el6_3.4]\n- fix out of range heap access (CVE-2012-5134)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5134.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1512.html"
+				}
+			],
+			"published": "2012-11-29T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-5134",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5134.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.26-2.1.15.0.1.el5_8.6"
+								}
+							],
+							"fixed": [
+								"0:2.6.26-2.1.15.0.1.el5_8.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.26-2.1.15.0.1.el5_8.6"
+								}
+							],
+							"fixed": [
+								"0:2.6.26-2.1.15.0.1.el5_8.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-python",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.26-2.1.15.0.1.el5_8.6"
+								}
+							],
+							"fixed": [
+								"0:2.6.26-2.1.15.0.1.el5_8.6"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-8.0.1.el6_3.4"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-8.0.1.el6_3.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-8.0.1.el6_3.4"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-8.0.1.el6_3.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-python",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-8.0.1.el6_3.4"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-8.0.1.el6_3.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-static",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-8.0.1.el6_3.4"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-8.0.1.el6_3.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

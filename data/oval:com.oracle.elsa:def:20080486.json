@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20080486",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20080486",
+			"title": "\nELSA-2008-0486:  nfs-utils security update (MODERATE)\n",
+			"description": "\n\n[1.0.9-35z]\n- Added the warning.patch to fix some warning which were\n  flaged by rpmdiff during the errata phasea (Errata 2008:0486)\n\n[1.0.9-34z]\n- Re-enabled tcp wrappers. (bz440119)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1376.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2008-0486.html"
+				}
+			],
+			"published": "2008-07-31T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2008-1376",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1376.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nfs-utils",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.9-35z.el5_2"
+								}
+							],
+							"fixed": [
+								"1:1.0.9-35z.el5_2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

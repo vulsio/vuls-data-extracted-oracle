@@ -1,0 +1,154 @@
+{
+	"id": "oval:com.oracle.elsa:def:20181669",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20181669",
+			"title": "\nELSA-2018-1669:  libvirt security update (IMPORTANT)\n",
+			"description": "\n[0.10.2-62.0.1.el6_9.2]\n- Replace docs/et.png in tarball with blank image\n\n[0.10.2-62.el6_9.2]\n- cpu: define the 'ssbd' CPUID feature bit (CVE-2018-3639)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-3639.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-1669.html"
+				}
+			],
+			"published": "2018-05-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-3639",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-3639.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.2-62.0.1.el6_9.2"
+								}
+							],
+							"fixed": [
+								"0:0.10.2-62.0.1.el6_9.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-client",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.2-62.0.1.el6_9.2"
+								}
+							],
+							"fixed": [
+								"0:0.10.2-62.0.1.el6_9.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.2-62.0.1.el6_9.2"
+								}
+							],
+							"fixed": [
+								"0:0.10.2-62.0.1.el6_9.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-lock-sanlock",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.2-62.0.1.el6_9.2"
+								}
+							],
+							"fixed": [
+								"0:0.10.2-62.0.1.el6_9.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-python",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.2-62.0.1.el6_9.2"
+								}
+							],
+							"fixed": [
+								"0:0.10.2-62.0.1.el6_9.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

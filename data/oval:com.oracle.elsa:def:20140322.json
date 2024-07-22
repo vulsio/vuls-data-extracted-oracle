@@ -1,0 +1,173 @@
+{
+	"id": "oval:com.oracle.elsa:def:20140322",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20140322",
+			"title": "\nELSA-2014-0322:  net-snmp security update (MODERATE)\n",
+			"description": "\n[5.3.2.2-22.0.2.el5_10.1]\n- hrProcessorLoad returns incorrect values for CPUs greater than 100 (Jason Luan) [Orabug 17792842]\n- snmptrapd: Fix crash due to access of freed memory (John Haxby) [orabug 14391194]\n- suppress spurious asserts on 32bit [Greg Marsden]\n\n[5.3.2.2-20.1]\n- Fixed CVE-2012-6151: snmpd crashing when AgentX subagent disconnects in\n  the middle of request processing (#1073224)\n- Fixed CVE-2014-2285: snmptrapd crash when using a trap with empty community\n  string (#1073224)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-6151.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2285.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0322.html"
+				}
+			],
+			"published": "2014-03-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-6151",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-6151.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-2285",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2285.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.3.2.2-22.0.2.el5_10.1"
+								}
+							],
+							"fixed": [
+								"1:5.3.2.2-22.0.2.el5_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.3.2.2-22.0.2.el5_10.1"
+								}
+							],
+							"fixed": [
+								"1:5.3.2.2-22.0.2.el5_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-libs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.3.2.2-22.0.2.el5_10.1"
+								}
+							],
+							"fixed": [
+								"1:5.3.2.2-22.0.2.el5_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-perl",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.3.2.2-22.0.2.el5_10.1"
+								}
+							],
+							"fixed": [
+								"1:5.3.2.2-22.0.2.el5_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-utils",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.3.2.2-22.0.2.el5_10.1"
+								}
+							],
+							"fixed": [
+								"1:5.3.2.2-22.0.2.el5_10.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,283 @@
+{
+	"id": "oval:com.oracle.elsa:def:20091484",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20091484",
+			"title": "\nELSA-2009-1484:  postgresql security update (MODERATE)\n",
+			"description": "\n\n[8.1.18-2.el5_4.1]\n- Remove unnecessary .o file that confuses TPS tests\nRelated: #525284\n\n[8.1.18-1.el5_4.1]\n- Update to PostgreSQL 8.1.18 to fix CVE-2009-0922, CVE-2009-3230,\n  and assorted other bugs described at\n  http://www.postgresql.org/docs/8.1/static/release.html\nResolves: #525284\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0922.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3230.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-1484.html"
+				}
+			],
+			"published": "2009-10-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-0922",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0922.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-3230",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3230.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.1.18-2.el5_4.1"
+								}
+							],
+							"fixed": [
+								"0:8.1.18-2.el5_4.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-contrib",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.1.18-2.el5_4.1"
+								}
+							],
+							"fixed": [
+								"0:8.1.18-2.el5_4.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.1.18-2.el5_4.1"
+								}
+							],
+							"fixed": [
+								"0:8.1.18-2.el5_4.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-docs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.1.18-2.el5_4.1"
+								}
+							],
+							"fixed": [
+								"0:8.1.18-2.el5_4.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-libs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.1.18-2.el5_4.1"
+								}
+							],
+							"fixed": [
+								"0:8.1.18-2.el5_4.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-pl",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.1.18-2.el5_4.1"
+								}
+							],
+							"fixed": [
+								"0:8.1.18-2.el5_4.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-python",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.1.18-2.el5_4.1"
+								}
+							],
+							"fixed": [
+								"0:8.1.18-2.el5_4.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-server",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.1.18-2.el5_4.1"
+								}
+							],
+							"fixed": [
+								"0:8.1.18-2.el5_4.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-tcl",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.1.18-2.el5_4.1"
+								}
+							],
+							"fixed": [
+								"0:8.1.18-2.el5_4.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-test",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.1.18-2.el5_4.1"
+								}
+							],
+							"fixed": [
+								"0:8.1.18-2.el5_4.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

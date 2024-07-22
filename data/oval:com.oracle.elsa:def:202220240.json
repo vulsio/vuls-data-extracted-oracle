@@ -1,0 +1,105 @@
+{
+	"id": "oval:com.oracle.elsa:def:202220240",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:202220240",
+			"title": "\nELSA-2022-20240:  podman security update (MODERATE)\n",
+			"description": "\n[1.6.4-36.0.1]\n- Reduce unnecessary writable mounts in NaiveDiffDriver [Orabug: 31025483]\n- handle redirect from the docker registry v2 [Orabug: 29874238] (nikita.gerasimov@oracle.com)\n- remove changes in NaiveDiffDriver\n\n[1.6.4-36]\n- update to the latest content of https://github.com/containers/podman/tree/v1.6.4-rhel\n  (https://github.com/containers/podman/commit/7667df8)\n\n[1.6.4-35]\n- update to the latest content of https://github.com/containers/podman/tree/v1.6.4-rhel\n  (https://github.com/containers/podman/commit/e330751)\n\n[1.6.4-34]\n- fix RHEL7 regressions - thanks to Valentin Rothberg\n\n[1.6.4-33]\n- update to the latest content of https://github.com/containers/podman/tree/v1.6.4-rhel\n  (https://github.com/containers/podman/commit/68af661)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2738.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2739.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-20240.html"
+				}
+			],
+			"published": "2022-08-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-2738",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2738.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2739",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2739.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.4-36.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"0:1.6.4-36.0.1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-docker",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.4-36.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"0:1.6.4-36.0.1.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

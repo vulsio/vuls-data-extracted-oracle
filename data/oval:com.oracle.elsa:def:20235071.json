@@ -1,0 +1,105 @@
+{
+	"id": "oval:com.oracle.elsa:def:20235071",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20235071",
+			"title": "\nELSA-2023-5071:  libcap security update (MODERATE)\n",
+			"description": "\n[2.48-9]\n- Fix integer overflow in _libcap_strdup() (CVE-2023-2603)\n  Resolves: rhbz#2210638\n- Correctly check pthread_create() return value to avoid memory leak (CVE-2023-2602)\n  Resolves: rhbz#2222198\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2602.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2603.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-5071.html"
+				}
+			],
+			"published": "2023-09-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-2602",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2602.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-2603",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2603.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.48-9.el9_2"
+								}
+							],
+							"fixed": [
+								"0:2.48-9.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcap-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.48-9.el9_2"
+								}
+							],
+							"fixed": [
+								"0:2.48-9.el9_2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

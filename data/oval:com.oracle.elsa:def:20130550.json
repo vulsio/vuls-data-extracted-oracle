@@ -1,0 +1,176 @@
+{
+	"id": "oval:com.oracle.elsa:def:20130550",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20130550",
+			"title": "\nELSA-2013-0550:  bind security and enhancement update (MODERATE)\n",
+			"description": "\n[32:9.8.2-0.17.rc1.0.2.el6.3]\n- bump up version and rebuild\n\n[32:9.8.2-0.17.rc1.0.1.el6.3]\n- add rrl.h into include dirs\n\n[32:9.8.2-0.27.rc1.3]\n- remove one bogus file from /usr/share/doc, introduced by RRL patch\n\n[32:9.8.2-0.17.rc1.2]\n- fix CVE-2012-5689\n\n[32:9.8.2-0.17.rc1.1]\n- add response rate limit patch (#873624)\n\n[32:9.8.2-0.17.rc1]\n- fix CVE-2012-5688\n\n[32:9.8.2-0.16.rc1]\n- initscript: silence spurious \"named.pid: No such file\" error\n\n[32:9.8.2-0.15.rc1]\n- fix CVE-2012-5166\n\n[32:9.8.2-0.14.rc1]\n- allow forward{,ers} statement in static-stub zones\n\n[32:9.8.2-0.13.rc1]\n- fix  CVE-2012-4244\n\n[32:9.8.2-0.12.rc1]\n- fix CVE-2012-3817\n\n[32:9.8.2-0.11.rc1]\n- fix rbtnode.deadlink INSIST failures in rbtdb.c (#837165)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5689.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0550.html"
+				}
+			],
+			"published": "2013-02-28T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-5689",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5689.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.17.rc1.0.2.el6.3"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.17.rc1.0.2.el6.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-chroot",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.17.rc1.0.2.el6.3"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.17.rc1.0.2.el6.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.17.rc1.0.2.el6.3"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.17.rc1.0.2.el6.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.17.rc1.0.2.el6.3"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.17.rc1.0.2.el6.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-sdb",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.17.rc1.0.2.el6.3"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.17.rc1.0.2.el6.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-utils",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.17.rc1.0.2.el6.3"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.17.rc1.0.2.el6.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

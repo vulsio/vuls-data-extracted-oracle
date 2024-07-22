@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20214153",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20214153",
+			"title": "\nELSA-2021-4153:  dnsmasq security and bug fix update (MODERATE)\n",
+			"description": "\n[2.79-19]\n- Correct typo in man page (#1947039)\n\n[2.79-18]\n- Properly randomize outgoing ports also with bound interface (CVE-2021-3448)\n\n[2.79-17]\n- Fix sporadic bind-dynamic failures (#1887649)\n\n[2.79-16]\n- Fix network errors on queries both from ipv4 and ipv6 (#1921153)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3448.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-4153.html"
+				}
+			],
+			"published": "2021-11-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-3448",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3448.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dnsmasq",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.79-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.79-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dnsmasq-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.79-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.79-19.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20240670",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20240670",
+			"title": "\nELSA-2024-0670:  runc security update (IMPORTANT)\n",
+			"description": "\n[4:1.1.12-1]\n- update to https://github.com/opencontainers/runc/releases/tag/v1.1.12\n- Related: RHEL-2112\n\n[4:1.1.11-1]\n- update to https://github.com/opencontainers/runc/releases/tag/v1.1.11\n- Related: RHEL-2112\n\n[4:1.1.10-3]\n- Rebuild for CVEs: CVE-2023-39321 CVE-2023-39322 CVE-2023-29409\n- Related: Jira:RHEL-2792\n- Related: Jira:RHEL-7454\n\n[4:1.1.10-2]\n- require container-selinux >= 2.224.0 for dmz feature\n- Related: Jira:RHEL-2112\n\n[4:1.1.10-1]\n- update to https://github.com/opencontainers/runc/releases/tag/v1.1.10\n- Related: RHEL-2112\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-21626.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-0670.html"
+				}
+			],
+			"published": "2024-02-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2024-21626",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-21626.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "runc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:1.1.12-1.el9_3"
+								}
+							],
+							"fixed": [
+								"4:1.1.12-1.el9_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

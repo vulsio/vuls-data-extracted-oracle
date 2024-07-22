@@ -1,0 +1,218 @@
+{
+	"id": "oval:com.oracle.elsa:def:20233837",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20233837",
+			"title": "\nELSA-2023-3837:  systemd security and bug fix update (MODERATE)\n",
+			"description": "\n[239-74.0.4.2]\n- Fix CVE-2023-26604\n- pager: set  whenver we invoke a pager (lukas.lipinsky@oracle.com)  (#2175624)\n- pager: make pager secure when under euid is changed or explicitly requested (lukas.lipinsky@oracle.com) (#2175624)\n- pager: lets check SYSTEMD_PAGERSECURE with secure_getenv() (lukas.lipinsky@oracle.com) (#2175624)\n- pstore: fix crash and forward dummy arguments instead of NULL (lukas.lipinsky@oracle.com) (#2190151)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-26604.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-3837.html"
+				}
+			],
+			"published": "2023-07-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-26604",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-26604.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-74.0.4.el8_8.2"
+								}
+							],
+							"fixed": [
+								"0:239-74.0.4.el8_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-container",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-74.0.4.el8_8.2"
+								}
+							],
+							"fixed": [
+								"0:239-74.0.4.el8_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-74.0.4.el8_8.2"
+								}
+							],
+							"fixed": [
+								"0:239-74.0.4.el8_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-journal-remote",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-74.0.4.el8_8.2"
+								}
+							],
+							"fixed": [
+								"0:239-74.0.4.el8_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-74.0.4.el8_8.2"
+								}
+							],
+							"fixed": [
+								"0:239-74.0.4.el8_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-pam",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-74.0.4.el8_8.2"
+								}
+							],
+							"fixed": [
+								"0:239-74.0.4.el8_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-74.0.4.el8_8.2"
+								}
+							],
+							"fixed": [
+								"0:239-74.0.4.el8_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-udev",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-74.0.4.el8_8.2"
+								}
+							],
+							"fixed": [
+								"0:239-74.0.4.el8_8.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

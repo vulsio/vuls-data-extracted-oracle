@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20232177",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20232177",
+			"title": "\nELSA-2023-2177:  grafana-pcp security and enhancement update (MODERATE)\n",
+			"description": "\n[5.1.1-1]\n- update to 5.1.1 tagged upstream community sources, see CHANGELOG\n- resolve CVE-2022-27664 golang: net/http: handle server errors after sending GOAWAY\n\n[5.0.0-4]\n- update to 5.0.0 tagged upstream community sources, see CHANGELOG\n- install plugin in /usr/share and create symlink from /var using\n  systemd-tmpfiles to work on rpm-ostree based distributions\n- revert the breaking change (change of internal plugin IDs) of upstream v5.0.0,\n  i.e. there are no breaking changes when performing this upgrade\n- enable Go modules in build process\n- make vendor and webpack tarballs reproducible\n- drop makefile in favor of create_bundles.sh script\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-27664.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-2177.html"
+				}
+			],
+			"published": "2023-05-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-27664",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-27664.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "grafana-pcp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.1.1-1.el9"
+								}
+							],
+							"fixed": [
+								"0:5.1.1-1.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

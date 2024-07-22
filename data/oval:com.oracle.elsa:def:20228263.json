@@ -1,0 +1,160 @@
+{
+	"id": "oval:com.oracle.elsa:def:20228263",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20228263",
+			"title": "\nELSA-2022-8263:  dpdk security and bug fix update (IMPORTANT)\n",
+			"description": "\n[21.11.2-1]\n- Rebase to 21.11.2 (#2126159)\n- Includes fixes for CVE-2022-2132 (#2107173) and CVE-2022-28199 (#2123616)\n\n[21.11.1-1]\n- Rebase to 21.11.1 (#2106856)\n- Includes fix for CVE-2021-3839 (#2026642)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3839.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2132.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-28199.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-8263.html"
+				}
+			],
+			"published": "2022-11-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-3839",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3839.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2132",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2132.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-28199",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-28199.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dpdk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:21.11.2-1.el9_1"
+								}
+							],
+							"fixed": [
+								"2:21.11.2-1.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dpdk-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:21.11.2-1.el9_1"
+								}
+							],
+							"fixed": [
+								"2:21.11.2-1.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dpdk-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:21.11.2-1.el9_1"
+								}
+							],
+							"fixed": [
+								"2:21.11.2-1.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dpdk-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:21.11.2-1.el9_1"
+								}
+							],
+							"fixed": [
+								"2:21.11.2-1.el9_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,90 @@
+{
+	"id": "oval:com.oracle.elsa:def:20162593",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20162593",
+			"title": "\nELSA-2016-2593:  sudo security, bug fix, and enhancement update (LOW)\n",
+			"description": "\n[1.8.6p7-20]\n- RHEL 7.3 erratum\n  - fixed visudo's -q flag\n  Resolves: rhbz#1350828\n\n[1.8.6p7-19]\n- RHEL 7.3 erratum\n  - removed INPUTRC from env_keep to prevent a potential info leak\n  Resolves: rhbz#1340700\n\n[1.8.6p7-18]\n- RHEL 7.3 erratum\n  - removed requiretty flag from the default sudoers policy\n  - backported pam_service and pam_login_service defaults options\n  - implemented netgroup_tuple defaults option for changing netgroup\n    processing semantics\n  - fixed user matching logic in the LDAP nss backend\n  - don't allow visudo to accept an invalid sudoers file\n  - fixed a bug causing that non-root users can list privileges of\n    other users\n  - modified digest check documentation to mention the raciness of\n    the checking mechanism\n  Resolves: rhbz#1196451\n  Resolves: rhbz#1247230\n  Resolves: rhbz#1334331\n  Resolves: rhbz#1334360\n  Resolves: rhbz#1261998\n  Resolves: rhbz#1313364\n  Resolves: rhbz#1312486\n  Resolves: rhbz#1268958\n  Resolves: rhbz#1335039\n  Resolves: rhbz#1335042\n  Resolves: rhbz#1335045\n  Resolves: rhbz#1273243\n  Resolves: rhbz#1299883\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-7091.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-2593.html"
+				}
+			],
+			"published": "2016-11-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-7091",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-7091.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sudo",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.6p7-20.el7"
+								}
+							],
+							"fixed": [
+								"0:1.8.6p7-20.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sudo-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.6p7-20.el7"
+								}
+							],
+							"fixed": [
+								"0:1.8.6p7-20.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

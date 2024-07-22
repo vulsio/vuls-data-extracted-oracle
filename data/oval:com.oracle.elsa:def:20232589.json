@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20232589",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20232589",
+			"title": "\nELSA-2023-2589:  autotrace security update (MODERATE)\n",
+			"description": "\n[0.31.1-65]\n- Resolves: rhbz#2121828 Fix the gating tests by using only local test\n  Upstream testsuite will not work as this package code is very old\n\n[0.31.1-64]\n- Resolves: rhbz#2121828\n  CVE-2022-32323 - heap-buffer overflow via the ReadImage() at input-bmp.c\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-32323.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-2589.html"
+				}
+			],
+			"published": "2023-05-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-32323",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-32323.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "autotrace",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.31.1-65.el9"
+								}
+							],
+							"fixed": [
+								"0:0.31.1-65.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

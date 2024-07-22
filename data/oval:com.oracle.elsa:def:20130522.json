@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20130522",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20130522",
+			"title": "\nELSA-2013-0522:  gdb security and bug fix update (MODERATE)\n",
+			"description": "\n[7.2-60.el6]\n- Fix CVE-2011-4355 gdb: arbitrary code execution via .debug_gdb_scripts'\n  (Jan Kratochvil, RH BZ 756116).\n\n[7.2-58.el6]\n- Fix Backport gdb fix to handle identical binaries via additional build-id\n  symlinks' (RH BZ 836966).\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4355.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0522.html"
+				}
+			],
+			"published": "2013-02-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-4355",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4355.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gdb",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.2-60.el6"
+								}
+							],
+							"fixed": [
+								"0:7.2-60.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gdb-gdbserver",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.2-60.el6"
+								}
+							],
+							"fixed": [
+								"0:7.2-60.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

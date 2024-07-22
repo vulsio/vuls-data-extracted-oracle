@@ -1,0 +1,160 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100321",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100321",
+			"title": "\nELSA-2010-0321:  automake security update (LOW)\n",
+			"description": "\n[1.9.6-2.3]\n- increase delay in self checks\n- add delays in aclocal7 self check\n  http://osdir.com/ml/sysutils.automake.bugs/2006-09/msg00012.html\n- preserve timestamps of configure files\n\n[1.9.6-2.2]\n- add fix for CVE-2009-4029\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4029.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0321.html"
+				}
+			],
+			"published": "2010-04-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-4029",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4029.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "automake",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.6-2.3.el5"
+								}
+							],
+							"fixed": [
+								"0:1.9.6-2.3.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "automake14",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4p6-13.el5.1"
+								}
+							],
+							"fixed": [
+								"0:1.4p6-13.el5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "automake15",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5-16.el5.2"
+								}
+							],
+							"fixed": [
+								"0:1.5-16.el5.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "automake16",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.3-8.el5.1"
+								}
+							],
+							"fixed": [
+								"0:1.6.3-8.el5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "automake17",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.9-7.el5.2"
+								}
+							],
+							"fixed": [
+								"0:1.7.9-7.el5.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

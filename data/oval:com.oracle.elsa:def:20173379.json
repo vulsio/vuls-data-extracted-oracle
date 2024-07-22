@@ -1,0 +1,764 @@
+{
+	"id": "oval:com.oracle.elsa:def:20173379",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20173379",
+			"title": "\nELSA-2017-3379:  sssd security and bug fix update (MODERATE)\n",
+			"description": "\n[1.15.2-50.8]\n- Resolves: rhbz#1508972 - Accessing IdM kerberos ticket fails while id\n                           mapping is applied [rhel-7.4.z]\n- Resolves: rhbz#1509177 - Race condition between refreshing the cr_domain\n                           list and a request that is using the list can\n                           cause a segfault is sssd_nss [rhel-7.4.z]\n\n[1.15.2-50.7]\n- Resolves: rhbz#1506142 - SSSD can crash due to ABI changes in\n                           libldb >= 1.2.0 (1.1.30) [rhel-7.4.z]\n- Resolves: rhbz#1506682 - sssd_client: add mutex protected call to the\n                           PAC responder [rhel-7.4.z]\n- Resolves: rhbz#1499658 - CVE-2017-12173 sssd: unsanitized input when\n                           searching in local cache database [rhel-7.4.z]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-12173.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-3379.html"
+				}
+			],
+			"published": "2017-12-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-12173",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-12173.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libipa_hbac",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libipa_hbac-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_autofs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_certmap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_certmap-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_idmap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_idmap-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_nss_idmap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_nss_idmap-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_simpleifp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_simpleifp-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_sudo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-libipa_hbac",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-libsss_nss_idmap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-sss",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-sss-murmur",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-sssdconfig",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-ad",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-client",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-common-pac",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-dbus",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-ipa",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-kcm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-krb5",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-krb5-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-ldap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-libwbclient",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-libwbclient-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-polkit-rules",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-proxy",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-winbind-idmap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.2-50.el7_4.8"
+								}
+							],
+							"fixed": [
+								"0:1.15.2-50.el7_4.8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

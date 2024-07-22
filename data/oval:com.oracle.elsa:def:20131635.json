@@ -1,0 +1,218 @@
+{
+	"id": "oval:com.oracle.elsa:def:20131635",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20131635",
+			"title": "\nELSA-2013-1635:  pacemaker security, bug fix, and enhancement update (LOW)\n",
+			"description": "\n[1.1.10-14]\n- Log: crmd: Supply arguments in the correct order\n    Resolves: rhbz#996850\n- Fix: Invalid formatting of log message causes crash\n    Resolves: rhbz#996850\n\n[1.1.10-13]\n- Fix: cman: Start clvmd and friends from the init script if enabled\n\n[1.1.10-12]\n- Fix: Consistently use 'Slave' as the role for unpromoted master/slave resources\n    Resolves: rhbz#1011618\n- Fix: pengine: Location constraints with role=Started should prevent masters from running at all\n    Resolves: rhbz#902407\n- Fix: crm_resource: Observe --master modifier for --move\n    Resolves: rhbz#902407\n\n[1.1.10-11]\n+ Fix: cman: Do not start pacemaker if cman startup fails\n  + Fix: Fencing: Observe pcmk_host_list during automatic unfencing\n    Resolves: rhbz#996850\n\n[1.1.10-10]\n- Remove unsupported resource agent\n    Resolves: rhbz#1005678\n- Provide a meaningful error if --master is used for primitives and groups\n\n[1.1.10-9]\n+ Fix: xml: Location constraints are allowed to specify a role\n  + Bug rhbz#902407 - crm_resource: Handle --ban for master/slave resources as advertised\n    Resolves: rhbz#902407\n\n[1.1.10-8]\n+ Fix: mcp: Remove LSB hints that instruct chkconfig to start pacemaker at boot time\n    Resolves: rhbz#997346\n\n[1.1.10-7]\n+ Fencing: Support agents that need the host to be unfenced at startup\n    Resolves: rhbz#996850\n  + Fix: crm_report: Collect corosync quorum data\n    Resolves: rhbz#989292\n\n[1.1.10-6]\n- Regenerate patches to have meaningful names\n\n[1.1.10-5]\n+ Fix: systemd: Prevent glib assertion - only call g_error_free with non-NULL arguments\n  + Fix: systemd: Prevent additional use-of-NULL assertions in g_error_free\n  + Fix: logging: glib CRIT messages should not produce core files in the background\n  + Fix: crmd: Correcty update the history cache when recurring ops change their return code\n  + Log: crm_mon: Unmangle the output for failed operations\n  + Log: cib: Correctly log short-form xml diffs\n  + Log: pengine: Better indicate when a resource has failed\n\n[1.1.10-4]\n+ Fix: crmd: Prevent crash by passing log arguments in the correct order\n  + Fix: pengine: Do not re-allocate clone instances that are blocked in the Stopped state\n  + Fix: pengine: Do not allow colocation with blocked clone instances\n\n[1.1.10-3]\n+ Fix: pengine: Do not restart resources that depend on unmanaged resources\n  + Fix: crmd: Prevent recurring monitors being cancelled due to notify operations\n\n[1.1.10-2]\n- Drop rgmanager 'provides' directive\n\n[1.1.10-1]\n- Update source tarball to revision: Pacemaker-1.1.10\n- See included ChangeLog file or https://raw.github.com/ClusterLabs/pacemaker/master/ChangeLog for full details\n\n- Resolves: rhbz#891766\n- Resolves: rhbz#902407\n- Resolves: rhbz#908450\n- Resolves: rhbz#913093\n- Resolves: rhbz#951340\n- Resolves: rhbz#951371\n- Related: rhbz#987355\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0281.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-1635.html"
+				}
+			],
+			"published": "2013-11-26T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-0281",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0281.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pacemaker",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.10-14.el6"
+								}
+							],
+							"fixed": [
+								"0:1.1.10-14.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pacemaker-cli",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.10-14.el6"
+								}
+							],
+							"fixed": [
+								"0:1.1.10-14.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pacemaker-cluster-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.10-14.el6"
+								}
+							],
+							"fixed": [
+								"0:1.1.10-14.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pacemaker-cts",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.10-14.el6"
+								}
+							],
+							"fixed": [
+								"0:1.1.10-14.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pacemaker-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.10-14.el6"
+								}
+							],
+							"fixed": [
+								"0:1.1.10-14.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pacemaker-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.10-14.el6"
+								}
+							],
+							"fixed": [
+								"0:1.1.10-14.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pacemaker-libs-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.10-14.el6"
+								}
+							],
+							"fixed": [
+								"0:1.1.10-14.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pacemaker-remote",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.10-14.el6"
+								}
+							],
+							"fixed": [
+								"0:1.1.10-14.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

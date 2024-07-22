@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20192722",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20192722",
+			"title": "\nELSA-2019-2722:  libwmf security update (LOW)\n",
+			"description": "\n[0.2.9-8]\n- Related: rhbz1717799 fix clang warning\n\n[0.2.9-7]\n- Related: rhbz1717799 bump n-v-r\n\n[0.2.9-6]\n- Related: rhbz1679006 bump n-v-r\n\n[0.2.9-5]\n- Resolves: rhbz1679006 libgd CVE-2019-6978\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-6978.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-2722.html"
+				}
+			],
+			"published": "2019-09-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-6978",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-6978.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libwmf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.2.9-8.el8_0"
+								}
+							],
+							"fixed": [
+								"0:0.2.9-8.el8_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libwmf-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.2.9-8.el8_0"
+								}
+							],
+							"fixed": [
+								"0:0.2.9-8.el8_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libwmf-lite",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.2.9-8.el8_0"
+								}
+							],
+							"fixed": [
+								"0:0.2.9-8.el8_0"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20236886",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20236886",
+			"title": "\nELSA-2023-6886:  plexus-archiver security update (IMPORTANT)\n",
+			"description": "\n[0:2.4.2-6]\n- Avoid override target symlink by standard file in AbstractUnArchiver\n- Fixes: CVE-2023-37460\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-37460.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-6886.html"
+				}
+			],
+			"published": "2023-11-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-37460",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-37460.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "plexus-archiver",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.2-6.el7_9"
+								}
+							],
+							"fixed": [
+								"0:2.4.2-6.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "plexus-archiver-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.2-6.el7_9"
+								}
+							],
+							"fixed": [
+								"0:2.4.2-6.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

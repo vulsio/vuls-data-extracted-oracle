@@ -1,0 +1,222 @@
+{
+	"id": "oval:com.oracle.elsa:def:20111508",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20111508",
+			"title": "\nELSA-2011-1508:  cyrus-imapd security update (MODERATE)\n",
+			"description": "\n[2.3.16-6.4]\n- fix CVE-2011-3481: NULL pointer dereference via crafted \n  References header in email (#738391)\n- fix CVE-2011-3372: nntpd authentication bypass (#740822)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3372.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3481.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1508.html"
+				}
+			],
+			"published": "2011-12-01T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-3372",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3372.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-3481",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3481.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cyrus-imapd",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.7-12.0.1.el5_7.2"
+								}
+							],
+							"fixed": [
+								"0:2.3.7-12.0.1.el5_7.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cyrus-imapd-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.7-12.0.1.el5_7.2"
+								}
+							],
+							"fixed": [
+								"0:2.3.7-12.0.1.el5_7.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cyrus-imapd-perl",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.7-12.0.1.el5_7.2"
+								}
+							],
+							"fixed": [
+								"0:2.3.7-12.0.1.el5_7.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cyrus-imapd-utils",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.7-12.0.1.el5_7.2"
+								}
+							],
+							"fixed": [
+								"0:2.3.7-12.0.1.el5_7.2"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cyrus-imapd",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.16-6.el6_1.4"
+								}
+							],
+							"fixed": [
+								"0:2.3.16-6.el6_1.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cyrus-imapd-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.16-6.el6_1.4"
+								}
+							],
+							"fixed": [
+								"0:2.3.16-6.el6_1.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cyrus-imapd-utils",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.16-6.el6_1.4"
+								}
+							],
+							"fixed": [
+								"0:2.3.16-6.el6_1.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

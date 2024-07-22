@@ -1,0 +1,110 @@
+{
+	"id": "oval:com.oracle.elsa:def:20240071",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20240071",
+			"title": "\nELSA-2024-0071:  squid security update (IMPORTANT)\n",
+			"description": "\n[7:5.5-6.0.1.el9_3.5]\n- squid: Denial of Service in SSL Certificate validation (CVE-2023-46724)\n- squid: NULL pointer dereference in the gopher protocol code (CVE-2023-46728)\n- squid: Buffer over-read in the HTTP Message processing feature (CVE-2023-49285)\n- squid: Incorrect Check of Function Return Value In Helper Process management (CVE-2023-49286)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46724.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46728.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-49285.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-49286.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-0071.html"
+				}
+			],
+			"published": "2024-01-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-46724",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46724.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-46728",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46728.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-49285",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-49285.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-49286",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-49286.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:5.5-6.0.1.el9_3.5"
+								}
+							],
+							"fixed": [
+								"7:5.5-6.0.1.el9_3.5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,84 @@
+{
+	"id": "oval:com.oracle.elsa:def:20201561",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20201561",
+			"title": "\nELSA-2020-1561:  python-twisted-web security update (IMPORTANT)\n",
+			"description": "\n[12.1.0-7]\n- Fix CVE-2020-10108 and CVE-2020-10109 multiple HTTP request smuggling vulnderabilities\nResolves: rhbz#1813439 rhbz#1813447\n- Remove useless macros definitions\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10108.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10109.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-1561.html"
+				}
+			],
+			"published": "2020-04-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-10108",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10108.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-10109",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10109.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-twisted-web",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:12.1.0-7.el7_8"
+								}
+							],
+							"fixed": [
+								"0:12.1.0-7.el7_8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

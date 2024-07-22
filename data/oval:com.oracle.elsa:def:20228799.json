@@ -1,0 +1,218 @@
+{
+	"id": "oval:com.oracle.elsa:def:20228799",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20228799",
+			"title": "\nELSA-2022-8799:  pki-core security update (IMPORTANT)\n",
+			"description": "\n[10.5.18-24]\n- ##########################################################################\n- # RHEL 7.9 (Batch Update 19):\n- ##########################################################################\n- Bugzilla Bug #2107329 - CVE-2022-2414 pki-core: access to external\n  entities when parsing XML can lead to XXE [rhel-7.9.z] (ckelley, mharmsen)\n- ##########################################################################\n- # RHCS 9.7 (Batch Update 19):\n- ##########################################################################\n- Bugzilla Bug #2107325 - CVE-2022-2414 pki-core: access to external\n  entities when parsing XML can lead to XXE [certificate_system_9.7.z]\n  (ckelley, mharmsen)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2414.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-8799.html"
+				}
+			],
+			"published": "2022-12-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-2414",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2414.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-base",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.5.18-24.el7_9"
+								}
+							],
+							"fixed": [
+								"0:10.5.18-24.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-base-java",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.5.18-24.el7_9"
+								}
+							],
+							"fixed": [
+								"0:10.5.18-24.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-ca",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.5.18-24.el7_9"
+								}
+							],
+							"fixed": [
+								"0:10.5.18-24.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.5.18-24.el7_9"
+								}
+							],
+							"fixed": [
+								"0:10.5.18-24.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-kra",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.5.18-24.el7_9"
+								}
+							],
+							"fixed": [
+								"0:10.5.18-24.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.5.18-24.el7_9"
+								}
+							],
+							"fixed": [
+								"0:10.5.18-24.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-symkey",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.5.18-24.el7_9"
+								}
+							],
+							"fixed": [
+								"0:10.5.18-24.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.5.18-24.el7_9"
+								}
+							],
+							"fixed": [
+								"0:10.5.18-24.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

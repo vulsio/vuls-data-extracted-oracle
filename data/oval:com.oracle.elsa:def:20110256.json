@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20110256",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20110256",
+			"title": "\nELSA-2011-0256:  dhcp security update (MODERATE)\n",
+			"description": "\n\n[12:4.1.1-12.P1.2]\n- CVE-2011-0413: Unexpected abort caused by a DHCPv6 decline message (#672994)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0413.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-0256.html"
+				}
+			],
+			"published": "2011-02-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-0413",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0413.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhclient",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.1.1-12.P1.el6_0.2"
+								}
+							],
+							"fixed": [
+								"12:4.1.1-12.P1.el6_0.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.1.1-12.P1.el6_0.2"
+								}
+							],
+							"fixed": [
+								"12:4.1.1-12.P1.el6_0.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.1.1-12.P1.el6_0.2"
+								}
+							],
+							"fixed": [
+								"12:4.1.1-12.P1.el6_0.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

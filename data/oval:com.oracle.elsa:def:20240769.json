@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20240769",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20240769",
+			"title": "\nELSA-2024-0769:  tcpdump security update (MODERATE)\n",
+			"description": "\n[14:4.9.3-3.1]\n- tcpslice: use-after-free in extract_slice() (CVE-2021-41043)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-41043.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-0769.html"
+				}
+			],
+			"published": "2024-02-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-41043",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-41043.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tcpdump",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "14:4.9.3-3.el8_9.1"
+								}
+							],
+							"fixed": [
+								"14:4.9.3-3.el8_9.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

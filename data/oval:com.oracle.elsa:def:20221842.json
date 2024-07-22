@@ -1,0 +1,134 @@
+{
+	"id": "oval:com.oracle.elsa:def:20221842",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20221842",
+			"title": "\nELSA-2022-1842:  exiv2 security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\n[0.27.5-2]\n- Remove RPATH\n  Resolves: bz#2018422\n\n[0.27.5-1]\n- Exiv2 0.27.5\n  Resolves: bz#2018422\n\n  Fix stack exhaustion issue in the printIFDStructure function leading to DoS\n  Resolves: bz#2003673\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-18898.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-1842.html"
+				}
+			],
+			"published": "2022-05-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-18898",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-18898.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "exiv2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.27.5-2.el8"
+								}
+							],
+							"fixed": [
+								"0:0.27.5-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "exiv2-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.27.5-2.el8"
+								}
+							],
+							"fixed": [
+								"0:0.27.5-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "exiv2-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.27.5-2.el8"
+								}
+							],
+							"fixed": [
+								"0:0.27.5-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "exiv2-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.27.5-2.el8"
+								}
+							],
+							"fixed": [
+								"0:0.27.5-2.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

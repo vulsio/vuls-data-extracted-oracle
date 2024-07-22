@@ -1,0 +1,288 @@
+{
+	"id": "oval:com.oracle.elsa:def:20205526",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20205526",
+			"title": "\nELSA-2020-5526: Unbreakable Enterprise kernel security update (IMPORTANT)\n",
+			"description": "\n[4.14.35-1902.10.4.el7uek]  \n- kvm: Don't reference vcpu->arch.st in arch-independent code (Boris Ostrovsky)  [Orabug: 30489861]\n- kvm: fix compile on s390 part 2 (Christian Borntraeger)  [Orabug: 30489861]\n- kvm: fix compilation on s390 (Paolo Bonzini)  [Orabug: 30489861]\n- kvm: fix compilation on aarch64 (Paolo Bonzini)  [Orabug: 30489861]\n\n[4.14.35-1902.10.3.el7uek] \n- x86/KVM: Clean up host's steal time structure (Boris Ostrovsky)  [Orabug: 30489861]  {CVE-2019-3016} {CVE-2019-3016}\n- x86/KVM: Make sure KVM_VCPU_FLUSH_TLB flag is not missed (Boris Ostrovsky)  [Orabug: 30489861]  {CVE-2019-3016} {CVE-2019-3016}  \n- x86/kvm: Cache gfn to pfn translation (Boris Ostrovsky)  [Orabug: 30489861]  {CVE-2019-3016} {CVE-2019-3016} \n- x86/kvm: Introduce kvm_(un)map_gfn() (Boris Ostrovsky)  [Orabug: 30489861]  {CVE-2019-3016} {CVE-2019-3016} \n- x86/kvm: Be careful not to clear KVM_VCPU_FLUSH_TLB bit (Boris Ostrovsky)  [Orabug: 30489861]  {CVE-2019-3016} {CVE-2019-3016}  \n- KVM: Properly check if page is valid in kvm_vcpu_unmap (KarimAllah Ahmed)  [Orabug: 30489861]\n- KVM: Introduce a new guest mapping API (KarimAllah Ahmed)  [Orabug: 30489861]\n- KVM: x86: svm: make sure NMI is injected after nmi_singlestep (Vitaly Kuznetsov)  [Orabug: 30714532]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15917.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3016.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-5526.html"
+				}
+			],
+			"published": "2020-01-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-15917",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15917.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-3016",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3016.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.4.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.4.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.4.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.4.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.4.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.4.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.4.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.4.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.4.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.4.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-headers",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.4.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.4.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.4.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.4.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools-libs",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.4.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.4.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools-libs-devel",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.4.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.4.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.4.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.4.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.4.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.4.el7uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,154 @@
+{
+	"id": "oval:com.oracle.elsa:def:20121359",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20121359",
+			"title": "\nELSA-2012-1359:  libvirt security and bug fix update (MODERATE)\n",
+			"description": "\n[libvirt-0.9.10-21.0.1.el6_3.5]\n- Replace docs/et.png in tarball with blank image\n\n[libvirt-0.9.10-21.el6_3.5]\n- security: Fix libvirtd crash possibility (CVE-2012-4423)\n- Fix augeas test of shared sanlock leases (rhbz#858988)\n- qemu augeas: Add spice_tls/spice_tls_x509_cert_dir (rhbz#858988)\n- Fix mistakes in augeas lens (rhbz#858988)\n- qemu: Fix failure path in disk hotplug (rhbz#859376)\n- blockjob: Relabel entire existing chain (rhbz#860720)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-4423.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1359.html"
+				}
+			],
+			"published": "2012-10-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-4423",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-4423.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.10-21.0.1.el6_3.5"
+								}
+							],
+							"fixed": [
+								"0:0.9.10-21.0.1.el6_3.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-client",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.10-21.0.1.el6_3.5"
+								}
+							],
+							"fixed": [
+								"0:0.9.10-21.0.1.el6_3.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.10-21.0.1.el6_3.5"
+								}
+							],
+							"fixed": [
+								"0:0.9.10-21.0.1.el6_3.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-lock-sanlock",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.10-21.0.1.el6_3.5"
+								}
+							],
+							"fixed": [
+								"0:0.9.10-21.0.1.el6_3.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-python",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.10-21.0.1.el6_3.5"
+								}
+							],
+							"fixed": [
+								"0:0.9.10-21.0.1.el6_3.5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

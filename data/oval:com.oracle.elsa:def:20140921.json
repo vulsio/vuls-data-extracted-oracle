@@ -1,0 +1,262 @@
+{
+	"id": "oval:com.oracle.elsa:def:20140921",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20140921",
+			"title": "\nELSA-2014-0921:  httpd security update (IMPORTANT)\n",
+			"description": "\n[2.4.6-18.0.1.el7_0]\n- replace index.html with Oracle's index page oracle_index.html\n\n[2.4.6-18]\n- mod_cgid: add security fix for CVE-2014-0231 (#1120607)\n- mod_proxy: add security fix for CVE-2014-0117 (#1120607)\n- mod_deflate: add security fix for CVE-2014-0118 (#1120607)\n- mod_status: add security fix for CVE-2014-0226 (#1120607)\n- mod_cache: add secutiry fix for CVE-2013-4352 (#1120607)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4352.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0117.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0118.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0226.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0231.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0921.html"
+				}
+			],
+			"published": "2014-07-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-4352",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4352.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0117",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0117.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0118",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0118.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0226",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0226.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0231",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0231.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-18.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-18.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-18.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-18.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-manual",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-18.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-18.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-18.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-18.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_ldap",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-18.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-18.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_proxy_html",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.4.6-18.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"1:2.4.6-18.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_session",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-18.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-18.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_ssl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.4.6-18.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"1:2.4.6-18.0.1.el7_0"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

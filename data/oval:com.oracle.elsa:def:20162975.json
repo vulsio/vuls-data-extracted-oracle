@@ -1,0 +1,144 @@
+{
+	"id": "oval:com.oracle.elsa:def:20162975",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20162975",
+			"title": "\nELSA-2016-2975:  gstreamer-plugins-good security update (IMPORTANT)\n",
+			"description": "\n[0.10.23-4]\n- Remove insecure FLX plugin\nResolves: rhbz#1400835\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9634.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9635.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9636.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9807.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9808.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-2975.html"
+				}
+			],
+			"published": "2016-12-21T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-9634",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9634.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-9635",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9635.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-9636",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9636.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-9807",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9807.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-9808",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9808.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gstreamer-plugins-good",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.23-4.el6_8"
+								}
+							],
+							"fixed": [
+								"0:0.10.23-4.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gstreamer-plugins-good-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.23-4.el6_8"
+								}
+							],
+							"fixed": [
+								"0:0.10.23-4.el6_8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

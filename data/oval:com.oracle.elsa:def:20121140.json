@@ -1,0 +1,160 @@
+{
+	"id": "oval:com.oracle.elsa:def:20121140",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20121140",
+			"title": "\nELSA-2012-1140:  dhcp security update (MODERATE)\n",
+			"description": "\n[12:3.0.5-31.1]\n- An error in the handling of malformed client identifiers can\n  cause a denial-of-service condition in affected servers. (CVE-2012-3571, #843124)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3571.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1140.html"
+				}
+			],
+			"published": "2012-08-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-3571",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3571.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhclient",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:3.0.5-31.el5_8.1"
+								}
+							],
+							"fixed": [
+								"12:3.0.5-31.el5_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:3.0.5-31.el5_8.1"
+								}
+							],
+							"fixed": [
+								"12:3.0.5-31.el5_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:3.0.5-31.el5_8.1"
+								}
+							],
+							"fixed": [
+								"12:3.0.5-31.el5_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libdhcp4client",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:3.0.5-31.el5_8.1"
+								}
+							],
+							"fixed": [
+								"12:3.0.5-31.el5_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libdhcp4client-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:3.0.5-31.el5_8.1"
+								}
+							],
+							"fixed": [
+								"12:3.0.5-31.el5_8.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

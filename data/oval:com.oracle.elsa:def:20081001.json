@@ -1,0 +1,105 @@
+{
+	"id": "oval:com.oracle.elsa:def:20081001",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20081001",
+			"title": "\nELSA-2008-1001:  tog-pegasus security update (IMPORTANT)\n",
+			"description": "\n\n[2.7.0-2.0.1.el5_2.1]\n- Added pegasus-enterprise.patch to allow detection of enterprise-release\n\n[2.7.0-2.el5_2.1]\n- Fix local-or-remote-auth patch and enhance PAM security settings\n  Resolves: #471370\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4313.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4315.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2008-1001.html"
+				}
+			],
+			"published": "2008-11-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2008-4313",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4313.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-4315",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4315.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tog-pegasus",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.7.0-2.0.1.el5_2.1"
+								}
+							],
+							"fixed": [
+								"2:2.7.0-2.0.1.el5_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tog-pegasus-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.7.0-2.0.1.el5_2.1"
+								}
+							],
+							"fixed": [
+								"2:2.7.0-2.0.1.el5_2.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

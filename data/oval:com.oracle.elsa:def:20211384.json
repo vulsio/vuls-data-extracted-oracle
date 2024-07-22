@@ -1,0 +1,155 @@
+{
+	"id": "oval:com.oracle.elsa:def:20211384",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20211384",
+			"title": "\nELSA-2021-1384:  nss security and bug fix update (MODERATE)\n",
+			"description": "\n[3.53.1-7]\n- Fix HSM load failure because of CKO_Profile\n- Allow builds with strict-proto\n\n[3.53.1-6]\n- Update to CVE 2020-256423 TLS flood DOS attack patch.\n\n[3.53.1-5]\n- Fix CVE 2020-256423 TLS flood DOS Attack.\n\n[3.53.1-4]\n- Fix deadlock issue\n- Fix 3 FTBS issues, 2 expired certs, one semantic change in nss-softokn.\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-25648.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-1384.html"
+				}
+			],
+			"published": "2021-04-28T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-25648",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-25648.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.53.1-7.el7_9"
+								}
+							],
+							"fixed": [
+								"0:3.53.1-7.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.53.1-7.el7_9"
+								}
+							],
+							"fixed": [
+								"0:3.53.1-7.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-pkcs11-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.53.1-7.el7_9"
+								}
+							],
+							"fixed": [
+								"0:3.53.1-7.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-sysinit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.53.1-7.el7_9"
+								}
+							],
+							"fixed": [
+								"0:3.53.1-7.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.53.1-7.el7_9"
+								}
+							],
+							"fixed": [
+								"0:3.53.1-7.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

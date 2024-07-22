@@ -1,0 +1,189 @@
+{
+	"id": "oval:com.oracle.elsa:def:20232969",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20232969",
+			"title": "\nELSA-2023-2969:  net-snmp security and bug fix update (MODERATE)\n",
+			"description": "\n[5.8-27.0.1]\n- fix error index value when snmpget is used a proxy pass [Orabug: 34905643]\n\n[1:5.8-27]\n- fix memory leak due of proc file creating (#2105957)\n- fix CVE-2022-44792 and CVE-2022-44793 (#2141901) and (#2141905)\n- fix memory leak when ipv6 disable set to 1 (#2151537)\n- fix proxy timeout issue (#2160723)\n\n[1:5.8-26]\n- backport two memory leaks from upstream (#2134635)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-44792.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-44793.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-2969.html"
+				}
+			],
+			"published": "2023-05-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-44792",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-44792.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-44793",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-44793.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.8-27.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:5.8-27.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-agent-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.8-27.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:5.8-27.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.8-27.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:5.8-27.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.8-27.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:5.8-27.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.8-27.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:5.8-27.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.8-27.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:5.8-27.0.1.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

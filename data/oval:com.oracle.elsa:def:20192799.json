@@ -1,0 +1,244 @@
+{
+	"id": "oval:com.oracle.elsa:def:20192799",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20192799",
+			"title": "\nELSA-2019-2799:  nginx:1.14 security update (IMPORTANT)\n",
+			"description": "\n[1:1.14.1-9.0.1]\n- Remove Red Hat references [Orabug: 29498217]\n\n[1:1.14.1-9]\n- Resolves: #1744811 - CVE-2019-9511 nginx:1.14/nginx: HTTP/2: large amount of\n  data request leads to denial of service\n- Resolves: #1744325 - CVE-2019-9513 nginx:1.14/nginx: HTTP/2: flood using\n  PRIORITY frames resulting in excessive resource consumption\n- Resolves: #1745094 - CVE-2019-9516 nginx:1.14/nginx: HTTP/2: 0-length\n  headers leads to denial of service\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9511.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9513.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9516.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-2799.html"
+				}
+			],
+			"published": "2019-09-19T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-9511",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9511.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-9513",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9513.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-9516",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9516.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.14::nginx",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+								}
+							],
+							"fixed": [
+								"1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.14::nginx-all-modules",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+								}
+							],
+							"fixed": [
+								"1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.14::nginx-filesystem",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+								}
+							],
+							"fixed": [
+								"1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.14::nginx-mod-http-image-filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+								}
+							],
+							"fixed": [
+								"1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.14::nginx-mod-http-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+								}
+							],
+							"fixed": [
+								"1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.14::nginx-mod-http-xslt-filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+								}
+							],
+							"fixed": [
+								"1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.14::nginx-mod-mail",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+								}
+							],
+							"fixed": [
+								"1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.14::nginx-mod-stream",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+								}
+							],
+							"fixed": [
+								"1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

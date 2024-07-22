@@ -1,0 +1,149 @@
+{
+	"id": "oval:com.oracle.elsa:def:20237501",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20237501",
+			"title": "\nELSA-2023-7501:  thunderbird security update (IMPORTANT)\n",
+			"description": "\n[115.5.0-1.0.1]\n- Replaced thunderbird-redhat-default-prefs.js with thunderbird-oracle-default-prefs.js\n\n[115.5.0-1]\n- Update to 115.5.0 build1\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6204.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6205.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6206.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6207.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6208.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6209.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6212.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-7501.html"
+				}
+			],
+			"published": "2023-11-28T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-6204",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6204.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-6205",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6205.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-6206",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6206.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-6207",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6207.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-6208",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6208.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-6209",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6209.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-6212",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6212.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "thunderbird",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:115.5.0-1.0.1.el9_3"
+								}
+							],
+							"fixed": [
+								"0:115.5.0-1.0.1.el9_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

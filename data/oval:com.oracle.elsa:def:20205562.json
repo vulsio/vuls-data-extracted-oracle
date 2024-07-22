@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20205562",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20205562",
+			"title": "\nELSA-2020-5562:  curl security update (IMPORTANT)\n",
+			"description": "\n[7.29.0-54.0.5.el7_7.2]\n- Fix TFTP small blocksize heap buffer overflow (https://curl.haxx.se/docs/CVE-2019-5482.html)[CVE-2019-5482][Orabug:30568724]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-5482.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-5562.html"
+				}
+			],
+			"published": "2020-03-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-5482",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-5482.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "curl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.29.0-54.0.5.el7_7.2"
+								}
+							],
+							"fixed": [
+								"0:7.29.0-54.0.5.el7_7.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcurl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.29.0-54.0.5.el7_7.2"
+								}
+							],
+							"fixed": [
+								"0:7.29.0-54.0.5.el7_7.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcurl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.29.0-54.0.5.el7_7.2"
+								}
+							],
+							"fixed": [
+								"0:7.29.0-54.0.5.el7_7.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

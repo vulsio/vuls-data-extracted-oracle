@@ -1,0 +1,386 @@
+{
+	"id": "oval:com.oracle.elsa:def:20234152",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20234152",
+			"title": "\nELSA-2023-4152:  bind security update (IMPORTANT)\n",
+			"description": "\n[2:9.11.4-26.P2.14]\n- Prevent the cache going over the configured limit (CVE-2023-2828)\n\n[32:9.11.4-26.P2.13]\n- Tighten cache protection against record from forwarders (CVE-2021-25220)\n\n[32:9.11.4-26.P2.12]\n- Include test of forwarders (CVE-2021-25220)\n\n[32:9.11.4-26.P2.11]\n- Prevent excessive resource use while processing large delegations.\n  (CVE-2022-2795)\n\n[32:9.11.4-26.P2.10]\n- Fix memory leak in ECDSA verify processing (CVE-2022-38177)\n- Fix memory leak in EdDSA verify processing (CVE-2022-38178)\n\n[32:9.11.4-26.P2.9]\n- Fix possible assertion failure isc_refcount_current == 0 in free_rbtdb\n  (#1935152)\n\n[32:9.11.4-26.P2.8]\n- Prevent a race after zone load (#2011220)\n\n[32:9.11.4-26.P2.7]\n- Apply again patch 172, got removed by mistake\n\n[32:9.11.4-26.P2.6]\n- Insufficient IXFR checks could lead to assertion failure (CVE-2021-25214)\n\n[32:9.11.4-26.P2.5]\n- Possible assertion failure on DNAME processing (CVE-2021-25215)\n\n[32:9.11.4-26.P2.4]\n- Fix off-by-one bug in ISC SPNEGO implementation (CVE-2020-8625)\n\n[32:9.11.4-26.P2.3]\n- Fix inline re-signing (#rh1889902)\n\n[32:9.11.4-26.P2.2]\n- Fix unsupported algorithms validation (#rh1769876)\n\n[32:9.11.4-26.P2.1]\n- Fix tsig-request verify (CVE-2020-8622)\n- Prevent PKCS11 daemon crash on crafted packet (CVE-2020-8623)\n- Correct update-policy type subdomain to match documentation (CVE-2020-8624)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2828.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-4152.html"
+				}
+			],
+			"published": "2023-07-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-2828",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2828.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-chroot",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-export-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-export-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-libs-lite",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-license",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-lite-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-pkcs11",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-pkcs11-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-pkcs11-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-pkcs11-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-sdb",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-sdb-chroot",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.11.4-26.P2.el7_9.14"
+								}
+							],
+							"fixed": [
+								"32:9.11.4-26.P2.el7_9.14"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

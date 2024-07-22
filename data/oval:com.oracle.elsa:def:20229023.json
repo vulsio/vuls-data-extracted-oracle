@@ -1,0 +1,155 @@
+{
+	"id": "oval:com.oracle.elsa:def:20229023",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20229023",
+			"title": "\nELSA-2022-9023:  openssl security update (MODERATE)\n",
+			"description": "\n[1.0.2k-23.0.1]\n- Change Epoch from 1 to 10\n- Fix DH self-test to add shared secret comparison [Orabug: 32467026]\n- Add DH support changes for SP 800-56A rev3 requirements [Orabug: 32467059]\n- Add TLS KDF self-test [Orabug: 32467193]\n- Add EC keys pairwise consistency test [Orabug: 32467059]\n\n[1.0.2k-23]\n- fixes CVE-2021-3712 openssl: Read buffer overruns processing ASN.1 strings\n- Resolves: rhbz#1996054\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3712.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-9023.html"
+				}
+			],
+			"published": "2022-01-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-3712",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3712.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.0.2k-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:1.0.2k-23.0.1.el7_9_fips"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.0.2k-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:1.0.2k-23.0.1.el7_9_fips"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.0.2k-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:1.0.2k-23.0.1.el7_9_fips"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.0.2k-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:1.0.2k-23.0.1.el7_9_fips"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.0.2k-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:1.0.2k-23.0.1.el7_9_fips"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,176 @@
+{
+	"id": "oval:com.oracle.elsa:def:20111247",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20111247",
+			"title": "\nELSA-2011-1247:  rsyslog security update (MODERATE)\n",
+			"description": "\n\n[4.6.2-3.el6_1.2]\n- add patch to resolve buffer overflow (CVE-2011-3200)\n  Resolves: #733647\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3200.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1247.html"
+				}
+			],
+			"published": "2011-09-01T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-3200",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3200.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rsyslog",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.6.2-3.el6_1.2"
+								}
+							],
+							"fixed": [
+								"0:4.6.2-3.el6_1.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rsyslog-gnutls",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.6.2-3.el6_1.2"
+								}
+							],
+							"fixed": [
+								"0:4.6.2-3.el6_1.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rsyslog-gssapi",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.6.2-3.el6_1.2"
+								}
+							],
+							"fixed": [
+								"0:4.6.2-3.el6_1.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rsyslog-mysql",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.6.2-3.el6_1.2"
+								}
+							],
+							"fixed": [
+								"0:4.6.2-3.el6_1.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rsyslog-pgsql",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.6.2-3.el6_1.2"
+								}
+							],
+							"fixed": [
+								"0:4.6.2-3.el6_1.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rsyslog-relp",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.6.2-3.el6_1.2"
+								}
+							],
+							"fixed": [
+								"0:4.6.2-3.el6_1.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

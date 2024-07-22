@@ -1,0 +1,349 @@
+{
+	"id": "oval:com.oracle.elsa:def:20194637",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20194637",
+			"title": "\nELSA-2019-4637: Unbreakable Enterprise kernel security update (IMPORTANT)\n",
+			"description": "\n[2.6.39-400.310.1]\n- x86/speculation/mds: Make cpu_matches() __cpuinit (Patrick Colp)  [Orabug: 29752091]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127} {CVE-2019-11091}\n- x86/speculation/mds: Only worry about firmware loaded microcode (Patrick Colp)  [Orabug: 29641786]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127} {CVE-2019-11091}\n\n[2.6.39-400.309.1]\n- x86/mds: Add empty commit for CVE-2019-11091 (Patrick Colp)  [Orabug: 29721938]  {CVE-2019-11091}\n- x86/speculation/mds: Fix comment (Boris Ostrovsky)  [Orabug: 29641786]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127}\n- x86/speculation/mds: Add mitigation mode VMWERV (Thomas Gleixner)  [Orabug: 29641786]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127}\n- x86/speculation/mds: Add sysfs reporting for MDS (Thomas Gleixner)  [Orabug: 29641786]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127}\n- x86/speculation/mds: Add mitigation control for MDS (Thomas Gleixner)  [Orabug: 29641786]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127}\n- x86/speculation/mds: Allow runtime checking of CPU features (Patrick Colp)  [Orabug: 29641786]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127}\n- x86/speculation/mds: Improve coverage for MDS vulnerability (Boris Ostrovsky)  [Orabug: 29641786]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127}\n- x86/speculation/mds: Clear CPU buffers on exit to user (Thomas Gleixner)  [Orabug: 29641786]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127}\n- x86/speculation/mds: Add mds_clear_cpu_buffers() (Thomas Gleixner)  [Orabug: 29641786]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127}\n- x86/speculation/mds: Add BUG_MSBDS_ONLY (Thomas Gleixner)  [Orabug: 29641786]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127}\n- x86/speculation/mds: Add basic bug infrastructure for MDS (Andi Kleen)  [Orabug: 29641786]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127} {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127}\n- x86/speculation: Consolidate CPU whitelists (Thomas Gleixner)  [Orabug: 29641786]  {CVE-2018-12126} {CVE-2018-12130} {CVE-2018-12127}\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12126.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12127.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12130.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11091.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-4637.html"
+				}
+			],
+			"published": "2019-05-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-12126",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12126.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-12127",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12127.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-12130",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12130.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-11091",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11091.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.310.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.310.1.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.310.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.310.1.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.310.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.310.1.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.310.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.310.1.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.310.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.310.1.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.310.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.310.1.el5uek"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.310.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.310.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.310.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.310.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.310.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.310.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.310.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.310.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.310.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.310.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.310.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.310.1.el6uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

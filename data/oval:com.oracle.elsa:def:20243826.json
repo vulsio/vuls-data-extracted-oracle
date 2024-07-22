@@ -1,0 +1,181 @@
+{
+	"id": "oval:com.oracle.elsa:def:20243826",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20243826",
+			"title": "\nELSA-2024-3826:  podman security and bug fix update (MODERATE)\n",
+			"description": "\n[4.9.4-4.0.1]\n- Improved saving remote build context to tarfile in Podman daemon [Orabug: 36495655]\n- Add devices on container startup, not on creation\n- Backport fast gzip for compression [Orabug: 36420418]\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[4:4.9.4-4]\n- update to the latest content of https://github.com/containers/podman/tree/v4.9-rhel\n  (https://github.com/containers/podman/commit/4afc71a)\n- Resolves: RHEL-28735\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-45290.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-28176.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-28180.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-3826.html"
+				}
+			],
+			"published": "2024-06-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-45290",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-45290.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-28176",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-28176.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-28180",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-28180.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:4.9.4-4.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"4:4.9.4-4.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-docker",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:4.9.4-4.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"4:4.9.4-4.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-plugins",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:4.9.4-4.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"4:4.9.4-4.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-remote",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:4.9.4-4.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"4:4.9.4-4.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:4.9.4-4.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"4:4.9.4-4.0.1.el9_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

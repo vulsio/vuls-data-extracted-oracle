@@ -1,0 +1,131 @@
+{
+	"id": "oval:com.oracle.elsa:def:20201403",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20201403",
+			"title": "\nELSA-2020-1403:  qemu-kvm security and bug fix update (IMPORTANT)\n",
+			"description": "\n[0.12.1.2-2.506.el6_10.7]\n- kvm-slirp-disable-tcp_emu.patch [bz#1791680]\n- kvm-slirp-add-slirp_fmt-helpers.patch [bz#1798966]\n- kvm-tcp_emu-fix-unsafe-snprintf-usages.patch [bz#1798966]\n- Resolves: bz#1791680\n  (QEMU: Slirp: disable emulation of tcp programs like ftp IRC etc. [rhel-6])\n- Resolves: bz#1798966\n  (CVE-2020-8608 qemu-kvm: QEMU: Slirp: potential OOB access due to unsafe snprintf() usages [rhel-6.10.z])\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-8608.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-1403.html"
+				}
+			],
+			"published": "2020-04-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-8608",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-8608.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-guest-agent",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.12.1.2-2.506.el6_10.7"
+								}
+							],
+							"fixed": [
+								"2:0.12.1.2-2.506.el6_10.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-img",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.12.1.2-2.506.el6_10.7"
+								}
+							],
+							"fixed": [
+								"2:0.12.1.2-2.506.el6_10.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.12.1.2-2.506.el6_10.7"
+								}
+							],
+							"fixed": [
+								"2:0.12.1.2-2.506.el6_10.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.12.1.2-2.506.el6_10.7"
+								}
+							],
+							"fixed": [
+								"2:0.12.1.2-2.506.el6_10.7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

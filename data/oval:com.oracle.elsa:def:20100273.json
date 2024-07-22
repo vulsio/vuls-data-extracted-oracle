@@ -1,0 +1,94 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100273",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100273",
+			"title": "\nELSA-2010-0273:  curl security, bug fix and enhancement update (MODERATE)\n",
+			"description": "\n[7.15.5-9]\n- http://curl.haxx.se/docs/adv_20100209.html (#565408)\n\n[7.15.5-8]\n- mention lack of IPv6, FTPS and LDAP support while using a socks proxy\n  (#473128)\n- avoid tight loop if an upload connection is broken (#479967)\n- add options --ftp-account and --ftp-alternative-to-user to program help\n  (#517084)\n- fix crash when reusing connection after negotiate-auth (#517199)\n- support for CRL loading from a PEM file (#532069)\n\n[7.15.5-7]\n- sync patch for CVE-2007-0037 with 5.3.Z\nRelated: #485290\n\n[7.15.5-6]\n- fix CVE-2009-2417\nResolves: #516258\n\n[7.15.5-5]\n- forwardport one hunk from upstream curl-7.15.1\nRelated: #485290\n\n[7.15.5-4]\n- fix hunk applied to wrong place due to nonzero patch fuzz\nRelated: #485290\n\n[7.15.5-3]\n- fix CVE-2007-0037\nResolves: #485290\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0734.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0273.html"
+				}
+			],
+			"published": "2010-04-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-0734",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0734.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "curl",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.15.5-9.el5"
+								}
+							],
+							"fixed": [
+								"0:7.15.5-9.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "curl-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.15.5-9.el5"
+								}
+							],
+							"fixed": [
+								"0:7.15.5-9.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

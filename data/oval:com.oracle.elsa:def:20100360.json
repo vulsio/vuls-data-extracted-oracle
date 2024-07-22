@@ -1,0 +1,172 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100360",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100360",
+			"title": "\nELSA-2010-0360:  wireshark security update (MODERATE)\n",
+			"description": "\n\n[1.0.11-1.0.1.el5_5.5]\n- Add oracle-ocfs2-network.patch\n\n[1.0.11-1.5]\n- rebuild without smp flags (fixes problems with doc generating)\n\n[1.0.11-1.4]\n- add erf overflow patch\n- Resolves #532479\n\n[1.0.11-1.3]\n- bring back pie (patch from Jindrich Novy <jnovy@redhat.com>)\n- no GUI freeze\n- Resolves: #549583 \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2560.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2562.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2563.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3550.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3829.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4377.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0304.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0360.html"
+				}
+			],
+			"published": "2010-04-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-2560",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2560.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-2562",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2562.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-2563",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2563.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-3550",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3550.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-3829",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3829.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-4377",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4377.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-0304",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0304.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wireshark",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.11-1.0.1.el5_5.5"
+								}
+							],
+							"fixed": [
+								"0:1.0.11-1.0.1.el5_5.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wireshark-gnome",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.11-1.0.1.el5_5.5"
+								}
+							],
+							"fixed": [
+								"0:1.0.11-1.0.1.el5_5.5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

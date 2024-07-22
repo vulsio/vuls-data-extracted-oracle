@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20242055",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20242055",
+			"title": "\nELSA-2024-2055:  buildah security update (IMPORTANT)\n",
+			"description": "\n[1.31.5-1.0.1]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117178]\n\n[1:1.31.5-1]\n- update to the latest content of https://github.com/containers/buildah/tree/release-1.31\n  (https://github.com/containers/buildah/commit/5fd539c)\n- Resolves: RHEL-26775\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-1753.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-2055.html"
+				}
+			],
+			"published": "2024-04-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2024-1753",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-1753.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "buildah",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.31.5-1.0.1.el9_3"
+								}
+							],
+							"fixed": [
+								"1:1.31.5-1.0.1.el9_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "buildah-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.31.5-1.0.1.el9_3"
+								}
+							],
+							"fixed": [
+								"1:1.31.5-1.0.1.el9_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

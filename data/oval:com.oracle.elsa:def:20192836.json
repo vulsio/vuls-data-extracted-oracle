@@ -1,0 +1,155 @@
+{
+	"id": "oval:com.oracle.elsa:def:20192836",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20192836",
+			"title": "\nELSA-2019-2836:  dovecot security update (IMPORTANT)\n",
+			"description": "\n[1:2.2.36-3.1]\n- fix CVE-2019-11500: IMAP protocol parser does not properly handle NUL byte\n  when scanning data in quoted strings, leading to out of bounds heap\n  memory writes (#1751383)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11500.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-2836.html"
+				}
+			],
+			"published": "2019-09-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-11500",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11500.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.36-3.el7_7.1"
+								}
+							],
+							"fixed": [
+								"1:2.2.36-3.el7_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.36-3.el7_7.1"
+								}
+							],
+							"fixed": [
+								"1:2.2.36-3.el7_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot-mysql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.36-3.el7_7.1"
+								}
+							],
+							"fixed": [
+								"1:2.2.36-3.el7_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot-pgsql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.36-3.el7_7.1"
+								}
+							],
+							"fixed": [
+								"1:2.2.36-3.el7_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot-pigeonhole",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.36-3.el7_7.1"
+								}
+							],
+							"fixed": [
+								"1:2.2.36-3.el7_7.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

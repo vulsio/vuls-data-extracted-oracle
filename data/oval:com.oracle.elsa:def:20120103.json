@@ -1,0 +1,150 @@
+{
+	"id": "oval:com.oracle.elsa:def:20120103",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20120103",
+			"title": "\nELSA-2012-0103:  squirrelmail security update (MODERATE)\n",
+			"description": "\n[1.4.8-5.0.1.el5_7.13]\n- Remove Redhat splash screen images\n\n[1.4.8-5.13]\n- fix typo in CVE-20210-4555 patch\n\n[1.4.8-5.12]\n- patch for CVE-2010-2813 was not complete\n\n[1.4.8-5.11]\n- fix: CVE-2010-1637 : Port-scans via non-standard POP3 server ports in \n  Mail Fetch plugin\n- fix: CVE-2010-2813 : DoS (disk space consumption) by random IMAP login \n  attempts with 8-bit characters in the password\n- fix: CVE-2010-4554 : Prone to clickjacking attacks\n- fix: CVE-2010-4555 : Multiple XSS flaws\n[tag handling]\n- fix: CVE-2011-2752 : CRLF injection vulnerability\n- fix: CVE-2011-2753 : CSRF in the empty trash feature and in Index Order page\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-1637.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2813.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4554.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4555.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2023.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2752.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2753.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-0103.html"
+				}
+			],
+			"published": "2012-02-08T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-1637",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-1637.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-2813",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2813.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-4554",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4554.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-4555",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4555.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-2023",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2023.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-2752",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2752.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-2753",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2753.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squirrelmail",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.8-5.0.1.el5_7.13"
+								}
+							],
+							"fixed": [
+								"0:1.4.8-5.0.1.el5_7.13"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,196 @@
+{
+	"id": "oval:com.oracle.elsa:def:20141826",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20141826",
+			"title": "\nELSA-2014-1826:  libvncserver security update (MODERATE)\n",
+			"description": "\n[0.9.7-7.1]\n- Fix CVE-2014-6051 (integer overflow in screen size handling) (bug #1157668)\n- Fix CVE-2014-6052 (NULL pointer dereference in framebuffer setup)\n  (bug #1157668)\n- Fix CVE-2014-6053 (NULL pointer dereference in ClientCutText message\n  handling) (bug #1157668)\n- Fix CVE-2014-6054 (server divide-by-zero in scaling factor handling)\n  (bug #1157668)\n- Fix CVE-2014-6055 (server stacked-based buffer overflow in file transfer\n  handling) (bug #1157668)\n\n[0.9.7-7]\n- Revert CVE-2011-0904 and CVE-2011-0905 patch because libvncserver is not\n  vulnerable (bug #696767)\n\n[0.9.7-6]\n- Fix CVE-2011-0904 and CVE-2011-0905 in more generic way (bug #696767)\n\n[0.9.7-5]\n- Fix CVE-2011-0904 (bug #696767)\n- Fix CVE-2011-0905 (bug #696767)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6051.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6052.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6053.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6054.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6055.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-1826.html"
+				}
+			],
+			"published": "2014-11-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-6051",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6051.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-6052",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6052.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-6053",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6053.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-6054",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6054.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-6055",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6055.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvncserver",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.7-7.el6_6.1"
+								}
+							],
+							"fixed": [
+								"0:0.9.7-7.el6_6.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvncserver-devel",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.7-7.el6_6.1"
+								}
+							],
+							"fixed": [
+								"0:0.9.7-7.el6_6.1"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvncserver",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.9-9.el7_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.9.9-9.el7_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvncserver-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.9-9.el7_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.9.9-9.el7_0.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

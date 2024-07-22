@@ -1,0 +1,85 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100144",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100144",
+			"title": "\nELSA-2010-0144:  cpio security update (MODERATE)\n",
+			"description": "\n\n[2.6-23.1]\n- CVE-2010-0624 fix heap-based buffer overflow by expanding\n  a specially-crafted archive\n- CVE-2007-4476 fix stack crashing in safer_name_suffix \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4476.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0624.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0144.html"
+				}
+			],
+			"published": "2010-03-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-4476",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4476.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-0624",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0624.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cpio",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6-23.el5_4.1"
+								}
+							],
+							"fixed": [
+								"0:2.6-23.el5_4.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

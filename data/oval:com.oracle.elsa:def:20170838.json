@@ -1,0 +1,175 @@
+{
+	"id": "oval:com.oracle.elsa:def:20170838",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20170838",
+			"title": "\nELSA-2017-0838:  openjpeg security update (MODERATE)\n",
+			"description": "\n[1.5.1-16]\n- Revert previous changes in patch for CVE-2016-5159\n- Fix memory leaks\n  Related: #1419772\n\n[1.5.1-15]\n- Add two more allocation checks to patch for CVE-2016-5159\n  Related: #1419772\n\n[1.5.1-14]\n- Fix CWE-825 errors in patch for CVE-2016-5158\n  Related: #1419772\n\n[1.5.1-13]\n- Add patches for CVE-2016-5139, CVE-2016-5158, CVE-2016-5159\n  Related: #1419772\n\n[1.5.1-12]\n- Fix patch name: CVE-2016-9675 => CVE-2016-7163\n  Related: #1419772\n\n[1.5.1-11]\n- Fix decoding of chroma-subsampled images\n- Add patches for CVE-2016-9573 and CVE-2016-9675\n- Fix Coverity issues\n  Resolves: #1419772\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5139.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5158.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5159.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-7163.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9573.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9675.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0838.html"
+				}
+			],
+			"published": "2017-03-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-5139",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5139.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-5158",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5158.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-5159",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5159.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-7163",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-7163.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-9573",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9573.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-9675",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9675.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openjpeg",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.1-16.el7_3"
+								}
+							],
+							"fixed": [
+								"0:1.5.1-16.el7_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openjpeg-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.1-16.el7_3"
+								}
+							],
+							"fixed": [
+								"0:1.5.1-16.el7_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openjpeg-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.1-16.el7_3"
+								}
+							],
+							"fixed": [
+								"0:1.5.1-16.el7_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,105 @@
+{
+	"id": "oval:com.oracle.elsa:def:20192258",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20192258",
+			"title": "\nELSA-2019-2258:  http-parser security update (MODERATE)\n",
+			"description": "\n[2.7.1-8]\n- Backport needed test fixes\n- Related: rhbz#1666024 - CVE-2018-7159 http-parser: nodejs: HTTP parser\n                          allowed for spaces inside Content-Length header\n                          values [rhel-7]\n\n[2.7.1-7]\n- Resolves: rhbz#1666024 - CVE-2018-7159 http-parser: nodejs: HTTP parser\n                           allowed for spaces inside Content-Length header\n                           values [rhel-7]\n\n[2.7.1-6]\n- Resolves: rhbz#1666381 - CVE-2018-12121 http-parser: nodejs: Denial of\n                           Service with large HTTP headers [rhel-7]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12121.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-7159.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-2258.html"
+				}
+			],
+			"published": "2019-08-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-12121",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12121.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-7159",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-7159.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "http-parser",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.1-8.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.1-8.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "http-parser-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.1-8.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.1-8.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

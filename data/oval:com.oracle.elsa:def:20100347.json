@@ -1,0 +1,72 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100347",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100347",
+			"title": "\nELSA-2010-0347:  nss_db security update (MODERATE)\n",
+			"description": "\n\n[2.2-35.4]\n- import Kees Cook's patch to fix accidental leakage of part of ./DB_CONFIG\n  (#580542, CVE-2010-0826)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0826.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0347.html"
+				}
+			],
+			"published": "2010-04-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-0826",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0826.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss_db",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2-35.4.el5_5"
+								}
+							],
+							"fixed": [
+								"0:2.2-35.4.el5_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

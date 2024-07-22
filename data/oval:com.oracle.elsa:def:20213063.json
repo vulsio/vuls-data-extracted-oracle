@@ -1,0 +1,422 @@
+{
+	"id": "oval:com.oracle.elsa:def:20213063",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20213063",
+			"title": "\nELSA-2021-3063:  rust-toolset:ol8 security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\nrust\n[1.52.1-1]\n- Update to 1.52.1. Includes security fixes for CVE-2020-36323,\n  CVE-2021-28876, CVE-2021-28878, CVE-2021-28879, and CVE-2021-31162.\n\n[1.51.0-1]\n- Update to 1.51.0. Update to 1.51.0. Includes security fixes for\n  CVE-2021-28875 and CVE-2021-28877.\n\n[1.50.0-1]\n- Update to 1.50.0.\n\nrust-toolset\n[1.52.1-1]\n- Update to Rust and Cargo 1.52.1.\n\n[1.51.0-1]\n- Update to Rust and Cargo 1.51.0.\n\n[1.50.0-1]\n- Update to Rust and Cargo 1.50.0.\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-36323.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28875.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28876.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28877.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28878.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28879.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-31162.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-3063.html"
+				}
+			],
+			"published": "2021-08-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-36323",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-36323.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-28875",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28875.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-28876",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28876.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-28877",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28877.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-28878",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28878.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-28879",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28879.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-31162",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-31162.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::cargo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::cargo-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::clippy",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::rls",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::rust",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::rust-analysis",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::rust-debugger-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::rust-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::rust-gdb",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::rust-lldb",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::rust-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::rust-std-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::rust-toolset",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rust-toolset:ol8::rustfmt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+								}
+							],
+							"fixed": [
+								"0:1.52.1-1.module+el8.4.0+20287+5ada6442"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

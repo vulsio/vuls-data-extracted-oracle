@@ -1,0 +1,176 @@
+{
+	"id": "oval:com.oracle.elsa:def:20212595",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20212595",
+			"title": "\nELSA-2021-2595:  389-ds:1.4 security and bug fix update (MODERATE)\n",
+			"description": "\n[1.4.3.16-16]\n- Bump version to 1.4.3.16-16\n- Resolves: Bug 1972738 - Changelog cache can upload updates from a wrong starting point (CSN)\n- Resolves: Bug 1972721 - Large updates can reset the CLcache to the beginning of the changelog\n\n[1.4.3.16-15]\n- Bump version to 1.4.3.16-15\n- Resolves: Bug 1970791 - A connection can be erroneously flagged as replication conn during evaluation of an aci with ip bind rule\n\n[1.4.3.16-14]\n- Bump version to 1.4.3.16-14\n- Resolves: Bug 1968588 - ACIs are being evaluated against the Replication Manager account in a replication context\n- Resolves: Bug 1960720 - sync_repl NULL pointer dereference in sync_create_state_control()\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3514.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-2595.html"
+				}
+			],
+			"published": "2021-07-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-3514",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3514.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.16-16.module+el8.4.0+20199+8c6d81ae"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.16-16.module+el8.4.0+20199+8c6d81ae"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.16-16.module+el8.4.0+20199+8c6d81ae"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.16-16.module+el8.4.0+20199+8c6d81ae"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base-legacy-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.16-16.module+el8.4.0+20199+8c6d81ae"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.16-16.module+el8.4.0+20199+8c6d81ae"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.16-16.module+el8.4.0+20199+8c6d81ae"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.16-16.module+el8.4.0+20199+8c6d81ae"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base-snmp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.16-16.module+el8.4.0+20199+8c6d81ae"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.16-16.module+el8.4.0+20199+8c6d81ae"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::python3-lib389",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.16-16.module+el8.4.0+20199+8c6d81ae"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.16-16.module+el8.4.0+20199+8c6d81ae"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

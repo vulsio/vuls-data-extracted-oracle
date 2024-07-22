@@ -1,0 +1,202 @@
+{
+	"id": "oval:com.oracle.elsa:def:20219043",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20219043",
+			"title": "\nELSA-2021-9043: Unbreakable Enterprise kernel security update (IMPORTANT)\n",
+			"description": "\n[2.6.39-400.330.1]\n- mwifiex: Fix possible buffer overflows in mwifiex_cmd_802_11_ad_hoc_start (Zhang Xiaohui)  [Orabug: 32349211]  {CVE-2020-36158}\n\n[2.6.39-400.329.1]\n- Fonts: Support FONT_EXTRA_WORDS macros for built-in fonts (Peilin Ye)  [Orabug: 32176268]  {CVE-2020-28915}\n- fbdev, newport_con: Move FONT_EXTRA_WORDS macros into linux/font.h (Peilin Ye)  [Orabug: 32176268]  {CVE-2020-28915}\n- vt: Disable KD_FONT_OP_COPY (Daniel Vetter)  [Orabug: 32187752]  {CVE-2020-28974}\n- vt: sort out locking for font handling (Alan Cox)  [Orabug: 32187752]  {CVE-2020-28974}\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-28915.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-28974.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-36158.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-9043.html"
+				}
+			],
+			"published": "2021-02-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-28915",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-28915.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-28974",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-28974.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-36158",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-36158.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.330.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.330.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.330.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.330.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.330.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.330.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.330.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.330.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.330.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.330.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.330.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.330.1.el6uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

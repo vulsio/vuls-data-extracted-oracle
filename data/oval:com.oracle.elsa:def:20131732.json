@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20131732",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20131732",
+			"title": "\nELSA-2013-1732:  busybox security and bug fix update (LOW)\n",
+			"description": "\n[1:1.15.1-20]\n- Resolves: #855832\n  'Installation from NFS: That directory could not be mounted from the server'\n  by switching NFS mount default from UDP to TCP.\n  There was another place (in uclibc this time) which used UDP.\n\n[1:1.15.1-19]\n- Resolves: #1015010\n  'busybox: insecure directory permissions in /dev'\n\n[1:1.15.1-18]\n- Resolves: #855832\n  'Installation from NFS: That directory could not be mounted from the server'\n  by switching NFS mount default from UDP to TCP.\n\n[1:1.15.1-17]\n- Resolves: #820097\n- 's390x: wc: : No such file or directory'\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-1813.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-1732.html"
+				}
+			],
+			"published": "2013-11-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-1813",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-1813.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "busybox",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.15.1-20.el6"
+								}
+							],
+							"fixed": [
+								"1:1.15.1-20.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "busybox-petitboot",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.15.1-20.el6"
+								}
+							],
+							"fixed": [
+								"1:1.15.1-20.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

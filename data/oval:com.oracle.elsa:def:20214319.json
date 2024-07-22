@@ -1,0 +1,97 @@
+{
+	"id": "oval:com.oracle.elsa:def:20214319",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20214319",
+			"title": "\nELSA-2021-4319:  compat-exiv2-026 security update (MODERATE)\n",
+			"description": "\n[0.26-6]\n- Fix out-of-bounds read in Exiv2::Jp2Image::printStructure\n  Resolves: bz#1993283\n\n- Fix out-of-bounds read in Exiv2::Jp2Image::encodeJp2Header\n  Resolves: bz#1993246\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-31292.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-37618.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-37619.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-4319.html"
+				}
+			],
+			"published": "2021-11-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-31292",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-31292.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-37618",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-37618.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-37619",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-37619.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "compat-exiv2-026",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.26-6.el8"
+								}
+							],
+							"fixed": [
+								"0:0.26-6.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

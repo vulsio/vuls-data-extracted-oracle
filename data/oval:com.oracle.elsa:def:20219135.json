@@ -1,0 +1,301 @@
+{
+	"id": "oval:com.oracle.elsa:def:20219135",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20219135",
+			"title": "\nELSA-2021-9135: Unbreakable Enterprise kernel security update (IMPORTANT)\n",
+			"description": "\n[4.14.35-2047.500.9.3.el7uek] \n- net/rds: Reject error code change (Ka-Cheong Poon)  [Orabug: 32577425]  \n- PCI: hotplug: Add module parameter to allow user control of LEDs (James Puthukattukaran)  [Orabug: 32577399]  \n- net/rds: increase 1MB MR pool size for RDS (Manjunath Patil)  [Orabug: 32577394]\n\n[4.14.35-2047.500.9.2.el7uek] \n- Fix double free KASAN warnings and use after free of kmalloc-32 object. (Imran Khan)  [Orabug: 32515995]\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26930.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26931.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26932.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-9135.html"
+				}
+			],
+			"published": "2021-03-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-26930",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26930.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-26931",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26931.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-26932",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26932.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.500.9.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.500.9.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.500.9.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.500.9.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.500.9.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.500.9.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.500.9.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.500.9.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.500.9.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.500.9.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-headers",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.500.9.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.500.9.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.500.9.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.500.9.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools-libs",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.500.9.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.500.9.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools-libs-devel",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.500.9.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.500.9.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.500.9.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.500.9.3.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.500.9.3.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.500.9.3.el7uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

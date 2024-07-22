@@ -1,0 +1,239 @@
+{
+	"id": "oval:com.oracle.elsa:def:20131764",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20131764",
+			"title": "\nELSA-2013-1764:  ruby security update (CRITICAL)\n",
+			"description": "\n[1.8.7.352-13]\n- Workaround build issues against OpenSSL with enabled ECC curves.\n- Make DRb compatible with OpenSSL 1.0.1.\n  * ruby-1.9.3-p222-generate-1024-bits-RSA-key-instead-of-512-bits.patch\n- Fix CVE-2013-4164 Heap Overflow in Floating Point Parsing\n  * ruby-1.9.3-p484-CVE-2013-4164-ignore-too-long-fraction-part-which-does-not-affect-the-result.patch\n  - Resolves: rhbz#1033500\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4164.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-1764.html"
+				}
+			],
+			"published": "2013-11-26T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-4164",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4164.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-13.el6"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-13.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-13.el6"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-13.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-docs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-13.el6"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-13.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-irb",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-13.el6"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-13.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-13.el6"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-13.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-rdoc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-13.el6"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-13.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-ri",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-13.el6"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-13.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-static",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-13.el6"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-13.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-tcltk",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-13.el6"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-13.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

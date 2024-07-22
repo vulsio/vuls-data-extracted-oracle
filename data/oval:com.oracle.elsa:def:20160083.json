@@ -1,0 +1,190 @@
+{
+	"id": "oval:com.oracle.elsa:def:20160083",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20160083",
+			"title": "\nELSA-2016-0083:  qemu-kvm security and bug fix update (IMPORTANT)\n",
+			"description": "\n[1.5.3-105.el7_2.3]\n- kvm-fw_cfg-add-check-to-validate-current-entry-value-CVE.patch [bz#1298047]\n- Resolves: bz#1298047\n  (CVE-2016-1714 qemu-kvm: Qemu: nvram: OOB r/w access in processing firmware configurations [rhel-7.2.z])\n\n[1.5.3-105.el7_2.2]\n- kvm-raw-posix-Fix-.bdrv_co_get_block_status-for-unaligne.patch [bz#1298828]\n- Resolves: bz#1298828\n  ([abrt] qemu-img: get_block_status(): qemu-img killed by SIGABRT)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-1714.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-0083.html"
+				}
+			],
+			"published": "2016-01-28T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-1714",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-1714.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcacard",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-105.el7_2.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-105.el7_2.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcacard-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-105.el7_2.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-105.el7_2.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcacard-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-105.el7_2.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-105.el7_2.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-img",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-105.el7_2.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-105.el7_2.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-105.el7_2.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-105.el7_2.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-common",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-105.el7_2.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-105.el7_2.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-105.el7_2.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-105.el7_2.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20240628",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20240628",
+			"title": "\nELSA-2024-0628:  libssh security update (MODERATE)\n",
+			"description": "\n[0.9.6-13]\n- Client and Server side mitigations (CVE-2023-48795)\n- Strip extensions from both kex lists for matching (CVE-2023-48795)\n- tests: Adjust calculation to strict kex (CVE-2023-48795)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-48795.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-0628.html"
+				}
+			],
+			"published": "2024-02-01T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-48795",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-48795.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libssh",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.6-13.el8_9"
+								}
+							],
+							"fixed": [
+								"0:0.9.6-13.el8_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libssh-config",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.6-13.el8_9"
+								}
+							],
+							"fixed": [
+								"0:0.9.6-13.el8_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libssh-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.6-13.el8_9"
+								}
+							],
+							"fixed": [
+								"0:0.9.6-13.el8_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

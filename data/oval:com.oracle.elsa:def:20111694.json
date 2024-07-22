@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20111694",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20111694",
+			"title": "\nELSA-2011-1694:  libcap security and bug fix update (LOW)\n",
+			"description": "\n[2.16-5.5]\n- remove some obsolete parameters from capsh manpage\n\n[2.16-5.4]\n- add capsh manpage (#730957)\n\n[2.16-5.3]\n- make sure to chdir ('/') after calling chroot\n  http://cwe.mitre.org/data/definitions/243.html\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4099.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1694.html"
+				}
+			],
+			"published": "2011-12-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-4099",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4099.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcap",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.16-5.5.el6"
+								}
+							],
+							"fixed": [
+								"0:2.16-5.5.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcap-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.16-5.5.el6"
+								}
+							],
+							"fixed": [
+								"0:2.16-5.5.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

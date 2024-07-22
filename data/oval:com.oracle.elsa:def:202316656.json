@@ -1,0 +1,90 @@
+{
+	"id": "oval:com.oracle.elsa:def:202316656",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:202316656",
+			"title": "\nELSA-2023-16656:  squid security update (IMPORTANT)\n",
+			"description": "\n[7:4.15-3.0.3.1]\n- Add libtool-ltdl to squid Requires: [Orabug: 34992040]\n\n[ - 7:4.15-3.0.1.1]\n- Obsolete squid-sysvinit [Jira: OLDIS-20090]\n\n[7:4.15-3.1]\n- Resolves: #2100782 - CVE-2021-46784 squid:4/squid: DoS when processing gopher\n  server responses\n\n[7:4.15-3]\n- Resolves: #1941506 - CVE-2021-28116 squid:4/squid: out-of-bounds read in WCCP\n  protocol data may lead to information disclosure\n\n[7:4.15-2]\n- Resolves: #2006121 - SQUID shortens FTP Link wrong that contains a semi-colon\n  and as a result is not able to download zip file.CODE 404 TO CLIENT)\n\n[7:4.15-1]\n- new version 4.15\n- Resolves: #1964384 - squid:4 rebase to 4.15\n\n[7:4.11-5]\n- Resolves: #1944261 - CVE-2020-25097 squid:4/squid: improper input validation\n  may allow a trusted client to perform HTTP Request Smuggling\n\n[7:4.11-4]\n- Resolves: #1890606 - Fix for CVE 2019-13345 breaks authentication in\n  cachemgr.cgi\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-46784.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-16656.html"
+				}
+			],
+			"published": "2023-02-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-46784",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-46784.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:4.15-3.0.1.el7.1"
+								}
+							],
+							"fixed": [
+								"7:4.15-3.0.1.el7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:4.15-3.0.3.el7_9.1"
+								}
+							],
+							"fixed": [
+								"7:4.15-3.0.3.el7_9.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

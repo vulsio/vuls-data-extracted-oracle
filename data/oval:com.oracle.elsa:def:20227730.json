@@ -1,0 +1,176 @@
+{
+	"id": "oval:com.oracle.elsa:def:20227730",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20227730",
+			"title": "\nELSA-2022-7730:  libldb security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\n[2.5.2-2]\n- resolves: rhbz#2108998 - Rebuild to include python3-ldb-devel in CRB\n\n[2.5.2-1]\n- Rebase to version 2.5.2\n- resolves: rhbz#2109016 - Fix CVE-2022-32746\n\n[2.5.1-1]\n- related: rhbz#2077484 - Rebase to version 2.5.1\n\n[2.5.0-1]\n- resolves: rhbz#2077484 - Rebase to version 2.5.0\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-32746.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-7730.html"
+				}
+			],
+			"published": "2022-11-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-32746",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-32746.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ldb-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5.2-2.el8"
+								}
+							],
+							"fixed": [
+								"0:2.5.2-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libldb",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5.2-2.el8"
+								}
+							],
+							"fixed": [
+								"0:2.5.2-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libldb-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5.2-2.el8"
+								}
+							],
+							"fixed": [
+								"0:2.5.2-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-ldb-devel-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5.2-2.el8"
+								}
+							],
+							"fixed": [
+								"0:2.5.2-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-ldb",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5.2-2.el8"
+								}
+							],
+							"fixed": [
+								"0:2.5.2-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-ldb-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5.2-2.el8"
+								}
+							],
+							"fixed": [
+								"0:2.5.2-2.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,72 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100475",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100475",
+			"title": "\nELSA-2010-0475:  sudo security update (MODERATE)\n",
+			"description": "\n\n[1.7.2p1-7]\n- added patch that fixes insufficient environment sanitization issue (#598154)\n  Resolves: #598381 \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-1646.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0475.html"
+				}
+			],
+			"published": "2010-06-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-1646",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-1646.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sudo",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.2p1-7.el5_5"
+								}
+							],
+							"fixed": [
+								"0:1.7.2p1-7.el5_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

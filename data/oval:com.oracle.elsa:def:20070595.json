@@ -1,0 +1,340 @@
+{
+	"id": "oval:com.oracle.elsa:def:20070595",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20070595",
+			"title": "\nELSA-2007-0595:  Moderate: kernel security and bug fix update  (MODERATE)\n",
+			"description": "\n [2.6.18-8.1.8.0.1.el5]\n -Fix bonding primary=ethX (Bert Barbe) [IT 101532] [ORA 5136660]\n -Add entropy module option to e1000 (John Sobecki) [ORA 6045759]\n -Add entropy module option to bnx2 (John Sobecki) [ORA 6045759]\n \n [2.6.18-8.1.8.el5]\n - [ppc64] Fix FP corruption in signal return path (Konrad Rzeszutek ) \n [245580]\n \n [2.6.18-8.1.7.el5]\n - [ide] Serverworks data corruptor (Alan Cox ) [242994] \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-3107.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2007-0595.html"
+				}
+			],
+			"published": "2007-07-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-3107",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-3107.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-8.1.8.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-8.1.8.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-PAE",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-8.1.8.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-8.1.8.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-PAE-devel",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-8.1.8.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-8.1.8.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-8.1.8.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-8.1.8.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-8.1.8.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-8.1.8.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-8.1.8.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-8.1.8.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-xen",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-8.1.8.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-8.1.8.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-xen-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-8.1.8.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-8.1.8.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-8.1.8.0.1.el5",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.6-1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.2.6-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-8.1.8.0.1.el5PAE",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.6-1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.2.6-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-8.1.8.0.1.el5xen",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.6-1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.2.6-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-8.1.8.0.1.el5",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.4-1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.4-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-8.1.8.0.1.el5PAE",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.4-1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.4-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-8.1.8.0.1.el5xen",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.4-1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.4-1.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

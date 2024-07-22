@@ -1,0 +1,176 @@
+{
+	"id": "oval:com.oracle.elsa:def:20205480",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20205480",
+			"title": "\nELSA-2020-5480:  net-snmp security and bug fix update (IMPORTANT)\n",
+			"description": "\n[1:5.8-18.1]\n- revert permission of config files to 600 (#1902662)\n\n[1:5.8-18]\n- fix CVE-2020-15862 (#1886100)\n- fix bulk responses for invalid PID (#1896760)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-15862.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-5480.html"
+				}
+			],
+			"published": "2020-12-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-15862",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-15862.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.8-18.el8_3.1"
+								}
+							],
+							"fixed": [
+								"1:5.8-18.el8_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-agent-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.8-18.el8_3.1"
+								}
+							],
+							"fixed": [
+								"1:5.8-18.el8_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.8-18.el8_3.1"
+								}
+							],
+							"fixed": [
+								"1:5.8-18.el8_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.8-18.el8_3.1"
+								}
+							],
+							"fixed": [
+								"1:5.8-18.el8_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.8-18.el8_3.1"
+								}
+							],
+							"fixed": [
+								"1:5.8-18.el8_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.8-18.el8_3.1"
+								}
+							],
+							"fixed": [
+								"1:5.8-18.el8_3.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

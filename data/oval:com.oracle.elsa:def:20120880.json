@@ -1,0 +1,294 @@
+{
+	"id": "oval:com.oracle.elsa:def:20120880",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20120880",
+			"title": "\nELSA-2012-0880:  qt security and bug fix update (MODERATE)\n",
+			"description": "\n[1:4.6.2-24]\n- Resolves: bz#734444, list of trusted CA certificates should not be compiled into library\n\n[1:4.6.2-23]\n- Resolves: bz#805433, CVE-2011-3922\n\n[1:4.6.2-22]\n- Resolves: bz#694684, phonon crash\n\n[1:4.6.2-21]\n- Resolves: #rhbz757793, add OpenGL 3.1, 3.2, 3.3 and 4.0 recognition to QGLFormat\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-5076.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3922.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-0880.html"
+				}
+			],
+			"published": "2012-06-27T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-5076",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-5076.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-3922",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3922.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "phonon-backend-gstreamer",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.6.2-24.el6"
+								}
+							],
+							"fixed": [
+								"1:4.6.2-24.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qt",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.6.2-24.el6"
+								}
+							],
+							"fixed": [
+								"1:4.6.2-24.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qt-demos",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.6.2-24.el6"
+								}
+							],
+							"fixed": [
+								"1:4.6.2-24.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qt-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.6.2-24.el6"
+								}
+							],
+							"fixed": [
+								"1:4.6.2-24.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qt-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.6.2-24.el6"
+								}
+							],
+							"fixed": [
+								"1:4.6.2-24.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qt-examples",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.6.2-24.el6"
+								}
+							],
+							"fixed": [
+								"1:4.6.2-24.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qt-mysql",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.6.2-24.el6"
+								}
+							],
+							"fixed": [
+								"1:4.6.2-24.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qt-odbc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.6.2-24.el6"
+								}
+							],
+							"fixed": [
+								"1:4.6.2-24.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qt-postgresql",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.6.2-24.el6"
+								}
+							],
+							"fixed": [
+								"1:4.6.2-24.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qt-sqlite",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.6.2-24.el6"
+								}
+							],
+							"fixed": [
+								"1:4.6.2-24.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qt-x11",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.6.2-24.el6"
+								}
+							],
+							"fixed": [
+								"1:4.6.2-24.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

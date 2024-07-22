@@ -1,0 +1,97 @@
+{
+	"id": "oval:com.oracle.elsa:def:20236748",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20236748",
+			"title": "\nELSA-2023-6748:  squid security update (CRITICAL)\n",
+			"description": "\n[7:5.5-6.1]\n- Resolves: RHEL-14819 - squid: squid: denial of Servicein FTP\n- Resolves: RHEL-14807 - squid: squid: Denial of Service in HTTP Digest\n  Authentication\n- Resolves: RHEL-14780 - squid: squid: Request/Response smuggling in HTTP/1.1\n  and ICAP\n\n[7:5.5-6]\n- Resolves: #2231827 - Crash with half_closed_client on\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46846.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46847.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46848.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-6748.html"
+				}
+			],
+			"published": "2023-11-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-46846",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46846.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-46847",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46847.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-46848",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46848.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:5.5-6.el9_3.1"
+								}
+							],
+							"fixed": [
+								"7:5.5-6.el9_3.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

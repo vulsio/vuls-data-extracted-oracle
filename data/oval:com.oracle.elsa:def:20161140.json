@@ -1,0 +1,162 @@
+{
+	"id": "oval:com.oracle.elsa:def:20161140",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20161140",
+			"title": "\nELSA-2016-1140:  squid34 security update (MODERATE)\n",
+			"description": "\n[7:3.4.14-9.3]\n- Resolves: #1334499 - CVE-2016-4554 CVE-2016-4555 CVE-2016-4556\n  squid34: various flaws\n- Resolves: #1334506 - CVE-2016-4553 squid34: squid: Cache poisoning\n  issue in HTTP Request handling\n\n[7:3.4.14-9.2]\n- Related: #1330574 - CVE-2016-4051 CVE-2016-4052 CVE-2016-4053 CVE-2016-4054\n  squid34: various flaws\n\n[7:3.4.14-9.1]\n- Resolves: #1330574 - CVE-2016-4051 CVE-2016-4052 CVE-2016-4053 CVE-2016-4054\n  squid34: various flaws\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4051.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4052.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4053.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4054.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4553.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4554.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4555.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4556.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-1140.html"
+				}
+			],
+			"published": "2016-05-31T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-4051",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4051.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-4052",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4052.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-4053",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4053.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-4054",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4054.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-4553",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4553.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-4554",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4554.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-4555",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4555.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-4556",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4556.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid34",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:3.4.14-9.el6_8.3"
+								}
+							],
+							"fixed": [
+								"7:3.4.14-9.el6_8.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

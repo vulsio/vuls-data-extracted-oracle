@@ -1,0 +1,135 @@
+{
+	"id": "oval:com.oracle.elsa:def:20184077",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20184077",
+			"title": "\nELSA-2018-4077:  openssl security update (IMPORTANT)\n",
+			"description": "\n[1.0.2k-12.0.1]\n- sha256 is used for the RSA pairwise consistency test instead of sha1\n\n[1.0.2k-12]\n- fix CVE-2017-3737 - incorrect handling of fatal error state\n- fix CVE-2017-3738 - AVX2 Montgomery multiplication bug with 1024 bit modulus\n\n[1.0.2k-11]\n- fix deadlock in RNG in the FIPS mode in mariadb\n\n[1.0.2k-9]\n- fix CVE-2017-3736 - carry propagation bug in Montgomery multiplication\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-4077.html"
+				}
+			],
+			"published": "2018-04-18T00:00:00Z"
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.2k-12.0.1.ksplice1.el7"
+								}
+							],
+							"fixed": [
+								"2:1.0.2k-12.0.1.ksplice1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.2k-12.0.1.ksplice1.el7"
+								}
+							],
+							"fixed": [
+								"2:1.0.2k-12.0.1.ksplice1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.2k-12.0.1.ksplice1.el7"
+								}
+							],
+							"fixed": [
+								"2:1.0.2k-12.0.1.ksplice1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.2k-12.0.1.ksplice1.el7"
+								}
+							],
+							"fixed": [
+								"2:1.0.2k-12.0.1.ksplice1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.2k-12.0.1.ksplice1.el7"
+								}
+							],
+							"fixed": [
+								"2:1.0.2k-12.0.1.ksplice1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

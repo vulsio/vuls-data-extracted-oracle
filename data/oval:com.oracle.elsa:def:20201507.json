@@ -1,0 +1,288 @@
+{
+	"id": "oval:com.oracle.elsa:def:20201507",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20201507",
+			"title": "\nELSA-2020-1507:  java-1.7.0-openjdk security update (IMPORTANT)\n",
+			"description": "\n[1:1.7.0.261-2.6.22.2.0.1]\n- Update DISTRO_NAME in specfile\n\n[1:1.7.0.261-2.6.22.2]\n- Modify NEWS installation to avoid subpackage naming.\n- Resolves: rhbz#1810557\n\n[1:1.7.0.261-2.6.22.1]\n- Add release notes from IcedTea.\n- Mark license files with appropriate macro.\n- Resolves: rhbz#1810557\n\n[1:1.7.0.261-2.6.22.0]\n- Bump to 2.6.22 and OpenJDK 7u261-b02.\n- Resolves: rhbz#1810557\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2756.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2757.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2773.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2781.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2800.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2803.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2805.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2830.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-1507.html"
+				}
+			],
+			"published": "2020-04-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-2756",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2756.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-2757",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2757.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-2773",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2773.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-2781",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2781.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-2800",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2800.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-2803",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2803.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-2805",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2805.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-2830",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2830.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.261-2.6.22.2.0.1.el7_8"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.261-2.6.22.2.0.1.el7_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-accessibility",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.261-2.6.22.2.0.1.el7_8"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.261-2.6.22.2.0.1.el7_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-demo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.261-2.6.22.2.0.1.el7_8"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.261-2.6.22.2.0.1.el7_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.261-2.6.22.2.0.1.el7_8"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.261-2.6.22.2.0.1.el7_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-headless",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.261-2.6.22.2.0.1.el7_8"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.261-2.6.22.2.0.1.el7_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.261-2.6.22.2.0.1.el7_8"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.261-2.6.22.2.0.1.el7_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.261-2.6.22.2.0.1.el7_8"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.261-2.6.22.2.0.1.el7_8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

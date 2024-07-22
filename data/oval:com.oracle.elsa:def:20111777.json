@@ -1,0 +1,110 @@
+{
+	"id": "oval:com.oracle.elsa:def:20111777",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20111777",
+			"title": "\nELSA-2011-1777:  qemu-kvm security update (IMPORTANT)\n",
+			"description": "\n[qemu-kvm-0.12.1.2-2.209.el6_2.1]\n- kvm-ccid-Fix-buffer-overrun-in-handling-of-VSC_ATR-messa.patch [bz#751312]\n- CVE: CVE-2011-4111\n- Resolves: bz#751312\n  (CVE-2011-4111 qemu: ccid: buffer overflow in handling of VSC_ATR message [rhel-6.2.z])\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4111.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1777.html"
+				}
+			],
+			"published": "2011-12-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-4111",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4111.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-img",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.12.1.2-2.209.el6_2.1"
+								}
+							],
+							"fixed": [
+								"2:0.12.1.2-2.209.el6_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.12.1.2-2.209.el6_2.1"
+								}
+							],
+							"fixed": [
+								"2:0.12.1.2-2.209.el6_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.12.1.2-2.209.el6_2.1"
+								}
+							],
+							"fixed": [
+								"2:0.12.1.2-2.209.el6_2.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,96 @@
+{
+	"id": "oval:com.oracle.elsa:def:20219068",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20219068",
+			"title": "\nELSA-2021-9068:  Unbreakable Enterprise kernel-container security update (IMPORTANT)\n",
+			"description": "\n[4.14.35-2047.500.10.el7]\n- xen-blkback: fix error handling in xen_blkbk_map() (Jan Beulich)  [Orabug: 32492110]  {CVE-2021-26930}\n- xen-scsiback: don't 'handle' error by BUG() (Jan Beulich)  [Orabug: 32492102]  {CVE-2021-26931}\n- xen-netback: don't 'handle' error by BUG() (Jan Beulich)  [Orabug: 32492102]  {CVE-2021-26931}\n- xen-blkback: don't 'handle' error by BUG() (Jan Beulich)  [Orabug: 32492102]  {CVE-2021-26931}\n- Xen/gntdev: correct error checking in gntdev_map_grant_pages() (Jan Beulich)  [Orabug: 32492094]  {CVE-2021-26932}\n- Xen/gntdev: correct dev_bus_addr handling in gntdev_map_grant_pages() (Jan Beulich)  [Orabug: 32492094]  {CVE-2021-26932}\n- Xen/x86: also check kernel mapping in set_foreign_p2m_mapping() (Jan Beulich)  [Orabug: 32492094]  {CVE-2021-26932}\n- Xen/x86: don't bail early from clear_foreign_p2m_mapping() (Jan Beulich)  [Orabug: 32492094]  {CVE-2021-26932}\n- tap: fix use-after-free (Michael S. Tsirkin)  [Orabug: 32466083]\n- vhost scsi: alloc vhost_scsi with kvzalloc() to avoid delay (Dongli Zhang)  [Orabug: 32471695]\n- Fix double free KASAN warnings and use after free of kmalloc-32 object. (Imran Khan)  [Orabug: 32480357]\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26930.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26931.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26932.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-9068.html"
+				}
+			],
+			"published": "2021-02-19T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-26930",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26930.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-26931",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26931.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-26932",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26932.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.500.10.el7"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.500.10.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

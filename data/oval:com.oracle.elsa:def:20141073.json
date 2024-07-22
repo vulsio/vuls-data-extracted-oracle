@@ -1,0 +1,270 @@
+{
+	"id": "oval:com.oracle.elsa:def:20141073",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20141073",
+			"title": "\nELSA-2014-1073:  nss, nss-util, nss-softokn security, bug fix, and enhancement update (LOW)\n",
+			"description": "\nnss\n[3.16.2-2.0.1.el7_0]\n- Added nss-vendor.patch to change vendor\n\n[3.16.2-2]\n- Restore missing options descriptions fix for certutil manpage\n- Document certutil options --dump-ext-val, --extGeneric, and --extSAN\n- Related: Bug 1124659 - Rebase RHEL 7 to at least NSS 3.16.1\n\n[3.16.2-1]\n- Rebase to nss-3.16.2\n- Resolves: Bug 1124659 - Rebase RHEL 7 to at least NSS 3.16.1 (FF 31)\n- Fix test failure detection in the %check section\n- Move removal of unwanted source directories to the end of the %prep section\n- Update various patches on account of the rebase\n- Remove unused patches rendered obsolete by the rebase\n- Fix libssl and test patches that disable ssl2 support\n- Replace expired PayPal test certificate that breaks the build\n\nnss-softokn\n[3.16.2-1]\n- Update to nss-3.16.2\n- Resolves: Bug 1124659 - Rebase RHEL 7.1 to at least NSS-SOFTOKN 3.16.1 (FF 31)\n\nnss-util\n[3.16.2-1]\n- Update to nss-3.16.2\n- Resolves: Bug 1124659 - Rebase RHEL-7.0 to at least NSS 3.16.1 (FF 31)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-1492.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-1073.html"
+				}
+			],
+			"published": "2014-08-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-1492",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-1492.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.2-2.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:3.16.2-2.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.2-2.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:3.16.2-2.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-pkcs11-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.2-2.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:3.16.2-2.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-softokn",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.2-1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:3.16.2-1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-softokn-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.2-1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:3.16.2-1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-softokn-freebl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.2-1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:3.16.2-1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-softokn-freebl-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.2-1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:3.16.2-1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-sysinit",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.2-2.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:3.16.2-2.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.2-2.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:3.16.2-2.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-util",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.2-1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:3.16.2-1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-util-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.2-1.el7_0"
+								}
+							],
+							"fixed": [
+								"0:3.16.2-1.el7_0"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

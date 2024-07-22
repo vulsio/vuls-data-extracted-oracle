@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20193755",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20193755",
+			"title": "\nELSA-2019-3755:  sudo security update (IMPORTANT)\n",
+			"description": "\n[1.8.6p3-29.0.1.el6_10.2]\n- Fixes [OraBug: 28747380]\n  sudo does not honor env_keep-='KRB5CCNAME' after 'sudo -k' (isaac.chen@oracle.com)\n\n[1.8.6p3-29.2]\n- RHEL-6.10.z ERRATUM\n- fixed CVE-2019-14287\n  Resolves: rhbz#1760684\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-14287.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-3755.html"
+				}
+			],
+			"published": "2019-11-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-14287",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-14287.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sudo",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.6p3-29.0.1.el6_10.2"
+								}
+							],
+							"fixed": [
+								"0:1.8.6p3-29.0.1.el6_10.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sudo-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.6p3-29.0.1.el6_10.2"
+								}
+							],
+							"fixed": [
+								"0:1.8.6p3-29.0.1.el6_10.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

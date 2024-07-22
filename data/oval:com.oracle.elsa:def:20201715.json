@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20201715",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20201715",
+			"title": "\nELSA-2020-1715:  dnsmasq security, bug fix, and enhancement update (LOW)\n",
+			"description": "\n[2.79-11]\n- Support multiple static leases for single mac on IPv6 (#1779187)\n\n[2.79-10]\n- Fix memory leak in helper.c (#1795370)\n\n[2.79-9]\n- Fix replies to non-recursive queries (#1700916)\n\n[2.79-8]\n- Fix dhcp_lease_time (#1746411)\n\n[2.79-7]\n- Fix TCP queries after interface recreation (#1728698)\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-14834.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-1715.html"
+				}
+			],
+			"published": "2020-05-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-14834",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-14834.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dnsmasq",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.79-11.el8"
+								}
+							],
+							"fixed": [
+								"0:2.79-11.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dnsmasq-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.79-11.el8"
+								}
+							],
+							"fixed": [
+								"0:2.79-11.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,116 @@
+{
+	"id": "oval:com.oracle.elsa:def:20120311",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20120311",
+			"title": "\nELSA-2012-0311:  ibutils security and bug fix update (LOW)\n",
+			"description": "\n[1.2-11.2.0.1.el5]\n- Fix double malloc and free problem in CrdLoopPrepare and CrdLoopCleanup\n\n[1.2-11.2.el5]\n- Added Requires lines for ibutils-libs to make rpmdiff happier.\n- Add patch for CVE-2008-3277\n  Resolves: bz768400\n\n[1.2-11.1.el5]\n- Add ibutils-1.2-invalid-delete.patch to close\n  Resolves: bz711779\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-3277.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-0311.html"
+				}
+			],
+			"published": "2012-03-01T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2008-3277",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-3277.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ibutils",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2-11.2.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.2-11.2.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ibutils-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2-11.2.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.2-11.2.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ibutils-libs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2-11.2.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.2-11.2.0.1.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

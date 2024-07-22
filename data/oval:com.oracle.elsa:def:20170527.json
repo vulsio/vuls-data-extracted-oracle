@@ -1,0 +1,261 @@
+{
+	"id": "oval:com.oracle.elsa:def:20170527",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20170527",
+			"title": "\nELSA-2017-0527:  tomcat6 security update (MODERATE)\n",
+			"description": "\n[0:6.0.24-105]\n- Related: rhbz#1402664 CVE-2016-6816 Adding system property from asfbz-60594 to allow use of some un-encoded characters\n- Related: rhbz#1402664 CVE-2016-6816 Resolving a security regression (2017-6056) caused by CVE-2016-6816\n\n[0:6.0.24-104]\n- Related: rhbz#1402664 build. reverting ExcludeArch to fix composes\n\n[0:6.0.24-102]\n- Resolves: rhbz#1413589 CVE-2016-8745 tomcat6: tomcat: information disclosure due to incorrect Processor sharing\n- Resolves: rhbz#1402664 CVE-2016-6816 tomcat6: tomcat: HTTP Request smuggling vulnerability due to permitting invalid character in HTTP requests\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-6816.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8745.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0527.html"
+				}
+			],
+			"published": "2017-03-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-6816",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-6816.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-8745",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8745.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat6",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.24-105.el6_8"
+								}
+							],
+							"fixed": [
+								"0:6.0.24-105.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat6-admin-webapps",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.24-105.el6_8"
+								}
+							],
+							"fixed": [
+								"0:6.0.24-105.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat6-docs-webapp",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.24-105.el6_8"
+								}
+							],
+							"fixed": [
+								"0:6.0.24-105.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat6-el-2.1-api",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.24-105.el6_8"
+								}
+							],
+							"fixed": [
+								"0:6.0.24-105.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat6-javadoc",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.24-105.el6_8"
+								}
+							],
+							"fixed": [
+								"0:6.0.24-105.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat6-jsp-2.1-api",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.24-105.el6_8"
+								}
+							],
+							"fixed": [
+								"0:6.0.24-105.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat6-lib",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.24-105.el6_8"
+								}
+							],
+							"fixed": [
+								"0:6.0.24-105.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat6-servlet-2.5-api",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.24-105.el6_8"
+								}
+							],
+							"fixed": [
+								"0:6.0.24-105.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat6-webapps",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.24-105.el6_8"
+								}
+							],
+							"fixed": [
+								"0:6.0.24-105.el6_8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

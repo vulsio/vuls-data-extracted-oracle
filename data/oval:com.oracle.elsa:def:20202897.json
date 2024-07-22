@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20202897",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20202897",
+			"title": "\nELSA-2020-2897:  jbig2dec security update (IMPORTANT)\n",
+			"description": "\n[0.14-4]\n- Add explicit package version requirement on jbig2dec-libs to jbig2dec\n  related: #1851057\n\n[0.14-3]\n- Fix CVE-2020-12268\n  resolves: #1851057\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-12268.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-2897.html"
+				}
+			],
+			"published": "2020-07-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-12268",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-12268.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "jbig2dec-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.14-4.el8_2"
+								}
+							],
+							"fixed": [
+								"0:0.14-4.el8_2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

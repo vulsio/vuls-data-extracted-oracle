@@ -1,0 +1,230 @@
+{
+	"id": "oval:com.oracle.elsa:def:20192726",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20192726",
+			"title": "\nELSA-2019-2726:  go-toolset:rhel8 security and bug fix update (IMPORTANT)\n",
+			"description": "\ngo-toolset\n[1.11.13-1]\n- Bump version to 1.11.13\n- Related: rhbz#1743204\n- Related: rhbz#1743206\n\ngolang\n[1.11.13-2]\n- Improve error message when using non-FIPS API in FIPS mode.\n- Fixes CVE-2019-9512.\n- Fixes CVE-2019-9514.\n- Resolves: rhbz#1745711\n- Resolves: rhbz#1745705\n\n[1.11.6-3]\n- Updates to be less strict on key size in FIPS mode\n- Resolves: rhbz#1731550\n\n[1.11.6-2]\n- Lock to specific OpenSSL version on build\n- Resolves: rhbz#1709606\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9512.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9514.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-2726.html"
+				}
+			],
+			"published": "2019-09-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-9512",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9512.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-9514",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9514.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::go-toolset",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.13-1.module+el8.0.1+5334+cadcb96c"
+								}
+							],
+							"fixed": [
+								"0:1.11.13-1.module+el8.0.1+5334+cadcb96c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+								}
+							],
+							"fixed": [
+								"0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang-bin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+								}
+							],
+							"fixed": [
+								"0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+								}
+							],
+							"fixed": [
+								"0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang-misc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+								}
+							],
+							"fixed": [
+								"0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang-race",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+								}
+							],
+							"fixed": [
+								"0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+								}
+							],
+							"fixed": [
+								"0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+								}
+							],
+							"fixed": [
+								"0:1.11.13-2.module+el8.0.1+5334+cadcb96c"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

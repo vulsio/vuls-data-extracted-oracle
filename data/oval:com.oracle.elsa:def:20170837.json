@@ -1,0 +1,136 @@
+{
+	"id": "oval:com.oracle.elsa:def:20170837",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20170837",
+			"title": "\nELSA-2017-0837:  icoutils security update (IMPORTANT)\n",
+			"description": "\n[0.31.3-1]\n- Rebase to upstream version 0.31.3.\n- This version includes multiple security fixes\n  CVE-2017-5208, CVE-2017-5333, CVE-2017-5332, CVE-2017-6009,\n  CVE-2017-6010, CVE-2017-6011\n  resolves: rhbz#1430610\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-5208.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-5332.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-5333.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-6009.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-6010.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-6011.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0837.html"
+				}
+			],
+			"published": "2017-03-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-5208",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-5208.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-5332",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-5332.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-5333",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-5333.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-6009",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-6009.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-6010",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-6010.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-6011",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-6011.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "icoutils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.31.3-1.el7_3"
+								}
+							],
+							"fixed": [
+								"0:0.31.3-1.el7_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

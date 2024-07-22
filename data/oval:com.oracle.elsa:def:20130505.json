@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20130505",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20130505",
+			"title": "\nELSA-2013-0505:  squid security and bug fix update (MODERATE)\n",
+			"description": "\n[7:3.1.10-16]\n- Resolves: #888198 - CVE-2012-5643: improved upstream patch\n\n[7:3.1.10-15]\n- Reverts: #861062 - Squid delays on FQDNs that don't contains AAAA record\n\n[7:3.1.10-14]\n- Resolves: #888198 - CVE-2012-5643: patch\n\n[7:3.1.10-13]\n- Resolves: #888198 - CVE-2012-5643: DoS (excessive resource consumption)\n\n[7:3.1.10-12]\n- Resolves #861062 - add configure directive --enable-internal-dns\n\n[7:3.1.10-11\t]\n- Resolves #861062 - Squid delays on FQDNs that don't contains AAAA record\n\n[7:3.1.10-10]\n- Resolves #798090 - Client timeout uses server-side 'read_timeout'\n- Resolves #833086 - Private md5 hash function does not comply FIPS\n- Resolves #782732 - Squid crashes by segfault when it reboots\n- Resolves #797571 - Squid userid is not added to wbpriv group\n- Disable strict-error-checking on account of squid-fips.patch\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5643.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0505.html"
+				}
+			],
+			"published": "2013-02-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-5643",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5643.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:3.1.10-16.el6"
+								}
+							],
+							"fixed": [
+								"7:3.1.10-16.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

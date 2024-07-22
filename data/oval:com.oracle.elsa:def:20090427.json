@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20090427",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20090427",
+			"title": "\nELSA-2009-0427:  udev security update (IMPORTANT)\n",
+			"description": "\n\n[095-14.20]\n- fix for CVE-2009-1185 (bug #495051)\n- Resolves: rhbz#495055 \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1185.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-0427.html"
+				}
+			],
+			"published": "2009-04-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-1185",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1185.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvolume_id",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:095-14.20.el5_3"
+								}
+							],
+							"fixed": [
+								"0:095-14.20.el5_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvolume_id-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:095-14.20.el5_3"
+								}
+							],
+							"fixed": [
+								"0:095-14.20.el5_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "udev",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:095-14.20.el5_3"
+								}
+							],
+							"fixed": [
+								"0:095-14.20.el5_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

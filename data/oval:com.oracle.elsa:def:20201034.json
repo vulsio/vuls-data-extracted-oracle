@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20201034",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20201034",
+			"title": "\nELSA-2020-1034:  doxygen security and bug fix update (LOW)\n",
+			"description": "\n[1:1.8.5-4]\n- Resolves: #1483569, incorrect processing of code blocks\n- Resolves: #1724173 - CVE-2016-10245, cross-site scripting\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-10245.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-1034.html"
+				}
+			],
+			"published": "2020-04-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-10245",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-10245.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "doxygen",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.5-4.el7"
+								}
+							],
+							"fixed": [
+								"1:1.8.5-4.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "doxygen-doxywizard",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.5-4.el7"
+								}
+							],
+							"fixed": [
+								"1:1.8.5-4.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "doxygen-latex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.5-4.el7"
+								}
+							],
+							"fixed": [
+								"1:1.8.5-4.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

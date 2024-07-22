@@ -1,0 +1,230 @@
+{
+	"id": "oval:com.oracle.elsa:def:20200329",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20200329",
+			"title": "\nELSA-2020-0329:  go-toolset:ol8 security update (MODERATE)\n",
+			"description": "\ngo-toolset\n[1.12.12-1]\n- Update for golang package fixes\n\n[1.12.12-1]\n- Bump version to 1.12.12\n\ngolang\n[1.12.12-4.0.1]\n- from upstream https://github.com/golang/go/issues/2775\n- move arbitrary value 10% to 15% for GC tests, hits 10.48% on our\n- infrastructure\n- Resolves failing post build tests [Orabug: 30241946]\n\n[1.12.12-4]\n- Fix boring/aes_test.go tags\n\n[1.12.12-3]\n- Fix tarball\n\n[1.12.12-2]\n- Fix stub boring.(Sign/Verify)RSAPKCS1v15 functions\n\n[1.12.12-1]\n- Rebase to 1.12.12\n- Revert to Sign/Verify operations not expected unhashed inputs\n- Remove previously added verbose output\n- Better expose openssl errors\n\n[1.12.8-4]\n- Reduce number of threads when testing on i686\n\n[1.12.8-3]\n- Relax FIPS requirements to unblock OpenShift testing\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-16276.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-17596.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-0329.html"
+				}
+			],
+			"published": "2020-02-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-16276",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-16276.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-17596",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-17596.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::go-toolset",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.12-2.module+el8.1.0+5478+8384556e"
+								}
+							],
+							"fixed": [
+								"0:1.12.12-2.module+el8.1.0+5478+8384556e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+								}
+							],
+							"fixed": [
+								"0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang-bin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+								}
+							],
+							"fixed": [
+								"0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+								}
+							],
+							"fixed": [
+								"0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang-misc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+								}
+							],
+							"fixed": [
+								"0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang-race",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+								}
+							],
+							"fixed": [
+								"0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+								}
+							],
+							"fixed": [
+								"0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8::golang-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+								}
+							],
+							"fixed": [
+								"0:1.12.12-4.0.1.module+el8.1.0+5478+8384556e"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

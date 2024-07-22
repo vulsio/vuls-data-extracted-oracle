@@ -1,0 +1,85 @@
+{
+	"id": "oval:com.oracle.elsa:def:20091039",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20091039",
+			"title": "\nELSA-2009-1039:  ntp security update (IMPORTANT)\n",
+			"description": "\n\n[4.2.2p1-9.el5_3.2]\n- fix buffer overflow when parsing Autokey association message\n  (#500783, CVE-2009-1252)\n- fix buffer overflow in ntpq (#500783, CVE-2009-0159)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0159.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1252.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-1039.html"
+				}
+			],
+			"published": "2009-05-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-0159",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0159.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-1252",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1252.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ntp",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.2.2p1-9.el5_3.2"
+								}
+							],
+							"fixed": [
+								"0:4.2.2p1-9.el5_3.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

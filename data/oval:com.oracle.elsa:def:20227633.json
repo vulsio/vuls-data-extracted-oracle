@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20227633",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20227633",
+			"title": "\nELSA-2022-7633:  dnsmasq security and bug fix update (MODERATE)\n",
+			"description": "\n[2.79-24]\n- Prevent endless loop in forward_query (#2120357)\n\n[2.79-23]\n- Add IPv6 ntp-server suboptions support (#2049691)\n\n[2.79-22]\n- Prevent use after free in dhcp6_no_relay (CVE-2022-0934)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-0934.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-7633.html"
+				}
+			],
+			"published": "2022-11-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-0934",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-0934.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dnsmasq",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.79-24.el8"
+								}
+							],
+							"fixed": [
+								"0:2.79-24.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dnsmasq-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.79-24.el8"
+								}
+							],
+							"fixed": [
+								"0:2.79-24.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

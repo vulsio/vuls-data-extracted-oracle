@@ -1,0 +1,94 @@
+{
+	"id": "oval:com.oracle.elsa:def:20091561",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20091561",
+			"title": "\nELSA-2009-1561:  libvorbis security update (IMPORTANT)\n",
+			"description": "\n\n[1:1.1.2-3.el5.4]\n- fix CVE-CVE-2009-3379\nResolves: #532418 \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3379.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-1561.html"
+				}
+			],
+			"published": "2009-11-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-3379",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3379.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvorbis",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.2-3.el5_4.4"
+								}
+							],
+							"fixed": [
+								"1:1.1.2-3.el5_4.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvorbis-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.2-3.el5_4.4"
+								}
+							],
+							"fixed": [
+								"1:1.1.2-3.el5_4.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

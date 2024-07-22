@@ -1,0 +1,236 @@
+{
+	"id": "oval:com.oracle.elsa:def:20211633",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20211633",
+			"title": "\nELSA-2021-1633:  python3 security update (MODERATE)\n",
+			"description": "\n[3.6.8-37.0.1]\n- Add Oracle Linux distribution in platform.py [Orabug: 20812544]\n\n[3.6.8-37]\n- Fix for CVE-2021-23336\nResolves: rhbz#1928904\n\n[3.6.8-36]\n- Fix for CVE-2021-3177\nResolves: rhbz#1918168\n\n[3.6.8-35]\n- New options -a and -k for pathfix.py script backported from upstream\nResolves: rhbz#1917691\n\n[3.6.8-34]\n- Security fix for CVE-2020-27619: eval() call on content received via HTTP in the CJK codec tests\nResolves: rhbz#1890237\n\n[3.6.8-33]\n- Add support for upstream architecture names\nhttps://fedoraproject.org/wiki/Changes/Python_Upstream_Architecture_Names\nResolves: rhbz#1868003\n\n[3.6.8-32]\n- Security fix for CVE-2020-26116: Reject control chars in HTTP method in http.client\nResolves: rhbz#1883257\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-26116.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-27619.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23336.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3177.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-1633.html"
+				}
+			],
+			"published": "2021-05-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-26116",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-26116.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-27619",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-27619.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-23336",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23336.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-3177",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3177.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "platform-python",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.8-37.0.1.el8"
+								}
+							],
+							"fixed": [
+								"0:3.6.8-37.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "platform-python-debug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.8-37.0.1.el8"
+								}
+							],
+							"fixed": [
+								"0:3.6.8-37.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "platform-python-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.8-37.0.1.el8"
+								}
+							],
+							"fixed": [
+								"0:3.6.8-37.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-idle",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.8-37.0.1.el8"
+								}
+							],
+							"fixed": [
+								"0:3.6.8-37.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.8-37.0.1.el8"
+								}
+							],
+							"fixed": [
+								"0:3.6.8-37.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-test",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.8-37.0.1.el8"
+								}
+							],
+							"fixed": [
+								"0:3.6.8-37.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-tkinter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.8-37.0.1.el8"
+								}
+							],
+							"fixed": [
+								"0:3.6.8-37.0.1.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

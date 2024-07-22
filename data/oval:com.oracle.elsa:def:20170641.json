@@ -1,0 +1,181 @@
+{
+	"id": "oval:com.oracle.elsa:def:20170641",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20170641",
+			"title": "\nELSA-2017-0641:  openssh security and bug fix update (MODERATE)\n",
+			"description": "\n[5.3p1-122]\n- Allow to use ibmca crypto hardware (#1397547)\n- CVE-2015-8325: privilege escalation via user's PAM environment and UseLogin=yes (1405374)\n\n[5.3p1-121]\n- Fix missing hmac-md5-96 from server offer (#1373836)\n\n[5.3p1-120]\n- Prevent infinite loop when Ctrl+Z pressed at password prompt (#1218424)\n- Remove RC4 cipher and MD5 based MAC from the default client proposal (#1373836)\n\n[5.3p1-119]\n- Resolve sftp force permission colision with umask (#1341747)\n- Relax bits needed check to allow hmac-sha2-512 with gss-group1-sha1- (#1353359)\n- close ControlPersist background process stderr when not in debug mode (#1335539)\n- Do not add a message 'The agent has no identities.' in ~/.ssh/authorized_keys (#1353410)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8325.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0641.html"
+				}
+			],
+			"published": "2017-03-27T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-8325",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8325.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-122.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-122.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-askpass",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-122.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-122.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-clients",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-122.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-122.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-ldap",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-122.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-122.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-server",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-122.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-122.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pam_ssh_agent_auth",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.3-122.el6"
+								}
+							],
+							"fixed": [
+								"0:0.9.3-122.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

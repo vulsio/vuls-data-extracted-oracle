@@ -1,0 +1,242 @@
+{
+	"id": "oval:com.oracle.elsa:def:20152101",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20152101",
+			"title": "\nELSA-2015-2101:  python security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\n[2.7.5-34.0.1]\n- Add Oracle Linux distribution in platform.py [orabug 20812544]\n\n[2.7.5-34]\n- Revert fix for rhbz#1117751 as it leads to regressions\nResolves: rhbz#1117751\n\n[2.7.5-33]\n- Only restore SIG_PIPE when Popen called with restore_sigpipe\nResolves: rhbz#1117751\n\n[2.7.5-32]\n- Backport SSLSocket.version function\n- Temporary disable test_gdb on ppc64le rhbz#1260558\nResolves: rhbz#1259421\n\n[2.7.5-31]\n- Update load_cert_chain function to accept None keyfile\nResolves: rhbz#1250611\n\n[2.7.5-30]\n- Change Patch224 according to latest update in PEP493\nResolves:rhbz#1219108\n\n[2.7.5-29]\n- Popen shouldn't ignore SIG_PIPE\nResolves: rhbz#1117751\n\n[2.7.5-28]\n- Exclude python subprocess temp files from cleaning\nResolves: rhbz#1058482\n\n[2.7.5-27]\n- Add list for cprofile sort option\nResolves:rhbz#1237107\n\n[2.7.5-26]\n- Add switch to toggle cert verification on or off globally\nResolves:rhbz#1219108\n\n[2.7.5-25]\n- PEP476 enable cert verifications by default\nResolves:rhbz#1219110\n\n[2.7.5-24]\n- Massive backport of ssl module from python3 aka PEP466\nResolves: rhbz#1111461\n\n[2.7.5-23]\n- Fixed CVE-2013-1753, CVE-2013-1752, CVE-2014-4616, CVE-2014-4650, CVE-2014-7185\nResolves: rhbz#1206574\n\n[2.7.5-22]\n- Fix importing readline producing erroneous output\nResolves: rhbz#1189301\n\n[2.7.5-21]\n- Add missing import in bdist_rpm\nResolves: rhbz#1177613\n\n[2.7.5-20]\n- Avoid double close of subprocess pipes\nResolves: rhbz#1103452\n\n[2.7.5-19]\n- make multiprocessing ignore EINTR\nResolves: rhbz#1181624\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-1752.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-1753.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-4616.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-4650.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-7185.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-2101.html"
+				}
+			],
+			"published": "2015-11-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-1752",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-1752.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-1753",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-1753.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-4616",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-4616.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-4650",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-4650.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-7185",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-7185.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.5-34.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.5-34.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.5-34.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.5-34.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.5-34.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.5-34.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.5-34.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.5-34.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-test",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.5-34.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.5-34.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.5-34.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.5-34.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tkinter",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.5-34.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.5-34.0.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

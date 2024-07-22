@@ -1,0 +1,331 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100580",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100580",
+			"title": "\nELSA-2010-0580:  tomcat5 security update (IMPORTANT)\n",
+			"description": "\n\n[0:5.5.23-0jpp.9]\n- Resolves: rhbz#619424 fixed servlet-api typo. serve4-api to servlet-api\n- RHSA-2010:9748\n\n[0:5.5.23-0jpp.8]\n- Patches backported from RHEL-5 tomcat5-5.5.23-0jpp.10.el5\n- Updated init script for LSB compliance, catalina.log permissions\n- Resolves: CVE-2009-2693, CVE-2009-2902, CVE-2010-2227\n- CVE_2010-0781 \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2693.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2696.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2902.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2227.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0580.html"
+				}
+			],
+			"published": "2010-08-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-2693",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2693.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-2696",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2696.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-2902",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2902.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-2227",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2227.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat5",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.5.23-0jpp.9.el5_5"
+								}
+							],
+							"fixed": [
+								"0:5.5.23-0jpp.9.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat5-admin-webapps",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.5.23-0jpp.9.el5_5"
+								}
+							],
+							"fixed": [
+								"0:5.5.23-0jpp.9.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat5-common-lib",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.5.23-0jpp.9.el5_5"
+								}
+							],
+							"fixed": [
+								"0:5.5.23-0jpp.9.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat5-jasper",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.5.23-0jpp.9.el5_5"
+								}
+							],
+							"fixed": [
+								"0:5.5.23-0jpp.9.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat5-jasper-javadoc",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.5.23-0jpp.9.el5_5"
+								}
+							],
+							"fixed": [
+								"0:5.5.23-0jpp.9.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat5-jsp-2.0-api",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.5.23-0jpp.9.el5_5"
+								}
+							],
+							"fixed": [
+								"0:5.5.23-0jpp.9.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat5-jsp-2.0-api-javadoc",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.5.23-0jpp.9.el5_5"
+								}
+							],
+							"fixed": [
+								"0:5.5.23-0jpp.9.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat5-server-lib",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.5.23-0jpp.9.el5_5"
+								}
+							],
+							"fixed": [
+								"0:5.5.23-0jpp.9.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat5-servlet-2.4-api",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.5.23-0jpp.9.el5_5"
+								}
+							],
+							"fixed": [
+								"0:5.5.23-0jpp.9.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat5-servlet-2.4-api-javadoc",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.5.23-0jpp.9.el5_5"
+								}
+							],
+							"fixed": [
+								"0:5.5.23-0jpp.9.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat5-webapps",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.5.23-0jpp.9.el5_5"
+								}
+							],
+							"fixed": [
+								"0:5.5.23-0jpp.9.el5_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

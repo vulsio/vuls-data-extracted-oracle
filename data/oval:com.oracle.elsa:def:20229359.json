@@ -1,0 +1,118 @@
+{
+	"id": "oval:com.oracle.elsa:def:20229359",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20229359",
+			"title": "\nELSA-2022-9359:  expat security update (IMPORTANT)\n",
+			"description": "\n[2.0.1-13.0.1]\n- Prevent integer overflow in storeRawNames [CVE-2022-25315][Orabug: 34059442]\n- Add missing validation of encoding [CVE-2022-25235][Orabug: 34059442]\n- Protect against malicious namespace declarations [CVE-2022-25236][Orabug: 34059442]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25235.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25236.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25315.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-9359.html"
+				}
+			],
+			"published": "2022-05-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-25235",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25235.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-25236",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25236.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-25315",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25315.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "expat",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.1-13.0.1.el6_8"
+								}
+							],
+							"fixed": [
+								"0:2.0.1-13.0.1.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "expat-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.1-13.0.1.el6_8"
+								}
+							],
+							"fixed": [
+								"0:2.0.1-13.0.1.el6_8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

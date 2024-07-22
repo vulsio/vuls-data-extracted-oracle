@@ -1,0 +1,516 @@
+{
+	"id": "oval:com.oracle.elsa:def:20131166",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20131166",
+			"title": "\nELSA-2013-1166:  kernel security and bug fix update (IMPORTANT)\n",
+			"description": "\nkernel\n[2.6.18-348.16.1]\n- [x86_64] Fix kdump failure due to 'x86_64: Early segment setup' (Paolo Bonzini) [988251 987244]\n- [xen] skip tracing if it was disabled instead of dying (Igor Mammedov) [987976 967053]\n- [ia64] fix KABI breakage on ia64 (Prarit Bhargava) [966878 960783]\n- [x86] fpu: fix CONFIG_PREEMPT=y corruption of FPU stack (Prarit Bhargava) [948187 731531]\n- [i386] add sleazy FPU optimization (Prarit Bhargava) [948187 731531]\n- [x86-64] non lazy 'sleazy' fpu implementation (Prarit Bhargava) [948187 731531]\n\n[2.6.18-348.15.1]\n- [fs] nfs: flush cached dir information slightly more readily (Scott Mayhew) [976441 853145]\n- [fs] nfs: Fix resolution prob with cache_change_attribute (Scott Mayhew) [976441 853145]\n- [fs] nfs: define function to update nfsi->cache_change_attribute (Scott Mayhew) [976441 853145]\n- [net] af_key: fix info leaks in notify messages (Jiri Benc) [980999 981000] {CVE-2013-2234}\n- [net] af_key: initialize satype in key_notify_policy_flush() (Jiri Benc) [981222 981224] {CVE-2013-2237}\n- [net] ipv6: ip6_sk_dst_check() must not assume ipv6 dst (Jiri Pirko) [981556 981557] {CVE-2013-2232}\n- [net] fix invalid free in ip_cmsg_send() callers (Petr Matousek) [980141 980142] {CVE-2013-2224}\n- [x86_64] Early segment setup for VT (Paolo Bonzini) [979920 978305]\n- [block] cpqarray: info leak in ida_locked_ioctl() (Tomas Henzl) [971245 971246] {CVE-2013-2147}\n- [block] cdrom: use kzalloc() for failing hardware (Frantisek Hrbata) [973103 973104] {CVE-2013-2164}\n- [mm] Break out when there is nothing more to write for the fs. (Larry Woodman) [972583 965359]\n\n[2.6.18-348.14.1]\n- [net] Fix panic for vlan over gre via tun (Thomas Graf) [983452 981337]\n- [x86] mm: introduce proper mem barriers smp_invalidate_interrupt (Rafael Aquini) [983628 865095]\n\n[2.6.18-348.13.1]\n- [net] sctp: Disallow new connection on a closing socket (Daniel Borkmann) [976569 974936] {CVE-2013-2206}\n- [net] sctp: Use correct sideffect command in dup cookie handling (Daniel Borkmann) [976569 974936] {CVE-2013-2206}\n- [net] sctp: deal with multiple COOKIE_ECHO chunks (Daniel Borkmann) [976569 974936] {CVE-2013-2206}\n- [net] tcp: bind() use stronger condition for bind_conflict (Flavio Leitner) [980811 957604]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2147.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2164.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2206.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2224.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2232.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2234.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2237.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-1166.html"
+				}
+			],
+			"published": "2013-08-21T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-2147",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2147.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-2164",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2164.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-2206",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2206.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-2224",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2224.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-2232",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2232.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-2234",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2234.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-2237",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2237.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-348.16.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-348.16.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-PAE",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-348.16.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-348.16.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-PAE-devel",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-348.16.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-348.16.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-348.16.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-348.16.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-348.16.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-348.16.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-348.16.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-348.16.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-348.16.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-348.16.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-348.16.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-348.16.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-xen",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-348.16.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-348.16.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-xen-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-348.16.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-348.16.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-348.16.1.el5",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.10-1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.4.10-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-348.16.1.el5PAE",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.10-1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.4.10-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-348.16.1.el5debug",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.10-1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.4.10-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-348.16.1.el5xen",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.10-1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.4.10-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-348.16.1.el5",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.5-1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.5-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-348.16.1.el5PAE",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.5-1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.5-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-348.16.1.el5debug",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.5-1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.5-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-348.16.1.el5xen",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.5-1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.5-1.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

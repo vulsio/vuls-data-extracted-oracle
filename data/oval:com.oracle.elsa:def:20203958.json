@@ -1,0 +1,283 @@
+{
+	"id": "oval:com.oracle.elsa:def:20203958",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20203958",
+			"title": "\nELSA-2020-3958:  httpd security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\n[2.4.6-95.0.1]\n- replace index.html with Oracles index page oracle_index.html\n\n[2.4.6-95]\n- Resolves: #1823262 - CVE-2020-1934 httpd: mod_proxy_ftp use of uninitialized\n  value\n\n[2.4.6-94]\n- Resolves: #1565491 - CVE-2017-15715 httpd: <FilesMatch> bypass with a trailing\n  newline in the file name\n- Resolves: #1747283 - CVE-2019-10098 httpd: mod_rewrite potential open redirect\n- Resolves: #1724879 - httpd terminates all SSL connections using an abortive\n  shutdown\n- Resolves: #1715981 - Backport of SessionExpiryUpdateInterval directive\n- Resolves: #1565457 - CVE-2018-1303 httpd: Out of bounds read in\n  mod_cache_socache can allow a remote attacker to cause a denial of service\n- Resolves: #1566531 - CVE-2018-1283 httpd: Improper handling of headers in\n  mod_session can allow a remote user to modify session data for CGI applications\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-15715.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-1283.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-1303.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-10098.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-1927.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-1934.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-3958.html"
+				}
+			],
+			"published": "2020-10-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-15715",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-15715.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-1283",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-1283.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-1303",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-1303.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-10098",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-10098.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-1927",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-1927.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-1934",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-1934.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-95.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-95.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-95.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-95.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-manual",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-95.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-95.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-95.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-95.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_ldap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-95.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-95.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_proxy_html",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.4.6-95.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:2.4.6-95.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_session",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-95.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-95.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_ssl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.4.6-95.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:2.4.6-95.0.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

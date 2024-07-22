@@ -1,0 +1,252 @@
+{
+	"id": "oval:com.oracle.elsa:def:20121156",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20121156",
+			"title": "\nELSA-2012-1156:  kernel security and bug fix update (MODERATE)\n",
+			"description": "\n[2.6.32-279.5.1.el6]\n- [net] 8021q/vlan: filter device events on bonds (Neil Horman) [842429 841983]\n\n[2.6.32-279.4.1.el6]\n- [fs] proc: stats: Use arch_idle_time for idle and iowait times if available (Steve Best) [841579 841149]\n- [drm] i915: fix integer overflow in i915_gem_execbuffer2() (Jacob Tanenbaum) [824553 824555] {CVE-2012-2383}\n- [usb] core: change the memory limits in usbfs URB submission (Don Zickus) [841667 828271]\n- [usb] core: unify some error pathways in usbfs (Don Zickus) [841667 828271]\n- [netdrv] ixgbe: BIT_APP_UPCHG not set by ixgbe_copy_dcb_cfg() (Andy Gospodarek) [840156 814044]\n- [netdrv] ixgbe: driver fix for link flap (Andy Gospodarek) [840156 814044]\n- [net] bridge: Fix enforcement of multicast hash_max limit (Thomas Graf) [840023 832575]\n- [net] bluetooth: fix sco_conninfo infoleak (Jacob Tanenbaum) [681307 681308] {CVE-2011-1078}\n- [wireless] ipw2200: remove references to CFG80211_WEXT config option (John Linville) [841406 839311]\n- [netdrv] be2net: enable GRO by default (Ivan Vecera) [838821 837230]\n- [virt] kvm/vmx: Fix KVM_SET_SREGS with big real mode segments (Orit Wasserman) [841411 756044]\n- [fs] writeback: merge for_kupdate and !for_kupdate cases (Eric Sandeen) [832360 818172]\n- [fs] writeback: fix queue_io() ordering (Eric Sandeen) [832360 818172]\n- [fs] writeback: don't redirty tail an inode with dirty pages (Eric Sandeen) [832360 818172]\n\n[2.6.32-279.3.1.el6]\n- [fs] ext4: properly dirty split extent nodes (David Jeffery) [840052 838640]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1078.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-2383.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1156.html"
+				}
+			],
+			"published": "2012-08-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-1078",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1078.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-2383",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-2383.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.5.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.5.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.5.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.5.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.5.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.5.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.5.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.5.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.5.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.5.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-firmware",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.5.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.5.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.5.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.5.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.5.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.5.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.5.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.5.1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

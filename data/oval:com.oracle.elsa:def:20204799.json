@@ -1,0 +1,323 @@
+{
+	"id": "oval:com.oracle.elsa:def:20204799",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20204799",
+			"title": "\nELSA-2020-4799:  freeradius:3.0 security and bug fix update (MODERATE)\n",
+			"description": "\n[3.0.20-3]\n- Require make for proper bootstrap execution, removes post script\n  Resolves: bz#1672285\n\n[3.0.20-2]\n- Fix breakage caused by OpenSSL FIPS regression\n  Related: bz#1855822\n  Related: bz#1810911\n  Resolves: bz#1672285\n\n[3.0.20-1]\n- Update to FreeRADIUS server version 3.0.20\n- Introduce Python 3 support; resolves: bz#1623069\n- DoS issues due to multithreaded BN_CTX access; resolves: bz#1818809\n- Create tmp files in /run; resolves: bz#1805975\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-17185.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-4799.html"
+				}
+			],
+			"published": "2020-11-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-17185",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-17185.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::freeradius",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::freeradius-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::freeradius-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::freeradius-krb5",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::freeradius-ldap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::freeradius-mysql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::freeradius-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::freeradius-postgresql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::freeradius-rest",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::freeradius-sqlite",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::freeradius-unixODBC",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::freeradius-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius:3.0::python3-freeradius",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+								}
+							],
+							"fixed": [
+								"0:3.0.20-3.module+el8.3.0+7821+dc9b437c"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

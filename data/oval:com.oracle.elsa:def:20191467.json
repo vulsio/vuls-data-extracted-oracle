@@ -1,0 +1,189 @@
+{
+	"id": "oval:com.oracle.elsa:def:20191467",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20191467",
+			"title": "\nELSA-2019-1467:  python security update (IMPORTANT)\n",
+			"description": "\n[2.6.6-68.0.1]\n- Add Oracle Linux distribution in platform.py [orabug 21288328] (Keshav Sharma)\n\n[2.6.6-68]\n- Security fix for CVE-2019-10160\nResolves: rhbz#1716744\n\n[2.6.6-67]\n- Security fix for CVE-2019-9636\nResolves: rhbz#1716744\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-10160.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9636.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-1467.html"
+				}
+			],
+			"published": "2019-06-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-10160",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-10160.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-9636",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9636.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.6-68.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:2.6.6-68.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.6-68.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:2.6.6-68.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.6-68.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:2.6.6-68.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-test",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.6-68.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:2.6.6-68.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-tools",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.6-68.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:2.6.6-68.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tkinter",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.6-68.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:2.6.6-68.0.1.el6_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

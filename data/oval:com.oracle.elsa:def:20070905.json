@@ -1,0 +1,118 @@
+{
+	"id": "oval:com.oracle.elsa:def:20070905",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20070905",
+			"title": "\nELSA-2007-0905:  Moderate: kdebase security update  (MODERATE)\n",
+			"description": "\n [3.3.1-6.el4.0.1]\n - turn off '\n \n [3.3.1-6.l4]\n - Resolves: #290851,\n   CVE-2007-4569, kdm password-less login vulnerability\n   CVE-2007-3820, CVE-2007-4224 CVE-2007-4225, Konqueror address bar spoofin \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-3820.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4224.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4569.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2007-0905.html"
+				}
+			],
+			"published": "2007-10-08T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-3820",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-3820.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-4224",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4224.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-4569",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4569.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kdebase",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "6:3.5.4-15.el5.0.1"
+								}
+							],
+							"fixed": [
+								"6:3.5.4-15.el5.0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kdebase-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "6:3.5.4-15.el5.0.1"
+								}
+							],
+							"fixed": [
+								"6:3.5.4-15.el5.0.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,160 @@
+{
+	"id": "oval:com.oracle.elsa:def:20151707",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20151707",
+			"title": "\nELSA-2015-1707:  bind97 security update (IMPORTANT)\n",
+			"description": "\n[32:9.7.0-21.P2.3]\n- Fix CVE-2015-5722\n\n[32:9.7.0-21.P2.2]\n- Fix CVE-2015-5477\n\n[32:9.7.0-21.P2.1]\n- Fix CVE-2014-8500 (#1171972)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-5722.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-1707.html"
+				}
+			],
+			"published": "2015-09-03T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-5722",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-5722.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind97",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.7.0-21.P2.el5_11.3"
+								}
+							],
+							"fixed": [
+								"32:9.7.0-21.P2.el5_11.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind97-chroot",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.7.0-21.P2.el5_11.3"
+								}
+							],
+							"fixed": [
+								"32:9.7.0-21.P2.el5_11.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind97-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.7.0-21.P2.el5_11.3"
+								}
+							],
+							"fixed": [
+								"32:9.7.0-21.P2.el5_11.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind97-libs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.7.0-21.P2.el5_11.3"
+								}
+							],
+							"fixed": [
+								"32:9.7.0-21.P2.el5_11.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind97-utils",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.7.0-21.P2.el5_11.3"
+								}
+							],
+							"fixed": [
+								"32:9.7.0-21.P2.el5_11.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

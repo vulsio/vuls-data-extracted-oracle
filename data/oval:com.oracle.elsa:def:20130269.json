@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20130269",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20130269",
+			"title": "\nELSA-2013-0269:  axis security update (MODERATE)\n",
+			"description": "\n[0:1.2.1-7.3]\n- Add missing connection hostname check against X.509 certificate name\n- Resolves: CVE-2012-5784\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5784.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0269.html"
+				}
+			],
+			"published": "2013-02-19T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-5784",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5784.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "axis",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.1-7.3.el6_3"
+								}
+							],
+							"fixed": [
+								"0:1.2.1-7.3.el6_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "axis-javadoc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.1-7.3.el6_3"
+								}
+							],
+							"fixed": [
+								"0:1.2.1-7.3.el6_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "axis-manual",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.1-7.3.el6_3"
+								}
+							],
+							"fixed": [
+								"0:1.2.1-7.3.el6_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

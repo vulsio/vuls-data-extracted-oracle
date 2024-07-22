@@ -1,0 +1,489 @@
+{
+	"id": "oval:com.oracle.elsa:def:20140675",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20140675",
+			"title": "\nELSA-2014-0675:  java-1.7.0-openjdk security update (CRITICAL)\n",
+			"description": "\n[1.7.0.55-2.4.7.2.0.1.el7_0]\n- Update DISTRO_NAME in specfile\n\n[1.7.0.55-2.4.7.2]\n- Remove NSS patches. Issues with PKCS11 provider mean it shouldn't be enabled.\n- Always setup nss.cfg and depend on nss-devel at build-time to do so.\n- This allows users who wish to use PKCS11+NSS to just add it to java.security.\n- Patches to PKCS11 provider will be included upstream in 2.4.8 (ETA July 2014)\n- Resolves: rhbz#1099565\n\n[1.7.0.55-2.4.7.0.el7]\n- bumped to future icedtea-forest 2.4.7\n- updatever set to 55, buildver se to 13, release reset to 0\n- removed upstreamed patch402 gstackbounds.patch\n- removed Requires: rhino, BuildRequires is enough\n- ppc64 repalced by power64 macro\n- patch111 applied as dry-run (6.6 forward port)\n- nss enabled, but notused as default (6.6 forward port)\n- Resolves: rhbz#1099565\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0429.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0446.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0451.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0452.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0453.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0454.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0455.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0456.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0457.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0458.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0459.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0460.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0461.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-1876.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2397.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2398.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2402.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2403.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2412.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2413.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2414.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2421.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2423.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2427.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0675.html"
+				}
+			],
+			"published": "2014-07-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-0429",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0429.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0446",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0446.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0451",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0451.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0452",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0452.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0453",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0453.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0454",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0454.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0455",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0455.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0456",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0456.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0457",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0457.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0458",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0458.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0459",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0459.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0460",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0460.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0461",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0461.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-1876",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-1876.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-2397",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2397.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-2398",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2398.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-2402",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2402.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-2403",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2403.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-2412",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2412.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-2413",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2413.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-2414",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2414.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-2421",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2421.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-2423",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2423.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-2427",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2427.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.55-2.4.7.2.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.55-2.4.7.2.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-accessibility",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.55-2.4.7.2.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.55-2.4.7.2.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-demo",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.55-2.4.7.2.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.55-2.4.7.2.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.55-2.4.7.2.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.55-2.4.7.2.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-headless",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.55-2.4.7.2.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.55-2.4.7.2.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-javadoc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.55-2.4.7.2.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.55-2.4.7.2.0.1.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-src",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.55-2.4.7.2.0.1.el7_0"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.55-2.4.7.2.0.1.el7_0"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

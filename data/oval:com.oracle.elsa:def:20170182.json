@@ -1,0 +1,110 @@
+{
+	"id": "oval:com.oracle.elsa:def:20170182",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20170182",
+			"title": "\nELSA-2017-0182:  squid security update (MODERATE)\n",
+			"description": "\n[7:3.5.20-2.2]\n- Resolves: #1412735 - CVE-2016-10002 squid: Information disclosure in HTTP\n  request processing\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-10002.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0182.html"
+				}
+			],
+			"published": "2017-01-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-10002",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-10002.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:3.5.20-2.el7_3.2"
+								}
+							],
+							"fixed": [
+								"7:3.5.20-2.el7_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid-migration-script",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:3.5.20-2.el7_3.2"
+								}
+							],
+							"fixed": [
+								"7:3.5.20-2.el7_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid-sysvinit",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:3.5.20-2.el7_3.2"
+								}
+							],
+							"fixed": [
+								"7:3.5.20-2.el7_3.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

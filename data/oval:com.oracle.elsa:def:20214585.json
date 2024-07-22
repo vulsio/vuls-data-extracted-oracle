@@ -1,0 +1,364 @@
+{
+	"id": "oval:com.oracle.elsa:def:20214585",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20214585",
+			"title": "\nELSA-2021-4585:  gcc-toolset-10-gcc security update (MODERATE)\n",
+			"description": "\n[10.3.1-1.2.0.1]\n- Fix Orabug 32423691- gcc10 SEGV for every test in sregress: ORA-7445_ksmplru_add_batchksm\n  same bug as PR tree-optimization/100053:\n  gcc11-pr100053.patch\n- Fix Orabug 31197798 (Profile data size way too big)\n  same bug as PR gcov-profile/95348:\n  gcc11-pr95348.patch\n- Introduce 'oracle_release' into .spec file. Echo it to gcc/DEV-PHASE.\nReviewed by: TBD\n\n[10.3.1-1.2]\n- add -Wbidirectional patch (#2016244)\n\n[10.3.1-1.1]\n- bump NVR for rebuild (#1995192)\n\n[10.3.1-1]\n- update from Fedora gcc 10.3.1-1 (#1929382)\n- drop gcc10-pr97060.patch\n- use --enable-cet\n- ship gcc-accel-nvptx-none-lto-dump\n- backport PR96939 fixes\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-42574.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-4585.html"
+				}
+			],
+			"published": "2021-11-19T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-42574",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-42574.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-gcc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-gcc-c++",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-gcc-gdb-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-gcc-gfortran",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-gcc-plugin-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-libasan-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-libatomic-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-libitm-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-liblsan-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-libquadmath-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-libstdc++-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-libstdc++-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-libtsan-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gcc-toolset-10-libubsan-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libasan6",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.3.1-1.2.0.1.el8_5"
+								}
+							],
+							"fixed": [
+								"0:10.3.1-1.2.0.1.el8_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

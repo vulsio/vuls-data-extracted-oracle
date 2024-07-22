@@ -1,0 +1,181 @@
+{
+	"id": "oval:com.oracle.elsa:def:20183050",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20183050",
+			"title": "\nELSA-2018-3050:  gnutls security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\n[3.3.29-8.0.1]\n- Include ECDSA KAT into selftests for FIPS140-2 compliance [Orabug 27484156]\n\n[3.3.29-8]\n- Backported --sni-hostname option which allows overriding the hostname\n  advertised to the peer (#1444792)\n- Improved counter-measures in TLS CBC record padding for lucky13 attack\n  (CVE-2018-10844, #1589704, CVE-2018-10845, #1589707)\n- Added counter-measures for 'Just in Time' PRIME + PROBE cache-based attack\n  (CVE-2018-10846, #1589708)\n- Address p11tool issue in object deletion in batch mode (#1375307)\n- Backport PKCS#11 tests from master branch. Some tests were disabled due to\n  unsupported features in 3.3.x (--load-pubkey and --test-sign options, ECC key\n  generation without login, and certificates do not inherit ID from the private\n  key)\n- p11tool explicitly marks certificates and public keys as NOT private objects\n  and private keys as private objects\n- Enlarge buffer size to support resumption with large keys (#1542461)\n- Legacy HMAC-SHA384 cipher suites were disabled by default\n- Added DSA key generation to p11tool (#1464896)\n- Address session renegotiation issue using client certificate (#1434091)\n- Address issue when importing private keys into Atos HSM (#1460125)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-10844.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-10845.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-10846.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-3050.html"
+				}
+			],
+			"published": "2018-11-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-10844",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-10844.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-10845",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-10845.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-10846",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-10846.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnutls",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.3.29-8.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:3.3.29-8.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnutls-c++",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.3.29-8.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:3.3.29-8.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnutls-dane",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.3.29-8.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:3.3.29-8.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnutls-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.3.29-8.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:3.3.29-8.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnutls-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.3.29-8.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:3.3.29-8.0.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

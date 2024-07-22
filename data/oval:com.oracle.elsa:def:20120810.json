@@ -1,0 +1,105 @@
+{
+	"id": "oval:com.oracle.elsa:def:20120810",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20120810",
+			"title": "\nELSA-2012-0810:  busybox security and bug fix update (LOW)\n",
+			"description": "\n[1:1.15.1-15]\n- Fix btrfs support to findfs and related applets\n- Resolves: #751927\n\n[1:1.15.1-14]\n- Resolves: #790335 'busybox various flaws'\n  Added a fix for SEGV on empty command in hush\n\n[1:1.15.1-13]\n- Resolves: #790335 'busybox various flaws' including:\n  'buffer underflow in decompression'\n  'udhcpc insufficient checking of DHCP options'\n\n[1:1.15.1-12]\n- Backport 'set -o pipefail' support\n- Resolves: #782018\n- Add btrfs support to findfs and related applets\n- Resolves: #751927\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2006-1168.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2716.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-0810.html"
+				}
+			],
+			"published": "2012-06-27T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2006-1168",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2006-1168.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-2716",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2716.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "busybox",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.15.1-15.el6"
+								}
+							],
+							"fixed": [
+								"1:1.15.1-15.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "busybox-petitboot",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.15.1-15.el6"
+								}
+							],
+							"fixed": [
+								"1:1.15.1-15.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

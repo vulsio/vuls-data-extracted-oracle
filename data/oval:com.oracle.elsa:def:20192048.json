@@ -1,0 +1,144 @@
+{
+	"id": "oval:com.oracle.elsa:def:20192048",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20192048",
+			"title": "\nELSA-2019-2048:  exempi security update (LOW)\n",
+			"description": "\n[2.2.0-9]\n- Fix CVE-2017-18233\n  resolves: #1574865\n- Fix CVE-2017-18234\n  resolves: #1656011\n- Fix CVE-2017-18236\n  resolves: #1574905\n- Fix CVE-2017-18238\n  resolves: #1572270\n- Fix CVE-2018-7730\n  resolves: #1572631\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-18233.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-18234.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-18236.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-18238.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-7730.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-2048.html"
+				}
+			],
+			"published": "2019-08-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-18233",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-18233.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-18234",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-18234.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-18236",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-18236.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-18238",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-18238.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-7730",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-7730.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "exempi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-9.el7"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-9.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "exempi-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-9.el7"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-9.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

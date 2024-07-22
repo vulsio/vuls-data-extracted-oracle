@@ -1,0 +1,186 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100109",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100109",
+			"title": "\nELSA-2010-0109:  mysql security update (MODERATE)\n",
+			"description": "\n\n[5.0.77-4.2]\n- Add fixes for CVE-2009-4019, CVE-2009-4028, CVE-2009-4030\nResolves: #556505\n- Use non-expired certificates for SSL testing (upstream bug 50702)\n- Emit explicit error message if user tries to build RPM as root\n- Add comment suggesting disabling symbolic links in /etc/my.cnf \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4019.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4028.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4030.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0109.html"
+				}
+			],
+			"published": "2010-02-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-4019",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4019.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-4028",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4028.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-4030",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4030.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.77-4.el5_4.2"
+								}
+							],
+							"fixed": [
+								"0:5.0.77-4.el5_4.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql-bench",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.77-4.el5_4.2"
+								}
+							],
+							"fixed": [
+								"0:5.0.77-4.el5_4.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.77-4.el5_4.2"
+								}
+							],
+							"fixed": [
+								"0:5.0.77-4.el5_4.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql-server",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.77-4.el5_4.2"
+								}
+							],
+							"fixed": [
+								"0:5.0.77-4.el5_4.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql-test",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.77-4.el5_4.2"
+								}
+							],
+							"fixed": [
+								"0:5.0.77-4.el5_4.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

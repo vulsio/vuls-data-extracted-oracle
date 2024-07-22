@@ -1,0 +1,181 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100578",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100578",
+			"title": "\nELSA-2010-0578:  freetype security update (IMPORTANT)\n",
+			"description": "\n\n[2.2.1-25]\n- Add freetype-2.2.1-axis-name-overflow.patch\n    (Avoid overflow when dealing with names of axes)\n- Resolves: #614012\n\n[2.2.1-24]\n- Modify freetype-2.2.1-CVE-2010-2519.patch (additional fix)\n    (If the type of the POST fragment is 0, the segment is completely ignored)\n- Resolves: #614012\n\n[2.2.1-23]\n- Add freetype-2.2.1-CVE-2010-2527.patch\n    (Use precision for '%s' where appropriate to avoid buffer overflows)\n- Resolves: #614012\n\n[2.2.1-22]\n- Add freetype-2.2.1-CVE-2010-2498.patch\n    (Assure that 'end_point' is not larger than 'glyph->num_points')\n- Add freetype-2.2.1-CVE-2010-2499.patch\n    (Check the buffer size during gathering PFB fragments)\n- Add freetype-2.2.1-CVE-2010-2500.patch\n    (Use smaller threshold values for 'width' and 'height')\n- Add freetype-2.2.1-CVE-2010-2519.patch\n    (Check 'rlen' the length of fragment declared in the POST fragment header)\n- Resolves: #614012 \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2498.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2499.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2500.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2519.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2527.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2541.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0578.html"
+				}
+			],
+			"published": "2010-07-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-2498",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2498.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-2499",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2499.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-2500",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2500.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-2519",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2519.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-2527",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2527.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-2541",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2541.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freetype",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.1-25.el5_5"
+								}
+							],
+							"fixed": [
+								"0:2.2.1-25.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freetype-demos",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.1-25.el5_5"
+								}
+							],
+							"fixed": [
+								"0:2.2.1-25.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freetype-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.1-25.el5_5"
+								}
+							],
+							"fixed": [
+								"0:2.2.1-25.el5_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

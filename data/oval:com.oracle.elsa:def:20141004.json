@@ -1,0 +1,72 @@
+{
+	"id": "oval:com.oracle.elsa:def:20141004",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20141004",
+			"title": "\nELSA-2014-1004:  yum-updatesd security update (IMPORTANT)\n",
+			"description": "\n[1:0.9-6]\n- updatesd: prevent installing unsigned packages.\n- Resolves: rhbz#1125185\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0022.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-1004.html"
+				}
+			],
+			"published": "2014-08-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-0022",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0022.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "yum-updatesd",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.9-6.el5_10"
+								}
+							],
+							"fixed": [
+								"1:0.9-6.el5_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

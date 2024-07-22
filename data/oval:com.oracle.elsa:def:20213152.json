@@ -1,0 +1,134 @@
+{
+	"id": "oval:com.oracle.elsa:def:20213152",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20213152",
+			"title": "\nELSA-2021-3152:  exiv2 security update (IMPORTANT)\n",
+			"description": "\n[0.27.3-3]\n- Fix heap-based buffer overflow vulnerability in jp2image.cpp that may lead to DoS\n  Resolves: bz#1990355\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-31291.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-3152.html"
+				}
+			],
+			"published": "2021-08-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-31291",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-31291.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "exiv2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.27.3-3.el8_4"
+								}
+							],
+							"fixed": [
+								"0:0.27.3-3.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "exiv2-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.27.3-3.el8_4"
+								}
+							],
+							"fixed": [
+								"0:0.27.3-3.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "exiv2-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.27.3-3.el8_4"
+								}
+							],
+							"fixed": [
+								"0:0.27.3-3.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "exiv2-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.27.3-3.el8_4"
+								}
+							],
+							"fixed": [
+								"0:0.27.3-3.el8_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

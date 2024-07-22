@@ -1,0 +1,83 @@
+{
+	"id": "oval:com.oracle.elsa:def:20229177",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20229177",
+			"title": "\nELSA-2022-9177:  jquery-ui security update (IMPORTANT)\n",
+			"description": "\n[1.10.4.custom-4.0.1]\n- Backport jQuery CVE-2020-11022 and CVE-2020-11023 fixes to bundled jQuery v1.10.2 [Orabug: 33869588]\n\n[1.10.4.custom-4]\n- removed %%defattr from specfile\n- removed Group from specfile\n- removed BuildRoot from specfiles\n\n* Tue May 10 2016 Grant Gainey 1.10.4.custom-3\n- jquery-ui: build on openSUSE\n\n[1.10.4.custom-2]\n- fix jquery-ui source url\n\n[1.10.4.custom-1]\n- initial jquery-ui build\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-11022.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-11023.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-9177.html"
+				}
+			],
+			"published": "2022-03-01T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-11022",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-11022.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-11023",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-11023.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "jquery-ui",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.10.4.custom-4.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.10.4.custom-4.0.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

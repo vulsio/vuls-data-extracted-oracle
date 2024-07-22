@@ -1,0 +1,147 @@
+{
+	"id": "oval:com.oracle.elsa:def:20121141",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20121141",
+			"title": "\nELSA-2012-1141:  dhcp security update (MODERATE)\n",
+			"description": "\n[12:4.1.1-31.P1.0.1.el6_3.1]\n- Added oracle-errwarn-message.patch\n\n[12:4.1.1-31.P1.1]\n- An error in the handling of malformed client identifiers can\n  cause a denial-of-service condition in affected servers. (CVE-2012-3571, #843120)\n- Memory Leaks Found In ISC DHCP (CVE-2012-3954, #843120)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3571.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3954.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1141.html"
+				}
+			],
+			"published": "2012-08-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-3571",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3571.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-3954",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3954.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhclient",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.1.1-31.P1.0.1.el6_3.1"
+								}
+							],
+							"fixed": [
+								"12:4.1.1-31.P1.0.1.el6_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.1.1-31.P1.0.1.el6_3.1"
+								}
+							],
+							"fixed": [
+								"12:4.1.1-31.P1.0.1.el6_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-common",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.1.1-31.P1.0.1.el6_3.1"
+								}
+							],
+							"fixed": [
+								"12:4.1.1-31.P1.0.1.el6_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.1.1-31.P1.0.1.el6_3.1"
+								}
+							],
+							"fixed": [
+								"12:4.1.1-31.P1.0.1.el6_3.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

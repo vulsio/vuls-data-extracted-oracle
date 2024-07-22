@@ -1,0 +1,116 @@
+{
+	"id": "oval:com.oracle.elsa:def:20130131",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20130131",
+			"title": "\nELSA-2013-0131:  gnome-vfs2 security and bug fix update (LOW)\n",
+			"description": "\n[2.16.2-10.el5]\n- Prevent trash applet crashing (#848822)\n\n[2.16.2-9.el5]\n- Prevent deleting items linking out of the trash (#586015)\n- Do not stat every file on an ClearCase mvfs filesystem (#822817)\n- Do not silently skip directory having no read permission during copy (#772307)\n- Allow trashing symlink to filesystem root that does not support trashing (#621394)\n- CVE-2009-2473 gnome-vfs2 embedded neon: billion laughs DoS attack (#540548)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2473.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0131.html"
+				}
+			],
+			"published": "2013-01-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-2473",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2473.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnome-vfs2",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.16.2-10.el5"
+								}
+							],
+							"fixed": [
+								"0:2.16.2-10.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnome-vfs2-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.16.2-10.el5"
+								}
+							],
+							"fixed": [
+								"0:2.16.2-10.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnome-vfs2-smb",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.16.2-10.el5"
+								}
+							],
+							"fixed": [
+								"0:2.16.2-10.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

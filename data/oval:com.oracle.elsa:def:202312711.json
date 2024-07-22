@@ -1,0 +1,239 @@
+{
+	"id": "oval:com.oracle.elsa:def:202312711",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:202312711",
+			"title": "\nELSA-2023-12711:  openssh security update (CRITICAL)\n",
+			"description": "\n[7.4p1-23.0.1_fips]\n- Change Epoch from 1 to 10\n- Enable fips KDF POST [Orabug: 32461750]\n- Disable diffie-hellman-group-exchange-sha256 KEX FIPS method [Orabug: 32461739]\n\n[7.4p1-23.0.1]\n- enlarge format buffer size for certificate serial\n  number so the log message can record any 64-bit integer without\n  truncation (openssh bz#3012) [Orabug: 30448895]\n\n[7.4p1-23 + 0.10.3-2]\n- Avoid remote code execution in ssh-agent PKCS#11 support\n  Resolves: CVE-2023-38408\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-38408.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-12711.html"
+				}
+			],
+			"published": "2023-08-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-38408",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-38408.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:7.4p1-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:7.4p1-23.0.1.el7_9_fips"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-askpass",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:7.4p1-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:7.4p1-23.0.1.el7_9_fips"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-cavs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:7.4p1-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:7.4p1-23.0.1.el7_9_fips"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-clients",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:7.4p1-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:7.4p1-23.0.1.el7_9_fips"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-keycat",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:7.4p1-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:7.4p1-23.0.1.el7_9_fips"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-ldap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:7.4p1-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:7.4p1-23.0.1.el7_9_fips"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:7.4p1-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:7.4p1-23.0.1.el7_9_fips"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-server-sysvinit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:7.4p1-23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:7.4p1-23.0.1.el7_9_fips"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pam_ssh_agent_auth",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:0.10.3-2.23.0.1.el7_9_fips"
+								}
+							],
+							"fixed": [
+								"10:0.10.3-2.23.0.1.el7_9_fips"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

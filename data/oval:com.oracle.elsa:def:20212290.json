@@ -1,0 +1,218 @@
+{
+	"id": "oval:com.oracle.elsa:def:20212290",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20212290",
+			"title": "\nELSA-2021-2290:  nginx:1.16 security update (IMPORTANT)\n",
+			"description": "\n[1.16.1-2.0.1.1]\n- Remove Red Hat references [Orabug: 29498217]\n\n[1:1.16.1-2.1]\n- Resolves: #1963174 - CVE-2021-23017 nginx:1.16/nginx: Off-by-one in\n  ngx_resolver_copy() when labels are followed by a pointer to a root\n  domain name\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23017.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-2290.html"
+				}
+			],
+			"published": "2021-06-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-23017",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23017.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.16::nginx",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+								}
+							],
+							"fixed": [
+								"1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.16::nginx-all-modules",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+								}
+							],
+							"fixed": [
+								"1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.16::nginx-filesystem",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+								}
+							],
+							"fixed": [
+								"1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.16::nginx-mod-http-image-filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+								}
+							],
+							"fixed": [
+								"1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.16::nginx-mod-http-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+								}
+							],
+							"fixed": [
+								"1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.16::nginx-mod-http-xslt-filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+								}
+							],
+							"fixed": [
+								"1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.16::nginx-mod-mail",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+								}
+							],
+							"fixed": [
+								"1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.16::nginx-mod-stream",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+								}
+							],
+							"fixed": [
+								"1:1.16.1-2.0.1.module+el8.4.0+20188+a733e426.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,97 @@
+{
+	"id": "oval:com.oracle.elsa:def:20227340",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20227340",
+			"title": "\nELSA-2022-7340:  php-pear security update (MODERATE)\n",
+			"description": "\n[1:1.9.4-23]\n- update Archive_Tar to 1.4.14\n  CVE-2020-36193 CVE-2020-28948 CVE-2020-28949\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-28948.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-28949.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-36193.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-7340.html"
+				}
+			],
+			"published": "2022-11-03T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-28948",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-28948.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-28949",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-28949.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-36193",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-36193.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "php-pear",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.9.4-23.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.9.4-23.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

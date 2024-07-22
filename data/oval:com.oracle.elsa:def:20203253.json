@@ -1,0 +1,110 @@
+{
+	"id": "oval:com.oracle.elsa:def:20203253",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20203253",
+			"title": "\nELSA-2020-3253:  firefox security update (IMPORTANT)\n",
+			"description": "\n[68.11.0-1.0.1]\n- Remove upstream references [Orabug: 30143292]\n- Update distribution for Oracle Linux [Orabug: 30143292]\n- Add firefox-oracle-default-prefs.js and remove the corresponding Red Hat file\n\n* Thu Jul 23 2020 Jan Horak <jhorak@redhat.com>\n- Update to 68.11.0 build1\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-15652.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-15659.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-6463.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-6514.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-3253.html"
+				}
+			],
+			"published": "2020-07-31T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-15652",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-15652.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-15659",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-15659.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-6463",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-6463.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-6514",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-6514.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:68.11.0-1.0.1.el7_8"
+								}
+							],
+							"fixed": [
+								"0:68.11.0-1.0.1.el7_8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

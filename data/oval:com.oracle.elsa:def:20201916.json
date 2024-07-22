@@ -1,0 +1,152 @@
+{
+	"id": "oval:com.oracle.elsa:def:20201916",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20201916",
+			"title": "\nELSA-2020-1916:  python-pip security update (MODERATE)\n",
+			"description": "\n[9.0.3-16]\n- Add four new patches for CVEs in bundled urllib3 and requests\nCVE-2018-20060, CVE-2019-11236, CVE-2019-11324, CVE-2018-18074\nResolves: rhbz#1649153\nResolves: rhbz#1700824\nResolves: rhbz#1702473\nResolves: rhbz#1643829\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-18074.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-20060.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11236.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11324.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-1916.html"
+				}
+			],
+			"published": "2020-05-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-18074",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-18074.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-20060",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-20060.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-11236",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11236.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-11324",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11324.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "platform-python-pip",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.3-16.el8"
+								}
+							],
+							"fixed": [
+								"0:9.0.3-16.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-pip",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.3-16.el8"
+								}
+							],
+							"fixed": [
+								"0:9.0.3-16.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-pip-wheel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.3-16.el8"
+								}
+							],
+							"fixed": [
+								"0:9.0.3-16.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

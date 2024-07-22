@@ -1,0 +1,130 @@
+{
+	"id": "oval:com.oracle.elsa:def:20235312",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20235312",
+			"title": "\nELSA-2023-5312:  open-vm-tools security update (IMPORTANT)\n",
+			"description": "\n[12.1.5-2.0.2.3]\n- Resolves: RHEL-4584\n  (CVE-2023-20900 open-vm-tools: SAML token signature bypass)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-20900.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-5312.html"
+				}
+			],
+			"published": "2023-09-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-20900",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-20900.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "open-vm-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:12.1.5-2.0.2.el8_8.3"
+								}
+							],
+							"fixed": [
+								"0:12.1.5-2.0.2.el8_8.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "open-vm-tools-desktop",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:12.1.5-2.0.2.el8_8.3"
+								}
+							],
+							"fixed": [
+								"0:12.1.5-2.0.2.el8_8.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "open-vm-tools-salt-minion",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:12.1.5-2.0.2.el8_8.3"
+								}
+							],
+							"fixed": [
+								"0:12.1.5-2.0.2.el8_8.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "open-vm-tools-sdmp",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:12.1.5-2.0.2.el8_8.3"
+								}
+							],
+							"fixed": [
+								"0:12.1.5-2.0.2.el8_8.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

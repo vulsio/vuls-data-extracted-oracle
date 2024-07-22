@@ -1,0 +1,218 @@
+{
+	"id": "oval:com.oracle.elsa:def:20226206",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20226206",
+			"title": "\nELSA-2022-6206:  systemd security update (IMPORTANT)\n",
+			"description": "\n[239-58.0.1.4]\n- Disable unprivileged BPF by default [Orabug: 32870980]\n- backport upstream pstore tmpfiles patch [Orabug: 31420486]\n- udev rules: fix memory hot add and remove [Orabug: 31310273]\n- fix to enable systemd-pstore.service [Orabug: 30951066]\n- journal: change support URL shown in the catalog entries [Orabug: 30853009]\n- fix to generate systemd-pstore.service file [Orabug: 30230056]\n- fix _netdev is missing for iscsi entry in /etc/fstab (tony.l.lam@oracle.com) [Orabug: 25897792]\n- set 'RemoveIPC=no' in logind.conf as default for OL7.2 [Orabug: 22224874]\n- allow dm remove ioctl to co-operate with UEK3 (Vaughan Cao) [Orabug: 18467469]\n- add hv dynamic memory support (Jerry Snitselaar) [Orabug: 18621475]\n- Backport upstream patches for the new systemd-pstore tool (Eric DeVolder) [OraBug: 30230056]\n\n[239-58.4]\n- resolved: pin stream while calling callbacks for it (#2110548)\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2526.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-6206.html"
+				}
+			],
+			"published": "2022-08-29T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-2526",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2526.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-58.0.1.el8_6.4"
+								}
+							],
+							"fixed": [
+								"0:239-58.0.1.el8_6.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-container",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-58.0.1.el8_6.4"
+								}
+							],
+							"fixed": [
+								"0:239-58.0.1.el8_6.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-58.0.1.el8_6.4"
+								}
+							],
+							"fixed": [
+								"0:239-58.0.1.el8_6.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-journal-remote",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-58.0.1.el8_6.4"
+								}
+							],
+							"fixed": [
+								"0:239-58.0.1.el8_6.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-58.0.1.el8_6.4"
+								}
+							],
+							"fixed": [
+								"0:239-58.0.1.el8_6.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-pam",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-58.0.1.el8_6.4"
+								}
+							],
+							"fixed": [
+								"0:239-58.0.1.el8_6.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-58.0.1.el8_6.4"
+								}
+							],
+							"fixed": [
+								"0:239-58.0.1.el8_6.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-udev",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-58.0.1.el8_6.4"
+								}
+							],
+							"fixed": [
+								"0:239-58.0.1.el8_6.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

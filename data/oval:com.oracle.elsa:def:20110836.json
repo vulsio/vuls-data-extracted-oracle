@@ -1,0 +1,270 @@
+{
+	"id": "oval:com.oracle.elsa:def:20110836",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20110836",
+			"title": "\nELSA-2011-0836:  kernel security and bug fix update (IMPORTANT)\n",
+			"description": "\n\n[2.6.32-131.2.1.el6]\n- [kernel] lib/vsprintf.c: add %pU to print UUID/GUIDs (Frantisek Hrbata) [704280 700299]\n- [scsi] megaraid_sas: Driver only report tape drive, JBOD and logic drives (Tomas Henzl) [704601 619422]\n\n[2.6.32-131.1.1.el6]\n- [net] dccp: handle invalid feature options length (Jiri Pirko) [703012 703013] {CVE-2011-1770}\n- [fs] cifs: check for private_data before trying to put it (Jeff Layton) [703017 702642] {CVE-2011-1771}\n- [net] can: add missing socket check in can/raw and can/bcm release (Jiri Pirko) [698482 698483] {CVE-2011-1748 CVE-2011-1598}\n- [netdrv] ixgbe: do not clear FCoE DDP error status for received ABTS (Andy Gospodarek) [704011 695966]\n- [netdrv] ixgbe: DCB remove ixgbe_fcoe_getapp routine (Andy Gospodarek) [704002 694358]\n- [fs] setup_arg_pages: diagnose excessive argument size (Oleg Nesterov) [645228 645229] {CVE-2010-3858}\n- [scsi] bfa: change tech-preview to cover all cases (Rob Evers) [704014 703251]\n- [scsi] bfa: driver version update (Rob Evers) [704282 703265]\n- [scsi] bfa: kdump fix (Rob Evers) [704282 703265]\n- [scsi] bfa: firmware download fix (Rob Evers) [704282 703265]\n- [netdrv] bna: fix memory leak during RX path cleanup (Ivan Vecera) [704000 698625]\n- [netdrv] bna: fix for clean fw re-initialization (Ivan Vecera) [704000 698625]\n- [scsi] ipr: improve interrupt service routine performance (Steve Best) [704009 696754]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3858.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1598.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1748.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1770.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1771.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-0836.html"
+				}
+			],
+			"published": "2011-06-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-3858",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3858.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1598",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1598.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1748",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1748.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1770",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1770.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1771",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1771.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-131.2.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-131.2.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-131.2.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-131.2.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-131.2.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-131.2.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-131.2.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-131.2.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-131.2.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-131.2.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-firmware",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-131.2.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-131.2.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-131.2.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-131.2.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-131.2.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-131.2.1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

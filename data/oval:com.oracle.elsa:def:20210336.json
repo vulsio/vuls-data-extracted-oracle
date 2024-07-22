@@ -1,0 +1,323 @@
+{
+	"id": "oval:com.oracle.elsa:def:20210336",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20210336",
+			"title": "\nELSA-2021-0336:  kernel security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\n[3.10.0-1160.15.2.OL7]\n- Oracle Linux certificates (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was compiled into kernel (olkmod_signing_key.x509)(alexey.petrenko@oracle.com)\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15-2.0.3\n\n[3.10.0-1160.15.2]\n- [fs] nfs: Fix security label length not being reset (Dave Wysochanski) [1917504]\n\n[3.10.0-1160.15.1]\n- [fs] ceph: quota: fix null pointer dereference in quota check (Jeff Layton) [1890386]\n- [netdrv] revert 'mlx5e: ethtool, Remove unsupported SFP EEPROM high pages query' (Alaa Hleihel) [1896756]\n- [kernel] timekeeping_Force_unsigned_clocksource_to_nanoseconds_conversion (Waiman Long) [1890911]\n- [kernel] exit: Optimize forget_original_parent() for large thread group exiting (Waiman Long) [1872110]\n- [kernel] exit: reparent: call forget_original_parent() under tasklist_lock (Waiman Long) [1872110]\n- [kernel] Disable tasklist_waiters when qrwlock is enabled (Waiman Long) [1872110]\n- [fs] cifs: handle ERRBaduid for SMB1 (Leif Sahlberg) [1847041]\n\n[3.10.0-1160.14.1]\n- [fs] nfsd: fix incorrect umasks ('J. Bruce Fields') [1905208]\n- [hv] vmbus: Add timeout to vmbus_wait_for_unload (Mohammed Gamal) [1888979]\n- [scsi] qla2xxx: Fix device loss on 4G and older HBAs (Nilesh Javali) [1889311]\n- [s390] dasd: Fix zero write for FBA devices (Philipp Rudo) [1896839]\n- [net] ipv6: use in6_dev_put in dad timer handler instead of __in6_dev_put (Xin Long) [1809519]\n\n[3.10.0-1160.13.1]\n- [s390] zcrypt: Fix ZCRYPT_PERDEV_REQCNT ioctl (Philipp Rudo) [1896826]\n- [block] block/diskstats: more accurate approximation of io_ticks for slow disks (Ming Lei) [1859364]\n- [block] block: delete part_round_stats and switch to less precise counting (Ming Lei) [1859364]\n- [md] dm: simplify start of block stats accounting for bio-based (Ming Lei) [1859364]\n- [block] block/rsxx: use generic io stats accounting functions to simplify io stat accounting (Ming Lei) [1859364]\n- [block] drbd: use generic io stats accounting functions to simplify io stat accounting (Ming Lei) [1859364]\n- [md] md: use generic io stats accounting functions to simplify io stat accounting (Ming Lei) [1859364]\n- [nvme] limit number of IO queues on Dell/Kioxia config (Gopal Tiwari) [1883403]\n- [netdrv] hv_netvsc: make recording RSS hash depend on feature flag (Mohammed Gamal) [1898280]\n- [netdrv] hv_netvsc: record hardware hash in skb (Mohammed Gamal) [1898280]\n- [fs] block: Fix use-after-free in blkdev_get() (Ming Lei) [1902414] {CVE-2020-15436}\n\n[3.10.0-1160.12.1]\n- [mm] mmap: relax file size limit for regular files (Rafael Aquini) [1855985]\n- [mm] mmap: introduce sane default mmap limits (Rafael Aquini) [1855985]\n- [of] Move dynamic node fixups out of powerpc and into common code (Laurent Vivier) [1866138]\n- [fs] nfs: Fix double-free in filelayout_alloc_commit_info/filelayout_free_lseg (Benjamin Coddington) [1679980]\n- [hid] HID: hid-plantronics: Re-resend Update to map button for PTT products (Torez Smith) [1769502]\n- [fs] dlm: make posix locks interruptible (Alexander Aring) [1826858]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-15436.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-35513.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-0336.html"
+				}
+			],
+			"published": "2021-02-03T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-15436",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-15436.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-35513",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-35513.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bpftool",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-abi-whitelists",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-tools-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-tools-libs-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.10.0-1160.15.2.el7"
+								}
+							],
+							"fixed": [
+								"0:3.10.0-1160.15.2.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,181 @@
+{
+	"id": "oval:com.oracle.elsa:def:20203617",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20203617",
+			"title": "\nELSA-2020-3617:  dovecot security update (IMPORTANT)\n",
+			"description": "\n[1:2.2.36-6.1]\n- fix CVE-2020-12100 resource exhaustion via deeply nested MIME parts (#1871841)\n- fix CVE-2020-12673 out of bound reads in dovecot NTLM implementation (#1871843)\n- fix CVE-2020-12674 crash due to assert in RPA implementation (#1871842)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-12100.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-12673.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-12674.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-3617.html"
+				}
+			],
+			"published": "2020-09-03T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-12100",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-12100.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-12673",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-12673.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-12674",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-12674.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.36-6.el7_8.1"
+								}
+							],
+							"fixed": [
+								"1:2.2.36-6.el7_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.36-6.el7_8.1"
+								}
+							],
+							"fixed": [
+								"1:2.2.36-6.el7_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot-mysql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.36-6.el7_8.1"
+								}
+							],
+							"fixed": [
+								"1:2.2.36-6.el7_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot-pgsql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.36-6.el7_8.1"
+								}
+							],
+							"fixed": [
+								"1:2.2.36-6.el7_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot-pigeonhole",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.36-6.el7_8.1"
+								}
+							],
+							"fixed": [
+								"1:2.2.36-6.el7_8.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

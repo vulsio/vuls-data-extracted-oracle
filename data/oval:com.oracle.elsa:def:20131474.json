@@ -1,0 +1,110 @@
+{
+	"id": "oval:com.oracle.elsa:def:20131474",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20131474",
+			"title": "\nELSA-2013-1474:  qspice security update (IMPORTANT)\n",
+			"description": "\n[0.3.0-56.1]\n- Fix spice-server crash when client sends a password which is too long\n  Resolves: CVE-2013-4282\n\n[0.3.0-56.el5]\n- Fix unsafe accesses\n  + spice: drop libpng from windows components (537849)\n  + libspice: fix unsafe guest data accessing\nResolves: #568720\n  + fix unsafe free() call.\nResolves: #568724\n  + spice server: fix unsafe cursor items handling.\nResolves: #568720\n\n[0.3.0-55.el5]\n- spice: clear client palette caches on migration\nResolves: #599496\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4282.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-1474.html"
+				}
+			],
+			"published": "2013-10-29T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-4282",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4282.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qspice",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.3.0-56.el5_10.1"
+								}
+							],
+							"fixed": [
+								"0:0.3.0-56.el5_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qspice-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.3.0-56.el5_10.1"
+								}
+							],
+							"fixed": [
+								"0:0.3.0-56.el5_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qspice-libs-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.3.0-56.el5_10.1"
+								}
+							],
+							"fixed": [
+								"0:0.3.0-56.el5_10.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

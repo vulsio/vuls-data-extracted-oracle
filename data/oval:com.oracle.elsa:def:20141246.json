@@ -1,0 +1,190 @@
+{
+	"id": "oval:com.oracle.elsa:def:20141246",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20141246",
+			"title": "\nELSA-2014-1246:  nss and nspr security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\n[3.16.1-2]\n- Backport nss-3.12.6 upstream fix required by Firefox 31 ESR\n- Resolves: Bug 1110860\n\n[3.16.1-1]\n- Rebase to nss-3.16.1 for FF31\n- Resolves: Bug 1110860 - Rebase nss in RHEL 5.11 to NSS 3.16.1, required for FF 31\n\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-1740.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-1490.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-1491.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-1492.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-1545.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-1246.html"
+				}
+			],
+			"published": "2014-09-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-1740",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-1740.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-1490",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-1490.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-1491",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-1491.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-1492",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-1492.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-1545",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-1545.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.1-2.el5"
+								}
+							],
+							"fixed": [
+								"0:3.16.1-2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.1-2.el5"
+								}
+							],
+							"fixed": [
+								"0:3.16.1-2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-pkcs11-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.1-2.el5"
+								}
+							],
+							"fixed": [
+								"0:3.16.1-2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-tools",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.16.1-2.el5"
+								}
+							],
+							"fixed": [
+								"0:3.16.1-2.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

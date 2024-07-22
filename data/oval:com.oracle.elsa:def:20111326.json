@@ -1,0 +1,94 @@
+{
+	"id": "oval:com.oracle.elsa:def:20111326",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20111326",
+			"title": "\nELSA-2011-1326:  pango security update (MODERATE)\n",
+			"description": "\n\n[1.14.9.8.0.1.el5_7.3]\n- Bump release\n\n[1.14.9.8.el5_1.3]\n- Prevent buffer overflow errors in harfbuzz module (CVE-2011-3193)\n- Resolves: #737819\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3193.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1326.html"
+				}
+			],
+			"published": "2011-09-21T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-3193",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3193.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pango",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.14.9-8.0.1.el5_7.3"
+								}
+							],
+							"fixed": [
+								"0:1.14.9-8.0.1.el5_7.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pango-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.14.9-8.0.1.el5_7.3"
+								}
+							],
+							"fixed": [
+								"0:1.14.9-8.0.1.el5_7.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

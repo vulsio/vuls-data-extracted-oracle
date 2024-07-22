@@ -1,0 +1,126 @@
+{
+	"id": "oval:com.oracle.elsa:def:20080988",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20080988",
+			"title": "\nELSA-2008-0988:  libxml2 security update (IMPORTANT)\n",
+			"description": "\n\n[2.6.26-2.1.2.7.0.1]\n- Add libxml2-enterprise.patch and update logos in tarball\n\n[2.6.26-2.1.2.7]\n- two patches for size overflows problems CVE-2008-4225 and CVE-2008-4226\n- Resolves:  rhbz#470474\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4225.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4226.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2008-0988.html"
+				}
+			],
+			"published": "2008-11-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2008-4225",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4225.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-4226",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4226.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.26-2.1.2.7.0.1"
+								}
+							],
+							"fixed": [
+								"0:2.6.26-2.1.2.7.0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.26-2.1.2.7.0.1"
+								}
+							],
+							"fixed": [
+								"0:2.6.26-2.1.2.7.0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-python",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.26-2.1.2.7.0.1"
+								}
+							],
+							"fixed": [
+								"0:2.6.26-2.1.2.7.0.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

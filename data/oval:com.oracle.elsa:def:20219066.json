@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20219066",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20219066",
+			"title": "\nELSA-2021-9066:  xterm security update (IMPORTANT)\n",
+			"description": "\n[253-1.0.1]\n- fix xutf8.h to work with up-to-date Xlib\n- fix crash in combining character support {CVE-2021-27135} [orabug 32496959]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27135.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-9066.html"
+				}
+			],
+			"published": "2021-02-19T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-27135",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27135.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xterm",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:253-1.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:253-1.0.1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20140304",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20140304",
+			"title": "\nELSA-2014-0304:  mutt security update (IMPORTANT)\n",
+			"description": "\n[5:1.5.20-4.20091214hg736b6a]\n- Resolves: #1075872 (CVE-2014-0467, heap-based buffer overflow when parsing\n  certain headers)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0467.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0304.html"
+				}
+			],
+			"published": "2014-03-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-0467",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0467.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mutt",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "5:1.5.20-4.20091214hg736b6a.el6_5"
+								}
+							],
+							"fixed": [
+								"5:1.5.20-4.20091214hg736b6a.el6_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

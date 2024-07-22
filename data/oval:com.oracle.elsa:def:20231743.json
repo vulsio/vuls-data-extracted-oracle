@@ -1,0 +1,275 @@
+{
+	"id": "oval:com.oracle.elsa:def:20231743",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20231743",
+			"title": "\nELSA-2023-1743:  nodejs:14 security, bug fix, and enhancement update (IMPORTANT)\n",
+			"description": "\nnodejs\n[1:14.21.3-1]\n- Rebase to 14.21.3\n  Resolves: rhbz#2153712\n  Resolves: CVE-2022-25881 CVE-2023-23918 CVE-2023-23920 CVE-2022-38900\n  Resolves: CVE-2022-4904\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35065.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25881.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-3517.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-38900.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-4904.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-23918.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-23920.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-1743.html"
+				}
+			],
+			"published": "2023-04-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-35065",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35065.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-25881",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25881.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-3517",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-3517.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-38900",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-38900.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-4904",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-4904.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-23918",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-23918.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-23920",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-23920.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:14.21.3-1.module+el8.7.0+21031+52889874"
+								}
+							],
+							"fixed": [
+								"1:14.21.3-1.module+el8.7.0+21031+52889874"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:14.21.3-1.module+el8.7.0+21031+52889874"
+								}
+							],
+							"fixed": [
+								"1:14.21.3-1.module+el8.7.0+21031+52889874"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:14.21.3-1.module+el8.7.0+21031+52889874"
+								}
+							],
+							"fixed": [
+								"1:14.21.3-1.module+el8.7.0+21031+52889874"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs-full-i18n",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:14.21.3-1.module+el8.7.0+21031+52889874"
+								}
+							],
+							"fixed": [
+								"1:14.21.3-1.module+el8.7.0+21031+52889874"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs-nodemon",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.20-3.module+el8.7.0+21031+52889874"
+								}
+							],
+							"fixed": [
+								"0:2.0.20-3.module+el8.7.0+21031+52889874"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs:14::nodejs-packaging",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:23-3.module+el8.3.0+7818+6cd30d85"
+								}
+							],
+							"fixed": [
+								"0:23-3.module+el8.3.0+7818+6cd30d85"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "npm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:6.14.18-1.14.21.3.1.module+el8.7.0+21031+52889874"
+								}
+							],
+							"fixed": [
+								"1:6.14.18-1.14.21.3.1.module+el8.7.0+21031+52889874"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,273 @@
+{
+	"id": "oval:com.oracle.elsa:def:20200790",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20200790",
+			"title": "\nELSA-2020-0790:  kernel security and bug fix update (IMPORTANT)\n",
+			"description": "\n[2.6.32-754.28.1.OL6]\n- Update genkey [bug 25599697]\n\n[2.6.32-754.28.1]\n- [netdrv] ixgbevf: Use cached link state instead of re-reading the value for ethtool (Ken Cox) [1795404]\n- [isdn] mISDN: enforce CAP_NET_RAW for raw sockets (Andrea Claudi) [1779473] {CVE-2019-17055}\n- [net] cfg80211: wext: avoid copying malformed SSIDs (Jarod Wilson) [1778625] {CVE-2019-17133}\n- [netdrv] bonding: speed/duplex update at NETDEV_UP event (Patrick Talbert) [1772779]\n- [netdrv] bonding: make speed, duplex setting consistent with link state (Patrick Talbert) [1772779]\n- [netdrv] bonding: simplify / unify event handling code for 3ad mode (Patrick Talbert) [1772779]\n- [netdrv] bonding: unify all places where actor-oper key needs to be updated (Patrick Talbert) [1772779]\n- [netdrv] bonding: simple code refactor (Patrick Talbert) [1772779]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-17055.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-17133.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-0790.html"
+				}
+			],
+			"published": "2020-03-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-17055",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-17055.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-17133",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-17133.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-754.28.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-754.28.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-abi-whitelists",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-754.28.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-754.28.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-754.28.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-754.28.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-754.28.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-754.28.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-754.28.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-754.28.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-754.28.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-754.28.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-firmware",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-754.28.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-754.28.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-754.28.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-754.28.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-754.28.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-754.28.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-754.28.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-754.28.1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

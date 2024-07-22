@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20228226",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20228226",
+			"title": "\nELSA-2022-8226:  python-lxml security update (MODERATE)\n",
+			"description": "\n[4.6.5-3]\n- Security fix for CVE-2022-2309\n- Resolves: rhbz#2107571\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2309.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-8226.html"
+				}
+			],
+			"published": "2022-11-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-2309",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2309.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-lxml",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.6.5-3.el9"
+								}
+							],
+							"fixed": [
+								"0:4.6.5-3.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

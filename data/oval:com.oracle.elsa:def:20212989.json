@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20212989",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20212989",
+			"title": "\nELSA-2021-2989:  lasso security update (IMPORTANT)\n",
+			"description": "\n[2.5.1-8]\n- Fix Coverity warning introduced by the previous patch\n- Related: #1963855 - CVE-2021-28091 lasso: XML signature wrapping\n                      vulnerability when parsing SAML responses\n\n[2.5.1-7]\n- Fix Coverity warning introduced by the previous patch\n- Related: #1963855 - CVE-2021-28091 lasso: XML signature wrapping\n                      vulnerability when parsing SAML responses\n\n[2.5.1-6]\n- Resolves: #1963855 - CVE-2021-28091 lasso: XML signature wrapping\n                       vulnerability when parsing SAML responses\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28091.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-2989.html"
+				}
+			],
+			"published": "2021-08-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-28091",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28091.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "lasso",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5.1-8.el7_9"
+								}
+							],
+							"fixed": [
+								"0:2.5.1-8.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "lasso-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5.1-8.el7_9"
+								}
+							],
+							"fixed": [
+								"0:2.5.1-8.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "lasso-python",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5.1-8.el7_9"
+								}
+							],
+							"fixed": [
+								"0:2.5.1-8.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

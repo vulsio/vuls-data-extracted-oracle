@@ -1,0 +1,853 @@
+{
+	"id": "oval:com.oracle.elsa:def:20243466",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20243466",
+			"title": "\nELSA-2024-3466:  python39:3.9 and python39-devel:3.9 security update (IMPORTANT)\n",
+			"description": "\nmod_wsgi\nnumpy\npython39\n[3.9.19-1]\n- Update to 3.9.19\n- Security fixes for CVE-2023-6597 and CVE-2024-0450\n- Fix tests for XMLPullParser with Expat with fixed CVE\nResolves: RHEL-33676, RHEL-33688\n\npython3x-pip\npython3x-setuptools\npython3x-six\npython-cffi\npython-chardet\npython-cryptography\npython-idna\n[2.10-4]\n- Security fix for CVE-2024-3651\nResolves: RHEL-32705\n\npython-lxml\npython-ply\npython-psutil\npython-psycopg2\npython-pycparser\npython-PyMySQL\npython-pysocks\npython-requests\npython-toml\npython-urllib3\npython-wheel\nPyYAML\nscipy\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6597.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-0450.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-3651.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-3466.html"
+				}
+			],
+			"published": "2024-05-31T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-6597",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6597.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-0450",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-0450.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-3651",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-3651.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39-devel:3.9::python39-debug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+								}
+							],
+							"fixed": [
+								"0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+								}
+							],
+							"fixed": [
+								"0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-PyMySQL",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.1-2.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:0.10.1-2.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-cffi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.14.3-2.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:1.14.3-2.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-chardet",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.4-19.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:3.0.4-19.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-cryptography",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.3.1-3.0.1.module+el8.10.0+90269+2fa22b99"
+								}
+							],
+							"fixed": [
+								"0:3.3.1-3.0.1.module+el8.10.0+90269+2fa22b99"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+								}
+							],
+							"fixed": [
+								"0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-idle",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+								}
+							],
+							"fixed": [
+								"0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-idna",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.10-4.module+el8.10.0+90341+71ca88f4"
+								}
+							],
+							"fixed": [
+								"0:2.10-4.module+el8.10.0+90341+71ca88f4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+								}
+							],
+							"fixed": [
+								"0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-lxml",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.6.5-1.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:4.6.5-1.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-mod_wsgi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.7.1-7.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:4.7.1-7.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-numpy",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.19.4-3.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:1.19.4-3.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-numpy-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.19.4-3.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:1.19.4-3.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-numpy-f2py",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.19.4-3.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:1.19.4-3.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-pip",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:20.2.4-9.module+el8.10.0+90269+2fa22b99"
+								}
+							],
+							"fixed": [
+								"0:20.2.4-9.module+el8.10.0+90269+2fa22b99"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-pip-wheel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:20.2.4-9.module+el8.10.0+90269+2fa22b99"
+								}
+							],
+							"fixed": [
+								"0:20.2.4-9.module+el8.10.0+90269+2fa22b99"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-ply",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.11-10.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:3.11-10.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-psutil",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.8.0-4.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:5.8.0-4.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-psycopg2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.8.6-3.module+el8.10.0+90269+2fa22b99"
+								}
+							],
+							"fixed": [
+								"0:2.8.6-3.module+el8.10.0+90269+2fa22b99"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-psycopg2-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.8.6-3.module+el8.10.0+90269+2fa22b99"
+								}
+							],
+							"fixed": [
+								"0:2.8.6-3.module+el8.10.0+90269+2fa22b99"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-psycopg2-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.8.6-3.module+el8.10.0+90269+2fa22b99"
+								}
+							],
+							"fixed": [
+								"0:2.8.6-3.module+el8.10.0+90269+2fa22b99"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-pycparser",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.20-3.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:2.20-3.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-pysocks",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.1-4.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:1.7.1-4.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-pyyaml",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.4.1-1.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:5.4.1-1.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-requests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.25.0-3.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:2.25.0-3.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-rpm-macros",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+								}
+							],
+							"fixed": [
+								"0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-scipy",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.4-5.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:1.5.4-5.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-setuptools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:50.3.2-5.module+el8.10.0+90269+2fa22b99"
+								}
+							],
+							"fixed": [
+								"0:50.3.2-5.module+el8.10.0+90269+2fa22b99"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-setuptools-wheel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:50.3.2-5.module+el8.10.0+90269+2fa22b99"
+								}
+							],
+							"fixed": [
+								"0:50.3.2-5.module+el8.10.0+90269+2fa22b99"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-six",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.0-3.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:1.15.0-3.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-test",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+								}
+							],
+							"fixed": [
+								"0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-tkinter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+								}
+							],
+							"fixed": [
+								"0:3.9.19-1.module+el8.10.0+90341+71ca88f4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-toml",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.1-5.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"0:0.10.1-5.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-urllib3",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.25.10-5.module+el8.10.0+90269+2fa22b99"
+								}
+							],
+							"fixed": [
+								"0:1.25.10-5.module+el8.10.0+90269+2fa22b99"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-wheel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.35.1-4.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"1:0.35.1-4.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python39:3.9::python39-wheel-wheel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.35.1-4.module+el8.9.0+90016+9c2d6573"
+								}
+							],
+							"fixed": [
+								"1:0.35.1-4.module+el8.9.0+90016+9c2d6573"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

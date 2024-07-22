@@ -1,0 +1,451 @@
+{
+	"id": "oval:com.oracle.elsa:def:20162124",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20162124",
+			"title": "\nELSA-2016-2124:  kernel security and bug fix update (IMPORTANT)\n",
+			"description": "\nkernel\n[2.6.18-416]\n- [mm] Fix Privilege escalation via MAP_PRIVATE (Larry Woodman) [1385112] {CVE-2016-5195}\n\n[2.6.18-415]\n- [fs] gfs2: Initialize atime of I_NEW inodes (Andreas Grunbacher) [1374861]\n- [fs] gfs2: Update file times after grabbing glock (Andreas Grunbacher) [1374861]\n- Revert: [fs] gfs2: Only refresh newer in-memory timestamps (Andreas Grunbacher) [1374861]\n\n[2.6.18-414]\n- [redhat] Fix missed -413 kernel version (Alexander Gordeev)\n\n[2.6.18-413]\n- [redhat] Disable 'Invalid version (double separator '-')' error (Alexander Gordeev) [1375746]\n- [fs] jbd: Fix oops in journal_remove_journal_head() (Lukas Czerner) [1067708]\n- [fs] jbd: Fix race between CP and journal_get_write_access() (Lukas Czerner) [1067708]\n- [fs] ecryptfs: prevent mounts backed by procfs (Mateusz Guzik) [1347100] {CVE-2016-1583}\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-1583.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5195.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-2124.html"
+				}
+			],
+			"published": "2016-10-28T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-1583",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-1583.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-5195",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5195.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-416.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-416.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-PAE",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-416.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-416.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-PAE-devel",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-416.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-416.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-416.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-416.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-416.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-416.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-416.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-416.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-416.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-416.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-416.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-416.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-xen",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-416.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-416.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-xen-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-416.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-416.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-416.el5",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.11-1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.4.11-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-416.el5PAE",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.11-1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.4.11-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-416.el5debug",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.11-1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.4.11-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-416.el5xen",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.11-1.el5"
+								}
+							],
+							"fixed": [
+								"0:1.4.11-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-416.el5",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.5-2.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.5-2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-416.el5PAE",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.5-2.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.5-2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-416.el5debug",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.5-2.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.5-2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-416.el5xen",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.5-2.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.5-2.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

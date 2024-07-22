@@ -1,0 +1,155 @@
+{
+	"id": "oval:com.oracle.elsa:def:20193525",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20193525",
+			"title": "\nELSA-2019-3525:  dhcp security and bug fix update (MODERATE)\n",
+			"description": "\n[12:4.3.6-34]\n- Resolves: #1704672 - Fix crash caused by bind rebase\n\n[12:4.3.6-33]\n- Resolves: #1673946 - Change default prefix length to 128\n- Add address-prefix-lenght option to change default value\n- Fix backporting issues\n\n[12:4.3.6-31]\n- Resolves: #1685560 - Drop executable flag from NM dispatcher\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-6470.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-3525.html"
+				}
+			],
+			"published": "2019-11-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-6470",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-6470.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-client",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.3.6-34.el8"
+								}
+							],
+							"fixed": [
+								"12:4.3.6-34.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.3.6-34.el8"
+								}
+							],
+							"fixed": [
+								"12:4.3.6-34.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.3.6-34.el8"
+								}
+							],
+							"fixed": [
+								"12:4.3.6-34.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-relay",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.3.6-34.el8"
+								}
+							],
+							"fixed": [
+								"12:4.3.6-34.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.3.6-34.el8"
+								}
+							],
+							"fixed": [
+								"12:4.3.6-34.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

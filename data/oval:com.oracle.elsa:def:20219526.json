@@ -1,0 +1,422 @@
+{
+	"id": "oval:com.oracle.elsa:def:20219526",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20219526",
+			"title": "\nELSA-2021-9526:  olcne security update (IMPORTANT)\n",
+			"description": "\nolcne\n[1.3.2-2]\n- Turn off default PodDisruptionBudget in istio template to unblock kubernetes module upgrade\n- Update Kubernetes version to 1.20.11 to address CVE-2021-25741\n- Update Istio to 1.9.8, 1.10.4 to address CVE-2021-32777, CVE-2021-32778, CVE-2021-32779, CVE-2021-32780 & CVE-2021-32781\n- Update proxyv2 image to select iptables legacy or latest based on host operating system\n- Fix major.minor k8s version\n\nistio\n[1.9.8-3]\n- Updated iptables-switch for OL8 and OL7 logic\n\n[1.9.8-2]\n- Bump release, addresses the following envoy CVEs,\n  CVE-2021-32777, CVE-2021-32778, CVE-2021-32779, CVE-2021-32780 & CVE-2021-32781\n\n[1.9.8-1]\n- Added Oracle specific files for 1.9.8-1\n\nistio\n[1.10.4-3]\n- Updated iptables-switch for OL8 and OL7 logic\n\n[1.10.4-2]\n- Bump release, addresses the following envoy CVEs,\n  CVE-2021-32777, CVE-2021-32778, CVE-2021-32779, CVE-2021-32780 & CVE-2021-32781\n\n[1.10.4-1]\n- Added Oracle specific files for 1.10.4-1\n\nkubernetes\n[1.20.11-4]\n- Fix major.minor version\n\n[1.20.11-3]\n- Updated iptables-switch for OL8 and OL7 logic\n\n[1.20.11-2]\n- Bump release for CVE fix, addresses CVE-2021-25741\n\n[1.20.11-1]\n- Added Oracle specific build files for Kubernetes\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-25741.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32777.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32779.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32780.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32781.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-9526.html"
+				}
+			],
+			"published": "2021-11-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-25741",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-25741.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-32777",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32777.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-32779",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32779.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-32780",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32780.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-32781",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32781.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "istio",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.10.4-3.el7"
+								}
+							],
+							"fixed": [
+								"0:1.10.4-3.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "istio",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.8-3.el7"
+								}
+							],
+							"fixed": [
+								"0:1.9.8-3.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "istio-istioctl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.10.4-3.el7"
+								}
+							],
+							"fixed": [
+								"0:1.10.4-3.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "istio-istioctl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.8-3.el7"
+								}
+							],
+							"fixed": [
+								"0:1.9.8-3.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubeadm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.20.11-4.el7"
+								}
+							],
+							"fixed": [
+								"0:1.20.11-4.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubectl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.20.11-4.el7"
+								}
+							],
+							"fixed": [
+								"0:1.20.11-4.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubelet",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.20.11-4.el7"
+								}
+							],
+							"fixed": [
+								"0:1.20.11-4.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-agent",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.2-2.el7"
+								}
+							],
+							"fixed": [
+								"0:1.3.2-2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-api-server",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.2-2.el7"
+								}
+							],
+							"fixed": [
+								"0:1.3.2-2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-grafana-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.2-2.el7"
+								}
+							],
+							"fixed": [
+								"0:1.3.2-2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-istio-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.2-2.el7"
+								}
+							],
+							"fixed": [
+								"0:1.3.2-2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-nginx",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.2-2.el7"
+								}
+							],
+							"fixed": [
+								"0:1.3.2-2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-olm-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.2-2.el7"
+								}
+							],
+							"fixed": [
+								"0:1.3.2-2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-prometheus-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.2-2.el7"
+								}
+							],
+							"fixed": [
+								"0:1.3.2-2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-utils",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.2-2.el7"
+								}
+							],
+							"fixed": [
+								"0:1.3.2-2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcnectl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.2-2.el7"
+								}
+							],
+							"fixed": [
+								"0:1.3.2-2.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

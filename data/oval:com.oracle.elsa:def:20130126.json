@@ -1,0 +1,72 @@
+{
+	"id": "oval:com.oracle.elsa:def:20130126",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20130126",
+			"title": "\nELSA-2013-0126:  squirrelmail security and bug fix update (LOW)\n",
+			"description": "\n[1.4.8-21.0.2.el5]\n- remove Redhat splash screen images from source\n\n[1.4.8-21.0.1.el5]\n- remove Redhat splash screen images\n- add README instead of README.RedHat\n\n[1.4.8-21]\n- change charset for zh_CN and zh_TW to utf-8 (#508686)\n\n[1.4.8-20]\n- fix header encoding issue (#241861)\n- fix code producing warnings in the log (#475188)\n\n[1.4.8-19]\n- patch for CVE-2010-2813 modified wrong file (#808598)\n- correct requirement is mod_php not php (#789353)\n- comply with RFC2822 line length limits (#745469)\n- document that SELinux boolean httpd_can_sendmail needs to be\n  turned on (#745380)\n- add support for big UIDs on 32bit machines (#450780)\n- do not corrupt html attachments (#359791)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-2124.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0126.html"
+				}
+			],
+			"published": "2013-01-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-2124",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-2124.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squirrelmail",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.8-21.0.2.el5"
+								}
+							],
+							"fixed": [
+								"0:1.4.8-21.0.2.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

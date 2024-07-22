@@ -1,0 +1,70 @@
+{
+	"id": "oval:com.oracle.elsa:def:20229213",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20229213",
+			"title": "\nELSA-2022-9213:  Unbreakable Enterprise kernel-container security update (IMPORTANT)\n",
+			"description": "\n[4.14.35-2047.511.5.6.el7]\n- lib/iov_iter: initialize 'flags' in new pipe_buffer (Max Kellermann)  [Orabug:\n  33942242]  {CVE-2022-0847}\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-0847.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-9213.html"
+				}
+			],
+			"published": "2022-03-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-0847",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-0847.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.511.5.6.el7"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.511.5.6.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,84 @@
+{
+	"id": "oval:com.oracle.elsa:def:20211751",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20211751",
+			"title": "\nELSA-2021-1751:  mailman:2.1 security update (MODERATE)\n",
+			"description": "\n[3:2.1.29-11]\n- Fixes for  CVE-2020-12108 and CVE-2020-15011\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-12108.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-15011.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-1751.html"
+				}
+			],
+			"published": "2021-05-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-12108",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-12108.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-15011",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-15011.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mailman:2.1::mailman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:2.1.29-11.module+el8.4.0+20063+5e2c6e6e"
+								}
+							],
+							"fixed": [
+								"3:2.1.29-11.module+el8.4.0+20063+5e2c6e6e"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

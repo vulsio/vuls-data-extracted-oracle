@@ -1,0 +1,72 @@
+{
+	"id": "oval:com.oracle.elsa:def:20140266",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20140266",
+			"title": "\nELSA-2014-0266:  sudo security update (MODERATE)\n",
+			"description": "\n[1.7.2p1-29]\n- added patch for CVE-2014-0106: certain environment variables not\n  sanitized when env_reset is disabled\n  Resolves: rhbz#1072210\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0106.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0266.html"
+				}
+			],
+			"published": "2014-03-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-0106",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0106.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sudo",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.2p1-29.el5_10"
+								}
+							],
+							"fixed": [
+								"0:1.7.2p1-29.el5_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,176 @@
+{
+	"id": "oval:com.oracle.elsa:def:20131591",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20131591",
+			"title": "\nELSA-2013-1591:  openssh security, bug fix, and enhancement update (LOW)\n",
+			"description": "\n[5.3p1-94]\n- use dracut-fips package to determine if a FIPS module is installed (#1001565)\n\n[5.3p1-93]\n- use dist tag in suffixes for hmac checksum files (#1001565)\n\n[5.3p1-92]\n- use hmac_suffix for ssh{,d} hmac checksums (#1001565)\n\n[5.3p1-91]\n- fix NSS keys support (#1004763)\n\n[5.3p1-90]\n- change default value of MaxStartups - CVE-2010-5107 - #908707\n- add -fips subpackages that contains the FIPS module files (#1001565)\n\n[5.3p1-89]\n- don't use SSH_FP_MD5 for fingerprints in FIPS mode (#998835)\n\n[5.3p1-88]\n- do ssh_gssapi_krb5_storecreds() twice - before and after pam sesssion (#974096)\n\n[5.3p1-87]\n- bump the minimum value of SSH_USE_STRONG_RNG to 14 according to SP800-131A (#993577)\n- fixed an issue with broken 'ssh -I pkcs11' (#908038)\n- abort non-subsystem sessions to forced internal sftp-server (#993509)\n- reverted 'store krb5 credentials after a pam session is created (#974096)'\n\n[5.3p1-86]\n- Add support for certificate key types for users and hosts (#906872)\n- Apply RFC3454 stringprep to banners when possible (#955792)\n\n[5.3p1-85]\n- fix chroot logging issue (#872169)\n- change the bad key permissions error message (#880575)\n- fix a race condition in ssh-agent (#896561)\n- backport support for PKCS11 from openssh-5.4p1 (#908038)\n- add a KexAlgorithms knob to the client and server configuration (#951704)\n- fix parsing logic of ldap.conf file (#954094)\n- Add HMAC-SHA2 algorithm support (#969565)\n- store krb5 credentials after a pam session is created (#974096)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-5107.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-1591.html"
+				}
+			],
+			"published": "2013-11-26T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-5107",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-5107.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-94.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-94.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-askpass",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-94.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-94.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-clients",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-94.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-94.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-ldap",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-94.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-94.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-server",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-94.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-94.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pam_ssh_agent_auth",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.3-94.el6"
+								}
+							],
+							"fixed": [
+								"0:0.9.3-94.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20230842",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20230842",
+			"title": "\nELSA-2023-0842:  tar security update (MODERATE)\n",
+			"description": "\n[1.30-6.1]\n- Fix CVE-2022-48303\n- Resolves: CVE-2022-48303\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-48303.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-0842.html"
+				}
+			],
+			"published": "2023-02-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-48303",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-48303.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tar",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.30-6.el8_7.1"
+								}
+							],
+							"fixed": [
+								"2:1.30-6.el8_7.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

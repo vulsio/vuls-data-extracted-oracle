@@ -1,0 +1,291 @@
+{
+	"id": "oval:com.oracle.elsa:def:20172029",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20172029",
+			"title": "\nELSA-2017-2029:  openssh security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\n[7.4p1-11 + 0.10.3-1]\n- Compiler warnings (#1341754)\n\n[7.4p1-10 + 0.10.3-1]\n- Add missing messages in FIPS mode (#1341754)\n\n[7.4p1-9 + 0.10.3-1]\n- Allow harmless syscalls for s390 crypto modules (#1451809)\n\n[7.4p1-8 + 0.10.3-1]\n- Fix multilib issue in documentation (#1450361)\n\n[7.4p1-6 + 0.10.3-1]\n- ControlPath too long should not be a fatal error (#1447561)\n\n[7.4p1-5 + 0.10.3-1]\n- Fix the default key exchange proposal in FIPS mode (#1438414)\n- Remove another wrong coverity chunk to unbreak gsskex (#1438414)\n\n[7.4p1-4 + 0.10.3-1]\n- Update seccomp filter to work on ppc64le (#1443916)\n\n[7.4p1-3 + 0.10.3-1]\n- Do not completely disable SHA-1 key exchange methods in FIPS (#1324493)\n- Remove wrong coverity patches\n\n[7.4p1-2 + 0.10.3-1]\n- Fix coverity scan results\n- Adjust FIPS algorithms list (#1420910)\n- Revert problematic feature for chroot(#1418062)\n- Fix CBC weakness in released OpenSSH 7.5\n\n[7.4p1-1 + 0.10.3-1]\n- Rebase to openssh 7.4 and pam_ssh_agent_auth 0.10.3 (#1341754)\n- detach -cavs subpackage\n- enable seccomp filter for sandboxed child\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-10009.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-10011.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-10012.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-6210.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-6515.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-2029.html"
+				}
+			],
+			"published": "2017-08-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-10009",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-10009.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-10011",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-10011.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-10012",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-10012.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-6210",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-6210.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-6515",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-6515.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.4p1-11.el7"
+								}
+							],
+							"fixed": [
+								"0:7.4p1-11.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-askpass",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.4p1-11.el7"
+								}
+							],
+							"fixed": [
+								"0:7.4p1-11.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-cavs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.4p1-11.el7"
+								}
+							],
+							"fixed": [
+								"0:7.4p1-11.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-clients",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.4p1-11.el7"
+								}
+							],
+							"fixed": [
+								"0:7.4p1-11.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-keycat",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.4p1-11.el7"
+								}
+							],
+							"fixed": [
+								"0:7.4p1-11.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-ldap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.4p1-11.el7"
+								}
+							],
+							"fixed": [
+								"0:7.4p1-11.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.4p1-11.el7"
+								}
+							],
+							"fixed": [
+								"0:7.4p1-11.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-server-sysvinit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.4p1-11.el7"
+								}
+							],
+							"fixed": [
+								"0:7.4p1-11.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pam_ssh_agent_auth",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.3-1.11.el7"
+								}
+							],
+							"fixed": [
+								"0:0.10.3-1.11.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20201318",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20201318",
+			"title": "\nELSA-2020-1318:  telnet security update (IMPORTANT)\n",
+			"description": "\n[1:0.17-73.1]\n- Resolves: #1814473 - Arbitrary remote code execution in utility.c via short writes or urgent data\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10188.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-1318.html"
+				}
+			],
+			"published": "2020-04-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-10188",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10188.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "telnet",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.17-73.el8_1.1"
+								}
+							],
+							"fixed": [
+								"1:0.17-73.el8_1.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "telnet-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.17-73.el8_1.1"
+								}
+							],
+							"fixed": [
+								"1:0.17-73.el8_1.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

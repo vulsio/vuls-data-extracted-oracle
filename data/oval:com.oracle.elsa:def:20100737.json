@@ -1,0 +1,155 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100737",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100737",
+			"title": "\nELSA-2010-0737:  freetype security update (IMPORTANT)\n",
+			"description": "\n\n[2.2.1-28]\n- Modify freetype-2.2.1-CVE-2010-3054.patch\n- Resolves: #638142\n\n[2.2.1-27]\n- Add freetype-2.2.1-CVE-2010-2806.patch\n    (Protect against negative string_size. Fix comparison.)\n- Add freetype-2.2.1-CVE-2010-3311.patch\n    (Don't seek behind end of stream.)\n- Add freetype-2.2.1-CVE-2010-3054.patch\n    (Protect against nested 'seac' calls.)\n- Add freetype-2.2.1-CVE-2010-2808.patch\n    (Check the total length of collected POST segments.)\n- Resolves: #638142 \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2806.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2808.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3054.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3311.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0737.html"
+				}
+			],
+			"published": "2010-10-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-2806",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2806.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-2808",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2808.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-3054",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3054.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-3311",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3311.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freetype",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.1-28.el5_5"
+								}
+							],
+							"fixed": [
+								"0:2.2.1-28.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freetype-demos",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.1-28.el5_5"
+								}
+							],
+							"fixed": [
+								"0:2.2.1-28.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freetype-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.1-28.el5_5"
+								}
+							],
+							"fixed": [
+								"0:2.2.1-28.el5_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,118 @@
+{
+	"id": "oval:com.oracle.elsa:def:20192004",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20192004",
+			"title": "\nELSA-2019-2004:  icedtea-web security update (IMPORTANT)\n",
+			"description": "\n[1.7.1-16]\n- Added Patch5, testTuning.patch to make tests pass inclean envirnment\n- Resolves: rhbz#1724958\n\n[1.7.1-16]\n- added patch1, patch4 and patch11 to fix CVE-2019-10182\n- added patch2 to fix CVE-2019-10181\n- added patch3 and patch33 to fix CVE-2019-10185\n- Resolves: rhbz#1724958\n- Resolves: rhbz#1725928\n- Resolves: rhbz#1724989\n\n[-1.7.1-10]\n- added gating\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-10181.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-10182.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-10185.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-2004.html"
+				}
+			],
+			"published": "2019-08-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-10181",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-10181.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-10182",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-10182.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-10185",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-10185.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "icedtea-web",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.1-17.el8_0"
+								}
+							],
+							"fixed": [
+								"0:1.7.1-17.el8_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "icedtea-web-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.1-17.el8_0"
+								}
+							],
+							"fixed": [
+								"0:1.7.1-17.el8_0"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

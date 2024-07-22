@@ -1,0 +1,264 @@
+{
+	"id": "oval:com.oracle.elsa:def:20211853",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20211853",
+			"title": "\nELSA-2021-1853:  unbound security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\n[1.7.3-15]\n- Fix SPEC file to not check md5 mtime and size of /var/lib/unbound/root.key\n- Resolves: rhbz#1714175\n- Use system-wide crypto policy setting (PROFILE=SYSTEM) instead of custom setting\n- Resolves: rhbz#1842837\n- Enable additional logging in unbound\n- Resolves: rhbz#1850460\n- security hardening from x41 report\n- Resolves: rhbz#1859933\n- symbolic link traversal when writing PID file\n- Resolves: rhbz#1899058\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25032.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25034.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25035.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25036.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25037.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25038.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25039.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25040.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25041.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25042.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-28935.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-1853.html"
+				}
+			],
+			"published": "2021-05-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-25032",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25032.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-25034",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25034.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-25035",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25035.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-25036",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25036.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-25037",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25037.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-25038",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25038.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-25039",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25039.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-25040",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25040.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-25041",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25041.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-25042",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-25042.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-28935",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-28935.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-unbound",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.3-15.el8"
+								}
+							],
+							"fixed": [
+								"0:1.7.3-15.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "unbound",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.3-15.el8"
+								}
+							],
+							"fixed": [
+								"0:1.7.3-15.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "unbound-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.3-15.el8"
+								}
+							],
+							"fixed": [
+								"0:1.7.3-15.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "unbound-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.3-15.el8"
+								}
+							],
+							"fixed": [
+								"0:1.7.3-15.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

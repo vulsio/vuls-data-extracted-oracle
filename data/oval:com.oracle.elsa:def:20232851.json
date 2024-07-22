@@ -1,0 +1,259 @@
+{
+	"id": "oval:com.oracle.elsa:def:20232851",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20232851",
+			"title": "\nELSA-2023-2851:  freerdp security update (MODERATE)\n",
+			"description": "\n[2:2.2.0-10]\n- Fix 'implicit declaration of function' errors (#2136153, #2145139)\n\n[- 2:2.2.0-9]\n- CVE-2022-39282: Fix length checks in parallel driver (#2136151)\n- CVE-2022-39283: Add missing length check in video channel (#2136153)\n- CVE-2022-39316, CVE-2022-39317: Add missing length checks in zgfx (#2145139)\n- CVE-2022-39318: Fix division by zero in urbdrc channel (#2145139)\n- CVE-2022-39319: Add missing length checks in urbdrc channel (#2145139)\n- CVE-2022-39320: Ensure urb_create_iocompletion uses size_t (#2145139)\n- CVE-2022-39347: Fix path validation in drive channel (#2145139)\n- CVE-2022-41877: Add missing length check in drive channel (#2145139)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39282.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39283.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39316.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39317.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39318.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39319.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39320.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39347.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-41877.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-2851.html"
+				}
+			],
+			"published": "2023-05-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-39282",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39282.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-39283",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39283.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-39316",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39316.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-39317",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39317.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-39318",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39318.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-39319",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39319.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-39320",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39320.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-39347",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-39347.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-41877",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-41877.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freerdp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.2.0-10.el8"
+								}
+							],
+							"fixed": [
+								"2:2.2.0-10.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freerdp-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.2.0-10.el8"
+								}
+							],
+							"fixed": [
+								"2:2.2.0-10.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freerdp-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.2.0-10.el8"
+								}
+							],
+							"fixed": [
+								"2:2.2.0-10.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libwinpr",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.2.0-10.el8"
+								}
+							],
+							"fixed": [
+								"2:2.2.0-10.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libwinpr-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.2.0-10.el8"
+								}
+							],
+							"fixed": [
+								"2:2.2.0-10.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

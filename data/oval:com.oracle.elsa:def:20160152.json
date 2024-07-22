@@ -1,0 +1,72 @@
+{
+	"id": "oval:com.oracle.elsa:def:20160152",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20160152",
+			"title": "\nELSA-2016-0152:  sos security and bug fix update (MODERATE)\n",
+			"description": "\n[3.2-28.0.1.2]\n- Add vendor, vendor URL info for Oracle Linux [orabug 17656507] (joe.jin@oracle.com)\n- Direct traceroute to linux.oracle.com (John Haxby) [orabug 11713272] (joe.jin@oracle.com)\n- Check oraclelinux-release instead of redhat-release to get OS version (John Haxby) [bug 11681869] (joe.jin@oracle.com)\n- Remove RH ftp URL and support email (joe.jin@oracle.com)\n- add sos-oracle-enterprise.patch (joe.jin@oracle.com)\n- Add smartmon plugin (John Haxby) [orabug 17995005] (joe.jin@oracle.com)\n\n[= 3.2-28.el6_7.2]\n- [sosreport] Report correct final path with --build\n  Related: bz1290953\n\n[= 3.2-28.el6_7.1]\n- [hpasm] Add timeout.\n  Resolves: bz1291828\n\n[= 3.2-28.el6_7]\n- [sosreport] Prepare report in a private subdirectory\n  Resolves: bz1290953\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7529.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-0152.html"
+				}
+			],
+			"published": "2016-02-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-7529",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7529.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sos",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.2-28.0.1.el6_7.2"
+								}
+							],
+							"fixed": [
+								"0:3.2-28.0.1.el6_7.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

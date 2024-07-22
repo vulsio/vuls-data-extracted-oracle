@@ -1,0 +1,94 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100565",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100565",
+			"title": "\nELSA-2010-0565:  w3m security update (MODERATE)\n",
+			"description": "\n\n[0.5.1-17]\n- Resolves:rh#604861:Clear execstack requirement also for ia64 architecture\n\n[0.5.1-16]\n- Resolves:rh#604861:CVE-2010-2074 w3m: doesn't handle NULL in Common Name properly \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2074.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0565.html"
+				}
+			],
+			"published": "2010-07-27T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-2074",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2074.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "w3m",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.5.1-17.el5_5"
+								}
+							],
+							"fixed": [
+								"0:0.5.1-17.el5_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "w3m-img",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.5.1-17.el5_5"
+								}
+							],
+							"fixed": [
+								"0:0.5.1-17.el5_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

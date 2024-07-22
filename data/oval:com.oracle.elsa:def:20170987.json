@@ -1,0 +1,130 @@
+{
+	"id": "oval:com.oracle.elsa:def:20170987",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20170987",
+			"title": "\nELSA-2017-0987:  qemu-kvm security update (IMPORTANT)\n",
+			"description": "\n[1.5.3-126.el7_3.6]\n- kvm-fix-cirrus_vga-fix-OOB-read-case-qemu-Segmentation-f.patch [bz#1430059]\n- kvm-cirrus-vnc-zap-bitblit-support-from-console-code.patch [bz#1430059]\n- kvm-cirrus-add-option-to-disable-blitter.patch [bz#1430059]\n- kvm-cirrus-fix-cirrus_invalidate_region.patch [bz#1430059]\n- kvm-cirrus-stop-passing-around-dst-pointers-in-the-blitt.patch [bz#1430059]\n- kvm-cirrus-stop-passing-around-src-pointers-in-the-blitt.patch [bz#1430059]\n- kvm-cirrus-fix-off-by-one-in-cirrus_bitblt_rop_bkwd_tran.patch [bz#1430059]\n- Resolves: bz#1430059\n  (CVE-2016-9603 qemu-kvm: Qemu: cirrus: heap buffer overflow via vnc connection [rhel-7.3.z])\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9603.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0987.html"
+				}
+			],
+			"published": "2017-04-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-9603",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9603.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-img",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-126.el7_3.6"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-126.el7_3.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-126.el7_3.6"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-126.el7_3.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-common",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-126.el7_3.6"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-126.el7_3.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-126.el7_3.6"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-126.el7_3.6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

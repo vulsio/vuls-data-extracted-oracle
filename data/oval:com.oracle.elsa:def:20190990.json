@@ -1,0 +1,218 @@
+{
+	"id": "oval:com.oracle.elsa:def:20190990",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20190990",
+			"title": "\nELSA-2019-0990:  systemd security and bug fix update (MODERATE)\n",
+			"description": "\n[239-13.0.1.3]\n- fix _netdev is missing for iscsi entry in /etc/fstab (tony.l.lam@oracle.com) [Orabug: 25897792]\n- set RemoveIPC=no in logind.conf as default for OL7.2 [Orabug: 22224874]\n- allow dm remove ioctl to co-operate with UEK3 (Vaughan Cao) [Orabug: 18467469]\n- add hv dynamic memory support (Jerry Snitselaar) [Orabug: 18621475]\n\n[239-13.3]\n- rebuilt\n\n[239-13.2]\n- Refuse dbus message paths longer than BUS_PATH_SIZE_MAX limit. (#1678641)\n- Allocate temporary strings to hold dbus paths on the heap (#1678641)\n- sd-bus: if we receive an invalid dbus message, ignore and proceeed (#1678641)\n\n[239-13.1]\n- bus-socket: Fix line_begins() to accept word matching full string (#1692991)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-6454.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-0990.html"
+				}
+			],
+			"published": "2019-07-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-6454",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-6454.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-13.0.1.el8_0.3"
+								}
+							],
+							"fixed": [
+								"0:239-13.0.1.el8_0.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-container",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-13.0.1.el8_0.3"
+								}
+							],
+							"fixed": [
+								"0:239-13.0.1.el8_0.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-13.0.1.el8_0.3"
+								}
+							],
+							"fixed": [
+								"0:239-13.0.1.el8_0.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-journal-remote",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-13.0.1.el8_0.3"
+								}
+							],
+							"fixed": [
+								"0:239-13.0.1.el8_0.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-13.0.1.el8_0.3"
+								}
+							],
+							"fixed": [
+								"0:239-13.0.1.el8_0.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-pam",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-13.0.1.el8_0.3"
+								}
+							],
+							"fixed": [
+								"0:239-13.0.1.el8_0.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-13.0.1.el8_0.3"
+								}
+							],
+							"fixed": [
+								"0:239-13.0.1.el8_0.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "systemd-udev",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:239-13.0.1.el8_0.3"
+								}
+							],
+							"fixed": [
+								"0:239-13.0.1.el8_0.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

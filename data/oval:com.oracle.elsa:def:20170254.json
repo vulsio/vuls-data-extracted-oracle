@@ -1,0 +1,103 @@
+{
+	"id": "oval:com.oracle.elsa:def:20170254",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20170254",
+			"title": "\nELSA-2017-0254:  spice security update (MODERATE)\n",
+			"description": "\n[0.12.4-20]\n- Fix buffer overflow in main_channel_alloc_msg_rcv_buf when reading large\n  messages.\n  Resolves: CVE-2016-9577\n- Fix remote DoS via crafted message.\n  Resolves: CVE-2016-9578\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9577.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9578.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0254.html"
+				}
+			],
+			"published": "2017-02-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-9577",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9577.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-9578",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-9578.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-server",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-20.el7_3"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-20.el7_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-server-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-20.el7_3"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-20.el7_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

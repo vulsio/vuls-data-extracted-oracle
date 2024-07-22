@@ -1,0 +1,142 @@
+{
+	"id": "oval:com.oracle.elsa:def:20091127",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20091127",
+			"title": "\nELSA-2009-1127:  kdelibs security update (CRITICAL)\n",
+			"description": "\n\n[3.5.4-22.0.1.el5_3]\n- Remove Version branding\n- Maximum rpm trademark logos removed (pics/crystalsvg/*-mime-rpm*) in tarball\n\n[3.5.4-22]\n- Resolves: #505621,\n    CVE-2009-1687, integer overflow in KJS JavaScript garbage collector\n    CVE-2009-1698, KHTML CSS parser - incorrect handling CSS style attribute content (DoS, ACE)\n\n[3.5.4-21]\n- Resolves: #505621,\n    CVE-2009-1687, integer overflow in KJS JavaScript garbage collector\n    CVE-2009-1698, KHTML CSS parser - incorrect handling CSS style attribute content (DoS, ACE)\n\n[3.5.4-20]\n- Resolves: #505621,\n    CVE-2009-1687, integer overflow in KJS JavaScript garbage collector\n    CVE-2009-1698, KHTML CSS parser - incorrect handling CSS style attribute content (DoS, ACE)\n\n[3.5.4-19]\n- Resolves: #505621, CVE-2009-1690\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1687.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1690.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1698.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-1127.html"
+				}
+			],
+			"published": "2009-06-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-1687",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1687.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-1690",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1690.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-1698",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1698.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kdelibs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "6:3.5.4-22.0.1.el5_3"
+								}
+							],
+							"fixed": [
+								"6:3.5.4-22.0.1.el5_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kdelibs-apidocs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "6:3.5.4-22.0.1.el5_3"
+								}
+							],
+							"fixed": [
+								"6:3.5.4-22.0.1.el5_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kdelibs-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "6:3.5.4-22.0.1.el5_3"
+								}
+							],
+							"fixed": [
+								"6:3.5.4-22.0.1.el5_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

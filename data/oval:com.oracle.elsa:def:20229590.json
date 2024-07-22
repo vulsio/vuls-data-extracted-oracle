@@ -1,0 +1,588 @@
+{
+	"id": "oval:com.oracle.elsa:def:20229590",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20229590",
+			"title": "\nELSA-2022-9590:  Unbreakable Enterprise kernel security update (IMPORTANT)\n",
+			"description": "\n[5.15.0-0.30.20]\n- floppy: use a statically allocated error counter (Willy Tarreau)  [Orabug: 34218638]  {CVE-2022-1652}\n- x86: Disable RET on kexec (Konrad Rzeszutek Wilk)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/bugs: do not enable IBPB-on-entry when IBPB is not supported (Thadeu Lima de Souza Cascardo)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- arm64: proton-pack: provide vulnerability file value for RETBleed (James Morse)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/cpu/amd: Enumerate BTC_NO (Andrew Cooper)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/common: Stamp out the stepping madness (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- KVM: VMX: Prevent RSB underflow before vmenter (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/speculation: Fill RSB on vmexit for IBRS (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- KVM: VMX: Fix IBRS handling after vmexit (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- KVM: VMX: Prevent guest RSB poisoning attacks with eIBRS (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- KVM: VMX: Convert launched argument to flags (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- KVM: VMX: Flatten __vmx_vcpu_run() (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- objtool: Re-add UNWIND_HINT_{SAVE_RESTORE} (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/speculation: Remove x86_spec_ctrl_mask (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/speculation: Use cached host SPEC_CTRL value for guest entry/exit (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/speculation: Fix SPEC_CTRL write on SMT state change (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/speculation: Fix firmware entry SPEC_CTRL handling (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/speculation: Fix RSB filling with CONFIG_RETPOLINE=n (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/cpu/amd: Add Spectral Chicken (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- objtool: Add entry UNRET validation (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/bugs: Do IBPB fallback check only once (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/bugs: Add retbleed=ibpb (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/xen: Rename SYS* entry points (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- objtool: Update Retpoline validation (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- intel_idle: Disable IBRS during long idle (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/bugs: Report Intel retbleed vulnerability (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/bugs: Split spectre_v2_select_mitigation() and spectre_v2_user_select_mitigation() (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/speculation: Add spectre_v2=ibrs option to support Kernel IBRS (Pawan Gupta)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/bugs: Optimize SPEC_CTRL MSR writes (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/entry: Add kernel IBRS implementation (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/bugs: Keep a per-CPU IA32_SPEC_CTRL value (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/bugs: Enable STIBP for JMP2RET (Kim Phillips)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/bugs: Add AMD retbleed= boot parameter (Alexandre Chartre)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/bugs: Report AMD retbleed vulnerability (Alexandre Chartre)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86: Add magic AMD return-thunk (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- objtool: Treat .text.__x86.* as noinstr (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86: Use return-thunk in asm code (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/sev: Avoid using __x86_return_thunk (Kim Phillips)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/vsyscall_emu/64: Don't use RET in vsyscall emulation (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/kvm: Fix SETcc emulation for return thunks (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/bpf: Use alternative RET encoding (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/ftrace: Use alternative RET encoding (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86,static_call: Use alternative RET encoding (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86,objtool: Create .return_sites (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86: Undo return-thunk damage (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/retpoline: Use -mfunction-return (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/retpoline: Swizzle retpoline thunk (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/retpoline: Cleanup some #ifdefery (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/cpufeatures: Move RETPOLINE flags to word 11 (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/kvm/vmx: Make noinstr clean (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/entry: Remove skip_r11rcx (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/entry: Fix register corruption in compat syscall (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/entry: Use PUSH_AND_CLEAR_REGS for compat (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/entry: Simplify entry_INT80_compat() (Linus Torvalds)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/mm: Simplify RESERVE_BRK() (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- crypto: x86/poly1305 - Fixup SLS (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86,static_call: Fix __static_call_return0 for i386 (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- kvm/emulate: Fix SETcc emulation function offsets with SLS (Borislav Petkov)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- objtool: Default ignore INT3 for unreachable (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/ibt,paravirt: Use text_gen_insn() for paravirt_patch() (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86: Add straight-line-speculation mitigation (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- objtool: Add straight-line-speculation validation (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86: Prepare inline-asm for straight-line-speculation (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86: Prepare asm files for straight-line-speculation (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/lib/atomic64_386_32: Rename things (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/alternative: Relax text_poke_bp() constraint (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- static_call,x86: Robustify trampoline patching (Peter Zijlstra)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n- x86/xen: Move hypercall_page to top of the file (Josh Poimboeuf)  [Orabug: 34335631]  {CVE-2022-29901} {CVE-2022-23816}\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-1652.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-23816.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-29901.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-9590.html"
+				}
+			],
+			"published": "2022-07-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-1652",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-1652.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-23816",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-23816.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-29901",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-29901.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bpftool",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el8uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el8uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el8uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el8uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el8uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el8uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el8uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el8uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el8uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el8uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el8uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el8uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-modules",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el8uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el8uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-modules-extra",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el8uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el8uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el8uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el8uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el8uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el8uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-modules",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el8uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el8uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-modules-extra",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el8uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el8uek"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bpftool",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el9uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el9uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el9uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el9uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el9uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el9uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el9uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el9uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el9uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el9uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el9uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el9uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-modules",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el9uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el9uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-modules-extra",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el9uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el9uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el9uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el9uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el9uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el9uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-modules",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el9uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el9uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-modules-extra",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.15.0-0.30.20.el9uek"
+								}
+							],
+							"fixed": [
+								"0:5.15.0-0.30.20.el9uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

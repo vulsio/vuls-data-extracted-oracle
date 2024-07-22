@@ -1,0 +1,176 @@
+{
+	"id": "oval:com.oracle.elsa:def:20192178",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20192178",
+			"title": "\nELSA-2019-2178:  udisks2 security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\n[2.7.3-9]\n- Build udisks2-lsm subpackage (#1672664)\n- Fix sigint source removal on daemon exit (#1643350)\n- CVE-2018-17336: Fix format string vulnerability in udisks_log (#1637427)\n- Describe command options in the udisksctl man page (#1568269)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-17336.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-2178.html"
+				}
+			],
+			"published": "2019-08-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-17336",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-17336.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libudisks2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.3-9.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.3-9.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libudisks2-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.3-9.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.3-9.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "udisks2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.3-9.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.3-9.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "udisks2-iscsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.3-9.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.3-9.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "udisks2-lsm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.3-9.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.3-9.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "udisks2-lvm2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.3-9.el7"
+								}
+							],
+							"fixed": [
+								"0:2.7.3-9.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

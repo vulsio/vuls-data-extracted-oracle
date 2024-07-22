@@ -1,0 +1,155 @@
+{
+	"id": "oval:com.oracle.elsa:def:20160511",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20160511",
+			"title": "\nELSA-2016-0511:  java-1.7.0-openjdk security update (CRITICAL)\n",
+			"description": "\n[1:1.7.0.99-2.6.5.0.0.1]\n- Update DISTRO_NAME in specfile\n\n[1:1.7.0.99-2.6.5.0]\n- Bump to 2.6.5 and u99b00.\n- Correct check for fsg.sh in tarball creation script\n- Resolves: rhbz#1320656\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0636.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-0511.html"
+				}
+			],
+			"published": "2016-03-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-0636",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0636.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.99-2.6.5.0.0.1.el6_7"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.99-2.6.5.0.0.1.el6_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-demo",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.99-2.6.5.0.0.1.el6_7"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.99-2.6.5.0.0.1.el6_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.99-2.6.5.0.0.1.el6_7"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.99-2.6.5.0.0.1.el6_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-javadoc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.99-2.6.5.0.0.1.el6_7"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.99-2.6.5.0.0.1.el6_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-src",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.99-2.6.5.0.0.1.el6_7"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.99-2.6.5.0.0.1.el6_7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

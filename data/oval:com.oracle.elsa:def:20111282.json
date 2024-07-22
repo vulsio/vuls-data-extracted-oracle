@@ -1,0 +1,280 @@
+{
+	"id": "oval:com.oracle.elsa:def:20111282",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20111282",
+			"title": "\nELSA-2011-1282:  nss and nspr security update (IMPORTANT)\n",
+			"description": "\n\n[3.12.9-12.0.1.el6_1]\n- Use blank image instead of clean.gif in nss-3.12.9-stripped.tar.bz2\n\n[3.12.9-12]\n- Retagging\n\n[3.12.10-12]\n- Update builtins certs to those from NSSCKBI_1_87_RTM\n\n[3.12.9-11]\n- Update builtins certs to those from NSSCKBI_1_86_RTM\n\n[3.12.9-10]\n- Update builtins certs to NSSCKBI_1_85_RTM\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1282.html"
+				}
+			],
+			"published": "2011-09-12T00:00:00Z"
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nspr",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.8.8-1.el5_7"
+								}
+							],
+							"fixed": [
+								"0:4.8.8-1.el5_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nspr-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.8.8-1.el5_7"
+								}
+							],
+							"fixed": [
+								"0:4.8.8-1.el5_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12.10-4.0.1.el5_7"
+								}
+							],
+							"fixed": [
+								"0:3.12.10-4.0.1.el5_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12.10-4.0.1.el5_7"
+								}
+							],
+							"fixed": [
+								"0:3.12.10-4.0.1.el5_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-pkcs11-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12.10-4.0.1.el5_7"
+								}
+							],
+							"fixed": [
+								"0:3.12.10-4.0.1.el5_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-tools",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12.10-4.0.1.el5_7"
+								}
+							],
+							"fixed": [
+								"0:3.12.10-4.0.1.el5_7"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12.9-12.0.1.el6_1"
+								}
+							],
+							"fixed": [
+								"0:3.12.9-12.0.1.el6_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12.9-12.0.1.el6_1"
+								}
+							],
+							"fixed": [
+								"0:3.12.9-12.0.1.el6_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-pkcs11-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12.9-12.0.1.el6_1"
+								}
+							],
+							"fixed": [
+								"0:3.12.9-12.0.1.el6_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-sysinit",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12.9-12.0.1.el6_1"
+								}
+							],
+							"fixed": [
+								"0:3.12.9-12.0.1.el6_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-tools",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12.9-12.0.1.el6_1"
+								}
+							],
+							"fixed": [
+								"0:3.12.9-12.0.1.el6_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

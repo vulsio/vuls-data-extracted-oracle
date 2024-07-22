@@ -1,0 +1,95 @@
+{
+	"id": "oval:com.oracle.elsa:def:20194611",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20194611",
+			"title": "\nELSA-2019-4611:  kubernetes security update (IMPORTANT)\n",
+			"description": "\n[1.11.3-2.5.2]\n- [OLCNE-235] [CVE-2019-9946] portmap inserts rules at the front of the iptables nat chains\n\n[1.11.3-2.4.2]\n- [CVE-2019-1002101] kubectl fix potential directory traversal\n\n[1.11.3-2.3.2]\n- [CVE-2019-1002100] Limit the number of operations in a single json patch to be 10,000\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-4611.html"
+				}
+			],
+			"published": "2019-04-13T00:00:00Z"
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubeadm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.3-2.5.2.el7"
+								}
+							],
+							"fixed": [
+								"0:1.11.3-2.5.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubectl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.3-2.5.2.el7"
+								}
+							],
+							"fixed": [
+								"0:1.11.3-2.5.2.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubelet",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.3-2.5.2.el7"
+								}
+							],
+							"fixed": [
+								"0:1.11.3-2.5.2.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

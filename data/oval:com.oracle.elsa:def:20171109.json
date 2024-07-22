@@ -1,0 +1,367 @@
+{
+	"id": "oval:com.oracle.elsa:def:20171109",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20171109",
+			"title": "\nELSA-2017-1109:  java-1.8.0-openjdk security update (MODERATE)\n",
+			"description": "\n[1:1.8.0.131-0.b11]\n- Update to aarch64-jdk8u131-b11.\n- Drop upstreamed patches for 8147910, 8161993, 8170888 and 8173783.\n- Update generate_source_tarball.sh to remove patch remnants.\n- Cleanup tarball creation documentation to avoid duplication.\n- Resolves: rhbz#1438751\n\n[1:1.8.0.121-2.b13]\n- Add backports from 8u131 and 8u152 ahead of April CPU.\n- Apply backports before local RPM fixes so they will be the same as when applied upstream\n- Adjust RH1022017 following application of 8173783\n- Resolves: rhbz#1438751\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3509.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3511.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3526.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3533.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3539.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3544.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-1109.html"
+				}
+			],
+			"published": "2017-04-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-3509",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3509.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-3511",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3511.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-3526",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3526.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-3533",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3533.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-3539",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3539.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-3544",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3544.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.131-0.b11.el6_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.131-0.b11.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.131-0.b11.el6_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.131-0.b11.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-demo",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.131-0.b11.el6_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.131-0.b11.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-demo-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.131-0.b11.el6_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.131-0.b11.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.131-0.b11.el6_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.131-0.b11.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-devel-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.131-0.b11.el6_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.131-0.b11.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-headless",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.131-0.b11.el6_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.131-0.b11.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-headless-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.131-0.b11.el6_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.131-0.b11.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-javadoc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.131-0.b11.el6_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.131-0.b11.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-javadoc-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.131-0.b11.el6_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.131-0.b11.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-src",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.131-0.b11.el6_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.131-0.b11.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-src-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.131-0.b11.el6_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.131-0.b11.el6_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

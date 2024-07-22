@@ -1,0 +1,524 @@
+{
+	"id": "oval:com.oracle.elsa:def:20231470",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20231470",
+			"title": "\nELSA-2023-1470:  kernel security, bug fix, and enhancement update (IMPORTANT)\n",
+			"description": "\n- [5.14.0-162.22.2_1.OL9]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5\n- Remove nmap references from kernel (Mridula Shastry) [Orabug: 34313944]\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n\n[5.14.0-162.22.2_1]\n- tun: avoid double free in tun_free_netdev (Jon Maloy) [2156373] {CVE-2022-4744}\n\n[5.14.0-162.22.1_1]\n- ALSA: pcm: Move rwsem lock inside snd_ctl_elem_read to prevent UAF (Jaroslav Kysela) [2163390 2125540] {CVE-2023-0266}\n\n[5.14.0-162.21.1_1]\n- s390/boot: add secure boot trailer (Tobias Huschle) [2151528 2141966]\n- s390/kexec: fix ipl report address for kdump (Tobias Huschle) [2166903 2161327]\n- s390/qeth: cache link_info for ethtool (Tobias Huschle) [2166304 2110436]\n- scsi: zfcp: Fix missing auto port scan and thus missing target ports (Tobias Huschle) [2127880 2121088]\n\n[5.14.0-162.20.1_1]\n- cgroup/cpuset: remove unreachable code (Waiman Long) [2161105 1946801]\n- kselftest/cgroup: Add cpuset v2 partition root state test (Waiman Long) [2161105 1946801]\n- cgroup/cpuset: Update description of cpuset.cpus.partition in cgroup-v2.rst (Waiman Long) [2161105 1946801]\n- cgroup/cpuset: Make partition invalid if cpumask change violates exclusivity rule (Waiman Long) [2161105 1946801]\n- cgroup/cpuset: Relocate a code block in validate_change() (Waiman Long) [2161105 1946801]\n- cgroup/cpuset: Show invalid partition reason string (Waiman Long) [2161105 1946801]\n- cgroup/cpuset: Add a new isolated cpus.partition type (Waiman Long) [2161105 1946801]\n- cgroup/cpuset: Relax constraints to partition & cpus changes (Waiman Long) [2161105 1946801]\n- cgroup/cpuset: Allow no-task partition to have empty cpuset.cpus.effective (Waiman Long) [2161105 1946801]\n- cgroup/cpuset: Miscellaneous cleanups & add helper functions (Waiman Long) [2161105 1946801]\n- cgroup/cpuset: Enable update_tasks_cpumask() on top_cpuset (Waiman Long) [2161105 1946801]\n- cpuset: convert 'allowed' in __cpuset_node_allowed() to be boolean (Waiman Long) [2161105 1946801]\n- cgroup/cpuset: Remove cpus_allowed/mems_allowed setup in cpuset_init_smp() (Waiman Long) [2161105 1946801]\n- cgroup: cleanup comments (Waiman Long) [2161105 1946801]\n- act_mirred: use the backlog for nested calls to mirred ingress (Davide Caratti) [2164655 2150278] {CVE-2022-4269}\n- net/sched: act_mirred: better wording on protection against excessive stack growth (Davide Caratti) [2164655 2150278] {CVE-2022-4269}\n- scsi: storvsc: Fix swiotlb bounce buffer leak in confidential VM (Emanuele Giuseppe Esposito) [2170227 2150660]\n\n[5.14.0-162.19.1_1]\n- sched/core: Use kfree_rcu() in do_set_cpus_allowed() (Waiman Long) [2160614 2143847]\n- sched/core: Fix use-after-free bug in dup_user_cpus_ptr() (Waiman Long) [2160614 2143847]\n- sched: Always clear user_cpus_ptr in do_set_cpus_allowed() (Waiman Long) [2143766 2107354]\n- sched: Enforce user requested affinity (Waiman Long) [2143766 2107354]\n- sched: Always preserve the user requested cpumask (Waiman Long) [2143766 2107354]\n- sched: Introduce affinity_context (Waiman Long) [2143766 2107354]\n- sched: Add __releases annotations to affine_move_task() (Waiman Long) [2143766 2107354]\n- x86/fpu: Fix copy_xstate_to_uabi() to copy init states correctly (Dean Nelson) [2168382 2122851]\n- x86/fpu: Exclude dynamic states from init_fpstate (Dean Nelson) [2168382 2122851]\n- x86/fpu: Fix the init_fpstate size check with the actual size (Dean Nelson) [2168382 2122851]\n- x86/fpu: Configure init_fpstate attributes orderly (Dean Nelson) [2168382 2122851]\n- x86/fpu/xstate: Fix the ARCH_REQ_XCOMP_PERM implementation (Dean Nelson) [2168382 2122851]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-4269.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-4744.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-0266.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-1470.html"
+				}
+			],
+			"published": "2023-03-28T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-4269",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-4269.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-4744",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-4744.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-0266",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-0266.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bpftool",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-abi-stablelists",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-cross-headers",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel-matched",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-modules",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-modules-extra",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel-matched",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-modules",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-modules-extra",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-tools-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-tools-libs-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-perf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-162.22.2.el9_1"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-162.22.2.el9_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

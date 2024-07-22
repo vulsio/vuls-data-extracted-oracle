@@ -1,0 +1,365 @@
+{
+	"id": "oval:com.oracle.elsa:def:20203011",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20203011",
+			"title": "\nELSA-2020-3011:  NetworkManager security and bug fix update (MODERATE)\n",
+			"description": "\n[1:1.22.8-5]\n- dhcp: fix handling IO error in nettools DHCPv4 client (rh #1843357)\n- ifcfg-rh: handle '802-1x.{,phase2-}ca-path' (rh #1843360, CVE-2020-10754)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10754.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-3011.html"
+				}
+			],
+			"published": "2020-07-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-10754",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10754.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-adsl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-bluetooth",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-cloud-setup",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-config-connectivity-redhat",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-config-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-dispatcher-routing-rules",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-libnm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-libnm-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-ovs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-ppp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-team",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-tui",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-wifi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-wwan",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.22.8-5.el8_2"
+								}
+							],
+							"fixed": [
+								"1:1.22.8-5.el8_2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,210 @@
+{
+	"id": "oval:com.oracle.elsa:def:20235080",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20235080",
+			"title": "\nELSA-2023-5080:  keylime security update (MODERATE)\n",
+			"description": "\n[6.5.2-6]\n- Fix registrar is subject to a DoS against SSL (CVE-2023-38200)\n  Resolves: rhbz#2222694\n- Fix challenge-protocol bypass during agent registration (CVE-2023-38201)\n  Resolves: rhbz#2222695\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-38200.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-38201.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-5080.html"
+				}
+			],
+			"published": "2023-09-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-38200",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-38200.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-38201",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-38201.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "keylime",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.5.2-6.el9_2"
+								}
+							],
+							"fixed": [
+								"0:6.5.2-6.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "keylime-base",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.5.2-6.el9_2"
+								}
+							],
+							"fixed": [
+								"0:6.5.2-6.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "keylime-registrar",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.5.2-6.el9_2"
+								}
+							],
+							"fixed": [
+								"0:6.5.2-6.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "keylime-selinux",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.5.2-6.el9_2"
+								}
+							],
+							"fixed": [
+								"0:6.5.2-6.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "keylime-tenant",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.5.2-6.el9_2"
+								}
+							],
+							"fixed": [
+								"0:6.5.2-6.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "keylime-verifier",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.5.2-6.el9_2"
+								}
+							],
+							"fixed": [
+								"0:6.5.2-6.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-keylime",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.5.2-6.el9_2"
+								}
+							],
+							"fixed": [
+								"0:6.5.2-6.el9_2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

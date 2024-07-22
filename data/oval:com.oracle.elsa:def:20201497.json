@@ -1,0 +1,249 @@
+{
+	"id": "oval:com.oracle.elsa:def:20201497",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20201497",
+			"title": "\nELSA-2020-1497:  tigervnc security update (MODERATE)\n",
+			"description": "\n[1.9.0-14]\n- Bump build version\n  Resolves: bz#1819877\n  Resolves: bz#1819879\n  Resolves: bz#1819882\n  Resolves: bz#1819886\n  Resolves: bz#1819884\n\n[1.9.0-13]\n- Fix stack buffer overflow in CMsgReader::readSetCursor\n  Resolves: bz#1819877\n\n- Fix heap buffer overflow in DecodeManager::decodeRect\n  Resolves: bz#1819879\n\n- Fix heap buffer overflow in TightDecoder::FilterGradient\n  Resolves: bz#1819882\n\n- Fix heap-based buffer overflow triggered from CopyRectDecoder\n  Resolves: bz#1819886\n\n- Fix stack use-after-return due to incorrect usage of stack memory in ZRLEDecoder\n  Resolves: bz#1819884\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15691.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15692.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15693.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15694.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15695.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-1497.html"
+				}
+			],
+			"published": "2020-04-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-15691",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15691.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-15692",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15692.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-15693",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15693.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-15694",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15694.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-15695",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15695.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.0-14.el8_1"
+								}
+							],
+							"fixed": [
+								"0:1.9.0-14.el8_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc-icons",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.0-14.el8_1"
+								}
+							],
+							"fixed": [
+								"0:1.9.0-14.el8_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc-license",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.0-14.el8_1"
+								}
+							],
+							"fixed": [
+								"0:1.9.0-14.el8_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.0-14.el8_1"
+								}
+							],
+							"fixed": [
+								"0:1.9.0-14.el8_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc-server-applet",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.0-14.el8_1"
+								}
+							],
+							"fixed": [
+								"0:1.9.0-14.el8_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc-server-minimal",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.0-14.el8_1"
+								}
+							],
+							"fixed": [
+								"0:1.9.0-14.el8_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc-server-module",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.0-14.el8_1"
+								}
+							],
+							"fixed": [
+								"0:1.9.0-14.el8_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

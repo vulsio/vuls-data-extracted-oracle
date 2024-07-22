@@ -1,0 +1,239 @@
+{
+	"id": "oval:com.oracle.elsa:def:20130696",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20130696",
+			"title": "\nELSA-2013-0696:  firefox security update (CRITICAL)\n",
+			"description": "\nfirefox\n[17.0.5-1.0.1]\n- Add firefox-oracle-default-prefs.js and remove the corresponding Red Hat ones\n\n[17.0.5-1]\n- Update to 17.0.5 ESR\n\nxulrunner\n[17.0.5-1.0.1.el6_4]\n- Replaced xulrunner-redhat-default-prefs.js with xulrunner-oracle-default-prefs.js\n- Removed XULRUNNER_VERSION from SOURCE21\n\n[17.0.5-1]\n- Update to 17.0.5 ESR\n\n[17.0.3-3]\n- Added fix for rhbz#916180 - Wrong library directory reference\n  in /usr/bin/xulrunner\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0788.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0793.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0795.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0796.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0800.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0696.html"
+				}
+			],
+			"published": "2013-04-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-0788",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0788.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-0793",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0793.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-0795",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0795.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-0796",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0796.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-0800",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0800.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:17.0.5-1.0.1.el5_9"
+								}
+							],
+							"fixed": [
+								"0:17.0.5-1.0.1.el5_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xulrunner",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:17.0.5-1.0.1.el5_9"
+								}
+							],
+							"fixed": [
+								"0:17.0.5-1.0.1.el5_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xulrunner-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:17.0.5-1.0.1.el5_9"
+								}
+							],
+							"fixed": [
+								"0:17.0.5-1.0.1.el5_9"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:17.0.5-1.0.1.el6_4"
+								}
+							],
+							"fixed": [
+								"0:17.0.5-1.0.1.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xulrunner",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:17.0.5-1.0.1.el6_4"
+								}
+							],
+							"fixed": [
+								"0:17.0.5-1.0.1.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xulrunner-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:17.0.5-1.0.1.el6_4"
+								}
+							],
+							"fixed": [
+								"0:17.0.5-1.0.1.el6_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

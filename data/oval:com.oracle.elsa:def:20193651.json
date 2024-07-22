@@ -1,0 +1,680 @@
+{
+	"id": "oval:com.oracle.elsa:def:20193651",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20193651",
+			"title": "\nELSA-2019-3651:  sssd security, bug fix, and enhancement update (LOW)\n",
+			"description": "\n[2.2.0-19]\n- Resolves: rhbz#1712875 - Old kerberos credentials active instead of valid\n                           new ones (kcm)\n\n[2.2.0-18]\n- Resolves: rhbz#1744134 - New defect found in sssd-2.2.0-16.el8\n- Also sync. kcm multihost tests with master\n\n[2.2.0-17]\n- Resolves: rhbz#1676385 - pam_sss with smartcard auth does not create gnome\n                           keyring\n- Also apply a patch to fix gating tests issue\n\n[2.2.0-16]\n- Resolves: rhbz#1736861 - dyndns_update = True is no longer enough to get\n                           the IP address of the machine updated in IPA upon\n                           sssd.service startup\n\n[2.2.0-15]\n- Resolves: rhbz#1736265 - Smart Card auth of local user: endless\n                           loop if wrong PIN was provided\n\n[2.2.0-14]\n- Resolves: rhbz#1736796 - sssd config option 'default_domain_suffix'\n                           should not cause files domain entries to be\n                           qualified, this can break sudo access\n\n[2.2.0-13]\n- Resolves: rhbz#1669407 - MAN: Document that PAM stack contains the\n            systemd-user service in the account phase in RHEL-8\n\n[2.2.0-12]\n- Resolves: rhbz#1448094 - sssd-kcm cannot handle big tickets\n\n[2.2.0-11]\n- Resolves: rhbz#1733372 - permission denied on logs when running sssd as\n                           non-root user\n\n[2.2.0-10]\n- Resolves: rhbz#1736483 - Sudo prompt for smart card authentication is missing\n                           the trailing colon\n\n[2.2.0-9]\n- Resolves: rhbz#1382750 - Conflicting default timeout values\n\n[2.2.0-8]\n- Resolves: rhbz#1699480 - Include libsss_nss_idmap-devel in the Builder\n                           repository\n                         - This just required a raise in release number\n                           and changelog for the record.\n\n[2.2.0-7]\n- Resolves: rhbz#1711318 - p11_child::sign_data() function implementation is\n                           not FIPS140 compliant\n\n[2.2.0-6]\n- Resolves: rhbz#1726945 - negative cache does not use values from\n                           'filter_users' config option for known domains\n\n[2.2.0-5]\n- Resolves: rhbz#1729055 - sssd does not pass correct rules to sudo\n\n[2.2.0-4]\n- Resolves: rhbz#1283798 - sssd failover does not work on connecting to\n                           non-responsive ldaps:// server\n\n[2.2.0-3]\n- Resolves: rhbz#1725168 - sssd-proxy crashes resolving groups with\n                           no members\n\n[2.2.0-2]\n- Resolves: rhbz#1673443 - sssd man pages: The default value of\n                           'ldap_user_home_directory' is not mentioned\n                           with AD server configuration\n\n[2.2.0-1]\n- Resolves: rhbz#1687281\n  Rebase sssd in RHEL-8.1 to the latest upstream release\n\n[2.1.0-1]\n- Resolves: rhbz#1687281\n  Rebase sssd in RHEL-8.1 to the latest upstream release\n\n[2.0.0-45]\n- Replace ARRAY_SIZE with N_ELEMENTS to reflect samba changes. This is\n  done here in order to unblock gating changes before rebase.\n- Related: rhbz#1682305\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16838.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-3651.html"
+				}
+			],
+			"published": "2019-11-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-16838",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16838.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libipa_hbac",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_autofs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_certmap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_idmap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_nss_idmap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_nss_idmap-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_simpleifp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsss_sudo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-libipa_hbac",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-libsss_nss_idmap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-sss",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-sss-murmur",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-sssdconfig",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-ad",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-client",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-common-pac",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-dbus",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-ipa",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-kcm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-krb5",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-krb5-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-ldap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-libwbclient",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-nfs-idmap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-polkit-rules",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-proxy",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sssd-winbind-idmap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.0-19.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.0-19.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

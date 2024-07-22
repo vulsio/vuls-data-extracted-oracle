@@ -1,0 +1,212 @@
+{
+	"id": "oval:com.oracle.elsa:def:20160996",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20160996",
+			"title": "\nELSA-2016-0996:  openssl security update (IMPORTANT)\n",
+			"description": "\n[1.0.1e-48.1]\n- fix CVE-2016-2105 - possible overflow in base64 encoding\n- fix CVE-2016-2106 - possible overflow in EVP_EncryptUpdate()\n- fix CVE-2016-2107 - padding oracle in stitched AES-NI CBC-MAC\n- fix CVE-2016-2108 - memory corruption in ASN.1 encoder\n- fix CVE-2016-2109 - possible DoS when reading ASN.1 data from BIO\n- fix CVE-2016-0799 - memory issues in BIO_printf\n\n[1.0.1e-48]\n- fix CVE-2016-0702 - side channel attack on modular exponentiation\n- fix CVE-2016-0705 - double-free in DSA private key parsing\n- fix CVE-2016-0797 - heap corruption in BN_hex2bn and BN_dec2bn\n\n[1.0.1e-47]\n- fix CVE-2015-3197 - SSLv2 ciphersuite enforcement\n- disable SSLv2 in the generic TLS method\n\n[1.0.1e-46]\n- fix 1-byte memory leak in pkcs12 parse (#1229871)\n- document some options of the speed command (#1197095)\n\n[1.0.1e-45]\n- fix high-precision timestamps in timestamping authority\n\n[1.0.1e-44]\n- fix CVE-2015-7575 - disallow use of MD5 in TLS1.2\n\n[1.0.1e-43]\n- fix CVE-2015-3194 - certificate verify crash with missing PSS parameter\n- fix CVE-2015-3195 - X509_ATTRIBUTE memory leak\n- fix CVE-2015-3196 - race condition when handling PSK identity hint\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0799.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2105.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2106.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2107.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2108.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2109.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2842.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-0996.html"
+				}
+			],
+			"published": "2016-05-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-0799",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0799.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-2105",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2105.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-2106",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2106.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-2107",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2107.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-2108",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2108.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-2109",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2109.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-2842",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2842.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1e-48.el6_8.1"
+								}
+							],
+							"fixed": [
+								"0:1.0.1e-48.el6_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1e-48.el6_8.1"
+								}
+							],
+							"fixed": [
+								"0:1.0.1e-48.el6_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1e-48.el6_8.1"
+								}
+							],
+							"fixed": [
+								"0:1.0.1e-48.el6_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1e-48.el6_8.1"
+								}
+							],
+							"fixed": [
+								"0:1.0.1e-48.el6_8.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

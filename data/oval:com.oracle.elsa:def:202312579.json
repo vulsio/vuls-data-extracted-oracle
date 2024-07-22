@@ -1,0 +1,748 @@
+{
+	"id": "oval:com.oracle.elsa:def:202312579",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:202312579",
+			"title": "\nELSA-2023-12579: aardvark-dns security update (IMPORTANT)\n",
+			"description": "\nrunc\n[1:1.1.4-1.0.1]\n- rootless: fix /sys/fs/cgroup mounts to prevent CVE-2023-25809\n- rootfs: prohibit symlinks that conflicts with readonlyPaths\n          and/or maskedPaths to prevent CVE-2023-27561\n- Prohibit /proc and /sys to be symlinks to prevent CVE-2023-28642\n- JIRA: OLDIS-25589\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-25809.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-27561.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-28642.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-12579.html"
+				}
+			],
+			"published": "2023-07-19T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-25809",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-25809.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-27561",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-27561.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-28642",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-28642.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::aardvark-dns",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.5.0-2.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"2:1.5.0-2.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::buildah",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.29.1-2.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"1:1.29.1-2.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::buildah-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.29.1-2.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"1:1.29.1-2.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::cockpit-podman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:63.1-1.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"0:63.1-1.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::conmon",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:2.1.6-1.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"3:2.1.6-1.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::container-selinux",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.205.0-2.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"2:2.205.0-2.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::containernetworking-plugins",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.2.0-1.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"1:1.2.0-1.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::containers-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1-64.0.1.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"2:1-64.0.1.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::crit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.15-3.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"0:3.15-3.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::criu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.15-3.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"0:3.15-3.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::criu-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.15-3.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"0:3.15-3.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::criu-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.15-3.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"0:3.15-3.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::crun",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.4-2.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"0:1.8.4-2.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::fuse-overlayfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11-1.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"0:1.11-1.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::libslirp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.4.0-1.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"0:4.4.0-1.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::libslirp-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.4.0-1.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"0:4.4.0-1.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::netavark",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.5.0-5.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"2:1.5.0-5.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::oci-seccomp-bpf-hook",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.8-1.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"0:1.2.8-1.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::podman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::podman-catatonit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::podman-docker",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::podman-gvproxy",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::podman-plugins",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::podman-remote",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::podman-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+								}
+							],
+							"fixed": [
+								"3:4.4.1-12.module+el8.8.0+21056+d98a0860"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::python3-criu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.15-3.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"0:3.15-3.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::python3-podman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.4.1-1.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"0:4.4.1-1.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::skopeo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.11.2-0.2.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"2:1.11.2-0.2.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::skopeo-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.11.2-0.2.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"2:1.11.2-0.2.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::slirp4netns",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.0-2.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"0:1.2.0-2.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:ol8::udica",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.2.6-20.module+el8.8.0+21045+adcb6a64"
+								}
+							],
+							"fixed": [
+								"0:0.2.6-20.module+el8.8.0+21045+adcb6a64"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "runc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.4-1.0.1.module+el8.8.0+21119+51f68ed8"
+								}
+							],
+							"fixed": [
+								"1:1.1.4-1.0.1.module+el8.8.0+21119+51f68ed8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

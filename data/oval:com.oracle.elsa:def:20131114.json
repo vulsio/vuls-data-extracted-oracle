@@ -1,0 +1,176 @@
+{
+	"id": "oval:com.oracle.elsa:def:20131114",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20131114",
+			"title": "\nELSA-2013-1114:  bind security update (IMPORTANT)\n",
+			"description": "\n[32:9.8.2-0.17.rc1.0.2.el6_4.5]\n- bump release and build for ULN\n\n[32:9.8.2-0.17.rc1.5]\n- fix CVE-2013-4854\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4854.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-1114.html"
+				}
+			],
+			"published": "2013-07-29T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-4854",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4854.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.17.rc1.0.2.el6_4.5"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.17.rc1.0.2.el6_4.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-chroot",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.17.rc1.0.2.el6_4.5"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.17.rc1.0.2.el6_4.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.17.rc1.0.2.el6_4.5"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.17.rc1.0.2.el6_4.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.17.rc1.0.2.el6_4.5"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.17.rc1.0.2.el6_4.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-sdb",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.17.rc1.0.2.el6_4.5"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.17.rc1.0.2.el6_4.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-utils",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.17.rc1.0.2.el6_4.5"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.17.rc1.0.2.el6_4.5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

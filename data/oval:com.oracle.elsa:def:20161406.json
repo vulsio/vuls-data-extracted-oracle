@@ -1,0 +1,260 @@
+{
+	"id": "oval:com.oracle.elsa:def:20161406",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20161406",
+			"title": "\nELSA-2016-1406:  kernel security and bug fix update (IMPORTANT)\n",
+			"description": "\n[2.6.32-642.3.1]\n- [infiniband] security: Restrict use of the write interface (Don Dutile) [1332547 1332548] {CVE-2016-4565}\n\n[2.6.32-642.2.1]\n- [sched] Revert 'kernel: sched: Cure load average vs NO_HZ woes' (Rafael Aquini) [1343015 1326373]\n- [sched] Revert 'kernel: sched: Cure more NO_HZ load average woes' (Rafael Aquini) [1343015 1326373]\n- [sched] Revert 'kernel: sched: Move sched_avg_update to update_cpu_load' (Rafael Aquini) [1343015 1326373]\n- [sched] Revert 'kernel: sched: Fix nohz load accounting -- again' (Rafael Aquini) [1343015 1326373]\n- [fs] lockd: Don't try to register/unregister callbacks on the inet6addr_chain if the ipv6 module isn't loaded (Scott Mayhew) [1341496 1336483]\n- [fs] nfsd: Don't try to register/unregister callbacks on the inet6addr_chain if the ipv6 module isn't loaded (Scott Mayhew) [1341496 1336483]\n- [isdn] avoid calling tty_ldisc_flush() in atomic context (Sabrina Dubroca) [1337443 1328115]\n- [redhat] Update dracut dependency to pull in ecb module (Herbert Xu) [1334431 1315832]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4565.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-1406.html"
+				}
+			],
+			"published": "2016-07-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-4565",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-4565.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-642.3.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-642.3.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-abi-whitelists",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-642.3.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-642.3.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-642.3.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-642.3.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-642.3.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-642.3.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-642.3.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-642.3.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-642.3.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-642.3.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-firmware",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-642.3.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-642.3.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-642.3.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-642.3.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-642.3.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-642.3.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-642.3.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-642.3.1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

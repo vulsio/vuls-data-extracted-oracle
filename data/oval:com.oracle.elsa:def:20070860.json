@@ -1,0 +1,72 @@
+{
+	"id": "oval:com.oracle.elsa:def:20070860",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20070860",
+			"title": "\nELSA-2007-0860:  Moderate: tar security update  (MODERATE)\n",
+			"description": "\n [1.14-12.5.1.RHEL4]\n - CVE-2007-4131 tar directory traversal vulnerability (#251921) \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4131.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2007-0860.html"
+				}
+			],
+			"published": "2007-08-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-4131",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4131.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tar",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.15.1-23.0.1.el5"
+								}
+							],
+							"fixed": [
+								"2:1.15.1-23.0.1.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

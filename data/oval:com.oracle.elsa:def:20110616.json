@@ -1,0 +1,273 @@
+{
+	"id": "oval:com.oracle.elsa:def:20110616",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20110616",
+			"title": "\nELSA-2011-0616:  pidgin security and bug fix update (LOW)\n",
+			"description": "\n[2.7.9-3.el6]\n- Add patch for RH bug #684685 (zero-out crypto keys before freeing).\n\n[2.7.9-2.el6]\n- Add patch for CVE-2011-1091 (RH bug #683031).\n\n[2.7.9-1.el6]\n- Update to 2.7.9 (RH bug #616917).\n- Remove patches now included upstream:\n    pidgin-2.6.6-clientLogin-proxy-fix.patch\n    pidgin-2.6.6-clientLogin-use-https.patch\n    pidgin-2.6.6-CVE-2010-1624.patch\n    pidgin-2.6.6-CVE-2010-3711.patch\n- Disable the translation updates patch.  It doesn't apply anymore and\n  will have to be redone.  Saving the patch for now in case some parts\n  are still useful to translators.\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1091.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4922.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-0616.html"
+				}
+			],
+			"published": "2011-05-28T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-1091",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1091.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-4922",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4922.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "finch",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.9-3.el6"
+								}
+							],
+							"fixed": [
+								"0:2.7.9-3.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "finch-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.9-3.el6"
+								}
+							],
+							"fixed": [
+								"0:2.7.9-3.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libpurple",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.9-3.el6"
+								}
+							],
+							"fixed": [
+								"0:2.7.9-3.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libpurple-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.9-3.el6"
+								}
+							],
+							"fixed": [
+								"0:2.7.9-3.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libpurple-perl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.9-3.el6"
+								}
+							],
+							"fixed": [
+								"0:2.7.9-3.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libpurple-tcl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.9-3.el6"
+								}
+							],
+							"fixed": [
+								"0:2.7.9-3.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pidgin",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.9-3.el6"
+								}
+							],
+							"fixed": [
+								"0:2.7.9-3.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pidgin-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.9-3.el6"
+								}
+							],
+							"fixed": [
+								"0:2.7.9-3.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pidgin-docs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.9-3.el6"
+								}
+							],
+							"fixed": [
+								"0:2.7.9-3.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pidgin-perl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.9-3.el6"
+								}
+							],
+							"fixed": [
+								"0:2.7.9-3.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

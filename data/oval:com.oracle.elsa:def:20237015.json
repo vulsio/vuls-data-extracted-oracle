@@ -1,0 +1,152 @@
+{
+	"id": "oval:com.oracle.elsa:def:20237015",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20237015",
+			"title": "\nELSA-2023-7015:  wireshark security update (MODERATE)\n",
+			"description": "\n[1:2.6.2-17]\n- Resolves: #2211412 - XRA dissector infinite loop\n\n[1:2.6.2-16]\n- Resolves: #2210866 - VMS TCPIPtrace file parser crash\n- Resolves: #2210867 - NetScaler file parser crash\n- Resolves: #2210869 - RTPS dissector crash\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-0666.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2856.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2858.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2952.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-7015.html"
+				}
+			],
+			"published": "2023-11-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-0666",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-0666.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-2856",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2856.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-2858",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2858.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-2952",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2952.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wireshark",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.6.2-17.el8"
+								}
+							],
+							"fixed": [
+								"1:2.6.2-17.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wireshark-cli",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.6.2-17.el8"
+								}
+							],
+							"fixed": [
+								"1:2.6.2-17.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wireshark-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.6.2-17.el8"
+								}
+							],
+							"fixed": [
+								"1:2.6.2-17.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

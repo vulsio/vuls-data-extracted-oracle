@@ -1,0 +1,370 @@
+{
+	"id": "oval:com.oracle.elsa:def:20194713",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20194713",
+			"title": "\nELSA-2019-4713:  qemu security update (IMPORTANT)\n",
+			"description": "\n[15:3.1.0-5.el7]\n- Only enable the halt poll control MSR if it is supported by the host (Mark\n  Kanda)  [Orabug: 29946722]\n\n[15:3.1.0-4.el7]\n- kvm: i386: halt poll control MSR support (Marcelo Tosatti)  [Orabug: 29933278]\n- Document CVEs as fixed: CVE-2017-9524, CVE-2017-6058, CVE-2017-5931 (Mark Kanda)  [Orabug: 29886908]  {CVE-2017-5931} {CVE-2017-6058} {CVE-2017-9524}\n- pvrdma: release device resources in case of an error (Prasad J Pandit)  [Orabug: 29056678]  {CVE-2018-20123}\n- qxl: check release info object (Prasad J Pandit)  [Orabug: 29886906]  {CVE-2019-12155}\n- target/i386: add MDS-NO feature (Paolo Bonzini)  [Orabug: 29820428]  {CVE-2018-12126} {CVE-2018-12127} {CVE-2018-12130} {CVE-2019-11091}\n- docs: recommend use of md-clear feature on all Intel CPUs (Daniel P. Berrange)  [Orabug: 29820428]  {CVE-2018-12126} {CVE-2018-12127} {CVE-2018-12130} {CVE-2019-11091}\n- target/i386: define md-clear bit (Paolo Bonzini)  [Orabug: 29820428]  {CVE-2018-12126} {CVE-2018-12127} {CVE-2018-12130} {CVE-2019-11091}\n- pvh: block migration if booting using PVH (Liam Merwick)  [Orabug: 29796676]\n- hw/i386/pc: run the multiboot loader before the PVH loader (Stefano Garzarella)  [Orabug: 29796676]\n- optionrom/pvh: load initrd from fw_cfg (Stefano Garzarella)  [Orabug: 29796676]\n- hw/i386/pc: use PVH option rom (Stefano Garzarella)  [Orabug: 29796676]\n- qemu.spec: add pvh.bin to %files (Liam Merwick)  [Orabug: 29796676]\n- optionrom: add new PVH option rom (Stefano Garzarella)  [Orabug: 29796676]\n- linuxboot_dma: move common functions in a new header (Stefano Garzarella)  [Orabug: 29796676]\n- linuxboot_dma: remove duplicate definitions of FW_CFG (Stefano Garzarella)  [Orabug: 29796676]\n- pvh: load initrd and expose it through fw_cfg (Stefano Garzarella)  [Orabug: 29796676]\n- pvh: Boot uncompressed kernel using direct boot ABI (Liam Merwick)  [Orabug: 29796676]\n- pvh: Add x86/HVM direct boot ABI header file (Liam Merwick)  [Orabug: 29796676]\n- elf-ops.h: Add get_elf_note_type() (Liam Merwick)  [Orabug: 29796676]\n- elf: Add optional function ptr to load_elf() to parse ELF notes (Liam Merwick)  [Orabug: 29796676]\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-5931.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-6058.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-9524.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-20123.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-12155.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-4713.html"
+				}
+			],
+			"published": "2019-07-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-5931",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-5931.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-6058",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-6058.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-9524",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-9524.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-20123",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-20123.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-12155",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-12155.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ivshmem-tools",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-block-gluster",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-block-iscsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-block-rbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-img",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-system-aarch64",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-system-aarch64-core",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-system-x86",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-system-x86-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:3.1.0-5.el7"
+								}
+							],
+							"fixed": [
+								"15:3.1.0-5.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

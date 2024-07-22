@@ -1,0 +1,239 @@
+{
+	"id": "oval:com.oracle.elsa:def:20211307",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20211307",
+			"title": "\nELSA-2021-1307:  java-11-openjdk security update (MODERATE)\n",
+			"description": "\n[1:11.0.11.0.9-0]\n- Update to jdk-11.0.11.0+9\n- Update release notes to 11.0.11.0+9\n- Require tzdata 2020f to match upstream change JDK-8259048\n- Require tzdata 2021a to match upstream change JDK-8260356\n- Remove RH1868754 patch as this is now resolved upstream by JDK-8258833\n- Remove RH1868740 & RH1883849 patches as these are now resolved by JDK-8259319\n- This tarball is embargoed until 2021-04-20 @ 1pm PT.\n- Resolves: rhbz#1938201\n\n[1:11.0.11.0.9-0]\n- Fix issue where CheckVendor.java test erroneously passes when it should fail.\n- Add proper quoting so '&' is not treated as a special character by the shell.\n- Fixed not-including fastdebug build in case of --without fastdebug\n- Resolves: rhbz#1938201\n\n[1:11.0.10.0.9-5]\n- Perform static library build on a separate source tree with bundled image libraries\n- Make static library build optional\n- Based on initial work by Severin Gehwolf\n- Resolves: rhbz#1930513\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2163.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-1307.html"
+				}
+			],
+			"published": "2021-04-21T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-2163",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2163.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.11.0.9-0.el8_3"
+								}
+							],
+							"fixed": [
+								"1:11.0.11.0.9-0.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-demo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.11.0.9-0.el8_3"
+								}
+							],
+							"fixed": [
+								"1:11.0.11.0.9-0.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.11.0.9-0.el8_3"
+								}
+							],
+							"fixed": [
+								"1:11.0.11.0.9-0.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-headless",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.11.0.9-0.el8_3"
+								}
+							],
+							"fixed": [
+								"1:11.0.11.0.9-0.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.11.0.9-0.el8_3"
+								}
+							],
+							"fixed": [
+								"1:11.0.11.0.9-0.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-javadoc-zip",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.11.0.9-0.el8_3"
+								}
+							],
+							"fixed": [
+								"1:11.0.11.0.9-0.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-jmods",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.11.0.9-0.el8_3"
+								}
+							],
+							"fixed": [
+								"1:11.0.11.0.9-0.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.11.0.9-0.el8_3"
+								}
+							],
+							"fixed": [
+								"1:11.0.11.0.9-0.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-static-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.11.0.9-0.el8_3"
+								}
+							],
+							"fixed": [
+								"1:11.0.11.0.9-0.el8_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

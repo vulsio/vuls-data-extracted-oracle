@@ -1,0 +1,96 @@
+{
+	"id": "oval:com.oracle.elsa:def:20194867",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20194867",
+			"title": "\nELSA-2019-4867:  microcode_ctl security update (IMPORTANT)\n",
+			"description": "\n[2:2.1-53.3.0.4]\n- set early_microcode='no' in virtualized guests to avoid early load bugs [Orabug: 30618736]\n\n[2:2.1-53.3.0.1]\n- do not late load prior to 3.10.0\n- ensure late loading fixes are present on 4.1.12-* and 4.14.35-*\n- enable early loading on 06-4f-01\n- update 06-55-04 to 0x2000065\n- update 06-55-07 to 0x500002c\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12207.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11135.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11139.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-4867.html"
+				}
+			],
+			"published": "2019-12-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-12207",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12207.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-11135",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11135.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-11139",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11139.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "microcode_ctl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.1-53.3.0.4.el7_7"
+								}
+							],
+							"fixed": [
+								"2:2.1-53.3.0.4.el7_7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

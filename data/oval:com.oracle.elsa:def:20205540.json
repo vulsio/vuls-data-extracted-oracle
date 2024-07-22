@@ -1,0 +1,275 @@
+{
+	"id": "oval:com.oracle.elsa:def:20205540",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20205540",
+			"title": "\nELSA-2020-5540: Unbreakable Enterprise kernel security update (IMPORTANT)\n",
+			"description": "\n[4.14.35-1902.10.8]\n- KVM: nVMX: Check IO instruction VM-exit conditions (Oliver Upton)  [Orabug: 30847136]  {CVE-2020-2732} \n- KVM: nVMX: Refactor IO bitmap checks into helper function (Oliver Upton)  [Orabug: 30847136]  {CVE-2020-2732} \n- KVM: nVMX: Dont emulate instructions in guest mode (Paolo Bonzini)  [Orabug: 30847136]  {CVE-2020-2732}\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2732.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-5540.html"
+				}
+			],
+			"published": "2020-02-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-2732",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-2732.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.8.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.8.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.8.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.8.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.8.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.8.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.8.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.8.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.8.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.8.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-headers",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.8.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.8.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.8.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.8.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools-libs",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.8.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.8.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools-libs-devel",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.8.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.8.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.8.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.8.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-1902.10.8.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-1902.10.8.el7uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

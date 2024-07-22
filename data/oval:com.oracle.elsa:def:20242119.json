@@ -1,0 +1,260 @@
+{
+	"id": "oval:com.oracle.elsa:def:20242119",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20242119",
+			"title": "\nELSA-2024-2119:  Image builder components bug fix, enhancement and security update (MODERATE)\n",
+			"description": "\nosbuild\n[110-1]\n- New upstream release\n\n[109-1]\n- New upstream release\n\n[106-1]\n- New upstream release\n\n[105-1]\n- New upstream release\n\n[104-2]\n- Fix unit tests in RHEL CI by backporting upstream fixes\n\n[104-1]\n- New upstream release\n\n[103-1]\n- New upstream release\n\n[102-1]\n- New upstream release\n\n[101-2]\n- Change unit-test timeout from 3h to 4h\n- Rebuild after failed gating\n\n[101-1]\n- New upstream release\n\n[100-1]\n- New upstream release\n\n[99-1]\n- New upstream release\n\n[98-1]\n- New upstream release\n\n[97-1]\n- New upstream release\n\n[96-1]\n- New upstream release\n\n[95-1]\n- New upstream release\n\n[94-1]\n- New upstream release\n\nosbuild-composer\n[101-1]\n- New upstream release\n\n[100-1]\n- New upstream release\n\n[99-1]\n- New upstream release\n\n[98-1]\n- New upstream release\n\n[96-1]\n- New upstream release\n\n[95-1]\n- New upstream release\n\n[94-1]\n- New upstream release\n\n[93-1]\n- New upstream release\n\n[92-1]\n- New upstream release\n\n[91-1]\n- New upstream release\n\n[89-1]\n- New upstream release\n\n[88-1]\n- New upstream release\n\n[87-1]\n- New upstream release\n\n[86-1]\n- New upstream release\n\n[85-1]\n- New upstream release\n\n[84-1]\n- New upstream release\n\n[82-1]\n- New upstream release\n\n[80-1]\n- New upstream release\n\n[79-1]\n- New upstream release\n\n[77-1]\n- New upstream release\n\n[76-1]\n- New upstream release\n\n[75-1]\n- New upstream release\n\n[74-1]\n- New upstream release\n\n[73-1]\n- New upstream release\n\n[72-1]\n- New upstream release\n\n[71-1]\n- New upstream release\n\n[70-1]\n- New upstream release\n\n[69-1]\n- New upstream release\n\n[68-1]\n- New upstream release\n\n[67-2]\n- Fix functional tests to make them pass in RHEL-9.2 gating\n\n[67-1]\n- New upstream release\n\n[62-1]\n- New upstream release\n\n[60-1]\n- New upstream release\n\n[59-1]\n- New upstream release\n\n[58-1]\n- New upstream release\n\n[57-1]\n- New upstream release\n\n[55-1]\n- New upstream release\n\n[54-1]\n- New upstream release\n\n[53-1]\n- New upstream release\n\n[51-1]\n- New upstream release\n\n[46-1]\n- New upstream release\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-2307.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-2119.html"
+				}
+			],
+			"published": "2024-05-03T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2024-2307",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-2307.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "osbuild",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:110-1.el9"
+								}
+							],
+							"fixed": [
+								"0:110-1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "osbuild-composer",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:101-1.el9"
+								}
+							],
+							"fixed": [
+								"0:101-1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "osbuild-composer-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:101-1.el9"
+								}
+							],
+							"fixed": [
+								"0:101-1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "osbuild-composer-worker",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:101-1.el9"
+								}
+							],
+							"fixed": [
+								"0:101-1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "osbuild-depsolve-dnf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:110-1.el9"
+								}
+							],
+							"fixed": [
+								"0:110-1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "osbuild-luks2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:110-1.el9"
+								}
+							],
+							"fixed": [
+								"0:110-1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "osbuild-lvm2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:110-1.el9"
+								}
+							],
+							"fixed": [
+								"0:110-1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "osbuild-ostree",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:110-1.el9"
+								}
+							],
+							"fixed": [
+								"0:110-1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "osbuild-selinux",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:110-1.el9"
+								}
+							],
+							"fixed": [
+								"0:110-1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-osbuild",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:110-1.el9"
+								}
+							],
+							"fixed": [
+								"0:110-1.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

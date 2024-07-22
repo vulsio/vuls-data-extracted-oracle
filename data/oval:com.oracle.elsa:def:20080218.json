@@ -1,0 +1,72 @@
+{
+	"id": "oval:com.oracle.elsa:def:20080218",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20080218",
+			"title": "\nELSA-2008-0218:  gnome-screensaver security update (MODERATE)\n",
+			"description": "\n[2.16.1-8]\nResolves: #436522\n- rebuild against 5.1 nss\n\n[2.16.1-7]\nResolves: #436522\n- dont unlock the screen when pwent lookup fails\n\n[2.16.1-6]\nResolves: #245345\n- Add missing BuildRequires to fix fade in\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-0887.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2008-0218.html"
+				}
+			],
+			"published": "2008-05-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2008-0887",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-0887.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnome-screensaver",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.16.1-8.el5"
+								}
+							],
+							"fixed": [
+								"0:2.16.1-8.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

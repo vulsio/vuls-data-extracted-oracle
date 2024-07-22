@@ -1,0 +1,126 @@
+{
+	"id": "oval:com.oracle.elsa:def:20110320",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20110320",
+			"title": "\nELSA-2011-0320:  libcgroup security update (IMPORTANT)\n",
+			"description": "\n\n[0.36-6.1]\n- Fixed buffer overflow when parsing cgexec command line parameters.\n- Added checking of source of netlink messages to cgrulesengd daemon.\n- Resolves: CVE-2011-1006 CVE-2011-1022\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1006.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1022.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-0320.html"
+				}
+			],
+			"published": "2011-03-03T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-1006",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1006.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1022",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1022.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcgroup",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.36.1-6.el6_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.36.1-6.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcgroup-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.36.1-6.el6_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.36.1-6.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcgroup-pam",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.36.1-6.el6_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.36.1-6.el6_0.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

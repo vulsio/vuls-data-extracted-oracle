@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20180504",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20180504",
+			"title": "\nELSA-2018-0504:  mailman security update (MODERATE)\n",
+			"description": "\n[3:2.1.12-26.3]\n- Related: #1545967 - Add missed import\n\n[3:2.1.12-26.2]\n- Resolves: #1545967 - Fix XSS vulnerability in web UI. Add sanitizer\n\n[3:2.1.12-26.1]\n- Resolves: #1545967 - Fix XSS vulnerability in web UI\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-5950.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-0504.html"
+				}
+			],
+			"published": "2018-03-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-5950",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-5950.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mailman",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:2.1.12-26.el6_9.3"
+								}
+							],
+							"fixed": [
+								"3:2.1.12-26.el6_9.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

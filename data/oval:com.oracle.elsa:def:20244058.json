@@ -1,0 +1,231 @@
+{
+	"id": "oval:com.oracle.elsa:def:20244058",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20244058",
+			"title": "\nELSA-2024-4058:  python3.11 security update (IMPORTANT)\n",
+			"description": "\n[3.11.9-1.0.1]\n- Update rpm-macros description [Orabug: 36024572]\n\n[3.11.9-1]\n- Rebase to 3.11.9\n- Security fixes for CVE-2023-6597 and CVE-2024-0450\n- Fix expat tests for the latest expat security release\nResolves: RHEL-33672, RHEL-33684\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6597.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-0450.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-4058.html"
+				}
+			],
+			"published": "2024-06-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-6597",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-6597.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-0450",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-0450.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3.11",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.11.9-1.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:3.11.9-1.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3.11-debug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.11.9-1.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:3.11.9-1.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3.11-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.11.9-1.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:3.11.9-1.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3.11-idle",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.11.9-1.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:3.11.9-1.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3.11-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.11.9-1.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:3.11.9-1.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3.11-rpm-macros",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.11.9-1.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:3.11.9-1.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3.11-test",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.11.9-1.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:3.11.9-1.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3.11-tkinter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.11.9-1.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:3.11.9-1.0.1.el8_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20236917",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20236917",
+			"title": "\nELSA-2023-6917:  xorg-x11-server-Xwayland security and bug fix update (MODERATE)\n",
+			"description": "\n[21.1.3-12]\n- Backport fix for a deadlock with DRI3\n  Resolves: rhbz#2212831\n\n[21.1.3-11]\n- Fix CVE-2023-1393 (#2180298)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-1393.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-6917.html"
+				}
+			],
+			"published": "2023-11-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-1393",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-1393.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xorg-x11-server-Xwayland",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:21.1.3-12.el8"
+								}
+							],
+							"fixed": [
+								"0:21.1.3-12.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

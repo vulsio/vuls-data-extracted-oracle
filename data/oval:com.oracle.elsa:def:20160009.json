@@ -1,0 +1,276 @@
+{
+	"id": "oval:com.oracle.elsa:def:20160009",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20160009",
+			"title": "\nELSA-2016-0009:  libldb security update (MODERATE)\n",
+			"description": "\n[1.1.13-3.1]\n- Resolves: rhbz#1290712 - CVE-2015-5330 libldb: samba: Remote memory read\n                           in Samba LDAP server [rhel-7.2.z]\n- Remove the patch from the previous commit, it doesn't fix a remotely\n  eploitable issue. Add patches from upstream #11636 instead.\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3223.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-5330.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-0009.html"
+				}
+			],
+			"published": "2016-01-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-3223",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3223.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-5330",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-5330.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ldb-tools",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.13-3.el6_7.1"
+								}
+							],
+							"fixed": [
+								"0:1.1.13-3.el6_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libldb",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.13-3.el6_7.1"
+								}
+							],
+							"fixed": [
+								"0:1.1.13-3.el6_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libldb-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.13-3.el6_7.1"
+								}
+							],
+							"fixed": [
+								"0:1.1.13-3.el6_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pyldb",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.13-3.el6_7.1"
+								}
+							],
+							"fixed": [
+								"0:1.1.13-3.el6_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pyldb-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.13-3.el6_7.1"
+								}
+							],
+							"fixed": [
+								"0:1.1.13-3.el6_7.1"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ldb-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.20-1.el7_2.2"
+								}
+							],
+							"fixed": [
+								"0:1.1.20-1.el7_2.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libldb",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.20-1.el7_2.2"
+								}
+							],
+							"fixed": [
+								"0:1.1.20-1.el7_2.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libldb-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.20-1.el7_2.2"
+								}
+							],
+							"fixed": [
+								"0:1.1.20-1.el7_2.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pyldb",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.20-1.el7_2.2"
+								}
+							],
+							"fixed": [
+								"0:1.1.20-1.el7_2.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pyldb-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.20-1.el7_2.2"
+								}
+							],
+							"fixed": [
+								"0:1.1.20-1.el7_2.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,118 @@
+{
+	"id": "oval:com.oracle.elsa:def:20162819",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20162819",
+			"title": "\nELSA-2016-2819:  memcached security update (IMPORTANT)\n",
+			"description": "\n[0:1.4.15-10.el7_3.1]\n- fix vulnerabilities allowing remote code execution (CVE-2016-8704,\n  CVE-2016-8705, CVE-2016-8706)\n\n[0:1.4.15-10]\n- fix binding to IPv6 address (#1298603)\n- enable SASL support (#1263696)\n- don't allow authentication with bad SASL credentials (CVE-2013-7239)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8704.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8705.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8706.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-2819.html"
+				}
+			],
+			"published": "2016-11-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-8704",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8704.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-8705",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8705.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-8706",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8706.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "memcached",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.15-10.el7_3.1"
+								}
+							],
+							"fixed": [
+								"0:1.4.15-10.el7_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "memcached-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.15-10.el7_3.1"
+								}
+							],
+							"fixed": [
+								"0:1.4.15-10.el7_3.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

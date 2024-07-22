@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20213075",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20213075",
+			"title": "\nELSA-2021-3075:  libuv security update (LOW)\n",
+			"description": "\n[1:1.41.1-1]\n- Rebase to 1.41.1\n- Change description to reflect upstream\n- Resolves: RHBZ1980033\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-22918.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-3075.html"
+				}
+			],
+			"published": "2021-08-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-22918",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-22918.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libuv",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.41.1-1.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.41.1-1.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libuv-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.41.1-1.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.41.1-1.el8_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

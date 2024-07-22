@@ -1,0 +1,176 @@
+{
+	"id": "oval:com.oracle.elsa:def:20190482",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20190482",
+			"title": "\nELSA-2019-0482:  cockpit security update (MODERATE)\n",
+			"description": "\n[173.2-1.0.1]\n- turn off display of subscriptions menu item in GUI\n- Drop subscription-manager requirement since we do not ship it (tianyue.lan@oralce.com)\n- Remove Red Hat references.\n\n[173.2-1]\n- ws: Fix bug parsing invalid base64 headers rhbz#1672296\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3804.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-0482.html"
+				}
+			],
+			"published": "2019-03-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-3804",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3804.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cockpit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:173.2-1.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:173.2-1.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cockpit-bridge",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:173.2-1.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:173.2-1.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cockpit-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:173.2-1.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:173.2-1.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cockpit-machines-ovirt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:173.2-1.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:173.2-1.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cockpit-system",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:173.2-1.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:173.2-1.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cockpit-ws",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:173.2-1.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:173.2-1.0.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

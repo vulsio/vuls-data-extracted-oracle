@@ -1,0 +1,134 @@
+{
+	"id": "oval:com.oracle.elsa:def:20194152",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20194152",
+			"title": "\nELSA-2019-4152:  nss-softokn security update (IMPORTANT)\n",
+			"description": "\n[3.44.0-6.0.1]\n- Add fips140-2 DSA Known Answer Test fix [Orabug 26696773]\n- Add fips140-2 ECDSA/RSA/DSA Pairwise Consistency Test fix [Orabug 26617866],\n  [Orabug 26617833], [Orabug 26617780]\n\n[3.44.0-6]\n- Fix out-of-bounds write in NSC_EncryptUpdate (#1775909)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11745.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-4152.html"
+				}
+			],
+			"published": "2019-12-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-11745",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11745.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-softokn",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.44.0-6.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:3.44.0-6.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-softokn-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.44.0-6.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:3.44.0-6.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-softokn-freebl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.44.0-6.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:3.44.0-6.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-softokn-freebl-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.44.0-6.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"0:3.44.0-6.0.1.el6_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

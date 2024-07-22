@@ -1,0 +1,194 @@
+{
+	"id": "oval:com.oracle.elsa:def:20236679",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20236679",
+			"title": "\nELSA-2023-6679:  curl security update (MODERATE)\n",
+			"description": "\n[7.76.1-26]\n- unify the upload/method handling (CVE-2023-28322)\n- fix host name wildcard checking (CVE-2023-28321)\n\n[7.76.1-25]\n- adapt the fix of CVE-2023-27535 for RHEL 9 curl\n\n[7.76.1-24]\n- fix SSH connection too eager reuse still (CVE-2023-27538)\n- fix GSS delegation too eager connection re-use (CVE-2023-27536)\n- fix FTP too eager connection reuse (CVE-2023-27535)\n- fix SFTP path ~ resolving discrepancy (CVE-2023-27534)\n- fix TELNET option IAC injection (CVE-2023-27533)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-27533.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-27534.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-27536.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-27538.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-6679.html"
+				}
+			],
+			"published": "2023-11-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-27533",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-27533.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-27534",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-27534.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-27536",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-27536.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-27538",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-27538.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "curl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.76.1-26.el9"
+								}
+							],
+							"fixed": [
+								"0:7.76.1-26.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "curl-minimal",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.76.1-26.el9"
+								}
+							],
+							"fixed": [
+								"0:7.76.1-26.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcurl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.76.1-26.el9"
+								}
+							],
+							"fixed": [
+								"0:7.76.1-26.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcurl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.76.1-26.el9"
+								}
+							],
+							"fixed": [
+								"0:7.76.1-26.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcurl-minimal",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.76.1-26.el9"
+								}
+							],
+							"fixed": [
+								"0:7.76.1-26.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

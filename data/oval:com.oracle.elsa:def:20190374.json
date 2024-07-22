@@ -1,0 +1,84 @@
+{
+	"id": "oval:com.oracle.elsa:def:20190374",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20190374",
+			"title": "\nELSA-2019-0374:  firefox security update (IMPORTANT)\n",
+			"description": "\n[60.5.1-1.0.1]\n- Add firefox-oracle-default-prefs.js and remove the corresponding Red Hat file\n\n[60.5.1-1]\n- Update to 60.5.1 ESR\n\n[60.5.0-3]\n- Added fix for rhbz#1672424 - Firefox crashes on NFS drives.\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-18356.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-5785.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-0374.html"
+				}
+			],
+			"published": "2019-02-19T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-18356",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-18356.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-5785",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-5785.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:60.5.1-1.0.1.el7_6"
+								}
+							],
+							"fixed": [
+								"0:60.5.1-1.0.1.el7_6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

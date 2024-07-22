@@ -1,0 +1,70 @@
+{
+	"id": "oval:com.oracle.elsa:def:20229267",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20229267",
+			"title": "\nELSA-2022-9267:  Unbreakable Enterprise kernel-container security update (IMPORTANT)\n",
+			"description": "\n[4.14.35-2047.511.5.5.1.el7uek] \n- netfilter: nf_tables: initialize registers in nft_do_chain() (Pablo Neira Ayuso)  [Orabug: 34018777]  {CVE-2022-1016}\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-1016.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-9267.html"
+				}
+			],
+			"published": "2022-04-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-1016",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-1016.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.511.5.5.1.el7"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.511.5.5.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

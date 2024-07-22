@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20192181",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20192181",
+			"title": "\nELSA-2019-2181:  curl security and bug fix update (LOW)\n",
+			"description": "\n[7.29.0-54.0.1]\n- Security Fixes [OraBug: 28939992]\n- CVE-2016-8615 cookie injection for other servers (https://curl.haxx.se/docs/CVE-2016-8615.html)\n- CVE-2016-8616 case insensitive password comparison (https://curl.haxx.se/docs/CVE-2016-8616.html)\n- CVE-2016-8617 OOB write via unchecked multiplication (https://curl.haxx.se/docs/CVE-2016-8617.html)\n- CVE-2016-8618 double-free in curl_maprintf (https://curl.haxx.se/docs/CVE-2016-8618.html)\n- CVE-2016-8619 double-free in krb5 code (https://curl.haxx.se/docs/CVE-2016-8619.html)\n- CVE-2016-8621 curl_getdate read out of bounds (https://curl.haxx.se/docs/CVE-2016-8621.html)\n- CVE-2016-8622 URL unescape heap overflow via integer truncation (https://curl.haxx.se/docs/CVE-2016-8622.html)\n- CVE-2016-8623 Use-after-free via shared cookies (https://curl.haxx.se/docs/CVE-2016-8623.html)\n- CVE-2016-8624 invalid URL parsing with # (https://curl.haxx.se/docs/CVE-2016-8624.html)\n\n[7.29.0-54]\n- make 'curl --tlsv1' backward compatible (#1672639)\n\n[7.29.0-53]\n- backport the --tls-max option of curl and TLS 1.3 ciphers (#1672639)\n\n[7.29.0-52]\n- prevent curl --rate-limit from hanging on file URLs (#1281969)\n- fix NTLM password overflow via integer overflow (CVE-2018-14618)\n- fix bad arithmetic when outputting warnings to stderr (CVE-2018-16842)\n- backport options to force TLS 1.3 in curl and libcurl (#1672639)\n- prevent curl --rate-limit from crashing on https URLs (#1683292)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16842.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-2181.html"
+				}
+			],
+			"published": "2019-08-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-16842",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16842.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "curl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.29.0-54.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:7.29.0-54.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcurl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.29.0-54.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:7.29.0-54.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcurl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.29.0-54.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:7.29.0-54.0.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

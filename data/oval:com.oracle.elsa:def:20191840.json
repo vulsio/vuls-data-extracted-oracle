@@ -1,0 +1,220 @@
+{
+	"id": "oval:com.oracle.elsa:def:20191840",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20191840",
+			"title": "\nELSA-2019-1840:  java-1.7.0-openjdk security update (MODERATE)\n",
+			"description": "\n[1:1.7.0.231-2.6.19.1.0.1]\n- Update DISTRO_NAME in specfile\n\n[1:1.7.0.231-2.6.19.1]\n- Add missing hyphen in tapset filename.\n- Resolves: rhbz#1724452\n\n[1:1.7.0.231-2.6.19.0]\n- Update tapset name in patch.\n- Resolves: rhbz#1724452\n\n[1:1.7.0.231-2.6.19.0]\n- Bump to 2.6.19 (including tapsets) and OpenJDK 7u231-b01.\n- Fix fsg.sh to fail if patching fails.\n- Resolves: rhbz#1724452\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2745.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2762.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2769.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2786.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2816.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2842.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-1840.html"
+				}
+			],
+			"published": "2019-07-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-2745",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2745.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-2762",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2762.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-2769",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2769.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-2786",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2786.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-2816",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2816.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-2842",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2842.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.231-2.6.19.1.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.231-2.6.19.1.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-demo",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.231-2.6.19.1.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.231-2.6.19.1.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.231-2.6.19.1.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.231-2.6.19.1.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-javadoc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.231-2.6.19.1.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.231-2.6.19.1.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-src",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.231-2.6.19.1.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.231-2.6.19.1.0.1.el6_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

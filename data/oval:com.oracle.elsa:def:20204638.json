@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20204638",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20204638",
+			"title": "\nELSA-2020-4638:  sysstat security update (LOW)\n",
+			"description": "\n[11.7.3-5]\n- Rebuild\n\n[11.7.3-4]\n- Package onboarded to gating\n\n[11.7.3-3]\n- Fix memory corruption bug due to integer overflow (#1790608)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-16167.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-4638.html"
+				}
+			],
+			"published": "2020-11-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-16167",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-16167.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sysstat",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:11.7.3-5.el8"
+								}
+							],
+							"fixed": [
+								"0:11.7.3-5.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

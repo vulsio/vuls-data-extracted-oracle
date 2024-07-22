@@ -1,0 +1,210 @@
+{
+	"id": "oval:com.oracle.elsa:def:20228431",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20228431",
+			"title": "\nELSA-2022-8431:  podman security, bug fix, and enhancement update (LOW)\n",
+			"description": "\n[4.2.0-7.0.1]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[2:4.2.0-7]\n- update to the latest content of https://github.com/containers/podman/tree/v4.2.0-rhel\n  (https://github.com/containers/podman/commit/35c0df3)\n- Resolves: #2120436\n\n[2:4.2.0-6]\n- update to the latest content of https://github.com/containers/podman/tree/v4.2.0-rhel\n  (https://github.com/containers/podman/commit/d520a5c)\n- Resolves: #2136845\n\n[2:4.2.0-5]\n- properly obsolete catatonit\n- Resolves: #2123319\n\n[2:4.2.0-4]\n- update to the latest content of https://github.com/containers/podman/tree/v4.2.0-rhel\n  (https://github.com/containers/podman/commit/4978898)\n- Resolves: #2124676\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2989.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2990.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-8431.html"
+				}
+			],
+			"published": "2022-11-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-2989",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2989.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2990",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2990.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:4.2.0-7.0.1.el9_1"
+								}
+							],
+							"fixed": [
+								"2:4.2.0-7.0.1.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-catatonit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:4.2.0-7.0.1.el9_1"
+								}
+							],
+							"fixed": [
+								"2:4.2.0-7.0.1.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-docker",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:4.2.0-7.0.1.el9_1"
+								}
+							],
+							"fixed": [
+								"2:4.2.0-7.0.1.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-gvproxy",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:4.2.0-7.0.1.el9_1"
+								}
+							],
+							"fixed": [
+								"2:4.2.0-7.0.1.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-plugins",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:4.2.0-7.0.1.el9_1"
+								}
+							],
+							"fixed": [
+								"2:4.2.0-7.0.1.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-remote",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:4.2.0-7.0.1.el9_1"
+								}
+							],
+							"fixed": [
+								"2:4.2.0-7.0.1.el9_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:4.2.0-7.0.1.el9_1"
+								}
+							],
+							"fixed": [
+								"2:4.2.0-7.0.1.el9_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

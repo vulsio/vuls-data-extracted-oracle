@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20225526",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20225526",
+			"title": "\nELSA-2022-5526:  squid:4 security update (IMPORTANT)\n",
+			"description": "\nsquid\n[7:4.15-3.1]\n- Resolves: #2100782 - CVE-2021-46784 squid:4/squid: DoS when processing gopher\n  server responses\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-46784.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-5526.html"
+				}
+			],
+			"published": "2022-07-08T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-46784",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-46784.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:4.15-3.module+el8.6.0+20699+8fa0a254.1"
+								}
+							],
+							"fixed": [
+								"7:4.15-3.module+el8.6.0+20699+8fa0a254.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid:4::libecap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1-2.module+el8.3.0+7819+eb7d4ef6"
+								}
+							],
+							"fixed": [
+								"0:1.0.1-2.module+el8.3.0+7819+eb7d4ef6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid:4::libecap-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1-2.module+el8.3.0+7819+eb7d4ef6"
+								}
+							],
+							"fixed": [
+								"0:1.0.1-2.module+el8.3.0+7819+eb7d4ef6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,135 @@
+{
+	"id": "oval:com.oracle.elsa:def:20184267",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20184267",
+			"title": "\nELSA-2018-4267:  openssl security update (IMPORTANT)\n",
+			"description": "\n[1.0.2k-16.0.1]\n- sha256 is used for the RSA pairwise consistency test instead of sha1\n\n[1.0.2k-16]\n- fix CVE-2018-0495 - ROHNP - Key Extraction Side Channel on DSA, ECDSA\n- fix incorrect error message on FIPS DSA parameter generation (#1603597)\n\n[1.0.2k-14]\n- ppc64le is not multilib architecture (#1585004)\n\n[1.0.2k-13]\n- add S390x assembler updates\n- make CA name list comparison function case sensitive (#1548401)\n- fix CVE-2017-3735 - possible one byte overread with X.509 IPAdressFamily\n- fix CVE-2018-0732 - large prime DH DoS of TLS client\n- fix CVE-2018-0737 - RSA key generation cache timing vulnerability\n- fix CVE-2018-0739 - stack overflow parsing recursive ASN.1 structure\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-4267.html"
+				}
+			],
+			"published": "2018-11-06T00:00:00Z"
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.2k-16.0.1.ksplice1.el7"
+								}
+							],
+							"fixed": [
+								"2:1.0.2k-16.0.1.ksplice1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.2k-16.0.1.ksplice1.el7"
+								}
+							],
+							"fixed": [
+								"2:1.0.2k-16.0.1.ksplice1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.2k-16.0.1.ksplice1.el7"
+								}
+							],
+							"fixed": [
+								"2:1.0.2k-16.0.1.ksplice1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.2k-16.0.1.ksplice1.el7"
+								}
+							],
+							"fixed": [
+								"2:1.0.2k-16.0.1.ksplice1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.2k-16.0.1.ksplice1.el7"
+								}
+							],
+							"fixed": [
+								"2:1.0.2k-16.0.1.ksplice1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

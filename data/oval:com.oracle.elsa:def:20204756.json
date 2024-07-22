@@ -1,0 +1,160 @@
+{
+	"id": "oval:com.oracle.elsa:def:20204756",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20204756",
+			"title": "\nELSA-2020-4756:  varnish:6 security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\nvarnish\n[6.0.6-2]\n- new version 6.0.6\n- Resolves: #1795673 - RFE: rebase varnish:6 to latest 6.0.x LTS\n- Resolves: #1790907 - CVE-2019-20637 varnish: not clearing pointer between two\n  client requests leads to information disclosure\n- Resolves: #1763958 - CVE-2019-15892 varnish:6/varnish: denial of service\n  handling certain crafted HTTP/1 requests\n\nvarnish-modules\n[0.15.0-5]\n- Related: #1795673 - RFE: rebase varnish:6 to latest 6.0.x LTS\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15892.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-20637.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-11653.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-4756.html"
+				}
+			],
+			"published": "2020-11-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-15892",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-15892.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-20637",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-20637.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-11653",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-11653.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "varnish:6::varnish",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.6-2.module+el8.3.0+7653+45014445"
+								}
+							],
+							"fixed": [
+								"0:6.0.6-2.module+el8.3.0+7653+45014445"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "varnish:6::varnish-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.6-2.module+el8.3.0+7653+45014445"
+								}
+							],
+							"fixed": [
+								"0:6.0.6-2.module+el8.3.0+7653+45014445"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "varnish:6::varnish-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.6-2.module+el8.3.0+7653+45014445"
+								}
+							],
+							"fixed": [
+								"0:6.0.6-2.module+el8.3.0+7653+45014445"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "varnish:6::varnish-modules",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.15.0-5.module+el8.3.0+7653+45014445"
+								}
+							],
+							"fixed": [
+								"0:0.15.0-5.module+el8.3.0+7653+45014445"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

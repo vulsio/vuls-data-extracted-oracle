@@ -1,0 +1,149 @@
+{
+	"id": "oval:com.oracle.elsa:def:20224873",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20224873",
+			"title": "\nELSA-2022-4873:  firefox security update (IMPORTANT)\n",
+			"description": "\n[91.10.0-1.0.1]\n- Replaced upstream package with oracle-indexhtml [Orabug: 33802044]\n- Add firefox-oracle-default-prefs.js and remove the corresponding Red Hat file\n- Removed Upstream references\n\n[91.10.0-1]\n- Update to 91.10.0 build1\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31736.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31737.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31738.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31740.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31741.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31742.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31747.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-4873.html"
+				}
+			],
+			"published": "2022-06-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-31736",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31736.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-31737",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31737.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-31738",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31738.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-31740",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31740.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-31741",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31741.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-31742",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31742.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-31747",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31747.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:91.10.0-1.0.1.el9_0"
+								}
+							],
+							"fixed": [
+								"0:91.10.0-1.0.1.el9_0"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

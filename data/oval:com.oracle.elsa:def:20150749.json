@@ -1,0 +1,130 @@
+{
+	"id": "oval:com.oracle.elsa:def:20150749",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20150749",
+			"title": "\nELSA-2015-0749:  libxml2 security update (MODERATE)\n",
+			"description": "\n[2.9.1-5.0.1.el7_1.2]\n- Update doc/redhat.gif in tarball\n- Add libxml2-oracle-enterprise.patch and update logos in tarball\n\n[2.9.1-5.2]\n- Fix missing entities after CVE-2014-3660 fix\n- CVE-2014-0191 Do not fetch external parameter entities (rhbz#1195649)\n- Fix regressions introduced by CVE-2014-0191 patch\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0191.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-0749.html"
+				}
+			],
+			"published": "2015-03-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-0191",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0191.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.9.1-5.0.1.el7_1.2"
+								}
+							],
+							"fixed": [
+								"0:2.9.1-5.0.1.el7_1.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.9.1-5.0.1.el7_1.2"
+								}
+							],
+							"fixed": [
+								"0:2.9.1-5.0.1.el7_1.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-python",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.9.1-5.0.1.el7_1.2"
+								}
+							],
+							"fixed": [
+								"0:2.9.1-5.0.1.el7_1.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-static",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.9.1-5.0.1.el7_1.2"
+								}
+							],
+							"fixed": [
+								"0:2.9.1-5.0.1.el7_1.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,138 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100423",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100423",
+			"title": "\nELSA-2010-0423:  krb5 security update (IMPORTANT)\n",
+			"description": "\n\n[1.6.1-36.el5_5.4]\n- add candidate patch to correct KDC null pointer dereference which\n  could be triggered by malformed client requests (CVE-2010-1321, #583703)\n\n[1.6.1-36.el5_5.3]\n- add upstream patch to fix a few use-after-free bugs, including one in\n  kadmind (CVE-2010-0629, #578185)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-1321.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0423.html"
+				}
+			],
+			"published": "2010-05-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-1321",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-1321.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.1-36.el5_5.4"
+								}
+							],
+							"fixed": [
+								"0:1.6.1-36.el5_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-libs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.1-36.el5_5.4"
+								}
+							],
+							"fixed": [
+								"0:1.6.1-36.el5_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-server",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.1-36.el5_5.4"
+								}
+							],
+							"fixed": [
+								"0:1.6.1-36.el5_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-workstation",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.1-36.el5_5.4"
+								}
+							],
+							"fixed": [
+								"0:1.6.1-36.el5_5.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

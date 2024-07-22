@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20191228",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20191228",
+			"title": "\nELSA-2019-1228:  wget security update (IMPORTANT)\n",
+			"description": "\n[1.14-18.1]\n- Fix CVE-2019-5953 (#1696733)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-5953.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-1228.html"
+				}
+			],
+			"published": "2019-05-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-5953",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-5953.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wget",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.14-18.el7_6.1"
+								}
+							],
+							"fixed": [
+								"0:1.14-18.el7_6.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

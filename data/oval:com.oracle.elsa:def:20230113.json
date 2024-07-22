@@ -1,0 +1,323 @@
+{
+	"id": "oval:com.oracle.elsa:def:20230113",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20230113",
+			"title": "\nELSA-2023-0113:  postgresql:10 security update (MODERATE)\n",
+			"description": "\n[10.23-1]\n- Fix CVE-2022-2625\n- Resolves: #2143167\n- Rebase to 10.23\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2625.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-0113.html"
+				}
+			],
+			"published": "2023-01-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-2625",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2625.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql-contrib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql-plperl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql-plpython3",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql-pltcl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql-server-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql-test",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql-test-rpm-macros",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql-upgrade",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:10::postgresql-upgrade-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.23-1.module+el8.7.0+20896+16771be9"
+								}
+							],
+							"fixed": [
+								"0:10.23-1.module+el8.7.0+20896+16771be9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

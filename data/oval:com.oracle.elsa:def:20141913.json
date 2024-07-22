@@ -1,0 +1,356 @@
+{
+	"id": "oval:com.oracle.elsa:def:20141913",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20141913",
+			"title": "\nELSA-2014-1913:  ruby193-ruby security update (MODERATE)\n",
+			"description": "\n[1.9.3.484-50.0.1]\n- fix build issue: self test report 'dh key to small'\n\n[1.9.3.484-50]\n- Fix off-by-one stack-based buffer overflow in the encodes() function\n  (CVE-2014-4975).\n  Related: rhbz#1164004\n- Fix REXML billion laughs attack via parameter entity expansion\n  (CVE-2014-8080).\n  Related: rhbz#1164004\n- REXML incomplete fix for CVE-2014-8080 (CVE-2014-8090).\n  Related: rhbz#1164004\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-4975.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8080.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8090.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-1913.html"
+				}
+			],
+			"published": "2016-02-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-4975",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-4975.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-8080",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8080.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-8090",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8090.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-ruby",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.3.484-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:1.9.3.484-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-ruby-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.3.484-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:1.9.3.484-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-ruby-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.3.484-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:1.9.3.484-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-ruby-irb",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.3.484-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:1.9.3.484-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-ruby-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.3.484-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:1.9.3.484-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-ruby-tcltk",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.3.484-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:1.9.3.484-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-rubygem-bigdecimal",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.0-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:1.1.0-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-rubygem-io-console",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.3-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:0.3-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-rubygem-json",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.5-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:1.5.5-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-rubygem-minitest",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5.1-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.5.1-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-rubygem-rake",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.2.2-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:0.9.2.2-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-rubygem-rdoc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.5-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:3.9.5-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-rubygems",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.23-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:1.8.23-50.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby193-rubygems-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.23-50.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:1.8.23-50.0.1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

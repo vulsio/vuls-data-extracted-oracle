@@ -1,0 +1,176 @@
+{
+	"id": "oval:com.oracle.elsa:def:20140321",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20140321",
+			"title": "\nELSA-2014-0321:  net-snmp security and bug fix update (MODERATE)\n",
+			"description": "\n[1:5.5-49.0.1.el6_5.1]\n- snmptrapd: Fix crash due to access of freed memory (John Haxby) [orabug 14404682]\n\n[1:5.5-49.1]\n- added 'diskio' option to snmpd.conf, it's possible to monitor only selected\n  devices in diskIOTable (#990674)\n- fixed CVE-2014-2284: denial of service flaw in Linux implementation of\n  ICMP-MIB (#1073222)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2284.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0321.html"
+				}
+			],
+			"published": "2014-03-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-2284",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-2284.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.5-49.0.1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"1:5.5-49.0.1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.5-49.0.1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"1:5.5-49.0.1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.5-49.0.1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"1:5.5-49.0.1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-perl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.5-49.0.1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"1:5.5-49.0.1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-python",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.5-49.0.1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"1:5.5-49.0.1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-utils",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.5-49.0.1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"1:5.5-49.0.1.el6_5.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

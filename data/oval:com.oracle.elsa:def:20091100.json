@@ -1,0 +1,133 @@
+{
+	"id": "oval:com.oracle.elsa:def:20091100",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20091100",
+			"title": "\nELSA-2009-1100:  wireshark security update (MODERATE)\n",
+			"description": "\n\n[1.0.8-1.0.1.el5_3.1]\n- Add oracle-ocfs2-network.patch\n\n[1.0.8-1.1]\n- bump release to match Z-stream/EUS NVR policy\n- Resolves: #501950\n\n[1.0.8-1]\n- upgrade to 1.0.8\n- Resolves: #501950 \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1210.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1268.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1269.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1829.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-1100.html"
+				}
+			],
+			"published": "2009-06-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-1210",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1210.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-1268",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1268.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-1269",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1269.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-1829",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1829.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wireshark",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.8-1.0.1.el5_3.1"
+								}
+							],
+							"fixed": [
+								"0:1.0.8-1.0.1.el5_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wireshark-gnome",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.8-1.0.1.el5_3.1"
+								}
+							],
+							"fixed": [
+								"0:1.0.8-1.0.1.el5_3.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,147 @@
+{
+	"id": "oval:com.oracle.elsa:def:20140513",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20140513",
+			"title": "\nELSA-2014-0513:  libxml2 security update (MODERATE)\n",
+			"description": "\n[2.7.6-14.0.1.el6_5.1]\n- Update doc/redhat.gif in tarball\n- Add libxml2-oracle-enterprise.patch and update logos in tarball\n\n[2-2.7.6-14.el6_5.1]\n- Improve handling of xmlStopParser(CVE-2013-2877)\n- Do not fetch external parameter entities (CVE-2014-0191)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2877.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0191.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0513.html"
+				}
+			],
+			"published": "2014-05-19T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-2877",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-2877.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0191",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0191.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-14.0.1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-14.0.1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-14.0.1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-14.0.1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-python",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-14.0.1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-14.0.1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-static",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-14.0.1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-14.0.1.el6_5.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

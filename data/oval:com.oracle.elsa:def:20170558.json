@@ -1,0 +1,70 @@
+{
+	"id": "oval:com.oracle.elsa:def:20170558",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20170558",
+			"title": "\nELSA-2017-0558:  firefox security update (CRITICAL)\n",
+			"description": "\n[52.0-5.0.1]\n- Add firefox-oracle-default-prefs.js and remove the corresponding Red Hat file\n\n[52.0-5]\n- Added fix for mozbz#1348168/CVE-2017-5428\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-5428.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0558.html"
+				}
+			],
+			"published": "2017-03-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-5428",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-5428.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:52.0-5.0.1.el7_3"
+								}
+							],
+							"fixed": [
+								"0:52.0-5.0.1.el7_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

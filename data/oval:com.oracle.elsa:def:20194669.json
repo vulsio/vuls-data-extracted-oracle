@@ -1,0 +1,311 @@
+{
+	"id": "oval:com.oracle.elsa:def:20194669",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20194669",
+			"title": "\nELSA-2019-4669: Unbreakable Enterprise kernel security update (IMPORTANT)\n",
+			"description": "\n[4.1.12-124.27.2]\n- x86/speculation/mds: Check for the right microcode before setting mitigation (Kanth Ghatraju)  [Orabug: 29797118] \n- vxlan: test dev->flags & IFF_UP before accessing vxlan->dev->dev_addr (Venkat Venkatsubra)  [Orabug: 29710939] \n- vxlan: test dev->flags & IFF_UP before calling gro_cells_receive() (Eric Dumazet)  [Orabug: 29710939] \n- nvme: allow timed-out ios to retry (James Smart)  [Orabug: 29301607] \n- rds: Introduce a pool of worker threads for connection management (Hakon Bugge)  [Orabug: 29391909] \n- rds: Use rds_conn_path cp_wq when applicable (Hakon Bugge)  [Orabug: 29391909] \n- rds: ib: Implement proper cm_id compare (Hakon Bugge)  [Orabug: 29391909] \n- Revert 'net/rds: prevent RDS connections using stale ARP entries' (Hakon Bugge)  [Orabug: 29391909] \n- rds: ib: Flush ARP cache when needed (Hakon Bugge)  [Orabug: 29391909] \n- rds: Add simple heuristics to determine connect delay (Hakon Bugge)  [Orabug: 29391909] \n- rds: Fix one-sided connect (Hakon Bugge)  [Orabug: 29391909] \n- rds: Consolidate and align ftrace related to connection management (Hakon Bugge)  [Orabug: 29391909] \n- rds: ib: Fix gratuitous ARP storm (Hakon Bugge)  [Orabug: 29391909] \n- IB/mlx4: Increase the timeout for CM cache (Hakon Bugge)  [Orabug: 29391909] \n- kvm/speculation: Allow KVM guests to use SSBD even if host does not (Alejandro Jimenez)  [Orabug: 29423804] \n- x86/speculation: Keep enhanced IBRS on when spec_store_bypass_disable=on is used (Alejandro Jimenez)  [Orabug: 29423804] \n- x86/speculation: Clean up enhanced IBRS checks in bugs_64.c (Alejandro Jimenez)  [Orabug: 29423804] \n- mm: thp: relax __GFP_THISNODE for MADV_HUGEPAGE mappings (Andrea Arcangeli)  [Orabug: 29510356] \n- bnxt_en: Reset device on RX buffer errors. (Michael Chan)  [Orabug: 29651238] \n- x86/mitigations: Fix the test for Xen PV guest (Boris Ostrovsky)  [Orabug: 29774291] \n- x86/speculation/mds: Fix verw usage to use memory operand (Kanth Ghatraju)  [Orabug: 29791036]  {CVE-2018-12127} {CVE-2018-12130}\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12127.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12130.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-4669.html"
+				}
+			],
+			"published": "2019-05-31T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-12127",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12127.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-12130",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12130.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.27.2.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.27.2.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.27.2.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.27.2.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.27.2.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.27.2.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.27.2.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.27.2.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.27.2.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.27.2.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.27.2.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.27.2.el6uek"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.27.2.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.27.2.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.27.2.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.27.2.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.27.2.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.27.2.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.27.2.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.27.2.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.27.2.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.27.2.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.27.2.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.27.2.el7uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

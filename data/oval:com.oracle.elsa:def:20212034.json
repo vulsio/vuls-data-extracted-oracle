@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20212034",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20212034",
+			"title": "\nELSA-2021-2034:  redis:6 security update (IMPORTANT)\n",
+			"description": "\n[6.0.9-3]\n- fix integer overflow via STRALGO LCS command\n  CVE-2021-29477\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-29477.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-2034.html"
+				}
+			],
+			"published": "2021-05-26T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-29477",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-29477.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "redis:6::redis",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.9-3.module+el8.4.0+20175+330f1c60"
+								}
+							],
+							"fixed": [
+								"0:6.0.9-3.module+el8.4.0+20175+330f1c60"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "redis:6::redis-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.9-3.module+el8.4.0+20175+330f1c60"
+								}
+							],
+							"fixed": [
+								"0:6.0.9-3.module+el8.4.0+20175+330f1c60"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "redis:6::redis-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.9-3.module+el8.4.0+20175+330f1c60"
+								}
+							],
+							"fixed": [
+								"0:6.0.9-3.module+el8.4.0+20175+330f1c60"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

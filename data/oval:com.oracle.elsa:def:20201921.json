@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20201921",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20201921",
+			"title": "\nELSA-2020-1921:  fontforge security update (MODERATE)\n",
+			"description": "\n[20170731-14]\n- Resolves:rh#1790974 - CVE-2020-5395:out-of-bounds write in sfd.c\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-5395.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-1921.html"
+				}
+			],
+			"published": "2020-05-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-5395",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-5395.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "fontforge",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:20170731-14.el8"
+								}
+							],
+							"fixed": [
+								"0:20170731-14.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

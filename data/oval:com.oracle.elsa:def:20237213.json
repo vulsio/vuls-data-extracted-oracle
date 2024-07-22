@@ -1,0 +1,126 @@
+{
+	"id": "oval:com.oracle.elsa:def:20237213",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20237213",
+			"title": "\nELSA-2023-7213:  squid:4 security update (CRITICAL)\n",
+			"description": "\nlibecap\nsquid\n[7:4.15-7.1]\n- Resolves: RHEL-14801 - squid: squid: Denial of Service in HTTP Digest\n  Authentication\n- Resolves: RHEL-14776 - squid: squid: Request/Response smuggling in HTTP/1.1\n  and ICAP\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46846.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46847.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-7213.html"
+				}
+			],
+			"published": "2023-11-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-46846",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46846.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-46847",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46847.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid:4::libecap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1-2.module+el8.9.0+90083+f7556140"
+								}
+							],
+							"fixed": [
+								"0:1.0.1-2.module+el8.9.0+90083+f7556140"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid:4::libecap-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1-2.module+el8.9.0+90083+f7556140"
+								}
+							],
+							"fixed": [
+								"0:1.0.1-2.module+el8.9.0+90083+f7556140"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid:4::squid",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:4.15-7.module+el8.9.0+90083+f7556140.1"
+								}
+							],
+							"fixed": [
+								"7:4.15-7.module+el8.9.0+90083+f7556140.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,265 @@
+{
+	"id": "oval:com.oracle.elsa:def:20100859",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20100859",
+			"title": "\nELSA-2010-0859:  poppler security update (IMPORTANT)\n",
+			"description": "\n\n[0.12.4-3.el6.1]\n- Add poppler-0.12.4-CVE-2010-3702.patch\n    (Properly initialize parser)\n- Add poppler-0.12.4-CVE-2010-3703.patch\n    (Properly initialize stack)\n- Add poppler-0.12.4-CVE-2010-3704.patch\n    (Fix crash in broken pdf (code < 0))\n- Resolves: #639859\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3702.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3703.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3704.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0859.html"
+				}
+			],
+			"published": "2011-02-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-3702",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3702.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-3703",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3703.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-3704",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3704.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "poppler",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-3.el6_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-3.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "poppler-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-3.el6_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-3.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "poppler-glib",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-3.el6_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-3.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "poppler-glib-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-3.el6_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-3.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "poppler-qt",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-3.el6_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-3.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "poppler-qt-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-3.el6_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-3.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "poppler-qt4",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-3.el6_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-3.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "poppler-qt4-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-3.el6_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-3.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "poppler-utils",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-3.el6_0.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-3.el6_0.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

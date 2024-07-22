@@ -1,0 +1,84 @@
+{
+	"id": "oval:com.oracle.elsa:def:20192272",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20192272",
+			"title": "\nELSA-2019-2272:  python-urllib3 security update (MODERATE)\n",
+			"description": "\n[1.10.2-7]\n- Provide python2-urllib3\n- Add patch for CVE-2019-11236\nResolves: rhbz#1703360\n\n[1.10.2-6]\n- Source URL switched to HTTPS protocol\n- Add patch for CVE-2018-20060\nResolves: rhbz#1658471\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-20060.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11236.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-2272.html"
+				}
+			],
+			"published": "2019-08-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-20060",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-20060.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-11236",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11236.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-urllib3",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.10.2-7.el7"
+								}
+							],
+							"fixed": [
+								"0:1.10.2-7.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

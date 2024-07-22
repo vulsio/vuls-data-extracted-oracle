@@ -1,0 +1,92 @@
+{
+	"id": "oval:com.oracle.elsa:def:20111084",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20111084",
+			"title": "\nELSA-2011-1084:  libsndfile security update (MODERATE)\n",
+			"description": "\n\n[1.0.20-3.1]\n- fixes integer overflow by processing certain PAF audio files (#722841)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2696.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1084.html"
+				}
+			],
+			"published": "2011-07-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-2696",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2696.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsndfile",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.20-3.el6_1.1"
+								}
+							],
+							"fixed": [
+								"0:1.0.20-3.el6_1.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsndfile-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.20-3.el6_1.1"
+								}
+							],
+							"fixed": [
+								"0:1.0.20-3.el6_1.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

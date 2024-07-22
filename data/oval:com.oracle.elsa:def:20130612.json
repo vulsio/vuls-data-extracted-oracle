@@ -1,0 +1,252 @@
+{
+	"id": "oval:com.oracle.elsa:def:20130612",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20130612",
+			"title": "\nELSA-2013-0612:  ruby security update (MODERATE)\n",
+			"description": "\n[1.8.7.352-10]\n-  escaping vulnerability about Exception#to_s / NameError#to_s\n  * ruby-1.8.7-p371-CVE-2012-4481.patch\n  - Related: rhbz#915379\n\n[1.8.7.352-9]\n- Fix regression introduced by fix for entity expansion DOS vulnerability\n  in REXML (https://bugs.ruby-lang.org/issues/7961)\n  * ruby-2.0.0-add-missing-rexml-require.patch\n- Related: rhbz#915379\n\n[1.8.7.352-8]\n- Addresses entity expansion DoS vulnerability in REXML.\n  * ruby-2.0.0-entity-expansion-DoS-vulnerability-in-REXML.patch\n- Resolves: rhbz#915379\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-4481.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-1821.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0612.html"
+				}
+			],
+			"published": "2013-03-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-4481",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-4481.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-1821",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-1821.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-10.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-10.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-10.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-10.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-docs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-10.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-10.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-irb",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-10.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-10.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-10.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-10.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-rdoc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-10.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-10.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-ri",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-10.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-10.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-static",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-10.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-10.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-tcltk",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.7.352-10.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.8.7.352-10.el6_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

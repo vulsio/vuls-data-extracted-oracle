@@ -1,0 +1,178 @@
+{
+	"id": "oval:com.oracle.elsa:def:20213945",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20213945",
+			"title": "\nELSA-2021-3945:  redis:6 security update (IMPORTANT)\n",
+			"description": "\n[6.0.9-5]\n- fix denial of service via Redis Standard Protocol (RESP) request\n  CVE-2021-32675\n\n[6.0.9-4]\n- fix lua scripts can overflow the heap-based Lua stack\n  CVE-2021-32626\n- fix integer overflow issue with Streams\n  CVE-2021-32627\n- fix integer overflow bug in the ziplist data structure\n  CVE-2021-32628\n- fix integer overflow issue with intsets\n  CVE-2021-32687\n- fix integer overflow issue with strings\n  CVE-2021-41099\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32626.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32627.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32628.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32675.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32687.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-41099.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-3945.html"
+				}
+			],
+			"published": "2021-10-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-32626",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32626.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-32627",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32627.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-32628",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32628.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-32675",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32675.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-32687",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32687.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-41099",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-41099.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "redis:6::redis",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.9-5.module+el8.4.0+20384+68ad316c"
+								}
+							],
+							"fixed": [
+								"0:6.0.9-5.module+el8.4.0+20384+68ad316c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "redis:6::redis-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.9-5.module+el8.4.0+20384+68ad316c"
+								}
+							],
+							"fixed": [
+								"0:6.0.9-5.module+el8.4.0+20384+68ad316c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "redis:6::redis-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.9-5.module+el8.4.0+20384+68ad316c"
+								}
+							],
+							"fixed": [
+								"0:6.0.9-5.module+el8.4.0+20384+68ad316c"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

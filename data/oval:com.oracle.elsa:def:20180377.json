@@ -1,0 +1,113 @@
+{
+	"id": "oval:com.oracle.elsa:def:20180377",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20180377",
+			"title": "\nELSA-2018-0377:  quagga security update (IMPORTANT)\n",
+			"description": "\n[0.99.22.4-5]\n- Fixed CVE-2018-5379 - Double free vulnerability in bgpd when processing\n  certain forms of UPDATE message allowing to crash or potentially execute\n  arbitrary code\n- Resolves: rhbz#1546015\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-5379.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-0377.html"
+				}
+			],
+			"published": "2018-02-28T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-5379",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-5379.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "quagga",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.99.22.4-5.el7_4"
+								}
+							],
+							"fixed": [
+								"0:0.99.22.4-5.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "quagga-contrib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.99.22.4-5.el7_4"
+								}
+							],
+							"fixed": [
+								"0:0.99.22.4-5.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "quagga-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.99.22.4-5.el7_4"
+								}
+							],
+							"fixed": [
+								"0:0.99.22.4-5.el7_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

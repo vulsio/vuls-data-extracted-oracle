@@ -1,0 +1,160 @@
+{
+	"id": "oval:com.oracle.elsa:def:20171364",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20171364",
+			"title": "\nELSA-2017-1364:  nss security and bug fix update (IMPORTANT)\n",
+			"description": "\n[3.28.4-3.0.1]\n- Added nss-vendor.patch to change vendor\n- Temporarily disable some tests until expired PayPalEE.cert is renewed\n\n[3.28.4-3]\n- Fix zero-length record treatment for stream ciphers and SSLv2\n\n[3.28.4-2]\n- Include CKBI 2.14 and updated CA constraints from NSS 3.28.5\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-7502.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-1364.html"
+				}
+			],
+			"published": "2017-05-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-7502",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-7502.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.28.4-3.0.1.el6_9"
+								}
+							],
+							"fixed": [
+								"0:3.28.4-3.0.1.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-devel",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.28.4-3.0.1.el6_9"
+								}
+							],
+							"fixed": [
+								"0:3.28.4-3.0.1.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-pkcs11-devel",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.28.4-3.0.1.el6_9"
+								}
+							],
+							"fixed": [
+								"0:3.28.4-3.0.1.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-sysinit",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.28.4-3.0.1.el6_9"
+								}
+							],
+							"fixed": [
+								"0:3.28.4-3.0.1.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-tools",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.28.4-3.0.1.el6_9"
+								}
+							],
+							"fixed": [
+								"0:3.28.4-3.0.1.el6_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

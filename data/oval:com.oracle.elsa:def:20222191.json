@@ -1,0 +1,71 @@
+{
+	"id": "oval:com.oracle.elsa:def:20222191",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20222191",
+			"title": "\nELSA-2022-2191:  gzip security update (IMPORTANT)\n",
+			"description": "\n[1.5-11]\n- fix an arbitrary-file-write vulnerability in zgrep\nResolves: CVE-2022-1271\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-1271.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-2191.html"
+				}
+			],
+			"published": "2022-05-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-1271",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-1271.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gzip",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5-11.el7_9"
+								}
+							],
+							"fixed": [
+								"0:1.5-11.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

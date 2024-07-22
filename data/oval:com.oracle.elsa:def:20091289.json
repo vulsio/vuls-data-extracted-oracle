@@ -1,0 +1,199 @@
+{
+	"id": "oval:com.oracle.elsa:def:20091289",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20091289",
+			"title": "\nELSA-2009-1289:  mysql security and bug fix update (MODERATE)\n",
+			"description": "\n[5.0.77-3]\n- Add fix for CVE-2009-2446 (format string vulnerability in COM_CREATE_DB and\n  COM_DROP_DB processing)\nResolves: #512200\n\n[5.0.77-2]\n- Back-port upstream fix for CVE-2008-4456 (mysql command line client XSS flaw)\nResolves: #502169\n\n[5.0.77-1]\n- Update to MySQL 5.0.77, for numerous fixes described at\n  http://dev.mysql.com/doc/refman/5.0/en/releasenotes-cs-5-0-77.html\n  including low-priority security issues CVE-2008-2079, CVE-2008-3963\nResolves: #448487, #448534, #452824, #453156, #455619, #456875\nResolves: #457218, #462534, #470036, #476896, #479615\n- Improve mysql.init to pass configured datadir to mysql_install_db,\n  and to force user=mysql for both mysql_install_db and mysqld_safe.\nResolves: #450178\n- Fix mysql.init to wait correctly when socket is not in default place\nResolves: #435494\n \n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-2079.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-3963.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4456.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2446.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-1289.html"
+				}
+			],
+			"published": "2009-09-08T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2008-2079",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-2079.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-3963",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-3963.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-4456",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4456.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-2446",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-2446.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.77-3.el5"
+								}
+							],
+							"fixed": [
+								"0:5.0.77-3.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql-bench",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.77-3.el5"
+								}
+							],
+							"fixed": [
+								"0:5.0.77-3.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.77-3.el5"
+								}
+							],
+							"fixed": [
+								"0:5.0.77-3.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql-server",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.77-3.el5"
+								}
+							],
+							"fixed": [
+								"0:5.0.77-3.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql-test",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.77-3.el5"
+								}
+							],
+							"fixed": [
+								"0:5.0.77-3.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

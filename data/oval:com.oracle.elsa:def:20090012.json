@@ -1,0 +1,126 @@
+{
+	"id": "oval:com.oracle.elsa:def:20090012",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20090012",
+			"title": "\nELSA-2009-0012:  netpbm security update (MODERATE)\n",
+			"description": "\n\n[10.35-6.1.el5_3.1]\n- fix NVR to be greater than previous release in the main branch\nRelated: #472947\n\n[10.35-6.el5_3.1]\n- fix CVE-2007-2721 and CVE-2008-3520 libjasper issues (#472947)\nResolves: #472947\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2721.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-3520.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-0012.html"
+				}
+			],
+			"published": "2009-02-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-2721",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2721.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-3520",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-3520.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "netpbm",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.35-6.1.el5_3.1"
+								}
+							],
+							"fixed": [
+								"0:10.35-6.1.el5_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "netpbm-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.35-6.1.el5_3.1"
+								}
+							],
+							"fixed": [
+								"0:10.35-6.1.el5_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "netpbm-progs",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.35-6.1.el5_3.1"
+								}
+							],
+							"fixed": [
+								"0:10.35-6.1.el5_3.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

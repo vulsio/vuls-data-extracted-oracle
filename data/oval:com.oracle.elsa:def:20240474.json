@@ -1,0 +1,257 @@
+{
+	"id": "oval:com.oracle.elsa:def:20240474",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20240474",
+			"title": "\nELSA-2024-0474:  tomcat security update (MODERATE)\n",
+			"description": "\n[1:9.0.62-37.el9_3.1]\n- Resolves: #2235370 CVE-2023-41080 tomcat: Open Redirect vulnerability in FORM authentication\n- Resolves: #2243749 CVE-2023-45648 tomcat: incorrectly parsed http trailer headers can cause request smuggling\n- Resolves: #2243751 CVE-2023-42794 tomcat: FileUpload: DoS due to accumulation of temporary files on Windows\n- Resolves: #2243752 CVE-2023-42795 tomcat: improper cleaning of recycled objects could lead to information leak\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-41080.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-42794.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-42795.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-45648.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-0474.html"
+				}
+			],
+			"published": "2024-01-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-41080",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-41080.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-42794",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-42794.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-42795",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-42795.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-45648",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-45648.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:9.0.62-37.el9_3.1"
+								}
+							],
+							"fixed": [
+								"1:9.0.62-37.el9_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-admin-webapps",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:9.0.62-37.el9_3.1"
+								}
+							],
+							"fixed": [
+								"1:9.0.62-37.el9_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-docs-webapp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:9.0.62-37.el9_3.1"
+								}
+							],
+							"fixed": [
+								"1:9.0.62-37.el9_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-el-3.0-api",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:9.0.62-37.el9_3.1"
+								}
+							],
+							"fixed": [
+								"1:9.0.62-37.el9_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-jsp-2.3-api",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:9.0.62-37.el9_3.1"
+								}
+							],
+							"fixed": [
+								"1:9.0.62-37.el9_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-lib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:9.0.62-37.el9_3.1"
+								}
+							],
+							"fixed": [
+								"1:9.0.62-37.el9_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-servlet-4.0-api",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:9.0.62-37.el9_3.1"
+								}
+							],
+							"fixed": [
+								"1:9.0.62-37.el9_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-webapps",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:9.0.62-37.el9_3.1"
+								}
+							],
+							"fixed": [
+								"1:9.0.62-37.el9_3.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

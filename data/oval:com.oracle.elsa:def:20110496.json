@@ -1,0 +1,126 @@
+{
+	"id": "oval:com.oracle.elsa:def:20110496",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20110496",
+			"title": "\nELSA-2011-0496:  xen security update (IMPORTANT)\n",
+			"description": "\n\n[3.0.3-120.el5_6.2]\n- Fix logic and integer overflow in xc_try_bzip2_decode() (rhbz 696938)\n- Fix logic and integer overflow in xc_try_lzma_decode() (rhbz 696938)\n- Fix integer and buffer overflows in xc_dom_probe_bzimage_kernel() (rhbz 696938)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1583.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3262.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-0496.html"
+				}
+			],
+			"published": "2011-05-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-1583",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1583.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-3262",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3262.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xen",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.3-120.el5_6.2"
+								}
+							],
+							"fixed": [
+								"0:3.0.3-120.el5_6.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xen-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.3-120.el5_6.2"
+								}
+							],
+							"fixed": [
+								"0:3.0.3-120.el5_6.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xen-libs",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.3-120.el5_6.2"
+								}
+							],
+							"fixed": [
+								"0:3.0.3-120.el5_6.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

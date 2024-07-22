@@ -1,0 +1,1058 @@
+{
+	"id": "oval:com.oracle.elsa:def:20211775",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20211775",
+			"title": "\nELSA-2021-1775:  pki-core:10.6 and pki-deps:10.6 security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\napache-commons-collections\njss\n[4.8.1-2]\n- Bug 1932803 - HSM + FIPS: CMCRequest with a shared secret resulting in error\n\n[4.8.1-1]\n- Rebase to upstream JSS v4.8.1\n- Red Hat Bugilla #1908541 - jss broke SCEP - missing PasswordChallenge class\n- Red Hat Bugilla #1489256 - [RFE] jss should support RSA with OAEP padding\n\n[4.8.0-2]\n- Only check PKCS11Constants on beta builds\n- Bump tomcatjss, pki-core conflicts due to lang3\n\n[4.8.0-1]\n- Rebase to upstream JSS v4.8.0\n\n[4.8.0-0.1]\n- Rebase to upstream JSS v4.8.0-b1\n\npki-core\n[10.10.5-2.0.1]\n- Remove upstream reference.\n\n[10.10.5-2]\n- Bug 1914396 - CVE-2021-20179 pki-core:10.6/pki-core: Unprivileged users can renew any certificate\n\n[10.10.5-1]\n- Rebase to PKI 10.10.5\n- Bug 1929067 - PKI instance creation failed with new 389-ds-base build\n\npki-servlet-engine\n[1:9.0.30-1]\n- Resolves: rhbz#1721684 Rebase pki-servlet-engine to 9.0.30\n- Update to JWS 5.3.0 distribution\n- Remove new dependencies that PKI doesnt need (and are not provided by RHEL 8)\n\nresteasy\n[3.0.26-6]\n- CVE-2020-1695: Improper validation of response header in MediaTypeHeaderDelegate.java class\n  Resolves: rh-bz#1845548\n\ntomcatjss\n[7.6.1-1]\n- Rebase to TomcatJSS 7.6.1\n\n[7.6.0-2]\n- Bump dependency to JSS 4.8.0\n- Remove unsupported platforms\n\n[7.6.0-1]\n- Rebase to TomcatJSS 7.6.0\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-1695.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-1775.html"
+				}
+			],
+			"published": "2021-05-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-1695",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-1695.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::jss",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.8.1-2.module+el8.4.0+20154+9830f79e"
+								}
+							],
+							"fixed": [
+								"0:4.8.1-2.module+el8.4.0+20154+9830f79e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::jss-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.8.1-2.module+el8.4.0+20154+9830f79e"
+								}
+							],
+							"fixed": [
+								"0:4.8.1-2.module+el8.4.0+20154+9830f79e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::ldapjdk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.22.0-1.module+el8.3.0+7857+983338ee"
+								}
+							],
+							"fixed": [
+								"0:4.22.0-1.module+el8.3.0+7857+983338ee"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::ldapjdk-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.22.0-1.module+el8.3.0+7857+983338ee"
+								}
+							],
+							"fixed": [
+								"0:4.22.0-1.module+el8.3.0+7857+983338ee"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::pki-acme",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+								}
+							],
+							"fixed": [
+								"0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::pki-base",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+								}
+							],
+							"fixed": [
+								"0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::pki-base-java",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+								}
+							],
+							"fixed": [
+								"0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::pki-ca",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+								}
+							],
+							"fixed": [
+								"0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::pki-kra",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+								}
+							],
+							"fixed": [
+								"0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::pki-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+								}
+							],
+							"fixed": [
+								"0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::pki-symkey",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+								}
+							],
+							"fixed": [
+								"0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::pki-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+								}
+							],
+							"fixed": [
+								"0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::python3-pki",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+								}
+							],
+							"fixed": [
+								"0:10.10.5-2.0.1.module+el8.4.0+20154+9830f79e"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-core:10.6::tomcatjss",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.6.1-1.module+el8.4.0+20053+7cddd5b6"
+								}
+							],
+							"fixed": [
+								"0:7.6.1-1.module+el8.4.0+20053+7cddd5b6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::apache-commons-collections",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.2.2-10.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:3.2.2-10.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::apache-commons-lang",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6-21.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.6-21.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::apache-commons-net",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6-3.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:3.6-3.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::bea-stax-api",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.0-16.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:1.2.0-16.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::glassfish-fastinfoset",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.13-9.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:1.2.13-9.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::glassfish-jaxb-api",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.12-8.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.2.12-8.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::glassfish-jaxb-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.11-11.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.2.11-11.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::glassfish-jaxb-runtime",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.11-11.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.2.11-11.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::glassfish-jaxb-txw2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.11-11.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.2.11-11.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::jackson-annotations",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.10.0-1.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.10.0-1.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::jackson-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.10.0-1.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.10.0-1.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::jackson-databind",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.10.0-1.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.10.0-1.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::jackson-jaxrs-json-provider",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.9.9-1.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.9.9-1.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::jackson-jaxrs-providers",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.9.9-1.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.9.9-1.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::jackson-module-jaxb-annotations",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-4.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-4.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::jakarta-commons-httpclient",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:3.1-28.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"1:3.1-28.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::javassist",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.18.1-8.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:3.18.1-8.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::javassist-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.18.1-8.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:3.18.1-8.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::pki-servlet-4.0-api",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:9.0.30-1.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"1:9.0.30-1.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::pki-servlet-engine",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:9.0.30-1.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"1:9.0.30-1.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::python-nss-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1-10.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:1.0.1-10.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::python3-nss",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1-10.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:1.0.1-10.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::relaxngDatatype",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2011.1-7.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2011.1-7.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::resteasy",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.26-6.module+el8.4.0+20041+bb8828ef"
+								}
+							],
+							"fixed": [
+								"0:3.0.26-6.module+el8.4.0+20041+bb8828ef"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::slf4j",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.25-4.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:1.7.25-4.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::slf4j-jdk14",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.25-4.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:1.7.25-4.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::stax-ex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.7-8.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:1.7.7-8.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::velocity",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7-24.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:1.7-24.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::xalan-j2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.1-38.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.7.1-38.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::xerces-j2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.11.0-34.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:2.11.0-34.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::xml-commons-apis",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.01-25.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:1.4.01-25.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::xml-commons-resolver",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2-26.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:1.2-26.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::xmlstreambuffer",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.4-8.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:1.5.4-8.module+el8.3.0+7697+44932688"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pki-deps:10.6::xsom",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0-19.20110809svn.module+el8.3.0+7697+44932688"
+								}
+							],
+							"fixed": [
+								"0:0-19.20110809svn.module+el8.3.0+7697+44932688"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

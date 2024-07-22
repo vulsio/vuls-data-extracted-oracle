@@ -1,0 +1,152 @@
+{
+	"id": "oval:com.oracle.elsa:def:20190679",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20190679",
+			"title": "\nELSA-2019-0679:  libssh2 security update (IMPORTANT)\n",
+			"description": "\n[1.4.3-12.el7_6.2]\n- sanitize public header file (detected by rpmdiff)\n\n[1.4.3-12.el7_6.1]\n- fix integer overflow in keyboard interactive handling that allows out-of-bounds writes (CVE-2019-3863)\n- fix integer overflow in SSH packet processing channel resulting in out of bounds write (CVE-2019-3857)\n- fix integer overflow in keyboard interactive handling resulting in out of bounds write (CVE-2019-3856)\n- fix integer overflow in transport read resulting in out of bounds write (CVE-2019-3855)\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3855.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3856.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3857.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3863.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-0679.html"
+				}
+			],
+			"published": "2019-03-28T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-3855",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3855.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-3856",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3856.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-3857",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3857.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-3863",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-3863.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libssh2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3-12.el7_6.2"
+								}
+							],
+							"fixed": [
+								"0:1.4.3-12.el7_6.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libssh2-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3-12.el7_6.2"
+								}
+							],
+							"fixed": [
+								"0:1.4.3-12.el7_6.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libssh2-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3-12.el7_6.2"
+								}
+							],
+							"fixed": [
+								"0:1.4.3-12.el7_6.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

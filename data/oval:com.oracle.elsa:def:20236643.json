@@ -1,0 +1,126 @@
+{
+	"id": "oval:com.oracle.elsa:def:20236643",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20236643",
+			"title": "\nELSA-2023-6643:  libssh security update (MODERATE)\n",
+			"description": "\n[0.10.4-11]\n- Fix loglevel regression\n- Related: rhbz#2182252, rhbz#2189740\n\n[0.10.4.10]\n- Fix null dereference issues found by covscan\n- Related: rhbz#2182252, rhbz#2189740\n\n[0.10.4-9]\n- Fix CVE-2023-1667 and CVE-2023-2283\n- Fix issues found by cosvcan\n- Resolves: rhbz#2182252, rhbz#2189740\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-1667.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2283.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-6643.html"
+				}
+			],
+			"published": "2023-11-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-1667",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-1667.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-2283",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2283.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libssh",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.4-11.el9"
+								}
+							],
+							"fixed": [
+								"0:0.10.4-11.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libssh-config",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.4-11.el9"
+								}
+							],
+							"fixed": [
+								"0:0.10.4-11.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libssh-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.4-11.el9"
+								}
+							],
+							"fixed": [
+								"0:0.10.4-11.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

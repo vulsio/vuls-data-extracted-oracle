@@ -1,0 +1,72 @@
+{
+	"id": "oval:com.oracle.elsa:def:20130807",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20130807",
+			"title": "\nELSA-2013-0807:  hypervkvpd security and bug fix update (LOW)\n",
+			"description": "\n[0-0.7.0.1.el5_9.3]\n- Add support for oracle os\n\n[0-0.7.3]\n- Fix for one more file descriptor leak (rhbz#953502)\n\n[0-0.7.2]\n- Validate Netlink source address (CVE-2012-5532) (rhbz#953560)\n\n[0-0.7.1]\n- Fix for file descriptor leak (rhbz#953502)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5532.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0807.html"
+				}
+			],
+			"published": "2013-05-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-5532",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5532.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "hypervkvpd",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0-0.7.0.1.el5_9.3"
+								}
+							],
+							"fixed": [
+								"0:0-0.7.0.1.el5_9.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

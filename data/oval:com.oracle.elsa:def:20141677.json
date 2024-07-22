@@ -1,0 +1,198 @@
+{
+	"id": "oval:com.oracle.elsa:def:20141677",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20141677",
+			"title": "\nELSA-2014-1677:  wireshark security update (MODERATE)\n",
+			"description": "\n[1.0.15-7.0.1.el5]\n- Added oracle-ocfs2-network.patch\n- increase max packet size to 65536 (Herbert van den Bergh) [orabug 13542633]\n\n[1.0.15-7]\n- security patches\n- Resolves: CVE-2014-6421\n            CVE-2014-6423\n            CVE-2014-6425\n            CVE-2014-6428\n            CVE-2014-6429\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6421.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6422.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6423.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6425.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6428.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6429.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6430.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6431.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6432.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-1677.html"
+				}
+			],
+			"published": "2014-10-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-6421",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6421.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-6422",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6422.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-6423",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6423.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-6425",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6425.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-6428",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6428.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-6429",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6429.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-6430",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6430.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-6431",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6431.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-6432",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-6432.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wireshark",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.15-7.0.1.el5_11"
+								}
+							],
+							"fixed": [
+								"0:1.0.15-7.0.1.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wireshark-gnome",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.15-7.0.1.el5_11"
+								}
+							],
+							"fixed": [
+								"0:1.0.15-7.0.1.el5_11"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

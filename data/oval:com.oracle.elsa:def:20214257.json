@@ -1,0 +1,294 @@
+{
+	"id": "oval:com.oracle.elsa:def:20214257",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20214257",
+			"title": "\nELSA-2021-4257:  httpd:2.4 security, bug fix, and enhancement update (MODERATE)\n",
+			"description": "\nhttpd\n[2.4.37-41.0.1]\n- Add checks on the configured UDS path [Orabug: 33412270][CVE-2021-40438]\n- Set vstring per ORACLE_SUPPORT_PRODUCT [Orabug: 29892262]\n- Replace index.html with Oracles index page oracle_index.html\n\n[2.4.37-41]\n- Resolves: #1680111 - httpd sends reply to HTTPS GET using two TLS records\n- Resolves: #1905613 - mod_ssl does not like valid certificate chain\n- Resolves: #1935742 - [RFE] backport samesite/httponly/secure flags for\n  usertrack\n- Resolves: #1972500 - CVE-2021-30641 httpd:2.4/httpd: MergeSlashes regression\n- Resolves: #1968307 - CVE-2021-26690 httpd:2.4/httpd: mod_session NULL pointer\n  dereference in parser\n- Resolves: #1934741 - Apache trademark update - new logo\n\n[2.4.37-40]\n- Resolves: #1952557 - mod_proxy_wstunnel.html is a malformed XML\n- Resolves: #1937334 - SSLProtocol with based virtual hosts\n\nmod_http2\n[1.15.7-3]\n- Resolves: #1869077 - CVE-2020-11993 httpd:2.4/mod_http2: httpd:\n  mod_http2 concurrent pool usage\n\nmod_md\n[1:2.0.8-8]\n- Resolves: #1832844 - mod_md does not work with ACME server that does not\n  provide keyChange or revokeCert resources\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26690.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-30641.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-4257.html"
+				}
+			],
+			"published": "2021-11-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-26690",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-26690.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-30641",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-30641.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::httpd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::httpd-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::httpd-filesystem",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::httpd-manual",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::httpd-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::mod_http2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.7-3.module+el8.4.0+20024+b87b2deb"
+								}
+							],
+							"fixed": [
+								"0:1.15.7-3.module+el8.4.0+20024+b87b2deb"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::mod_ldap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::mod_md",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.0.8-8.module+el8.3.0+7816+49791cfd"
+								}
+							],
+							"fixed": [
+								"1:2.0.8-8.module+el8.3.0+7816+49791cfd"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::mod_proxy_html",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+								}
+							],
+							"fixed": [
+								"1:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::mod_session",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::mod_ssl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+								}
+							],
+							"fixed": [
+								"1:2.4.37-41.0.1.module+el8.5.0+20323+c8e0c271"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

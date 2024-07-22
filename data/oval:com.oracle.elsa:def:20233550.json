@@ -1,0 +1,189 @@
+{
+	"id": "oval:com.oracle.elsa:def:20233550",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20233550",
+			"title": "\nELSA-2023-3550:  python  security update (IMPORTANT)\n",
+			"description": "\n[2.6.6-68.0.3]\n- ASCII newline and tab characters are stripped from the URL [CVE-2022-0391][Orabug: 35479836]\n- Start stripping C0 control and space chars in urlsplit [CVE-2023-24329][Orabug: 35479836]\n\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-0391.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-24329.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-3550.html"
+				}
+			],
+			"published": "2023-06-26T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-0391",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-0391.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-24329",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-24329.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.6-68.0.3.el6_10"
+								}
+							],
+							"fixed": [
+								"0:2.6.6-68.0.3.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.6-68.0.3.el6_10"
+								}
+							],
+							"fixed": [
+								"0:2.6.6-68.0.3.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.6-68.0.3.el6_10"
+								}
+							],
+							"fixed": [
+								"0:2.6.6-68.0.3.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-test",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.6-68.0.3.el6_10"
+								}
+							],
+							"fixed": [
+								"0:2.6.6-68.0.3.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-tools",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.6-68.0.3.el6_10"
+								}
+							],
+							"fixed": [
+								"0:2.6.6-68.0.3.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tkinter",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.6-68.0.3.el6_10"
+								}
+							],
+							"fixed": [
+								"0:2.6.6-68.0.3.el6_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

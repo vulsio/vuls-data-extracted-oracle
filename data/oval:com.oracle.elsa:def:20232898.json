@@ -1,0 +1,110 @@
+{
+	"id": "oval:com.oracle.elsa:def:20232898",
+	"advisories": [
+		{
+			"id": "oval:com.oracle.elsa:def:20232898",
+			"title": "\nELSA-2023-2898:  libtar security update (MODERATE)\n",
+			"description": "\n[1.2.20-17]\n- fix use-after-free bugs introduced by incorrect memleak fixes (CVE-2021-33640)\n\n[1.2.20-16]\n- fix memory leaks through gnu_long{name,link} (CVE-2021-33645 CVE-2021-33646)\n- fix out-of-bounds read in gnu_long{name,link} (CVE-2021-33643 CVE-2021-33644)\n",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33643.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33644.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33645.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33646.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-2898.html"
+				}
+			],
+			"published": "2023-05-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-33643",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33643.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-33644",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33644.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-33645",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33645.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-33646",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33646.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libtar",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.20-17.el8"
+								}
+							],
+							"fixed": [
+								"0:1.2.20-17.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}
