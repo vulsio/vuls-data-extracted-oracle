@@ -1,0 +1,283 @@
+{
+	"id": "ELSA-2024-0223",
+	"advisories": [
+		{
+			"id": "ELSA-2024-0223",
+			"title": "ELSA-2024-0223:  java-1.8.0-openjdk security and bug fix update (IMPORTANT)",
+			"description": "[1:1.8.0.402.b06-0.1.ea]\n- Update to shenandoah-jdk8u402-b06 (GA)\n- Update release notes for shenandoah-8u402-b06.\n- Drop local copy of JDK-8312489 which is now included upstream\n- Switch to GA mode.\n- ** This tarball is embargoed until 2024-01-16 @ 1pm PT. **\n- Resolves: RHEL-17914\n- Resolves: RHEL-20965\n\n[1:1.8.0.402.b01-0.1.ea]\n- Update to shenandoah-jdk8u402-b01 (EA)\n- Update release notes for shenandoah-8u402-b01.\n- Switch to EA mode.\n- Sync NEWS with vanilla branch version.\n- Related: RHEL-17914\n\n[1:1.8.0.392.b08-3]\n- Restore %{epoch}:%{javaver} versioning to jre, java, jre-headless, java-headless, java-devel & java-sdk\n- Resolves: RHEL-19630",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-20918.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-20919.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-20921.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-20926.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-20945.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-20952.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-0223.html"
+				}
+			],
+			"published": "2024-01-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2024-20918",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-20918.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-20919",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-20919.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-20921",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-20921.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-20926",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-20926.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-20945",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-20945.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-20952",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-20952.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.402.b06-1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.402.b06-1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-accessibility",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.402.b06-1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.402.b06-1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-demo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.402.b06-1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.402.b06-1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.402.b06-1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.402.b06-1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-headless",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.402.b06-1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.402.b06-1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.402.b06-1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.402.b06-1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-javadoc-zip",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.402.b06-1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.402.b06-1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.402.b06-1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.402.b06-1.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

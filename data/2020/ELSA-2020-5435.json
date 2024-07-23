@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2020-5435",
+	"advisories": [
+		{
+			"id": "ELSA-2020-5435",
+			"title": "ELSA-2020-5435:  python-rtslib security update (MODERATE)",
+			"description": "[2.1.74-1.0.1]\n- Add patch 0005-allow-mixed-case-in-oracle-iqns to fix [Orabug: 27613482]\n- Add patch 0004-allow-underscore-in-oracle-iqns to fix [Orabug: 27582660]\n- Add patch 0014-reenable-vhost to fix [Orabug: 27707403] <alan.adamson@oracle.com>\n\n[2.1.74-1]\n- Rebase to the latest upstream version",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-14019.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-5435.html"
+				}
+			],
+			"published": "2020-12-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-14019",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-14019.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-rtslib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.1.74-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"0:2.1.74-1.0.1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-rtslib-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.1.74-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"0:2.1.74-1.0.1.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

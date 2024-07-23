@@ -1,0 +1,294 @@
+{
+	"id": "ELSA-2019-0980",
+	"advisories": [
+		{
+			"id": "ELSA-2019-0980",
+			"title": "ELSA-2019-0980: httpd:2.4 security update (IMPORTANT)",
+			"description": "httpd\n[2.4.37-11.0.1]\n- Set vstring per ORACLE_SUPPORT_PRODUCT [Orabug: 29892262]\n- Replace index.html with Oracle's index page oracle_index.html\n\n[2.4.37-11]\n- Resolves: #1695431 - CVE-2019-0211 httpd: privilege escalation\n  from modules scripts\n- Resolves: #1696090 - CVE-2019-0215 httpd:2.4/httpd: mod_ssl: access control\n  bypass when using per-location client certification authentication\n\nmod_http2\n[1.11.3-2]\n- update release (#1695587)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-0211.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-0215.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-0980.html"
+				}
+			],
+			"published": "2019-07-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-0211",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-0211.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-0215",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-0215.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::httpd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::httpd-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::httpd-filesystem",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::httpd-manual",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::httpd-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::mod_http2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.3-2.module+el8.0.0+5209+a98d70d6"
+								}
+							],
+							"fixed": [
+								"0:1.11.3-2.module+el8.0.0+5209+a98d70d6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::mod_ldap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::mod_md",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::mod_proxy_html",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+								}
+							],
+							"fixed": [
+								"1:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::mod_session",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+								}
+							],
+							"fixed": [
+								"0:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd:2.4::mod_ssl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+								}
+							],
+							"fixed": [
+								"1:2.4.37-11.0.1.module+el8.0.0+5209+a98d70d6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

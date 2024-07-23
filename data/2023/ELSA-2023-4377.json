@@ -1,0 +1,650 @@
+{
+	"id": "ELSA-2023-4377",
+	"advisories": [
+		{
+			"id": "ELSA-2023-4377",
+			"title": "ELSA-2023-4377:  kernel security, bug fix, and enhancement update (IMPORTANT)",
+			"description": "[5.14.0-284.25.1.0.1_2]\n- Fix KVM: x86/mmu: Fix race condition in direct_page_fault [Orabug: 35673032] {CVE-2022-45869}\n\n[5.14.0-284.25.1_2]\n- KVM: x86/mmu: Fix race condition in direct_page_fault\n- prlimit: do_prlimit needs to have a speculation check {CVE-2023-0458}\n- x86/speculation: Allow enabling STIBP with legacy IBRS {CVE-2023-1998}\n- ipvlan: Fix out of bounds caused by unclear skb->cb {CVE-2023-3090}\n- net/sched: flower: fix possible OOB write in fl_set_geneve_opt {CVE-2023-35788}",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-45869.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-0458.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-1998.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-3090.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-35788.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-4377.html"
+				}
+			],
+			"published": "2023-08-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-45869",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-45869.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-0458",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-0458.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-1998",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-1998.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-3090",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-3090.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-35788",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-35788.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bpftool",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.0.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:7.0.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-abi-stablelists",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-cross-headers",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel-matched",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-modules",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-modules-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-modules-extra",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-uki-virt",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel-matched",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-modules",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-modules-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-modules-extra",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-tools-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-tools-libs-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uki-virt",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-perf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rtla",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-284.25.1.0.1.el9_2"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-284.25.1.0.1.el9_2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,130 @@
+{
+	"id": "ELSA-2017-1681",
+	"advisories": [
+		{
+			"id": "ELSA-2017-1681",
+			"title": "ELSA-2017-1681:  qemu-kvm security update (IMPORTANT)",
+			"description": "[1.5.3-126.el7_3.10]\n- kvm-nbd-Fully-initialize-client-in-case-of-failed-negoti.patch [bz#1460179]\n- kvm-nbd-Fix-regression-on-resiliency-to-port-scan.patch [bz#1460179]\n- Resolves: bz#1460179\n  (CVE-2017-9524 qemu-kvm: Qemu: nbd: segmentation fault due to client non-negotiation [rhel-7.3.z])",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-9524.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-1681.html"
+				}
+			],
+			"published": "2017-07-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-9524",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-9524.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-img",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-126.el7_3.10"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-126.el7_3.10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-126.el7_3.10"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-126.el7_3.10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-common",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-126.el7_3.10"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-126.el7_3.10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-126.el7_3.10"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-126.el7_3.10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

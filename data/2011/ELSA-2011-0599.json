@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2011-0599",
+	"advisories": [
+		{
+			"id": "ELSA-2011-0599",
+			"title": "ELSA-2011-0599:  sudo security and bug fix update (LOW)",
+			"description": "[1.7.4p5-5]\n- patch: log failed user role changes\n  Resolves: rhbz#665131\n\n[1.7.4p5-4]\n- added #includedir /etc/sudoers.d to sudoers\n  Resolves: rhbz#615087\n\n[1.7.4p5-3]\n- added !visiblepw option to sudoers\n  Resolves: rhbz#688640\n\n[1.7.4p5-2]\n- added patch for rhbz#665131\n  Resolves: rhbz#665131\n\n[1.7.4p5-1]\n- rebase to latest stable version\n- sudo now uses /var/db/sudo for timestamps\n- new command available: sudoreplay\n- use native audit support\n- sync configuration paths with the nss_ldap package\n  Resolves: rhbz#615087\n  Resolves: rhbz#652726\n  Resolves: rhbz#634159\n  Resolves: rhbz#603823",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0010.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-0599.html"
+				}
+			],
+			"published": "2011-05-28T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-0010",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0010.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sudo",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.4p5-5.el6"
+								}
+							],
+							"fixed": [
+								"0:1.7.4p5-5.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

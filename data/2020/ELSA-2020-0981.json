@@ -1,0 +1,113 @@
+{
+	"id": "ELSA-2020-0981",
+	"advisories": [
+		{
+			"id": "ELSA-2020-0981",
+			"title": "ELSA-2020-0981:  ipmitool security update (IMPORTANT)",
+			"description": "[1.8.18-12]\n- Disable -fstrict-aliasing (RPMDiff issue)\n\n[1.8.18-11]\n- Backport fix for CVE-2020-5208",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-5208.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-0981.html"
+				}
+			],
+			"published": "2020-03-26T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-5208",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-5208.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "exchange-bmc-os-info",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.18-12.el8_1"
+								}
+							],
+							"fixed": [
+								"0:1.8.18-12.el8_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ipmievd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.18-12.el8_1"
+								}
+							],
+							"fixed": [
+								"0:1.8.18-12.el8_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ipmitool",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.18-12.el8_1"
+								}
+							],
+							"fixed": [
+								"0:1.8.18-12.el8_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

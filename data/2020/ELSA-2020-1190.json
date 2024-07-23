@@ -1,0 +1,199 @@
+{
+	"id": "ELSA-2020-1190",
+	"advisories": [
+		{
+			"id": "ELSA-2020-1190",
+			"title": "ELSA-2020-1190:  libxml2 security update (MODERATE)",
+			"description": "[2.9.1-6.0.1.4]\n- Update doc/redhat.gif in tarball\n- Add libxml2-oracle-enterprise.patch and update logos in tarball\n\n[2.9.1-6.4]\n- Fix CVE-2015-8035 (#1595697)\n- Fix CVE-2018-14404 (#1602817)\n- Fix CVE-2017-15412 (#1729857)\n- Fix CVE-2016-5131 (#1714050)\n- Fix CVE-2017-18258 (#1579211)\n- Fix CVE-2018-1456 (#1622715)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8035.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5131.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-15412.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-18258.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-14404.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-14567.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-1190.html"
+				}
+			],
+			"published": "2020-04-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-8035",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8035.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-5131",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5131.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-15412",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-15412.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-18258",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-18258.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-14404",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-14404.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-14567",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-14567.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.9.1-6.0.1.el7.4"
+								}
+							],
+							"fixed": [
+								"0:2.9.1-6.0.1.el7.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.9.1-6.0.1.el7.4"
+								}
+							],
+							"fixed": [
+								"0:2.9.1-6.0.1.el7.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-python",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.9.1-6.0.1.el7.4"
+								}
+							],
+							"fixed": [
+								"0:2.9.1-6.0.1.el7.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.9.1-6.0.1.el7.4"
+								}
+							],
+							"fixed": [
+								"0:2.9.1-6.0.1.el7.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,147 @@
+{
+	"id": "ELSA-2021-1024",
+	"advisories": [
+		{
+			"id": "ELSA-2021-1024",
+			"title": "ELSA-2021-1024:  openssl security update (IMPORTANT)",
+			"description": "[1.1.1g-15]\n- version bump\n\n[1.1.1g-14]\n- CVE-2021-3450 openssl: CA certificate check\n  bypass with X509_V_FLAG_X509_STRICT\n\n[1.1.1g-13]\n- Fix CVE-2021-3449 NULL pointer deref in signature_algorithms processing",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3449.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3450.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-1024.html"
+				}
+			],
+			"published": "2021-03-29T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-3449",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3449.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-3450",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3450.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1g-15.el8_3"
+								}
+							],
+							"fixed": [
+								"1:1.1.1g-15.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1g-15.el8_3"
+								}
+							],
+							"fixed": [
+								"1:1.1.1g-15.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1g-15.el8_3"
+								}
+							],
+							"fixed": [
+								"1:1.1.1g-15.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1g-15.el8_3"
+								}
+							],
+							"fixed": [
+								"1:1.1.1g-15.el8_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

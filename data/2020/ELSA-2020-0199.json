@@ -1,0 +1,113 @@
+{
+	"id": "ELSA-2020-0199",
+	"advisories": [
+		{
+			"id": "ELSA-2020-0199",
+			"title": "ELSA-2020-0199:  openslp security update (CRITICAL)",
+			"description": "[2.0.0-4]\n- Fix a heap-based buffer overflow vulnerability leading to\n  remote code execution, CVE-2019-5544\n  Resolves: #1788447",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-5544.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-0199.html"
+				}
+			],
+			"published": "2020-01-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-5544",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-5544.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openslp",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.0.0-4.el6_10"
+								}
+							],
+							"fixed": [
+								"1:2.0.0-4.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openslp-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.0.0-4.el6_10"
+								}
+							],
+							"fixed": [
+								"1:2.0.0-4.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openslp-server",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.0.0-4.el6_10"
+								}
+							],
+							"fixed": [
+								"1:2.0.0-4.el6_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

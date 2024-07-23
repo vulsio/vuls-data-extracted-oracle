@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2024-3095",
+	"advisories": [
+		{
+			"id": "ELSA-2024-3095",
+			"title": "ELSA-2024-3095:  vorbis-tools security update (MODERATE)",
+			"description": "[1:1.4.0-29]\n- fix out-of-bounds read in oggenc (CVE-2023-43361)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-43361.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-3095.html"
+				}
+			],
+			"published": "2024-05-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-43361",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-43361.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vorbis-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.0-29.el8"
+								}
+							],
+							"fixed": [
+								"1:1.4.0-29.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

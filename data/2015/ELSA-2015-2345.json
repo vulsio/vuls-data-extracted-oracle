@@ -1,0 +1,230 @@
+{
+	"id": "ELSA-2015-2345",
+	"advisories": [
+		{
+			"id": "ELSA-2015-2345",
+			"title": "ELSA-2015-2345:  net-snmp security and bug fix update (MODERATE)",
+			"description": "[1:5.7.2-24]\n- Fixed lmSensorsTable not reporting sensors with duplicate names\n  (#1252053)\n- Fixed close() overhead of extend commands (#1252048)\n- Fixed out-of-bounds write in python code (#1252034)\n\n[1:5.7.2-23]\n- Fixed parsing of invalid variables in incoming packets (#1248414)\n- Fixed HOST-RESOURCES-MIB::hrFSAccess flag when read-only filesystem\n  becomes writable (#1241897)\n\n[1:5.7.2-22]\n- Fixed IP-MIB::ipSystemStatsInOctets and similar counters for IPv4\n  (#1235697)\n\n[1:5.7.2-21]\n- Fixed crash on reloading 'exec' configuration options (#1228893)\n- Fixed CVE-2014-3565, snmptrapd died when parsing certain traps (#1209361)\n- Fixed storageUseNFS functionality in hrStorageTable (#1193006)\n- Fixed forwarding of traps with RequestID=0 in snmptrapd (#1192511)\n- Fixed hrStorageTable to contain 31 bits integers (#1192221)\n- Fixed 'clientaddr' option for UDPv6 client messages (#1190679)\n- Fixed log level of SMUX messages (#1189393)\n- Fixed UDP-MIB::udpTable index on big-endian platforms (#1184433)\n- Fixed client utilities reporting 'read_config_store open failure on\n  /var/lib/net-snmp/snmpapp.conf' (#1151310)\n- Fixed snmpd crash when failed to parse SMUX message headers (#1140236)\n- Added 'diskio' option to snmpd.conf, it's possible to monitor only\n  selected devices in diskIOTable (#1092308)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-3565.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-2345.html"
+				}
+			],
+			"published": "2015-11-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-3565",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-3565.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.7.2-24.el7"
+								}
+							],
+							"fixed": [
+								"1:5.7.2-24.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-agent-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.7.2-24.el7"
+								}
+							],
+							"fixed": [
+								"1:5.7.2-24.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.7.2-24.el7"
+								}
+							],
+							"fixed": [
+								"1:5.7.2-24.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-gui",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.7.2-24.el7"
+								}
+							],
+							"fixed": [
+								"1:5.7.2-24.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.7.2-24.el7"
+								}
+							],
+							"fixed": [
+								"1:5.7.2-24.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-perl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.7.2-24.el7"
+								}
+							],
+							"fixed": [
+								"1:5.7.2-24.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-python",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.7.2-24.el7"
+								}
+							],
+							"fixed": [
+								"1:5.7.2-24.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-sysvinit",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.7.2-24.el7"
+								}
+							],
+							"fixed": [
+								"1:5.7.2-24.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "net-snmp-utils",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.7.2-24.el7"
+								}
+							],
+							"fixed": [
+								"1:5.7.2-24.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

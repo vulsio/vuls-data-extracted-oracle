@@ -1,0 +1,115 @@
+{
+	"id": "ELSA-2018-4229",
+	"advisories": [
+		{
+			"id": "ELSA-2018-4229",
+			"title": "ELSA-2018-4229:  openssl security update (IMPORTANT)",
+			"description": "[1.0.1e-57.0.5]\n- Merge upstream patch to fix CVE-2018-0739\n\n[1.0.1e-57.0.3]\n- Avoid out-of-bounds read. Fixes CVE 2017-3735. By Rich Salz",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-4229.html"
+				}
+			],
+			"published": "2018-09-27T00:00:00Z"
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-57.0.5.ksplice1.el6"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-57.0.5.ksplice1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-57.0.5.ksplice1.el6"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-57.0.5.ksplice1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-57.0.5.ksplice1.el6"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-57.0.5.ksplice1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-57.0.5.ksplice1.el6"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-57.0.5.ksplice1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

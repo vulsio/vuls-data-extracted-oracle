@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2019-2582",
+	"advisories": [
+		{
+			"id": "ELSA-2019-2582",
+			"title": "ELSA-2019-2582:  pango security update (IMPORTANT)",
+			"description": "[1.42.4-5]\n- Fixes crash in pango_fc_font_key_get_variations when key is null\n\n[1.42.4-4]\n- Fixes bidi crash\n- Security fix for CVE-2019-1010238\n- Resolves: #1738461\n\n[1.42.4-3]\n- rebuild\n\n[1.42.4-2]\n- rebuild",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-1010238.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-2582.html"
+				}
+			],
+			"published": "2019-08-29T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-1010238",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-1010238.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pango",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.42.4-5.el8_0"
+								}
+							],
+							"fixed": [
+								"0:1.42.4-5.el8_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pango-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.42.4-5.el8_0"
+								}
+							],
+							"fixed": [
+								"0:1.42.4-5.el8_0"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

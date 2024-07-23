@@ -1,0 +1,155 @@
+{
+	"id": "ELSA-2023-1569",
+	"advisories": [
+		{
+			"id": "ELSA-2023-1569",
+			"title": "ELSA-2023-1569:  gnutls security and bug fix update (MODERATE)",
+			"description": "[3.6.16-6]\n- Fix x86_64 CPU feature detection when AVX is not available (#2131152)\n- Fix timing side-channel in TLS RSA key exchange (#2162598)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-0361.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-1569.html"
+				}
+			],
+			"published": "2023-04-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-0361",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-0361.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnutls",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.16-6.el8_7"
+								}
+							],
+							"fixed": [
+								"0:3.6.16-6.el8_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnutls-c++",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.16-6.el8_7"
+								}
+							],
+							"fixed": [
+								"0:3.6.16-6.el8_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnutls-dane",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.16-6.el8_7"
+								}
+							],
+							"fixed": [
+								"0:3.6.16-6.el8_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnutls-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.16-6.el8_7"
+								}
+							],
+							"fixed": [
+								"0:3.6.16-6.el8_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnutls-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.16-6.el8_7"
+								}
+							],
+							"fixed": [
+								"0:3.6.16-6.el8_7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,131 @@
+{
+	"id": "ELSA-2019-1650",
+	"advisories": [
+		{
+			"id": "ELSA-2019-1650",
+			"title": "ELSA-2019-1650:  qemu-kvm security update (LOW)",
+			"description": "[0.12.1.2-2.506.el6_10.4]\n- kvm-target-i386-Sanitize-the-XSAVE-related-feature-bits.patch [bz#1673779]\n- kvm-slirp-check-sscanf-result-when-emulating-ident.patch [bz#1689790]\n- Resolves: bz#1673779\n  (RHEL8 VM's do not install on RHEL6 KVM hypervisor)\n- Resolves: bz#1689790\n  (CVE-2019-9824 qemu-kvm: QEMU: Slirp: information leakage in tcp_emu() due to uninitialized stack variables [rhel-6])",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9824.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-1650.html"
+				}
+			],
+			"published": "2019-07-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-9824",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-9824.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-guest-agent",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.12.1.2-2.506.el6_10.4"
+								}
+							],
+							"fixed": [
+								"2:0.12.1.2-2.506.el6_10.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-img",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.12.1.2-2.506.el6_10.4"
+								}
+							],
+							"fixed": [
+								"2:0.12.1.2-2.506.el6_10.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.12.1.2-2.506.el6_10.4"
+								}
+							],
+							"fixed": [
+								"2:0.12.1.2-2.506.el6_10.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.12.1.2-2.506.el6_10.4"
+								}
+							],
+							"fixed": [
+								"2:0.12.1.2-2.506.el6_10.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

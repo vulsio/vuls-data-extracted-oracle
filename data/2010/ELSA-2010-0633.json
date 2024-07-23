@@ -1,0 +1,123 @@
+{
+	"id": "ELSA-2010-0633",
+	"advisories": [
+		{
+			"id": "ELSA-2010-0633",
+			"title": "ELSA-2010-0633:  qspice security update (IMPORTANT)",
+			"description": "[0.3.0-54.el5_5.2]\n- Fix unsafe accesses\n  + spice: drop libpng from windows components (537849)\n  + libspice: fix unsafe guest data accessing\nResolves: #568719\n  + fix unsafe free() call.\nResolves: #568723\n  + spice server: fix unsafe cursor items handling.\nResolves: #568719",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0428.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0429.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0633.html"
+				}
+			],
+			"published": "2010-08-19T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-0428",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0428.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-0429",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0429.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qspice",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.3.0-54.el5_5.2"
+								}
+							],
+							"fixed": [
+								"0:0.3.0-54.el5_5.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qspice-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.3.0-54.el5_5.2"
+								}
+							],
+							"fixed": [
+								"0:0.3.0-54.el5_5.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qspice-libs-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.3.0-54.el5_5.2"
+								}
+							],
+							"fixed": [
+								"0:0.3.0-54.el5_5.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

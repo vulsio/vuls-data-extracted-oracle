@@ -1,0 +1,362 @@
+{
+	"id": "ELSA-2015-3014",
+	"advisories": [
+		{
+			"id": "ELSA-2015-3014",
+			"title": "ELSA-2015-3014: Unbreakable Enterprise kernel security update (IMPORTANT)",
+			"description": "[2.6.39-400.248.3]\n- kvm: fix excessive pages un-pinning in kvm_iommu_map error path. (Quentin Casasnovas)  [Orabug: 20687314]  {CVE-2014-3601} {CVE-2014-8369} {CVE-2014-3601}\n- Revert 'mm: Fix NULL pointer dereference in madvise(MADV_WILLNEED) support' (Guangyu Sun)  [Orabug: 20673281]  {CVE-2014-8173}\n\n[2.6.39-400.248.2]\n- netfilter: conntrack: disable generic tracking for known protocols (Florian Westphal)  [Orabug: 20679630]  {CVE-2014-8160}\n- mac80211: fix fragmentation code, particularly for encryption (Johannes Berg)  [Orabug: 20673313]  {CVE-2014-8709}\n- mm: Fix NULL pointer dereference in madvise(MADV_WILLNEED) support (Kirill A. Shutemov)  [Orabug: 20673282]  {CVE-2014-8173}\n- tracing/syscalls: Ignore numbers outside NR_syscalls' range (Rabin Vincent)  [Orabug: 20673164]  {CVE-2014-7825} {CVE-2014-7826}\n- tracing/syscalls: Fix perf syscall tracing when syscall_nr == -1 (Will Deacon)  [Orabug: 20673164]  {CVE-2014-7825} {CVE-2014-7826}\n\n[2.6.39-400.248.1]\n- NVMe: Disable pci before clearing queue (Keith Busch)  [Orabug: 20533100] \n- x86, fpu: disable eagerfpu by default (Santosh Shilimkar)  [Orabug: 20521543]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-7825.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-7826.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8160.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8369.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8709.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-3014.html"
+				}
+			],
+			"published": "2015-03-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-7825",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-7825.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-7826",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-7826.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-8160",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8160.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-8369",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8369.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-8709",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8709.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.248.3.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.248.3.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.248.3.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.248.3.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.248.3.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.248.3.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.248.3.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.248.3.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.248.3.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.248.3.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.248.3.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.248.3.el5uek"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.248.3.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.248.3.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.248.3.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.248.3.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.248.3.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.248.3.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.248.3.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.248.3.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.248.3.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.248.3.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.39-400.248.3.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.39-400.248.3.el6uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

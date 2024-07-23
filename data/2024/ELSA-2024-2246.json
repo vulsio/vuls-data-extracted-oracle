@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2024-2246",
+	"advisories": [
+		{
+			"id": "ELSA-2024-2246",
+			"title": "ELSA-2024-2246:  ansible-core bug fix, enhancement, and security update (MODERATE)",
+			"description": "[1:2.14.14-1]\n- ansible-core 2.14.14 release (RHEL-23783)\n- Fix CVE-2024-0690 (possible information leak in tasks that ignore\n  ANSIBLE_NO_LOG configuration) (RHEL-22124)\n\n[1:2.14.13-1]\n- ansible-core 2.14.13 release (RHEL-19298)\n\n[1:2.14.12-1]\n- ansible-core 2.14.12 release (RHEL-18950)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-0690.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-2246.html"
+				}
+			],
+			"published": "2024-05-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2024-0690",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-0690.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ansible-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.14.14-1.el9"
+								}
+							],
+							"fixed": [
+								"1:2.14.14-1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ansible-test",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.14.14-1.el9"
+								}
+							],
+							"fixed": [
+								"1:2.14.14-1.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,355 @@
+{
+	"id": "ELSA-2022-23681",
+	"advisories": [
+		{
+			"id": "ELSA-2022-23681",
+			"title": "ELSA-2022-23681: ol8addon security update (IMPORTANT)",
+			"description": "golang\n[1.17.13-1.0.1]\n- Update tarball to 1.17.12\n- Add patches between Go 1.17.12 and Go 1.17.13\n- Reviewed-by: David Faust <david.faust@oracle.com>\n\n[1.17.12-1]\n- Update Go to version 1.17.12\n- Resolves: rhbz#2109182\n\ngo-toolset\n[1.17.13-1]\n- Set version to correspond to the matching build golang version",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-1705.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-1962.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-28131.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-30630.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-30631.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-30632.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-30633.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-30635.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-32148.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-32189.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-23681.html"
+				}
+			],
+			"published": "2022-11-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-1705",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-1705.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-1962",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-1962.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-28131",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-28131.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-30630",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-30630.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-30631",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-30631.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-30632",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-30632.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-30633",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-30633.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-30635",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-30635.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-32148",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-32148.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-32189",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-32189.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.13-1.module+el8.6.0+20868+00b8efc8"
+								}
+							],
+							"fixed": [
+								"0:1.17.13-1.module+el8.6.0+20868+00b8efc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "go-toolset:ol8addon::delve",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.7.2-1.0.1.module+el8.6.0+20703+24a110ad"
+								}
+							],
+							"fixed": [
+								"0:1.7.2-1.0.1.module+el8.6.0+20703+24a110ad"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "golang",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+								}
+							],
+							"fixed": [
+								"0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "golang-bin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+								}
+							],
+							"fixed": [
+								"0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "golang-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+								}
+							],
+							"fixed": [
+								"0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "golang-misc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+								}
+							],
+							"fixed": [
+								"0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "golang-race",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+								}
+							],
+							"fixed": [
+								"0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "golang-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+								}
+							],
+							"fixed": [
+								"0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "golang-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+								}
+							],
+							"fixed": [
+								"0:1.17.13-1.0.1.module+el8.6.0+20868+00b8efc8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

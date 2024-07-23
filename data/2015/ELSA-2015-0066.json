@@ -1,0 +1,320 @@
+{
+	"id": "ELSA-2015-0066",
+	"advisories": [
+		{
+			"id": "ELSA-2015-0066",
+			"title": "ELSA-2015-0066:  openssl security update (MODERATE)",
+			"description": "[1.0.1e-34.7]\n- fix CVE-2014-3570 - incorrect computation in BN_sqr()\n- fix CVE-2014-3571 - possible crash in dtls1_get_record()\n- fix CVE-2014-3572 - possible downgrade of ECDH ciphersuite to non-PFS state\n- fix CVE-2014-8275 - various certificate fingerprint issues\n- fix CVE-2015-0204 - remove support for RSA ephemeral keys for non-export\n  ciphersuites and on server\n- fix CVE-2015-0205 - do not allow unauthenticated client DH certificate\n- fix CVE-2015-0206 - possible memory leak when buffering DTLS records",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-3570.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-3571.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-3572.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8275.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0204.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0205.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0206.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-0066.html"
+				}
+			],
+			"published": "2015-01-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-3570",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-3570.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-3571",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-3571.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-3572",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-3572.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-8275",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8275.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-0204",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0204.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-0205",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0205.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-0206",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0206.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1e-30.el6_6.5"
+								}
+							],
+							"fixed": [
+								"0:1.0.1e-30.el6_6.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1e-30.el6_6.5"
+								}
+							],
+							"fixed": [
+								"0:1.0.1e-30.el6_6.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1e-30.el6_6.5"
+								}
+							],
+							"fixed": [
+								"0:1.0.1e-30.el6_6.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1e-30.el6_6.5"
+								}
+							],
+							"fixed": [
+								"0:1.0.1e-30.el6_6.5"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.1e-34.el7_0.7"
+								}
+							],
+							"fixed": [
+								"1:1.0.1e-34.el7_0.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.1e-34.el7_0.7"
+								}
+							],
+							"fixed": [
+								"1:1.0.1e-34.el7_0.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.1e-34.el7_0.7"
+								}
+							],
+							"fixed": [
+								"1:1.0.1e-34.el7_0.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.1e-34.el7_0.7"
+								}
+							],
+							"fixed": [
+								"1:1.0.1e-34.el7_0.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.1e-34.el7_0.7"
+								}
+							],
+							"fixed": [
+								"1:1.0.1e-34.el7_0.7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

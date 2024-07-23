@@ -1,0 +1,663 @@
+{
+	"id": "ELSA-2018-1396",
+	"advisories": [
+		{
+			"id": "ELSA-2018-1396",
+			"title": "ELSA-2018-1396:  libvirt security and bug fix update (LOW)",
+			"description": "[3.9.0-14.el7_5.4]\n- lxc: Drop useless check in live device update (rhbz#1557922)\n- Pass oldDev to virDomainDefCompatibleDevice on device update (rhbz#1557922)\n- qemu: Fix updating device with boot order (rhbz#1557922)\n- conf: Fix crash in virDomainDefCompatibleDevice (rhbz#1557922)\n- vmx: check for present/enabled devices earlier (rhbz#1566524)\n- vmx: allocate space for network interfaces if needed (rhbz#1566524)\n- internal: add STRCASEPREFIX (rhbz#1566524)\n- vmx: convert any amount of NICs (rhbz#1566524)\n- qemu: Use dynamic buffer for storing PTY aliases (rhbz#1566525)\n- qemu: avoid denial of service reading from QEMU monitor (CVE-2018-5748) (CVE-2018-5748)\n- qemu: avoid denial of service reading from QEMU guest agent (CVE-2018-1064) (CVE-2018-1064)\n\n[3.9.0-14.el7_5.3]\n- qemu_cgroup: Fix 'rc' argument on virDomainAuditCgroupPath() calls (rhbz#1564996)\n- util: Introduce virStringListMerge (rhbz#1564996)\n- util: Introduce virDevMapperGetTargets (rhbz#1564996)\n- qemu_cgroup: Handle device mapper targets properly (rhbz#1564996)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-1064.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-5748.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-1396.html"
+				}
+			],
+			"published": "2018-05-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-1064",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-1064.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-5748",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-5748.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-admin",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-client",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-config-network",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-config-nwfilter",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-interface",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-lxc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-network",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-nodedev",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-nwfilter",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-qemu",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-secret",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-disk",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-gluster",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-iscsi",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-logical",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-mpath",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-rbd",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-scsi",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-kvm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-lxc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-docs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-lock-sanlock",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-login-shell",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-nss",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.9.0-14.el7_5.4"
+								}
+							],
+							"fixed": [
+								"0:3.9.0-14.el7_5.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

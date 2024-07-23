@@ -1,0 +1,134 @@
+{
+	"id": "ELSA-2011-1364",
+	"advisories": [
+		{
+			"id": "ELSA-2011-1364",
+			"title": "ELSA-2011-1364:  kdelibs security and enhancement update (MODERATE)",
+			"description": "[6:4.3.4-11.4]\n- Resolves: bz#743951, use ca-certificates' ca-bundle.crt\n\n[6:4.3.4-11.3]\n- Resolves: bz#743515, CVE-2011-3365 - input validation failure",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3365.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1364.html"
+				}
+			],
+			"published": "2011-10-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-3365",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3365.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kdelibs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "6:4.3.4-11.el6_1.4"
+								}
+							],
+							"fixed": [
+								"6:4.3.4-11.el6_1.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kdelibs-apidocs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "6:4.3.4-11.el6_1.4"
+								}
+							],
+							"fixed": [
+								"6:4.3.4-11.el6_1.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kdelibs-common",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "6:4.3.4-11.el6_1.4"
+								}
+							],
+							"fixed": [
+								"6:4.3.4-11.el6_1.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kdelibs-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "6:4.3.4-11.el6_1.4"
+								}
+							],
+							"fixed": [
+								"6:4.3.4-11.el6_1.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2007-1176",
+	"advisories": [
+		{
+			"id": "ELSA-2007-1176",
+			"title": "ELSA-2007-1176:  Important: autofs security update  (IMPORTANT)",
+			"description": "[5.0.1-0.rc2.55.el5.2]\n - Bug 426219: CVE-2007-6285 autofs default doesn't set nodev in /net \n [rhel-5.1.z]\n   - use mount option nodev for -hosts map unless dev is explicily \n specified.\n - Related: rhbz#426219",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-6285.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2007-1176.html"
+				}
+			],
+			"published": "2007-12-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-6285",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-6285.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "autofs",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.0.1-0.rc2.55.el5.2"
+								}
+							],
+							"fixed": [
+								"1:5.0.1-0.rc2.55.el5.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

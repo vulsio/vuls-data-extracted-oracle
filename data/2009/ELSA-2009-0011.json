@@ -1,0 +1,126 @@
+{
+	"id": "ELSA-2009-0011",
+	"advisories": [
+		{
+			"id": "ELSA-2009-0011",
+			"title": "ELSA-2009-0011:  lcms security update (MODERATE)",
+			"description": "[1.15-1.2.2.el5_2.2]\n- Fix Requires to ensure subpackages match the parent package\n\n[1.15-1.2.2.el5_2.1]\n- Fix insufficient input validation in ReadEmbeddedTextTag\n- Fix unsigned -> signed integer cast issue in cmsAllocGamma\n- Resolves: #473469",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-5316.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-5317.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-0011.html"
+				}
+			],
+			"published": "2009-01-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2008-5316",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-5316.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-5317",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-5317.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "lcms",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15-1.2.2.el5_2.2"
+								}
+							],
+							"fixed": [
+								"0:1.15-1.2.2.el5_2.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "lcms-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15-1.2.2.el5_2.2"
+								}
+							],
+							"fixed": [
+								"0:1.15-1.2.2.el5_2.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-lcms",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15-1.2.2.el5_2.2"
+								}
+							],
+							"fixed": [
+								"0:1.15-1.2.2.el5_2.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

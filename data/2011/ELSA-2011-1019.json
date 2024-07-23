@@ -1,0 +1,116 @@
+{
+	"id": "ELSA-2011-1019",
+	"advisories": [
+		{
+			"id": "ELSA-2011-1019",
+			"title": "ELSA-2011-1019:  libvirt security, bug fix, and enhancement update (MODERATE)",
+			"description": "[0.8.2-22.0.1.el5]\n- Replaced docs/et.png in tarball\n\n[libvirt-0.8.2-22.el5]\n- Fix auditing of disk hotunplug operations (rhbz#710151)\n\n[libvirt-0.8.2-21.el5]\n- remote: Protect against integer overflow (rhbz#717207)\n\n[0.8.2-20.el5]\n- Support enabling or disabling the HPET for Xen domains (rhbz#703193)\n- SMBIOS support (rhbz#661365)\n\n[0.8.2-19.el5]\n- xen: Plug memory leak in multiple serial ports support (rhbz#670789)\n- Manually kill gzip if restore fails before starting qemu (rhbz#681623)\n- qemu: Avoid double close on domain restore (rhbz#681623)\n- virterror: Avoid API breakage with vmware (rhbz#665075)\n- nwfilter: Resolve deadlock between VM ops and filter update (rhbz#697749)\n\n[0.8.2-18.el5]\n- xen: Prevent updating device when attaching a device (rhbz#662908)\n- Add PCI sysfs reset access (rhbz#689880)\n- xencapstest: Don't fail when Xen is installed (rhbz#690459)\n- Make error reporting in libvirtd thread safe (rhbz#690733)\n\n[0.8.2-17.el5]\n- Fix event-handling data race (rhbz#671569)\n- Add support for multiple serial ports into the Xen driver (rhbz#670789)\n- Add missing checks for read only connections (CVE-2011-1146)\n- Guess rhel macro based on dist macro (rhbz#665325)\n\n[0.8.2-16.el5]\n- Fix possible crash in virExec (rhbz#665549)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2511.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1019.html"
+				}
+			],
+			"published": "2011-07-31T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-2511",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2511.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.8.2-22.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:0.8.2-22.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.8.2-22.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:0.8.2-22.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-python",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.8.2-22.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:0.8.2-22.0.1.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

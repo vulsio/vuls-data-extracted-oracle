@@ -1,0 +1,148 @@
+{
+	"id": "ELSA-2013-1459",
+	"advisories": [
+		{
+			"id": "ELSA-2013-1459",
+			"title": "ELSA-2013-1459:  gnupg2 security update (MODERATE)",
+			"description": "[2.0.14-6]\n- fix CVE-2013-4351 gpg treats no-usage-permitted keys as all-usages-permitted\n\n[2.0.14-5]\n- fix CVE-2012-6085 GnuPG: read_block() corrupt key input validation\n- fix CVE-2013-4402 GnuPG: infinite recursion in the compressed packet parser",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-6085.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4351.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4402.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-1459.html"
+				}
+			],
+			"published": "2013-10-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-6085",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-6085.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-4351",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4351.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-4402",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4402.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnupg2",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.10-6.el5_10"
+								}
+							],
+							"fixed": [
+								"0:2.0.10-6.el5_10"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnupg2",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.14-6.el6_4"
+								}
+							],
+							"fixed": [
+								"0:2.0.14-6.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnupg2-smime",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.14-6.el6_4"
+								}
+							],
+							"fixed": [
+								"0:2.0.14-6.el6_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

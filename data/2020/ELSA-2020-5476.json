@@ -1,0 +1,134 @@
+{
+	"id": "ELSA-2020-5476",
+	"advisories": [
+		{
+			"id": "ELSA-2020-5476",
+			"title": "ELSA-2020-5476:  openssl security and bug fix update (IMPORTANT)",
+			"description": "[1.1.1g-12]\n- Fix CVE-2020-1971 ediparty null pointer dereference\n\n[1.1.1g-11.1]\n- Implemented new FIPS requirements in regards to KDF and DH selftests\n- Disallow certificates with explicit EC parameters",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-1971.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-5476.html"
+				}
+			],
+			"published": "2020-12-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-1971",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-1971.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1g-12.el8_3"
+								}
+							],
+							"fixed": [
+								"1:1.1.1g-12.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1g-12.el8_3"
+								}
+							],
+							"fixed": [
+								"1:1.1.1g-12.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1g-12.el8_3"
+								}
+							],
+							"fixed": [
+								"1:1.1.1g-12.el8_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1g-12.el8_3"
+								}
+							],
+							"fixed": [
+								"1:1.1.1g-12.el8_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

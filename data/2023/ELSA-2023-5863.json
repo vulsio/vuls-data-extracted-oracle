@@ -1,0 +1,84 @@
+{
+	"id": "ELSA-2023-5863",
+	"advisories": [
+		{
+			"id": "ELSA-2023-5863",
+			"title": "ELSA-2023-5863:  grafana security update (MODERATE)",
+			"description": "[7.5.15-5]\n- Resolve CVE-2023-44487 Rapid Reset Attack\n- Resolve CVE-2023-39325 rapid stream resets can cause excessive work",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-39325.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-44487.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-5863.html"
+				}
+			],
+			"published": "2023-10-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-39325",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-39325.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-44487",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-44487.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "grafana",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.5.15-5.el8_8"
+								}
+							],
+							"fixed": [
+								"0:7.5.15-5.el8_8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

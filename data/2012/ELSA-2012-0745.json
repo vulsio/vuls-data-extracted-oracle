@@ -1,0 +1,186 @@
+{
+	"id": "ELSA-2012-0745",
+	"advisories": [
+		{
+			"id": "ELSA-2012-0745",
+			"title": "ELSA-2012-0745:  python security update (MODERATE)",
+			"description": "[2.4.3-46.el5_8.2]\n- if hash randomization is enabled, also enable it within pyexpat\nResolves: CVE-2012-0876\n\n[2.4.3-46.el5_8.1]\n- distutils.commands.register: create ~/.pypirc securely\nResolves: CVE-2011-4944\n- send encoding in SimpleHTTPServer.list_directory to protect IE7 against\npotential XSS attacks\nResolves: CVE-2011-4940\n- oCERT-2011-003: add -R command-line option and PYTHONHASHSEED environment\nvariable, to provide an opt-in way to protect against denial of service\nattacks due to hash collisions within the dict and set types\nResolves: CVE-2012-1150",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4940.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4944.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-1150.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-0745.html"
+				}
+			],
+			"published": "2012-06-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-4940",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4940.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-4944",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4944.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-1150",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-1150.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.3-46.el5_8.2"
+								}
+							],
+							"fixed": [
+								"0:2.4.3-46.el5_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.3-46.el5_8.2"
+								}
+							],
+							"fixed": [
+								"0:2.4.3-46.el5_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-libs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.3-46.el5_8.2"
+								}
+							],
+							"fixed": [
+								"0:2.4.3-46.el5_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-tools",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.3-46.el5_8.2"
+								}
+							],
+							"fixed": [
+								"0:2.4.3-46.el5_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tkinter",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.3-46.el5_8.2"
+								}
+							],
+							"fixed": [
+								"0:2.4.3-46.el5_8.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

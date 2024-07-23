@@ -1,0 +1,160 @@
+{
+	"id": "ELSA-2007-0556",
+	"advisories": [
+		{
+			"id": "ELSA-2007-0556",
+			"title": "ELSA-2007-0556:  Moderate: httpd security update  (MODERATE)",
+			"description": "[2.2.3-7.el5.0.1]\n - Marks removal + index page cleanup\n \n [2.2.3-7.el5]\n - add security fixes for CVE-2007-1863, CVE-2007-3304,\n   and CVE-2006-5752 (#244665)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2006-5752.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-1863.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-3304.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2007-0556.html"
+				}
+			],
+			"published": "2007-06-26T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2006-5752",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2006-5752.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-1863",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-1863.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-3304",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-3304.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.3-7.el5.0.1"
+								}
+							],
+							"fixed": [
+								"0:2.2.3-7.el5.0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.3-7.el5.0.1"
+								}
+							],
+							"fixed": [
+								"0:2.2.3-7.el5.0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-manual",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.3-7.el5.0.1"
+								}
+							],
+							"fixed": [
+								"0:2.2.3-7.el5.0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_ssl",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.3-7.el5.0.1"
+								}
+							],
+							"fixed": [
+								"1:2.2.3-7.el5.0.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

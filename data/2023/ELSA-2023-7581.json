@@ -1,0 +1,425 @@
+{
+	"id": "ELSA-2023-7581",
+	"advisories": [
+		{
+			"id": "ELSA-2023-7581",
+			"title": "ELSA-2023-7581:  postgresql:13 security update (IMPORTANT)",
+			"description": "pgaudit\npg_repack\npostgres-decoderbufs\npostgresql\n[13.13-1.0.1]\n- Fixed postgresql port binding issue during bootup [Orabug: 35103668]\n\n[13.13-1]\n- Update to 13.13\n- Fixes: CVE-2023-5868 CVE-2023-5869 CVE-2023-5870 CVE-2023-39417\n- Resolves: RHEL-16085 RHEL-16123",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-39417.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-5868.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-5869.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-5870.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-7581.html"
+				}
+			],
+			"published": "2023-11-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-39417",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-39417.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-5868",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-5868.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-5869",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-5869.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-5870",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-5870.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::pg_repack",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.6-3.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:1.4.6-3.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::pgaudit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.0-1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:1.5.0-1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgres-decoderbufs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.0-2.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:0.10.0-2.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql-contrib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql-plperl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql-plpython3",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql-pltcl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql-server-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql-test",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql-test-rpm-macros",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql-upgrade",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:13::postgresql-upgrade-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+								}
+							],
+							"fixed": [
+								"0:13.13-1.0.1.module+el8.9.0+90098+1560b6c2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

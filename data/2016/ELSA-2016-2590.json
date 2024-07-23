@@ -1,0 +1,150 @@
+{
+	"id": "ELSA-2016-2590",
+	"advisories": [
+		{
+			"id": "ELSA-2016-2590",
+			"title": "ELSA-2016-2590:  dhcp security, bug fix, and enhancement update (MODERATE)",
+			"description": "[12:4.2.5-47.0.1]\n- Added oracle-errwarn-message.patch\n\n[12:4.2.5-47]\n- 1269596 - fix undefined variable in dhclient-script\n\n[12:4.2.5-46]\n- unclosed TCP connections to OMAPI or failover ports can cause DoS (CVE-2016-2774)\n\n[12:4.2.5-45]\n- 1267489 - dhclient-script does not respect DEFROUTE/GATEWAYDEV patched\n\n[12:4.2.5-44]\n- 1269596 - dhclient-script doesn't keep old nameservers\n- 1193586 - DHCP renewal does not update lifetimes if MTU has changed\n- 1306608 - Add ignore-client-uids option to dhcpd\n- 1267489 - dhclient-script does not respect DEFROUTE/GATEWAYDEV\n\n[12:4.2.5-43]\n- Fixing bug 1234251",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2774.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-2590.html"
+				}
+			],
+			"published": "2016-11-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-2774",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2774.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhclient",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-47.0.1.el7"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-47.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-47.0.1.el7"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-47.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-common",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-47.0.1.el7"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-47.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-47.0.1.el7"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-47.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-47.0.1.el7"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-47.0.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

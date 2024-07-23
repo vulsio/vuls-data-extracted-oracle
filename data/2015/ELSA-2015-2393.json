@@ -1,0 +1,370 @@
+{
+	"id": "ELSA-2015-2393",
+	"advisories": [
+		{
+			"id": "ELSA-2015-2393",
+			"title": "ELSA-2015-2393:  wireshark security, bug fix, and enhancement update (MODERATE)",
+			"description": "[1.10.14-7.0.1]\n- Add oracle-ocfs2-network.patch to allow disassembly of OCFS2 interconnect\n\n[1.10.14-7]\n- Rebase some tvbuff API from upstream to 1.10.14\n- Fixes crash when tvb_length_remaining() is used\n- Related: CVE-2015-6244\n\n[1.10.14-6]\n- Security patch\n- Resolves: CVE-2015-3182\n\n[1.10.14-5]\n- Fix crash caused by -DGDK_PIXBUF_DEPRECATED on startup\n- Resolves: rhbz#1267959\n\n[1.10.14-4]\n- Security patches\n- Resolves: CVE-2015-6243\n            CVE-2015-6244\n            CVE-2015-6245\n            CVE-2015-6246\n            CVE-2015-6248\n\n[1.10.14-3]\n- Security patches\n- Resolves: CVE-2015-3810\n            CVE-2015-3813\n\n[1.10.14-2]\n- Add certificate verify message decoding in TLS extension\n- Resolves: #1239150\n\n[1.10.14-1]\n- Upgrade to 1.10.14\n- Resolves: #1238676\n\n[1.10.3-20]\n- add master secret extension decoding in TLS extension\n- add encrypt-then-mac extension decoding in TLS extension\n- Resolves: #1222901\n\n[1.10.3-19]\n- create pcap file if -F pcap specified\n- Resolves: #1227199\n\n[1.10.3-18]\n- add key exchange algorithms decoding in TLS extension\n- Resolves: #1222600\n\n[1.10.3-17]\n- add signature algorithms decoding in TLS extension\n- Resolves: #1221701\n\n[1.10.3-16]\n- add relro check\n- Resolves: #1092532\n\n[1.10.3-15]\n- add elliptic curves decoding in DTLS HELLO\n- Resolves: #1131202\n\n[1.10.3-14]\n- introduced nanosecond time precision\n- Resolves: #1213339\n\n[1.10.3-13]\n- security patches\n- Resolves: #1148267",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8710.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8711.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8712.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8713.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8714.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0562.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0563.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0564.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-2188.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-2189.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-2191.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3182.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3810.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3811.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3812.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3813.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-6243.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-6244.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-6245.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-6246.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-6248.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-2393.html"
+				}
+			],
+			"published": "2015-11-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-8710",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8710.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-8711",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8711.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-8712",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8712.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-8713",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8713.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-8714",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-8714.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-0562",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0562.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-0563",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0563.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-0564",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0564.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-2188",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-2188.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-2189",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-2189.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-2191",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-2191.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-3182",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3182.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-3810",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3810.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-3811",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3811.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-3812",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3812.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-3813",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3813.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-6243",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-6243.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-6244",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-6244.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-6245",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-6245.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-6246",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-6246.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-6248",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-6248.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wireshark",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.10.14-7.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.10.14-7.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wireshark-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.10.14-7.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.10.14-7.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "wireshark-gnome",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.10.14-7.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.10.14-7.0.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

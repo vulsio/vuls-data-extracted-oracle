@@ -1,0 +1,152 @@
+{
+	"id": "ELSA-2009-0421",
+	"advisories": [
+		{
+			"id": "ELSA-2009-0421",
+			"title": "ELSA-2009-0421:  ghostscript security update (MODERATE)",
+			"description": "[8.15.2-9.4:.7]\n- Added extra checking for CVE-2009-0792 (bug #491853).\n\n[8.15.2-9.4:.6]\n- Applied patch to fix gdevpdtb buffer overflow (bug #493445).\n- Applied patch to fix scfd buffer underrun (bug #493442).\n- Applied patch to fix CVE-2009-0792 (bug #491853).\n- Applied patch to fix CVE-2009-0196 (bug #493379).",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-6725.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-6679.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0196.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0792.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-0421.html"
+				}
+			],
+			"published": "2009-04-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-6725",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-6725.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-6679",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-6679.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-0196",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0196.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-0792",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0792.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.15.2-9.4.el5_3.7"
+								}
+							],
+							"fixed": [
+								"0:8.15.2-9.4.el5_3.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.15.2-9.4.el5_3.7"
+								}
+							],
+							"fixed": [
+								"0:8.15.2-9.4.el5_3.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript-gtk",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.15.2-9.4.el5_3.7"
+								}
+							],
+							"fixed": [
+								"0:8.15.2-9.4.el5_3.7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,236 @@
+{
+	"id": "ELSA-2017-0680",
+	"advisories": [
+		{
+			"id": "ELSA-2017-0680",
+			"title": "ELSA-2017-0680:  glibc security and bug fix update (MODERATE)",
+			"description": "[2.12-1.209.0.1]\n- Update newmode size to fix a possible corruption\n\n[2.12-1.209]\n- Fix AF_INET6 getaddrinfo with nscd (#1416496)\n\n[2.12-1.208]\n- Update tests for struct sockaddr_storage changes (#1338673)\n\n[2.12-1.207]\n- Use FL_CLOEXEC in internal calls to fopen (#1012343).\n\n[2.12-1.206]\n- Fix CVE-2015-8779 glibc: Unbounded stack allocation in catopen function\n  (#1358015).\n\n[2.12-1.205]\n- Make padding in struct sockaddr_storage explicit (#1338673)\n\n[2.12-1.204]\n- Fix detection of Intel FMA hardware (#1384281).\n\n[2.12-1.203]\n- Add support for el_GR@euro, ur_IN, and wal_ET locales (#1101858).\n\n[2.12-1.202]\n- Change malloc/tst-malloc-thread-exit.c to use fewer threads and\n  avoid timeout (#1318380).\n\n[2.12-1.201]\n- df can fail on some systems (#1307029).\n\n[2.12-1.200]\n- Log uname, cpuinfo, meminfo during build (#1307029).\n\n[2.12-1.199]\n- Draw graphs for heap and stack only if MAXSIZE_HEAP and MAXSIZE_STACK\n  are non-zero (#1331304).\n\n[2.12-1.198]\n- Avoid unneeded calls to __check_pf in getadddrinfo (#1270950)\n\n[2.12-1.197]\n- Fix CVE-2015-8778 glibc: Integer overflow in hcreate and hcreate_r\n  (#1358013).\n\n[2.12-1.196]\n- Fix CVE-2015-8776 glibc: Segmentation fault caused by passing\n  out-of-range data to strftime() (#1358011).\n\n[2.12-1.195]\n- tzdata-update: Ignore umask setting (#1373646)\n\n[2.12-1.194]\n- CVE-2014-9761: Fix unbounded stack allocation in nan* (#1358014)\n\n[2.12-1.193]\n- Avoid using uninitialized data in getaddrinfo (#1223095)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-9761.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8776.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8778.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8779.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0680.html"
+				}
+			],
+			"published": "2017-03-27T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-9761",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-9761.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-8776",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8776.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-8778",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8778.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-8779",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8779.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.209.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.209.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-common",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.209.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.209.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.209.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.209.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-headers",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.209.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.209.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-static",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.209.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.209.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-utils",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.209.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.209.0.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nscd",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.209.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.209.0.1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

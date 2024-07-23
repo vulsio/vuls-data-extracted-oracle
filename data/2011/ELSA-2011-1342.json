@@ -1,0 +1,123 @@
+{
+	"id": "ELSA-2011-1342",
+	"advisories": [
+		{
+			"id": "ELSA-2011-1342",
+			"title": "ELSA-2011-1342:  thunderbird security update (CRITICAL)",
+			"description": "[3.1.15-1.0.1.el6_1]\n- Replaced thunderbird-redhat-default-prefs.js with\n  thunderbird-oracle-default-prefs.js\n- Replace clean.gif in tarball\n\n[3.1.15-1]\n- Update to 3.1.15",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2372.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2995.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2998.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2999.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3000.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1342.html"
+				}
+			],
+			"published": "2011-09-28T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-2372",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2372.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-2995",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2995.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-2998",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2998.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-2999",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2999.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-3000",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3000.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "thunderbird",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.1.15-1.0.1.el6_1"
+								}
+							],
+							"fixed": [
+								"0:3.1.15-1.0.1.el6_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

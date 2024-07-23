@@ -1,0 +1,4712 @@
+{
+	"id": "ELSA-2024-3128",
+	"advisories": [
+		{
+			"id": "ELSA-2024-3128",
+			"title": "ELSA-2024-3128:  perl:5.32 security update (MODERATE)",
+			"description": "perl-Algorithm-Diff\nperl-Archive-Tar\nperl-Archive-Zip\nperl-autodie\nperl-bignum\nperl-Carp\nperl-Compress-Bzip2\nperl-Compress-Raw-Bzip2\nperl-Compress-Raw-Lzma\nperl-Compress-Raw-Zlib\n[2.096-2]\n- Fix test broken by update in zlib on s390x\n- Related: RHEL-16371\n\nperl-Config-Perl-V\nperl-constant\nperl-CPAN-DistnameInfo\nperl-CPAN-Meta\nperl-CPAN-Meta-Requirements\nperl-CPAN-Meta-YAML\nperl-CPAN\nperl-Data-Dumper\nperl-Data-OptList\nperl-Data-Section\nperl-DB_File\nperl-Devel-PPPort\nperl-Devel-Size\nperl-Digest-MD5\nperl-Digest\nperl-Digest-SHA\nperl-Encode-Locale\nperl-Encode\nperl-Env\nperl-experimental\nperl-Exporter\nperl-ExtUtils-CBuilder\nperl-ExtUtils-Install\nperl-ExtUtils-MakeMaker\nperl-ExtUtils-Manifest\nperl-ExtUtils-ParseXS\nperl-Fedora-VSP\nperl-File-Fetch\nperl-File-HomeDir\nperl-File-Path\nperl-File-Temp\nperl-File-Which\nperl-Filter\nperl-Filter-Simple\nperl-generators\nperl-Getopt-Long\nperl-HTTP-Tiny\nperl-Importer\nperl-inc-latest\nperl-IO-Compress-Lzma\nperl-IO-Compress\nperl-IO-Socket-IP\nperl-IPC-Cmd\nperl-IPC-System-Simple\nperl-IPC-SysV\nperl-JSON-PP\nperl-libnet\nperl-Locale-Maketext\nperl-local-lib\nperl-Math-BigInt-FastCalc\nperl-Math-BigInt\nperl-Math-BigRat\nperl-MIME-Base64\nperl-Module-Build\nperl-Module-CoreList\nperl-Module-Load-Conditional\nperl-Module-Load\nperl-Module-Metadata\nperl-MRO-Compat\nperl-Object-HashBase\nperl-Package-Generator\nperl-Params-Check\nperl-Params-Util\nperl-parent\nperl-PathTools\nperl\n[4:5.32.1-473]\n- Fix CVE-2023-47038\n- Added perl-autouse and perl-ExtUtils-MM-Utils to perl run-requires\n\nperl-perlfaq\nperl-PerlIO-via-QuotedPrint\nperl-Perl-OSType\nperl-Pod-Checker\nperl-Pod-Escapes\nperl-podlators\nperl-Pod-Parser\nperl-Pod-Perldoc\nperl-Pod-Simple\nperl-Pod-Usage\nperl-Scalar-List-Utils\nperl-Socket\nperl-Software-License\nperl-Storable\nperl-Sub-Exporter\nperl-Sub-Install\nperl-Sys-Syslog\nperl-Term-ANSIColor\nperl-Term-Cap\nperl-Term-Table\nperl-Test-Harness\nperl-Test-Simple\nperl-Text-Balanced\nperl-Text-Diff\nperl-Text-Glob\nperl-Text-ParseWords\nperl-Text-Tabs+Wrap\nperl-Text-Template\nperl-Thread-Queue\nperl-threads\nperl-threads-shared\nperl-Time-HiRes\nperl-Time-Local\nperl-Unicode-Collate\nperl-Unicode-Normalize\nperl-URI\nperl-version",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-47038.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-3128.html"
+				}
+			],
+			"published": "2024-05-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-47038",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-47038.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Algorithm-Diff",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1903-10.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.1903-10.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Archive-Tar",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.38-3.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.38-3.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Archive-Zip",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.68-3.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.68-3.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Attribute-Handlers",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.01-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.01-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-AutoLoader",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.74-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:5.74-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-AutoSplit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.74-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:5.74-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-B",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.80-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.80-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Benchmark",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.23-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.23-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-CPAN",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.28-5.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.28-5.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-CPAN-DistnameInfo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12-13.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.12-13.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-CPAN-Meta",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.150010-397.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.150010-397.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-CPAN-Meta-Requirements",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.140-397.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.140-397.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-CPAN-Meta-YAML",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.018-1001.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.018-1001.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Carp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.50-439.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.50-439.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Class-Struct",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.66-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.66-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Compress-Bzip2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.28-2.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.28-2.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Compress-Raw-Bzip2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.096-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.096-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Compress-Raw-Lzma",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.096-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.096-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Compress-Raw-Zlib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.096-2.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.096-2.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Config-Extensions",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.03-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.03-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Config-Perl-V",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.32-441.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.32-441.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-DBM_Filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.06-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.06-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-DB_File",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.855-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.855-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Data-Dumper",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.174-440.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.174-440.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Data-OptList",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.110-7.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.110-7.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Data-Section",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.200007-8.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.200007-8.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Devel-PPPort",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.62-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:3.62-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Devel-Peek",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.28-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.28-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Devel-SelfStubber",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.06-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.06-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Devel-Size",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.83-3.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.83-3.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Digest",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.20-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.20-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Digest-MD5",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.58-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.58-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Digest-SHA",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:6.02-2.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:6.02-2.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-DirHandle",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.05-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.05-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Dumpvalue",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.27-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.27-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-DynaLoader",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.47-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.47-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Encode",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:3.08-461.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:3.08-461.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Encode-Locale",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.05-10.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.05-10.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Encode-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:3.08-461.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:3.08-461.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-English",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.11-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Env",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.04-396.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.04-396.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Errno",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.30-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.30-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Exporter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.74-458.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:5.74-458.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-ExtUtils-CBuilder",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.280236-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:0.280236-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-ExtUtils-Command",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:7.46-3.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"2:7.46-3.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-ExtUtils-Constant",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.25-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.25-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-ExtUtils-Embed",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.35-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.35-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-ExtUtils-Install",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.20-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.20-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-ExtUtils-MM-Utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:7.46-3.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"2:7.46-3.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-ExtUtils-MakeMaker",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:7.46-3.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"2:7.46-3.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-ExtUtils-Manifest",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.73-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:1.73-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-ExtUtils-Miniperl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.09-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.09-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-ExtUtils-ParseXS",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:3.40-439.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:3.40-439.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Fcntl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.13-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.13-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Fedora-VSP",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.001-10.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.001-10.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-File-Basename",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.85-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.85-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-File-Compare",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.100.600-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.100.600-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-File-Copy",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.34-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.34-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-File-DosGlob",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.12-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-File-Fetch",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.00-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.00-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-File-Find",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.37-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.37-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-File-HomeDir",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.004-6.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.004-6.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-File-Path",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.16-439.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.16-439.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-File-Temp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.231.100-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:0.231.100-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-File-Which",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.23-4.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.23-4.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-File-stat",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.09-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.09-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-FileCache",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.10-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.10-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-FileHandle",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.03-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.03-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.60-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"2:1.60-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Filter-Simple",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.96-457.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.96-457.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-FindBin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.51-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.51-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-GDBM_File",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.18-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Getopt-Long",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.52-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:2.52-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Getopt-Std",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.12-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-HTTP-Tiny",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.078-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.078-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Hash-Util",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.23-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.23-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Hash-Util-FieldHash",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.20-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.20-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-I18N-Collate",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.02-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.02-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-I18N-LangTags",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.44-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.44-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-I18N-Langinfo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.19-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.19-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-IO",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.43-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.43-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-IO-Compress",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.096-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.096-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-IO-Compress-Lzma",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.096-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.096-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-IO-Socket-IP",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.41-2.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.41-2.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-IO-Zlib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.10-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:1.10-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-IPC-Cmd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.04-2.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"2:1.04-2.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-IPC-Open3",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.21-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.21-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-IPC-SysV",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.09-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.09-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-IPC-System-Simple",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.30-3.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.30-3.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Importer",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.025-6.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.025-6.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-JSON-PP",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.04-2.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:4.04-2.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Locale-Maketext",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.29-440.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.29-440.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Locale-Maketext-Simple",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.21-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:0.21-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-MIME-Base64",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.15-1001.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:3.15-1001.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-MRO-Compat",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.13-5.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.13-5.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Math-BigInt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.9998.18-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:1.9998.18-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Math-BigInt-FastCalc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.500.900-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.500.900-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Math-BigRat",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.2614-2.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.2614-2.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Math-Complex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.59-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.59-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Memoize",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.03-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.03-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Module-Build",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.42.31-5.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"2:0.42.31-5.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Module-CoreList",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.20211020-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:5.20211020-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Module-CoreList-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:5.20211020-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:5.20211020-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Module-Load",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.36-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:0.36-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Module-Load-Conditional",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.74-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.74-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Module-Loaded",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.08-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:0.08-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Module-Metadata",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.000037-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.000037-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-NDBM_File",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.15-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-NEXT",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.67-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.67-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Net",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.02-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.02-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Net-Ping",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.72-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.72-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-ODBM_File",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.16-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.16-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Object-HashBase",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.009-4.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.009-4.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Object-HashBase-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.009-4.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.009-4.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Opcode",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.48-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.48-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-POSIX",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.94-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.94-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Package-Generator",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.106-12.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.106-12.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Params-Check",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.38-396.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:0.38-396.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Params-Util",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.102-2.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.102-2.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-PathTools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.78-439.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:3.78-439.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Perl-OSType",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.010-397.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.010-397.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-PerlIO-via-QuotedPrint",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.09-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.09-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Pod-Checker",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:1.74-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:1.74-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Pod-Escapes",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.07-396.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:1.07-396.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Pod-Functions",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.13-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.13-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Pod-Html",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.25-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.25-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Pod-Parser",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.63-1001.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.63-1001.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Pod-Perldoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.28.01-443.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:3.28.01-443.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Pod-Simple",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:3.42-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:3.42-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Pod-Usage",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:2.01-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:2.01-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Safe",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.41-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.41-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Scalar-List-Utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:1.55-457.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:1.55-457.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Search-Dict",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.07-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.07-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-SelectSaver",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.02-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.02-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-SelfLoader",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.26-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.26-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Socket",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:2.031-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:2.031-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Software-License",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.103014-5.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.103014-5.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Storable",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:3.21-457.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:3.21-457.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Sub-Exporter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.987-17.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.987-17.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Sub-Install",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.928-15.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.928-15.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Symbol",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.08-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.08-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Sys-Hostname",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.23-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.23-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Sys-Syslog",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.36-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.36-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Term-ANSIColor",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.01-458.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:5.01-458.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Term-Cap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17-396.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.17-396.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Term-Complete",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.403-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.403-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Term-ReadLine",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.17-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.17-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Term-Table",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.015-2.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.015-2.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Test",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.31-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.31-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Test-Harness",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:3.42-2.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:3.42-2.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Test-Simple",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:1.302181-2.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"3:1.302181-2.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Text-Abbrev",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.02-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.02-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Text-Balanced",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.04-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.04-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Text-Diff",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.45-7.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.45-7.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Text-Glob",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.11-5.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.11-5.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Text-ParseWords",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.30-396.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:3.30-396.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Text-Tabs+Wrap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2013.0523-396.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2013.0523-396.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Text-Template",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.58-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.58-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Thread",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.05-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:3.05-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Thread-Queue",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.14-457.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:3.14-457.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Thread-Semaphore",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.13-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.13-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Tie",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.6-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:4.6-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Tie-File",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.06-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.06-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Tie-Memoize",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.1-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Tie-RefHash",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.39-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.39-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Time",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.03-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.03-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Time-HiRes",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:1.9764-459.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:1.9764-459.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Time-Local",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.300-4.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"2:1.300-4.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Time-Piece",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3401-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.3401-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-URI",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.76-5.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.76-5.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Unicode-Collate",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.29-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.29-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Unicode-Normalize",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.27-458.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.27-458.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-Unicode-UCD",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.75-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.75-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-User-pwent",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.03-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.03-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-autodie",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.34-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.34-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-autouse",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.11-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-base",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.27-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.27-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-bignum",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.51-439.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.51-439.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-blib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.07-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.07-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-constant",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.33-1001.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.33-1001.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-debugger",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.56-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.56-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-deprecate",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.04-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.04-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-diagnostics",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.37-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.37-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-encoding",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:3.00-461.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:3.00-461.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-encoding-warnings",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.13-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.13-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-experimental",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.025-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.025-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-fields",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.27-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.27-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-filetest",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.03-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.03-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-generators",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.13-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.13-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-homedir",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.000024-7.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.000024-7.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-if",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.60.800-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.60.800-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-inc-latest",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:0.500-10.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"2:0.500-10.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-interpreter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-less",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.03-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.03-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-lib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.65-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.65-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-libnet",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.13-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:3.13-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-libnetcfg",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-local-lib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.000024-7.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.000024-7.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-locale",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.09-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.09-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-macros",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"4:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-meta-notation",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-mro",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.23-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.23-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-open",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.12-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-overload",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.31-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.31-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-overloading",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.02-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:0.02-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-parent",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.238-457.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:0.238-457.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-perlfaq",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.20210520-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:5.20210520-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-ph",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-podlators",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:4.14-457.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:4.14-457.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-sigtrap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.09-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.09-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-sort",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.04-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:2.04-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-subs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.03-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.03-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-threads",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.25-457.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"1:2.25-457.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-threads-shared",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.61-457.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.61-457.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:5.32.1-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-vars",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.05-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.05-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-version",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:0.99.29-1.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"7:0.99.29-1.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl:5.32::perl-vmsish",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.04-473.module+el8.10.0+90267+7012ad3b"
+								}
+							],
+							"fixed": [
+								"0:1.04-473.module+el8.10.0+90267+7012ad3b"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

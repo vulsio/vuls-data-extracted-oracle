@@ -1,0 +1,160 @@
+{
+	"id": "ELSA-2014-1244",
+	"advisories": [
+		{
+			"id": "ELSA-2014-1244",
+			"title": "ELSA-2014-1244:  bind97 security and bug fix update (MODERATE)",
+			"description": "[32:9.7.0-21.P2]\n- Fix CVE-2014-0591\n\n[32:9.7.0-20.P2]\n- Fix init script to not unmount filesystem when ROOTDIR is empty (#1059118)\n\n[32:9.7.0-19.P2]\n- fix for CVE-2013-4854\n\n[32:9.7.0-18.P2]\n- fix CVE-2013-2266",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0591.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-1244.html"
+				}
+			],
+			"published": "2014-09-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-0591",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0591.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind97",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.7.0-21.P2.el5"
+								}
+							],
+							"fixed": [
+								"32:9.7.0-21.P2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind97-chroot",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.7.0-21.P2.el5"
+								}
+							],
+							"fixed": [
+								"32:9.7.0-21.P2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind97-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.7.0-21.P2.el5"
+								}
+							],
+							"fixed": [
+								"32:9.7.0-21.P2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind97-libs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.7.0-21.P2.el5"
+								}
+							],
+							"fixed": [
+								"32:9.7.0-21.P2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind97-utils",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.7.0-21.P2.el5"
+								}
+							],
+							"fixed": [
+								"32:9.7.0-21.P2.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

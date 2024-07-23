@@ -1,0 +1,118 @@
+{
+	"id": "ELSA-2022-8011",
+	"advisories": [
+		{
+			"id": "ELSA-2022-8011",
+			"title": "ELSA-2022-8011:  fribidi security update (MODERATE)",
+			"description": "[1.0.10-6.el9.2]\n- Security fixes for CVE-2022-25308, CVE-2022-25309, CVE-2022-25310\n  Resolves: rhbz#2050086, rhbz#2050069, rhbz#2050063",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25308.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25309.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25310.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-8011.html"
+				}
+			],
+			"published": "2022-11-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-25308",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25308.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-25309",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25309.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-25310",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-25310.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "fribidi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.10-6.el9.2"
+								}
+							],
+							"fixed": [
+								"0:1.0.10-6.el9.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "fribidi-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.10-6.el9.2"
+								}
+							],
+							"fixed": [
+								"0:1.0.10-6.el9.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

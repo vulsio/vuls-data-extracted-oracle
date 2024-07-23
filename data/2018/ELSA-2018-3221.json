@@ -1,0 +1,207 @@
+{
+	"id": "ELSA-2018-3221",
+	"advisories": [
+		{
+			"id": "ELSA-2018-3221",
+			"title": "ELSA-2018-3221:  openssl security, bug fix, and enhancement update (MODERATE)",
+			"description": "[1.0.2k-16.0.1]\n- sha256 is used for the RSA pairwise consistency test instead of sha1\n\n[1.0.2k-16]\n- fix CVE-2018-0495 - ROHNP - Key Extraction Side Channel on DSA, ECDSA\n- fix incorrect error message on FIPS DSA parameter generation (#1603597)\n\n[1.0.2k-14]\n- ppc64le is not multilib architecture (#1585004)\n\n[1.0.2k-13]\n- add S390x assembler updates\n- make CA name list comparison function case sensitive (#1548401)\n- fix CVE-2017-3735 - possible one byte overread with X.509 IPAdressFamily\n- fix CVE-2018-0732 - large prime DH DoS of TLS client\n- fix CVE-2018-0737 - RSA key generation cache timing vulnerability\n- fix CVE-2018-0739 - stack overflow parsing recursive ASN.1 structure",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3735.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0495.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0732.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0737.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0739.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-3221.html"
+				}
+			],
+			"published": "2018-11-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-3735",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-3735.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-0495",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0495.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-0732",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0732.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-0737",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0737.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-0739",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0739.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-16.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-16.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-16.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-16.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-16.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-16.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-16.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-16.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-16.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-16.0.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

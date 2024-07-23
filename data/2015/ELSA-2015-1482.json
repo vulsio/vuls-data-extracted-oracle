@@ -1,0 +1,129 @@
+{
+	"id": "ELSA-2015-1482",
+	"advisories": [
+		{
+			"id": "ELSA-2015-1482",
+			"title": "ELSA-2015-1482:  libuser security update (IMPORTANT)",
+			"description": "[0.56.13-8]\n- Update CVE-2015-3246 patch based on review comments\n  Resolves: #1235518\n\n[0.56.13-7]\n- Dont use 512-bit RSA private keys in tests\n  Related: #1235518\n- Fix testsuite failures if more than one architecture is building concurrently\n  Related: #1235518\n\n[0.56.13-6]\n- Fix CVE-2015-3246\n  Resolves: #1235518",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3245.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3246.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-1482.html"
+				}
+			],
+			"published": "2015-07-29T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-3245",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3245.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-3246",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3246.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libuser",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.56.13-8.el6_7"
+								}
+							],
+							"fixed": [
+								"0:0.56.13-8.el6_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libuser-devel",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.56.13-8.el6_7"
+								}
+							],
+							"fixed": [
+								"0:0.56.13-8.el6_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libuser-python",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.56.13-8.el6_7"
+								}
+							],
+							"fixed": [
+								"0:0.56.13-8.el6_7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

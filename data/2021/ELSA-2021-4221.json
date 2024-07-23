@@ -1,0 +1,491 @@
+{
+	"id": "ELSA-2021-4221",
+	"advisories": [
+		{
+			"id": "ELSA-2021-4221",
+			"title": "ELSA-2021-4221: container-tools:2.0 security update (MODERATE)",
+			"description": "buildah\n[1.11.6-9.0.1]\n- Reduce unnecessary writable mounts in NaiveDiffDriver [Orabug: 31025483]\n- Fixes troubles with oracle registry login [Orabug: 29937283]\n\n[1.11.6-9]\n- update to the latest content of https://github.com/containers/buildah/tree/release-1.11-rhel\n  (https://github.com/containers/buildah/commit/6a746dc)\n- fixes CVE-2021-3602\n- Related: #1977942\n\nrunc\n[1.0.0-66.rc10]\n- set GO111MODULE=off to fix build\n- Related: #1955651",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3602.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-4221.html"
+				}
+			],
+			"published": "2021-11-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-3602",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3602.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::buildah",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.6-9.0.1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:1.11.6-9.0.1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::buildah-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.11.6-9.0.1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:1.11.6-9.0.1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::cockpit-podman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:11-1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:11-1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::conmon",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.0.15-1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"2:2.0.15-1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::container-selinux",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.130.0-1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"2:2.130.0-1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::containernetworking-plugins",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.8.3-4.0.1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:0.8.3-4.0.1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::containers-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.1.41-4.0.1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"1:0.1.41-4.0.1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::crit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12-9.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:3.12-9.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::criu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12-9.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:3.12-9.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::fuse-overlayfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.7.8-1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:0.7.8-1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::podman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.4-26.0.1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:1.6.4-26.0.1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::podman-docker",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.4-26.0.1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:1.6.4-26.0.1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::podman-remote",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.4-26.0.1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:1.6.4-26.0.1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::podman-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.4-26.0.1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:1.6.4-26.0.1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::python-podman-api",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.0-0.2.gitd0a45fe.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:1.2.0-0.2.gitd0a45fe.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::python3-criu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12-9.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:3.12-9.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::runc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.0-66.rc10.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:1.0.0-66.rc10.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::skopeo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.1.41-4.0.1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"1:0.1.41-4.0.1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::skopeo-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.1.41-4.0.1.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"1:0.1.41-4.0.1.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::slirp4netns",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.4.2-3.git21fdece.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:0.4.2-3.git21fdece.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:2.0::udica",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.2.1-2.module+el8.5.0+20355+d36cb39d"
+								}
+							],
+							"fixed": [
+								"0:0.2.1-2.module+el8.5.0+20355+d36cb39d"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

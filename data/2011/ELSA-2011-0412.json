@@ -1,0 +1,247 @@
+{
+	"id": "ELSA-2011-0412",
+	"advisories": [
+		{
+			"id": "ELSA-2011-0412",
+			"title": "ELSA-2011-0412:  glibc security update (IMPORTANT)",
+			"description": "[2.5-58.el5_6.2]\n- Avoid too much stack use in fnmatch (#681054, CVE-2011-1071)\n- Properly quote output of locale (#625893, CVE-2011-1095)\n- Don't leave empty element in rpath when skipping the first element,\n  ignore rpath elements containing non-isolated use of  when\n  privileged (#667974, CVE-2011-0536)\n- Fix handling of newline in addmntent (#559579, CVE-2010-0296)\n\n[2.5-58.el5_6.1]\n- Don't ignore  in libraries (#682991)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0296.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0536.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1071.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1095.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1658.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1659.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-0412.html"
+				}
+			],
+			"published": "2011-04-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-0296",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0296.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-0536",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0536.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1071",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1071.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1095",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1095.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1658",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1658.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1659",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1659.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5-58.el5_6.2"
+								}
+							],
+							"fixed": [
+								"0:2.5-58.el5_6.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-common",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5-58.el5_6.2"
+								}
+							],
+							"fixed": [
+								"0:2.5-58.el5_6.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5-58.el5_6.2"
+								}
+							],
+							"fixed": [
+								"0:2.5-58.el5_6.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-headers",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5-58.el5_6.2"
+								}
+							],
+							"fixed": [
+								"0:2.5-58.el5_6.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-utils",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5-58.el5_6.2"
+								}
+							],
+							"fixed": [
+								"0:2.5-58.el5_6.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nscd",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5-58.el5_6.2"
+								}
+							],
+							"fixed": [
+								"0:2.5-58.el5_6.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

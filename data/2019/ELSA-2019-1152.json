@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2019-1152",
+	"advisories": [
+		{
+			"id": "ELSA-2019-1152",
+			"title": "ELSA-2019-1152:  python-jinja2 security update (IMPORTANT)",
+			"description": "[2.10.1-2]\n- Rebuild of package to go through gating\n- Resolves: rhbz#1701300\n\n[2.10.1-1]\n- Rebase to 2.10.1 (security update) to fix CVE-2019-10906\n- Resolves: rhbz#1701300\n\n[2.10-9]\n- Require platform-python-setuptools instead of python3-setuptools\n- Resolves: rhbz#1650536\n\n[2.10-8]\n- Revert changes commited to wrong branch",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-10906.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-1152.html"
+				}
+			],
+			"published": "2019-07-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-10906",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-10906.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-jinja2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.10.1-2.el8_0"
+								}
+							],
+							"fixed": [
+								"0:2.10.1-2.el8_0"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

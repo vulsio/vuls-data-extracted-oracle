@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2024-3008",
+	"advisories": [
+		{
+			"id": "ELSA-2024-3008",
+			"title": "ELSA-2024-3008:  pmix security update (IMPORTANT)",
+			"description": "[2.2.5-3]\n- Add gating test\n- Resolves: RHEL-3692\n\n[2.2.5-2]\n- Fix CVE-2023-41915\n- Resolves: RHEL-3692",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-41915.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-3008.html"
+				}
+			],
+			"published": "2024-05-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-41915",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-41915.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pmix",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.5-3.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.5-3.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pmix-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.5-3.el8"
+								}
+							],
+							"fixed": [
+								"0:2.2.5-3.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

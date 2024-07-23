@@ -1,0 +1,134 @@
+{
+	"id": "ELSA-2007-0346",
+	"advisories": [
+		{
+			"id": "ELSA-2007-0346",
+			"title": "ELSA-2007-0346:  Moderate: vim security update  (MODERATE)",
+			"description": "[7.0.109-3.3]\n - use gzip -9n to avoid multilib fileconflicts\n \n [7.0.109-3.2]\n - Let 'modeline' default to off for root\n - Resolves: bz#238259\n \n [7.0.109-3.1]\n - fix modeline issues\n - Resolves: bz#238259",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2438.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2007-0346.html"
+				}
+			],
+			"published": "2007-06-26T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-2438",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2438.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-X11",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:7.0.109-3.el5.3"
+								}
+							],
+							"fixed": [
+								"2:7.0.109-3.el5.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-common",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:7.0.109-3.el5.3"
+								}
+							],
+							"fixed": [
+								"2:7.0.109-3.el5.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-enhanced",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:7.0.109-3.el5.3"
+								}
+							],
+							"fixed": [
+								"2:7.0.109-3.el5.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-minimal",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:7.0.109-3.el5.3"
+								}
+							],
+							"fixed": [
+								"2:7.0.109-3.el5.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,168 @@
+{
+	"id": "ELSA-2021-3798",
+	"advisories": [
+		{
+			"id": "ELSA-2021-3798",
+			"title": "ELSA-2021-3798:  openssl security update (MODERATE)",
+			"description": "[1.0.2k-22]\n- fix CVE-2021-23841 openssl: NULL pointer dereference\n  in X509_issuer_and_serial_hash()\n- fix CVE-2021-23840 openssl: integer overflow in CipherUpdate\n- Resolves: rhbz#1932132, rhbz#1932126",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23840.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23841.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-3798.html"
+				}
+			],
+			"published": "2021-10-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-23840",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23840.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-23841",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23841.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-22.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-22.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-22.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-22.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-22.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-22.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-22.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-22.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-22.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-22.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

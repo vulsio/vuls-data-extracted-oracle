@@ -1,0 +1,120 @@
+{
+	"id": "ELSA-2011-1797",
+	"advisories": [
+		{
+			"id": "ELSA-2011-1797",
+			"title": "ELSA-2011-1797:  perl security update (MODERATE)",
+			"description": "[4:5.8.8-32.0.1.el5_7.6]\n- Up release number and rebuild\n\n[4:5.8.8-32.el5.6]\n- CVE-2010-2761 CVE-2010-4410 perl: CGI module multiple issues fixed by security\n  patch based on commit from version 3.50\n- Related: rhbz#743626\n\n[4:5.8.8-32.el5.5]\n- CVE-2010-2761 CVE-2010-4410 perl: CGI module multiple issues fixed by update\n  of CGI module to 3.54\n- Resolves: rhbz#743626\n\n[4:5.8.8-32.el5.4]\n- 743010 - perl: code injection vulnerability in Digest->new()\n- Resolves: rhbz#743094",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2761.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4410.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3597.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1797.html"
+				}
+			],
+			"published": "2011-12-08T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-2761",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2761.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-4410",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4410.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-3597",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3597.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:5.8.8-32.0.1.el5_7.6"
+								}
+							],
+							"fixed": [
+								"4:5.8.8-32.0.1.el5_7.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl-suidperl",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:5.8.8-32.0.1.el5_7.6"
+								}
+							],
+							"fixed": [
+								"4:5.8.8-32.0.1.el5_7.6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

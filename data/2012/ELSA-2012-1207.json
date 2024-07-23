@@ -1,0 +1,182 @@
+{
+	"id": "ELSA-2012-1207",
+	"advisories": [
+		{
+			"id": "ELSA-2012-1207",
+			"title": "ELSA-2012-1207:  glibc security and bug fix update (MODERATE)",
+			"description": "[2.5-81.el5_8.7]\n- Fix out of bounds array access in strto* exposed by 847929 patch.\n\n[2.5-81.el5_8.6]\n- Fix integer overflow leading to buffer overflow in strto* (#847929)\n\n[2.5-81.el5_8.5]\n- Do not use PT_IEEE_IP ptrace calls (#839411)\n- Update ULPs (#839411)\n- Fix various transcendentals in non-default rounding modes (#839411)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3480.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1207.html"
+				}
+			],
+			"published": "2012-08-27T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-3480",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3480.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5-81.el5_8.7"
+								}
+							],
+							"fixed": [
+								"0:2.5-81.el5_8.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-common",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5-81.el5_8.7"
+								}
+							],
+							"fixed": [
+								"0:2.5-81.el5_8.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5-81.el5_8.7"
+								}
+							],
+							"fixed": [
+								"0:2.5-81.el5_8.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-headers",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5-81.el5_8.7"
+								}
+							],
+							"fixed": [
+								"0:2.5-81.el5_8.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-utils",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5-81.el5_8.7"
+								}
+							],
+							"fixed": [
+								"0:2.5-81.el5_8.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nscd",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.5-81.el5_8.7"
+								}
+							],
+							"fixed": [
+								"0:2.5-81.el5_8.7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,164 @@
+{
+	"id": "ELSA-2009-1579",
+	"advisories": [
+		{
+			"id": "ELSA-2009-1579",
+			"title": "ELSA-2009-1579:  httpd security update (MODERATE)",
+			"description": "[2.2.3-31.0.1.el5_4.2]\n- replace index.html with Oracle's index page oracle_index.html\n- update vstring and distro in specfile\n\n[2.2.3-31.2]\n- add security fixes for CVE-2009-3094, CVE-2009-3095, CVE-2009-3555 (#534041)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3094.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3095.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3555.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-1579.html"
+				}
+			],
+			"published": "2009-11-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-3094",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3094.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-3095",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3095.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-3555",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3555.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.3-31.0.1.el5_4.2"
+								}
+							],
+							"fixed": [
+								"0:2.2.3-31.0.1.el5_4.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.3-31.0.1.el5_4.2"
+								}
+							],
+							"fixed": [
+								"0:2.2.3-31.0.1.el5_4.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-manual",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.3-31.0.1.el5_4.2"
+								}
+							],
+							"fixed": [
+								"0:2.2.3-31.0.1.el5_4.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_ssl",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.3-31.0.1.el5_4.2"
+								}
+							],
+							"fixed": [
+								"1:2.2.3-31.0.1.el5_4.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

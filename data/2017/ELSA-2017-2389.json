@@ -1,0 +1,367 @@
+{
+	"id": "ELSA-2017-2389",
+	"advisories": [
+		{
+			"id": "ELSA-2017-2389",
+			"title": "ELSA-2017-2389:  freeradius security update (IMPORTANT)",
+			"description": "[3.0.13-8]\n- Avoid misinterpreting zero-size malloc in data2vp_extended() fix.\n- Related: Bug#1469414 CVE-2017-10984 freeradius: Out-of-bounds write in\n                       data2vp_wimax()\n\n[3.0.13-7]\n- Resolves: Bug#1469409 CVE-2017-10978 freeradius: Out-of-bounds read/write due\n                        to improper output buffer size check in make_secret()\n- Resolves: Bug#1469413 CVE-2017-10983 freeradius: Out-of-bounds read in\n                        fr_dhcp_decode() when decoding option 63\n- Resolves: Bug#1469414 CVE-2017-10984 freeradius: Out-of-bounds write in\n                        data2vp_wimax()\n- Resolves: Bug#1469417 CVE-2017-10985 freeradius: Infinite loop and memory\n                        exhaustion with 'concat' attributes\n- Resolves: Bug#1469418 CVE-2017-10986 freeradius: Infinite read in\n                        dhcp_attr2vp()\n- Resolves: Bug#1469421 CVE-2017-10987 freeradius: Buffer over-read in\n                        fr_dhcp_decode_suboptions()",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10978.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10983.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10984.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10985.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10986.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10987.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-2389.html"
+				}
+			],
+			"published": "2017-08-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-10978",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10978.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-10983",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10983.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-10984",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10984.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-10985",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10985.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-10986",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10986.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-10987",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10987.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.13-8.el7_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.13-8.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.13-8.el7_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.13-8.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.13-8.el7_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.13-8.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius-krb5",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.13-8.el7_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.13-8.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius-ldap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.13-8.el7_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.13-8.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius-mysql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.13-8.el7_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.13-8.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.13-8.el7_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.13-8.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius-postgresql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.13-8.el7_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.13-8.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius-python",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.13-8.el7_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.13-8.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius-sqlite",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.13-8.el7_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.13-8.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius-unixODBC",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.13-8.el7_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.13-8.el7_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "freeradius-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.13-8.el7_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.13-8.el7_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

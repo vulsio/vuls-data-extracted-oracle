@@ -1,0 +1,126 @@
+{
+	"id": "ELSA-2011-0406",
+	"advisories": [
+		{
+			"id": "ELSA-2011-0406",
+			"title": "ELSA-2011-0406:  quagga security update (MODERATE)",
+			"description": "[0.99.15-5_el6_0.2]\n- Resolves: #684750 - CVE-2010-1674 CVE-2010-1675 quagga various flaws",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-1674.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-1675.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-0406.html"
+				}
+			],
+			"published": "2011-03-31T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-1674",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-1674.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-1675",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-1675.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "quagga",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.99.15-5.el6_0.2"
+								}
+							],
+							"fixed": [
+								"0:0.99.15-5.el6_0.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "quagga-contrib",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.99.15-5.el6_0.2"
+								}
+							],
+							"fixed": [
+								"0:0.99.15-5.el6_0.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "quagga-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.99.15-5.el6_0.2"
+								}
+							],
+							"fixed": [
+								"0:0.99.15-5.el6_0.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

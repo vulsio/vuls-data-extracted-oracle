@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2021-3233",
+	"advisories": [
+		{
+			"id": "ELSA-2021-3233",
+			"title": "ELSA-2021-3233:  compat-exiv2-026 security update (IMPORTANT)",
+			"description": "[0.26-3]\n- Fix heap-based buffer overflow vulnerability in jp2image.cpp\n  Resolves: bz#1990394",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-31291.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-3233.html"
+				}
+			],
+			"published": "2021-08-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-31291",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-31291.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "compat-exiv2-026",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.26-3.el7_9"
+								}
+							],
+							"fixed": [
+								"0:0.26-3.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

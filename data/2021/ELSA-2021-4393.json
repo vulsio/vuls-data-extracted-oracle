@@ -1,0 +1,197 @@
+{
+	"id": "ELSA-2021-4393",
+	"advisories": [
+		{
+			"id": "ELSA-2021-4393",
+			"title": "ELSA-2021-4393:  cups security and bug fix update (MODERATE)",
+			"description": "[1:2.2.6-40]\n- 1955964 - PreserveJobHistory doesnt work with seconds\n- 1927452 - CVE-2020-10001 cups: access to uninitialized buffer in ipp.c [rhel-8]\n\n[1:2.2.6-39]\n- 1941437 - cupsd doesnt log job ids when logging into journal\n- 1782216 - Print queue is paused after ipp backend ends with CUPS_BACKEND_STOP\n- 1938384 - CUPS doesnt start if sssd starts after cupsd",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10001.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-4393.html"
+				}
+			],
+			"published": "2021-11-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-10001",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10001.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.6-40.el8"
+								}
+							],
+							"fixed": [
+								"1:2.2.6-40.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-client",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.6-40.el8"
+								}
+							],
+							"fixed": [
+								"1:2.2.6-40.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.6-40.el8"
+								}
+							],
+							"fixed": [
+								"1:2.2.6-40.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-filesystem",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.6-40.el8"
+								}
+							],
+							"fixed": [
+								"1:2.2.6-40.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-ipptool",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.6-40.el8"
+								}
+							],
+							"fixed": [
+								"1:2.2.6-40.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.6-40.el8"
+								}
+							],
+							"fixed": [
+								"1:2.2.6-40.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-lpd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.6-40.el8"
+								}
+							],
+							"fixed": [
+								"1:2.2.6-40.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

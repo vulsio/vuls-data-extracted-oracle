@@ -1,0 +1,130 @@
+{
+	"id": "ELSA-2018-2001",
+	"advisories": [
+		{
+			"id": "ELSA-2018-2001",
+			"title": "ELSA-2018-2001:  qemu-kvm security update (IMPORTANT)",
+			"description": "[1.5.3-156.el7_5.3]\n- kvm-i386-Define-the-Virt-SSBD-MSR-and-handling-of-it-CVE.patch [bz#1584363]\n- kvm-i386-define-the-AMD-virt-ssbd-CPUID-feature-bit-CVE-.patch [bz#1584363]\n- Resolves: bz#1584363\n  (CVE-2018-3639 qemu-kvm: hw: cpu: AMD: speculative store bypass [rhel-7.5.z])",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-3639.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-2001.html"
+				}
+			],
+			"published": "2018-06-27T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-3639",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-3639.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-img",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-156.el7_5.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-156.el7_5.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-156.el7_5.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-156.el7_5.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-common",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-156.el7_5.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-156.el7_5.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-156.el7_5.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-156.el7_5.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

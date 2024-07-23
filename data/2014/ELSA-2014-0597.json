@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2014-0597",
+	"advisories": [
+		{
+			"id": "ELSA-2014-0597",
+			"title": "ELSA-2014-0597:  squid security update (MODERATE)",
+			"description": "[7:3.1.10-20.3]\n- Resolves: #1098134 - CVE-2014-0128 squid: denial of service when using\n  SSL-Bump\n\n[7:3.1.10-20.2]\n- revert: Resolves: #1039088 - issues with timeout on HTTPS connections\n\n[7:3.1.10-20.1]\n- Resolves: #1093072 - issues with timeout on HTTPS connections",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0128.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0597.html"
+				}
+			],
+			"published": "2014-06-03T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-0128",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0128.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:3.1.10-20.el6_5.3"
+								}
+							],
+							"fixed": [
+								"7:3.1.10-20.el6_5.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

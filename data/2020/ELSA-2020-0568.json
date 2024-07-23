@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2020-0568",
+	"advisories": [
+		{
+			"id": "ELSA-2020-0568",
+			"title": "ELSA-2020-0568:  ksh security update (IMPORTANT)",
+			"description": "[20120801-140.0.1]\n- disable _AST_no_spawnveg for taskset workaround [orabug 26754277]\n  Red Hat Bug: #1295563\n\n[20120801-140]\n- Do not evaluate arithmetic expressions from environment variables at startup\n  Resolves: #1790543",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-14868.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-0568.html"
+				}
+			],
+			"published": "2020-02-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-14868",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-14868.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ksh",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:20120801-140.0.1.el7_7"
+								}
+							],
+							"fixed": [
+								"0:20120801-140.0.1.el7_7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

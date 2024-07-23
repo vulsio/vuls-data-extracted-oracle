@@ -1,0 +1,113 @@
+{
+	"id": "ELSA-2020-5443",
+	"advisories": [
+		{
+			"id": "ELSA-2020-5443",
+			"title": "ELSA-2020-5443:  gd security update (MODERATE)",
+			"description": "[2.0.35-27]\n- Fix CVE-2016-5766\n- Resolves: #1356813\n- Upstream patch: https://github.com/libgd/libgd/commit/aba3db8",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5766.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-5443.html"
+				}
+			],
+			"published": "2020-12-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-5766",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5766.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.35-27.el7_9"
+								}
+							],
+							"fixed": [
+								"0:2.0.35-27.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gd-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.35-27.el7_9"
+								}
+							],
+							"fixed": [
+								"0:2.0.35-27.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gd-progs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.35-27.el7_9"
+								}
+							],
+							"fixed": [
+								"0:2.0.35-27.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

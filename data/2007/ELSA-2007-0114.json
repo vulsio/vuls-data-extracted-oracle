@@ -1,0 +1,113 @@
+{
+	"id": "ELSA-2007-0114",
+	"advisories": [
+		{
+			"id": "ELSA-2007-0114",
+			"title": "ELSA-2007-0114:  Important: xen security update  (IMPORTANT)",
+			"description": "[3.0.3-25.0.3.el5]\n - fix ethernet bonding in balanced-rr mode, respin (rhbz#215887)\n \n [3.0.3-25.0.2.el5]\n - fix ethernet bonding in balanced-rr mode (rhbz#215887)\n \n [3.0.3-25.0.1.el5]\n - disable qemu monitor mode, for security reasons (rhbz#230295)\n - fix IA64 shadow page table mode (rhbz#230459, rhbz#230331)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-0998.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2007-0114.html"
+				}
+			],
+			"published": "2007-06-26T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-0998",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-0998.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xen",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.3-25.0.3.el5"
+								}
+							],
+							"fixed": [
+								"0:3.0.3-25.0.3.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xen-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.3-25.0.3.el5"
+								}
+							],
+							"fixed": [
+								"0:3.0.3-25.0.3.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xen-libs",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.3-25.0.3.el5"
+								}
+							],
+							"fixed": [
+								"0:3.0.3-25.0.3.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

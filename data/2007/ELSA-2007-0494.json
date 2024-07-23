@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2007-0494",
+	"advisories": [
+		{
+			"id": "ELSA-2007-0494",
+			"title": "ELSA-2007-0494:  Important: kdebase security update  (IMPORTANT)",
+			"description": "[-  6:3.3.1-5.19.rhel4.0.1]\n - turn off '\n \n [- 6:3.3.1-5.19.rhel4]\n - Resolves: bz#243620, KDE flash player workaround, CVE-2007-2022",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2022.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2007-0494.html"
+				}
+			],
+			"published": "2007-06-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-2022",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2022.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kdebase",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "6:3.5.4-13.6.el5.0.1"
+								}
+							],
+							"fixed": [
+								"6:3.5.4-13.6.el5.0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kdebase-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "6:3.5.4-13.6.el5.0.1"
+								}
+							],
+							"fixed": [
+								"6:3.5.4-13.6.el5.0.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

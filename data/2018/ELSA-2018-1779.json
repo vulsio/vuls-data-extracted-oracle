@@ -1,0 +1,197 @@
+{
+	"id": "ELSA-2018-1779",
+	"advisories": [
+		{
+			"id": "ELSA-2018-1779",
+			"title": "ELSA-2018-1779:  xmlrpc3 security update (IMPORTANT)",
+			"description": "[3.0-4.17]\n- Rebase patch to avoid orig files in source JAR\n- Related: CVE-2016-5003\n\n[3.0-4.16]\n- Disallow deserialization of <ex:serializable> tags by default\n- Resolves: CVE-2016-5003",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5003.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-1779.html"
+				}
+			],
+			"published": "2018-05-31T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-5003",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5003.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xmlrpc3-client",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-4.17.el6_9"
+								}
+							],
+							"fixed": [
+								"0:3.0-4.17.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xmlrpc3-client-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-4.17.el6_9"
+								}
+							],
+							"fixed": [
+								"0:3.0-4.17.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xmlrpc3-common",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-4.17.el6_9"
+								}
+							],
+							"fixed": [
+								"0:3.0-4.17.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xmlrpc3-common-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-4.17.el6_9"
+								}
+							],
+							"fixed": [
+								"0:3.0-4.17.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xmlrpc3-javadoc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-4.17.el6_9"
+								}
+							],
+							"fixed": [
+								"0:3.0-4.17.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xmlrpc3-server",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-4.17.el6_9"
+								}
+							],
+							"fixed": [
+								"0:3.0-4.17.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xmlrpc3-server-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-4.17.el6_9"
+								}
+							],
+							"fixed": [
+								"0:3.0-4.17.el6_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

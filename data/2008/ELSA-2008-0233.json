@@ -1,0 +1,489 @@
+{
+	"id": "ELSA-2008-0233",
+	"advisories": [
+		{
+			"id": "ELSA-2008-0233",
+			"title": "ELSA-2008-0233:  kernel security and bug fix update (IMPORTANT)",
+			"description": "[2.6.18-53.1.19.0.1.el5]\n- [NET] Add entropy support to e1000 and bnx2 (John Sobecki) [ORA 6045759]\n- [NET] Fix msi issue with kexec/kdump (Michael Chan) [ORA 6219364]\n- [MM] Fix alloc_pages_node() static nid' race made kernel crash (Joe Jin) [ORA 6187457]\n- [splice] Fix bad unlock_page() in error case  (Jens Axboe) [ORA 6263574]\n- [dio] fix error-path crashes (Linux Torvalds) [ORA 6242289]\n\n[2.6.18-53.1.19.el5]\n- [xen] check num of segments in block backend driver (Bill Burns ) [378281]\n- [x86_64] update IO-APIC dest field to 8-bit for xAPIC (Dave Anderson ) [442922]\n- Update: [fs] fix race condition in dnotify (Alexander Viro ) [439758] {CVE-2008-1375}\n- Update: [xen] ia64: ftp stress test fixes between HVM/Dom0 (Tetsu Yamamoto ) [427400] {CVE-2008-1619}\n\n[2.6.18-53.1.18.el5]\n- Update: [fs] fix race condition in dnotify (Alexander Viro ) [439758] {CVE-2008-1375}\n\n[2.6.18-53.1.17.el5]\n- [fs] fix race condition in dnotify (Alexander Viro ) [439758] {CVE-2008-1375}\n- [pci] hotplug: PCI Express problems with bad DLLPs (Kei Tokunaga ) [440438]\n- [nfs] stop sillyrenames and unmounts from racing (Steve Dickson ) [440447]\n- [x86] clear df flag for signal handlers (Jason Baron ) [437316] {CVE-2008-1367}\n- [xen] ia64: ftp stress test fixes between HVM/Dom0 (Tetsu Yamamoto ) [427400] {CVE-2008-1619}\n- [xen] ia64: fix ssm_i emulation barrier and vdso pv (Tetsu Yamamoto ) [427400] {CVE-2008-1619}\n\n[2.6.18-53.1.16.el5]\n- [misc] fix range check in fault handlers with mremap (Vitaly Mayatskikh ) [428970]\n- [video] neofb: avoid overwriting fb_info fields (Anton Arapov ) [430253]\n\n[2.6.18-53.1.15.el5]\n- [libata] sata_nv: un-blacklist hitachi drives (David Milburn ) [433617]\n- [libata] sata_nv: may send cmds with duplicate tags (David Milburn ) [433617]\n- [s390] qdio: output queue stall on FCP and net devs (Hans-Joachim Picht ) [412071]\n- [xen] ia64: guest has bad network performance (Tetsu Yamamoto ) [433616]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-5498.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-0007.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1367.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1375.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1619.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1669.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2008-0233.html"
+				}
+			],
+			"published": "2008-05-08T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-5498",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-5498.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-0007",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-0007.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-1367",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1367.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-1375",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1375.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-1619",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1619.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-1669",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1669.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-53.1.19.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-53.1.19.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-PAE",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-53.1.19.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-53.1.19.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-PAE-devel",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-53.1.19.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-53.1.19.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-53.1.19.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-53.1.19.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-53.1.19.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-53.1.19.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-53.1.19.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-53.1.19.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-53.1.19.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-53.1.19.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-53.1.19.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-53.1.19.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-xen",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-53.1.19.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-53.1.19.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-xen-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.18-53.1.19.0.1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.18-53.1.19.0.1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-53.1.19.0.1.el5",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.8-2.el5"
+								}
+							],
+							"fixed": [
+								"0:1.2.8-2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-53.1.19.0.1.el5PAE",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.8-2.el5"
+								}
+							],
+							"fixed": [
+								"0:1.2.8-2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-53.1.19.0.1.el5debug",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.8-2.el5"
+								}
+							],
+							"fixed": [
+								"0:1.2.8-2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ocfs2-2.6.18-53.1.19.0.1.el5xen",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.8-2.el5"
+								}
+							],
+							"fixed": [
+								"0:1.2.8-2.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-53.1.19.0.1.el5",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.4-1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.4-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-53.1.19.0.1.el5PAE",
+							"architectures": [
+								"i386"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.4-1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.4-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-53.1.19.0.1.el5debug",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.4-1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.4-1.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oracleasm-2.6.18-53.1.19.0.1.el5xen",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.4-1.el5"
+								}
+							],
+							"fixed": [
+								"0:2.0.4-1.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

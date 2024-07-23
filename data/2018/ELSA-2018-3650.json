@@ -1,0 +1,194 @@
+{
+	"id": "ELSA-2018-3650",
+	"advisories": [
+		{
+			"id": "ELSA-2018-3650",
+			"title": "ELSA-2018-3650:  ghostscript security update (IMPORTANT)",
+			"description": "[9.07-31.el7_6.1]\n- Remove as many non-standard operators as possible to make the codebase\n  closer to upstream for later CVEs\n- Resolves: #1621383 - CVE-2018-16511 ghostscript: missing type check in type\n  checker (699659)\n- Resolves: #1621159 - CVE-2018-15908 ghostscript: .tempfile file permission\n  issues (699657)\n- Resolves: #1621381 - CVE-2018-15909 ghostscript: shading_param incomplete\n  type checking (699660)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-15908.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-15909.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16511.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16539.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-3650.html"
+				}
+			],
+			"published": "2018-11-26T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-15908",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-15908.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-15909",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-15909.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-16511",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16511.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-16539",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16539.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.07-31.el7_6.1"
+								}
+							],
+							"fixed": [
+								"0:9.07-31.el7_6.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript-cups",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.07-31.el7_6.1"
+								}
+							],
+							"fixed": [
+								"0:9.07-31.el7_6.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.07-31.el7_6.1"
+								}
+							],
+							"fixed": [
+								"0:9.07-31.el7_6.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.07-31.el7_6.1"
+								}
+							],
+							"fixed": [
+								"0:9.07-31.el7_6.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript-gtk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.07-31.el7_6.1"
+								}
+							],
+							"fixed": [
+								"0:9.07-31.el7_6.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

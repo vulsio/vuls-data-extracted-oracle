@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2022-7458",
+	"advisories": [
+		{
+			"id": "ELSA-2022-7458",
+			"title": "ELSA-2022-7458:  flatpak-builder security and bug fix update (MODERATE)",
+			"description": "[1.0.14-2]\n- Fix CVE-2022-21682 (#2042007)\n\n[1.0.14-1]\n- Update to 1.0.14 (#2047312)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-21682.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-7458.html"
+				}
+			],
+			"published": "2022-11-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-21682",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-21682.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "flatpak-builder",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.14-2.el8"
+								}
+							],
+							"fixed": [
+								"0:1.0.14-2.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

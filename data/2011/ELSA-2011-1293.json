@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2011-1293",
+	"advisories": [
+		{
+			"id": "ELSA-2011-1293",
+			"title": "ELSA-2011-1293:  squid security update (MODERATE)",
+			"description": "[7:3.1.10-1.el6_1.1]\n- Resolves: #735447 - CVE-2011-3205 squid: buffer overflow flaw in Squid's Gopher reply parser",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3205.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1293.html"
+				}
+			],
+			"published": "2011-09-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-3205",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3205.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:3.1.10-1.el6_1.1"
+								}
+							],
+							"fixed": [
+								"7:3.1.10-1.el6_1.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

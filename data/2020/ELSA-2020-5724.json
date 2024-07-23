@@ -1,0 +1,70 @@
+{
+	"id": "ELSA-2020-5724",
+	"advisories": [
+		{
+			"id": "ELSA-2020-5724",
+			"title": "ELSA-2020-5724:  pcs security update (IMPORTANT)",
+			"description": "[0.10.4-6.0.1.el8_2.1]\n- Replace HAM-logo.png with a generic one\n\n[0.10.4-6.el8_2.1]\n- Fixed running pcs status on remote nodes\n- Fixed ruby daemon closing connection after 30s\n- Fixed inability to create colocation constraint in webUI\n- Updated bundled rubygem-json\n- Resolves: rhbz#1832914 rhbz#1838084 rhbz#1840154 rhbz#1840158\n\n[0.10.4-6]\n- Fixed communication between python and ruby daemons\n- Resolves: rhbz#1783106\n\n[0.10.4-5]\n- Fixed link to sbd man page from  doc\n- Fixed safe-disabling clones, groups, bundles\n- Fixed sinatra wrapper performance issue\n- Fixed detecting fence history support\n- Fixed cookie options\n- Updated hint for 'resource create ... master'\n- Updated gating tests execution, smoke tests run from upstream sources\n- Resolves: rhbz#1750427 rhbz#1781303 rhbz#1783106 rhbz#1793574\n\n[0.10.4-4]\n- Fix testsuite for pacemaker-2.0.3-4\n- Resolves: rhbz#1792946\n\n[0.10.4-3]\n- Added basic resource views in new webUI",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10663.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-5724.html"
+				}
+			],
+			"published": "2020-06-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-10663",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10663.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pcs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.10.4-6.0.1.el8_2.1"
+								}
+							],
+							"fixed": [
+								"0:0.10.4-6.0.1.el8_2.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

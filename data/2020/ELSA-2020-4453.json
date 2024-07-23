@@ -1,0 +1,155 @@
+{
+	"id": "ELSA-2020-4453",
+	"advisories": [
+		{
+			"id": "ELSA-2020-4453",
+			"title": "ELSA-2020-4453:  vim security update (MODERATE)",
+			"description": "[2:8.0.1763-15.0.1]\n- - Remove upstream references [Orabug: 31197557]\n\n[2:8.0.1763-15]\n- 1842755 - CVE-2019-20807\n\n[2:8.0.1763-14]\n- 1745476 - manpage of vim is garbled in Japanese locale",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-20807.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-4453.html"
+				}
+			],
+			"published": "2020-11-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-20807",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-20807.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-X11",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:8.0.1763-15.0.1.el8"
+								}
+							],
+							"fixed": [
+								"2:8.0.1763-15.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:8.0.1763-15.0.1.el8"
+								}
+							],
+							"fixed": [
+								"2:8.0.1763-15.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-enhanced",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:8.0.1763-15.0.1.el8"
+								}
+							],
+							"fixed": [
+								"2:8.0.1763-15.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-filesystem",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:8.0.1763-15.0.1.el8"
+								}
+							],
+							"fixed": [
+								"2:8.0.1763-15.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-minimal",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:8.0.1763-15.0.1.el8"
+								}
+							],
+							"fixed": [
+								"2:8.0.1763-15.0.1.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

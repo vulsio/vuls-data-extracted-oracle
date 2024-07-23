@@ -1,0 +1,113 @@
+{
+	"id": "ELSA-2010-0923",
+	"advisories": [
+		{
+			"id": "ELSA-2010-0923",
+			"title": "ELSA-2010-0923:  dhcp security update (MODERATE)",
+			"description": "[12:4.1.1-12.P1.1]\n- CVE-2010-3611: NULL pointer dereference crash via crafted DHCPv6 packet (#651913)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3611.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0923.html"
+				}
+			],
+			"published": "2011-02-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-3611",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3611.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhclient",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.1.1-12.P1.el6_0.1"
+								}
+							],
+							"fixed": [
+								"12:4.1.1-12.P1.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.1.1-12.P1.el6_0.1"
+								}
+							],
+							"fixed": [
+								"12:4.1.1-12.P1.el6_0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.1.1-12.P1.el6_0.1"
+								}
+							],
+							"fixed": [
+								"12:4.1.1-12.P1.el6_0.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

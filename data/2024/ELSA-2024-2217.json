@@ -1,0 +1,105 @@
+{
+	"id": "ELSA-2024-2217",
+	"advisories": [
+		{
+			"id": "ELSA-2024-2217",
+			"title": "ELSA-2024-2217:  motif security update (MODERATE)",
+			"description": "[2.3.4-28]\n- Fix CVE-2023-43788: out of bounds read in XpmCreateXpmImageFromBuffer()\n- Fix CVE-2023-43789: out of bounds read on XPM with corrupted colormap",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-43788.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-43789.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-2217.html"
+				}
+			],
+			"published": "2024-05-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-43788",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-43788.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-43789",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-43789.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "motif",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.4-28.el9"
+								}
+							],
+							"fixed": [
+								"0:2.3.4-28.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "motif-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.4-28.el9"
+								}
+							],
+							"fixed": [
+								"0:2.3.4-28.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

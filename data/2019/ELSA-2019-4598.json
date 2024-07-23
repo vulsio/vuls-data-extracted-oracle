@@ -1,0 +1,55 @@
+{
+	"id": "ELSA-2019-4598",
+	"advisories": [
+		{
+			"id": "ELSA-2019-4598",
+			"title": "ELSA-2019-4598:  docker-engine security update (IMPORTANT)",
+			"description": "[17.06.2.ol-1.0.7]\n- update for CVE-2018-20699",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-4598.html"
+				}
+			],
+			"published": "2019-04-02T00:00:00Z"
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "docker-engine",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:17.06.2.ol-1.0.7.el7"
+								}
+							],
+							"fixed": [
+								"0:17.06.2.ol-1.0.7.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

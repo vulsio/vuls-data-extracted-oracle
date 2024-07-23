@@ -1,0 +1,259 @@
+{
+	"id": "ELSA-2018-3834",
+	"advisories": [
+		{
+			"id": "ELSA-2018-3834",
+			"title": "ELSA-2018-3834:  ghostscript security and bug fix update (IMPORTANT)",
+			"description": "[9.07-31.el7_6.6]\n- Resolves: #1657822 - ghostscript: Regression: Warning: Dropping incorrect\n  smooth shading object (Error: /rangecheck in --run--)\n\n[9.07-31.el7_6.5]\n- Resolves: #1654621 - CVE-2018-16541 ghostscript: incorrect free logic in\n  pagedevice replacement (699664)\n- Resolves: #1650210 - CVE-2018-17183 ghostscript: User-writable error\n  exception table\n- Resolves: #1645516 - CVE-2018-18073 ghostscript: saved execution stacks\n  can leak operator arrays\n- Resolves: #1648891 - CVE-2018-17961 ghostscript: saved execution stacks\n  can leak operator arrays (incomplete fix for CVE-2018-17183)\n- Resolves: #1643115 - CVE-2018-18284 ghostscript: 1Policy operator\n  allows a sandbox protection bypass\n- Resolves: #1655937 - CVE-2018-19134 ghostscript: Type confusion in\n  setpattern (700141)\n\n[9.07-31.el7_6.4]\n- Resolves: #1651149 - CVE-2018-15911 ghostscript: uninitialized memory\n  access in the aesdecode operator (699665)\n- Resolves: #1650060 - CVE-2018-16802 ghostscript: Incorrect 'restoration of\n  privilege' checking when running out of stack during exception handling\n- Resolves: #1652935 - CVE-2018-19409 ghostscript: Improperly implemented\n  security check in zsetdevice function in psi/zdevice.c",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-15911.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16541.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16802.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-17183.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-17961.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-18073.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-18284.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-19134.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-19409.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-3834.html"
+				}
+			],
+			"published": "2018-12-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-15911",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-15911.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-16541",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16541.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-16802",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-16802.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-17183",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-17183.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-17961",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-17961.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-18073",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-18073.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-18284",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-18284.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-19134",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-19134.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-19409",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-19409.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.07-31.el7_6.6"
+								}
+							],
+							"fixed": [
+								"0:9.07-31.el7_6.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript-cups",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.07-31.el7_6.6"
+								}
+							],
+							"fixed": [
+								"0:9.07-31.el7_6.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.07-31.el7_6.6"
+								}
+							],
+							"fixed": [
+								"0:9.07-31.el7_6.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.07-31.el7_6.6"
+								}
+							],
+							"fixed": [
+								"0:9.07-31.el7_6.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ghostscript-gtk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.07-31.el7_6.6"
+								}
+							],
+							"fixed": [
+								"0:9.07-31.el7_6.6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

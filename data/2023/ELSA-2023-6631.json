@@ -1,0 +1,181 @@
+{
+	"id": "ELSA-2023-6631",
+	"advisories": [
+		{
+			"id": "ELSA-2023-6631",
+			"title": "ELSA-2023-6631:  glib2 security and bug fix update (LOW)",
+			"description": "[2.68.4-11]\n- Really fix authentication failures when sd-bus clients connect to GDBus servers\n- Resolves: #2217771\n\n[2.68.4-10]\n- Fix authentication failures when sd-bus clients connect to GDBus servers\n- Resolves: #2217771\n\n[2.68.4-9]\n- Resolve s390x crashes introduced by fixes for CVE-2023-24593/CVE-2023-25180\n- Related: #2181196\n- Related: #2181200\n\n[2.68.4-8]\n- Resolve use after free introduced by fixes for CVE-2023-24593/CVE-2023-25180\n- Related: #2181196\n- Related: #2181200\n\n[2.68.4-7]\n- Fix CVE-2023-24593 and CVE-2023-25180\n- Resolves: #2181196\n- Resolves: #2181200",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-29499.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-32611.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-32665.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-6631.html"
+				}
+			],
+			"published": "2023-11-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-29499",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-29499.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-32611",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-32611.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-32665",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-32665.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glib2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.68.4-11.el9"
+								}
+							],
+							"fixed": [
+								"0:2.68.4-11.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glib2-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.68.4-11.el9"
+								}
+							],
+							"fixed": [
+								"0:2.68.4-11.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glib2-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.68.4-11.el9"
+								}
+							],
+							"fixed": [
+								"0:2.68.4-11.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glib2-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.68.4-11.el9"
+								}
+							],
+							"fixed": [
+								"0:2.68.4-11.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glib2-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.68.4-11.el9"
+								}
+							],
+							"fixed": [
+								"0:2.68.4-11.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

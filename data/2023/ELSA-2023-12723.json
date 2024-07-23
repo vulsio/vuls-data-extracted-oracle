@@ -1,0 +1,70 @@
+{
+	"id": "ELSA-2023-12723",
+	"advisories": [
+		{
+			"id": "ELSA-2023-12723",
+			"title": "ELSA-2023-12723: microcode_ctl security update (MODERATE)",
+			"description": "[4:20230214-2.0.3]\n- update 06-55-04 to 0x2007006\n- update 06-55-06 to 0x4003604\n- update 06-55-07 to 0x5003604\n- update 06-6a-06 to 0xd0003a5\n- Resolves for Oracle hardware: {CVE-2022-40982} [Orabug: 35692741]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-40982.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-12723.html"
+				}
+			],
+			"published": "2023-08-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-40982",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-40982.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "microcode_ctl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:20230214-2.0.3.el8"
+								}
+							],
+							"fixed": [
+								"4:20230214-2.0.3.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

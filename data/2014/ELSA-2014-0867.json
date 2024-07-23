@@ -1,0 +1,476 @@
+{
+	"id": "ELSA-2014-0867",
+	"advisories": [
+		{
+			"id": "ELSA-2014-0867",
+			"title": "ELSA-2014-0867:  samba security update (MODERATE)",
+			"description": "[4.1.1-35]\n- resolves: #1105504 - CVE-2014-0244: DoS in nmbd.\n- resolves: #1108844 - CVE-2014-3493: DoS in smbd with unicode path names.\n- resolves: #1105573 - CVE-2014-0178: Uninitialized memory exposure.\n\n[4.1.1-33]\n- related: #717484 - Add missing configure line to enable profiling data support.\n\n[4.1.1-32]\n- related: #1082653 - Reuse IPv6 address during the AD domain join.",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0178.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0244.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-3493.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0867.html"
+				}
+			],
+			"published": "2014-07-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-0178",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0178.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0244",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0244.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-3493",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-3493.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsmbclient",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libsmbclient-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libwbclient",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libwbclient-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-client",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-common",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-dc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-dc-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-pidl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-python",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-test",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-test-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-vfs-glusterfs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-winbind",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-winbind-clients",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-winbind-krb5-locator",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "samba-winbind-modules",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.1-35.el7_0"
+								}
+							],
+							"fixed": [
+								"0:4.1.1-35.el7_0"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

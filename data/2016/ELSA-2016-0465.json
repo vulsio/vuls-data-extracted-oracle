@@ -1,0 +1,223 @@
+{
+	"id": "ELSA-2016-0465",
+	"advisories": [
+		{
+			"id": "ELSA-2016-0465",
+			"title": "ELSA-2016-0465:  openssh security update (MODERATE)",
+			"description": "[6.6.1p1-25 + 0.9.3-9]\n- CVE-2016-1908: possible fallback from untrusted to trusted X11 forwarding (#1298741)\n\n[6.6.1p1-24 + 0.9.3-9]\n- CVE-2016-3115: missing sanitisation of input for X11 forwarding (#1317818)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-1908.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-3115.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-0465.html"
+				}
+			],
+			"published": "2016-03-21T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-1908",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-1908.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-3115",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-3115.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.6.1p1-25.el7_2"
+								}
+							],
+							"fixed": [
+								"0:6.6.1p1-25.el7_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-askpass",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.6.1p1-25.el7_2"
+								}
+							],
+							"fixed": [
+								"0:6.6.1p1-25.el7_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-clients",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.6.1p1-25.el7_2"
+								}
+							],
+							"fixed": [
+								"0:6.6.1p1-25.el7_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-keycat",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.6.1p1-25.el7_2"
+								}
+							],
+							"fixed": [
+								"0:6.6.1p1-25.el7_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-ldap",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.6.1p1-25.el7_2"
+								}
+							],
+							"fixed": [
+								"0:6.6.1p1-25.el7_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-server",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.6.1p1-25.el7_2"
+								}
+							],
+							"fixed": [
+								"0:6.6.1p1-25.el7_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-server-sysvinit",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.6.1p1-25.el7_2"
+								}
+							],
+							"fixed": [
+								"0:6.6.1p1-25.el7_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pam_ssh_agent_auth",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.3-9.25.el7_2"
+								}
+							],
+							"fixed": [
+								"0:0.9.3-9.25.el7_2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

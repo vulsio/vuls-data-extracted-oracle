@@ -1,0 +1,324 @@
+{
+	"id": "ELSA-2021-9113",
+	"advisories": [
+		{
+			"id": "ELSA-2021-9113",
+			"title": "ELSA-2021-9113: Unbreakable Enterprise kernel security update (IMPORTANT)",
+			"description": "[4.1.12-124.48.6]\n- scsi: iscsi: Verify lengths on passthrough PDUs (Chris Leech)  [Orabug: 32603382] \n- scsi: iscsi: Ensure sysfs attributes are limited to PAGE_SIZE (Chris Leech)  [Orabug: 32603382]  {CVE-2021-27363} {CVE-2021-27364} {CVE-2021-27365}\n- scsi: iscsi: Report connection state in sysfs (Gabriel Krisman Bertazi)  [Orabug: 32603382]  {CVE-2021-27363} {CVE-2021-27364} {CVE-2021-27365}\n- sysfs: Add sysfs_emit and sysfs_emit_at to format sysfs output (Joe Perches)  [Orabug: 32603382] \n- scsi: iscsi: Restrict sessions and handles to admin capabilities (Lee Duncan)  [Orabug: 32603382]  {CVE-2021-27363} {CVE-2021-27364} {CVE-2021-27365}",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27363.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27364.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27365.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-9113.html"
+				}
+			],
+			"published": "2021-03-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-27363",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27363.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-27364",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27364.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-27365",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27365.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.48.6.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.48.6.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.48.6.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.48.6.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.48.6.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.48.6.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.48.6.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.48.6.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.48.6.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.48.6.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.48.6.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.48.6.el6uek"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.48.6.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.48.6.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.48.6.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.48.6.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.48.6.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.48.6.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.48.6.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.48.6.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.48.6.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.48.6.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-124.48.6.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-124.48.6.el7uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

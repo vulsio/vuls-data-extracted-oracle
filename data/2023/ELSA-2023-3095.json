@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2023-3095",
+	"advisories": [
+		{
+			"id": "ELSA-2023-3095",
+			"title": "ELSA-2023-3095:  libreswan security and bug fix update (MODERATE)",
+			"description": "[4.9-2.0.1.2]\n- Add libreswan-oracle.patch to detect Oracle Linux distro\n\n[4.9-2.2]\n- Update libreswan-4.9-2176248-authby-rsasig.patch\n\n[4.9-2.1]\n- Resolves: rhbz#2187647 authby=rsasig fails in FIPS policy\n\n[4.9-2]\n- Fix CVE-2023-23009: remote DoS via crafted TS payload with an\n  incorrect selector length (rhbz#2186127)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-23009.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-3095.html"
+				}
+			],
+			"published": "2023-05-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-23009",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-23009.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libreswan",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.9-2.0.1.el8_8.2"
+								}
+							],
+							"fixed": [
+								"0:4.9-2.0.1.el8_8.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

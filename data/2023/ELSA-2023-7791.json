@@ -1,0 +1,105 @@
+{
+	"id": "ELSA-2023-7791",
+	"advisories": [
+		{
+			"id": "ELSA-2023-7791",
+			"title": "ELSA-2023-7791:  gstreamer1-plugins-bad-free security update (IMPORTANT)",
+			"description": "[1.22.1-2]\n- Patch CVE-2023-44429: AV1 codec parser heap-based buffer overflow\n- Patch CVE-2023-44446: MXF demuxer use-after-free\n- Resolves: RHEL-17030, RHEL-17039",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-44429.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-44446.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-7791.html"
+				}
+			],
+			"published": "2023-12-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-44429",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-44429.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-44446",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-44446.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gstreamer1-plugins-bad-free",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.22.1-2.el9_3"
+								}
+							],
+							"fixed": [
+								"0:1.22.1-2.el9_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gstreamer1-plugins-bad-free-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.22.1-2.el9_3"
+								}
+							],
+							"fixed": [
+								"0:1.22.1-2.el9_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

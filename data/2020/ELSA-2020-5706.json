@@ -1,0 +1,390 @@
+{
+	"id": "ELSA-2020-5706",
+	"advisories": [
+		{
+			"id": "ELSA-2020-5706",
+			"title": "ELSA-2020-5706: Unbreakable Enterprise kernel security update (IMPORTANT)",
+			"description": "kernel-uek\n[3.8.13-118.46.1]\n- ipv6: only static routes qualify for equal cost multipathing (Hannes Frederic Sowa)  [Orabug: 30977687]  {CVE-2013-4125}\n- USB: adutux: fix use-after-free on disconnect (Johan Hovold)  [Orabug: 31240296]  {CVE-2019-19523}\n- USB: core: Fix races in character device registration and deregistraion (Alan Stern)  [Orabug: 31317668]  {CVE-2019-19537}\n- USB: iowarrior: fix use-after-free on disconnect (Johan Hovold)  [Orabug: 31351063]  {CVE-2019-19528}\n- usb: iowarrior: fix deadlock on disconnect (Oliver Neukum)  [Orabug: 31351063]  {CVE-2019-19528}\n- mremap: properly flush TLB before releasing the page (Linus Torvalds)  [Orabug: 31352012]  {CVE-2018-18281}",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4125.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-18281.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-19523.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-19528.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-19537.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-5706.html"
+				}
+			],
+			"published": "2020-06-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-4125",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4125.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-18281",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-18281.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-19523",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-19523.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-19528",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-19528.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-19537",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-19537.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dtrace-modules-3.8.13-118.46.1.el6uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.4.5-3.el6"
+								}
+							],
+							"fixed": [
+								"0:0.4.5-3.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.46.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.46.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.46.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.46.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.46.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.46.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.46.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.46.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.46.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.46.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.46.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.46.1.el6uek"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dtrace-modules-3.8.13-118.46.1.el7uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.4.5-3.el7"
+								}
+							],
+							"fixed": [
+								"0:0.4.5-3.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.46.1.el7uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.46.1.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.46.1.el7uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.46.1.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.46.1.el7uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.46.1.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.46.1.el7uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.46.1.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.46.1.el7uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.46.1.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.46.1.el7uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.46.1.el7uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

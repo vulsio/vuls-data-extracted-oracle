@@ -1,0 +1,130 @@
+{
+	"id": "ELSA-2019-1883",
+	"advisories": [
+		{
+			"id": "ELSA-2019-1883",
+			"title": "ELSA-2019-1883:  qemu-kvm security update (IMPORTANT)",
+			"description": "[1.5.3-160.el7_6.3]\n- kvm-slirp-check-sscanf-result-when-emulating-ident.patch [bz#1669067]\n- kvm-slirp-fix-big-little-endian-conversion-in-ident-prot.patch [bz#1669067]\n- kvm-slirp-ensure-there-is-enough-space-in-mbuf-to-null-t.patch [bz#1669067]\n- kvm-slirp-don-t-manipulate-so_rcv-in-tcp_emu.patch [bz#1669067]\n- Resolves: bz#1669067\n  (CVE-2019-6778 qemu-kvm: QEMU: slirp: heap buffer overflow in tcp_emu() [rhel-7.6.z])",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-6778.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-1883.html"
+				}
+			],
+			"published": "2019-07-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-6778",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-6778.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-img",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-160.el7_6.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-160.el7_6.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-160.el7_6.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-160.el7_6.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-common",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-160.el7_6.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-160.el7_6.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-160.el7_6.3"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-160.el7_6.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

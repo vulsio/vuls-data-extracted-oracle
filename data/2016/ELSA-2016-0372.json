@@ -1,0 +1,151 @@
+{
+	"id": "ELSA-2016-0372",
+	"advisories": [
+		{
+			"id": "ELSA-2016-0372",
+			"title": "ELSA-2016-0372:  openssl098e security update (IMPORTANT)",
+			"description": "[0.9.8e-20.0.1.1]\n- Updated the description\n\n[0.9.8e-20.1]\n- fix CVE-2015-0293 - triggerable assert in SSLv2 server\n- fix CVE-2015-3197 - SSLv2 ciphersuite enforcement\n- disable SSLv2 in the generic TLS method\n\n[0.9.8e-20]\n- fix for CVE-2014-0224 - SSL/TLS MITM vulnerability",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0293.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3197.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0703.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0704.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0800.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-0372.html"
+				}
+			],
+			"published": "2016-03-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-0293",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0293.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-3197",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-3197.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-0703",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0703.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-0704",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0704.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-0800",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0800.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl098e",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.8e-20.0.1.el6_7.1"
+								}
+							],
+							"fixed": [
+								"0:0.9.8e-20.0.1.el6_7.1"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl098e",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.8e-29.el7_2.3"
+								}
+							],
+							"fixed": [
+								"0:0.9.8e-29.el7_2.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

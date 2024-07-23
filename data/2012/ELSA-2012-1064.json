@@ -1,0 +1,252 @@
+{
+	"id": "ELSA-2012-1064",
+	"advisories": [
+		{
+			"id": "ELSA-2012-1064",
+			"title": "ELSA-2012-1064:  kernel security and bug fix update (IMPORTANT)",
+			"description": "[2.6.32-279.1.1.el6]\n- [kernel] Prevent keyctl new_session from causing a panic (David Howells) [833433 827424] {CVE-2012-2745}\n- [net] ipv6/netfilter: fix null pointer dereference in nf_ct_frag6_reasm() (Petr Matousek) [833410 833412] {CVE-2012-2744}\n- [fs] nfs: Map minor mismatch error to protocol not support error (Steve Dickson) [832365 796352]\n- [fs] ext4: Fix overflow caused by missing cast in ext4_fallocate() (Lukas Czerner) [833034 830209]\n- [ata] libata: Add 2GB ATA Flash Disk/ADMA428M to DMA blacklist (Prarit Bhargava) [832363 812904]\n- [netdrv] r8169: fix typo in firmware filenames (Ivan Vecera) [832359 829211]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-2744.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-2745.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1064.html"
+				}
+			],
+			"published": "2012-07-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-2744",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-2744.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-2745",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-2745.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-firmware",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.1.1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

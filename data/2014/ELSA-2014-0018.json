@@ -1,0 +1,144 @@
+{
+	"id": "ELSA-2014-0018",
+	"advisories": [
+		{
+			"id": "ELSA-2014-0018",
+			"title": "ELSA-2014-0018:  libxfont security update (IMPORTANT)",
+			"description": "[1.4.5-3]\n- cve-2013-6462.patch: sscanf overflow (bug 1049684)\n- sscanf-hardening.patch: Some other sscanf hardening fixes (1049684)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-6462.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0018.html"
+				}
+			],
+			"published": "2014-01-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-6462",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-6462.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libXfont",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.2-1.0.5.el5_10"
+								}
+							],
+							"fixed": [
+								"0:1.2.2-1.0.5.el5_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libXfont-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.2-1.0.5.el5_10"
+								}
+							],
+							"fixed": [
+								"0:1.2.2-1.0.5.el5_10"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libXfont",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.5-3.el6_5"
+								}
+							],
+							"fixed": [
+								"0:1.4.5-3.el6_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libXfont-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.5-3.el6_5"
+								}
+							],
+							"fixed": [
+								"0:1.4.5-3.el6_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

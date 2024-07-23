@@ -1,0 +1,288 @@
+{
+	"id": "ELSA-2021-9419",
+	"advisories": [
+		{
+			"id": "ELSA-2021-9419",
+			"title": "ELSA-2021-9419: Unbreakable Enterprise kernel security update (IMPORTANT)",
+			"description": "[4.14.35-2047.506.10]\n- Revert 'rds/ib: reap tx completions during connection shutdown' (Manjunath Patil)  [Orabug: 33220435] \n- Revert 'rds/ib: handle posted ACK during connection shutdown' (Manjunath Patil)  [Orabug: 33220435] \n- Revert 'rds/ib: recover rds connection from interrupt loss scenario' (Manjunath Patil)  [Orabug: 33220435] \n- Revert 'rds/ib: move rds_ib_clear_irq_miss() to .h file' (Manjunath Patil)  [Orabug: 33220435]\n\n[4.14.35-2047.506.9]\n- KVM: nSVM: always intercept VMLOAD/VMSAVE when nested (Maxim Levitsky)  [Orabug: 33205367]  {CVE-2021-3656} {CVE-2021-3656}\n- KVM: nSVM: avoid picking up unsupported bits from L2 in int_ctl (Maxim Levitsky)  [Orabug: 33205444]  {CVE-2021-3653} {CVE-2021-3653}",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3653.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3656.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-9419.html"
+				}
+			],
+			"published": "2021-08-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-3653",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3653.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-3656",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3656.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.506.10.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.506.10.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.506.10.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.506.10.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.506.10.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.506.10.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.506.10.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.506.10.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.506.10.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.506.10.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-headers",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.506.10.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.506.10.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.506.10.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.506.10.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools-libs",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.506.10.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.506.10.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools-libs-devel",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.506.10.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.506.10.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.506.10.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.506.10.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.506.10.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.506.10.el7uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

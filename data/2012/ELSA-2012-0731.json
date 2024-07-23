@@ -1,0 +1,158 @@
+{
+	"id": "ELSA-2012-0731",
+	"advisories": [
+		{
+			"id": "ELSA-2012-0731",
+			"title": "ELSA-2012-0731:  expat security update (MODERATE)",
+			"description": "[2.0.1-11]\n- use symbol version for XML_SetHashSalt (CVE-2012-0876, #816306)\n\n[2.0.1-10]\n- add security fix for CVE-2012-1148 (#811825)\n- add security fix for CVE-2012-0876 (#811833)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0876.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-1148.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-0731.html"
+				}
+			],
+			"published": "2012-06-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-0876",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0876.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-1148",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-1148.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "expat",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.95.8-11.el5_8"
+								}
+							],
+							"fixed": [
+								"0:1.95.8-11.el5_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "expat-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.95.8-11.el5_8"
+								}
+							],
+							"fixed": [
+								"0:1.95.8-11.el5_8"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "expat",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.1-11.el6_2"
+								}
+							],
+							"fixed": [
+								"0:2.0.1-11.el6_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "expat-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.1-11.el6_2"
+								}
+							],
+							"fixed": [
+								"0:2.0.1-11.el6_2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,229 @@
+{
+	"id": "ELSA-2010-0112",
+	"advisories": [
+		{
+			"id": "ELSA-2010-0112",
+			"title": "ELSA-2010-0112:  firefox security update (CRITICAL)",
+			"description": "firefox:\n\n[3.0.18-1.0.1.el5_4]\n- Update firstrun and homepage URLs in specfile\n- Added patch oracle-firefox-branding.patch\n- Added firefox-oracle-default-prefs.js/firefox-oracle-default-bookmarks.html\n  and removed the corresponding RedHat ones\n\n[3.0.18-1]\n- Update to 3.0.18\n\nxulrunner:\n\n[1.9.0.18-1.0.1.el5_4]\n- Added xulrunner-oracle-default-prefs.js and removed the corresponding\n  RedHat one.\n\n[1.9.0.18-1]\n- Update to 1.9.0.18",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1571.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3988.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0159.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0160.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0162.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0167.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0169.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0171.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0112.html"
+				}
+			],
+			"published": "2010-02-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-1571",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1571.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-3988",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3988.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-0159",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0159.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-0160",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0160.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-0162",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0162.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-0167",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0167.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-0169",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0169.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-0171",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-0171.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.18-1.0.1.el5_4"
+								}
+							],
+							"fixed": [
+								"0:3.0.18-1.0.1.el5_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xulrunner",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.0.18-1.0.1.el5_4"
+								}
+							],
+							"fixed": [
+								"0:1.9.0.18-1.0.1.el5_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xulrunner-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.0.18-1.0.1.el5_4"
+								}
+							],
+							"fixed": [
+								"0:1.9.0.18-1.0.1.el5_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xulrunner-devel-unstable",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.0.18-1.0.1.el5_4"
+								}
+							],
+							"fixed": [
+								"0:1.9.0.18-1.0.1.el5_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

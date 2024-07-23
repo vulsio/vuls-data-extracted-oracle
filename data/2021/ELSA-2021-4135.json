@@ -1,0 +1,624 @@
+{
+	"id": "ELSA-2021-4135",
+	"advisories": [
+		{
+			"id": "ELSA-2021-4135",
+			"title": "ELSA-2021-4135:  java-17-openjdk security update (IMPORTANT)",
+			"description": "[1:17.0.1.0.12-2]\n- Extend LTS check to exclude EPEL.\n- Related: rhbz#2013841\n\n[1:17.0.1.0.12-2]\n- Set LTS designator.\n- Related: rhbz#2013841\n\n[1:17.0.1.0.12-1]\n- Drop JDK-8272332/RH2004078 patch which is upstream in 17.0.1\n- Resolves: rhbz#2013841\n\n[1:17.0.1.0.12-1]\n- October CPU update to jdk 17.0.1+12\n- Dropped commented-out source line\n- Resolves: rhbz#2013841",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35556.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35559.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35561.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35564.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35567.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35578.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35586.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35603.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-4135.html"
+				}
+			],
+			"published": "2021-11-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-35556",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35556.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-35559",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35559.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-35561",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35561.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-35564",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35564.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-35567",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35567.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-35578",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35578.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-35586",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35586.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-35603",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35603.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-demo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-demo-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-demo-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-devel-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-devel-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-headless",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-headless-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-headless-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-javadoc-zip",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-jmods",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-jmods-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-jmods-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-src-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-src-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-static-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-static-libs-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-17-openjdk-static-libs-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:17.0.1.0.12-2.el8_5"
+								}
+							],
+							"fixed": [
+								"1:17.0.1.0.12-2.el8_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

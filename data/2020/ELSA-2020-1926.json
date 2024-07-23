@@ -1,0 +1,365 @@
+{
+	"id": "ELSA-2020-1926",
+	"advisories": [
+		{
+			"id": "ELSA-2020-1926",
+			"title": "ELSA-2020-1926:  container-tools:1.0 security and bug fix update (IMPORTANT)",
+			"description": "buildah\n[1.5-4.0.1.gite94b4f9]\n- Fixes troubles with oracle registry login [Orabug: 29937283]\n\n[1.5-4.gite94b4f9]\n- fix 'CVE-2020-10696 buildah: crafted input tar file may lead to local file overwriting during image build process'\n- Resolves: #1819431\n\n\ncontainer-selinux\n[2:2.124.0-1.gitf958d0c]\n- update to 2.124.0\n- Resolves: #1816541\n\n[2:2.94-2.git1e99f1d]\n- rebuild because of CVE-2019-9512 and CVE-2019-9514\n- Resolves: #1766316, #1766215\n\nslirp4netns\n[0.1-5.dev.gitc4e1bc5]\n- backport fix for CVE-2020-7039\n- Resolves: #1791578\n\n[0.1-4.dev.gitc4e1bc5]\n- actually add CVE-2019-14378 patch to dist-git\n- Related: RHELPLAN-25139",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10696.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-1926.html"
+				}
+			],
+			"published": "2020-05-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-10696",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10696.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::buildah",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5-4.0.1.gite94b4f9.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"0:1.5-4.0.1.gite94b4f9.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::container-selinux",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.124.0-1.gitf958d0c.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"2:2.124.0-1.gitf958d0c.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::containernetworking-plugins",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.7.4-3.git9ebe139.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"0:0.7.4-3.git9ebe139.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::containers-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.1.32-4.0.2.git1715c90.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"1:0.1.32-4.0.2.git1715c90.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::crit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12-9.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"0:3.12-9.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::criu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12-9.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"0:3.12-9.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::fuse-overlayfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.3-5.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"0:0.3-5.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::oci-systemd-hook",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.1.15-2.git2d0b8a3.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"1:0.1.15-2.git2d0b8a3.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::oci-umount",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.3.4-2.git87f9237.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"2:2.3.4-2.git87f9237.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::podman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.0-4.git921f98f.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"0:1.0.0-4.git921f98f.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::podman-docker",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.0-4.git921f98f.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"0:1.0.0-4.git921f98f.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::python3-criu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.12-9.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"0:3.12-9.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::runc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.0-56.rc5.dev.git2abd837.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"0:1.0.0-56.rc5.dev.git2abd837.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::skopeo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.1.32-4.0.2.git1715c90.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"1:0.1.32-4.0.2.git1715c90.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "container-tools:1.0::slirp4netns",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.1-5.dev.gitc4e1bc5.module+el8.2.0+7621+b33f33e5"
+								}
+							],
+							"fixed": [
+								"0:0.1-5.dev.gitc4e1bc5.module+el8.2.0+7621+b33f33e5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

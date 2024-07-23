@@ -1,0 +1,113 @@
+{
+	"id": "ELSA-2017-0893",
+	"advisories": [
+		{
+			"id": "ELSA-2017-0893",
+			"title": "ELSA-2017-0893:  389-ds-base security and bug fix update (IMPORTANT)",
+			"description": "[1.2.1.11.15-91]\n- Release 1.2.11.15-91\n- Resolves: bug 1437777 - EMBARGOED CVE-2017-2668 389-ds-base: Remote crash via crafted LDAP messages\n\n[1.2.11.15-90]\n- Release 1.2.11.15-90\n- Resovles: #1435365 - Unable to dereference unqiemember attribute because it is dn [#UID] not dn syntax",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-2668.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0893.html"
+				}
+			],
+			"published": "2017-04-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-2668",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-2668.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds-base",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.11.15-91.el6_9"
+								}
+							],
+							"fixed": [
+								"0:1.2.11.15-91.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds-base-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.11.15-91.el6_9"
+								}
+							],
+							"fixed": [
+								"0:1.2.11.15-91.el6_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds-base-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.11.15-91.el6_9"
+								}
+							],
+							"fixed": [
+								"0:1.2.11.15-91.el6_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

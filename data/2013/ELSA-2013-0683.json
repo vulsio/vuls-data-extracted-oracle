@@ -1,0 +1,116 @@
+{
+	"id": "ELSA-2013-0683",
+	"advisories": [
+		{
+			"id": "ELSA-2013-0683",
+			"title": "ELSA-2013-0683:  axis security update (MODERATE)",
+			"description": "[0:1.2.1-2jpp.7]\n- Add missing connection hostname check against X.509 certificate name\n- Resolves: CVE-2012-5784\n- Add patches to build with java 1.6",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5784.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0683.html"
+				}
+			],
+			"published": "2013-03-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-5784",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5784.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "axis",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.1-2jpp.7.el5_9"
+								}
+							],
+							"fixed": [
+								"0:1.2.1-2jpp.7.el5_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "axis-javadoc",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.1-2jpp.7.el5_9"
+								}
+							],
+							"fixed": [
+								"0:1.2.1-2jpp.7.el5_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "axis-manual",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.1-2jpp.7.el5_9"
+								}
+							],
+							"fixed": [
+								"0:1.2.1-2jpp.7.el5_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

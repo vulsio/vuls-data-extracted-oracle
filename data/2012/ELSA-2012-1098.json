@@ -1,0 +1,223 @@
+{
+	"id": "ELSA-2012-1098",
+	"advisories": [
+		{
+			"id": "ELSA-2012-1098",
+			"title": "ELSA-2012-1098:  glibc security and bug fix update (MODERATE)",
+			"description": "[2.12-1.80.el6_3.3]\n- Fix incorrect/corrupt patchfile for 833716.  Did not\n    affect generated code, but tests were missing (#833716).\n\n[2.12-1.80.el6_3.2]\n- Fix regression after patch for BZ804630 (#837026).\n\n[2.12-1.80.el6_3.1]\n- Fixes an unbound alloca and related problems. (#833716)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3404.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3405.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3406.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1098.html"
+				}
+			],
+			"published": "2012-07-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-3404",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3404.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-3405",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3405.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-3406",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3406.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.80.el6_3.3"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.80.el6_3.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-common",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.80.el6_3.3"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.80.el6_3.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.80.el6_3.3"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.80.el6_3.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-headers",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.80.el6_3.3"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.80.el6_3.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-static",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.80.el6_3.3"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.80.el6_3.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-utils",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.80.el6_3.3"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.80.el6_3.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nscd",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.12-1.80.el6_3.3"
+								}
+							],
+							"fixed": [
+								"0:2.12-1.80.el6_3.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

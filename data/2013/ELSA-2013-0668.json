@@ -1,0 +1,670 @@
+{
+	"id": "ELSA-2013-0668",
+	"advisories": [
+		{
+			"id": "ELSA-2013-0668",
+			"title": "ELSA-2013-0668:  boost security update (MODERATE)",
+			"description": "[1.41.0-15]\n- Add in explicit dependences between some boost subpackages\n\n[1.41.0-14]\n- Build with -fno-strict-aliasing\n\n[1.41.0-13]\n- In Boost.Pool, be careful not to overflow allocated chunk size\n  (boost-1.41.0-pool.patch)\n\n[1.41.0-12]\n- Add an upstream patch that fixes computation of CRC in zlib streams.\n- Resolves: #707624",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-2677.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0668.html"
+				}
+			],
+			"published": "2013-03-21T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-2677",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-2677.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.33.1-16.el5_9"
+								}
+							],
+							"fixed": [
+								"0:1.33.1-16.el5_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.33.1-16.el5_9"
+								}
+							],
+							"fixed": [
+								"0:1.33.1-16.el5_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-doc",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.33.1-16.el5_9"
+								}
+							],
+							"fixed": [
+								"0:1.33.1-16.el5_9"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-date-time",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-filesystem",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-graph",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-graph-mpich2",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-graph-openmpi",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-iostreams",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-math",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-mpich2",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-mpich2-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-mpich2-python",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-openmpi",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-openmpi-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-openmpi-python",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-program-options",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-python",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-regex",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-serialization",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-signals",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-static",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-system",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-test",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-thread",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "boost-wave",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.41.0-15.el6_4"
+								}
+							],
+							"fixed": [
+								"0:1.41.0-15.el6_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

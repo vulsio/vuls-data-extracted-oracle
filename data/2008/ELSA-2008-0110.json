@@ -1,0 +1,189 @@
+{
+	"id": "ELSA-2008-0110",
+	"advisories": [
+		{
+			"id": "ELSA-2008-0110",
+			"title": "ELSA-2008-0110:  Moderate: openldap security update  (MODERATE)",
+			"description": "[2.3.27-8.3]\n - better fix for CVE-2007-6698 (#431407), now it fixes also\n   modrdn operations\n \n [2.3.27-8.2]\n - fix CVE-2007-6698 (#431407)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-6698.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-0658.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2008-0110.html"
+				}
+			],
+			"published": "2008-02-21T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-6698",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-6698.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-0658",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-0658.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "compat-openldap",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.27_2.2.29-8.el5_1.3"
+								}
+							],
+							"fixed": [
+								"0:2.3.27_2.2.29-8.el5_1.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openldap",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.27-8.el5_1.3"
+								}
+							],
+							"fixed": [
+								"0:2.3.27-8.el5_1.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openldap-clients",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.27-8.el5_1.3"
+								}
+							],
+							"fixed": [
+								"0:2.3.27-8.el5_1.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openldap-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.27-8.el5_1.3"
+								}
+							],
+							"fixed": [
+								"0:2.3.27-8.el5_1.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openldap-servers",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.27-8.el5_1.3"
+								}
+							],
+							"fixed": [
+								"0:2.3.27-8.el5_1.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openldap-servers-sql",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.3.27-8.el5_1.3"
+								}
+							],
+							"fixed": [
+								"0:2.3.27-8.el5_1.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,314 @@
+{
+	"id": "ELSA-2018-1278",
+	"advisories": [
+		{
+			"id": "ELSA-2018-1278",
+			"title": "ELSA-2018-1278:  java-1.7.0-openjdk security update (IMPORTANT)",
+			"description": "[1:1.7.0.181-2.6.14.5.0.1]\n- Update DISTRO_NAME in specfile\n\n[1:1.7.0.181-2.6.14.5]\n- added depndence on latest c-j-c who do not have the incorrect jre-abrt handling\n- Resolves: rhbz#1559766\n\n[1:1.7.0.181-2.6.14.3]\n- Bump release number to an unused one as rhel-7.5-z-java-unsafe-candidate wrongly using .el7\n- Resolves: rhbz#1559766\n\n[1:1.7.0.181-2.6.14.1]\n- Fix invalid license 'LGPL+' (should be LGPLv2+ for ECC code) and add missing ones\n- Resolves: rhbz#1559766\n\n[1:1.7.0.181-2.6.14.0]\n- Bump to 2.6.14 and u181b00.\n- Drop 8197981 Zero 32-bit patch now applied upstream.\n- Update RC4 patch (8076221/PR2809) to apply after 8175075 (disable 3DES)\n- Resolves: rhbz#1559766",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2790.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2794.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2795.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2796.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2797.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2798.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2799.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2800.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2814.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2815.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-1278.html"
+				}
+			],
+			"published": "2018-05-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-2790",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2790.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-2794",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2794.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-2795",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2795.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-2796",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2796.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-2797",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2797.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-2798",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2798.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-2799",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2799.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-2800",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2800.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-2814",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2814.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-2815",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-2815.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.181-2.6.14.5.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.181-2.6.14.5.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-accessibility",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.181-2.6.14.5.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.181-2.6.14.5.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-demo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.181-2.6.14.5.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.181-2.6.14.5.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.181-2.6.14.5.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.181-2.6.14.5.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-headless",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.181-2.6.14.5.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.181-2.6.14.5.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.181-2.6.14.5.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.181-2.6.14.5.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.181-2.6.14.5.0.1.el7"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.181-2.6.14.5.0.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

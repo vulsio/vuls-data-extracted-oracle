@@ -1,0 +1,72 @@
+{
+	"id": "ELSA-2010-0603",
+	"advisories": [
+		{
+			"id": "ELSA-2010-0603",
+			"title": "ELSA-2010-0603:  gnupg2 security update (MODERATE)",
+			"description": "[2.0.10-3.1]\n- fix use after free when importing certain X509 certificates\n  CVE-2010-2547 (#618156)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2547.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0603.html"
+				}
+			],
+			"published": "2010-08-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-2547",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2547.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gnupg2",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.10-3.el5_5.1"
+								}
+							],
+							"fixed": [
+								"0:2.0.10-3.el5_5.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

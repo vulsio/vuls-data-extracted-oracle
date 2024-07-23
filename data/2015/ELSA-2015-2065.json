@@ -1,0 +1,116 @@
+{
+	"id": "ELSA-2015-2065",
+	"advisories": [
+		{
+			"id": "ELSA-2015-2065",
+			"title": "ELSA-2015-2065:  xen security update (IMPORTANT)",
+			"description": "[3.0.3-147.el5]\n- net: add checks to validate ring buffer pointers\n- Resolves: bz#1263273\n  (xen: qemu: Heap overflow vulnerability in ne2000_receive() function)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-5279.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-2065.html"
+				}
+			],
+			"published": "2015-11-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-5279",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-5279.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xen",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.3-147.el5_11"
+								}
+							],
+							"fixed": [
+								"0:3.0.3-147.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xen-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.3-147.el5_11"
+								}
+							],
+							"fixed": [
+								"0:3.0.3-147.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xen-libs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.3-147.el5_11"
+								}
+							],
+							"fixed": [
+								"0:3.0.3-147.el5_11"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

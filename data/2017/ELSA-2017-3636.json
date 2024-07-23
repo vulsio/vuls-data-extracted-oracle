@@ -1,0 +1,455 @@
+{
+	"id": "ELSA-2017-3636",
+	"advisories": [
+		{
+			"id": "ELSA-2017-3636",
+			"title": "ELSA-2017-3636: Unbreakable Enterprise kernel security update (IMPORTANT)",
+			"description": "kernel-uek\n[3.8.13-118.19.12]\n- nvme: Drop nvmeq->q_lock before dma_pool_alloc(), so as to prevent hard lockups (Aruna Ramakrishna)  [Orabug: 25409587]\n\n[3.8.13-118.19.11]\n- nvme: Handle PM1725 HIL reset (Martin K. Petersen)  [Orabug: 26277600] \n- char: lp: fix possible integer overflow in lp_setup() (Willy Tarreau)  [Orabug: 26403940]  {CVE-2017-1000363}\n- ALSA: timer: Fix missing queue indices reset at SNDRV_TIMER_IOCTL_SELECT (Takashi Iwai)  [Orabug: 26403956]  {CVE-2017-1000380}\n- ALSA: timer: Fix race between read and ioctl (Takashi Iwai)  [Orabug: 26403956]  {CVE-2017-1000380}\n- ALSA: timer: fix NULL pointer dereference in read()/ioctl() race (Vegard Nossum)  [Orabug: 26403956]  {CVE-2017-1000380}\n- ALSA: timer: Fix negative queue usage by racy accesses (Takashi Iwai)  [Orabug: 26403956]  {CVE-2017-1000380}\n- ALSA: timer: Fix race at concurrent reads (Takashi Iwai)  [Orabug: 26403956]  {CVE-2017-1000380}\n- ALSA: timer: Fix race among timer ioctls (Takashi Iwai)  [Orabug: 26403956]  {CVE-2017-1000380}\n- ipv6/dccp: do not inherit ipv6_mc_list from parent (WANG Cong)  [Orabug: 26404005]  {CVE-2017-9077}\n- ocfs2: fix deadlock issue when taking inode lock at vfs entry points (Eric Ren)  [Orabug: 26427126] \n- ocfs2/dlmglue: prepare tracking logic to avoid recursive cluster lock (Eric Ren)  [Orabug: 26427126] \n- ping: implement proper locking (Eric Dumazet)  [Orabug: 26540286]  {CVE-2017-2671}\n- aio: mark AIO pseudo-fs noexec (Jann Horn)  [Orabug: 26643598]  {CVE-2016-10044}\n- vfs: Commit to never having exectuables on proc and sysfs. (Eric W. Biederman)  [Orabug: 26643598]  {CVE-2016-10044}\n- vfs, writeback: replace FS_CGROUP_WRITEBACK with SB_I_CGROUPWB (Tejun Heo)  [Orabug: 26643598]  {CVE-2016-10044}\n- x86/acpi: Prevent out of bound access caused by broken ACPI tables (Seunghun Han)  [Orabug: 26643645]  {CVE-2017-11473}\n- sctp: do not inherit ipv6_{mc|ac|fl}_list from parent (Eric Dumazet)  [Orabug: 26650883]  {CVE-2017-9075}\n- [media] saa7164: fix double fetch PCIe access condition (Steven Toth)  [Orabug: 26675142]  {CVE-2017-8831}\n- [media] saa7164: fix sparse warnings (Hans Verkuil)  [Orabug: 26675142]  {CVE-2017-8831}\n- fs: __generic_file_splice_read retry lookup on AOP_TRUNCATED_PAGE (Abhi Das)  [Orabug: 26797306] \n- timerfd: Protect the might cancel mechanism proper (Thomas Gleixner)  [Orabug: 26899787]  {CVE-2017-10661}\n- scsi: scsi_transport_iscsi: fix the issue that iscsi_if_rx doesn't parse nlmsg properly (Xin Long)  [Orabug: 26988627]  {CVE-2017-14489}",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-10044.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-1000363.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-1000380.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10661.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-11473.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14489.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-2671.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-8831.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-9075.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-9077.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-3636.html"
+				}
+			],
+			"published": "2017-11-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-10044",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-10044.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-1000363",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-1000363.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-1000380",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-1000380.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-10661",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-10661.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-11473",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-11473.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-14489",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-14489.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-2671",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-2671.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-8831",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-8831.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-9075",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-9075.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-9077",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-9077.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dtrace-modules-3.8.13-118.19.12.el6uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.4.5-3.el6"
+								}
+							],
+							"fixed": [
+								"0:0.4.5-3.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.19.12.el6uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.19.12.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.19.12.el6uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.19.12.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.19.12.el6uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.19.12.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.19.12.el6uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.19.12.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.19.12.el6uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.19.12.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.19.12.el6uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.19.12.el6uek"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dtrace-modules-3.8.13-118.19.12.el7uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.4.5-3.el7"
+								}
+							],
+							"fixed": [
+								"0:0.4.5-3.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.19.12.el7uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.19.12.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.19.12.el7uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.19.12.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.19.12.el7uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.19.12.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.19.12.el7uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.19.12.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.19.12.el7uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.19.12.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.8.13-118.19.12.el7uek"
+								}
+							],
+							"fixed": [
+								"0:3.8.13-118.19.12.el7uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

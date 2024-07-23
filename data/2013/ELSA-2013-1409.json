@@ -1,0 +1,102 @@
+{
+	"id": "ELSA-2013-1409",
+	"advisories": [
+		{
+			"id": "ELSA-2013-1409",
+			"title": "ELSA-2013-1409:  xinetd security update (MODERATE)",
+			"description": "[2:2.3.14-39]\n- Honor user and group directives\n- Resolves: CVE-2013-4342",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4342.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-1409.html"
+				}
+			],
+			"published": "2013-10-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-4342",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4342.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xinetd",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.3.14-20.el5_10"
+								}
+							],
+							"fixed": [
+								"2:2.3.14-20.el5_10"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xinetd",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.3.14-39.el6_4"
+								}
+							],
+							"fixed": [
+								"2:2.3.14-39.el6_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2020-4687",
+	"advisories": [
+		{
+			"id": "ELSA-2020-4687",
+			"title": "ELSA-2020-4687:  oddjob security, bug fix, and enhancement update (MODERATE)",
+			"description": "[0.34.5-3]\n- Support HOME_MODE from /etc/login.defs\n  Resolves: rhbz#1886362\n\n[0.34.5-2]\n- Add gating tests using idm:DL1 module stream and upstream tests\n  Resolves: rhbz#1682457\n\n[0.34.5-1]\n- Upstream release 0.34.5\n- Resolves: rhbz#1833289 - Rebase oddjob to 0.34.5\n- Resolves: rhbz#1833052 - CVE-2020-10737\n  oddjob: race condition in oddjob_selinux_mkdir function in mkhomedir.c can lead to symlink attack",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10737.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-4687.html"
+				}
+			],
+			"published": "2020-11-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-10737",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10737.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oddjob",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.34.5-3.el8"
+								}
+							],
+							"fixed": [
+								"0:0.34.5-3.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oddjob-mkhomedir",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.34.5-3.el8"
+								}
+							],
+							"fixed": [
+								"0:0.34.5-3.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

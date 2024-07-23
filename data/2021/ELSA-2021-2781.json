@@ -1,0 +1,552 @@
+{
+	"id": "ELSA-2021-2781",
+	"advisories": [
+		{
+			"id": "ELSA-2021-2781",
+			"title": "ELSA-2021-2781:  java-11-openjdk security update (IMPORTANT)",
+			"description": "[1:11.0.12.0.7-0]\n- Update to jdk-11.0.12.0+7\n- Update release notes to 11.0.12.0+7\n- Switch to GA mode for final release.\n- This tarball is embargoed until 2021-07-20 @ 1pm PT.\n- Resolves: rhbz#1972395\n\n[1:11.0.12.0.6-0.0.ea]\n- Update to jdk-11.0.12.0+6\n- Update release notes to 11.0.12.0+6\n- Switch to EA mode for 11.0.12 pre-release builds.\n- Update ECC patch following JDK-8226374 (bug ID yet to be confirmed)\n- Re-order source files to sync with Fedora.\n- Remove explicit compiler flags which should be handled by the upstream build\n  (-std=gnu++98, -fno-delete-null-pointer-checks, -fno-lifetime-dse)\n- Use the 'reverse' build loop (debug first) as the main and only build loop to get more diagnostics.\n- Remove restriction on disabling product build, as debug packages no longer have javadoc packages.\n- Correct bug ID JDK-8264846 to intended ID of JDK-8264848\n- Skip 11.0.12.0+5 as 11.0.12.0+6 only adds a test change\n- Resolves: rhbz#1972395\n\n[1:11.0.12.0.6-0.0.ea]\n- Add a test verifying system crypto policies can be disabled\n- Resolves: rhbz#1972395",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2341.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2369.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2388.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-2781.html"
+				}
+			],
+			"published": "2021-07-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-2341",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2341.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-2369",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2369.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-2388",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2388.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-demo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-demo-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-demo-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-devel-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-devel-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-headless",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-headless-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-headless-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-javadoc-zip",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-jmods",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-jmods-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-jmods-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-src-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-src-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-static-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-static-libs-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-static-libs-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.12.0.7-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:11.0.12.0.7-0.el8_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

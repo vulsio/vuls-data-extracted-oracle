@@ -1,0 +1,239 @@
+{
+	"id": "ELSA-2023-5712",
+	"advisories": [
+		{
+			"id": "ELSA-2023-5712",
+			"title": "ELSA-2023-5712:  nginx:1.20 security update (MODERATE)",
+			"description": "[1:1.20.1-1.0.1.1]\n- Resolves: RHEL-12732 - nginx:1.20/nginx: HTTP/2: Multiple HTTP/2 enabled web\n  servers are vulnerable to a DDoS attack (Rapid Reset Attack) (CVE-2023-44487)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-44487.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-5712.html"
+				}
+			],
+			"published": "2023-10-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-44487",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-44487.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.20::nginx",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+								}
+							],
+							"fixed": [
+								"1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.20::nginx-all-modules",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+								}
+							],
+							"fixed": [
+								"1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.20::nginx-filesystem",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+								}
+							],
+							"fixed": [
+								"1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.20::nginx-mod-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+								}
+							],
+							"fixed": [
+								"1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.20::nginx-mod-http-image-filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+								}
+							],
+							"fixed": [
+								"1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.20::nginx-mod-http-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+								}
+							],
+							"fixed": [
+								"1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.20::nginx-mod-http-xslt-filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+								}
+							],
+							"fixed": [
+								"1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.20::nginx-mod-mail",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+								}
+							],
+							"fixed": [
+								"1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nginx:1.20::nginx-mod-stream",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+								}
+							],
+							"fixed": [
+								"1:1.20.1-1.0.1.module+el8.8.0+21179+be6d61e7.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

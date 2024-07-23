@@ -1,0 +1,110 @@
+{
+	"id": "ELSA-2022-9466",
+	"advisories": [
+		{
+			"id": "ELSA-2022-9466",
+			"title": "ELSA-2022-9466:  shim-signed security update (IMPORTANT)",
+			"description": "[15.6-1.0.7]\n- Update shimx64.efi and shimia32.efi signed by Microsoft [JIRA: OLDIS-16370]\n\n[15.6-1.0.5]\n- Update to shim-unsigned v15.6.rc2 [JIRA: OLDIS-16370]\n\n[15.6-1.0.3]\n- Add all algorithms using OPENSSL_add_all_algorithms [JIRA: OLDIS-16370]\n\n[15.6-1.0.1]\n- Update to 15.6.rc1 [JIRA: OLDIS-16370]\n- update CVE-2022-28737 patches [JIRA: OLDIS-16370]\n- Fix CVE-2022-28737 [JIRA: OLDIS-16370]\n\n[15.5-1.0.1]\n- update mokutils [JIRA: OLDIS-16370]\n- Import shim-15.5-1.0.1 [JIRA: OLDIS-16370]\n- Update vendor certs [JIRA: OLDIS-16370]\n- Update oracle(grub2-sig-key) [JIRA: OLDIS-16370]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-28737.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-9466.html"
+				}
+			],
+			"published": "2022-06-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-28737",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-28737.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mokutil",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:15.6-1.0.7.el7"
+								}
+							],
+							"fixed": [
+								"0:15.6-1.0.7.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "shim-ia32",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:15.6-1.0.7.el7"
+								}
+							],
+							"fixed": [
+								"0:15.6-1.0.7.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "shim-x64",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:15.6-1.0.7.el7"
+								}
+							],
+							"fixed": [
+								"0:15.6-1.0.7.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

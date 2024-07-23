@@ -1,0 +1,223 @@
+{
+	"id": "ELSA-2024-2616",
+	"advisories": [
+		{
+			"id": "ELSA-2024-2616",
+			"title": "ELSA-2024-2616:  tigervnc security update (IMPORTANT)",
+			"description": "[1.13.1-8.3]\n- Rebuild (z-stream target)\n  Resolves: RHEL-30985\n  Resolves: RHEL-31015\n\n[1.13.1-8.2]\n- Fix crash caused by fix for CVE-2024-31083\n  Resolves: RHEL-30985\n\n[1.13.1-8.1]\n- Fix CVE-2024-31080 tigervnc: xorg-x11-server: Heap buffer overread/data leakage in ProcXIGetSelectedEvents\n  Resolves: RHEL-31015\n- Fix CVE-2024-31083 tigervnc: xorg-x11-server: User-after-free in ProcRenderAddGlyphs\n  Resolves: RHEL-30985",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-31080.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-31081.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-31083.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-2616.html"
+				}
+			],
+			"published": "2024-05-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2024-31080",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-31080.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-31081",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-31081.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-31083",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-31083.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.13.1-8.el9_4.3"
+								}
+							],
+							"fixed": [
+								"0:1.13.1-8.el9_4.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc-icons",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.13.1-8.el9_4.3"
+								}
+							],
+							"fixed": [
+								"0:1.13.1-8.el9_4.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc-license",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.13.1-8.el9_4.3"
+								}
+							],
+							"fixed": [
+								"0:1.13.1-8.el9_4.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc-selinux",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.13.1-8.el9_4.3"
+								}
+							],
+							"fixed": [
+								"0:1.13.1-8.el9_4.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.13.1-8.el9_4.3"
+								}
+							],
+							"fixed": [
+								"0:1.13.1-8.el9_4.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc-server-minimal",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.13.1-8.el9_4.3"
+								}
+							],
+							"fixed": [
+								"0:1.13.1-8.el9_4.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tigervnc-server-module",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.13.1-8.el9_4.3"
+								}
+							],
+							"fixed": [
+								"0:1.13.1-8.el9_4.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

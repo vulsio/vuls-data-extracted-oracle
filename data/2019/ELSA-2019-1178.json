@@ -1,0 +1,169 @@
+{
+	"id": "ELSA-2019-1178",
+	"advisories": [
+		{
+			"id": "ELSA-2019-1178",
+			"title": "ELSA-2019-1178:  qemu-kvm security update (IMPORTANT)",
+			"description": "[1.5.3-160.el7_6.2]\n- kvm-target-i386-define-md-clear-bit-rhel.patch\n- Resolves: bz#1693216\n  (qemu-kvm: hardware: Microarchitectural Store Buffer Data Sampling)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12126.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12127.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12130.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11091.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-1178.html"
+				}
+			],
+			"published": "2019-05-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-12126",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12126.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-12127",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12127.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-12130",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-12130.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-11091",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11091.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-img",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-160.el7_6.2"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-160.el7_6.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-160.el7_6.2"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-160.el7_6.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-common",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-160.el7_6.2"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-160.el7_6.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "10:1.5.3-160.el7_6.2"
+								}
+							],
+							"fixed": [
+								"10:1.5.3-160.el7_6.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

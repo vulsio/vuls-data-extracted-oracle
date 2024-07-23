@@ -1,0 +1,107 @@
+{
+	"id": "ELSA-2011-1104",
+	"advisories": [
+		{
+			"id": "ELSA-2011-1104",
+			"title": "ELSA-2011-1104:  libpng security update (MODERATE)",
+			"description": "[2:1.2.10-7.1.el5_7.5]\n- Install the correct fix for CVE-2011-2690\nResolves: #721303\n\n[2:1.2.10-7.1.el5_7.4]\n- Back-port fixes for CVE-2011-2690, CVE-2011-2692\n  Note: CVE-2011-2691, announced at the same time, does not apply to 1.2.10;\n  likewise for CVE-2011-2501\nResolves: #721303",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2690.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2692.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1104.html"
+				}
+			],
+			"published": "2011-08-01T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-2690",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2690.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-2692",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2692.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libpng",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.2.10-7.1.el5_7.5"
+								}
+							],
+							"fixed": [
+								"2:1.2.10-7.1.el5_7.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libpng-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.2.10-7.1.el5_7.5"
+								}
+							],
+							"fixed": [
+								"2:1.2.10-7.1.el5_7.5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

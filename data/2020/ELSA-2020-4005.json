@@ -1,0 +1,126 @@
+{
+	"id": "ELSA-2020-4005",
+	"advisories": [
+		{
+			"id": "ELSA-2020-4005",
+			"title": "ELSA-2020-4005:  libxslt security update (MODERATE)",
+			"description": "[1.1.28-6.0.1]\n- Added libxslt-oracle-enterprise.patch and replaced doc/redhat.gif in tarball\n\n[1.1.28-6]\n- Fix CVE-2019-18197 (#1775516)\n- Fix CVE-2019-11068 (#1715731)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11068.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-18197.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-4005.html"
+				}
+			],
+			"published": "2020-10-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-11068",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-11068.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2019-18197",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-18197.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxslt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.28-6.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.1.28-6.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxslt-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.28-6.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.1.28-6.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxslt-python",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.1.28-6.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.1.28-6.0.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

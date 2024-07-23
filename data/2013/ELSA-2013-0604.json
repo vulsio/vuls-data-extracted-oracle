@@ -1,0 +1,168 @@
+{
+	"id": "ELSA-2013-0604",
+	"advisories": [
+		{
+			"id": "ELSA-2013-0604",
+			"title": "ELSA-2013-0604:  java-1.6.0-openjdk security update (IMPORTANT)",
+			"description": "[ 1:1.6.0.0-1.36.1.11.9.0.1.el5_9]\n- Add oracle-enterprise.patch\n\n[1:1.6.0.0-1.36.1.11.9]\n- Updated to icedtea6 1.11.9\n- Resolves: rhbz#917176",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0809.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-1493.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0604.html"
+				}
+			],
+			"published": "2013-03-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-0809",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0809.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2013-1493",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-1493.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.6.0-openjdk",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.6.0.0-1.36.1.11.9.0.1.el5_9"
+								}
+							],
+							"fixed": [
+								"1:1.6.0.0-1.36.1.11.9.0.1.el5_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.6.0-openjdk-demo",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.6.0.0-1.36.1.11.9.0.1.el5_9"
+								}
+							],
+							"fixed": [
+								"1:1.6.0.0-1.36.1.11.9.0.1.el5_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.6.0-openjdk-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.6.0.0-1.36.1.11.9.0.1.el5_9"
+								}
+							],
+							"fixed": [
+								"1:1.6.0.0-1.36.1.11.9.0.1.el5_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.6.0-openjdk-javadoc",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.6.0.0-1.36.1.11.9.0.1.el5_9"
+								}
+							],
+							"fixed": [
+								"1:1.6.0.0-1.36.1.11.9.0.1.el5_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.6.0-openjdk-src",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.6.0.0-1.36.1.11.9.0.1.el5_9"
+								}
+							],
+							"fixed": [
+								"1:1.6.0.0-1.36.1.11.9.0.1.el5_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

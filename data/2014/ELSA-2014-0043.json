@@ -1,0 +1,176 @@
+{
+	"id": "ELSA-2014-0043",
+	"advisories": [
+		{
+			"id": "ELSA-2014-0043",
+			"title": "ELSA-2014-0043:  bind security update (MODERATE)",
+			"description": "[32:9.8.2-0.23.rc1.1]\n- Fix CVE-2014-0591\n\n[32:9.8.2-0.23.rc1]\n- Fix gssapictx memory leak (#911167)\n\n[32:9.8.2-0.22.rc1]\n- fix CVE-2013-4854\n\n[32:9.8.2-0.21.rc1]\n- fix  CVE-2013-2266\n- ship dns/rrl.h in -devel subpkg\n\n[32:9.8.2-0.20.rc1]\n- remove one bogus file from /usr/share/doc, introduced by RRL patch\n\n[32:9.8.2-0.19.rc1]\n- fix CVE-2012-5689\n\n[32:9.8.2-0.18.rc1]\n- add response rate limit patch (#873624)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0591.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0043.html"
+				}
+			],
+			"published": "2014-01-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-0591",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0591.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.23.rc1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.23.rc1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-chroot",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.23.rc1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.23.rc1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.23.rc1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.23.rc1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.23.rc1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.23.rc1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-sdb",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.23.rc1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.23.rc1.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind-utils",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.8.2-0.23.rc1.el6_5.1"
+								}
+							],
+							"fixed": [
+								"32:9.8.2-0.23.rc1.el6_5.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

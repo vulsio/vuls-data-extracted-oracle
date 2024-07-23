@@ -1,0 +1,126 @@
+{
+	"id": "ELSA-2009-0003",
+	"advisories": [
+		{
+			"id": "ELSA-2009-0003",
+			"title": "ELSA-2009-0003:  xen security and bug fix update (MODERATE)",
+			"description": "[3.0.3-64.el5_2.9]\n- More fixes for Xenstore unsafe data access (CVE-2008-4405, rhbz #464817)\n- Fix block-detach regression due to (CVE-2008-4405, rhbz #473882)\n\n[3.0.3-64.el5_2.8]\n- Remove unneccessary patch & rebuild\n\n[3.0.3-64.el5_2.7]\n- Fix reboots after CVE-2008-4405 changes (rhbz #471588)\n\n[3.0.3-64.el5_2.6]\n- Remove qemu-dm.debug wrapper script (CVE-2008-4993, rhbz #470795)\n\n[3.0.3-64.el5_2.5]\n- Fix unsafe use of xenstore data (CVE-2008-4405, rhbz #464817)\n\n[3.0.3-64.el5_2.4]\n- Don't clobber wallclock on restore (rhbz #464455)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4405.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4993.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-0003.html"
+				}
+			],
+			"published": "2009-01-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2008-4405",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4405.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2008-4993",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-4993.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xen",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.3-64.el5_2.9"
+								}
+							],
+							"fixed": [
+								"0:3.0.3-64.el5_2.9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xen-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.3-64.el5_2.9"
+								}
+							],
+							"fixed": [
+								"0:3.0.3-64.el5_2.9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xen-libs",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.3-64.el5_2.9"
+								}
+							],
+							"fixed": [
+								"0:3.0.3-64.el5_2.9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,160 @@
+{
+	"id": "ELSA-2012-0306",
+	"advisories": [
+		{
+			"id": "ELSA-2012-0306",
+			"title": "ELSA-2012-0306:  krb5 security and bug fix update (LOW)",
+			"description": "[1.6.1-70.el5]\n- add upstream patch for telnetd buffer overflow (CVE-2011-4862, #770351)\n\n[1.6.1-69.el5]\n- ftp: fix a static analysis should-never-happen NULL dereference (#750823)\n\n[1.6.1-68.el5]\n- backport fixes to teach libkrb5 to use descriptors higher than FD_SETSIZE\n  to talk to a KDC by using poll() if it's detected at compile-time, revised\n  (#701444, RT#6905)\n\n[1.6.1-67.el5]\n- add backported patch by way of jbarbuc to free subkeys created by the\n  KDC while processing TGS requests (#708516)\n\n[1.6.1-66.el5]\n- add backported patch by way of several people to better avoid false\n  detection of replay attacks when talking to systems with coarse time\n  resolution (#713500)\n\n[1.6.1-65.el5]\n- ftpd: add backported patch to check for errors when calling setegid\n  (MITKRB5-SA-2011-005, CVE-2011-1526, #719098)\n\n[1.6.1-64.el5]\n- klist: don't trip over referral entries when invoked with -s (#729067,\n  RT#6915)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1526.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-0306.html"
+				}
+			],
+			"published": "2012-03-01T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-1526",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1526.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.1-70.el5"
+								}
+							],
+							"fixed": [
+								"0:1.6.1-70.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-libs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.1-70.el5"
+								}
+							],
+							"fixed": [
+								"0:1.6.1-70.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-server",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.1-70.el5"
+								}
+							],
+							"fixed": [
+								"0:1.6.1-70.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-server-ldap",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.1-70.el5"
+								}
+							],
+							"fixed": [
+								"0:1.6.1-70.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-workstation",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.1-70.el5"
+								}
+							],
+							"fixed": [
+								"0:1.6.1-70.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

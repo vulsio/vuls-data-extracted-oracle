@@ -1,0 +1,264 @@
+{
+	"id": "ELSA-2022-5687",
+	"advisories": [
+		{
+			"id": "ELSA-2022-5687",
+			"title": "ELSA-2022-5687:  java-11-openjdk security, bug fix, and enhancement update (IMPORTANT)",
+			"description": "[1:11.0.16.0.8-1.0.1]\n- link atomic for ix86 build\n\n[1:11.0.16.0.8-1]\n- Update to jdk-11.0.16+8\n- Update release notes to 11.0.16+8\n- Use same tarball naming style as java-17-openjdk and java-latest-openjdk\n- Drop JDK-8284920 patch now upstreamed\n- Print release file during build, which should now include a correct SOURCE value from .src-rev\n- Update tarball script with IcedTea GitHub URL and .src-rev generation\n- Use 'git apply' with patches in the tarball script to allow binary diffs\n- Include script to generate bug list for release notes\n- Update tzdata requirement to 2022a to match JDK-8283350\n- Make use of the vendor version string to store our version & release rather than an upstream release date\n- Explicitly require crypto-policies during build and runtime for system security properties\n- Resolves: rhbz#2106510\n\n[1:11.0.16.0.8-1]\n- Add additional patch during tarball generation to align tests with ECC changes\n- Related: rhbz#2106510",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-21540.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-21541.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-34169.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-5687.html"
+				}
+			],
+			"published": "2022-07-21T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-21540",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-21540.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-21541",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-21541.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-34169",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-34169.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.16.0.8-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:11.0.16.0.8-1.0.1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-demo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.16.0.8-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:11.0.16.0.8-1.0.1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.16.0.8-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:11.0.16.0.8-1.0.1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-headless",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.16.0.8-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:11.0.16.0.8-1.0.1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.16.0.8-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:11.0.16.0.8-1.0.1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-javadoc-zip",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.16.0.8-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:11.0.16.0.8-1.0.1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-jmods",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.16.0.8-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:11.0.16.0.8-1.0.1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.16.0.8-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:11.0.16.0.8-1.0.1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-11-openjdk-static-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:11.0.16.0.8-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:11.0.16.0.8-1.0.1.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

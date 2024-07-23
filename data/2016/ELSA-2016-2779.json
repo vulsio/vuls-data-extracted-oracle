@@ -1,0 +1,472 @@
+{
+	"id": "ELSA-2016-2779",
+	"advisories": [
+		{
+			"id": "ELSA-2016-2779",
+			"title": "ELSA-2016-2779:  nss and nss-util security update (MODERATE)",
+			"description": "nss\n[3.21.3-2.0.1]\n- Added nss-vendor.patch to change vendor\n\n[3.21.3-2]\n- Mozilla #1314604 / Red Hat CVE-2016-8635\n\n[3.21.3-1.1]\n- rebuild\n\n[3.21.3-1]\n- Rebase to NSS 3.21.3\n- Resolves: #1383887\n\nnss-util\n[3.21.3-1.1]\n- rebuild\n\n[3.21.3-1]\n- Rebase to nss-3.21.3\n- Remove patch for CVE-2016-1950, which is included in the release\n- Related: Bug 1347908",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2834.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5285.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8635.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-2779.html"
+				}
+			],
+			"published": "2016-11-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-2834",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2834.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-5285",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5285.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-8635",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8635.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.el5_11"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.el5_11"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-pkcs11-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.el5_11"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-tools",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.el5_11"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.el5_11"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.0.1.el6_8"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.0.1.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-devel",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.0.1.el6_8"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.0.1.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-pkcs11-devel",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.0.1.el6_8"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.0.1.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-sysinit",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.0.1.el6_8"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.0.1.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-tools",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.0.1.el6_8"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.0.1.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-util",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-1.el6_8"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-1.el6_8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-util-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-1.el6_8"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-1.el6_8"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.0.1.el7_3"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.0.1.el7_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.0.1.el7_3"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.0.1.el7_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-pkcs11-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.0.1.el7_3"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.0.1.el7_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-sysinit",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.0.1.el7_3"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.0.1.el7_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-2.0.1.el7_3"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-2.0.1.el7_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-util",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-1.1.el7_3"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-1.1.el7_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nss-util-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.21.3-1.1.el7_3"
+								}
+							],
+							"fixed": [
+								"0:3.21.3-1.1.el7_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,84 @@
+{
+	"id": "ELSA-2024-1142",
+	"advisories": [
+		{
+			"id": "ELSA-2024-1142",
+			"title": "ELSA-2024-1142:  haproxy security update (MODERATE)",
+			"description": "[2.4.22-3]\n- Reject '#' as part of URI path component (CVE-2023-45539, RHEL-18169)\n\n[2.4.22-2]\n- Reject any empty content-length header value (CVE-2023-40225, RHEL-7736)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-40225.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-45539.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-1142.html"
+				}
+			],
+			"published": "2024-03-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-40225",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-40225.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-45539",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-45539.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "haproxy",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.22-3.el9_3"
+								}
+							],
+							"fixed": [
+								"0:2.4.22-3.el9_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

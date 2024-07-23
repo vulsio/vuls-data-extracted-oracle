@@ -1,0 +1,168 @@
+{
+	"id": "ELSA-2009-0361",
+	"advisories": [
+		{
+			"id": "ELSA-2009-0361",
+			"title": "ELSA-2009-0361:  NetworkManager security update (MODERATE)",
+			"description": "[0.7.0-4]\n- CVE-2009-0365: GetSecrets disclosure\n- CVE-2009-0578: local users can modify the connection settings\n- Resolves: #487778",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0365.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0578.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-0361.html"
+				}
+			],
+			"published": "2009-03-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-0365",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0365.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-0578",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0578.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.7.0-4.el5_3"
+								}
+							],
+							"fixed": [
+								"1:0.7.0-4.el5_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.7.0-4.el5_3"
+								}
+							],
+							"fixed": [
+								"1:0.7.0-4.el5_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-glib",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.7.0-4.el5_3"
+								}
+							],
+							"fixed": [
+								"1:0.7.0-4.el5_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-glib-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.7.0-4.el5_3"
+								}
+							],
+							"fixed": [
+								"1:0.7.0-4.el5_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-gnome",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.7.0-4.el5_3"
+								}
+							],
+							"fixed": [
+								"1:0.7.0-4.el5_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

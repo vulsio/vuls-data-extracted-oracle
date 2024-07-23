@@ -1,0 +1,395 @@
+{
+	"id": "ELSA-2021-9396",
+	"advisories": [
+		{
+			"id": "ELSA-2021-9396",
+			"title": "ELSA-2021-9396:  olcne security update (IMPORTANT)",
+			"description": "olcne\n[1.2.4-5]\n- Updated registry-image-helper.sh to work with olcne-utils\n\n[1.2.4-4]\n- Fix istio template for 1.9.6 for k8s update failure\n\n[1.2.4-3]\n- Fixed yaml file to stop olcne-nginx and keepalived services at uninstall [Orabug: 32296282]\n\n[1.2.4-2]\n- Fix iptables issue when running on OL7 host using OL8 image\n\n[1.2.4-1]\n- Address Istio CVE's CVE-2021-28683, CVE-2021-28682, CVE-2021-29258, CVE-2021-31920, CVE-2021-31921, CVE-2021-34824\n\nistio\n[1.9.6-2]\n- Fix iptables issue when running on OL7 host using OL8 image\n- Added istio-mixs and istio-mixc to Obsoletes list\n\n[1.9.6-1]\n- Address CVE-2021-28683, CVE-2021-28682, CVE-2021-29258, CVE-2021-31920, CVE-2021-31921, CVE-2021-34824\n\nkubernetes\n[1.18.18-3]\n- Fix iptables OL7 host kernel issue when running with OL8 image\n\n[1.18.18-1]\n- Address CVE-2021-27918",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28682.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28683.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-29258.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-31920.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-31921.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-34824.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-9396.html"
+				}
+			],
+			"published": "2021-08-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-28682",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28682.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-28683",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28683.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-29258",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-29258.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-31920",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-31920.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-31921",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-31921.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-34824",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-34824.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "istio",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.6-2.el8"
+								}
+							],
+							"fixed": [
+								"0:1.9.6-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "istio-istioctl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.6-2.el8"
+								}
+							],
+							"fixed": [
+								"0:1.9.6-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "istio-pilot-agent",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.6-2.el8"
+								}
+							],
+							"fixed": [
+								"0:1.9.6-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "istio-pilot-discovery",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.6-2.el8"
+								}
+							],
+							"fixed": [
+								"0:1.9.6-2.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubeadm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.18-3.el8"
+								}
+							],
+							"fixed": [
+								"0:1.18.18-3.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubectl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.18-3.el8"
+								}
+							],
+							"fixed": [
+								"0:1.18.18-3.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubelet",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.18-3.el8"
+								}
+							],
+							"fixed": [
+								"0:1.18.18-3.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-agent",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.4-5.el8"
+								}
+							],
+							"fixed": [
+								"0:1.2.4-5.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-api-server",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.4-5.el8"
+								}
+							],
+							"fixed": [
+								"0:1.2.4-5.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-istio-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.4-5.el8"
+								}
+							],
+							"fixed": [
+								"0:1.2.4-5.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-nginx",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.4-5.el8"
+								}
+							],
+							"fixed": [
+								"0:1.2.4-5.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-prometheus-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.4-5.el8"
+								}
+							],
+							"fixed": [
+								"0:1.2.4-5.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-utils",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.4-5.el8"
+								}
+							],
+							"fixed": [
+								"0:1.2.4-5.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcnectl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.4-5.el8"
+								}
+							],
+							"fixed": [
+								"0:1.2.4-5.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

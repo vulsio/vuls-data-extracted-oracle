@@ -1,0 +1,173 @@
+{
+	"id": "ELSA-2010-0108",
+	"advisories": [
+		{
+			"id": "ELSA-2010-0108",
+			"title": "ELSA-2010-0108:  NetworkManager security update (MODERATE)",
+			"description": "[1:0.7.0-9.el5_4]\n- Ensure a connection is not used after its CA certificate has been deleted\n- Resolves: CVE-2009-4144\n- Fix possible information disclosure by nm-connection-editor\n- Resolves: CVE-2009-4145",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4144.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4145.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0108.html"
+				}
+			],
+			"published": "2010-02-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-4144",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4144.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-4145",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-4145.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.7.0-9.el5_4"
+								}
+							],
+							"fixed": [
+								"1:0.7.0-9.el5_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.7.0-9.el5_4"
+								}
+							],
+							"fixed": [
+								"1:0.7.0-9.el5_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-glib",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.7.0-9.el5_4"
+								}
+							],
+							"fixed": [
+								"1:0.7.0-9.el5_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-glib-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.7.0-9.el5_4"
+								}
+							],
+							"fixed": [
+								"1:0.7.0-9.el5_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "NetworkManager-gnome",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.7.0-9.el5_4"
+								}
+							],
+							"fixed": [
+								"1:0.7.0-9.el5_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

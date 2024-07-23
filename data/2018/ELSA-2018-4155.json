@@ -1,0 +1,175 @@
+{
+	"id": "ELSA-2018-4155",
+	"advisories": [
+		{
+			"id": "ELSA-2018-4155",
+			"title": "ELSA-2018-4155:  glibc security update (IMPORTANT)",
+			"description": "[2.12-1.212.0.1]\n- backport rh patch 1047983 from OL7, Orabug 25407655\n\n[2.12-1.212]\n- CVE-2017-15670: glob: Fix one-byte overflow with GLOB_TILDE (#1504810)\n- CVE-2017-15804: glob: Fix buffer overflow in GLOB_TILDE unescaping (#1504810)\n\n[2.12-1.211]\n- Avoid large allocas in the dynamic linker (#1452717)\n\n[2.12-1.210]\n- Fix thread cancellation issues for setmntent() and others (#1437147).",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-4155.html"
+				}
+			],
+			"published": "2018-06-28T00:00:00Z"
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.12-1.212.0.1.ksplice1.el6"
+								}
+							],
+							"fixed": [
+								"2:2.12-1.212.0.1.ksplice1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-common",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.12-1.212.0.1.ksplice1.el6"
+								}
+							],
+							"fixed": [
+								"2:2.12-1.212.0.1.ksplice1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.12-1.212.0.1.ksplice1.el6"
+								}
+							],
+							"fixed": [
+								"2:2.12-1.212.0.1.ksplice1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-headers",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.12-1.212.0.1.ksplice1.el6"
+								}
+							],
+							"fixed": [
+								"2:2.12-1.212.0.1.ksplice1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-static",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.12-1.212.0.1.ksplice1.el6"
+								}
+							],
+							"fixed": [
+								"2:2.12-1.212.0.1.ksplice1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "glibc-utils",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.12-1.212.0.1.ksplice1.el6"
+								}
+							],
+							"fixed": [
+								"2:2.12-1.212.0.1.ksplice1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nscd",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.12-1.212.0.1.ksplice1.el6"
+								}
+							],
+							"fixed": [
+								"2:2.12-1.212.0.1.ksplice1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

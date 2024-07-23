@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2020-5163",
+	"advisories": [
+		{
+			"id": "ELSA-2020-5163",
+			"title": "ELSA-2020-5163:  thunderbird security update (IMPORTANT)",
+			"description": "[78.4.3-1.0.1]\n- Replaced thunderbird-redhat-default-prefs.js with thunderbird-oracle-default-prefs.js\n\n[78.4.3-1]\n- Update to 78.4.3",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-26950.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-5163.html"
+				}
+			],
+			"published": "2020-11-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-26950",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-26950.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "thunderbird",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:78.4.3-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"0:78.4.3-1.0.1.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

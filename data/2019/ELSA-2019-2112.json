@@ -1,0 +1,84 @@
+{
+	"id": "ELSA-2019-2112",
+	"advisories": [
+		{
+			"id": "ELSA-2019-2112",
+			"title": "ELSA-2019-2112:  mod_auth_openidc security update (MODERATE)",
+			"description": "[1.8.8-5]\n- Resolves: rhbz#1626297 - CVE-2017-6413 mod_auth_openidc: OIDC_CLAIM and\n                           OIDCAuthNHeader not skipped in an 'AuthType oauth20'\n                           configuration [rhel-7]\n\n[1.8.8-4]\n- Resolves: rhbz#1626299 - CVE-2017-6059 mod_auth_openidc: Shows\n                           user-supplied content on error pages [rhel-7]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-6059.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-6413.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-2112.html"
+				}
+			],
+			"published": "2019-08-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-6059",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-6059.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-6413",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-6413.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_auth_openidc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.8-5.el7"
+								}
+							],
+							"fixed": [
+								"0:1.8.8-5.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

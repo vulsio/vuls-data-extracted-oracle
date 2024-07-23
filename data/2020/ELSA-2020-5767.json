@@ -1,0 +1,123 @@
+{
+	"id": "ELSA-2020-5767",
+	"advisories": [
+		{
+			"id": "ELSA-2020-5767",
+			"title": "ELSA-2020-5767:  kubernetes security update (IMPORTANT)",
+			"description": "[1.12.10-1.0.13]\n- CVE-2020-8559: Privilege escalation from compromised node to cluster\n- CVE-2020-8557: Node disk DOS by writing to container /etc/hosts",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-8557.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-8559.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-5767.html"
+				}
+			],
+			"published": "2020-07-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-8557",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-8557.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-8559",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-8559.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubeadm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.10-1.0.13.el7"
+								}
+							],
+							"fixed": [
+								"0:1.12.10-1.0.13.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubectl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.10-1.0.13.el7"
+								}
+							],
+							"fixed": [
+								"0:1.12.10-1.0.13.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubelet",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.10-1.0.13.el7"
+								}
+							],
+							"fixed": [
+								"0:1.12.10-1.0.13.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

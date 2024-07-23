@@ -1,0 +1,482 @@
+{
+	"id": "ELSA-2011-2014",
+	"advisories": [
+		{
+			"id": "ELSA-2011-2014",
+			"title": "ELSA-2011-2014:  Oracle Linux 6 Unbreakable Enterprise kernel security fix update (IMPORTANT)",
+			"description": "[2.6.32-100.28.11.el6]\n- fs/partitions: Validate map_count in Mac partition tables {CVE-2011-1010}\n- nfs4: Ensure that ACL pages sent over NFS were not allocated from\n  the slab (v3) {CVE-2011-1090}\n\n[2.6.32-100.28.10.el6]\n- Use cciss for some Smart Array controller for OL5 [orabug 11899706]\n- CVEs from RHSA-2011-0421\n- install_special_mapping skips security_file_mmap check {CVE-2010-4346}\n- orinoco: fix TKIP countermeasure behaviour {CVE-2010-4648}\n- net: clear heap allocation for ethtool_get_regs() {CVE-2010-4655}\n- usb: iowarrior: don't trust report_size for buffer size {CVE-2010-4656}\n- [media] [v3,media] av7110: check for negative array offset {CVE-2011-0521}\n- RDMA/cma: Fix crash in request handlers {CVE-2011-0695}\n- IB/cm: Bump reference count on cm_id before invoking callback {CVE-2011-0695}\n- gro: reset skb_iif on reuse {CVE-2011-1478}",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4346.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4648.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4655.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4656.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0521.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0695.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1010.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1090.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1478.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-2014.html"
+				}
+			],
+			"published": "2011-04-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-4346",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4346.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-4648",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4648.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-4655",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4655.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-4656",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4656.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-0521",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0521.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-0695",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0695.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1010",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1010.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1090",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1090.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1478",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1478.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-headers",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el5"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ofa-2.6.32-100.28.11.el5",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.1-4.0.28"
+								}
+							],
+							"fixed": [
+								"0:1.5.1-4.0.28"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ofa-2.6.32-100.28.11.el5debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.1-4.0.28"
+								}
+							],
+							"fixed": [
+								"0:1.5.1-4.0.28"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-headers",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-100.28.11.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-100.28.11.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

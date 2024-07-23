@@ -1,0 +1,155 @@
+{
+	"id": "ELSA-2020-2901",
+	"advisories": [
+		{
+			"id": "ELSA-2020-2901",
+			"title": "ELSA-2020-2901:  dovecot security update (IMPORTANT)",
+			"description": "[1:2.3.8-2.1]\n- fix CVE-2020-10957: malformed NOOP commands leads to DoS (#1840353)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10957.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-2901.html"
+				}
+			],
+			"published": "2020-07-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-10957",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-10957.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.8-2.el8_2.1"
+								}
+							],
+							"fixed": [
+								"1:2.3.8-2.el8_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.8-2.el8_2.1"
+								}
+							],
+							"fixed": [
+								"1:2.3.8-2.el8_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot-mysql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.8-2.el8_2.1"
+								}
+							],
+							"fixed": [
+								"1:2.3.8-2.el8_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot-pgsql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.8-2.el8_2.1"
+								}
+							],
+							"fixed": [
+								"1:2.3.8-2.el8_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dovecot-pigeonhole",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.8-2.el8_2.1"
+								}
+							],
+							"fixed": [
+								"1:2.3.8-2.el8_2.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

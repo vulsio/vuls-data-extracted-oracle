@@ -1,0 +1,110 @@
+{
+	"id": "ELSA-2021-0992",
+	"advisories": [
+		{
+			"id": "ELSA-2021-0992",
+			"title": "ELSA-2021-0992:  firefox security update (IMPORTANT)",
+			"description": "[78.9.0-1.0.1]\n- Remove upstream references [Orabug: 30143292]\n- Update distribution for Oracle Linux [Orabug: 30143292]\n- Add firefox-oracle-default-prefs.js and remove the corresponding Red Hat file\n\n[78.9.0-1]\n- Update to 78.9.0 build1",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23981.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23982.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23984.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23987.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-0992.html"
+				}
+			],
+			"published": "2021-03-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-23981",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23981.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-23982",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23982.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-23984",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23984.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-23987",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-23987.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:78.9.0-1.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"0:78.9.0-1.0.1.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

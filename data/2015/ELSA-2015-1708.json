@@ -1,0 +1,168 @@
+{
+	"id": "ELSA-2015-1708",
+	"advisories": [
+		{
+			"id": "ELSA-2015-1708",
+			"title": "ELSA-2015-1708:  libXfont security update (IMPORTANT)",
+			"description": "[1.4.5-5]\n- CVE-2015-1802: missing range check in bdfReadProperties (bug 1258892)\n- CVE-2015-1803: crash on invalid read in bdfReadCharacters (bug 1258892)\n- CVE-2015-1804: out-of-bounds memory access in bdfReadCharacters (bug 1258892)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-1802.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-1803.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-1804.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-1708.html"
+				}
+			],
+			"published": "2015-09-03T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-1802",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-1802.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-1803",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-1803.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-1804",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-1804.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libXfont",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.5-5.el6_7"
+								}
+							],
+							"fixed": [
+								"0:1.4.5-5.el6_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libXfont-devel",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.5-5.el6_7"
+								}
+							],
+							"fixed": [
+								"0:1.4.5-5.el6_7"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libXfont",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.7-3.el7_1"
+								}
+							],
+							"fixed": [
+								"0:1.4.7-3.el7_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libXfont-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.7-3.el7_1"
+								}
+							],
+							"fixed": [
+								"0:1.4.7-3.el7_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

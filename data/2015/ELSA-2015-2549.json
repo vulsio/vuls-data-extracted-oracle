@@ -1,0 +1,251 @@
+{
+	"id": "ELSA-2015-2549",
+	"advisories": [
+		{
+			"id": "ELSA-2015-2549",
+			"title": "ELSA-2015-2549:  libxml2 security update (MODERATE)",
+			"description": "[2.7.6-20.0.1]\n- Update doc/redhat.gif in tarball\n- Add libxml2-oracle-enterprise.patch and update logos in tarball\n\n[2.7.6-20.1]\n- Fix a series of CVEs (rhbz#1286495)\n- CVE-2015-7941 Cleanup conditional section error handling\n- CVE-2015-8317 Fail parsing early on if encoding conversion failed\n- CVE-2015-7942 Another variation of overflow in Conditional sections\n- CVE-2015-7942 Fix an error in previous Conditional section patch\n- Fix parsing short unclosed comment uninitialized access\n- CVE-2015-7498 Avoid processing entities after encoding conversion failures\n- CVE-2015-7497 Avoid an heap buffer overflow in xmlDictComputeFastQKey\n- CVE-2015-5312 Another entity expansion issue\n- CVE-2015-7499 Add xmlHaltParser() to stop the parser\n- CVE-2015-7499 Detect incoherency on GROW\n- CVE-2015-7500 Fix memory access error due to incorrect entities boundaries\n- CVE-2015-8242 Buffer overead with HTML parser in push mode\n- Libxml violates the zlib interface and crashes",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-5312.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7497.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7498.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7499.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7500.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7941.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7942.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8241.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8242.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8317.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-2549.html"
+				}
+			],
+			"published": "2015-12-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-5312",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-5312.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-7497",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7497.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-7498",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7498.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-7499",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7499.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-7500",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7500.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-7941",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7941.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-7942",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-7942.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-8241",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8241.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-8242",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8242.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-8317",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-8317.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-20.0.1.el6_7.1"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-20.0.1.el6_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-20.0.1.el6_7.1"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-20.0.1.el6_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-python",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-20.0.1.el6_7.1"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-20.0.1.el6_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libxml2-static",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.7.6-20.0.1.el6_7.1"
+								}
+							],
+							"fixed": [
+								"0:2.7.6-20.0.1.el6_7.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

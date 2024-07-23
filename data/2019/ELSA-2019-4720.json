@@ -1,0 +1,95 @@
+{
+	"id": "ELSA-2019-4720",
+	"advisories": [
+		{
+			"id": "ELSA-2019-4720",
+			"title": "ELSA-2019-4720:  kubernetes security update (IMPORTANT)",
+			"description": "[1.9.11-2.7.1]\n- [OLCNE-494] [CVE-2019-11244] fix CVE-2019-11244: 'kubectl --http-cache=<world-accessible dir>'\n- creates world-writeable cached schema files\n\n[1.9.11-2.6.1]\n- [OLCNE-382] [CVE-2019-11243] rest.AnonymousClientConfig() does not remove the sa credentials",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-4720.html"
+				}
+			],
+			"published": "2019-07-29T00:00:00Z"
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubeadm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.11-2.7.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.9.11-2.7.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubectl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.11-2.7.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.9.11-2.7.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubelet",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.11-2.7.1.el7"
+								}
+							],
+							"fixed": [
+								"0:1.9.11-2.7.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

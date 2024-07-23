@@ -1,0 +1,135 @@
+{
+	"id": "ELSA-2017-3518",
+	"advisories": [
+		{
+			"id": "ELSA-2017-3518",
+			"title": "ELSA-2017-3518:  openssl security update (MODERATE)",
+			"description": "[1.0.1e-60.1]\n- fix CVE-2017-3731 - DoS via truncated packets with RC4-MD5 cipher\n- fix CVE-2016-8610 - DoS of single-threaded servers via excessive alerts",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-3518.html"
+				}
+			],
+			"published": "2017-02-20T00:00:00Z"
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-60.ksplice1.el7_3.1"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-60.ksplice1.el7_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-60.ksplice1.el7_3.1"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-60.ksplice1.el7_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-60.ksplice1.el7_3.1"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-60.ksplice1.el7_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-60.ksplice1.el7_3.1"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-60.ksplice1.el7_3.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:1.0.1e-60.ksplice1.el7_3.1"
+								}
+							],
+							"fixed": [
+								"2:1.0.1e-60.ksplice1.el7_3.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

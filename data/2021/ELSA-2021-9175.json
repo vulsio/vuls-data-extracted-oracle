@@ -1,0 +1,109 @@
+{
+	"id": "ELSA-2021-9175",
+	"advisories": [
+		{
+			"id": "ELSA-2021-9175",
+			"title": "ELSA-2021-9175:  Unbreakable Enterprise kernel-container security update (IMPORTANT)",
+			"description": "[4.14.35-2047.502.4.el7]\n- Revert 'rds: ib: Remove two ib_modify_qp() calls' (Sharath Srinivasan)  [Orabug: 32715567]\n- uek-rpm: Update SecureBoot Digicert 2021 certificates (Somasundaram Krishnasamy)  [Orabug: 32532514]\n\n[4.14.35-2047.502.3.el7]\n- video: hyperv_fb: Fix the mmap() regression for v5.4.y and older (Dexuan Cui)  [Orabug: 32620797]\n- video: hyperv_fb: Fix the cache type when mapping the VRAM (Dexuan Cui)  [Orabug: 32620797]\n- RDMA/core: Fix corrupted SL on passive side (Hakon Bugge)  [Orabug: 32644356]\n\n[4.14.35-2047.502.2.el7]\n- EDAC: skx_common: downgrade message importance on missing PCI device (Aristeu Rozanski)  [Orabug: 32651294]\n- Xen/gnttab: handle p2m update errors on a per-slot basis (Jan Beulich)  [Orabug: 32651477]  {CVE-2021-28038}\n- KVM: kvmclock: Fix vCPUs > 64 can't be online/hotpluged (Wanpeng Li)  [Orabug: 32633928]\n- xen/netback: avoid race in xenvif_rx_ring_slots_available() (Juergen Gross)  [Orabug: 32640132]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27363.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27364.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27365.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28038.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-9175.html"
+				}
+			],
+			"published": "2021-04-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-27363",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27363.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-27364",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27364.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-27365",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-27365.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-28038",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-28038.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.502.4.el7"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.502.4.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,273 @@
+{
+	"id": "ELSA-2017-0892",
+	"advisories": [
+		{
+			"id": "ELSA-2017-0892",
+			"title": "ELSA-2017-0892:  kernel security and bug fix update (IMPORTANT)",
+			"description": "[2.6.32-696.1.1]\n- [block] fix use-after-free in seq file (Denys Vlasenko) [1418548 1418549] {CVE-2016-7910}\n- [firmware] Replacing the chelsio firmware (t4,t5)fw-1.15.37.0 (Sai Vemuri) [1433865 1425749]\n- [kernel] genirq: Avoid taking sparse_irq_lock for non-existent irqs (Dave Wysochanski) [1428106 1360930]\n- [tty] n_hdlc: get rid of racy n_hdlc.tbuf (Herton R. Krzesinski) [1429917 1429918] {CVE-2017-2636}",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-7910.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-2636.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0892.html"
+				}
+			],
+			"published": "2017-04-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-7910",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-7910.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-2636",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-2636.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-696.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-696.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-abi-whitelists",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-696.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-696.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-696.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-696.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-696.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-696.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-696.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-696.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-696.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-696.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-firmware",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-696.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-696.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-696.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-696.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-696.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-696.1.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-696.1.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-696.1.1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

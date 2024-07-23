@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2024-17931",
+	"advisories": [
+		{
+			"id": "ELSA-2024-17931",
+			"title": "ELSA-2024-17931: runc security update (IMPORTANT)",
+			"description": "[1.1.12-1]\n- Update runc to 1.1.12 [JIRA: OLDIS-30530]\n\n[1.1.10-1]\n- Update runc to 1.1.10 [JIRA: OLDIS-30530]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-21626.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-17931.html"
+				}
+			],
+			"published": "2024-02-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2024-21626",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-21626.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "runc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:1.1.12-1.el7"
+								}
+							],
+							"fixed": [
+								"3:1.1.12-1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

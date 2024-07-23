@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2008-0222",
+	"advisories": [
+		{
+			"id": "ELSA-2008-0222",
+			"title": "ELSA-2008-0222:  firefox security update (CRITICAL)",
+			"description": "[1.5.0.12-15.el5_1.0.1]\n- Add firefox-oracle-default-bookmarks.html and firefox-oracle-default-prefs.js\n\n[1.5.0.12-15]\n- Update patchset to fix regressions as per 1.8.1.14",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1380.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2008-0222.html"
+				}
+			],
+			"published": "2008-04-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2008-1380",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-1380.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.0.12-15.el5_1.0.1"
+								}
+							],
+							"fixed": [
+								"0:1.5.0.12-15.el5_1.0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.0.12-15.el5_1.0.1"
+								}
+							],
+							"fixed": [
+								"0:1.5.0.12-15.el5_1.0.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,126 @@
+{
+	"id": "ELSA-2022-9227",
+	"advisories": [
+		{
+			"id": "ELSA-2022-9227",
+			"title": "ELSA-2022-9227:  expat security update (IMPORTANT)",
+			"description": "[2.1.0-12.0.1]\n- lib: Prevent integer overflow on groupSize [CVE-2021-46143][Orabug: 33910302]\n- lib: Prevent integer overflow in doProlog [CVE-2022-23990][Orabug: 33910302]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-46143.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-23990.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-9227.html"
+				}
+			],
+			"published": "2022-03-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-46143",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-46143.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-23990",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-23990.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "expat",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.1.0-12.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.1.0-12.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "expat-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.1.0-12.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.1.0-12.0.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "expat-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.1.0-12.0.1.el7"
+								}
+							],
+							"fixed": [
+								"0:2.1.0-12.0.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

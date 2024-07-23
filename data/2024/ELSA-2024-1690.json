@@ -1,0 +1,134 @@
+{
+	"id": "ELSA-2024-1690",
+	"advisories": [
+		{
+			"id": "ELSA-2024-1690",
+			"title": "ELSA-2024-1690:  varnish security update (IMPORTANT)",
+			"description": "varnish\n[6.0.13-1]\n- new version 6.0.13\n- Resolves: RHEL-30378 - varnish:6/varnish: HTTP/2 Broken Window Attack may\n  result in denial of service (CVE-2024-30156)\n\nvarnish-modules",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-30156.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-1690.html"
+				}
+			],
+			"published": "2024-04-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2024-30156",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-30156.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "varnish:6::varnish",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.13-1.module+el8.9.0+90264+d552af1c"
+								}
+							],
+							"fixed": [
+								"0:6.0.13-1.module+el8.9.0+90264+d552af1c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "varnish:6::varnish-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.13-1.module+el8.9.0+90264+d552af1c"
+								}
+							],
+							"fixed": [
+								"0:6.0.13-1.module+el8.9.0+90264+d552af1c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "varnish:6::varnish-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.0.13-1.module+el8.9.0+90264+d552af1c"
+								}
+							],
+							"fixed": [
+								"0:6.0.13-1.module+el8.9.0+90264+d552af1c"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "varnish:6::varnish-modules",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.15.0-6.module+el8.9.0+90264+d552af1c"
+								}
+							],
+							"fixed": [
+								"0:0.15.0-6.module+el8.9.0+90264+d552af1c"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

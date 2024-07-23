@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2023-12710",
+	"advisories": [
+		{
+			"id": "ELSA-2023-12710",
+			"title": "ELSA-2023-12710: python-flask security update (IMPORTANT)",
+			"description": "[0.12.2-4.0.1]\n- Fix for CVE-2023-30861 [Orabug: 35662469]\n- Add test for CVE-2023-30861 [Orabug: 35662469]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-30861.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-12710.html"
+				}
+			],
+			"published": "2023-08-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-30861",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-30861.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-flask",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.12.2-4.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:0.12.2-4.0.1.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

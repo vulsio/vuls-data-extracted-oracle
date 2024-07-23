@@ -1,0 +1,85 @@
+{
+	"id": "ELSA-2009-0479",
+	"advisories": [
+		{
+			"id": "ELSA-2009-0479",
+			"title": "ELSA-2009-0479:  perl-DBD-Pg security update (MODERATE)",
+			"description": "[1.49-2.el5_3.1]\n- fix CVE-2009-0663 and CVE-2009-1341\n- Resolves: #498000",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0663.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1341.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-0479.html"
+				}
+			],
+			"published": "2009-05-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-0663",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0663.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-1341",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-1341.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perl-DBD-Pg",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.49-2.el5_3.1"
+								}
+							],
+							"fixed": [
+								"0:1.49-2.el5_3.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

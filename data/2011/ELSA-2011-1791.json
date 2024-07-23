@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2011-1791",
+	"advisories": [
+		{
+			"id": "ELSA-2011-1791",
+			"title": "ELSA-2011-1791:  squid security update (MODERATE)",
+			"description": "[-7:3.1.10-1.el6_2.1]\n- Resolves: #755016 - CVE-2011-4096: Invalid free by processing CNAME DNS record",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4096.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1791.html"
+				}
+			],
+			"published": "2011-12-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-4096",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-4096.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:3.1.10-1.el6_2.1"
+								}
+							],
+							"fixed": [
+								"7:3.1.10-1.el6_2.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

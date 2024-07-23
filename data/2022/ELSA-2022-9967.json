@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2022-9967",
+	"advisories": [
+		{
+			"id": "ELSA-2022-9967",
+			"title": "ELSA-2022-9967:  compat-expat1 security update (IMPORTANT)",
+			"description": "[1.95.8-8.0.1]\n- Ensure raw tagnames are safe exiting internalEntityParser [CVE-2022-40674][Orabug: 34708578]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-40674.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-9967.html"
+				}
+			],
+			"published": "2022-10-31T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-40674",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-40674.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "compat-expat1",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.95.8-8.0.1.el6"
+								}
+							],
+							"fixed": [
+								"0:1.95.8-8.0.1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

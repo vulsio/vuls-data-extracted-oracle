@@ -1,0 +1,490 @@
+{
+	"id": "ELSA-2021-2776",
+	"advisories": [
+		{
+			"id": "ELSA-2021-2776",
+			"title": "ELSA-2021-2776:  java-1.8.0-openjdk security update (IMPORTANT)",
+			"description": "[1:1.8.0.302.b08-0]\n- Update to aarch64-shenandoah-jdk8u302-b08 (EA)\n- Update release notes for 8u302-b08.\n- Switch to GA mode for final release.\n- This tarball is embargoed until 2021-07-20 @ 1pm PT.\n- Resolves: rhbz#1972395\n\n[1:1.8.0.302.b07-0.0.ea]\n- Update to aarch64-shenandoah-jdk8u302-b07 (EA)\n- Update release notes for 8u302-b07.\n- Switch to EA mode.\n- Cleanup architecture handling\n- Fixed not-including fastdebug build in case of --without fastdebug\n- Re-order source files to sync with Fedora.\n- Introduced nm based check to verify alt-java on x86_64 is patched, and no other alt-java or java is patched\n- Patch600, rh1750419-redhat_alt_java.patch, amended to die, if it is used wrongly\n- Introduced ssbd_arches with currently only valid arch of x86_64 to separate real alt-java architectures\n- Use the 'reverse' build loop (debug first) as the main and only build loop to get more diagnostics.\n- Remove restriction on disabling product build, as debug packages no longer have javadoc packages.\n- Fix name of javadoc debug packages in Obsoletes declarations and add version where it was removed.\n- Resolves: rhbz#1972395\n\n[1:1.8.0.302.b07-0.0.ea]\n- Add a test verifying system crypto policies can be disabled\n- Resolves: rhbz#1972395",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2341.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2369.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2388.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-2776.html"
+				}
+			],
+			"published": "2021-07-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-2341",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2341.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-2369",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2369.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-2388",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-2388.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-accessibility",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-accessibility-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-accessibility-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-demo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-demo-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-demo-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-devel-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-devel-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-headless",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-headless-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-headless-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-javadoc-zip",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-src-fastdebug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.8.0-openjdk-src-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.8.0.302.b08-0.el8_4"
+								}
+							],
+							"fixed": [
+								"1:1.8.0.302.b08-0.el8_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

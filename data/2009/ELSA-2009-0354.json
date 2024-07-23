@@ -1,0 +1,139 @@
+{
+	"id": "ELSA-2009-0354",
+	"advisories": [
+		{
+			"id": "ELSA-2009-0354",
+			"title": "ELSA-2009-0354:  evolution-data-server security update (MODERATE)",
+			"description": "[1.12.3-10.el5_3.3]\n- Add patch for RH bug #488280 (CVE-2009-0547, S/MIME signatures).\n\n[1.12.3-10.el5_3.2]\n- Add patch for RH bug #488280 (CVE-2009-0582, NTLM authentication).\n\n[1.12.3-10.el5_3.1]\n- Add patch for RH bug #488280 (CVE-2009-0587, Base64 encoding).",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0547.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0582.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0587.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-0354.html"
+				}
+			],
+			"published": "2009-03-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-0547",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0547.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-0582",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0582.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2009-0587",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-0587.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "evolution-data-server",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.3-10.el5_3.3"
+								}
+							],
+							"fixed": [
+								"0:1.12.3-10.el5_3.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "evolution-data-server-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.3-10.el5_3.3"
+								}
+							],
+							"fixed": [
+								"0:1.12.3-10.el5_3.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "evolution-data-server-doc",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.12.3-10.el5_3.3"
+								}
+							],
+							"fixed": [
+								"0:1.12.3-10.el5_3.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

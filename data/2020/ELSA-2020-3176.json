@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2020-3176",
+	"advisories": [
+		{
+			"id": "ELSA-2020-3176",
+			"title": "ELSA-2020-3176:  postgresql-jdbc security update (IMPORTANT)",
+			"description": "[42.2.3-3]\n- fixed XXE vulnerability unit test\n\n[42.2.3-2]\n- fixed XXE vulnerability (CVE-2020-13692)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-13692.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-3176.html"
+				}
+			],
+			"published": "2020-07-29T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-13692",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-13692.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-jdbc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:42.2.3-3.el8_2"
+								}
+							],
+							"fixed": [
+								"0:42.2.3-3.el8_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-jdbc-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:42.2.3-3.el8_2"
+								}
+							],
+							"fixed": [
+								"0:42.2.3-3.el8_2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,139 @@
+{
+	"id": "ELSA-2007-0964",
+	"advisories": [
+		{
+			"id": "ELSA-2007-0964",
+			"title": "ELSA-2007-0964:  Important: openssl security update  (IMPORTANT)",
+			"description": "[0.9.8b-8.3.2]\n - more DTLS fixes (#321211)\n \n [0.9.8b-8.3.1]\n - fix CVE-2007-3108 - side channel attack on private keys (#322891)\n - fix CVE-2007-5135 - off-by-one in SSL_get_shared_ciphers (#309871)\n - fix CVE-2007-4995 - out of order DTLS fragments buffer overflow (#321211)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-3108.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4995.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-5135.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2007-0964.html"
+				}
+			],
+			"published": "2007-10-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-3108",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-3108.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-4995",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-4995.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-5135",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-5135.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.8b-8.3.el5_0.2"
+								}
+							],
+							"fixed": [
+								"0:0.9.8b-8.3.el5_0.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.8b-8.3.el5_0.2"
+								}
+							],
+							"fixed": [
+								"0:0.9.8b-8.3.el5_0.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.8b-8.3.el5_0.2"
+								}
+							],
+							"fixed": [
+								"0:0.9.8b-8.3.el5_0.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

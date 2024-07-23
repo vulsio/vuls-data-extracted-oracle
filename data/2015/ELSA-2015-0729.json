@@ -1,0 +1,213 @@
+{
+	"id": "ELSA-2015-0729",
+	"advisories": [
+		{
+			"id": "ELSA-2015-0729",
+			"title": "ELSA-2015-0729:  setroubleshoot security update (IMPORTANT)",
+			"description": "[3.2.17-4.1.0.1]\n- Add setroubleshoot-oracle-enterprise.patch to change bug reporting\n  URL to linux.oracle.com\n\n[3.2.17-4.1]\n- Fix get_rpm_nvr_*_temporary functions\nResolves:#1203352",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-1815.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-0729.html"
+				}
+			],
+			"published": "2015-03-26T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-1815",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-1815.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "setroubleshoot",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.5-7.0.1.el5_11"
+								}
+							],
+							"fixed": [
+								"0:2.0.5-7.0.1.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "setroubleshoot-server",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.5-7.0.1.el5_11"
+								}
+							],
+							"fixed": [
+								"0:2.0.5-7.0.1.el5_11"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "setroubleshoot",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.47-6.0.1.el6_6.1"
+								}
+							],
+							"fixed": [
+								"0:3.0.47-6.0.1.el6_6.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "setroubleshoot-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.47-6.0.1.el6_6.1"
+								}
+							],
+							"fixed": [
+								"0:3.0.47-6.0.1.el6_6.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "setroubleshoot-server",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0.47-6.0.1.el6_6.1"
+								}
+							],
+							"fixed": [
+								"0:3.0.47-6.0.1.el6_6.1"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "setroubleshoot",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.2.17-4.1.0.1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:3.2.17-4.1.0.1.el7_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "setroubleshoot-server",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.2.17-4.1.0.1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:3.2.17-4.1.0.1.el7_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

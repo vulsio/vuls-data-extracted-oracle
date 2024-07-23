@@ -1,0 +1,113 @@
+{
+	"id": "ELSA-2023-3425",
+	"advisories": [
+		{
+			"id": "ELSA-2023-3425",
+			"title": "ELSA-2023-3425:  cups-filters security update (IMPORTANT)",
+			"description": "[1.20.0-29.0.1]\n- header/footer not being printed in banner page. [Orabug: 28265099] (isaac.chen@oracle.com)\n- Fixes [Orabug: 29163824] source indentation not following convention (isaac.chen@oracle.com)\n\n[1.20.0-29.2]\n- CVE-2023-24805 cups-filters: remote code execution in cups-filters, beh CUPS backend",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-24805.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-3425.html"
+				}
+			],
+			"published": "2023-06-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-24805",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-24805.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-filters",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.20.0-29.0.1.el8_8.2"
+								}
+							],
+							"fixed": [
+								"0:1.20.0-29.0.1.el8_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-filters-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.20.0-29.0.1.el8_8.2"
+								}
+							],
+							"fixed": [
+								"0:1.20.0-29.0.1.el8_8.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-filters-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.20.0-29.0.1.el8_8.2"
+								}
+							],
+							"fixed": [
+								"0:1.20.0-29.0.1.el8_8.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

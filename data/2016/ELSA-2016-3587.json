@@ -1,0 +1,364 @@
+{
+	"id": "ELSA-2016-3587",
+	"advisories": [
+		{
+			"id": "ELSA-2016-3587",
+			"title": "ELSA-2016-3587:  kernel-uek security update (IMPORTANT)",
+			"description": "kernel-uek\n[4.1.12-37.6.1]\n- vfs: rename: check backing inode being equal (Miklos Szeredi)  [Orabug: 24010060]  {CVE-2016-6198} {CVE-2016-6197}\n- vfs: add vfs_select_inode() helper (Miklos Szeredi)  [Orabug: 24010060]  {CVE-2016-6198} {CVE-2016-6197}\n- ovl: verify upper dentry before unlink and rename (Miklos Szeredi)  [Orabug: 24010060]  {CVE-2016-6198} {CVE-2016-6197}\n- ovl: fix getcwd() failure after unsuccessful rmdir (Rui Wang)  [Orabug: 24010060]  {CVE-2016-6198} {CVE-2016-6197}\n- xen: use same main loop for counting and remapping pages (Juergen Gross)  [Orabug: 24012238] \n- Revert 'ocfs2: bump up o2cb network protocol version' (Junxiao Bi)  [Orabug: 23710417] \n- atl2: Disable unimplemented scatter/gather feature (Ben Hutchings)  [Orabug: 23704078]  {CVE-2016-2117}\n- Revert 'perf tools: Bump default sample freq to 4 kHz' (ashok.vairavan)  [Orabug: 23634802] \n- block: Initialize max_dev_sectors to 0 (Keith Busch)  [Orabug: 23333444] \n- sd: Fix rw_max for devices that report an optimal xfer size (Martin K. Petersen)  [Orabug: 23333444] \n- sd: Fix excessive capacity printing on devices with blocks bigger than 512 bytes (Martin K. Petersen)  [Orabug: 23333444] \n- sd: Optimal I/O size is in bytes, not sectors (Martin K. Petersen)  [Orabug: 23333444] \n- sd: Reject optimal transfer length smaller than page size (Martin K. Petersen)  [Orabug: 23333444] \n- Fix kabi issue for upstream commit ca369d51 (Joe Jin)  [Orabug: 23333444] \n- block/sd: Fix device-imposed transfer length limits (Joe Jin)  [Orabug: 23333444]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2117.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-6197.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-6198.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-3587.html"
+				}
+			],
+			"published": "2016-07-29T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-2117",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2117.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-6197",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-6197.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-6198",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-6198.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dtrace-modules-4.1.12-37.6.1.el6uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.5.2-1.el6"
+								}
+							],
+							"fixed": [
+								"0:0.5.2-1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-37.6.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-37.6.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-37.6.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-37.6.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-37.6.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-37.6.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-37.6.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-37.6.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-37.6.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-37.6.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-37.6.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-37.6.1.el6uek"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dtrace-modules-4.1.12-37.6.1.el7uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.5.2-1.el7"
+								}
+							],
+							"fixed": [
+								"0:0.5.2-1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-37.6.1.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-37.6.1.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-37.6.1.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-37.6.1.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-37.6.1.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-37.6.1.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-37.6.1.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-37.6.1.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-37.6.1.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-37.6.1.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.1.12-37.6.1.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.1.12-37.6.1.el7uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

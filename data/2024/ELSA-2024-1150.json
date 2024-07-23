@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2024-1150",
+	"advisories": [
+		{
+			"id": "ELSA-2024-1150",
+			"title": "ELSA-2024-1150:  buildah security update (MODERATE)",
+			"description": "[1.31.4-1.0.1]\n- update to https://github.com/containers/buildah/releases/tag/v1.31\n- https://github.com/containers/buildah/commit/11bbf33",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-48795.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-1150.html"
+				}
+			],
+			"published": "2024-03-07T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-48795",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-48795.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "buildah",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.31.4-1.0.1.el9_3"
+								}
+							],
+							"fixed": [
+								"1:1.31.4-1.0.1.el9_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "buildah-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.31.4-1.0.1.el9_3"
+								}
+							],
+							"fixed": [
+								"1:1.31.4-1.0.1.el9_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

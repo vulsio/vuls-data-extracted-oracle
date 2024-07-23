@@ -1,0 +1,120 @@
+{
+	"id": "ELSA-2014-1893",
+	"advisories": [
+		{
+			"id": "ELSA-2014-1893",
+			"title": "ELSA-2014-1893:  libXfont security update (IMPORTANT)",
+			"description": "[1.2.2-1.0.6]\n- CVE-2014-0209: integer overflow of allocations in font metadata file parsing (bug 1163602, bug 1163601)\n- CVE-2014-0210: unvalidated length fields when parsing xfs protocol replies (bug 1163602, bug 1163601)\n- CVE-2014-0211: integer overflows calculating memory needs for xfs replies (bug 1163602, bug 1163601)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0209.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0210.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0211.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-1893.html"
+				}
+			],
+			"published": "2014-11-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-0209",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0209.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0210",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0210.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2014-0211",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-0211.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libXfont",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.2-1.0.6.el5_11"
+								}
+							],
+							"fixed": [
+								"0:1.2.2-1.0.6.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libXfont-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.2-1.0.6.el5_11"
+								}
+							],
+							"fixed": [
+								"0:1.2.2-1.0.6.el5_11"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

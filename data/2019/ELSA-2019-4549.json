@@ -1,0 +1,56 @@
+{
+	"id": "ELSA-2019-4549",
+	"advisories": [
+		{
+			"id": "ELSA-2019-4549",
+			"title": "ELSA-2019-4549:  oraclelinux-release-el6 security update (IMPORTANT)",
+			"description": "[1.0-5]\n- Fix ol_yum_configure.sh [ OraBug 29241080]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-4549.html"
+				}
+			],
+			"published": "2019-02-19T00:00:00Z"
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "oraclelinux-release-el6",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0-5.el6"
+								}
+							],
+							"fixed": [
+								"0:1.0-5.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

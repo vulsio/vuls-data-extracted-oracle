@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2023-12150",
+	"advisories": [
+		{
+			"id": "ELSA-2023-12150",
+			"title": "ELSA-2023-12150:  pcs security update (MODERATE)",
+			"description": "[0.11.3-4.el9_1.2]\n- Updated bundled rubygems: mustermann, rack, rack_protection, sinatra, tilt\n- Added license for rubygem ruby2_keywords\n- Resolves: rhbz#2159426",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-45442.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-12150.html"
+				}
+			],
+			"published": "2023-03-01T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-45442",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-45442.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pcs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.11.3-4.el9_1.2"
+								}
+							],
+							"fixed": [
+								"0:0.11.3-4.el9_1.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pcs-snmp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.11.3-4.el9_1.2"
+								}
+							],
+							"fixed": [
+								"0:0.11.3-4.el9_1.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

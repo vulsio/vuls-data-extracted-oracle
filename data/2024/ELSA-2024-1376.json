@@ -1,0 +1,97 @@
+{
+	"id": "ELSA-2024-1376",
+	"advisories": [
+		{
+			"id": "ELSA-2024-1376",
+			"title": "ELSA-2024-1376:  squid security update (IMPORTANT)",
+			"description": "[7:5.5-6.0.1.8]\n- Rebuild with release bump\n\n[7:5.5-6.8]\n- Resolves: RHEL-19555 - squid: denial of service in HTTP request\n  parsing (CVE-2023-50269)\n\n[7:5.5-6.7]\n- Resolves: RHEL-28614 - squid: Denial of Service in HTTP Chunked\n  Decoding (CVE-2024-25111)\n\n[7:5.5-6.6]\n- Resolves: RHEL-26091 - squid: denial of service in HTTP header\n  parser (CVE-2024-25617)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-50269.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-25111.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-25617.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-1376.html"
+				}
+			],
+			"published": "2024-03-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-50269",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-50269.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-25111",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-25111.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-25617",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-25617.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "squid",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "7:5.5-6.0.1.el9_3.8"
+								}
+							],
+							"fixed": [
+								"7:5.5-6.0.1.el9_3.8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

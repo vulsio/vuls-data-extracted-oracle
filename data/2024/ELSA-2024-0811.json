@@ -1,0 +1,147 @@
+{
+	"id": "ELSA-2024-0811",
+	"advisories": [
+		{
+			"id": "ELSA-2024-0811",
+			"title": "ELSA-2024-0811:  sudo security update (MODERATE)",
+			"description": "RHEL 9.3.0.Z ERRATUM\n[1.9.5p2-10]\n- CVE-2023-28487 sudo: Sudo does not escape control characters in sudoreplay output\nResolves: RHEL-21834\n- CVE-2023-28486 sudo: Sudo does not escape control characters in log messages\nResolves: RHEL-21828\n- CVE-2023-42465 sudo: Targeted Corruption of Register and Stack Variables\nResolves: RHEL-21821\n\nRHEL 8.9.0.Z ERRATUM\n[1.9.5p2-1]\n- Rebase to 1.9.5p2\n- CVE-2023-28486 sudo: Sudo does not escape control characters in log messages\nResolves: RHEL-21825\n- CVE-2023-28487 sudo: Sudo does not escape control characters in sudoreplay output\nResolves: RHEL-21831\n- CVE-2023-42465 sudo: Targeted Corruption of Register and Stack Variables\nResolves: RHEL-21820",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-28486.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-28487.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-42465.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-0811.html"
+				}
+			],
+			"published": "2024-02-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-28486",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-28486.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-28487",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-28487.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-42465",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-42465.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sudo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.5p2-1.el8_9"
+								}
+							],
+							"fixed": [
+								"0:1.9.5p2-1.el8_9"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sudo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.5p2-10.el9_3"
+								}
+							],
+							"fixed": [
+								"0:1.9.5p2-10.el9_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sudo-python-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.5p2-10.el9_3"
+								}
+							],
+							"fixed": [
+								"0:1.9.5p2-10.el9_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

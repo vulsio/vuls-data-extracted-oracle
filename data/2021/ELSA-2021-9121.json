@@ -1,0 +1,155 @@
+{
+	"id": "ELSA-2021-9121",
+	"advisories": [
+		{
+			"id": "ELSA-2021-9121",
+			"title": "ELSA-2021-9121:  openssl  bug fix update (IMPORTANT)",
+			"description": "[1.0.2k-21]\n- remove ASN1_F_ASN1_ITEM_EMBED_D2I from openssl-1.0.2k-cve-2020-1971.patch\n\n[1.0.2k-20]\n- fix CVE-2020-1971 openssl: EDIPARTYNAME NULL pointer de-reference\n\n[1.0.2k-19]\n- close the RSA decryption 9 lives of Bleichenbacher cat\n  timing side channel (#1649568)\n\n[1.0.2k-18]\n- fix CVE-2018-0734 - DSA signature local timing side channel\n- fix CVE-2019-1559 - 0-byte record padding oracle\n- close the RSA decryption One & done EM side channel (#1619558)\n\n[1.0.2k-17]\n- use SHA-256 in FIPS RSA pairwise key check\n- fix CVE-2018-5407 (and CVE-2018-0735) - EC signature local\n  timing side-channel key extraction",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-1971.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-9121.html"
+				}
+			],
+			"published": "2021-04-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-1971",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-1971.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-21.ksplice1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-21.ksplice1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-21.ksplice1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-21.ksplice1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-21.ksplice1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-21.ksplice1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-21.ksplice1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-21.ksplice1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-21.ksplice1.el7_9"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-21.ksplice1.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

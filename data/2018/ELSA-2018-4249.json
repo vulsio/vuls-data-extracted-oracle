@@ -1,0 +1,163 @@
+{
+	"id": "ELSA-2018-4249",
+	"advisories": [
+		{
+			"id": "ELSA-2018-4249",
+			"title": "ELSA-2018-4249:  openssl security update (IMPORTANT)",
+			"description": "[1.0.2k-12.0.3]\n- Oracle bug 28672370: backport CVE-2018-0732\n- Oracle bug 28672351: backport CVE-2018-0737",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0732.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0737.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-4249.html"
+				}
+			],
+			"published": "2018-10-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-0732",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0732.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-0737",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0737.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-12.0.3.el7"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-12.0.3.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-12.0.3.el7"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-12.0.3.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-12.0.3.el7"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-12.0.3.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-12.0.3.el7"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-12.0.3.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.0.2k-12.0.3.el7"
+								}
+							],
+							"fixed": [
+								"1:1.0.2k-12.0.3.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,134 @@
+{
+	"id": "ELSA-2022-4991",
+	"advisories": [
+		{
+			"id": "ELSA-2022-4991",
+			"title": "ELSA-2022-4991:  xz security update (IMPORTANT)",
+			"description": "[5.2.4-4]\n- Fix arbitrary file write vulnerability\n  Resolves: CVE-2022-1271",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-1271.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-4991.html"
+				}
+			],
+			"published": "2022-06-13T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-1271",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-1271.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xz",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.2.4-4.el8_6"
+								}
+							],
+							"fixed": [
+								"0:5.2.4-4.el8_6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xz-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.2.4-4.el8_6"
+								}
+							],
+							"fixed": [
+								"0:5.2.4-4.el8_6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xz-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.2.4-4.el8_6"
+								}
+							],
+							"fixed": [
+								"0:5.2.4-4.el8_6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xz-lzma-compat",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.2.4-4.el8_6"
+								}
+							],
+							"fixed": [
+								"0:5.2.4-4.el8_6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

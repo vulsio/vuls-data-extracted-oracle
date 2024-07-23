@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2022-1797",
+	"advisories": [
+		{
+			"id": "ELSA-2022-1797",
+			"title": "ELSA-2022-1797:  compat-exiv2-026 security update (MODERATE)",
+			"description": "[0.26-7]\n- Fix stack exhaustion issue in the printIFDStructure function\n  Resolves: bz#2003669",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-18898.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-1797.html"
+				}
+			],
+			"published": "2022-05-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-18898",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-18898.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "compat-exiv2-026",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.26-7.el8"
+								}
+							],
+							"fixed": [
+								"0:0.26-7.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

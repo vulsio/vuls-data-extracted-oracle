@@ -1,0 +1,176 @@
+{
+	"id": "ELSA-2013-0517",
+	"advisories": [
+		{
+			"id": "ELSA-2013-0517",
+			"title": "ELSA-2013-0517:  util-linux-ng security, bug fix and enhancement update (LOW)",
+			"description": "[2.17.2-12.9]\n- fix #892471 - CVE-2013-0157 mount folder existence information disclosure\n\n[2.17.2-12.8]\n- fix #679833 - [RFE] tailf should support \n- fix #719927 - [RFE] add adjtimex --compare functionality to hwclock\n- fix #730272 - losetup does not warn if backing file is < 512 bytes\n- fix #730891 - document cfdisk and sfdisk incompatibility with 4096-bytes sectors\n- fix #736245 - lscpu segfault on non-uniform cpu configuration\n- fix #783514 - default barrier setting for EXT3 filesystems in mount manpage is wrong\n- fix #790728 - blkid ignores swap UUIDs if the first byte is a zero byte\n- fix #818621 - lsblk should not open device it prints info about\n- fix #819945 - hwclock --systz causes a system time jump\n- fix #820183 - mount(8) man page should include relatime in defaults definition\n- fix #823008 - update to the latest upstream lscpu and chcpu\n- fix #837935 - lscpu coredumps on a system with 158 active processors\n- fix #839281 - inode_readahead for ext4 should be inode_readahead_blks\n- fix #845477 - Duplicate SElinux mount options cause mounting from the commandline to fail\n- fix #845971 - while reading /etc/fstab, mount command returns a device before a directory\n- fix #858009 - login doesn't update /var/run/utmp properly\n- fix #809449 - Backport inverse tree (-s) option for lsblk and related patches\n- fix #809139 - lsblk option -D missing in manpage",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0157.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0517.html"
+				}
+			],
+			"published": "2013-02-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-0157",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-0157.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libblkid",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.17.2-12.9.el6"
+								}
+							],
+							"fixed": [
+								"0:2.17.2-12.9.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libblkid-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.17.2-12.9.el6"
+								}
+							],
+							"fixed": [
+								"0:2.17.2-12.9.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libuuid",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.17.2-12.9.el6"
+								}
+							],
+							"fixed": [
+								"0:2.17.2-12.9.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libuuid-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.17.2-12.9.el6"
+								}
+							],
+							"fixed": [
+								"0:2.17.2-12.9.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "util-linux-ng",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.17.2-12.9.el6"
+								}
+							],
+							"fixed": [
+								"0:2.17.2-12.9.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "uuidd",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.17.2-12.9.el6"
+								}
+							],
+							"fixed": [
+								"0:2.17.2-12.9.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

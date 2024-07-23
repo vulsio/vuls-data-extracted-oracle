@@ -1,0 +1,370 @@
+{
+	"id": "ELSA-2024-4450",
+	"advisories": [
+		{
+			"id": "ELSA-2024-4450",
+			"title": "ELSA-2024-4450:  dotnet8.0 security update (IMPORTANT)",
+			"description": "[8.0.107-1.0.1]\n- Add support for Oracle Linux\n\n[8.0.107-1]\n- Update to .NET SDK 8.0.107 and Runtime 8.0.7\n- Resolves: RHEL-45324",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-30105.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-35264.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-38095.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-4450.html"
+				}
+			],
+			"published": "2024-07-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2024-30105",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-30105.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-35264",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-35264.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2024-38095",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-38095.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "aspnetcore-runtime-8.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.7-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.7-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "aspnetcore-runtime-dbg-8.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.7-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.7-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "aspnetcore-targeting-pack-8.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.7-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.7-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dotnet-apphost-pack-8.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.7-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.7-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dotnet-host",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.7-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.7-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dotnet-hostfxr-8.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.7-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.7-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dotnet-runtime-8.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.7-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.7-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dotnet-runtime-dbg-8.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.7-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.7-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dotnet-sdk-8.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.107-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.107-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dotnet-sdk-8.0-source-built-artifacts",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.107-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.107-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dotnet-sdk-dbg-8.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.107-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.107-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dotnet-targeting-pack-8.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.7-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.7-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dotnet-templates-8.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.107-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.107-1.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "netstandard-targeting-pack-2.1",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.107-1.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:8.0.107-1.0.1.el9_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

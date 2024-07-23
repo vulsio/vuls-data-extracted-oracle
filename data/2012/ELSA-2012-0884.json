@@ -1,0 +1,176 @@
+{
+	"id": "ELSA-2012-0884",
+	"advisories": [
+		{
+			"id": "ELSA-2012-0884",
+			"title": "ELSA-2012-0884:  openssh security, bug fix, and enhancement update (LOW)",
+			"description": "[5.3p1-81]\n- fixes in openssh-5.3p1-required-authentications.patch (#657378)\n\n[5.3p1-79]\n- fix forward on non-localhost ports with IPv6 (#732955)\n\n[5.3p1-78]\n- clear SELinux exec context before exec passwd (#814691)\n\n[5.3p1-77]\n- prevent post-auth resource exhaustion (#809938)\n\n[5.3p1-76]\n- don't escape backslah in a banner (#809619)\n\n[5.3p1-75]\n- fix various issues in openssh-5.3p1-required-authentications.patch (#805901)\n\n[5.3p1-74]\n- fix out-of-memory killer patch (#744236)\n\n[5.3p1-73]\n- remove openssh-4.3p2-no-v6only.patch (#732955)\n- adjust Linux out-of-memory killer (#744236)\n- fix sshd init script - check existence of crypto (#797384)\n- add RequiredAuthentications[12] (#657378)\n- run privsep slave process as the users SELinux context (#798241)\n\n[5.3p1-72]\n- drop CAVS test driver (#782091)\n\n[5.3p1-71]\n- enable aes-ctr ciphers use the EVP engines from OpenSSL such as the AES-NI (#756929)\n- add CAVS test driver for the aes-ctr ciphers (#782091)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-5000.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-0884.html"
+				}
+			],
+			"published": "2012-06-27T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-5000",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-5000.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-81.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-81.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-askpass",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-81.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-81.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-clients",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-81.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-81.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-ldap",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-81.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-81.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssh-server",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.3p1-81.el6"
+								}
+							],
+							"fixed": [
+								"0:5.3p1-81.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pam_ssh_agent_auth",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9-81.el6"
+								}
+							],
+							"fixed": [
+								"0:0.9-81.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,220 @@
+{
+	"id": "ELSA-2012-1259",
+	"advisories": [
+		{
+			"id": "ELSA-2012-1259",
+			"title": "ELSA-2012-1259:  quagga security update (MODERATE)",
+			"description": "[0.99.15-7.2]\n- improve fix for CVE-2011-3325\n\n[0.99.15-7.1]\n- fix CVE-2011-3323\n- fix CVE-2011-3324\n- fix CVE-2011-3325\n- fix CVE-2011-3326\n- fix CVE-2011-3327\n- fix CVE-2012-0255\n- fix CVE-2012-0249 and CVE-2012-0250\n- fix CVE-2012-1820\n\n[0.99.15-7]\n- Resolves: #684751 - CVE-2010-1674 CVE-2010-1675 quagga various flaws\n\n[0.99.15-6]\n- Resolves: #644832 - CVE-2010-2948 CVE-2010-2949 quagga various flaws",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3323.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3324.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3325.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3326.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3327.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0249.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0250.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0255.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-1820.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1259.html"
+				}
+			],
+			"published": "2012-09-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-3323",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3323.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-3324",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3324.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-3325",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3325.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-3326",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3326.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-3327",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3327.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-0249",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0249.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-0250",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0250.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-0255",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0255.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-1820",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-1820.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "quagga",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.99.15-7.el6_3.2"
+								}
+							],
+							"fixed": [
+								"0:0.99.15-7.el6_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "quagga-contrib",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.99.15-7.el6_3.2"
+								}
+							],
+							"fixed": [
+								"0:0.99.15-7.el6_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "quagga-devel",
+							"architectures": [
+								"i686",
+								"sparc64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.99.15-7.el6_3.2"
+								}
+							],
+							"fixed": [
+								"0:0.99.15-7.el6_3.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

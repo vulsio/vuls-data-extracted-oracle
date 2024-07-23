@@ -1,0 +1,236 @@
+{
+	"id": "ELSA-2017-0906",
+	"advisories": [
+		{
+			"id": "ELSA-2017-0906",
+			"title": "ELSA-2017-0906:  httpd security and bug fix update (MODERATE)",
+			"description": "[2.4.6-45.0.1.4]\n- replace index.html with Oracle's index page oracle_index.html\n\n[2.4.6-45.4]\n- Resolves: #1396197 - Backport: mod_proxy_wstunnel - AH02447: err/hup\n  on backconn\n\n[2.4.6-45.3]\n- prefork: fix delay completing graceful restart (#1327624)\n- mod_ldap: fix authz regression, failing to rebind (#1415257)\n\n[2.4.6-45.2]\n- updated patch for CVE-2016-8743\n\n[2.4.6-45.1]\n- Resolves: #1412975 - CVE-2016-0736 CVE-2016-2161 CVE-2016-8743 httpd: various\n  flaws",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0736.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2161.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8743.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-0906.html"
+				}
+			],
+			"published": "2017-04-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-0736",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-0736.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-2161",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2161.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-8743",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8743.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-45.0.1.el7_3.4"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-45.0.1.el7_3.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-45.0.1.el7_3.4"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-45.0.1.el7_3.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-manual",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-45.0.1.el7_3.4"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-45.0.1.el7_3.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-45.0.1.el7_3.4"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-45.0.1.el7_3.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_ldap",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-45.0.1.el7_3.4"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-45.0.1.el7_3.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_proxy_html",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.4.6-45.0.1.el7_3.4"
+								}
+							],
+							"fixed": [
+								"1:2.4.6-45.0.1.el7_3.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_session",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.6-45.0.1.el7_3.4"
+								}
+							],
+							"fixed": [
+								"0:2.4.6-45.0.1.el7_3.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_ssl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.4.6-45.0.1.el7_3.4"
+								}
+							],
+							"fixed": [
+								"1:2.4.6-45.0.1.el7_3.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

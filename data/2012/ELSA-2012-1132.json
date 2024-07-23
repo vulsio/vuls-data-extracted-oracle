@@ -1,0 +1,105 @@
+{
+	"id": "ELSA-2012-1132",
+	"advisories": [
+		{
+			"id": "ELSA-2012-1132",
+			"title": "ELSA-2012-1132:  icedtea-web security update (IMPORTANT)",
+			"description": "[1.2.1-1]\n- Updated to 1.2.1\n- Resolves: CVE-2012-3422\n- Resolves: CVE-2012-3423",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3422.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3423.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1132.html"
+				}
+			],
+			"published": "2012-07-31T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-3422",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3422.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-3423",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3423.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "icedtea-web",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.1-1.el6_3"
+								}
+							],
+							"fixed": [
+								"0:1.2.1-1.el6_3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "icedtea-web-javadoc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.2.1-1.el6_3"
+								}
+							],
+							"fixed": [
+								"0:1.2.1-1.el6_3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

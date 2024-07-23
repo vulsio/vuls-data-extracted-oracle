@@ -1,0 +1,125 @@
+{
+	"id": "ELSA-2017-3372",
+	"advisories": [
+		{
+			"id": "ELSA-2017-3372",
+			"title": "ELSA-2017-3372:  thunderbird security update (IMPORTANT)",
+			"description": "[52.5.0-1.0.1]\n- Replaced thunderbird-redhat-default-prefs.js with thunderbird-oracle-default-prefs.js\n\n[52.5.0-1]\n- Update to 52.5.0",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-7826.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-7828.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-7830.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-3372.html"
+				}
+			],
+			"published": "2017-12-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-7826",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-7826.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-7828",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-7828.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-7830",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-7830.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "thunderbird",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:52.5.0-1.0.1.el6_9"
+								}
+							],
+							"fixed": [
+								"0:52.5.0-1.0.1.el6_9"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "thunderbird",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:52.5.0-1.0.1.el7_4"
+								}
+							],
+							"fixed": [
+								"0:52.5.0-1.0.1.el7_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

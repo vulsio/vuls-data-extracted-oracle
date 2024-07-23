@@ -1,0 +1,256 @@
+{
+	"id": "ELSA-2020-4187",
+	"advisories": [
+		{
+			"id": "ELSA-2020-4187",
+			"title": "ELSA-2020-4187:  spice and spice-gtk security update (IMPORTANT)",
+			"description": "spice\n[0.14.0-9.0.2.el7_9.1]\n- Add ARM support\n\n[0.14.0-9.1]\n- Fix multiple buffer overflows in QUIC decoding code\n  Resolves: CVE-2020-14355\n\nspice-gtk\n[0.35-5.1]\n- Fix multiple buffer overflows in QUIC decoding code\n  Resolves: CVE-2020-14355",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-14355.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-4187.html"
+				}
+			],
+			"published": "2020-10-08T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2020-14355",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-14355.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-glib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.35-5.el7_9.1"
+								}
+							],
+							"fixed": [
+								"0:0.35-5.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-glib-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.35-5.el7_9.1"
+								}
+							],
+							"fixed": [
+								"0:0.35-5.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-gtk-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.35-5.el7_9.1"
+								}
+							],
+							"fixed": [
+								"0:0.35-5.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-gtk3",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.35-5.el7_9.1"
+								}
+							],
+							"fixed": [
+								"0:0.35-5.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-gtk3-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.35-5.el7_9.1"
+								}
+							],
+							"fixed": [
+								"0:0.35-5.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-gtk3-vala",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.35-5.el7_9.1"
+								}
+							],
+							"fixed": [
+								"0:0.35-5.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-server",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.14.0-9.0.2.el7_9.1"
+								}
+							],
+							"fixed": [
+								"0:0.14.0-9.0.2.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-server",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.14.0-9.el7_9.1"
+								}
+							],
+							"fixed": [
+								"0:0.14.0-9.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-server-devel",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.14.0-9.0.2.el7_9.1"
+								}
+							],
+							"fixed": [
+								"0:0.14.0-9.0.2.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-server-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.14.0-9.el7_9.1"
+								}
+							],
+							"fixed": [
+								"0:0.14.0-9.el7_9.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

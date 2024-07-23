@@ -1,0 +1,213 @@
+{
+	"id": "ELSA-2011-1437",
+	"advisories": [
+		{
+			"id": "ELSA-2011-1437",
+			"title": "ELSA-2011-1437:  firefox security update (CRITICAL)",
+			"description": "firefox:\n[3.6.24-3.0.1.el6_1]\n- Add firefox-oracle-default-prefs.js and remove the corresponding Red Hat ones\n\n[3.6.24-3]\n- Update to 3.6.24\n\nxulrunner:\n[1.9.2.24-2.0.1.el6_1.1]\n- Replace xulrunner-redhat-default-prefs.js with\n  xulrunner-oracle-default-prefs.js\n\n[1.9.2.24-2]\n- Update to 1.9.2.24",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3647.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3648.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3650.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1437.html"
+				}
+			],
+			"published": "2011-11-09T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-3647",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3647.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-3648",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3648.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-3650",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3650.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.24-3.0.1.el5_7"
+								}
+							],
+							"fixed": [
+								"0:3.6.24-3.0.1.el5_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xulrunner",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.2.24-2.0.1.el5_7"
+								}
+							],
+							"fixed": [
+								"0:1.9.2.24-2.0.1.el5_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xulrunner-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.2.24-2.0.1.el5_7"
+								}
+							],
+							"fixed": [
+								"0:1.9.2.24-2.0.1.el5_7"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.6.24-3.0.1.el6_1"
+								}
+							],
+							"fixed": [
+								"0:3.6.24-3.0.1.el6_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xulrunner",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.2.24-2.0.1.el6_1.1"
+								}
+							],
+							"fixed": [
+								"0:1.9.2.24-2.0.1.el6_1.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xulrunner-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.2.24-2.0.1.el6_1.1"
+								}
+							],
+							"fixed": [
+								"0:1.9.2.24-2.0.1.el6_1.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

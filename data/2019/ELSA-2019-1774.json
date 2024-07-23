@@ -1,0 +1,155 @@
+{
+	"id": "ELSA-2019-1774",
+	"advisories": [
+		{
+			"id": "ELSA-2019-1774",
+			"title": "ELSA-2019-1774:  vim security update (IMPORTANT)",
+			"description": "[2:7.4.629-5.2]\n- 1724045 - fix CVE-2019-12735 the :source! command allows arbitrary command execution via the modeline\n- fix spec warnings about expanding macros",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-12735.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-1774.html"
+				}
+			],
+			"published": "2019-07-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-12735",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-12735.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-X11",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:7.4.629-5.el6_10.2"
+								}
+							],
+							"fixed": [
+								"2:7.4.629-5.el6_10.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-common",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:7.4.629-5.el6_10.2"
+								}
+							],
+							"fixed": [
+								"2:7.4.629-5.el6_10.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-enhanced",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:7.4.629-5.el6_10.2"
+								}
+							],
+							"fixed": [
+								"2:7.4.629-5.el6_10.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-filesystem",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:7.4.629-5.el6_10.2"
+								}
+							],
+							"fixed": [
+								"2:7.4.629-5.el6_10.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "vim-minimal",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:7.4.629-5.el6_10.2"
+								}
+							],
+							"fixed": [
+								"2:7.4.629-5.el6_10.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

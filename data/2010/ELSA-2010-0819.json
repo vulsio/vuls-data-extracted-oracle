@@ -1,0 +1,133 @@
+{
+	"id": "ELSA-2010-0819",
+	"advisories": [
+		{
+			"id": "ELSA-2010-0819",
+			"title": "ELSA-2010-0819:  pam security update (MODERATE)",
+			"description": "[0.99.6.2-6.2]\n- fix insecure dropping of priviledges in pam_xauth\n  and pam_mail - CVE-2010-3316 (#637898), CVE-2010-3435 (#641335)\n- fix insecure executing of scripts with user supplied environment\n  variables in pam_namespace - CVE-2010-3853 (#643043)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3316.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3435.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3853.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4707.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0819.html"
+				}
+			],
+			"published": "2010-11-01T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-3316",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3316.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-3435",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3435.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-3853",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3853.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-4707",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-4707.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pam",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.99.6.2-6.el5_5.2"
+								}
+							],
+							"fixed": [
+								"0:0.99.6.2-6.el5_5.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pam-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.99.6.2-6.el5_5.2"
+								}
+							],
+							"fixed": [
+								"0:0.99.6.2-6.el5_5.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

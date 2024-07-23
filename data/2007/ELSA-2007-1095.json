@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2007-1095",
+	"advisories": [
+		{
+			"id": "ELSA-2007-1095",
+			"title": "ELSA-2007-1095:  Moderate: htdig security update  (MODERATE)",
+			"description": "[3:3.2.0b6-4]\n - CVE-2007-6110",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-6110.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2007-1095.html"
+				}
+			],
+			"published": "2007-12-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-6110",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-6110.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "htdig",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:3.2.0b6-9.0.1.el5_1"
+								}
+							],
+							"fixed": [
+								"3:3.2.0b6-9.0.1.el5_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "htdig-web",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:3.2.0b6-9.0.1.el5_1"
+								}
+							],
+							"fixed": [
+								"3:3.2.0b6-9.0.1.el5_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

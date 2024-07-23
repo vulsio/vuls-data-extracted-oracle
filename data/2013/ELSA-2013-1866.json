@@ -1,0 +1,56 @@
+{
+	"id": "ELSA-2013-1866",
+	"advisories": [
+		{
+			"id": "ELSA-2013-1866",
+			"title": "ELSA-2013-1866:  ca-certificates security update (MODERATE)",
+			"description": "[2013.1.95-65.1]\n- Update to CKBI 1.95 from NSS 3.15.3.1",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-1866.html"
+				}
+			],
+			"published": "2013-12-19T00:00:00Z"
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ca-certificates",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2013.1.95-65.1.el6_5"
+								}
+							],
+							"fixed": [
+								"0:2013.1.95-65.1.el6_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

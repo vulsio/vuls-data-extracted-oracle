@@ -1,0 +1,230 @@
+{
+	"id": "ELSA-2023-0095",
+	"advisories": [
+		{
+			"id": "ELSA-2023-0095",
+			"title": "ELSA-2023-0095:  libtiff security update (MODERATE)",
+			"description": "[4.0.9-26]\n- Fix various CVEs\n- Resolves: CVE-2022-2519 CVE-2022-2520 CVE-2022-2521 CVE-2022-2953\n\n[4.0.9-25]\n- Fix CVE-2022-2867 (#2118857)\n- Fix CVE-2022-2868 (#2118882)\n- Fix CVE-2022-2869 (#2118878)\n\n[4.0.9-24]\n- Fix CVE-2022-2056 CVE-2022-2057 CVE-2022-2058\n- Resolves: #2103222",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2056.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2057.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2058.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2519.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2520.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2521.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2867.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2868.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2869.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2953.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-0095.html"
+				}
+			],
+			"published": "2023-01-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-2056",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2056.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2057",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2057.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2058",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2058.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2519",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2519.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2520",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2520.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2521",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2521.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2867",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2867.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2868",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2868.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2869",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2869.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-2953",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2953.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libtiff",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.0.9-26.el8_7"
+								}
+							],
+							"fixed": [
+								"0:4.0.9-26.el8_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libtiff-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.0.9-26.el8_7"
+								}
+							],
+							"fixed": [
+								"0:4.0.9-26.el8_7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libtiff-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.0.9-26.el8_7"
+								}
+							],
+							"fixed": [
+								"0:4.0.9-26.el8_7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

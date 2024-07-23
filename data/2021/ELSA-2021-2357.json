@@ -1,0 +1,155 @@
+{
+	"id": "ELSA-2021-2357",
+	"advisories": [
+		{
+			"id": "ELSA-2021-2357",
+			"title": "ELSA-2021-2357:  dhcp security update (IMPORTANT)",
+			"description": "[12:4.2.5-83.0.1]\n- Direct users to Oracle Linux support site.\n\n[12:4.2.5-83.1]\n- Fix for CVE-2021-25217\n\n[12:4.2.5-83]\n- Revert fix for 1668696",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-25217.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-2357.html"
+				}
+			],
+			"published": "2021-06-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-25217",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-25217.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhclient",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-83.0.1.el7_9.1"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-83.0.1.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-83.0.1.el7_9.1"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-83.0.1.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-83.0.1.el7_9.1"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-83.0.1.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-83.0.1.el7_9.1"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-83.0.1.el7_9.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dhcp-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "12:4.2.5-83.0.1.el7_9.1"
+								}
+							],
+							"fixed": [
+								"12:4.2.5-83.0.1.el7_9.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

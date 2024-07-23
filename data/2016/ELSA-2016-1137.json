@@ -1,0 +1,116 @@
+{
+	"id": "ELSA-2016-1137",
+	"advisories": [
+		{
+			"id": "ELSA-2016-1137",
+			"title": "ELSA-2016-1137:  openssl security update (IMPORTANT)",
+			"description": "[0.9.8e-40.0.1]\n- To disable SSLv2 client connections create the file\n  /etc/sysconfig/openssl-ssl-client-kill-sslv2 (John Haxby) [orabug 21673934]\n- Backport openssl 08-Jan-2015 security fixes (John Haxby) [orabug 20409893]\n- fix CVE-2014-3570 - Bignum squaring may produce incorrect results\n- fix CVE-2014-3571 - DTLS segmentation fault in dtls1_get_record\n- fix CVE-2014-3572 - ECDHE silently downgrades to ECDH [Client]\n\n[0.9.8e-40]\n- fix CVE-2016-2108 - memory corruption in ASN.1 encoder",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2108.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-1137.html"
+				}
+			],
+			"published": "2016-05-31T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-2108",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-2108.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.8e-40.0.1.el5_11"
+								}
+							],
+							"fixed": [
+								"0:0.9.8e-40.0.1.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.8e-40.0.1.el5_11"
+								}
+							],
+							"fixed": [
+								"0:0.9.8e-40.0.1.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.8e-40.0.1.el5_11"
+								}
+							],
+							"fixed": [
+								"0:0.9.8e-40.0.1.el5_11"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

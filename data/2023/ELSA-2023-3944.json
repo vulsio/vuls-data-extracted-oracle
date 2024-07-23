@@ -1,0 +1,130 @@
+{
+	"id": "ELSA-2023-3944",
+	"advisories": [
+		{
+			"id": "ELSA-2023-3944",
+			"title": "ELSA-2023-3944:  open-vm-tools security and bug fix update (LOW)",
+			"description": "[11.0.5-3.0.1]\n- fix spaces in vmware udev rule for scsi devices\n  [Orabug: 24461968]\n- Fix vmware udev rule in 99-vmware-scsi-timeout.rules file.\n  [Orabug: 22815019]\n- Increase timeout for scsi devices on VMWare guests by adding a udev rule.\n- Created a new file 99-vmware-scsi-timeout.rules\n- Modified spec file to install this new file.\n  [Orabug: 21819156]\n\n[11.0.5-3.el7_9.6]\n- ovt-Remove-some-dead-code.patch [bz#2215562]\n- Resolves: bz#2215562\n  ([CISA Major Incident] CVE-2023-20867 open-vm-tools: authentication bypass vulnerability in the vgauth module [rhel-7])\n\n[11.0.5-3.el7_9.5]\n- ovt-Track-Linux-filesystem-id-FSID-for-quiesced-frozen-f.patch [bz#1880404 bz#1994590]\n- Resolves: bz#1880404\n  ([ESXi] [RHEL7] vmtoolsd task is blocked in the uninterruptible state while attempting to delete (unlink) the file 'quiesce_manifest.xml')\n- Resolves: bz#1994590\n  ([ESXi][RHEL7.9][open-vm-tools] Snapshot of the RHEL7 guest on the VMWare ESXi hypervisor failed vm hangs)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-20867.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-3944.html"
+				}
+			],
+			"published": "2023-06-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-20867",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-20867.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "open-vm-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:11.0.5-3.0.1.el7_9.6"
+								}
+							],
+							"fixed": [
+								"0:11.0.5-3.0.1.el7_9.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "open-vm-tools-desktop",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:11.0.5-3.0.1.el7_9.6"
+								}
+							],
+							"fixed": [
+								"0:11.0.5-3.0.1.el7_9.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "open-vm-tools-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:11.0.5-3.0.1.el7_9.6"
+								}
+							],
+							"fixed": [
+								"0:11.0.5-3.0.1.el7_9.6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "open-vm-tools-test",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:11.0.5-3.0.1.el7_9.6"
+								}
+							],
+							"fixed": [
+								"0:11.0.5-3.0.1.el7_9.6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

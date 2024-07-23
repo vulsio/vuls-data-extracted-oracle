@@ -1,0 +1,216 @@
+{
+	"id": "ELSA-2018-2732",
+	"advisories": [
+		{
+			"id": "ELSA-2018-2732",
+			"title": "ELSA-2018-2732:  spice-gtk and spice-server security update (IMPORTANT)",
+			"description": "spice-gtk\n[0.26-8.1]\n- Fix flexible array buffer overflow\n  Resolves: rhbz#1596008\n\nspice-server\n[0.12.4-16.1]\n- Fix flexible array buffer overflow\n  Resolves: rhbz#1596008",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-10873.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-2732.html"
+				}
+			],
+			"published": "2018-09-20T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-10873",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-10873.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-glib",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.26-8.el6_10.1"
+								}
+							],
+							"fixed": [
+								"0:0.26-8.el6_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-glib-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.26-8.el6_10.1"
+								}
+							],
+							"fixed": [
+								"0:0.26-8.el6_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-gtk",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.26-8.el6_10.1"
+								}
+							],
+							"fixed": [
+								"0:0.26-8.el6_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-gtk-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.26-8.el6_10.1"
+								}
+							],
+							"fixed": [
+								"0:0.26-8.el6_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-gtk-python",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.26-8.el6_10.1"
+								}
+							],
+							"fixed": [
+								"0:0.26-8.el6_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-gtk-tools",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.26-8.el6_10.1"
+								}
+							],
+							"fixed": [
+								"0:0.26-8.el6_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-server",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-16.el6_10.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-16.el6_10.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-server-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.4-16.el6_10.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.4-16.el6_10.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,70 @@
+{
+	"id": "ELSA-2018-0012",
+	"advisories": [
+		{
+			"id": "ELSA-2018-0012",
+			"title": "ELSA-2018-0012:  microcode_ctl security update (IMPORTANT)",
+			"description": "[2.1-22.2]\n- Update Intel CPU microde for 06-3f-02, 06-4f-01, and 06-55-04\n- Resolves: #1527358\n\n[2.1-22.1]\n- Update to upstream 2.1-13. Intel CPU microcode update to 20170707.\n- Resolves: #1474844",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-5715.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-0012.html"
+				}
+			],
+			"published": "2018-01-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-5715",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-5715.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "microcode_ctl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.1-22.2.el7"
+								}
+							],
+							"fixed": [
+								"2:2.1-22.2.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

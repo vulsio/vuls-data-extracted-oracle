@@ -1,0 +1,197 @@
+{
+	"id": "ELSA-2023-4569",
+	"advisories": [
+		{
+			"id": "ELSA-2023-4569",
+			"title": "ELSA-2023-4569:  dbus security update (MODERATE)",
+			"description": "[1:1.12.20-7.0.1.1]\n- Fix CVE-2023-34969 (#2213402)\n\n[1.12.20-7.0.1]\n- fix netlink poll: error 4 (Zhenzhong Duan)\n\n[1:1.12.20-7]\n- Fix CVE-2022-42010 (#2133647)\n- Fix CVE-2022-42011 (#2133641)\n- Fix CVE-2022-42012 (#2133635)\n\n[1:1.12.20-6]\n- Override upstream sysusers.d confguration (#2118226)\n\n[1:1.12.20-5]\n- Rebuilt for IMA sigs, glibc 2.34, aarch64 flags\n  Related: rhbz#1991688",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-34969.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-4569.html"
+				}
+			],
+			"published": "2023-08-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-34969",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-34969.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.20-7.0.1.el9_2.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.20-7.0.1.el9_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.20-7.0.1.el9_2.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.20-7.0.1.el9_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-daemon",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.20-7.0.1.el9_2.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.20-7.0.1.el9_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.20-7.0.1.el9_2.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.20-7.0.1.el9_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.20-7.0.1.el9_2.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.20-7.0.1.el9_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.20-7.0.1.el9_2.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.20-7.0.1.el9_2.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-x11",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.20-7.0.1.el9_2.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.20-7.0.1.el9_2.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

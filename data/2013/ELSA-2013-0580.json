@@ -1,0 +1,251 @@
+{
+	"id": "ELSA-2013-0580",
+	"advisories": [
+		{
+			"id": "ELSA-2013-0580",
+			"title": "ELSA-2013-0580:  cups security update (MODERATE)",
+			"description": "[1:1.4.2-50:.4]\n- Added BrowseLDAPCACertFile and PrintcapGUI to restricted options\n  list.\n\n[1:1.4.2-50:.3]\n- Fix for CVE-2012-5519 patch: handle blacklisted lines that have no\n  value part gracefully.\n\n[1:1.4.2-50:.2]\n- Added documentation for new CVE-2012-5519 option.\n\n[1:1.4.2-50:.1]\n- Applied patch to fix CVE-2012-5519 (privilege escalation for users\n  in SystemGroup or with equivalent polkit permission).  This prevents\n  HTTP PUT requests with paths under /admin/conf/ other than that for\n  cupsd.conf, and also prevents such requests altering certain\n  configuration directives such as PageLog and FileDevice (bug #875898).\n\n[1:1.4.2-50]\n- Fixed LDAP browsing issues (bug #870386).\n\n[1:1.4.2-49]\n- Avoid 'forbidden' error when moving job between queues via web UI\n  (bug #834445).",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5519.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0580.html"
+				}
+			],
+			"published": "2013-02-28T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-5519",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-5519.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.3.7-30.el5_9.3"
+								}
+							],
+							"fixed": [
+								"1:1.3.7-30.el5_9.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.3.7-30.el5_9.3"
+								}
+							],
+							"fixed": [
+								"1:1.3.7-30.el5_9.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-libs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.3.7-30.el5_9.3"
+								}
+							],
+							"fixed": [
+								"1:1.3.7-30.el5_9.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-lpd",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.3.7-30.el5_9.3"
+								}
+							],
+							"fixed": [
+								"1:1.3.7-30.el5_9.3"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-50.el6_4.4"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-50.el6_4.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-50.el6_4.4"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-50.el6_4.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-50.el6_4.4"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-50.el6_4.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-lpd",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-50.el6_4.4"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-50.el6_4.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-php",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-50.el6_4.4"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-50.el6_4.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

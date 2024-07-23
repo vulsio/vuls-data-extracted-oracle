@@ -1,0 +1,231 @@
+{
+	"id": "ELSA-2022-8833",
+	"advisories": [
+		{
+			"id": "ELSA-2022-8833",
+			"title": "ELSA-2022-8833:  nodejs:18 security, bug fix, and enhancement update (MODERATE)",
+			"description": "nodejs\n[1:18.12.1-2]\n- Update version of bundled histogram\n\n[1:18.12.1-1]\n- Rebase to version 18.12.1\n  Resolves: rhbz#2125580 CVE-2022-43548 CVE-2022-3517\n\n[1:18.9.1-1]\n- Rebase to version 18.9.1\n  Resolves: CVE-2022-35255 CVE-2022-35256\n\nnodejs-nodemon\n[2.0.20-1]\n- Rebase to 2.0.20\n  Resolves: CVE-2022-3517",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-3517.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-43548.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-8833.html"
+				}
+			],
+			"published": "2022-12-08T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-3517",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-3517.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-43548",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-43548.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:18.12.1-2.module+el8.7.0+20890+579912a9"
+								}
+							],
+							"fixed": [
+								"1:18.12.1-2.module+el8.7.0+20890+579912a9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:18.12.1-2.module+el8.7.0+20890+579912a9"
+								}
+							],
+							"fixed": [
+								"1:18.12.1-2.module+el8.7.0+20890+579912a9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:18.12.1-2.module+el8.7.0+20890+579912a9"
+								}
+							],
+							"fixed": [
+								"1:18.12.1-2.module+el8.7.0+20890+579912a9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs-full-i18n",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:18.12.1-2.module+el8.7.0+20890+579912a9"
+								}
+							],
+							"fixed": [
+								"1:18.12.1-2.module+el8.7.0+20890+579912a9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs-nodemon",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.20-1.module+el8.7.0+20890+579912a9"
+								}
+							],
+							"fixed": [
+								"0:2.0.20-1.module+el8.7.0+20890+579912a9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs:18::nodejs-packaging",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2021.06-4.module+el8.7.0+20766+0a247725"
+								}
+							],
+							"fixed": [
+								"0:2021.06-4.module+el8.7.0+20766+0a247725"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "nodejs:18::nodejs-packaging-bundler",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2021.06-4.module+el8.7.0+20766+0a247725"
+								}
+							],
+							"fixed": [
+								"0:2021.06-4.module+el8.7.0+20766+0a247725"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "npm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:8.19.2-1.18.12.1.2.module+el8.7.0+20890+579912a9"
+								}
+							],
+							"fixed": [
+								"1:8.19.2-1.18.12.1.2.module+el8.7.0+20890+579912a9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

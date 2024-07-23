@@ -1,0 +1,116 @@
+{
+	"id": "ELSA-2010-0003",
+	"advisories": [
+		{
+			"id": "ELSA-2010-0003",
+			"title": "ELSA-2010-0003:  gd security update (MODERATE)",
+			"description": "[2.0.33-9.4.el5_4.2]\n- rpmdiff fixes\n- Resolves: #541632\n\n[2.0.33-9.4.el5_4.1]\n- security fixes\n- CVE-2009-3546 gd: insufficient input validation in _gdGetColors()",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3546.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2010-0003.html"
+				}
+			],
+			"published": "2010-01-04T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2009-3546",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2009-3546.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gd",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.33-9.4.el5_4.2"
+								}
+							],
+							"fixed": [
+								"0:2.0.33-9.4.el5_4.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gd-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.33-9.4.el5_4.2"
+								}
+							],
+							"fixed": [
+								"0:2.0.33-9.4.el5_4.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gd-progs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.0.33-9.4.el5_4.2"
+								}
+							],
+							"fixed": [
+								"0:2.0.33-9.4.el5_4.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

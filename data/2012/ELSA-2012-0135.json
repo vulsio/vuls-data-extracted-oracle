@@ -1,0 +1,272 @@
+{
+	"id": "ELSA-2012-0135",
+	"advisories": [
+		{
+			"id": "ELSA-2012-0135",
+			"title": "ELSA-2012-0135:  java-1.6.0-openjdk security update (CRITICAL)",
+			"description": "[1:1.6.0.0-1.43.1.10.6]\n- Updated to IcedTea6 1.10.6\n- Resolves: rhbz#787144\n- Security fixes\n  - S7082299: Fix in AtomicReferenceArray\n  - S7088367: Fix issues in java sound\n  - S7110683: Issues with some KeyboardFocusManager method\n  - S7110687: Issues with TimeZone class\n  - S7110700: Enhance exception throwing mechanism in ObjectStreamClass\n  - S7110704: Issues with some method in corba\n  - S7112642: Incorrect checking for graphics rendering object\n  - S7118283: Better input parameter checking in zip file processing\n  - S7126960: Add property to limit number of request headers to the HTTP Server\n- Bug fixes\n  - RH580478: Desktop files should not use hardcoded path\n- Removed upstreamed patch7 - java-1.6.0-openjdk-6_2-Z-rmi-fix.patch",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "CRITICAL"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3563.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3571.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-5035.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0497.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0501.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0502.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0503.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0505.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0506.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0507.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-0135.html"
+				}
+			],
+			"published": "2012-02-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-3563",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3563.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-3571",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-3571.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-5035",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-5035.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-0497",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0497.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-0501",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0501.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-0502",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0502.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-0503",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0503.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-0505",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0505.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-0506",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0506.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-0507",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0507.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.6.0-openjdk",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.6.0.0-1.43.1.10.6.el6_2"
+								}
+							],
+							"fixed": [
+								"1:1.6.0.0-1.43.1.10.6.el6_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.6.0-openjdk-demo",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.6.0.0-1.43.1.10.6.el6_2"
+								}
+							],
+							"fixed": [
+								"1:1.6.0.0-1.43.1.10.6.el6_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.6.0-openjdk-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.6.0.0-1.43.1.10.6.el6_2"
+								}
+							],
+							"fixed": [
+								"1:1.6.0.0-1.43.1.10.6.el6_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.6.0-openjdk-javadoc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.6.0.0-1.43.1.10.6.el6_2"
+								}
+							],
+							"fixed": [
+								"1:1.6.0.0-1.43.1.10.6.el6_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.6.0-openjdk-src",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.6.0.0-1.43.1.10.6.el6_2"
+								}
+							],
+							"fixed": [
+								"1:1.6.0.0-1.43.1.10.6.el6_2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

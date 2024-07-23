@@ -1,0 +1,113 @@
+{
+	"id": "ELSA-2018-2240",
+	"advisories": [
+		{
+			"id": "ELSA-2018-2240",
+			"title": "ELSA-2018-2240:  openslp security update (IMPORTANT)",
+			"description": "[1:2.0.0-7]\n- Fix possible heap memory corruption, CVE-2017-17833\n  Resolves: #1575698",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-17833.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-2240.html"
+				}
+			],
+			"published": "2018-07-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-17833",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-17833.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openslp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.0.0-7.el7_5"
+								}
+							],
+							"fixed": [
+								"1:2.0.0-7.el7_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openslp-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.0.0-7.el7_5"
+								}
+							],
+							"fixed": [
+								"1:2.0.0-7.el7_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openslp-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.0.0-7.el7_5"
+								}
+							],
+							"fixed": [
+								"1:2.0.0-7.el7_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

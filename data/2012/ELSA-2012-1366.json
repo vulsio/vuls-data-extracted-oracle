@@ -1,0 +1,239 @@
+{
+	"id": "ELSA-2012-1366",
+	"advisories": [
+		{
+			"id": "ELSA-2012-1366",
+			"title": "ELSA-2012-1366:  kernel security and bug fix update (IMPORTANT)",
+			"description": "[2.6.32-279.11.1.el6]\n- [net] core: Fix napi_gro_frags vs netpoll path (Amerigo Wang) [857854 845347]\n- [netdrv] benet: disable BH in callers of be_process_mcc() (Amerigo Wang) [857854 845347]\n- [net] bonding: remove IFF_IN_NETPOLL flag (Amerigo Wang) [857854 845347]\n- [mm] fix contig_page_data kABI breakage and related memory corruption (Satoru Moriya) [857012 853007]\n- [net] sctp: backport sctp cache ipv6 source after route lookup (Michele Baldessari) [858284 855759]\n- [net] sctp: backport support of sctp multi-homing ipv6 source address selection (Michele Baldessari) [858284 855759]\n- [net] ipv6: backport RTA_PREFSRC ipv6 source route selection support (Michele Baldessari) [858285 851118]\n- [netdrv] sfc: Fix maximum number of TSO segments and minimum TX queue size (Nikolay Aleksandrov) [845556 845557] {CVE-2012-3412}\n- [s390] zfcp: No automatic port_rescan on events (Hendrik Brueckner) [856316 855131]\n- [fs] xfs: push the AIL from memory reclaim and periodic sync (Dave Chinner) [856686 855139]\n\n[2.6.32-279.10.1.el6]\n- [mm] hugetlbfs: close race during teardown of hugetlbfs shared page tables (Rafael Aquini) [857334 856325]\n- [mm] hugetlbfs: Correctly detect if page tables have just been shared (Rafael Aquini) [857334 856325]\n- [kernel] sched: fix divide by zero at {thread_group,task}_times (Stanislaw Gruszka) [856703 843771]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3412.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1366.html"
+				}
+			],
+			"published": "2012-10-16T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-3412",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3412.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.11.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.11.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.11.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.11.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.11.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.11.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.11.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.11.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.11.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.11.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-firmware",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.11.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.11.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.11.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.11.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.11.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.11.1.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-279.11.1.el6"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-279.11.1.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

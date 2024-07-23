@@ -1,0 +1,168 @@
+{
+	"id": "ELSA-2023-5763",
+	"advisories": [
+		{
+			"id": "ELSA-2023-5763",
+			"title": "ELSA-2023-5763:  curl security update (IMPORTANT)",
+			"description": "[7.76.1-23.el9_2.4]\n- curl: a heap-based buffer overflow in the SOCKS5 proxy handshake (CVE-2023-38545)\n- curl: cookie injection with none file (CVE-2023-38546)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-38545.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-38546.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-5763.html"
+				}
+			],
+			"published": "2023-10-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-38545",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-38545.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-38546",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-38546.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "curl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.76.1-23.el9_2.4"
+								}
+							],
+							"fixed": [
+								"0:7.76.1-23.el9_2.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "curl-minimal",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.76.1-23.el9_2.4"
+								}
+							],
+							"fixed": [
+								"0:7.76.1-23.el9_2.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcurl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.76.1-23.el9_2.4"
+								}
+							],
+							"fixed": [
+								"0:7.76.1-23.el9_2.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcurl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.76.1-23.el9_2.4"
+								}
+							],
+							"fixed": [
+								"0:7.76.1-23.el9_2.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcurl-minimal",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.76.1-23.el9_2.4"
+								}
+							],
+							"fixed": [
+								"0:7.76.1-23.el9_2.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

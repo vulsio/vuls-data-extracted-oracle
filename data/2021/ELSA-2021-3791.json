@@ -1,0 +1,136 @@
+{
+	"id": "ELSA-2021-3791",
+	"advisories": [
+		{
+			"id": "ELSA-2021-3791",
+			"title": "ELSA-2021-3791:  firefox security update (IMPORTANT)",
+			"description": "[91.2.0-4.0.1]\n- Remove upstream references [Orabug: 30143292]\n- Update distribution for Oracle Linux [Orabug: 30143292]\n- Add firefox-oracle-default-prefs.js and remove the corresponding Red Hat file\n\n[91.2.0-4]\n- Disable webrender on the s390x due to wrong colors: rhbz#2009503\n\n[91.2.0-3]\n- Update to 91.2.0 build1\n\n[91.1.0-1]\n- Update to 91.1.0 build1\n- Update to 91.0.1 build1\n\n[91.0-1]\n- Update to 91.0 ESR\n\n[91.0-1]\n- Update to 91.0b8",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32810.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-38496.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-38497.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-38498.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-38500.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-38501.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-3791.html"
+				}
+			],
+			"published": "2021-10-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-32810",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-32810.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-38496",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-38496.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-38497",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-38497.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-38498",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-38498.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-38500",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-38500.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-38501",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-38501.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:91.2.0-4.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"0:91.2.0-4.0.1.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

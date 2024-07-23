@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2023-1067",
+	"advisories": [
+		{
+			"id": "ELSA-2023-1067",
+			"title": "ELSA-2023-1067:  pesign security update (IMPORTANT)",
+			"description": "[115-6.0.1]\n- Update Oracle Linux test certificates [Orabug: 31928433]\n\n[115-6]\n- Fix chmod invocation\n- Resolves: CVE-2022-3560\n\n[115-5]\n- Deprecate pesign-authorize and drop ACL use\n- Resolves: CVE-2022-3560",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-3560.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-1067.html"
+				}
+			],
+			"published": "2023-03-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-3560",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-3560.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "pesign",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:115-6.0.1.el9_1"
+								}
+							],
+							"fixed": [
+								"0:115-6.0.1.el9_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

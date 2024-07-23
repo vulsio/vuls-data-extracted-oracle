@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2024-1644",
+	"advisories": [
+		{
+			"id": "ELSA-2024-1644",
+			"title": "ELSA-2024-1644:  grafana-pcp security and bug fix update (IMPORTANT)",
+			"description": "[5.1.1-2]\n- Rebuild with latest version of golang\n- resolves CVE-2024-1394",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-1394.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-1644.html"
+				}
+			],
+			"published": "2024-04-03T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2024-1394",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-1394.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "grafana-pcp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.1.1-2.el8_9"
+								}
+							],
+							"fixed": [
+								"0:5.1.1-2.el8_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

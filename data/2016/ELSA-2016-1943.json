@@ -1,0 +1,163 @@
+{
+	"id": "ELSA-2016-1943",
+	"advisories": [
+		{
+			"id": "ELSA-2016-1943",
+			"title": "ELSA-2016-1943:  kvm security update (IMPORTANT)",
+			"description": "[83-276.0.1.el5_11]\n- Added kvm-add-oracle-workaround-for-libvirt-bug.patch\n- Added kvm-Introduce-oel-machine-type.patch\n\n[83-275.el5_11]\n- kvm-virtio-error-out-if-guest-exceeds-virtqueue-size.patch [bz#1359723]\n- Resolves: bz#1359723\n  CVE-2016-5403 kvm: Qemu: virtio: unbounded memory allocation on host via guest leading to DoS [rhel-5.11.z]\n\n[kvm-83.275.el5]\n- kvm-vga-fix-banked-access-bounds-checking-CVE-2016-3710.patch [bz#1334173]\n- Resolves: bz#1334173\n  CVE-2016-3710 kvm: qemu: incorrect banked access bounds checking in vga module [rhel-5.11.z]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-3710.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5403.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2016-1943.html"
+				}
+			],
+			"published": "2016-09-27T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-3710",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-3710.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2016-5403",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-5403.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kmod-kvm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:83-276.0.1.el5_11"
+								}
+							],
+							"fixed": [
+								"0:83-276.0.1.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kmod-kvm-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:83-276.0.1.el5_11"
+								}
+							],
+							"fixed": [
+								"0:83-276.0.1.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kvm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:83-276.0.1.el5_11"
+								}
+							],
+							"fixed": [
+								"0:83-276.0.1.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kvm-qemu-img",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:83-276.0.1.el5_11"
+								}
+							],
+							"fixed": [
+								"0:83-276.0.1.el5_11"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kvm-tools",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:83-276.0.1.el5_11"
+								}
+							],
+							"fixed": [
+								"0:83-276.0.1.el5_11"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

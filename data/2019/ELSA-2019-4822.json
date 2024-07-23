@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2019-4822",
+	"advisories": [
+		{
+			"id": "ELSA-2019-4822",
+			"title": "ELSA-2019-4822: sudo security update (IMPORTANT)",
+			"description": "[1.8.25-4.0.1.el8.1]\n- Treat an ID of -1 as invalid since that means 'no change' [Orabug: 30421281] {CVE-2019-14287}\n- Add sudo_strtoid() tests for -1 and range errors. [Orabug: 30421281]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-14287.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-4822.html"
+				}
+			],
+			"published": "2019-10-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-14287",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-14287.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "sudo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.25p1-4.0.1.el8_0.1"
+								}
+							],
+							"fixed": [
+								"0:1.8.25p1-4.0.1.el8_0.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

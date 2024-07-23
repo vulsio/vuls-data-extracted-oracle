@@ -1,0 +1,155 @@
+{
+	"id": "ELSA-2019-0462",
+	"advisories": [
+		{
+			"id": "ELSA-2019-0462",
+			"title": "ELSA-2019-0462:  java-1.7.0-openjdk security update (MODERATE)",
+			"description": "[1:1.7.0.211-2.6.17.1.0.1]\n- Update DISTRO_NAME in specfile\n\n[1:1.7.0.211-2.6.17.1]\n- Produce debug symbols for libpulse-java.so\n- Set IT_CFLAGS=-g so that debug symbols for the pulse audio\n- native library are being produced. This is needed to fix\n- rpmdiff errors of missing .debug_info in pulse-java.so.debug.\n- Resolves: rhbz#1661577\n\n[1:1.7.0.211-2.6.17.0]\n- Bump to 2.6.17.\n- Adjust jdk8076221-pr2809-disable_rc4_cipher_suites.patch to apply after 8211883\n- Resolves: rhbz#1661577\n\n[1:1.7.0.201-2.6.17pre01.0]\n- Bump to 2.6.17pre01.\n- Add support for icedtea_snapshot so we can build pre-releases.\n- Resolves: rhbz#1661577",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2422.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-0462.html"
+				}
+			],
+			"published": "2019-03-05T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-2422",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-2422.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.211-2.6.17.1.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.211-2.6.17.1.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-demo",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.211-2.6.17.1.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.211-2.6.17.1.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.211-2.6.17.1.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.211-2.6.17.1.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-javadoc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.211-2.6.17.1.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.211-2.6.17.1.0.1.el6_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-1.7.0-openjdk-src",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.7.0.211-2.6.17.1.0.1.el6_10"
+								}
+							],
+							"fixed": [
+								"1:1.7.0.211-2.6.17.1.0.1.el6_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

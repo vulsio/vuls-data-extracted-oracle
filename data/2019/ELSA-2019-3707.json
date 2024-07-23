@@ -1,0 +1,197 @@
+{
+	"id": "ELSA-2019-3707",
+	"advisories": [
+		{
+			"id": "ELSA-2019-3707",
+			"title": "ELSA-2019-3707:  dbus security update (MODERATE)",
+			"description": "[1.12.8-9.0.1]\n- fix netlink poll: error 4 (Zhenzhong Duan)\n\n[1:1.12.8-9]\n- Ensure that patches are applied (#1725570)\n\n[1:1.12.8-8]\n- Fix CVE-2019-12749 (#1725570)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-12749.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2019-3707.html"
+				}
+			],
+			"published": "2019-11-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-12749",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-12749.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-9.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-9.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-9.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-9.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-daemon",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-9.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-9.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-9.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-9.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-9.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-9.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-9.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-9.0.1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-x11",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-9.0.1.el8"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-9.0.1.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,160 @@
+{
+	"id": "ELSA-2024-2973",
+	"advisories": [
+		{
+			"id": "ELSA-2024-2973",
+			"title": "ELSA-2024-2973:  libX11 security update (MODERATE)",
+			"description": "[1.6.8-8]\n- Backport fix for Xlib lockups due to recursive XError (RHEL-23452)\n\n[1.6.8-7]\n- Fix CVE-2023-43785: out-of-bounds memory access in _XkbReadKeySyms()\n- Fix CVE-2023-43786: stack exhaustion from infinite recursion in\n  PutSubImage()\n- Fix CVE-2023-43787: integer overflow in XCreateImage() leading to\n  a heap overflow",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-43785.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-43786.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-43787.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-2973.html"
+				}
+			],
+			"published": "2024-05-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-43785",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-43785.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-43786",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-43786.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-43787",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-43787.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libX11",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.8-8.el8"
+								}
+							],
+							"fixed": [
+								"0:1.6.8-8.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libX11-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.8-8.el8"
+								}
+							],
+							"fixed": [
+								"0:1.6.8-8.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libX11-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.8-8.el8"
+								}
+							],
+							"fixed": [
+								"0:1.6.8-8.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libX11-xcb",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.8-8.el8"
+								}
+							],
+							"fixed": [
+								"0:1.6.8-8.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

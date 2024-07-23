@@ -1,0 +1,155 @@
+{
+	"id": "ELSA-2017-1721",
+	"advisories": [
+		{
+			"id": "ELSA-2017-1721",
+			"title": "ELSA-2017-1721:  httpd security and bug fix update (MODERATE)",
+			"description": "[2.2.15-60.0.1.4]\n- replace index.html with Oracle's index page oracle_index.html\n- update vstring in specfile\n\n[2.2.15-60.4]\n- Related: #1427675 - CVE-2016-8743 httpd: Apache HTTP Request Parsing\n  Whitespace Defects\n\n[2.2.15-60.3]\n- Resolves: #1463205 - CVE-2017-7668 httpd: ap_find_token() buffer overread\n\n[2.2.15-60.2]\n- Resolves: #1463354 - segfault in ap_proxy_set_scoreboard_lb\n\n[2.2.15-60.1]\n- Resolves: #1427675 - CVE-2016-8743 httpd: Apache HTTP Request Parsing\n  Whitespace Defects",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8743.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-1721.html"
+				}
+			],
+			"published": "2017-07-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2016-8743",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2016-8743.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.15-60.0.1.el6_9.4"
+								}
+							],
+							"fixed": [
+								"0:2.2.15-60.0.1.el6_9.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.15-60.0.1.el6_9.4"
+								}
+							],
+							"fixed": [
+								"0:2.2.15-60.0.1.el6_9.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-manual",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.15-60.0.1.el6_9.4"
+								}
+							],
+							"fixed": [
+								"0:2.2.15-60.0.1.el6_9.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-tools",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.2.15-60.0.1.el6_9.4"
+								}
+							],
+							"fixed": [
+								"0:2.2.15-60.0.1.el6_9.4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_ssl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.2.15-60.0.1.el6_9.4"
+								}
+							],
+							"fixed": [
+								"1:2.2.15-60.0.1.el6_9.4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

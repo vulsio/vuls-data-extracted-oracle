@@ -1,0 +1,330 @@
+{
+	"id": "ELSA-2021-9109",
+	"advisories": [
+		{
+			"id": "ELSA-2021-9109",
+			"title": "ELSA-2021-9109:  qemu security update (IMPORTANT)",
+			"description": "[15:4.2.1-5.el7]\n- qemu.spec: use --tls-priority=NORMAL for OL7 (Elena Ufimtseva) \n- hostmem: fix default 'prealloc-threads' count (Mark Kanda)  [Orabug: 32472127]\n- hostmem: introduce 'prealloc-threads' property (Igor Mammedov) \n- qom: introduce object_register_sugar_prop (Paolo Bonzini) \n- migration/multifd: Do error_free after migrate_set_error to avoid memleaks (Pan Nengyuan) \n- multifd/tls: fix memoryleak of the QIOChannelSocket object when cancelling migration (Chuan Zheng) \n- migration/multifd: fix hangup with TLS-Multifd due to blocking handshake (Chuan Zheng) \n- migration/tls: add trace points for multifd-tls (Chuan Zheng) \n- migration/tls: add support for multifd tls-handshake (Chuan Zheng) \n- migration/tls: extract cleanup function for common-use (Chuan Zheng) \n- migration/multifd: fix memleaks in multifd_new_send_channel_async (Pan Nengyuan) \n- migration/multifd: fix nullptr access in multifd_send_terminate_threads (Zhimin Feng) \n- migration/tls: add tls_hostname into MultiFDSendParams (Chuan Zheng) \n- migration/tls: extract migration_tls_client_create for common-use (Chuan Zheng) \n- migration/tls: save hostname into MigrationState (Chuan Zheng) \n- tests/qtest: add a test case for pvpanic-pci (Mihai Carabas) \n- pvpanic : update pvpanic spec document (Mihai Carabas) \n- hw/misc/pvpanic: add PCI interface support (Mihai Carabas) \n- hw/misc/pvpanic: split-out generic and bus dependent code (Mihai Carabas) \n- 9pfs: Fully restart unreclaim loop (CVE-2021-20181) (Greg Kurz)  [Orabug: 32441198]  {CVE-2021-20181}\n- ide: atapi: check logical block address and read size (CVE-2020-29443) (Prasad J Pandit)  [Orabug: 32393835]  {CVE-2020-29443}\n- Document CVE-2019-20808 as fixed (Mark Kanda)  [Orabug: 32339196]  {CVE-2019-20808}\n- block/iscsi:fix heap-buffer-overflow in iscsi_aio_ioctl_cb (Chen Qun)  [Orabug: 32339207]  {CVE-2020-11947}\n- net: remove an assert call in eth_get_gso_type (Prasad J Pandit)  [Orabug: 32102583]  {CVE-2020-27617}\n- nvdimm: honor -object memory-backend-file, readonly=on option (Stefan Hajnoczi)  [Orabug: 32265408]\n- hostmem-file: add readonly=on|off option (Stefan Hajnoczi)  [Orabug: 32265408]\n- memory: add readonly support to memory_region_init_ram_from_file() (Stefan Hajnoczi)  [Orabug: 32265408]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-20808.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-11947.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-27617.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-29443.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-20181.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-9109.html"
+				}
+			],
+			"published": "2021-03-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-20808",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-20808.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-11947",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-11947.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-27617",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-27617.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-29443",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-29443.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-20181",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-20181.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ivshmem-tools",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:4.2.1-5.el7"
+								}
+							],
+							"fixed": [
+								"15:4.2.1-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:4.2.1-5.el7"
+								}
+							],
+							"fixed": [
+								"15:4.2.1-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-block-gluster",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:4.2.1-5.el7"
+								}
+							],
+							"fixed": [
+								"15:4.2.1-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-block-iscsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:4.2.1-5.el7"
+								}
+							],
+							"fixed": [
+								"15:4.2.1-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-block-rbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:4.2.1-5.el7"
+								}
+							],
+							"fixed": [
+								"15:4.2.1-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:4.2.1-5.el7"
+								}
+							],
+							"fixed": [
+								"15:4.2.1-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-img",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:4.2.1-5.el7"
+								}
+							],
+							"fixed": [
+								"15:4.2.1-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:4.2.1-5.el7"
+								}
+							],
+							"fixed": [
+								"15:4.2.1-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:4.2.1-5.el7"
+								}
+							],
+							"fixed": [
+								"15:4.2.1-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-system-aarch64",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:4.2.1-5.el7"
+								}
+							],
+							"fixed": [
+								"15:4.2.1-5.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-system-aarch64-core",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:4.2.1-5.el7"
+								}
+							],
+							"fixed": [
+								"15:4.2.1-5.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

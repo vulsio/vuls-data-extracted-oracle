@@ -1,0 +1,138 @@
+{
+	"id": "ELSA-2021-9372",
+	"advisories": [
+		{
+			"id": "ELSA-2021-9372",
+			"title": "ELSA-2021-9372:  Unbreakable Enterprise kernel-container security update (IMPORTANT)",
+			"description": "[5.4.17-2102.203.6.el7]\n- seq_file: disallow extremely large seq buffer allocations (Eric Sandeen)\n  [Orabug: 33135632]  {CVE-2021-33909}",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33909.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-9372.html"
+				}
+			],
+			"published": "2021-07-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-33909",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33909.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.4.17-2102.203.6.el7"
+								}
+							],
+							"fixed": [
+								"0:5.4.17-2102.203.6.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.4.17-2102.203.6.el7"
+								}
+							],
+							"fixed": [
+								"0:5.4.17-2102.203.6.el7"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.4.17-2102.203.6.el8"
+								}
+							],
+							"fixed": [
+								"0:5.4.17-2102.203.6.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.4.17-2102.203.6.el8"
+								}
+							],
+							"fixed": [
+								"0:5.4.17-2102.203.6.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

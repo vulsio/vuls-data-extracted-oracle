@@ -1,0 +1,131 @@
+{
+	"id": "ELSA-2018-1932",
+	"advisories": [
+		{
+			"id": "ELSA-2018-1932",
+			"title": "ELSA-2018-1932:  zsh security update (MODERATE)",
+			"description": "[4.3.11-8]\n- fix defects detected by Coverity related to CVE-2017-18206 and CVE-2018-1083\n\n[4.3.11-7]\n- fix stack-based buffer overflow in utils.c:checkmailpath() (CVE-2018-1100)\n- fix stack-based buffer overflow in gen_matches_files() (CVE-2018-1083)\n- fix buffer overrun in xsymlinks (CVE-2017-18206)\n- fix buffer overflow when scanning very long path for symlinks (CVE-2014-10072)\n\n[4.3.11-6]\n- signal-handling related fixes collected from upstream (#1311166)\n\n[4.3.11-5]\n- fix malloc() signal leak in lexsave() (#1267903)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-10072.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-18206.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-1083.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-1100.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2018-1932.html"
+				}
+			],
+			"published": "2018-06-25T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2014-10072",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2014-10072.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2017-18206",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-18206.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-1083",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-1083.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-1100",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-1100.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "zsh",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.3.11-8.el6"
+								}
+							],
+							"fixed": [
+								"0:4.3.11-8.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "zsh-html",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.3.11-8.el6"
+								}
+							],
+							"fixed": [
+								"0:4.3.11-8.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

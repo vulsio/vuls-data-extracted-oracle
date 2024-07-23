@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2022-7959",
+	"advisories": [
+		{
+			"id": "ELSA-2022-7959",
+			"title": "ELSA-2022-7959:  guestfs-tools security, bug fix, and enhancement update (LOW)",
+			"description": "[1.48.2-5]\n- Rebase to guestfs-tools 1.48.2\n  resolves: rhbz#2059286\n- Default to --selinux-relabel in various tools\n  resolves: rhbz#2075718, rhbz#2089748\n- Add lvm system.devices cleanup operation to virt-sysprep\n  resolves: rhbz#2072493\n- Refactor virt-customize --install, --update options in common submodule\n- Add support for Clevis & Tang\n  resolves: rhbz#1809453\n- Fix CVE-2022-2211 Denial of Service in --key parameter\n  resolves: rhbz#2102721\n- Fix virt-sysprep and LUKS-on-LVM guests\n  resolves: rhbz#2106286",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2211.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-7959.html"
+				}
+			],
+			"published": "2022-11-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-2211",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-2211.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "guestfs-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.48.2-5.el9"
+								}
+							],
+							"fixed": [
+								"0:1.48.2-5.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-win-reg",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.48.2-5.el9"
+								}
+							],
+							"fixed": [
+								"0:1.48.2-5.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

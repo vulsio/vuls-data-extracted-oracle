@@ -1,0 +1,189 @@
+{
+	"id": "ELSA-2012-1131",
+	"advisories": [
+		{
+			"id": "ELSA-2012-1131",
+			"title": "ELSA-2012-1131:  krb5 security update (IMPORTANT)",
+			"description": "[1.9-33.2]\n- pull up the patch to correct a possible NULL pointer dereference in\n  kadmind (CVE-2012-1013, #827517)\n\n[1.9-33.1]\n- add candidate patch from upstream to fix freeing uninitialized pointer in\n  the KDC (MITKRB5-SA-2012-001, CVE-2012-1015, #839859)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-1013.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-1015.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1131.html"
+				}
+			],
+			"published": "2012-07-31T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-1013",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-1013.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-1015",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-1015.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9-33.el6_3.2"
+								}
+							],
+							"fixed": [
+								"0:1.9-33.el6_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9-33.el6_3.2"
+								}
+							],
+							"fixed": [
+								"0:1.9-33.el6_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-pkinit-openssl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9-33.el6_3.2"
+								}
+							],
+							"fixed": [
+								"0:1.9-33.el6_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-server",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9-33.el6_3.2"
+								}
+							],
+							"fixed": [
+								"0:1.9-33.el6_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-server-ldap",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9-33.el6_3.2"
+								}
+							],
+							"fixed": [
+								"0:1.9-33.el6_3.2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-workstation",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9-33.el6_3.2"
+								}
+							],
+							"fixed": [
+								"0:1.9-33.el6_3.2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

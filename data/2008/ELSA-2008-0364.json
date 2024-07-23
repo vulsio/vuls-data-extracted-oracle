@@ -1,0 +1,272 @@
+{
+	"id": "ELSA-2008-0364",
+	"advisories": [
+		{
+			"id": "ELSA-2008-0364",
+			"title": "ELSA-2008-0364:  mysql security and bug fix update (LOW)",
+			"description": "[5.0.45-7]\n- Adjust thread stack requests to allow for platform-specific guard page size;\n  necessary to prevent stack overrun on PPC with RHEL5's 64K page size.\nResolves: #435391\n- Remove calendar-dependent queries from 'view' test; necessary to get\n  regression tests to pass after 2007.\n\n[5.0.45-6]\n- Back-port upstream fixes for CVE-2007-5925, CVE-2007-5969, CVE-2007-6303.\nResolves: #422211\n\n[5.0.45-1]\n- Update to MySQL 5.0.45\nResolves: #256501, #240813, #246309, #254012\nResolves: #280811, #316451, #349121, #367131\n- Synchronize with current Fedora package, which is pretty well tested by now;\n  see past bzs 245770, 241912, 233771, 221085, 223713, 203910, 193559, 199368\n\n[5.0.22-3]\n- Fix CVE-2007-3780: remote DOS via bad password length byte\nResolves: #257681",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2006-0903.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2006-4031.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2006-4227.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2006-7232.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-1420.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2583.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2691.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2692.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-3781.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-3782.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2008-0364.html"
+				}
+			],
+			"published": "2008-05-30T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2006-0903",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2006-0903.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2006-4031",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2006-4031.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2006-4227",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2006-4227.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2006-7232",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2006-7232.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-1420",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-1420.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-2583",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2583.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-2691",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2691.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-2692",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2692.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-3781",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-3781.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2007-3782",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-3782.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.45-7.el5"
+								}
+							],
+							"fixed": [
+								"0:5.0.45-7.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql-bench",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.45-7.el5"
+								}
+							],
+							"fixed": [
+								"0:5.0.45-7.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.45-7.el5"
+								}
+							],
+							"fixed": [
+								"0:5.0.45-7.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql-server",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.45-7.el5"
+								}
+							],
+							"fixed": [
+								"0:5.0.45-7.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mysql-test",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.0.45-7.el5"
+								}
+							],
+							"fixed": [
+								"0:5.0.45-7.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,134 @@
+{
+	"id": "ELSA-2020-4514",
+	"advisories": [
+		{
+			"id": "ELSA-2020-4514",
+			"title": "ELSA-2020-4514:  openssl security, bug fix, and enhancement update (LOW)",
+			"description": "[1.1.1g-11]\n- Further changes for SP 800-56A rev3 requirements\n\n[1.1.1g-9]\n- Rewire FIPS_drbg API to use the RAND_DRBG\n- Use the well known DH groups in TLS even for 2048 and 1024 bit parameters\n\n[1.1.1g-7]\n- Disallow dropping Extended Master Secret extension\n  on renegotiation\n- Return alert from s_server if ALPN protocol does not match\n- SHA1 is allowed in @SECLEVEL=2 only if allowed by\n  TLS SigAlgs configuration\n\n[1.1.1g-6]\n- Add FIPS selftest for PBKDF2 and KBKDF\n\n[1.1.1g-5]\n- Allow only well known DH groups in the FIPS mode\n\n[1.1.1g-1]\n- update to the 1.1.1g release\n- FIPS module installed state definition is modified",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-1551.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-4514.html"
+				}
+			],
+			"published": "2020-11-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-1551",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-1551.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1g-11.el8"
+								}
+							],
+							"fixed": [
+								"1:1.1.1g-11.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1g-11.el8"
+								}
+							],
+							"fixed": [
+								"1:1.1.1g-11.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1g-11.el8"
+								}
+							],
+							"fixed": [
+								"1:1.1.1g-11.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.1.1g-11.el8"
+								}
+							],
+							"fixed": [
+								"1:1.1.1g-11.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

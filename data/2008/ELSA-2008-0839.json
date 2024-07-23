@@ -1,0 +1,94 @@
+{
+	"id": "ELSA-2008-0839",
+	"advisories": [
+		{
+			"id": "ELSA-2008-0839",
+			"title": "ELSA-2008-0839:  postfix security update (MODERATE)",
+			"description": "[2.3.3-2.1]\n- fixed postfix privilege problem with symlinks in the mail spool directory\n  (CVE-2008-2936)\n  Resolves: rhbz#456717",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-2936.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2008-0839.html"
+				}
+			],
+			"published": "2008-08-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2008-2936",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2008-2936.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postfix",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.3.3-2.1.el5_2"
+								}
+							],
+							"fixed": [
+								"2:2.3.3-2.1.el5_2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postfix-pflogsumm",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.3.3-2.1.el5_2"
+								}
+							],
+							"fixed": [
+								"2:2.3.3-2.1.el5_2"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

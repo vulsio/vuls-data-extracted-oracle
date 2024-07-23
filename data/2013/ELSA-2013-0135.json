@@ -1,0 +1,94 @@
+{
+	"id": "ELSA-2013-0135",
+	"advisories": [
+		{
+			"id": "ELSA-2013-0135",
+			"title": "ELSA-2013-0135:  gtk2 security and bug fix update (LOW)",
+			"description": "[2.10.4-29]\n- Improve patch to parse CUPS user lpoptions file to avoid crashes\n  on s390 and ia64\n  Resolves: #603809\n\n[2.10.4-28]\n- Fix the filechooser not opening selected file when location entry\n  is empty\n  Resolves: #518483\n\n[2.10.4-27]\n- Fix integer overflow in GdkPixbuf's XBM image file format loader\n  (CVE-2012-2370)\n  Resolves: #846252\n\n[2.10.4-26]\n- Fix crash when drag and dropping notebook tabs\n  Resolves: #830901\n\n[2.10.4-25]\n- Fix a problem with Wacom tablets pen event positions when using dual\n  head displays\n  Resolves: #743658\n\n[2.10.4-24]\n- Backport a patch to parse CUPS user lpoptions file.\n  Resolves: #603809",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-2370.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0135.html"
+				}
+			],
+			"published": "2013-01-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-2370",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-2370.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gtk2",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.10.4-29.el5"
+								}
+							],
+							"fixed": [
+								"0:2.10.4-29.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "gtk2-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.10.4-29.el5"
+								}
+							],
+							"fixed": [
+								"0:2.10.4-29.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

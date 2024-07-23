@@ -1,0 +1,520 @@
+{
+	"id": "ELSA-2012-2038",
+	"advisories": [
+		{
+			"id": "ELSA-2012-2038",
+			"title": "ELSA-2012-2038: Unbreakable Enterprise kernel security and bug fix update (IMPORTANT)",
+			"description": "[2.6.32-300.37.1.]\n- sfc: Replace some literal constants with EFX_PAGE_SIZE/EFX_BUF_SIZE (Ben Hutchings) [Orabug: 14769994]\n- CVE-2012-3412 sfc: Fix maximum number of TSO segments and minimum TX queue size (Ben Hutchings) [Orabug: 14769994] {CVE-2012-3412}\n\n[2.6.32-300.36.1.]\n- dl2k: Clean up rio_ioctl (Stephan Mueller) [Orabug: 14675306] {CVE-2012-2313}\n- hugetlb: fix resv_map leak in error path (Christoph Lameter) [Orabug: 14676403] {CVE-2012-2390}\n- rds: set correct msg_namelen (Jay Fenlason) [Orabug: 14676504] {CVE-2012-3430}\n\n[2.6.32-300.35.1.]\n- oracleasm: Bring driver in sync with UEK2 (Martin K. Petersen)\n- Fix system hang due to bad protection module parameters (CR 130769) (Martin\n  K. Petersen)\n- sd: Avoid remapping bad reference tags (Martin K. Petersen)\n- block: Fix bad range check in bio_sector_offset (Martin K. Petersen)\n\n[2.6.32-300.34.1.]\n- htrimer: fix kabi breakage (Joe Jin)\n- 2.6.32.x: timekeeping: Add missing update call in timekeeping_resume()\n  (Thomas Gleixner)\n- 2.6.32.x: hrtimer: Update hrtimer base offsets each hrtimer_interrupt (John\n  Stultz)\n- 2.6.32.x: timekeeping: Provide hrtimer update function (Thomas Gleixner)\n- 2.6.32.x: hrtimers: Move lock held region in hrtimer_interrupt() (Thomas\n  Gleixner)\n- 2.6.32.x: timekeeping: Maintain ktime_t based offsets for hrtimers (Thomas\n  Gleixner)\n- 2.6.32.x: timekeeping: Fix leapsecond triggered load spike issue (John\n  Stultz)\n- 2.6.32.x: hrtimer: Provide clock_was_set_delayed() (John Stultz)\n- 2.6.32.x: time: Move common updates to a function (Thomas Gleixner)\n- 2.6.32.x: timekeeping: Fix CLOCK_MONOTONIC inconsistency during leapsecond\n  (John Stultz)\n- 2.6.32.x: ntp: Correct TAI offset during leap second (Richard Cochran)\n- 2.6.32.x: ntp: Fix leap-second hrtimer livelock (John Stultz)\n- Revert '2.6.32.x: hrtimer: Fix clock_was_set so it is safe to call from irq\n  context' (Joe Jin)\n- Revert '2.6.32.x: time: Fix leapsecond triggered hrtimer/futex load spike\n  issue' (Joe Jin)\n- Revert '2.6.32.x: hrtimer: Update hrtimer base offsets each\n  hrtimer_interrupt' (Joe Jin)\n\n[2.6.32-300.33.1.]\n- mpt2sas: Update mpt2sas to 120.105.11.00 (Guru Anbalagane) [Orabug: 14376481]\n- Revert 'mpt2sas: update to 12.105.11.00' (Maxim Uvarov)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3412.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-2038.html"
+				}
+			],
+			"published": "2012-10-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-3412",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-3412.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-headers",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el5uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el5uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mlnx_en-2.6.32-300.37.1.el5uek",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.7-2"
+								}
+							],
+							"fixed": [
+								"0:1.5.7-2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mlnx_en-2.6.32-300.37.1.el5uekdebug",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.7-2"
+								}
+							],
+							"fixed": [
+								"0:1.5.7-2"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ofa-2.6.32-300.37.1.el5uek",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.1-4.0.58"
+								}
+							],
+							"fixed": [
+								"0:1.5.1-4.0.58"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ofa-2.6.32-300.37.1.el5uekdebug",
+							"architectures": [
+								"i386",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.1-4.0.58"
+								}
+							],
+							"fixed": [
+								"0:1.5.1-4.0.58"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-firmware",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-headers",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.6.32-300.37.1.el6uek"
+								}
+							],
+							"fixed": [
+								"0:2.6.32-300.37.1.el6uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mlnx_en-2.6.32-300.37.1.el6uek",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.7-0.1"
+								}
+							],
+							"fixed": [
+								"0:1.5.7-0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mlnx_en-2.6.32-300.37.1.el6uekdebug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.7-0.1"
+								}
+							],
+							"fixed": [
+								"0:1.5.7-0.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ofa-2.6.32-300.37.1.el6uek",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.1-4.0.58"
+								}
+							],
+							"fixed": [
+								"0:1.5.1-4.0.58"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ofa-2.6.32-300.37.1.el6uekdebug",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.1-4.0.58"
+								}
+							],
+							"fixed": [
+								"0:1.5.1-4.0.58"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

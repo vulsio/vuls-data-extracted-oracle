@@ -1,0 +1,283 @@
+{
+	"id": "ELSA-2015-2078",
+	"advisories": [
+		{
+			"id": "ELSA-2015-2078",
+			"title": "ELSA-2015-2078:  postgresql security update (MODERATE)",
+			"description": "[9.2.14-1]\n- update to 9.2.14 per release notes\n  http://www.postgresql.org/docs/9.2/static/release-9-2-14.html\n\n[9.2.13-1]\n- update to 9.2.13 per release notes\n  http://www.postgresql.org/docs/9.2/static/release-9-2-13.html\n\n[9.2.12-1]\n- update to 9.2.12 per release notes\n  http://www.postgresql.org/docs/9.2/static/release-9-2-12.html\n\n[9.2.11-1]\n- update to 9.2.11 per release notes\n  http://www.postgresql.org/docs/9.2/static/release-9-2-11.html",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-5288.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-5289.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-2078.html"
+				}
+			],
+			"published": "2015-11-18T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-5288",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-5288.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-5289",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-5289.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.2.14-1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:9.2.14-1.el7_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-contrib",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.2.14-1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:9.2.14-1.el7_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.2.14-1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:9.2.14-1.el7_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-docs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.2.14-1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:9.2.14-1.el7_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.2.14-1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:9.2.14-1.el7_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-plperl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.2.14-1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:9.2.14-1.el7_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-plpython",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.2.14-1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:9.2.14-1.el7_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-pltcl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.2.14-1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:9.2.14-1.el7_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-server",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.2.14-1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:9.2.14-1.el7_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-test",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.2.14-1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:9.2.14-1.el7_1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-upgrade",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.2.14-1.el7_1"
+								}
+							],
+							"fixed": [
+								"0:9.2.14-1.el7_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

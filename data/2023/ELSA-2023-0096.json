@@ -1,0 +1,223 @@
+{
+	"id": "ELSA-2023-0096",
+	"advisories": [
+		{
+			"id": "ELSA-2023-0096",
+			"title": "ELSA-2023-0096:  dbus security update (MODERATE)",
+			"description": "[1.12.8-23.0.1]\n- fix netlink poll: error 4 (Zhenzhong Duan)\n\n[1:1.12.8-23.1]\n- Fix CVE-2022-42010 (#2133644)\n- Fix CVE-2022-42011 (#2133638)\n- Fix CVE-2022-42012 (#2133632)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-42010.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-42011.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-42012.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-0096.html"
+				}
+			],
+			"published": "2023-01-12T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-42010",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-42010.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-42011",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-42011.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-42012",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-42012.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-23.0.1.el8_7.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-23.0.1.el8_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-23.0.1.el8_7.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-23.0.1.el8_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-daemon",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-23.0.1.el8_7.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-23.0.1.el8_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-23.0.1.el8_7.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-23.0.1.el8_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-23.0.1.el8_7.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-23.0.1.el8_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-23.0.1.el8_7.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-23.0.1.el8_7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dbus-x11",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.12.8-23.0.1.el8_7.1"
+								}
+							],
+							"fixed": [
+								"1:1.12.8-23.0.1.el8_7.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

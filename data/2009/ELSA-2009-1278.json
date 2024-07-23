@@ -1,0 +1,72 @@
+{
+	"id": "ELSA-2009-1278",
+	"advisories": [
+		{
+			"id": "ELSA-2009-1278",
+			"title": "ELSA-2009-1278:  lftp security and bug fix update (LOW)",
+			"description": "[3.7.11-4]\n- Resolves: #461922 - lftp 'help mirror' does not display all options defined in manpage\n\n[3.7.11-3]\n- Resolves: #504594 - Alias ''edit' has multiple flaws\n\n[3.7.11-2]\n- Resolves: #504591 - Problems with spaces in file names over HTTP\n- Resolves: #504594 - Alias ''edit' has multiple flaws\n\n[3.7.11-1]\n- Resolves: #468858 - Clean up lftp source code - corrected licensing\n- Resolves: #458777 - License conflict between OpenSSL and GNU GPL v2 licenses in lftp\n- Resolves: #461922 - lftp 'help mirror' does not display all options defined in manpage\n- Resolves: #308721 - re-base to latest upstream 3.7.11\n\n[3.7.3-1]\n- Resolves: #308721 rebase to latest upstream\n- Resolves: #239334 solves CVE-2007-2348\n- Resolves: #422881 fixes bug with -c options\n- Resolves: #434294 fixes bug in (m)put with usage -c option",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2348.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2009-1278.html"
+				}
+			],
+			"published": "2009-09-08T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2007-2348",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2007-2348.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "lftp",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.7.11-4.el5"
+								}
+							],
+							"fixed": [
+								"0:3.7.11-4.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

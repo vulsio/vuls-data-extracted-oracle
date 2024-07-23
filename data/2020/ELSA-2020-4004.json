@@ -1,0 +1,273 @@
+{
+	"id": "ELSA-2020-4004",
+	"advisories": [
+		{
+			"id": "ELSA-2020-4004",
+			"title": "ELSA-2020-4004:  tomcat security and bug fix update (IMPORTANT)",
+			"description": "[0:7.0.76-15]\n- Resolves: CVE-2020-13935 tomcat: multiple requests with invalid payload length in a WebSocket frame could lead to DoS\n\n[0:7.0.76-14]\n- Revert rhbz#1814315 because it caused other issues with ipa-server, see rhbz#1831127\n- Resolves: CVE-2020-9484 tomcat: Apache Tomcat Remote Code Execution via session persistence\n\n[0:7.0.76-13]\n- Revert rhbz#1367492 because it caused issues with ipa-server, see rhbz#1831127",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-17563.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-13935.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-4004.html"
+				}
+			],
+			"published": "2020-10-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-17563",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-17563.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2020-13935",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2020-13935.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.0.76-15.el7"
+								}
+							],
+							"fixed": [
+								"0:7.0.76-15.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-admin-webapps",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.0.76-15.el7"
+								}
+							],
+							"fixed": [
+								"0:7.0.76-15.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-docs-webapp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.0.76-15.el7"
+								}
+							],
+							"fixed": [
+								"0:7.0.76-15.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-el-2.2-api",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.0.76-15.el7"
+								}
+							],
+							"fixed": [
+								"0:7.0.76-15.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.0.76-15.el7"
+								}
+							],
+							"fixed": [
+								"0:7.0.76-15.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-jsp-2.2-api",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.0.76-15.el7"
+								}
+							],
+							"fixed": [
+								"0:7.0.76-15.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-jsvc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.0.76-15.el7"
+								}
+							],
+							"fixed": [
+								"0:7.0.76-15.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-lib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.0.76-15.el7"
+								}
+							],
+							"fixed": [
+								"0:7.0.76-15.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-servlet-3.0-api",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.0.76-15.el7"
+								}
+							],
+							"fixed": [
+								"0:7.0.76-15.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tomcat-webapps",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.0.76-15.el7"
+								}
+							],
+							"fixed": [
+								"0:7.0.76-15.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

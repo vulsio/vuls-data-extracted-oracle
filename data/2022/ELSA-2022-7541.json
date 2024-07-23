@@ -1,0 +1,126 @@
+{
+	"id": "ELSA-2022-7541",
+	"advisories": [
+		{
+			"id": "ELSA-2022-7541",
+			"title": "ELSA-2022-7541:  redis:6 security, bug fix, and enhancement update (LOW)",
+			"description": "[6.2.7-1]\n- rebase to 6.2.7 #1999873",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-24735.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-24736.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-7541.html"
+				}
+			],
+			"published": "2022-11-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-24735",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-24735.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-24736",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-24736.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "redis:6::redis",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+								}
+							],
+							"fixed": [
+								"0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "redis:6::redis-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+								}
+							],
+							"fixed": [
+								"0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "redis:6::redis-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+								}
+							],
+							"fixed": [
+								"0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

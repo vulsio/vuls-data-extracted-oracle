@@ -1,0 +1,84 @@
+{
+	"id": "ELSA-2020-1054",
+	"advisories": [
+		{
+			"id": "ELSA-2020-1054",
+			"title": "ELSA-2020-1054:  mailman security and bug fix update (MODERATE)",
+			"description": "[3:2.1.15-30]\n- Resolves: #1599692 - Sanitize input on listinfo page (CVE-2018-0618)\n\n[3:2.1.15-29]\n- Resolves: #1611689 -  Trim long text in 'no such list' messages\n\n[3:2.1.15-28]\n- Resolves: #1718180 - Try to decode member name first\n\n[3:2.1.15-27]\n- Related : #1545973 -  Bump release to override rhel-7.4.z version",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0618.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-13796.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-1054.html"
+				}
+			],
+			"published": "2020-04-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2018-0618",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-0618.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2018-13796",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2018-13796.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mailman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:2.1.15-30.el7"
+								}
+							],
+							"fixed": [
+								"3:2.1.15-30.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

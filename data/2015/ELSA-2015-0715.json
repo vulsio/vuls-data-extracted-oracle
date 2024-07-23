@@ -1,0 +1,212 @@
+{
+	"id": "ELSA-2015-0715",
+	"advisories": [
+		{
+			"id": "ELSA-2015-0715",
+			"title": "ELSA-2015-0715:  openssl security update (MODERATE)",
+			"description": "[1.0.1e-30.7]\n- update fix for CVE-2015-0287 to what was released upstream\n\n[1.0.1e-30.6]\n- fix CVE-2015-0209 - potential use after free in d2i_ECPrivateKey()\n- fix CVE-2015-0286 - improper handling of ASN.1 boolean comparison\n- fix CVE-2015-0287 - ASN.1 structure reuse decoding memory corruption\n- fix CVE-2015-0289 - NULL dereference decoding invalid PKCS#7 data\n- fix CVE-2015-0292 - integer underflow in base64 decoder\n- fix CVE-2015-0293 - triggerable assert in SSLv2 server",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0209.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0286.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0287.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0288.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0289.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0292.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0293.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2015-0715.html"
+				}
+			],
+			"published": "2015-03-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2015-0209",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0209.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-0286",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0286.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-0287",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0287.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-0288",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0288.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-0289",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0289.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-0292",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0292.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2015-0293",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2015-0293.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1e-30.el6_6.7"
+								}
+							],
+							"fixed": [
+								"0:1.0.1e-30.el6_6.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1e-30.el6_6.7"
+								}
+							],
+							"fixed": [
+								"0:1.0.1e-30.el6_6.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-perl",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1e-30.el6_6.7"
+								}
+							],
+							"fixed": [
+								"0:1.0.1e-30.el6_6.7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openssl-static",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.0.1e-30.el6_6.7"
+								}
+							],
+							"fixed": [
+								"0:1.0.1e-30.el6_6.7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

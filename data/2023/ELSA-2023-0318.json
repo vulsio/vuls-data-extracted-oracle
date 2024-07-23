@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2023-0318",
+	"advisories": [
+		{
+			"id": "ELSA-2023-0318",
+			"title": "ELSA-2023-0318:  postgresql-jdbc security update (MODERATE)",
+			"description": "[42.2.18-6]\n- fix for CVE-2022-31197\n\n* Tue Aug 10 2021 Mohan Boddu <mboddu@redhat.com>\n- Rebuilt for IMA sigs, glibc 2.34, aarch64 flags\n  Related: rhbz#1991688",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31197.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-0318.html"
+				}
+			],
+			"published": "2023-01-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-31197",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-31197.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql-jdbc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:42.2.18-6.el9_1"
+								}
+							],
+							"fixed": [
+								"0:42.2.18-6.el9_1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

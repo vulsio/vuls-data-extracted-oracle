@@ -1,0 +1,295 @@
+{
+	"id": "ELSA-2012-1201",
+	"advisories": [
+		{
+			"id": "ELSA-2012-1201",
+			"title": "ELSA-2012-1201:  tetex security update (MODERATE)",
+			"description": "[3.0-33.15.el5_9.1]\n- more robust fix for CVE-2010-3702 (#773178)\n\n[3.0-33.15]\n- apply patch for CVE-2010-3702,3704 (#773180)\n\n[3.0-33.14]\n- fix CVE-2010-2642 CVE-2011-0433 CVE-2011-0764 CVE-2011-1552\n  CVE-2011-1553 CVE-2011-1554, texlive various flaws (#773180)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2642.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3702.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3704.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0433.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0764.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1552.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1553.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1554.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2012-1201.html"
+				}
+			],
+			"published": "2012-08-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2010-2642",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-2642.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-3702",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3702.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2010-3704",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2010-3704.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-0433",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0433.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-0764",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-0764.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1552",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1552.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1553",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1553.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2011-1554",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-1554.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tetex",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-33.15.el5_8.1"
+								}
+							],
+							"fixed": [
+								"0:3.0-33.15.el5_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tetex-afm",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-33.15.el5_8.1"
+								}
+							],
+							"fixed": [
+								"0:3.0-33.15.el5_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tetex-doc",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-33.15.el5_8.1"
+								}
+							],
+							"fixed": [
+								"0:3.0-33.15.el5_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tetex-dvips",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-33.15.el5_8.1"
+								}
+							],
+							"fixed": [
+								"0:3.0-33.15.el5_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tetex-fonts",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-33.15.el5_8.1"
+								}
+							],
+							"fixed": [
+								"0:3.0-33.15.el5_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tetex-latex",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-33.15.el5_8.1"
+								}
+							],
+							"fixed": [
+								"0:3.0-33.15.el5_8.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tetex-xdvi",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.0-33.15.el5_8.1"
+								}
+							],
+							"fixed": [
+								"0:3.0-33.15.el5_8.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

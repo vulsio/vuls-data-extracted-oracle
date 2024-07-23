@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2024-3211",
+	"advisories": [
+		{
+			"id": "ELSA-2024-3211",
+			"title": "ELSA-2024-3211:  traceroute security update (MODERATE)",
+			"description": "[3:2.1.0-8]\n- add gating.yaml\n\n[3:2.1.0-7]\n- fix improper command line parsing (CVE-2023-46316)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46316.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-3211.html"
+				}
+			],
+			"published": "2024-05-23T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-46316",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-46316.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "traceroute",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:2.1.0-8.el8"
+								}
+							],
+							"fixed": [
+								"3:2.1.0-8.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

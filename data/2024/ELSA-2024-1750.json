@@ -1,0 +1,134 @@
+{
+	"id": "ELSA-2024-1750",
+	"advisories": [
+		{
+			"id": "ELSA-2024-1750",
+			"title": "ELSA-2024-1750:  unbound security update (IMPORTANT)",
+			"description": "[1.16.2-3.5]\n- Rebuilt again with z-stream target\n\n[1.16.2-3.4]\n- Correct typo in new config file\n\n[1.16.2-3.3]\n- Ensure group access correction reaches also updated configs (CVE-2024-1488)\n\n[1.16.2-3.2]\n- Ensure only unbound group can change configuration (CVE-2024-1488)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-1488.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-1750.html"
+				}
+			],
+			"published": "2024-04-10T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2024-1488",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-1488.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-unbound",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.16.2-3.el9_3.5"
+								}
+							],
+							"fixed": [
+								"0:1.16.2-3.el9_3.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "unbound",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.16.2-3.el9_3.5"
+								}
+							],
+							"fixed": [
+								"0:1.16.2-3.el9_3.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "unbound-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.16.2-3.el9_3.5"
+								}
+							],
+							"fixed": [
+								"0:1.16.2-3.el9_3.5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "unbound-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.16.2-3.el9_3.5"
+								}
+							],
+							"fixed": [
+								"0:1.16.2-3.el9_3.5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

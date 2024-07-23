@@ -1,0 +1,84 @@
+{
+	"id": "ELSA-2021-4826",
+	"advisories": [
+		{
+			"id": "ELSA-2021-4826",
+			"title": "ELSA-2021-4826:  mailman:2.1 security update (IMPORTANT)",
+			"description": "[3:2.1.29-12.1]\n- Fix for CVE-2021-42096\n- Fix for CVE-2021-42097\n- Resolves: #2021139, #2020692",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-42096.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-42097.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2021-4826.html"
+				}
+			],
+			"published": "2021-11-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-42096",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-42096.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-42097",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-42097.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mailman:2.1::mailman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "3:2.1.29-12.module+el8.5.0+20429+dde04a6e.1"
+								}
+							],
+							"fixed": [
+								"3:2.1.29-12.module+el8.5.0+20429+dde04a6e.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

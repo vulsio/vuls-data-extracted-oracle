@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2020-3878",
+	"advisories": [
+		{
+			"id": "ELSA-2020-3878",
+			"title": "ELSA-2020-3878:  dnsmasq security and bug fix update (LOW)",
+			"description": "[2.76-16]\n- Fix strict-mode retries on REFUSED (#1755610)\n\n[2.76-15]\n- Forward non-recursive queries to upstream, but serve local names (#1755610)\n\n[2.76-14]\n- Stop treating SERVFAIL as successful response (#1815080)\n\n[2.76-13]\n- Do not ignore DHCPv6 relay messages (#1757247)\n\n[2.76-12]\n- Fix memory leak in create_helper (#1795369)\n\n[2.76-11]\n- Send dhcp_release even for addresses not on local network (#1752569)",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-14834.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2020-3878.html"
+				}
+			],
+			"published": "2020-10-06T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2019-14834",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2019-14834.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dnsmasq",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.76-16.el7"
+								}
+							],
+							"fixed": [
+								"0:2.76-16.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "dnsmasq-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.76-16.el7"
+								}
+							],
+							"fixed": [
+								"0:2.76-16.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

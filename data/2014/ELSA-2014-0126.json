@@ -1,0 +1,155 @@
+{
+	"id": "ELSA-2014-0126",
+	"advisories": [
+		{
+			"id": "ELSA-2014-0126",
+			"title": "ELSA-2014-0126:  openldap security and bug fix update (MODERATE)",
+			"description": "[2.4.23-34.1]\n- fix: segfault on certain queries with rwm overlay (#1058250)\n\n[2.4.23-34]\n- fix: deadlock during SSL_ForceHandshake (#996373)\n  + revert nss-handshake-threadsafe.patch",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4449.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2014-0126.html"
+				}
+			],
+			"published": "2014-02-03T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2013-4449",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2013-4449.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openldap",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.23-34.el6_5.1"
+								}
+							],
+							"fixed": [
+								"0:2.4.23-34.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openldap-clients",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.23-34.el6_5.1"
+								}
+							],
+							"fixed": [
+								"0:2.4.23-34.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openldap-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.23-34.el6_5.1"
+								}
+							],
+							"fixed": [
+								"0:2.4.23-34.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openldap-servers",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.23-34.el6_5.1"
+								}
+							],
+							"fixed": [
+								"0:2.4.23-34.el6_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "openldap-servers-sql",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.23-34.el6_5.1"
+								}
+							],
+							"fixed": [
+								"0:2.4.23-34.el6_5.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

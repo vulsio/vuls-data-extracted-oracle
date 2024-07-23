@@ -1,0 +1,155 @@
+{
+	"id": "ELSA-2011-1635",
+	"advisories": [
+		{
+			"id": "ELSA-2011-1635",
+			"title": "ELSA-2011-1635:  cups security and bug fix update (LOW)",
+			"description": "[1.4.2-44]\n- Init script should source /etc/sysconfig/cups (bug #744791)\n\n[1.4.2-43]\n- The scheduler might leave old job data files in the spool directory\n  (STR #3795, STR #3880, bug #735505).\n\n[1.4.2-42]\n- A further fix for imageto* filters crashing with bad GIF files\n  (STR #3914, bug #714118).\n\n[1.4.2-41]\n- The imageto* filters could crash with bad GIF files (STR #3867, bug #714118).\n\n[1.4.2-40]\n- Map ASCII to ISO-8859-1 in the transcoding code (STR #3832, bug #681836).\n- Check for empty values for some configuration directives (STR #3861, bug #706673).\n- The network backends no longer try to collect SNMP supply and status\n  information for raw queues (STR #3809, bug #709896).\n- Handle EAI_NONAME when resolving hostnames (bug #712430).",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2896.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2011-1635.html"
+				}
+			],
+			"published": "2011-12-14T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2011-2896",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2011-2896.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-44.el6"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-44.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-devel",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-44.el6"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-44.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-libs",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-44.el6"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-44.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-lpd",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-44.el6"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-44.el6"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-php",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.4.2-44.el6"
+								}
+							],
+							"fixed": [
+								"1:1.4.2-44.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

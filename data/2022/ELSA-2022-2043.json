@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2022-2043",
+	"advisories": [
+		{
+			"id": "ELSA-2022-2043",
+			"title": "ELSA-2022-2043:  c-ares security update (MODERATE)",
+			"description": "[1.13.0-6]\n- Resolves: rhbz#1989425 - CVE-2021-3672 c-ares: missing input validation of host names may lead to Domain Hijacking [rhel-8]",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3672.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-2043.html"
+				}
+			],
+			"published": "2022-05-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-3672",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3672.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "c-ares",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.13.0-6.el8"
+								}
+							],
+							"fixed": [
+								"0:1.13.0-6.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "c-ares-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.13.0-6.el8"
+								}
+							],
+							"fixed": [
+								"0:1.13.0-6.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

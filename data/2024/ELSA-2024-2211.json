@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2024-2211",
+	"advisories": [
+		{
+			"id": "ELSA-2024-2211",
+			"title": "ELSA-2024-2211:  tcpdump security update (MODERATE)",
+			"description": "[14:4.99.0-9]\n- Resolves: RHEL-21558 - tcpslice: use-after-free in extract_slice()\n\n[14:4.99.0-8]\n- Resolves: RHEL-10714 - Fix PGM option printing",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-41043.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-2211.html"
+				}
+			],
+			"published": "2024-05-02T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-41043",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-41043.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "tcpdump",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "14:4.99.0-9.el9"
+								}
+							],
+							"fixed": [
+								"14:4.99.0-9.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

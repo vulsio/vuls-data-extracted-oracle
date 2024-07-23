@@ -1,0 +1,3109 @@
+{
+	"id": "ELSA-2022-1759",
+	"advisories": [
+		{
+			"id": "ELSA-2022-1759",
+			"title": "ELSA-2022-1759:  virt:ol and virt-devel:ol security, bug fix, and enhancement update (MODERATE)",
+			"description": "hivex\n[1.3.18-23]\n- Limit recursion in ri-records (CVE-2021-3622)\n  resolves: rhbz#1976194\n\n[1.3.18-22.el8]\n- Resolves: bz#2000225\n  (Rebase virt:rhel module:stream based on AV-8.6)\n\nlibguestfs\n[1.44.0-5.0.1]\n- Replace upstream references from description tag\n- Config supermin to use host yum.conf in ol8 [Orabug: 29319324]\n- Set DISTRO_ORACLE_LINUX correspeonding to ol\n\n[1:1.44.0-5]\n- Fix libguestfs failure with qemu 6.2, libvirt 7.10\n  resolves: rhbz#2035177\n\n[1:1.44.0-4]\n- Autodetect backing format for qemu-img create -b\n- Move appliance to separate subpackage\n- Read rpm database through librpm\n  resolves: rhbz#2013916, rhbz#1989520, rhbz#1836094\n\n[1.44.0-3.el8]\n- Resolves: bz#2000225\n  (Rebase virt:rhel module:stream based on AV-8.6)\n\nlibguestfs-winsupport\n[8.6-1]\n- Rebase to ntfs-3g 2021.8.22\n- Fixes: CVE-2021-33285, CVE-2021-33286, CVE-2021-33287, CVE-2021-33289,\n  CVE-2021-35266, CVE-2021-35267, CVE-2021-35268, CVE-2021-35269,\n  CVE-2021-39251, CVE-2021-39252, CVE-2021-39253, CVE-2021-39254\n  resolves: rhbz#2004490\n\nlibnbd\n[1.6.0-5.el8]\n- Fix CVE-2022-0485: Fail nbdcopy if NBD read or write fails\n  resolves: rhbz#2045718\n\n[1.6.0-4.el8]\n- Resolves: bz#2000225\n  (Rebase virt:rhel module:stream based on AV-8.6)\n\n[1.2.2]\n- Resolves: bz#1844296\n(Upgrade components in virt:rhel module:stream for RHEL-8.3 release)\n\nlibvirt\n[8.0.0-5.0.1]\n- Set SOURCE_DATE_EPOCH from changelog [Orabug: 32019554]\n- Add runtime deps for pkg librbd1 >= 1:10.2.5 (Keshav Sharma)\n\n[8.0.0-5]\n- node_device: Rework udevKludgeStorageType() (rhbz#2056673)\n- node_device: Treat NVMe disks as regular disks (rhbz#2056673)\n\n[8.0.0-4]\n- qemu_command: Generate memory only after controllers (rhbz#2050697)\n- qemu: Validate domain definition even on migration (rhbz#2050702)\n\n[8.0.0-3]\n- qemuDomainSetupDisk: Initialize 'targetPaths' (rhbz#2046172)\n- RHEL: Remove <glib-2.64.0 workaround for GSource race (rhbz#2045879)\n\n[8.0.0-2]\n- Revert 'report error when virProcessGetStatInfo() is unable to parse data' (rhbz#2041610)\n- qemu: fix inactive snapshot revert (rhbz#2043584)\n\n[8.0.0-1]\n- Rebased to libvirt-8.0.0 (rhbz#2012802)\n\nlibvirt-python\n[8.0.0-1]\n- Rebased to libvirt-python-8.0.0 (rhbz#2012806)\n\nperl-Sys-Virt\n[8.0.0-1]\n- Rebase to 8.0.0 release\n- Resolves: rhbz#2012813\n\nqemu-kvm\n[6.2.0-11]\n- kvm-target-i386-properly-reset-TSC-on-reset.patch [bz#1975840]\n- Resolves: bz#1975840\n  (Windows guest hangs after updating and restarting from the guest OS)\n\n[6.2.0-10]\n- kvm-vmxcap-Add-5-level-EPT-bit.patch [bz#2056986]\n- kvm-i386-Add-Icelake-Server-v6-CPU-model-with-5-level-EP.patch [bz#2056986]\n- kvm-acpi-fix-QEMU-crash-when-started-with-SLIC-table.patch [bz#2059311]\n- kvm-tests-acpi-whitelist-expected-blobs-before-changing-.patch [bz#2059311]\n- kvm-tests-acpi-add-SLIC-table-test.patch [bz#2059311]\n- kvm-tests-acpi-SLIC-update-expected-blobs.patch [bz#2059311]\n- kvm-tests-acpi-manually-pad-OEM_ID-OEM_TABLE_ID-for-test.patch [bz#2059311]\n- kvm-tests-acpi-whitelist-nvdimm-s-SSDT-and-FACP.slic-exp.patch [bz#2059311]\n- kvm-acpi-fix-OEM-ID-OEM-Table-ID-padding.patch [bz#2059311]\n- kvm-tests-acpi-update-expected-blobs.patch [bz#2059311]\n- kvm-tests-acpi-test-short-OEM_ID-OEM_TABLE_ID-values-in-.patch [bz#2059311]\n- kvm-rhel-workaround-for-lack-of-binary-patches-in-SRPM.patch [bz#2059311]\n- Resolves: bz#2056986\n  (Win11 (q35+edk2) guest broke after install wsl2 through 'wsl --install -d Ubuntu-20.04')\n- Resolves: bz#2059311\n  (Guest can not start with SLIC acpi table)\n\n[6.2.0-9]\n- kvm-Revert-redhat-Add-hw_compat_4_2_extra-and-apply-to-u.patch [bz#2061856]\n- kvm-Revert-redhat-Enable-FDC-device-for-upstream-machine.patch [bz#2061856]\n- kvm-Revert-redhat-Expose-upstream-machines-pc-4.2-and-pc.patch [bz#2061856]\n- kvm-hw-virtio-vdpa-Fix-leak-of-host-notifier-memory-regi.patch [bz#2027208]\n- kvm-pci-expose-TYPE_XIO3130_DOWNSTREAM-name.patch [bz#2054597]\n- kvm-acpi-pcihp-pcie-set-power-on-cap-on-parent-slot.patch [bz#2054597]\n- Resolves: bz#2061856\n  (Revert IBM-specific Ubuntu-compatibility machine type for 8.6-AV GA)\n- Resolves: bz#2027208\n  ([virtual network][vDPA] qemu crash after hot unplug vdpa device)\n- Resolves: bz#2054597\n  (Do operation to disk will hang in the guest of target host after hotplugging and migrating)\n\n[6.2.0-8]\n- kvm-block-nbd-Delete-reconnect-delay-timer-when-done.patch [bz#2035185]\n- kvm-block-nbd-Assert-there-are-no-timers-when-closed.patch [bz#2035185]\n- kvm-iotests.py-Add-QemuStorageDaemon-class.patch [bz#2035185]\n- kvm-iotests-281-Test-lingering-timers.patch [bz#2035185]\n- kvm-block-nbd-Move-s-ioc-on-AioContext-change.patch [bz#2035185]\n- kvm-iotests-281-Let-NBD-connection-yield-in-iothread.patch [bz#2035185]\n- Resolves: bz#2035185\n  (Qemu core dump when start guest with nbd node or do block jobs to nbd node)\n\n[6.2.0-7]\n- kvm-numa-Enable-numa-for-SGX-EPC-sections.patch [bz#1518984]\n- kvm-numa-Support-SGX-numa-in-the-monitor-and-Libvirt-int.patch [bz#1518984]\n- kvm-doc-Add-the-SGX-numa-description.patch [bz#1518984]\n- kvm-Enable-SGX-RH-Only.patch [bz#1518984]\n- kvm-qapi-Cleanup-SGX-related-comments-and-restore-sectio.patch [bz#1518984]\n- kvm-block-io-Update-BSC-only-if-want_zero-is-true.patch [bz#2041480]\n- kvm-iotests-block-status-cache-New-test.patch [bz#2041480]\n- Resolves: bz#1518984\n  ([Intel 8.6 Feat] qemu-kvm: SGX 1.5 (SGX1 + Flexible Launch Control) support)\n- Resolves: bz#2041480\n  ([incremental_backup] Inconsistent block status reply in qemu-nbd)\n\n[6.2.0-6]\n- kvm-virtiofsd-Drop-membership-of-all-supplementary-group.patch [bz#2046198]\n- kvm-softmmu-fix-device-deletion-events-with-device-JSON-.patch [bz#2033279]\n- kvm-block-backend-prevent-dangling-BDS-pointers-across-a.patch [bz#2021778 bz#2036178]\n- kvm-iotests-stream-error-on-reset-New-test.patch [bz#2021778 bz#2036178]\n- kvm-block-rbd-fix-handling-of-holes-in-.bdrv_co_block_st.patch [bz#2037135]\n- kvm-block-rbd-workaround-for-ceph-issue-53784.patch [bz#2037135]\n- Resolves: bz#2046198\n  (CVE-2022-0358 virt:av/qemu-kvm: QEMU: virtiofsd: potential privilege escalation via CVE-2018-13405 [rhel-8.6])\n- Resolves: bz#2033279\n  ([wrb][qemu-kvm 6.2] The hot-unplugged device can not be hot-plugged back)\n- Resolves: bz#2021778\n  (Qemu core dump when do full backup during system reset)\n- Resolves: bz#2036178\n  (Qemu core dumped when do block-stream to a snapshot node on non-enough space storage)\n- Resolves: bz#2037135\n  (Booting from Local Snapshot Core Dumped Whose Backing File Is Based on RBD)\n\n[6.2.0-5]\n- kvm-acpi-validate-hotplug-selector-on-access.patch [bz#2036580]\n- kvm-x86-Add-q35-RHEL-8.6.0-machine-type.patch [bz#2031035]\n- Resolves: bz#2036580\n  (CVE-2021-4158 virt:rhel/qemu-kvm: QEMU: NULL pointer dereference in pci_write() in hw/acpi/pcihp.c [rhel-8])\n- Resolves: bz#2031035\n  (Add rhel-8.6.0 machine types for RHEL 8.6 [x86])\n\n[6.2.0-4]\n- kvm-hw-arm-virt-Register-iommu-as-a-class-property.patch [bz#2031039]\n- kvm-hw-arm-virt-Register-its-as-a-class-property.patch [bz#2031039]\n- kvm-hw-arm-virt-Rename-default_bus_bypass_iommu.patch [bz#2031039]\n- kvm-hw-arm-virt-Add-8.6-machine-type.patch [bz#2031039]\n- kvm-hw-arm-virt-Check-no_tcg_its-and-minor-style-changes.patch [bz#2031039]\n- kvm-rhel-machine-types-x86-set-prefer_sockets.patch [bz#2029582]\n- Resolves: bz#2031039\n  (Add rhel-8.6.0 machine types for RHEL 8.6 [aarch64])\n- Resolves: bz#2029582\n  ([8.6] machine types: 6.2: Fix prefer_sockets)\n\n[6.2.0-2]\n- kvm-redhat-Add-rhel8.6.0-machine-type-for-s390x.patch [bz#2005325]\n- kvm-redhat-Define-pseries-rhel8.6.0-machine-type.patch [bz#2031041]\n- Resolves: bz#2005325\n  (Fix CPU Model for new IBM Z Hardware - qemu part)\n- Resolves: bz#2031041\n  (Add rhel-8.6.0 machine types for RHEL 8.6 [ppc64le])\n\n[6.2.0-1.el8]\n- Rebase to qemu-kvm 6.2.0\n- Resolves bz#2027716",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-20196.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33285.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33286.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33287.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33289.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35266.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35267.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35268.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35269.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3622.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3716.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3748.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39251.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39252.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39253.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39254.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39255.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39256.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39257.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39258.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39259.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39260.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39261.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39262.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39263.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3975.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-4145.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-4158.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-0485.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-1759.html"
+				}
+			],
+			"published": "2022-05-17T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2021-20196",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-20196.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-33285",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33285.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-33286",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33286.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-33287",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33287.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-33289",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-33289.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-35266",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35266.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-35267",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35267.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-35268",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35268.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-35269",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-35269.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-3622",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3622.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-3716",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3716.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-3748",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3748.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39251",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39251.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39252",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39252.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39253",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39253.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39254",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39254.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39255",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39255.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39256",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39256.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39257",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39257.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39258",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39258.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39259",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39259.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39260",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39260.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39261",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39261.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39262",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39262.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-39263",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-39263.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-3975",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-3975.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-4145",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-4145.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2021-4158",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2021-4158.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2022-0485",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-0485.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::hivex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::hivex-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libguestfs-winsupport",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.6-1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.6-1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libiscsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.0-8.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.18.0-8.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libiscsi-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.0-8.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.18.0-8.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libiscsi-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.0-8.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.18.0-8.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libnbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libnbd-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-client",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-config-network",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-config-nwfilter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-interface",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-network",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-nodedev",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-nwfilter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-secret",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-disk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-iscsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-iscsi-direct",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-logical",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-mpath",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-scsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-dbus",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.0-2.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.3.0-2.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-nss",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-wireshark",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::nbdfuse",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::netcf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.2.8-12.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:0.2.8-12.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::netcf-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.2.8-12.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:0.2.8-12.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::netcf-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.2.8-12.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:0.2.8-12.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ocaml-hivex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ocaml-hivex-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ocaml-libguestfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ocaml-libguestfs-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ocaml-libnbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ocaml-libnbd-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::perl-Sys-Virt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::perl-hivex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::python3-hivex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::python3-libnbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::python3-libvirt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::qemu-kvm-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ruby-hivex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::sgabios",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.20170427git-3.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:0.20170427git-3.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-appliance",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-bash-completion",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-gfs2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-gobject",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-gobject-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-inspect-icons",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-java",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-java-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-man-pages-ja",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-man-pages-uk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-rescue",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-rsync",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-tools-c",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-xfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libnbd-bash-completion",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-5.module+el8.6.0+20664+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libtpms",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.1-0.20211126git1ff6fe1f43.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:0.9.1-0.20211126git1ff6fe1f43.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libtpms-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.1-0.20211126git1ff6fe1f43.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:0.9.1-0.20211126git1ff6fe1f43.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libvirt-daemon-driver-qemu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libvirt-daemon-driver-storage-gluster",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libvirt-daemon-driver-storage-rbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libvirt-daemon-kvm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libvirt-lock-sanlock",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::lua-guestfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-bash-completion",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-basic-filters",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-basic-plugins",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-curl-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-example-plugins",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-gzip-filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-gzip-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-linuxdisk-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-nbd-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-python-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-ssh-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-tar-filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-tar-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-tmpdisk-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-vddk-plugin",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-xz-filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-4.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::perl-Sys-Guestfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::python3-libguestfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-guest-agent",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-img",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-block-curl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-block-gluster",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-block-iscsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-block-rbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-block-ssh",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-hw-usbredir",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-ui-opengl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-ui-spice",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-11.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::ruby-libguestfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::seabios",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.0-2.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.15.0-2.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::seabios-bin",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.0-2.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.15.0-2.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::seavgabios-bin",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.0-2.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:1.15.0-2.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::sgabios-bin",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.20170427git-3.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:0.20170427git-3.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::supermin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.2.1-1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:5.2.1-1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::supermin-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.2.1-1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:5.2.1-1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::swtpm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.7.0-1.20211109gitb79fd91.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:0.7.0-1.20211109gitb79fd91.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::swtpm-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.7.0-1.20211109gitb79fd91.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:0.7.0-1.20211109gitb79fd91.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::swtpm-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.7.0-1.20211109gitb79fd91.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:0.7.0-1.20211109gitb79fd91.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::swtpm-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.7.0-1.20211109gitb79fd91.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:0.7.0-1.20211109gitb79fd91.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::swtpm-tools-pkcs11",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.7.0-1.20211109gitb79fd91.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"0:0.7.0-1.20211109gitb79fd91.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::virt-dib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-5.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::virt-v2v",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.42.0-18.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.42.0-18.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::virt-v2v-bash-completion",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.42.0-18.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.42.0-18.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::virt-v2v-man-pages-ja",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.42.0-18.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.42.0-18.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::virt-v2v-man-pages-uk",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.42.0-18.0.1.module+el8.6.0+20659+3dcf7c70"
+								}
+							],
+							"fixed": [
+								"1:1.42.0-18.0.1.module+el8.6.0+20659+3dcf7c70"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

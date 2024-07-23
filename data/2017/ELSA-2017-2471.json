@@ -1,0 +1,90 @@
+{
+	"id": "ELSA-2017-2471",
+	"advisories": [
+		{
+			"id": "ELSA-2017-2471",
+			"title": "ELSA-2017-2471:  spice security update (IMPORTANT)",
+			"description": "[0.12.8-2.1]\n- Redo build properly versioned as a zstream build\n  Related: CVE-2017-7506\n\n[0.12.8-3]\n- Prevent potential buffer/integer overflows with invalid MonitorsConfig messages\n  sent from an authenticated client\n  Resolves: CVE-2017-7506",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-7506.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2017-2471.html"
+				}
+			],
+			"published": "2017-08-15T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2017-7506",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2017-7506.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-server",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.8-2.el7.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.8-2.el7.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "spice-server-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.12.8-2.el7.1"
+								}
+							],
+							"fixed": [
+								"0:0.12.8-2.el7.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

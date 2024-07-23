@@ -1,0 +1,363 @@
+{
+	"id": "ELSA-2023-12561",
+	"advisories": [
+		{
+			"id": "ELSA-2023-12561",
+			"title": "ELSA-2023-12561:  kubernetes security update (IMPORTANT)",
+			"description": "kubernetes\n[1.24.8-2]\n- libct/cg: add misc controller to v1 drivers (upstream runc patch)\n\n[1.24.8-1]\n- Added Oracle specific build files for Kubernetes\n\nolcne\n[1.5.13-1]\n- CVE-2023-2727, CVE-2023-2728 Kubernetes upgraded to 1.24.15\n- Added script to support upgrade from OL7 to OL8 using leapp",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2727.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2728.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2023-12561.html"
+				}
+			],
+			"published": "2023-07-03T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2023-2727",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2727.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2023-2728",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2023-2728.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubeadm",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.15-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.24.15-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubectl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.15-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.24.15-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kubelet",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.15-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.24.15-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-agent",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.13-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.5.13-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-api-server",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.13-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.5.13-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-gluster-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.13-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.5.13-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-grafana-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.13-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.5.13-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-istio-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.13-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.5.13-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-metallb-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.13-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.5.13-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-nginx",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.13-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.5.13-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-oci-ccm-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.13-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.5.13-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-olm-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.13-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.5.13-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-prometheus-chart",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.13-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.5.13-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcne-utils",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.13-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.5.13-1.el8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "olcnectl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.5.13-1.el8"
+								}
+							],
+							"fixed": [
+								"0:1.5.13-1.el8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

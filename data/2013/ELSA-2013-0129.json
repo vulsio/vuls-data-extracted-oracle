@@ -1,0 +1,261 @@
+{
+	"id": "ELSA-2013-0129",
+	"advisories": [
+		{
+			"id": "ELSA-2013-0129",
+			"title": "ELSA-2013-0129:  ruby security and bug fix update (MODERATE)",
+			"description": "[1.8.5-27]\n- unintentional file creation caused by inserting an illegal NUL character\n  * ruby-1.8.6-CVE-2012-4522-io.c-pipe_open-command-name-should-not-contain-null-.patch\n  - Related: rhbz#867750\n\n[1.8.5-26]\n-  escaping vulnerability about Exception#to_s / NameError#to_s\n  * ruby-1.8.7-p371-CVE-2012-4481.patch\n  - Resolves: rhbz#867750\n- unintentional file creation caused by inserting an illegal NUL character\n  * ruby-1.8.6-CVE-2012-4522-io.c-rb_open_file-should-check-NUL-in-path.patch\n  - Resolves: rhbz#867750\n\n[1.8.5-25]\n- Resolve buffer overflow causing gem installation issues.\n  * ruby-1.8.7-syck-avoid-buffer-overflow.patch\n  - Resolves: rhbz#834381",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-4481.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-4522.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0129.html"
+				}
+			],
+			"published": "2013-01-11T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-4481",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-4481.html"
+				}
+			]
+		},
+		{
+			"id": "CVE-2012-4522",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-4522.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:5",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.5-27.el5"
+								}
+							],
+							"fixed": [
+								"0:1.8.5-27.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-devel",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.5-27.el5"
+								}
+							],
+							"fixed": [
+								"0:1.8.5-27.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-docs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.5-27.el5"
+								}
+							],
+							"fixed": [
+								"0:1.8.5-27.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-irb",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.5-27.el5"
+								}
+							],
+							"fixed": [
+								"0:1.8.5-27.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-libs",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.5-27.el5"
+								}
+							],
+							"fixed": [
+								"0:1.8.5-27.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-mode",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.5-27.el5"
+								}
+							],
+							"fixed": [
+								"0:1.8.5-27.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-rdoc",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.5-27.el5"
+								}
+							],
+							"fixed": [
+								"0:1.8.5-27.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-ri",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.5-27.el5"
+								}
+							],
+							"fixed": [
+								"0:1.8.5-27.el5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "ruby-tcltk",
+							"architectures": [
+								"i386",
+								"ia64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.8.5-27.el5"
+								}
+							],
+							"fixed": [
+								"0:1.8.5-27.el5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

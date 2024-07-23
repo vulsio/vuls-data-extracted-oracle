@@ -1,0 +1,92 @@
+{
+	"id": "ELSA-2022-1541",
+	"advisories": [
+		{
+			"id": "ELSA-2022-1541",
+			"title": "ELSA-2022-1541:  maven-shared-utils security update (IMPORTANT)",
+			"description": "[0.4-4]\n- Fix commandline injection vulnerability\n- Resolves: rhbz#2068651\n\n[0.4-3]\n- Mass rebuild 2013-12-27\n\n[0.4-2]\n- Rebuild to regenerate API documentation\n- Resolves: CVE-2013-1571\n\n[0.4-1]\n- Updated to latest upstream version\n- Fixed and reenabled tests\n\n[0.3-2]\n- Disable tests (they don't work with junit >= 4.11)\n\n[0.3-1]\n- Update to upstream version 0.3\n\n[0.2-4]\n- Build with xmvn\n\n[0.2-3]\n- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild\n\n[0.2-2]\n- Update for https://fedoraproject.org/wiki/Fedora_19_Maven_Rebuild\n- Replace maven BuildRequires with maven-local\n\n[0.2-1]\n- Initial version",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "IMPORTANT"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-29599.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2022-1541.html"
+				}
+			],
+			"published": "2022-04-29T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2022-29599",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2022-29599.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "maven-shared-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.4-4.el7_9"
+								}
+							],
+							"fixed": [
+								"0:0.4-4.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "maven-shared-utils-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.4-4.el7_9"
+								}
+							],
+							"fixed": [
+								"0:0.4-4.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

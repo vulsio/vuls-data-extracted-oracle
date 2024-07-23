@@ -1,0 +1,71 @@
+{
+	"id": "ELSA-2013-0499",
+	"advisories": [
+		{
+			"id": "ELSA-2013-0499",
+			"title": "ELSA-2013-0499:  xinetd security and bug fix update (LOW)",
+			"description": "[2:2.3.14-38]\n- CVE-2012-0862 xinetd: enables unintentional services over tcpmux port\n- Resolves: #883653\n\n[2:2.3.14-37]\n- Fix changelog entry\n- Related: #809271\n\n[2:2.3.14-36]\n- Fix: Service disabled due to bind failure\n- Resolves: #809271",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "LOW"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0862.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2013-0499.html"
+				}
+			],
+			"published": "2013-02-22T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2012-0862",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2012-0862.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:6",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "xinetd",
+							"architectures": [
+								"i686",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "2:2.3.14-38.el6"
+								}
+							],
+							"fixed": [
+								"2:2.3.14-38.el6"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

@@ -1,0 +1,176 @@
+{
+	"id": "ELSA-2024-3047",
+	"advisories": [
+		{
+			"id": "ELSA-2024-3047",
+			"title": "ELSA-2024-3047:  389-ds:1.4 security update (MODERATE)",
+			"description": "[1.4.3.39-3]\n- Bump version to 1.4.3.39-3\n- Resolves: RHEL-19240 - RFE Add PROXY protocol support to 389-ds-base via confiuration item - similar to Postfix\n\n[1.4.3.39-2]\n- Bump version to 1.4.3.39-2\n- Resolves: RHEL-23209 - CVE-2024-1062 389-ds:1.4/389-ds-base: a heap overflow leading to denail-of-servce while writing a value larger than 256 chars (in log_entry_attr)\n- Resolves: RHEL-5390  - schema-compat-plugin expensive with automember rebuild\n- Resolves: RHEL-5135  - crash in sync_update_persist_op() of content sync plugin\n\n[1.4.3.39-1]\n- Bump version to 1.4.3.39-1\n- Resolves: RHEL-19028 - Rebase 389-ds-base in RHEL 8.10 to 1.4.3.39\n- Resolves: RHEL-19240 - [RFE] Add PROXY protocol support to 389-ds-base\n- Resolves: RHEL-5143  - SELinux labeling for dirsrv files seen during ipa install/uninstall should be moved to DEBUG.\n- Resolves: RHEL-5107  - bdb_start - Detected Disorderly Shutdown directory server is not starting\n- Resolves: RHEL-16338 - ns-slapd crash in slapi_attr_basetype\n- Resolves: RHEL-14025 - After an upgrade the LDAP server won't start if nsslapd-conntablesize is present in the dse.ldif file.\n\n[1.4.3.38-1]\n- Bump version to 1.4.3.38-1\n- Resolves: RHEL-19028 - Rebase 389-ds-base in RHEL 8.10 to 1.4.3.38\n\n[1.4.3.37-1]\n- Bump versionto 1.4.3.37-1\n- Resolves: rhbz#2224505 - Paged search impacts performance\n- Resolves: rhbz#2220890 - healthcheck tool needs to be updates for new default password storage scheme\n- Resolves: rhbz#2218235 - python3-lib389: Python tarfile extraction needs change to avoid a warning\n- Resolves: rhbz#2210491 - dtablesize being set to soft maxfiledescriptor limit causing massive slowdown in large enviroments.\n- Resolves: rhbz#2149967 - SELinux labeling for dirsrv files seen during ipa install/uninstall should be moved to DEBUG\n\n[1.4.3.36-2]\n- Bump version to 1.4.3.36-2\n- Resolves: rhbz#2220890 - healthcheck tool needs to be updates for new default password storage scheme\n\n[1.4.3.36-1]\n- Bump version to 1.4.3.36-1\n- Resolves: rhbz#2188628 - Rebase 389-ds-base in RHEL 8.9 to 1.4.3.36\n\n[1.4.3.35-1]\n- Bump version to 1.4.3.35-1\n- Resolves: rhbz#2188628 - Rebase 389-ds-base in RHEL 8.9 to 1.4.3.35\n\n[1.4.3.32-1]\n- Bump version to 1.4.3.32-1\n- Resolves: Bug 2098138 - broken nsslapd-subtree-rename-switch option in rhds11\n- Resolves: Bug 2119063 - entryuuid fixup tasks fails because entryUUID is not mutable\n- Resolves: Bug 2136610 - [RFE] Add 'cn' attribute to IPA audit logs\n- Resolves: Bug 2142638 - pam mutex lock causing high etimes, affecting red hat internal sso\n- Resolves: Bug 2096795 - [RFE] Support ECDSA private keys for TLS",
+			"severity": [
+				{
+					"type": "vendor",
+					"source": "linux.oracle.com/security",
+					"vendor": "MODERATE"
+				}
+			],
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-1062.html"
+				},
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/errata/ELSA-2024-3047.html"
+				}
+			],
+			"published": "2024-05-24T00:00:00Z"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2024-1062",
+			"references": [
+				{
+					"source": "linux.oracle.com/security",
+					"url": "https://linux.oracle.com/cve/CVE-2024-1062.html"
+				}
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.39-3.module+el8.10.0+90328+4f014c15"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.39-3.module+el8.10.0+90328+4f014c15"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.39-3.module+el8.10.0+90328+4f014c15"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.39-3.module+el8.10.0+90328+4f014c15"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base-legacy-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.39-3.module+el8.10.0+90328+4f014c15"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.39-3.module+el8.10.0+90328+4f014c15"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.39-3.module+el8.10.0+90328+4f014c15"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.39-3.module+el8.10.0+90328+4f014c15"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base-snmp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.39-3.module+el8.10.0+90328+4f014c15"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.39-3.module+el8.10.0+90328+4f014c15"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::python3-lib389",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.39-3.module+el8.10.0+90328+4f014c15"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.39-3.module+el8.10.0+90328+4f014c15"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}
