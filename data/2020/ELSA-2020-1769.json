@@ -2,232 +2,317 @@
 	"id": "ELSA-2020-1769",
 	"advisories": [
 		{
-			"id": "ELSA-2020-1769",
-			"title": "ELSA-2020-1769:  kernel security, bug fix, and enhancement update (IMPORTANT)",
-			"description": "[4.18.0-193.el8.OL8]\n- Oracle Linux certificates (Alexey Petrenko)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list\n (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n\n[4.18.0-193.el8]\n- [kvm] KVM: PPC: Book3S HV: Use __gfn_to_pfn_memslot in HPT page fault handler \n(Sam Bobroff) [1815491]\n- [net] tcp: also NULL skb->dev when copy was needed (Florian Westphal) [1775961\n]\n- [net] tcp: ensure skb->dev is NULL before leaving TCP stack (Florian Westphal)\n [1775961]\n\n[4.18.0-192.el8]\n- [drm] drm/bochs: downgrade pci_request_region failure from error to warning (D\nave Airlie) [1804735]\n- [drm] drm/bochs: deinit bugfix (Dave Airlie) [1804735]\n- [fs] gfs2: fix O_EXCL|O_CREAT handling on cold dcache (Andrew Price) [1811787]\n- [net] esp: remove the skb from the chain when its enqueued in cryptd_wq (Xin \nLong) [1807909]\n- [powerpc] powerpc/nvdimm: set target_node properly (Diego Domingos) [1815038]\n\n[4.18.0-191.el8]\n- [netdrv] net/mlx5e: Dont clear the whole vf config when switching modes (moha\nmad meib) [1814350]\n- [fs] fuse: fix stack use after return (Miklos Szeredi) [1814666]\n\n[4.18.0-190.el8]\n- [powerpc] powerpc/pseries: Avoid NULL pointer dereference when drmem is unavai\nlable (David Hildenbrand) [1812874]\n- [x86] kvm/svm: PKU not currently supported (Wei Huang) [1789159]\n- [x86] Remove the unsupported check for Cooper Lake (David Arcari) [1813921]\n\n[4.18.0-189.el8]\n- [netdrv] net/mlx5e: Show/set Rx network flow classification rules on ul rep (A\nlaa Hleihel) [1795156 1794280]\n- [netdrv] net/mlx5e: Init ethtool steering for representors (Alaa Hleihel) [179\n5156 1794280]\n- [netdrv] net/mlx5e: Show/set Rx flow indir table and RSS hash key on ul rep (A\nlaa Hleihel) [1795156 1794280]\n- [netdrv] net/mlx5e: Introduce root ft concept for representors netdevs (Alaa H\nleihel) [1795156 1794280]\n- [netdrv] net/mlx5: E-Switch, Use vport metadata matching only when mandatory (\nAlaa Hleihel) [1795156]\n- [nvme] nvme: log additional message for controller status (David Milburn) [175\n2952]",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "IMPORTANT"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2018-16871.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-10639.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-15090.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-15099.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-15221.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-17053.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-17055.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-18805.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19057.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19073.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19074.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19534.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19768.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19922.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-8980.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2020-1749.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2020-1769.html"
-				}
-			],
-			"published": "2020-05-05T00:00:00Z"
+			"content": {
+				"id": "ELSA-2020-1769",
+				"title": "ELSA-2020-1769:  kernel security, bug fix, and enhancement update (IMPORTANT)",
+				"description": "[4.18.0-193.el8.OL8]\n- Oracle Linux certificates (Alexey Petrenko)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list\n (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n\n[4.18.0-193.el8]\n- [kvm] KVM: PPC: Book3S HV: Use __gfn_to_pfn_memslot in HPT page fault handler \n(Sam Bobroff) [1815491]\n- [net] tcp: also NULL skb->dev when copy was needed (Florian Westphal) [1775961\n]\n- [net] tcp: ensure skb->dev is NULL before leaving TCP stack (Florian Westphal)\n [1775961]\n\n[4.18.0-192.el8]\n- [drm] drm/bochs: downgrade pci_request_region failure from error to warning (D\nave Airlie) [1804735]\n- [drm] drm/bochs: deinit bugfix (Dave Airlie) [1804735]\n- [fs] gfs2: fix O_EXCL|O_CREAT handling on cold dcache (Andrew Price) [1811787]\n- [net] esp: remove the skb from the chain when its enqueued in cryptd_wq (Xin \nLong) [1807909]\n- [powerpc] powerpc/nvdimm: set target_node properly (Diego Domingos) [1815038]\n\n[4.18.0-191.el8]\n- [netdrv] net/mlx5e: Dont clear the whole vf config when switching modes (moha\nmad meib) [1814350]\n- [fs] fuse: fix stack use after return (Miklos Szeredi) [1814666]\n\n[4.18.0-190.el8]\n- [powerpc] powerpc/pseries: Avoid NULL pointer dereference when drmem is unavai\nlable (David Hildenbrand) [1812874]\n- [x86] kvm/svm: PKU not currently supported (Wei Huang) [1789159]\n- [x86] Remove the unsupported check for Cooper Lake (David Arcari) [1813921]\n\n[4.18.0-189.el8]\n- [netdrv] net/mlx5e: Show/set Rx network flow classification rules on ul rep (A\nlaa Hleihel) [1795156 1794280]\n- [netdrv] net/mlx5e: Init ethtool steering for representors (Alaa Hleihel) [179\n5156 1794280]\n- [netdrv] net/mlx5e: Show/set Rx flow indir table and RSS hash key on ul rep (A\nlaa Hleihel) [1795156 1794280]\n- [netdrv] net/mlx5e: Introduce root ft concept for representors netdevs (Alaa H\nleihel) [1795156 1794280]\n- [netdrv] net/mlx5: E-Switch, Use vport metadata matching only when mandatory (\nAlaa Hleihel) [1795156]\n- [nvme] nvme: log additional message for controller status (David Milburn) [175\n2952]",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2018-16871.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-10639.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-15090.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-15099.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-15221.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-17053.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-17055.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-18805.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19057.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19073.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19074.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19534.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19768.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19922.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-8980.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2020-1749.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2020-1769.html"
+					}
+				],
+				"published": "2020-05-05T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2018-16871",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2018-16871.html"
-				}
+			"content": {
+				"id": "CVE-2018-16871",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2018-16871.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-10639",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-10639.html"
-				}
+			"content": {
+				"id": "CVE-2019-10639",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-10639.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-15090",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-15090.html"
-				}
+			"content": {
+				"id": "CVE-2019-15090",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-15090.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-15099",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-15099.html"
-				}
+			"content": {
+				"id": "CVE-2019-15099",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-15099.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-15221",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-15221.html"
-				}
+			"content": {
+				"id": "CVE-2019-15221",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-15221.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-17053",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-17053.html"
-				}
+			"content": {
+				"id": "CVE-2019-17053",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-17053.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-17055",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-17055.html"
-				}
+			"content": {
+				"id": "CVE-2019-17055",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-17055.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-18805",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-18805.html"
-				}
+			"content": {
+				"id": "CVE-2019-18805",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-18805.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-19057",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19057.html"
-				}
+			"content": {
+				"id": "CVE-2019-19057",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19057.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-19073",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19073.html"
-				}
+			"content": {
+				"id": "CVE-2019-19073",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19073.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-19074",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19074.html"
-				}
+			"content": {
+				"id": "CVE-2019-19074",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19074.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-19534",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19534.html"
-				}
+			"content": {
+				"id": "CVE-2019-19534",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19534.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-19768",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19768.html"
-				}
+			"content": {
+				"id": "CVE-2019-19768",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19768.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-19922",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19922.html"
-				}
+			"content": {
+				"id": "CVE-2019-19922",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19922.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2019-8980",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-8980.html"
-				}
+			"content": {
+				"id": "CVE-2019-8980",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-8980.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2020-1749",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2020-1749.html"
-				}
+			"content": {
+				"id": "CVE-2020-1749",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2020-1749.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		}
 	],

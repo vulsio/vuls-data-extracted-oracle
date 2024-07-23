@@ -2,37 +2,47 @@
 	"id": "ELSA-2020-1828",
 	"advisories": [
 		{
-			"id": "ELSA-2020-1828",
-			"title": "ELSA-2020-1828:  glibc security, bug fix, and enhancement update (LOW)",
-			"description": "[2.28-101.0.1]\n- add Ampere emag  to tunable cpu list (Patrick McGehearty)\n- add optimized memset for emag\n- add an ASIMD variant of strlen for falkor\n- Orabug: 2700101.\n- Modify glibc-ora28849085.patch so it works with RHCK kernels.\n- Orabug: 28849085.\n- Make _IO_funlockfile match __funlockfile and _IO_flockfile match __flockfile\n- Both should test\n-   if (stream->_flags & _IO_USER_LOCK) == 0)\n-     _IO_lock_lock (*stream->_lock);\n- OraBug: 28481550.\nReviewed-by: Qing Zhao <qing.zhao@oracle.com>\n\n[2.28-101]\n- ld.so: Reset GL (dl_initfirst) pointer on dlopen failure (#1410154)\n\n[2.28-100]\n- Roll back dynamic linker state on dlopen failure (#1410154)\n\n[2.28-99]\n- s390x: Fix z15 strstr for patterns crossing pages (#1777241)\n\n[2.28-98]\n- Rebuild with new rpm (#1654901)\n\n[2.28-97]\n- Avoid invalid __has_include in <sys/stat.h> (#1775294)\n\n[2.28-96]\n- x86-64: Ignore LD_PREFER_MAP_32BIT_EXEC in SUID binaries (#1774021)\n\n[2.28-95]\n- Fix alignment of TLS variables for tls variant TLS_TCB_AT_TP (#1764214)\n\n[2.28-94]\n- Refuse to dlopen PIE objects (#1764223)\n\n[2.28-93]\n- Fix C.UTF-8 locale source ellipsis expressions (#1361965)\n\n[2.28-92]\n- Fix hangs during malloc tracing (#1764235)\n\n[2.28-91]\n- Support moving versioned symbols between sonames (#1764231)\n\n[2.28-90]\n- Avoid creating stale utmp entries for repeated pututxline (#1749439)\n\n[2.28-89]\n- Backport more precise tokenizer for installed headers test (#1769304)\n\n[2.28-88]\n- math: Enable some math builtins for clang in LLVM Toolset (#1764242)\n\n[2.28-87]\n- Support Fortran vectorized math functions with GCC Toolset 9 (#1764238)\n\n[2.28-86]\n- aarch64: Support STO_AARCH64_VARIANT_PCS, DT_AARCH64_VARIANT_PCS (#1726638)\n\n[2.28-85]\n- Add more test-in-container support (#1747502)\n\n[2.28-84]\n- Fix calling getpwent after endpwent (#1747502)\n\n[2.28-83]\n- nptl: Avoid fork handler lock for async-signal-safe fork (#1746928)\n\n[2.28-82]\n- Call _dl_open_check after relocation (#1682954)\n\n[2.28-81]\n- Add malloc fastbin tunable (#1764218)\n\n[2.28-80]\n- Fix race condition in tst-clone3 and add a new ldconfig test,\n  tst-ldconfig-bad-aux-cache (#1764226)\n\n[2.28-79]\n- Remove unwanted whitespace from size lines and account for top chunk in\n  malloc_info output (#1735747)\n\n[2.28-78]\n- Enhance malloc tcache (#1746933)\n\n[2.28-77]\n- Dont define initgroups in nsswitch.conf (#1747505)\n\n[2.28-76]\n- libio: Remove codecvt vtable. (#1764241)\n\n[2.28-75]\n- Implement --preload option for the dynamic linker.(#1747453)\n\n[2.28-74]\n- Make nsswitch.conf more distribution friendly.\n  Improve nscd.conf comments.  (#1747505)\n\n[2.28-73]\n- Update system call names list to Linux 5.3 (#1764234)",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "LOW"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19126.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2020-1828.html"
-				}
-			],
-			"published": "2020-05-05T00:00:00Z"
+			"content": {
+				"id": "ELSA-2020-1828",
+				"title": "ELSA-2020-1828:  glibc security, bug fix, and enhancement update (LOW)",
+				"description": "[2.28-101.0.1]\n- add Ampere emag  to tunable cpu list (Patrick McGehearty)\n- add optimized memset for emag\n- add an ASIMD variant of strlen for falkor\n- Orabug: 2700101.\n- Modify glibc-ora28849085.patch so it works with RHCK kernels.\n- Orabug: 28849085.\n- Make _IO_funlockfile match __funlockfile and _IO_flockfile match __flockfile\n- Both should test\n-   if (stream->_flags & _IO_USER_LOCK) == 0)\n-     _IO_lock_lock (*stream->_lock);\n- OraBug: 28481550.\nReviewed-by: Qing Zhao <qing.zhao@oracle.com>\n\n[2.28-101]\n- ld.so: Reset GL (dl_initfirst) pointer on dlopen failure (#1410154)\n\n[2.28-100]\n- Roll back dynamic linker state on dlopen failure (#1410154)\n\n[2.28-99]\n- s390x: Fix z15 strstr for patterns crossing pages (#1777241)\n\n[2.28-98]\n- Rebuild with new rpm (#1654901)\n\n[2.28-97]\n- Avoid invalid __has_include in <sys/stat.h> (#1775294)\n\n[2.28-96]\n- x86-64: Ignore LD_PREFER_MAP_32BIT_EXEC in SUID binaries (#1774021)\n\n[2.28-95]\n- Fix alignment of TLS variables for tls variant TLS_TCB_AT_TP (#1764214)\n\n[2.28-94]\n- Refuse to dlopen PIE objects (#1764223)\n\n[2.28-93]\n- Fix C.UTF-8 locale source ellipsis expressions (#1361965)\n\n[2.28-92]\n- Fix hangs during malloc tracing (#1764235)\n\n[2.28-91]\n- Support moving versioned symbols between sonames (#1764231)\n\n[2.28-90]\n- Avoid creating stale utmp entries for repeated pututxline (#1749439)\n\n[2.28-89]\n- Backport more precise tokenizer for installed headers test (#1769304)\n\n[2.28-88]\n- math: Enable some math builtins for clang in LLVM Toolset (#1764242)\n\n[2.28-87]\n- Support Fortran vectorized math functions with GCC Toolset 9 (#1764238)\n\n[2.28-86]\n- aarch64: Support STO_AARCH64_VARIANT_PCS, DT_AARCH64_VARIANT_PCS (#1726638)\n\n[2.28-85]\n- Add more test-in-container support (#1747502)\n\n[2.28-84]\n- Fix calling getpwent after endpwent (#1747502)\n\n[2.28-83]\n- nptl: Avoid fork handler lock for async-signal-safe fork (#1746928)\n\n[2.28-82]\n- Call _dl_open_check after relocation (#1682954)\n\n[2.28-81]\n- Add malloc fastbin tunable (#1764218)\n\n[2.28-80]\n- Fix race condition in tst-clone3 and add a new ldconfig test,\n  tst-ldconfig-bad-aux-cache (#1764226)\n\n[2.28-79]\n- Remove unwanted whitespace from size lines and account for top chunk in\n  malloc_info output (#1735747)\n\n[2.28-78]\n- Enhance malloc tcache (#1746933)\n\n[2.28-77]\n- Dont define initgroups in nsswitch.conf (#1747505)\n\n[2.28-76]\n- libio: Remove codecvt vtable. (#1764241)\n\n[2.28-75]\n- Implement --preload option for the dynamic linker.(#1747453)\n\n[2.28-74]\n- Make nsswitch.conf more distribution friendly.\n  Improve nscd.conf comments.  (#1747505)\n\n[2.28-73]\n- Update system call names list to Linux 5.3 (#1764234)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "LOW"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19126.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2020-1828.html"
+					}
+				],
+				"published": "2020-05-05T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2019-19126",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2019-19126.html"
-				}
+			"content": {
+				"id": "CVE-2019-19126",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2019-19126.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		}
 	],

@@ -2,141 +2,201 @@
 	"id": "ELSA-2018-4040",
 	"advisories": [
 		{
-			"id": "ELSA-2018-4040",
-			"title": "ELSA-2018-4040: Unbreakable Enterprise kernel security update (IMPORTANT)",
-			"description": "kernel-uek\n[3.8.13-118.20.3]\n- gre: fix a possible skb leak (Eric Dumazet)  [Orabug: 26403972]  {CVE-2017-9074}\n- ipv6: Fix leak in ipv6_gso_segment(). (David S. Miller)  [Orabug: 26403972]  {CVE-2017-9074}\n- ipv6: xfrm: Handle errors reported by xfrm6_find_1stfragopt() (Ben Hutchings)  [Orabug: 26403972]  {CVE-2017-9074}\n- ipv6: Check ip6_find_1stfragopt() return value properly. (David S. Miller)  [Orabug: 26403972]  {CVE-2017-9074}\n- ipv6: Prevent overrun when parsing v6 header options (Craig Gallek)  [Orabug: 26403972]  {CVE-2017-9074}\n- tcp: initialize rcv_mss to TCP_MIN_MSS instead of 0 (Wei Wang)  [Orabug: 26813390]  {CVE-2017-14106}\n- rxrpc: Fix several cases where a padded len isn't checked in ticket decode (David Howells)  [Orabug: 26880517]  {CVE-2017-7482} {CVE-2017-7482}\n- xen/mmu: Call xen_cleanhighmap() with 4MB aligned for page tables mapping (Zhenzhong Duan)  [Orabug: 26883322] \n- KVM: x86: fix deadlock in clock-in-progress request handling (Marcelo Tosatti)  [Orabug: 27065995] \n- ocfs2: fstrim: Fix start offset of first cluster group during fstrim (Ashish Samant)  [Orabug: 27099835] \n- USB: serial: console: fix use-after-free after failed setup (Johan Hovold)  [Orabug: 27206837]  {CVE-2017-16525}\n- uwb: properly check kthread_run return value (Andrey Konovalov)  [Orabug: 27206897]  {CVE-2017-16526}\n- ALSA: usb-audio: Check out-of-bounds access by corrupted buffer descriptor (Takashi Iwai)  [Orabug: 27206928]  {CVE-2017-16529}\n- USB: fix out-of-bounds in usb_set_configuration (Greg Kroah-Hartman)  [Orabug: 27207240]  {CVE-2017-16531}\n- USB: core: fix out-of-bounds access bug in usb_get_bos_descriptor() (Alan Stern)  [Orabug: 27207983]  {CVE-2017-16535}\n- dccp: CVE-2017-8824: use-after-free in DCCP code (Mohamed Ghannam)  [Orabug: 27290301]  {CVE-2017-8824}",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "IMPORTANT"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-14106.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-16525.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-16526.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-16529.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-16531.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-16535.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-7482.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-8824.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-9074.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2018-4040.html"
-				}
-			],
-			"published": "2018-02-26T00:00:00Z"
+			"content": {
+				"id": "ELSA-2018-4040",
+				"title": "ELSA-2018-4040: Unbreakable Enterprise kernel security update (IMPORTANT)",
+				"description": "kernel-uek\n[3.8.13-118.20.3]\n- gre: fix a possible skb leak (Eric Dumazet)  [Orabug: 26403972]  {CVE-2017-9074}\n- ipv6: Fix leak in ipv6_gso_segment(). (David S. Miller)  [Orabug: 26403972]  {CVE-2017-9074}\n- ipv6: xfrm: Handle errors reported by xfrm6_find_1stfragopt() (Ben Hutchings)  [Orabug: 26403972]  {CVE-2017-9074}\n- ipv6: Check ip6_find_1stfragopt() return value properly. (David S. Miller)  [Orabug: 26403972]  {CVE-2017-9074}\n- ipv6: Prevent overrun when parsing v6 header options (Craig Gallek)  [Orabug: 26403972]  {CVE-2017-9074}\n- tcp: initialize rcv_mss to TCP_MIN_MSS instead of 0 (Wei Wang)  [Orabug: 26813390]  {CVE-2017-14106}\n- rxrpc: Fix several cases where a padded len isn't checked in ticket decode (David Howells)  [Orabug: 26880517]  {CVE-2017-7482} {CVE-2017-7482}\n- xen/mmu: Call xen_cleanhighmap() with 4MB aligned for page tables mapping (Zhenzhong Duan)  [Orabug: 26883322] \n- KVM: x86: fix deadlock in clock-in-progress request handling (Marcelo Tosatti)  [Orabug: 27065995] \n- ocfs2: fstrim: Fix start offset of first cluster group during fstrim (Ashish Samant)  [Orabug: 27099835] \n- USB: serial: console: fix use-after-free after failed setup (Johan Hovold)  [Orabug: 27206837]  {CVE-2017-16525}\n- uwb: properly check kthread_run return value (Andrey Konovalov)  [Orabug: 27206897]  {CVE-2017-16526}\n- ALSA: usb-audio: Check out-of-bounds access by corrupted buffer descriptor (Takashi Iwai)  [Orabug: 27206928]  {CVE-2017-16529}\n- USB: fix out-of-bounds in usb_set_configuration (Greg Kroah-Hartman)  [Orabug: 27207240]  {CVE-2017-16531}\n- USB: core: fix out-of-bounds access bug in usb_get_bos_descriptor() (Alan Stern)  [Orabug: 27207983]  {CVE-2017-16535}\n- dccp: CVE-2017-8824: use-after-free in DCCP code (Mohamed Ghannam)  [Orabug: 27290301]  {CVE-2017-8824}",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-14106.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-16525.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-16526.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-16529.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-16531.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-16535.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-7482.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-8824.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-9074.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2018-4040.html"
+					}
+				],
+				"published": "2018-02-26T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2017-14106",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-14106.html"
-				}
+			"content": {
+				"id": "CVE-2017-14106",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-14106.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2017-16525",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-16525.html"
-				}
+			"content": {
+				"id": "CVE-2017-16525",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-16525.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2017-16526",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-16526.html"
-				}
+			"content": {
+				"id": "CVE-2017-16526",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-16526.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2017-16529",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-16529.html"
-				}
+			"content": {
+				"id": "CVE-2017-16529",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-16529.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2017-16531",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-16531.html"
-				}
+			"content": {
+				"id": "CVE-2017-16531",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-16531.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2017-16535",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-16535.html"
-				}
+			"content": {
+				"id": "CVE-2017-16535",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-16535.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2017-7482",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-7482.html"
-				}
+			"content": {
+				"id": "CVE-2017-7482",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-7482.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2017-8824",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-8824.html"
-				}
+			"content": {
+				"id": "CVE-2017-8824",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-8824.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2017-9074",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2017-9074.html"
-				}
+			"content": {
+				"id": "CVE-2017-9074",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2017-9074.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		}
 	],

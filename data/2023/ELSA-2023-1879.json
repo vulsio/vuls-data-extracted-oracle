@@ -2,115 +2,155 @@
 	"id": "ELSA-2023-1879",
 	"advisories": [
 		{
-			"id": "ELSA-2023-1879",
-			"title": "ELSA-2023-1879:  java-17-openjdk security and bug fix update (IMPORTANT)",
-			"description": "[17.0.7.0.7-1.0.1]\n- Replace upstream references [Orabug: 34340155]\n\n[1:17.0.7.0.7-1]\n- Update to jdk-17.0.7.0+7\n- Update release notes to 17.0.7.0+7\n- Require tzdata 2023c due to local inclusion of JDK-8274864 & JDK-8305113\n- Update generate_tarball.sh to add support for passing a boot JDK to the configure run\n- Add POSIX-friendly error codes to generate_tarball.sh and fix whitespace\n- Remove .jcheck and GitHub support when generating tarballs, as done in upstream release tarballs\n- Update FIPS support against 17.0.7+6 and bring in latest changes:\n- * RH2134669: Add missing attributes when registering services in FIPS mode.\n- * test/jdk/sun/security/pkcs11/fips/VerifyMissingAttributes.java: fixed jtreg main class\n- * RH1940064: Enable XML Signature provider in FIPS mode\n- * RH2173781: Avoid calling C_GetInfo() too early, before cryptoki is initialized\n- ** This tarball is embargoed until 2023-04-18 @ 1pm PT. **\n- Resolves: rhbz#2185182\n- Resolves: rhbz#2186804\n- Resolves: rhbz#2186811\n- Resolves: rhbz#2186807",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "IMPORTANT"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21930.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21937.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21938.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21939.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21954.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21967.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21968.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2023-1879.html"
-				}
-			],
-			"published": "2023-04-20T00:00:00Z"
+			"content": {
+				"id": "ELSA-2023-1879",
+				"title": "ELSA-2023-1879:  java-17-openjdk security and bug fix update (IMPORTANT)",
+				"description": "[17.0.7.0.7-1.0.1]\n- Replace upstream references [Orabug: 34340155]\n\n[1:17.0.7.0.7-1]\n- Update to jdk-17.0.7.0+7\n- Update release notes to 17.0.7.0+7\n- Require tzdata 2023c due to local inclusion of JDK-8274864 & JDK-8305113\n- Update generate_tarball.sh to add support for passing a boot JDK to the configure run\n- Add POSIX-friendly error codes to generate_tarball.sh and fix whitespace\n- Remove .jcheck and GitHub support when generating tarballs, as done in upstream release tarballs\n- Update FIPS support against 17.0.7+6 and bring in latest changes:\n- * RH2134669: Add missing attributes when registering services in FIPS mode.\n- * test/jdk/sun/security/pkcs11/fips/VerifyMissingAttributes.java: fixed jtreg main class\n- * RH1940064: Enable XML Signature provider in FIPS mode\n- * RH2173781: Avoid calling C_GetInfo() too early, before cryptoki is initialized\n- ** This tarball is embargoed until 2023-04-18 @ 1pm PT. **\n- Resolves: rhbz#2185182\n- Resolves: rhbz#2186804\n- Resolves: rhbz#2186811\n- Resolves: rhbz#2186807",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21930.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21937.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21938.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21939.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21954.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21967.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21968.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2023-1879.html"
+					}
+				],
+				"published": "2023-04-20T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2023-21930",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21930.html"
-				}
+			"content": {
+				"id": "CVE-2023-21930",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21930.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2023-21937",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21937.html"
-				}
+			"content": {
+				"id": "CVE-2023-21937",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21937.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2023-21938",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21938.html"
-				}
+			"content": {
+				"id": "CVE-2023-21938",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21938.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2023-21939",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21939.html"
-				}
+			"content": {
+				"id": "CVE-2023-21939",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21939.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2023-21954",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21954.html"
-				}
+			"content": {
+				"id": "CVE-2023-21954",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21954.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2023-21967",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21967.html"
-				}
+			"content": {
+				"id": "CVE-2023-21967",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21967.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2023-21968",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-21968.html"
-				}
+			"content": {
+				"id": "CVE-2023-21968",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-21968.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		}
 	],

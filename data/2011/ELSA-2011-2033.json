@@ -2,141 +2,201 @@
 	"id": "ELSA-2011-2033",
 	"advisories": [
 		{
-			"id": "ELSA-2011-2033",
-			"title": "ELSA-2011-2033:  Unbreakable Enterprise kernel security update (IMPORTANT)",
-			"description": "[2.6.32-200.23.1.el6uek]\n- net: Remove atmclip.h to prevent break kabi check.\n- KConfig: add CONFIG_UEK5=n to ol6/config-generic\n\n[2.6.32-200.22.1.el6uek]\n- ipv6: make fragment identifications less predictable (Joe Jin) {CVE-2011-2699}\n- vlan: fix panic when handling priority tagged frames (Joe Jin) {CVE-2011-3593}\n- ipv6: udp: fix the wrong headroom check (Maxim Uvarov) {CVE-2011-4326}\n- b43: allocate receive buffers big enough for max frame len + offset (Maxim Uvarov) {CVE-2011-3359}\n- fuse: check size of FUSE_NOTIFY_INVAL_ENTRY message (Maxim Uvarov) {CVE-2011-3353}\n- cifs: fix possible memory corruption in CIFSFindNext (Maxim Uvarov) {CVE-2011-3191}\n- crypto: md5 - Add export support (Maxim Uvarov) {CVE-2011-2699}\n- fs/partitions/efi.c: corrupted GUID partition tables can cause kernel oops (Maxim Uvarov) {CVE-2011-1577}\n- block: use struct parsed_partitions *state universally in partition check code (Maxim Uvarov)\n- net: Compute protocol sequence numbers and fragment IDs using MD5. (Maxim Uvarov) {CVE-2011-3188}\n- crypto: Move md5_transform to lib/md5.c (Maxim Uvarov) {CVE-2011-3188}\n- perf tools: do not look at ./config for configuration (Maxim Uvarov) {CVE-2011-2905}\n- Make TASKSTATS require root access (Maxim Uvarov) {CVE-2011-2494}\n- TPM: Zero buffer after copying to userspace (Maxim Uvarov) {CVE-2011-1162}\n- TPM: Call tpm_transmit with correct size (Maxim Uvarov){CVE-2011-1161}\n- fnic: fix panic while booting in fnic(Xiaowei Hu)\n- Revert 'PCI hotplug: acpiphp: set current_state to D0 in register_slot' (Guru Anbalagane)\n- xen: drop xen_sched_clock in favour of using plain wallclock time (Jeremy Fitzhardinge)\n\n[2.6.32-200.21.1.el6uek]\n- PCI: Set device power state to PCI_D0 for device without native PM support\n  (Ajaykumar Hotchandani) [orabug 13033435]",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "IMPORTANT"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1162.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1577.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-2494.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-2699.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-3188.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-3191.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-3353.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-3593.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-4326.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2011-2033.html"
-				}
-			],
-			"published": "2011-11-25T00:00:00Z"
+			"content": {
+				"id": "ELSA-2011-2033",
+				"title": "ELSA-2011-2033:  Unbreakable Enterprise kernel security update (IMPORTANT)",
+				"description": "[2.6.32-200.23.1.el6uek]\n- net: Remove atmclip.h to prevent break kabi check.\n- KConfig: add CONFIG_UEK5=n to ol6/config-generic\n\n[2.6.32-200.22.1.el6uek]\n- ipv6: make fragment identifications less predictable (Joe Jin) {CVE-2011-2699}\n- vlan: fix panic when handling priority tagged frames (Joe Jin) {CVE-2011-3593}\n- ipv6: udp: fix the wrong headroom check (Maxim Uvarov) {CVE-2011-4326}\n- b43: allocate receive buffers big enough for max frame len + offset (Maxim Uvarov) {CVE-2011-3359}\n- fuse: check size of FUSE_NOTIFY_INVAL_ENTRY message (Maxim Uvarov) {CVE-2011-3353}\n- cifs: fix possible memory corruption in CIFSFindNext (Maxim Uvarov) {CVE-2011-3191}\n- crypto: md5 - Add export support (Maxim Uvarov) {CVE-2011-2699}\n- fs/partitions/efi.c: corrupted GUID partition tables can cause kernel oops (Maxim Uvarov) {CVE-2011-1577}\n- block: use struct parsed_partitions *state universally in partition check code (Maxim Uvarov)\n- net: Compute protocol sequence numbers and fragment IDs using MD5. (Maxim Uvarov) {CVE-2011-3188}\n- crypto: Move md5_transform to lib/md5.c (Maxim Uvarov) {CVE-2011-3188}\n- perf tools: do not look at ./config for configuration (Maxim Uvarov) {CVE-2011-2905}\n- Make TASKSTATS require root access (Maxim Uvarov) {CVE-2011-2494}\n- TPM: Zero buffer after copying to userspace (Maxim Uvarov) {CVE-2011-1162}\n- TPM: Call tpm_transmit with correct size (Maxim Uvarov){CVE-2011-1161}\n- fnic: fix panic while booting in fnic(Xiaowei Hu)\n- Revert 'PCI hotplug: acpiphp: set current_state to D0 in register_slot' (Guru Anbalagane)\n- xen: drop xen_sched_clock in favour of using plain wallclock time (Jeremy Fitzhardinge)\n\n[2.6.32-200.21.1.el6uek]\n- PCI: Set device power state to PCI_D0 for device without native PM support\n  (Ajaykumar Hotchandani) [orabug 13033435]",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1162.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1577.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-2494.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-2699.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-3188.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-3191.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-3353.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-3593.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-4326.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2011-2033.html"
+					}
+				],
+				"published": "2011-11-25T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2011-1162",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1162.html"
-				}
+			"content": {
+				"id": "CVE-2011-1162",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1162.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-1577",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1577.html"
-				}
+			"content": {
+				"id": "CVE-2011-1577",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1577.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-2494",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-2494.html"
-				}
+			"content": {
+				"id": "CVE-2011-2494",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-2494.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-2699",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-2699.html"
-				}
+			"content": {
+				"id": "CVE-2011-2699",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-2699.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-3188",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-3188.html"
-				}
+			"content": {
+				"id": "CVE-2011-3188",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-3188.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-3191",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-3191.html"
-				}
+			"content": {
+				"id": "CVE-2011-3191",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-3191.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-3353",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-3353.html"
-				}
+			"content": {
+				"id": "CVE-2011-3353",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-3353.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-3593",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-3593.html"
-				}
+			"content": {
+				"id": "CVE-2011-3593",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-3593.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-4326",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-4326.html"
-				}
+			"content": {
+				"id": "CVE-2011-4326",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-4326.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		}
 	],

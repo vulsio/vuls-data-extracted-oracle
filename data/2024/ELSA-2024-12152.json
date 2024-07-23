@@ -2,63 +2,83 @@
 	"id": "ELSA-2024-12152",
 	"advisories": [
 		{
-			"id": "ELSA-2024-12152",
-			"title": "ELSA-2024-12152: virt:kvm_utils1 security update (MODERATE)",
-			"description": "hivex\nlibguestfs\nlibguestfs-winsupport\nlibiscsi\nlibnbd\nlibvirt\n[5.7.0-41]\n- qemu_monitor: Add defensive protection on mon->msg (Wim ten Have) [Orabug: 35699260]\n- vircpi: Add PCIe 5.0 and 6.0 link speeds (Michal Privoznik) [Orabug: 35496776]\n- qemuProcessSetupVcpusVnuma: add NULL check for def->cpu (Shaleen Bathla) [Orabug: 35332038]\n\nlibvirt-dbus\nlibvirt-python\n[5.7.0-41]\n- Bump version number to 5.7.0-41 to match libvirt (Karl Heubaum)\n\nnbdkit\nnetcf\nperl-Sys-Virt\nqemu-kvm\n[4.2.1-28]\n- virtio-crypto: verify src&dst buffer length for sym request (zhenwei pi) [Orabug: 35724113] {CVE-2023-3180}\n- hw/scsi/lsi53c895a: Fix reentrancy issues in the LSI controller (CVE-2023-0330) (Thomas Huth) [Orabug: 35724112] {CVE-2023-0330}\n- kvm: Atomic memslot updates (David Hildenbrand) [Orabug: 35719844]\n- KVM: keep track of running ioctls (Emanuele Giuseppe Esposito) [Orabug: 35719844]\n- accel: introduce accelerator blocker API (Emanuele Giuseppe Esposito) [Orabug: 35719844]\n- KVM: Use a big lock to replace per-kml slots_lock (Peter Xu) [Orabug: 35719844]\n- pcie: don't set link state active if the slot is empty (Laurent Vivier) [Orabug: 35707933]\n- vhost-vdpa: do not cleanup the vdpa/vhost-net structures if peer nic is present (Ani Sinha) [Orabug: 35662850] {CVE-2023-3301}\n\nseabios\nsgabios\nsupermin",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "MODERATE"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-0330.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-3180.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-3301.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2024-12152.html"
-				}
-			],
-			"published": "2024-02-12T00:00:00Z"
+			"content": {
+				"id": "ELSA-2024-12152",
+				"title": "ELSA-2024-12152: virt:kvm_utils1 security update (MODERATE)",
+				"description": "hivex\nlibguestfs\nlibguestfs-winsupport\nlibiscsi\nlibnbd\nlibvirt\n[5.7.0-41]\n- qemu_monitor: Add defensive protection on mon->msg (Wim ten Have) [Orabug: 35699260]\n- vircpi: Add PCIe 5.0 and 6.0 link speeds (Michal Privoznik) [Orabug: 35496776]\n- qemuProcessSetupVcpusVnuma: add NULL check for def->cpu (Shaleen Bathla) [Orabug: 35332038]\n\nlibvirt-dbus\nlibvirt-python\n[5.7.0-41]\n- Bump version number to 5.7.0-41 to match libvirt (Karl Heubaum)\n\nnbdkit\nnetcf\nperl-Sys-Virt\nqemu-kvm\n[4.2.1-28]\n- virtio-crypto: verify src&dst buffer length for sym request (zhenwei pi) [Orabug: 35724113] {CVE-2023-3180}\n- hw/scsi/lsi53c895a: Fix reentrancy issues in the LSI controller (CVE-2023-0330) (Thomas Huth) [Orabug: 35724112] {CVE-2023-0330}\n- kvm: Atomic memslot updates (David Hildenbrand) [Orabug: 35719844]\n- KVM: keep track of running ioctls (Emanuele Giuseppe Esposito) [Orabug: 35719844]\n- accel: introduce accelerator blocker API (Emanuele Giuseppe Esposito) [Orabug: 35719844]\n- KVM: Use a big lock to replace per-kml slots_lock (Peter Xu) [Orabug: 35719844]\n- pcie: don't set link state active if the slot is empty (Laurent Vivier) [Orabug: 35707933]\n- vhost-vdpa: do not cleanup the vdpa/vhost-net structures if peer nic is present (Ani Sinha) [Orabug: 35662850] {CVE-2023-3301}\n\nseabios\nsgabios\nsupermin",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-0330.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-3180.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-3301.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-12152.html"
+					}
+				],
+				"published": "2024-02-12T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2023-0330",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-0330.html"
-				}
+			"content": {
+				"id": "CVE-2023-0330",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-0330.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2023-3180",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-3180.html"
-				}
+			"content": {
+				"id": "CVE-2023-3180",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-3180.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2023-3301",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-3301.html"
-				}
+			"content": {
+				"id": "CVE-2023-3301",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-3301.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		}
 	],

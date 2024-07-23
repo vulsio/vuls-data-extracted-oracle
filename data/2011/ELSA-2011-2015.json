@@ -2,206 +2,296 @@
 	"id": "ELSA-2011-2015",
 	"advisories": [
 		{
-			"id": "ELSA-2011-2015",
-			"title": "ELSA-2011-2015:  Oracle Linux 6 Unbreakable Enterprise kernel security fix update (IMPORTANT)",
-			"description": "[2.6.32-100.28.15.el6]\n- sctp: fix to calc the INIT/INIT-ACK chunk length correctly is set {CVE-2011-1573}\n- dccp: fix oops on Reset after close {CVE-2011-1093}\n- bridge: netfilter: fix information leak {CVE-2011-1080}\n- Bluetooth: bnep: fix buffer overflow {CVE-2011-1079}\n- net: don't allow CAP_NET_ADMIN to load non-netdev kernel modules {CVE-2011-1019}\n- ipip: add module alias for tunl0 tunnel device\n- gre: add module alias for gre0 tunnel device\n- drm/radeon/kms: check AA resolve registers on r300 {CVE-2011-1016}\n- drm/radeon: fix regression with AA resolve checking {CVE-2011-1016}\n- drm: fix unsigned vs signed comparison issue in modeset ctl ioctl {CVE-2011-1013}\n- proc: protect mm start_code/end_code in /proc/pid/stat {CVE-2011-0726}\n- ALSA: caiaq - Fix possible string-buffer overflow {CVE-2011-0712}\n- xfs: zero proper structure size for geometry calls {CVE-2011-0711}\n- xfs: prevent leaking uninitialized stack memory in FSGEOMETRY_V1 {CVE-2011-0711}\n- ima: fix add LSM rule bug {CVE-2011-0006}\n- IB/uverbs: Handle large number of entries in poll CQ {CVE-2010-4649, CVE-2011-1044}\n- CAN: Use inode instead of kernel address for /proc file {CVE-2010-4565}\n\n[2.6.32-100.28.14.el6]\n- IB/qib: fix qib compile warning.\n- IB/core: Allow device-specific per-port sysfs files.\n- dm crypt: add plain64 iv.\n- firmware: add firmware for qib.\n- Infiniband: Add QLogic PCIe QLE InfiniBand host channel adapters support.",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "IMPORTANT"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2010-4565.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2010-4649.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-0006.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-0711.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-0712.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-0726.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1013.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1016.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1019.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1044.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1079.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1080.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1093.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1573.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2011-2015.html"
-				}
-			],
-			"published": "2011-05-11T00:00:00Z"
+			"content": {
+				"id": "ELSA-2011-2015",
+				"title": "ELSA-2011-2015:  Oracle Linux 6 Unbreakable Enterprise kernel security fix update (IMPORTANT)",
+				"description": "[2.6.32-100.28.15.el6]\n- sctp: fix to calc the INIT/INIT-ACK chunk length correctly is set {CVE-2011-1573}\n- dccp: fix oops on Reset after close {CVE-2011-1093}\n- bridge: netfilter: fix information leak {CVE-2011-1080}\n- Bluetooth: bnep: fix buffer overflow {CVE-2011-1079}\n- net: don't allow CAP_NET_ADMIN to load non-netdev kernel modules {CVE-2011-1019}\n- ipip: add module alias for tunl0 tunnel device\n- gre: add module alias for gre0 tunnel device\n- drm/radeon/kms: check AA resolve registers on r300 {CVE-2011-1016}\n- drm/radeon: fix regression with AA resolve checking {CVE-2011-1016}\n- drm: fix unsigned vs signed comparison issue in modeset ctl ioctl {CVE-2011-1013}\n- proc: protect mm start_code/end_code in /proc/pid/stat {CVE-2011-0726}\n- ALSA: caiaq - Fix possible string-buffer overflow {CVE-2011-0712}\n- xfs: zero proper structure size for geometry calls {CVE-2011-0711}\n- xfs: prevent leaking uninitialized stack memory in FSGEOMETRY_V1 {CVE-2011-0711}\n- ima: fix add LSM rule bug {CVE-2011-0006}\n- IB/uverbs: Handle large number of entries in poll CQ {CVE-2010-4649, CVE-2011-1044}\n- CAN: Use inode instead of kernel address for /proc file {CVE-2010-4565}\n\n[2.6.32-100.28.14.el6]\n- IB/qib: fix qib compile warning.\n- IB/core: Allow device-specific per-port sysfs files.\n- dm crypt: add plain64 iv.\n- firmware: add firmware for qib.\n- Infiniband: Add QLogic PCIe QLE InfiniBand host channel adapters support.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2010-4565.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2010-4649.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-0006.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-0711.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-0712.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-0726.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1013.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1016.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1019.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1044.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1079.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1080.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1093.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1573.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2011-2015.html"
+					}
+				],
+				"published": "2011-05-11T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2010-4565",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2010-4565.html"
-				}
+			"content": {
+				"id": "CVE-2010-4565",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2010-4565.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2010-4649",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2010-4649.html"
-				}
+			"content": {
+				"id": "CVE-2010-4649",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2010-4649.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-0006",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-0006.html"
-				}
+			"content": {
+				"id": "CVE-2011-0006",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-0006.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-0711",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-0711.html"
-				}
+			"content": {
+				"id": "CVE-2011-0711",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-0711.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-0712",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-0712.html"
-				}
+			"content": {
+				"id": "CVE-2011-0712",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-0712.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-0726",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-0726.html"
-				}
+			"content": {
+				"id": "CVE-2011-0726",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-0726.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-1013",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1013.html"
-				}
+			"content": {
+				"id": "CVE-2011-1013",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1013.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-1016",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1016.html"
-				}
+			"content": {
+				"id": "CVE-2011-1016",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1016.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-1019",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1019.html"
-				}
+			"content": {
+				"id": "CVE-2011-1019",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1019.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-1044",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1044.html"
-				}
+			"content": {
+				"id": "CVE-2011-1044",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1044.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-1079",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1079.html"
-				}
+			"content": {
+				"id": "CVE-2011-1079",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1079.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-1080",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1080.html"
-				}
+			"content": {
+				"id": "CVE-2011-1080",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1080.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-1093",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1093.html"
-				}
+			"content": {
+				"id": "CVE-2011-1093",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1093.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		},
 		{
-			"id": "CVE-2011-1573",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2011-1573.html"
-				}
+			"content": {
+				"id": "CVE-2011-1573",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2011-1573.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:5",
+				"oracle:6"
 			]
 		}
 	],

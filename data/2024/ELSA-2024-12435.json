@@ -2,50 +2,65 @@
 	"id": "ELSA-2024-12435",
 	"advisories": [
 		{
-			"id": "ELSA-2024-12435",
-			"title": "ELSA-2024-12435: virt:kvm_utils1 security update (MODERATE)",
-			"description": "hivex\nlibguestfs\nlibguestfs-winsupport\nlibiscsi\nlibnbd\nlibvirt\n[5.7.0-42]\n- Document CVEs as fixed (Karl Heubaum) {CVE-2023-2700}\n- Fix off-by-one error in udevListInterfacesByStatus (Martin Kletzander) [Orabug: 36364474] {CVE-2024-1441}\n- libvirt-<module>: Check caller-provided buffers to be NULL with size > 0 (Erik Skultety) [Orabug: 36364474]\n\nlibvirt-dbus\nlibvirt-python\n[5.7.0-42]\n- Bump version number to 5.7.0-42 to match libvirt (Karl Heubaum)\n\nnbdkit\nnetcf\nperl-Sys-Virt\nqemu-kvm\n[4.2.1-34]\n- multifd: fix the multifd initialization (Elena Ufimtseva) [Orabug: 36598610]\n- hw/scsi/scsi-generic: Fix io_timeout property not applying (Lorenz Brun) [Orabug: 36604206]\n- scsi: make io_timeout configurable (Hannes Reinecke) [Orabug: 36604206]\n- target/i386/monitor: synchronize cpu state for lapic info (Dongli Zhang) [Orabug: 36607762]\n\n[4.2.1-32]\n- Document CVEs as fixed (Mark Kanda) [Orabug: 36455470] [Orabug: 36455480] [Orabug: 36455529] [Orabug: 36455489] [Orabug: 36455500] [Orabug: 36455512] [Orabug: 36455520] {CVE-2023-4135} {CVE-2023-3255} {CVE-2023-6683} {CVE-2023-40360} {CVE-2023-42467} {CVE-2024-26327} {CVE-2024-24474}\n- hw/pvrdma: Protect against buggy or malicious guest driver (Yuval Shaia) [Orabug: 35250119] {CVE-2023-1544}\n- hw/pflash_cfi01: allow smaller backing devices in postload_update_cb() (Mark Kanda) [Orabug: 36378764]\n- hw/block/pflash: Check return value of blk_pwrite() (Mansour Ahmadi) [Orabug: 36378764]\n- net: Update MemReentrancyGuard for NIC (Akihiko Odaki) [Orabug: 36421467] {CVE-2023-3019}\n- net: Provide MemReentrancyGuard * to qemu_new_nic() (Akihiko Odaki) [Orabug: 36421467] {CVE-2023-3019}\n- lsi53c895a: disable reentrancy detection for MMIO region, too (Thomas Huth) [Orabug: 36425307] {CVE-2021-3750}\n- memory: stricter checks prior to unsetting engaged_in_io (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- async: avoid use-after-free on re-entrancy guard (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- apic: disable reentrancy detection for apic-msi (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- raven: disable reentrancy detection for iomem (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- bcm2835_property: disable reentrancy detection for iomem (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- lsi53c895a: disable reentrancy detection for script RAM (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- hw: replace most qemu_bh_new calls with qemu_bh_new_guarded (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- checkpatch: add qemu_bh_new/aio_bh_new checks (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- async: Add an optional reentrancy guard to the BH API (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- memory: prevent dma-reentracy issues (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- util/async: add a human-readable name to BHs for debugging (Stefan Hajnoczi) [Orabug: 36425307] {CVE-2021-3750}\n- io: remove io watch if TLS channel is closed during handshake (Daniel Berrange) [Orabug: 35595204] {CVE-2023-3354}\n- tests/qtest: ahci-test: add test exposing reset issue with pending callback (Fiona Ebner) [Orabug: 36327659] {CVE-2023-5088}\n- hw/ide: reset: cancel async DMA operation before resetting state (Fiona Ebner) [Orabug: 36327659] {CVE-2023-5088}\n- accel/tcg: fix race in cpu_exec_step_atomic (bug 1863025) (Alex Bennee) [Orabug: 36327651] {CVE-2020-24165}\n- physmem: add missing memory barrier (Paolo Bonzini) [Orabug: 35886091]\n- qemu-coroutine-lock: add smp_mb__after_rmw() (Paolo Bonzini) [Orabug: 35886091]\n- aio-wait: switch to smp_mb__after_rmw() (Paolo Bonzini) [Orabug: 35886091]\n- edu: add smp_mb__after_rmw() (Paolo Bonzini) [Orabug: 35886091]\n- qemu-thread-win32: cleanup, fix, document QemuEvent (Paolo Bonzini) [Orabug: 35886091]\n- qemu-thread-posix: cleanup, fix, document QemuEvent (Paolo Bonzini) [Orabug: 35886091]\n- qatomic: add smp_mb__before/after_rmw() (Paolo Bonzini) [Orabug: 35886091]\n- aio_wait_kick: add missing memory barrier (Emanuele Giuseppe Esposito) [Orabug: 35886091]\n- hw/smbios: Fix core count in type4 (Zhao Liu) [Orabug: 35876036]\n- hw/smbios: Fix thread count in type4 (Zhao Liu) [Orabug: 35876036]\n- hw/smbios: Fix smbios_smp_sockets caculation (Zhao Liu) [Orabug: 35876036]\n- machine: Add helpers to get cores/threads per socket (Zhao Liu) [Orabug: 35876036]\n- machine: move dies from X86MachineState to CpuTopology (Paolo Bonzini) [Orabug: 35876036]\n- machine: move SMP initialization from vl.c (Paolo Bonzini) [Orabug: 35876036]\n- machine: move UP defaults to class_base_init (Paolo Bonzini) [Orabug: 35876036]\n- virtio-crypto: verify src&dst buffer length for sym request (zhenwei pi) [Orabug: 35724113] {CVE-2023-3180}\n- hw/scsi/lsi53c895a: Fix reentrancy issues in the LSI controller (CVE-2023-0330) (Thomas Huth) [Orabug: 35724112] {CVE-2023-0330}\n\nseabios\nsgabios\nsupermin",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "MODERATE"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-2700.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-1441.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2024-12435.html"
-				}
-			],
-			"published": "2024-06-13T00:00:00Z"
+			"content": {
+				"id": "ELSA-2024-12435",
+				"title": "ELSA-2024-12435: virt:kvm_utils1 security update (MODERATE)",
+				"description": "hivex\nlibguestfs\nlibguestfs-winsupport\nlibiscsi\nlibnbd\nlibvirt\n[5.7.0-42]\n- Document CVEs as fixed (Karl Heubaum) {CVE-2023-2700}\n- Fix off-by-one error in udevListInterfacesByStatus (Martin Kletzander) [Orabug: 36364474] {CVE-2024-1441}\n- libvirt-<module>: Check caller-provided buffers to be NULL with size > 0 (Erik Skultety) [Orabug: 36364474]\n\nlibvirt-dbus\nlibvirt-python\n[5.7.0-42]\n- Bump version number to 5.7.0-42 to match libvirt (Karl Heubaum)\n\nnbdkit\nnetcf\nperl-Sys-Virt\nqemu-kvm\n[4.2.1-34]\n- multifd: fix the multifd initialization (Elena Ufimtseva) [Orabug: 36598610]\n- hw/scsi/scsi-generic: Fix io_timeout property not applying (Lorenz Brun) [Orabug: 36604206]\n- scsi: make io_timeout configurable (Hannes Reinecke) [Orabug: 36604206]\n- target/i386/monitor: synchronize cpu state for lapic info (Dongli Zhang) [Orabug: 36607762]\n\n[4.2.1-32]\n- Document CVEs as fixed (Mark Kanda) [Orabug: 36455470] [Orabug: 36455480] [Orabug: 36455529] [Orabug: 36455489] [Orabug: 36455500] [Orabug: 36455512] [Orabug: 36455520] {CVE-2023-4135} {CVE-2023-3255} {CVE-2023-6683} {CVE-2023-40360} {CVE-2023-42467} {CVE-2024-26327} {CVE-2024-24474}\n- hw/pvrdma: Protect against buggy or malicious guest driver (Yuval Shaia) [Orabug: 35250119] {CVE-2023-1544}\n- hw/pflash_cfi01: allow smaller backing devices in postload_update_cb() (Mark Kanda) [Orabug: 36378764]\n- hw/block/pflash: Check return value of blk_pwrite() (Mansour Ahmadi) [Orabug: 36378764]\n- net: Update MemReentrancyGuard for NIC (Akihiko Odaki) [Orabug: 36421467] {CVE-2023-3019}\n- net: Provide MemReentrancyGuard * to qemu_new_nic() (Akihiko Odaki) [Orabug: 36421467] {CVE-2023-3019}\n- lsi53c895a: disable reentrancy detection for MMIO region, too (Thomas Huth) [Orabug: 36425307] {CVE-2021-3750}\n- memory: stricter checks prior to unsetting engaged_in_io (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- async: avoid use-after-free on re-entrancy guard (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- apic: disable reentrancy detection for apic-msi (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- raven: disable reentrancy detection for iomem (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- bcm2835_property: disable reentrancy detection for iomem (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- lsi53c895a: disable reentrancy detection for script RAM (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- hw: replace most qemu_bh_new calls with qemu_bh_new_guarded (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- checkpatch: add qemu_bh_new/aio_bh_new checks (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- async: Add an optional reentrancy guard to the BH API (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- memory: prevent dma-reentracy issues (Alexander Bulekov) [Orabug: 36425307] {CVE-2021-3750}\n- util/async: add a human-readable name to BHs for debugging (Stefan Hajnoczi) [Orabug: 36425307] {CVE-2021-3750}\n- io: remove io watch if TLS channel is closed during handshake (Daniel Berrange) [Orabug: 35595204] {CVE-2023-3354}\n- tests/qtest: ahci-test: add test exposing reset issue with pending callback (Fiona Ebner) [Orabug: 36327659] {CVE-2023-5088}\n- hw/ide: reset: cancel async DMA operation before resetting state (Fiona Ebner) [Orabug: 36327659] {CVE-2023-5088}\n- accel/tcg: fix race in cpu_exec_step_atomic (bug 1863025) (Alex Bennee) [Orabug: 36327651] {CVE-2020-24165}\n- physmem: add missing memory barrier (Paolo Bonzini) [Orabug: 35886091]\n- qemu-coroutine-lock: add smp_mb__after_rmw() (Paolo Bonzini) [Orabug: 35886091]\n- aio-wait: switch to smp_mb__after_rmw() (Paolo Bonzini) [Orabug: 35886091]\n- edu: add smp_mb__after_rmw() (Paolo Bonzini) [Orabug: 35886091]\n- qemu-thread-win32: cleanup, fix, document QemuEvent (Paolo Bonzini) [Orabug: 35886091]\n- qemu-thread-posix: cleanup, fix, document QemuEvent (Paolo Bonzini) [Orabug: 35886091]\n- qatomic: add smp_mb__before/after_rmw() (Paolo Bonzini) [Orabug: 35886091]\n- aio_wait_kick: add missing memory barrier (Emanuele Giuseppe Esposito) [Orabug: 35886091]\n- hw/smbios: Fix core count in type4 (Zhao Liu) [Orabug: 35876036]\n- hw/smbios: Fix thread count in type4 (Zhao Liu) [Orabug: 35876036]\n- hw/smbios: Fix smbios_smp_sockets caculation (Zhao Liu) [Orabug: 35876036]\n- machine: Add helpers to get cores/threads per socket (Zhao Liu) [Orabug: 35876036]\n- machine: move dies from X86MachineState to CpuTopology (Paolo Bonzini) [Orabug: 35876036]\n- machine: move SMP initialization from vl.c (Paolo Bonzini) [Orabug: 35876036]\n- machine: move UP defaults to class_base_init (Paolo Bonzini) [Orabug: 35876036]\n- virtio-crypto: verify src&dst buffer length for sym request (zhenwei pi) [Orabug: 35724113] {CVE-2023-3180}\n- hw/scsi/lsi53c895a: Fix reentrancy issues in the LSI controller (CVE-2023-0330) (Thomas Huth) [Orabug: 35724112] {CVE-2023-0330}\n\nseabios\nsgabios\nsupermin",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-2700.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-1441.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-12435.html"
+					}
+				],
+				"published": "2024-06-13T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2023-2700",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-2700.html"
-				}
+			"content": {
+				"id": "CVE-2023-2700",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-2700.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2024-1441",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-1441.html"
-				}
+			"content": {
+				"id": "CVE-2024-1441",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-1441.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		}
 	],

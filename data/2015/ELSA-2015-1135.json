@@ -2,427 +2,587 @@
 	"id": "ELSA-2015-1135",
 	"advisories": [
 		{
-			"id": "ELSA-2015-1135",
-			"title": "ELSA-2015-1135:  php security and bug fix update (IMPORTANT)",
-			"description": "[5.4.16-36]\n- fix more functions accept paths with NUL character #1213407\n\n[5.4.16-35]\n- core: fix multipart/form-data request can use excessive\n  amount of CPU usage CVE-2015-4024\n- fix various functions accept paths with NUL character\n  CVE-2015-4025, CVE-2015-4026, #1213407\n- fileinfo: fix denial of service when processing a crafted\n  file #1213442\n- ftp: fix integer overflow leading to heap overflow when\n  reading FTP file listing CVE-2015-4022\n- phar: fix buffer over-read in metadata parsing CVE-2015-2783\n- phar: invalid pointer free() in phar_tar_process_metadata()\n  CVE-2015-3307\n- phar: fix buffer overflow in phar_set_inode() CVE-2015-3329\n- phar: fix memory corruption in phar_parse_tarfile caused by\n  empty entry file name CVE-2015-4021\n- soap: fix type confusion through unserialize #1222538\n- apache2handler: fix pipelined request executed in deinitialized\n  interpreter under httpd 2.4 CVE-2015-3330\n\n[5.4.16-34]\n- fix memory corruption in fileinfo module on big endian\n  machines #1082624\n- fix segfault in pdo_odbc on x86_64 #1159892\n- fix segfault in gmp allocator #1154760\n\n[5.4.16-33]\n- core: use after free vulnerability in unserialize()\n  CVE-2014-8142 and CVE-2015-0231\n- core: fix use-after-free in unserialize CVE-2015-2787\n- core: fix NUL byte injection in file name argument of\n  move_uploaded_file() CVE-2015-2348\n- date: use after free vulnerability in unserialize CVE-2015-0273\n- enchant: fix heap buffer overflow in enchant_broker_request_dict\n  CVE-2014-9705\n- exif: free called on unitialized pointer CVE-2015-0232\n- fileinfo: fix out of bounds read in mconvert CVE-2014-9652\n- gd: fix buffer read overflow in gd_gif_in.c CVE-2014-9709\n- phar: use after free in phar_object.c CVE-2015-2301\n- soap: fix type confusion through unserialize\n\n[5.4.16-31]\n- fileinfo: fix out-of-bounds read in elf note headers. CVE-2014-3710\n\n[5.4.16-29]\n- xmlrpc: fix out-of-bounds read flaw in mkgmtime() CVE-2014-3668\n- core: fix integer overflow in unserialize() CVE-2014-3669\n- exif: fix heap corruption issue in exif_thumbnail() CVE-2014-3670\n\n[5.4.16-27]\n- gd: fix NULL pointer dereference in gdImageCreateFromXpm().\n  CVE-2014-2497\n- gd: fix NUL byte injection in file names. CVE-2014-5120\n- fileinfo: fix extensive backtracking in regular expression\n  (incomplete fix for CVE-2013-7345). CVE-2014-3538\n- fileinfo: fix mconvert incorrect handling of truncated\n  pascal string size. CVE-2014-3478\n- fileinfo: fix cdf_read_property_info\n  (incomplete fix for CVE-2012-1571). CVE-2014-3587\n- spl: fix use-after-free in ArrayIterator due to object\n  change during sorting. CVE-2014-4698\n- spl: fix use-after-free in SPL Iterators. CVE-2014-4670\n- network: fix segfault in dns_get_record\n  (incomplete fix for CVE-2014-4049). CVE-2014-3597\n\n[5.4.16-25]\n- fix segfault after startup on aarch64 (#1107567)\n- compile php with -O3 on ppc64le (#1123499)",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "IMPORTANT"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2014-8142.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2014-9652.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2014-9705.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2014-9709.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-0231.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-0232.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-0273.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-2301.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-2348.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-2783.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-2787.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-3307.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-3329.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-3330.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-3411.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-3412.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4021.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4022.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4024.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4025.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4026.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4147.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4148.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4598.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4599.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4600.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4601.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4602.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4603.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4604.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4605.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2015-1135.html"
-				}
-			],
-			"published": "2015-06-23T00:00:00Z"
+			"content": {
+				"id": "ELSA-2015-1135",
+				"title": "ELSA-2015-1135:  php security and bug fix update (IMPORTANT)",
+				"description": "[5.4.16-36]\n- fix more functions accept paths with NUL character #1213407\n\n[5.4.16-35]\n- core: fix multipart/form-data request can use excessive\n  amount of CPU usage CVE-2015-4024\n- fix various functions accept paths with NUL character\n  CVE-2015-4025, CVE-2015-4026, #1213407\n- fileinfo: fix denial of service when processing a crafted\n  file #1213442\n- ftp: fix integer overflow leading to heap overflow when\n  reading FTP file listing CVE-2015-4022\n- phar: fix buffer over-read in metadata parsing CVE-2015-2783\n- phar: invalid pointer free() in phar_tar_process_metadata()\n  CVE-2015-3307\n- phar: fix buffer overflow in phar_set_inode() CVE-2015-3329\n- phar: fix memory corruption in phar_parse_tarfile caused by\n  empty entry file name CVE-2015-4021\n- soap: fix type confusion through unserialize #1222538\n- apache2handler: fix pipelined request executed in deinitialized\n  interpreter under httpd 2.4 CVE-2015-3330\n\n[5.4.16-34]\n- fix memory corruption in fileinfo module on big endian\n  machines #1082624\n- fix segfault in pdo_odbc on x86_64 #1159892\n- fix segfault in gmp allocator #1154760\n\n[5.4.16-33]\n- core: use after free vulnerability in unserialize()\n  CVE-2014-8142 and CVE-2015-0231\n- core: fix use-after-free in unserialize CVE-2015-2787\n- core: fix NUL byte injection in file name argument of\n  move_uploaded_file() CVE-2015-2348\n- date: use after free vulnerability in unserialize CVE-2015-0273\n- enchant: fix heap buffer overflow in enchant_broker_request_dict\n  CVE-2014-9705\n- exif: free called on unitialized pointer CVE-2015-0232\n- fileinfo: fix out of bounds read in mconvert CVE-2014-9652\n- gd: fix buffer read overflow in gd_gif_in.c CVE-2014-9709\n- phar: use after free in phar_object.c CVE-2015-2301\n- soap: fix type confusion through unserialize\n\n[5.4.16-31]\n- fileinfo: fix out-of-bounds read in elf note headers. CVE-2014-3710\n\n[5.4.16-29]\n- xmlrpc: fix out-of-bounds read flaw in mkgmtime() CVE-2014-3668\n- core: fix integer overflow in unserialize() CVE-2014-3669\n- exif: fix heap corruption issue in exif_thumbnail() CVE-2014-3670\n\n[5.4.16-27]\n- gd: fix NULL pointer dereference in gdImageCreateFromXpm().\n  CVE-2014-2497\n- gd: fix NUL byte injection in file names. CVE-2014-5120\n- fileinfo: fix extensive backtracking in regular expression\n  (incomplete fix for CVE-2013-7345). CVE-2014-3538\n- fileinfo: fix mconvert incorrect handling of truncated\n  pascal string size. CVE-2014-3478\n- fileinfo: fix cdf_read_property_info\n  (incomplete fix for CVE-2012-1571). CVE-2014-3587\n- spl: fix use-after-free in ArrayIterator due to object\n  change during sorting. CVE-2014-4698\n- spl: fix use-after-free in SPL Iterators. CVE-2014-4670\n- network: fix segfault in dns_get_record\n  (incomplete fix for CVE-2014-4049). CVE-2014-3597\n\n[5.4.16-25]\n- fix segfault after startup on aarch64 (#1107567)\n- compile php with -O3 on ppc64le (#1123499)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2014-8142.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2014-9652.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2014-9705.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2014-9709.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-0231.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-0232.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-0273.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-2301.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-2348.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-2783.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-2787.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-3307.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-3329.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-3330.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-3411.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-3412.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4021.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4022.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4024.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4025.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4026.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4147.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4148.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4598.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4599.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4600.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4601.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4602.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4603.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4604.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4605.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2015-1135.html"
+					}
+				],
+				"published": "2015-06-23T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2014-8142",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2014-8142.html"
-				}
+			"content": {
+				"id": "CVE-2014-8142",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2014-8142.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2014-9652",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2014-9652.html"
-				}
+			"content": {
+				"id": "CVE-2014-9652",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2014-9652.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2014-9705",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2014-9705.html"
-				}
+			"content": {
+				"id": "CVE-2014-9705",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2014-9705.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2014-9709",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2014-9709.html"
-				}
+			"content": {
+				"id": "CVE-2014-9709",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2014-9709.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-0231",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-0231.html"
-				}
+			"content": {
+				"id": "CVE-2015-0231",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-0231.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-0232",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-0232.html"
-				}
+			"content": {
+				"id": "CVE-2015-0232",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-0232.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-0273",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-0273.html"
-				}
+			"content": {
+				"id": "CVE-2015-0273",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-0273.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-2301",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-2301.html"
-				}
+			"content": {
+				"id": "CVE-2015-2301",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-2301.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-2348",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-2348.html"
-				}
+			"content": {
+				"id": "CVE-2015-2348",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-2348.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-2783",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-2783.html"
-				}
+			"content": {
+				"id": "CVE-2015-2783",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-2783.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-2787",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-2787.html"
-				}
+			"content": {
+				"id": "CVE-2015-2787",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-2787.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-3307",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-3307.html"
-				}
+			"content": {
+				"id": "CVE-2015-3307",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-3307.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-3329",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-3329.html"
-				}
+			"content": {
+				"id": "CVE-2015-3329",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-3329.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-3330",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-3330.html"
-				}
+			"content": {
+				"id": "CVE-2015-3330",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-3330.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-3411",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-3411.html"
-				}
+			"content": {
+				"id": "CVE-2015-3411",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-3411.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-3412",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-3412.html"
-				}
+			"content": {
+				"id": "CVE-2015-3412",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-3412.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4021",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4021.html"
-				}
+			"content": {
+				"id": "CVE-2015-4021",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4021.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4022",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4022.html"
-				}
+			"content": {
+				"id": "CVE-2015-4022",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4022.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4024",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4024.html"
-				}
+			"content": {
+				"id": "CVE-2015-4024",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4024.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4025",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4025.html"
-				}
+			"content": {
+				"id": "CVE-2015-4025",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4025.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4026",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4026.html"
-				}
+			"content": {
+				"id": "CVE-2015-4026",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4026.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4147",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4147.html"
-				}
+			"content": {
+				"id": "CVE-2015-4147",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4147.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4148",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4148.html"
-				}
+			"content": {
+				"id": "CVE-2015-4148",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4148.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4598",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4598.html"
-				}
+			"content": {
+				"id": "CVE-2015-4598",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4598.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4599",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4599.html"
-				}
+			"content": {
+				"id": "CVE-2015-4599",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4599.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4600",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4600.html"
-				}
+			"content": {
+				"id": "CVE-2015-4600",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4600.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4601",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4601.html"
-				}
+			"content": {
+				"id": "CVE-2015-4601",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4601.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4602",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4602.html"
-				}
+			"content": {
+				"id": "CVE-2015-4602",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4602.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4603",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4603.html"
-				}
+			"content": {
+				"id": "CVE-2015-4603",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4603.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4604",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4604.html"
-				}
+			"content": {
+				"id": "CVE-2015-4604",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4604.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2015-4605",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2015-4605.html"
-				}
+			"content": {
+				"id": "CVE-2015-4605",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2015-4605.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
 			]
 		}
 	],

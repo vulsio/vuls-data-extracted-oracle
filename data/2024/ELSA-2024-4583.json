@@ -2,245 +2,335 @@
 	"id": "ELSA-2024-4583",
 	"advisories": [
 		{
-			"id": "ELSA-2024-4583",
-			"title": "ELSA-2024-4583:  kernel security update (IMPORTANT)",
-			"description": "- [5.14.0-427.26.1_4.OL9]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n\n[5.14.0-427.26.1_4]\n- net: ena: Fix incorrect descriptor free behavior (Kamal Heib) [RHEL-39217 RHEL-37430] {CVE-2024-35958}\n- tcp: Use refcount_inc_not_zero() in tcp_twsk_unique(). (Guillaume Nault) [RHEL-41749 RHEL-39837] {CVE-2024-36904}\n- mm/mglru: Revert 'don't sync disk for each aging cycle' (Waiman Long) [RHEL-44418]\n- tipc: fix UAF in error path (Xin Long) [RHEL-34848 RHEL-34280] {CVE-2024-36886}\n- selftest/cgroup: Update test_cpuset_prs.sh to match changes (Waiman Long) [RHEL-45139]\n- cgroup/cpuset: Make cpuset.cpus.exclusive independent of cpuset.cpus (Waiman Long) [RHEL-45139]\n- cgroup/cpuset: Delay setting of CS_CPU_EXCLUSIVE until valid partition (Waiman Long) [RHEL-45139]\n- selftest/cgroup: Fix test_cpuset_prs.sh problems reported by test robot (Waiman Long) [RHEL-45139]\n- cgroup/cpuset: Fix remote root partition creation problem (Waiman Long) [RHEL-45139]\n- cgroup/cpuset: Optimize isolated partition only generate_sched_domains() calls (Waiman Long) [RHEL-45139]\n- cgroup/cpuset: Fix retval in update_cpumask() (Waiman Long) [RHEL-45139]\n- cgroup/cpuset: Fix a memory leak in update_exclusive_cpumask() (Waiman Long) [RHEL-45139]\n- ice: implement AQ download pkg retry (Petr Oros) [RHEL-38907 RHEL-17318]\n- redhat: include resolve_btfids in kernel-devel (Viktor Malik) [RHEL-43426 RHEL-40707]\n- blk-cgroup: fix list corruption from resetting io stat (cki-backport-bot) [RHEL-44977] {CVE-2024-38663}\n- misc: rtsx: do clear express reg every SD_INT (David Arcari) [RHEL-39985 RHEL-33706]\n- misc: rtsx: Fix rts5264 driver status incorrect when card removed (David Arcari) [RHEL-39985 RHEL-33706]\n- netfilter: tproxy: bail out if IP has been disabled on the device (cki-backport-bot) [RHEL-44371] {CVE-2024-36270}\n- lib/test_hmm.c: handle src_pfns and dst_pfns allocation failure (cki-backport-bot) [RHEL-44263 RHEL-44261] {CVE-2024-38543}\n- r8169: Fix possible ring buffer corruption on fragmented Tx packets. (cki-backport-bot) [RHEL-44039] {CVE-2024-38586}\n- net: micrel: Fix receiving the timestamp in the frame for lan8841 (cki-backport-bot) [RHEL-43996] {CVE-2024-38593}\n- vt: fix memory overlapping when deleting chars in the buffer (Waiman Long) [RHEL-43379 RHEL-27780] {CVE-2022-48627}\n- net/mlx5e: Use a memory barrier to enforce PTP WQ xmit submission tracking occurs after populating the metadata_map (Kamal Heib) [RHEL-42728 RHEL-34192] {CVE-2024-26858}\n- locking/atomic: Make test_and_*_bit() ordered on failure (Paolo Bonzini) [RHEL-45896]\n- mm/vmscan: fix a bug calling wakeup_kswapd() with a wrong zone index (Rafael Aquini) [RHEL-42659 RHEL-31840] {CVE-2024-26783}\n- can: j1939: prevent deadlock by changing j1939_socks_lock to rwlock (Jose Ignacio Tornos Martinez) [RHEL-42379 RHEL-31530] {CVE-2023-52638}\n- ethernet: hisilicon: hns: hns_dsaf_misc: fix a possible array overflow in hns_dsaf_ge_srst_by_port() (Ken Cox) [RHEL-42226 RHEL-38715] {CVE-2021-47548}\n\n[5.14.0-427.25.1_4]\n- nvme: fix reconnection fail due to reserved tag allocation (Maurizio Lombardi) [RHEL-42896 RHEL-36896] {CVE-2024-27435}\n- net: hns3: fix use-after-free bug in hclgevf_send_mbx_msg (cki-backport-bot) [RHEL-43625] {CVE-2021-47596}\n- scsi: sg: Avoid race in error handling & drop bogus warn (Ewan D. Milne) [RHEL-36106 RHEL-35659]\n- scsi: sg: Avoid sg device teardown race (Ewan D. Milne) [RHEL-36106 RHEL-35659]\n- netfilter: nf_tables: use timestamp to check for set element timeout (Florian Westphal) [RHEL-38032 RHEL-33985] {CVE-2024-27397}\n- netfilter: nft_set_rbtree: Remove unused variable nft_net (Florian Westphal) [RHEL-38032 RHEL-33985]\n- netfilter: nft_set_rbtree: prefer sync gc to async worker (Florian Westphal) [RHEL-38032 RHEL-33985]\n- netfilter: nft_set_rbtree: rename gc deactivate+erase function (Florian Westphal) [RHEL-38032 RHEL-33985]\n- netfilter: nf_tables: de-constify set commit ops function argument (Florian Westphal) [RHEL-38032 RHEL-33985]\n- octeontx2-af: avoid off-by-one read from userspace (Kamal Heib) [RHEL-40486 RHEL-39873] {CVE-2024-36957}",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "IMPORTANT"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2021-47548.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2021-47596.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-48627.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-52638.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-26783.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-26858.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-27397.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-27435.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-35958.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-36270.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-36886.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-36904.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-36957.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-38543.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-38586.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-38593.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-38663.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2024-4583.html"
-				}
-			],
-			"published": "2024-07-18T00:00:00Z"
+			"content": {
+				"id": "ELSA-2024-4583",
+				"title": "ELSA-2024-4583:  kernel security update (IMPORTANT)",
+				"description": "- [5.14.0-427.26.1_4.OL9]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n\n[5.14.0-427.26.1_4]\n- net: ena: Fix incorrect descriptor free behavior (Kamal Heib) [RHEL-39217 RHEL-37430] {CVE-2024-35958}\n- tcp: Use refcount_inc_not_zero() in tcp_twsk_unique(). (Guillaume Nault) [RHEL-41749 RHEL-39837] {CVE-2024-36904}\n- mm/mglru: Revert 'don't sync disk for each aging cycle' (Waiman Long) [RHEL-44418]\n- tipc: fix UAF in error path (Xin Long) [RHEL-34848 RHEL-34280] {CVE-2024-36886}\n- selftest/cgroup: Update test_cpuset_prs.sh to match changes (Waiman Long) [RHEL-45139]\n- cgroup/cpuset: Make cpuset.cpus.exclusive independent of cpuset.cpus (Waiman Long) [RHEL-45139]\n- cgroup/cpuset: Delay setting of CS_CPU_EXCLUSIVE until valid partition (Waiman Long) [RHEL-45139]\n- selftest/cgroup: Fix test_cpuset_prs.sh problems reported by test robot (Waiman Long) [RHEL-45139]\n- cgroup/cpuset: Fix remote root partition creation problem (Waiman Long) [RHEL-45139]\n- cgroup/cpuset: Optimize isolated partition only generate_sched_domains() calls (Waiman Long) [RHEL-45139]\n- cgroup/cpuset: Fix retval in update_cpumask() (Waiman Long) [RHEL-45139]\n- cgroup/cpuset: Fix a memory leak in update_exclusive_cpumask() (Waiman Long) [RHEL-45139]\n- ice: implement AQ download pkg retry (Petr Oros) [RHEL-38907 RHEL-17318]\n- redhat: include resolve_btfids in kernel-devel (Viktor Malik) [RHEL-43426 RHEL-40707]\n- blk-cgroup: fix list corruption from resetting io stat (cki-backport-bot) [RHEL-44977] {CVE-2024-38663}\n- misc: rtsx: do clear express reg every SD_INT (David Arcari) [RHEL-39985 RHEL-33706]\n- misc: rtsx: Fix rts5264 driver status incorrect when card removed (David Arcari) [RHEL-39985 RHEL-33706]\n- netfilter: tproxy: bail out if IP has been disabled on the device (cki-backport-bot) [RHEL-44371] {CVE-2024-36270}\n- lib/test_hmm.c: handle src_pfns and dst_pfns allocation failure (cki-backport-bot) [RHEL-44263 RHEL-44261] {CVE-2024-38543}\n- r8169: Fix possible ring buffer corruption on fragmented Tx packets. (cki-backport-bot) [RHEL-44039] {CVE-2024-38586}\n- net: micrel: Fix receiving the timestamp in the frame for lan8841 (cki-backport-bot) [RHEL-43996] {CVE-2024-38593}\n- vt: fix memory overlapping when deleting chars in the buffer (Waiman Long) [RHEL-43379 RHEL-27780] {CVE-2022-48627}\n- net/mlx5e: Use a memory barrier to enforce PTP WQ xmit submission tracking occurs after populating the metadata_map (Kamal Heib) [RHEL-42728 RHEL-34192] {CVE-2024-26858}\n- locking/atomic: Make test_and_*_bit() ordered on failure (Paolo Bonzini) [RHEL-45896]\n- mm/vmscan: fix a bug calling wakeup_kswapd() with a wrong zone index (Rafael Aquini) [RHEL-42659 RHEL-31840] {CVE-2024-26783}\n- can: j1939: prevent deadlock by changing j1939_socks_lock to rwlock (Jose Ignacio Tornos Martinez) [RHEL-42379 RHEL-31530] {CVE-2023-52638}\n- ethernet: hisilicon: hns: hns_dsaf_misc: fix a possible array overflow in hns_dsaf_ge_srst_by_port() (Ken Cox) [RHEL-42226 RHEL-38715] {CVE-2021-47548}\n\n[5.14.0-427.25.1_4]\n- nvme: fix reconnection fail due to reserved tag allocation (Maurizio Lombardi) [RHEL-42896 RHEL-36896] {CVE-2024-27435}\n- net: hns3: fix use-after-free bug in hclgevf_send_mbx_msg (cki-backport-bot) [RHEL-43625] {CVE-2021-47596}\n- scsi: sg: Avoid race in error handling & drop bogus warn (Ewan D. Milne) [RHEL-36106 RHEL-35659]\n- scsi: sg: Avoid sg device teardown race (Ewan D. Milne) [RHEL-36106 RHEL-35659]\n- netfilter: nf_tables: use timestamp to check for set element timeout (Florian Westphal) [RHEL-38032 RHEL-33985] {CVE-2024-27397}\n- netfilter: nft_set_rbtree: Remove unused variable nft_net (Florian Westphal) [RHEL-38032 RHEL-33985]\n- netfilter: nft_set_rbtree: prefer sync gc to async worker (Florian Westphal) [RHEL-38032 RHEL-33985]\n- netfilter: nft_set_rbtree: rename gc deactivate+erase function (Florian Westphal) [RHEL-38032 RHEL-33985]\n- netfilter: nf_tables: de-constify set commit ops function argument (Florian Westphal) [RHEL-38032 RHEL-33985]\n- octeontx2-af: avoid off-by-one read from userspace (Kamal Heib) [RHEL-40486 RHEL-39873] {CVE-2024-36957}",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2021-47548.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2021-47596.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-48627.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-52638.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26783.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26858.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-27397.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-27435.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35958.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-36270.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-36886.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-36904.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-36957.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38543.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38586.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38593.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38663.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-4583.html"
+					}
+				],
+				"published": "2024-07-18T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2021-47548",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2021-47548.html"
-				}
+			"content": {
+				"id": "CVE-2021-47548",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2021-47548.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2021-47596",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2021-47596.html"
-				}
+			"content": {
+				"id": "CVE-2021-47596",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2021-47596.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2022-48627",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-48627.html"
-				}
+			"content": {
+				"id": "CVE-2022-48627",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-48627.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2023-52638",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2023-52638.html"
-				}
+			"content": {
+				"id": "CVE-2023-52638",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-52638.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-26783",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-26783.html"
-				}
+			"content": {
+				"id": "CVE-2024-26783",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26783.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-26858",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-26858.html"
-				}
+			"content": {
+				"id": "CVE-2024-26858",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26858.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-27397",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-27397.html"
-				}
+			"content": {
+				"id": "CVE-2024-27397",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-27397.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-27435",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-27435.html"
-				}
+			"content": {
+				"id": "CVE-2024-27435",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-27435.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-35958",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-35958.html"
-				}
+			"content": {
+				"id": "CVE-2024-35958",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35958.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-36270",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-36270.html"
-				}
+			"content": {
+				"id": "CVE-2024-36270",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-36270.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-36886",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-36886.html"
-				}
+			"content": {
+				"id": "CVE-2024-36886",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-36886.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-36904",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-36904.html"
-				}
+			"content": {
+				"id": "CVE-2024-36904",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-36904.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-36957",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-36957.html"
-				}
+			"content": {
+				"id": "CVE-2024-36957",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-36957.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-38543",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-38543.html"
-				}
+			"content": {
+				"id": "CVE-2024-38543",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38543.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-38586",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-38586.html"
-				}
+			"content": {
+				"id": "CVE-2024-38586",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38586.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-38593",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-38593.html"
-				}
+			"content": {
+				"id": "CVE-2024-38593",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38593.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		},
 		{
-			"id": "CVE-2024-38663",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2024-38663.html"
-				}
+			"content": {
+				"id": "CVE-2024-38663",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38663.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
 			]
 		}
 	],

@@ -2,63 +2,83 @@
 	"id": "ELSA-2020-4444",
 	"advisories": [
 		{
-			"id": "ELSA-2020-4444",
-			"title": "ELSA-2020-4444:  glibc security, bug fix, and enhancement update (MODERATE)",
-			"description": "[2.28-127.0.1]\n- add Ampere emag  to tunable cpu list (Patrick McGehearty)\n- add optimized memset for emag\n- add an ASIMD variant of strlen for falkor\n- Orabug: 2700101.\n- Modify glibc-ora28849085.patch so it works with RHCK kernels.\n- Orabug: 28849085.\n- Make _IO_funlockfile match __funlockfile and _IO_flockfile match __flockfile\n- Both should test\n-   if (stream->_flags & _IO_USER_LOCK) == 0)\n-     _IO_lock_lock (*stream->_lock);\n- OraBug: 28481550.\nReviewed-by: Qing Zhao <qing.zhao@oracle.com>\n\n[2.28-127]\n- Improve performance of library strstr() function (#1821531)\n\n[2.28-126]\n- Do not clobber errno in nss_compat (#1836867)\n\n[2.28-125]\n- Support building rpm under newer versions of Coverity Scan (#1835999)\n\n[2.28-124]\n- Enhance memory protection key support on ppc64le (#1642150)\n\n[2.28-123]\n- Reduce IFUNC resolver usage in libpthread and librt (#1748197)\n\n[2.28-122]\n- Math library optimizations for IBM Z (#1780204)\n- Additional patch for s_nearbyint.c\n\n[2.28-121]\n- elf: Assign TLS modid later during dlopen (#1774115)\n\n[2.28-120]\n- x86-64: Automatically install nss_db.i686 for 32-bit environments (#1807824)\n\n[2.28-119]\n- ppc64le: Enable protection key support (#1642150)\n\n[2.28-118]\n- ppc64le: floating-point status and exception optimizations (#1783303)\n\n[2.28-117]\n- Update to Linux 5.6 syscall-names.list. (#1810224)\n\n[2.28-116]\n- CVE-2020-1751: Fix an array overflow in backtrace on PowerPC. (#1813399)\n\n[2.28-115]\n- CVE:2020-1752: Fix a use after free in glob when expanding ~user. (#1813398)\n\n[2.28-114]\n- CVE-2020-10029: Prevent stack corruption from crafted input in cosl, sinl,\n  sincosl, and tanl function. (#1811796)\n\n[2.28-113]\n- Improve elf/ and nptl/ testsuites (#1810223)\n\n[2.28-112]\n- Fix resource leak in getaddrinfo (#1810146)\n\n[2.28-111]\n- Protect locale archive against corruption (#1784525)\n\n[2.28-110]\n- Properly handle signed vs. unsigned values in mallopt (#1784520)\n\n[2.28-109]\n- Update and harmonize locale names with CLDR (#1757354)\n\n[2.28-108]\n- Fix filter and auxiliary filter implementation (#1812756)\n\n[2.28-107]\n- Handle .dynstr located in separate segment (#1774114)\n\n[2.28-106]\n- Disable vtable validation for pre-2.1 interposed handles (#1775819)\n\n[2.28-105]\n- Define __CORRECT_ISO_CPP_STRING_H_PROTO for Clang. (#1784519)\n\n[2.28-104]\n- Math library optimizations for IBM Z (#1780204)\n\n[2.28-103]\n- Filter 'ignore' autofs mount entries in getmntent (#1743445)\n\n[2.28-102]\n- Fix /etc/resolv.conf reloading defects (#1810142)",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "MODERATE"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2020-10029.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2020-1751.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2020-1752.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2020-4444.html"
-				}
-			],
-			"published": "2020-11-10T00:00:00Z"
+			"content": {
+				"id": "ELSA-2020-4444",
+				"title": "ELSA-2020-4444:  glibc security, bug fix, and enhancement update (MODERATE)",
+				"description": "[2.28-127.0.1]\n- add Ampere emag  to tunable cpu list (Patrick McGehearty)\n- add optimized memset for emag\n- add an ASIMD variant of strlen for falkor\n- Orabug: 2700101.\n- Modify glibc-ora28849085.patch so it works with RHCK kernels.\n- Orabug: 28849085.\n- Make _IO_funlockfile match __funlockfile and _IO_flockfile match __flockfile\n- Both should test\n-   if (stream->_flags & _IO_USER_LOCK) == 0)\n-     _IO_lock_lock (*stream->_lock);\n- OraBug: 28481550.\nReviewed-by: Qing Zhao <qing.zhao@oracle.com>\n\n[2.28-127]\n- Improve performance of library strstr() function (#1821531)\n\n[2.28-126]\n- Do not clobber errno in nss_compat (#1836867)\n\n[2.28-125]\n- Support building rpm under newer versions of Coverity Scan (#1835999)\n\n[2.28-124]\n- Enhance memory protection key support on ppc64le (#1642150)\n\n[2.28-123]\n- Reduce IFUNC resolver usage in libpthread and librt (#1748197)\n\n[2.28-122]\n- Math library optimizations for IBM Z (#1780204)\n- Additional patch for s_nearbyint.c\n\n[2.28-121]\n- elf: Assign TLS modid later during dlopen (#1774115)\n\n[2.28-120]\n- x86-64: Automatically install nss_db.i686 for 32-bit environments (#1807824)\n\n[2.28-119]\n- ppc64le: Enable protection key support (#1642150)\n\n[2.28-118]\n- ppc64le: floating-point status and exception optimizations (#1783303)\n\n[2.28-117]\n- Update to Linux 5.6 syscall-names.list. (#1810224)\n\n[2.28-116]\n- CVE-2020-1751: Fix an array overflow in backtrace on PowerPC. (#1813399)\n\n[2.28-115]\n- CVE:2020-1752: Fix a use after free in glob when expanding ~user. (#1813398)\n\n[2.28-114]\n- CVE-2020-10029: Prevent stack corruption from crafted input in cosl, sinl,\n  sincosl, and tanl function. (#1811796)\n\n[2.28-113]\n- Improve elf/ and nptl/ testsuites (#1810223)\n\n[2.28-112]\n- Fix resource leak in getaddrinfo (#1810146)\n\n[2.28-111]\n- Protect locale archive against corruption (#1784525)\n\n[2.28-110]\n- Properly handle signed vs. unsigned values in mallopt (#1784520)\n\n[2.28-109]\n- Update and harmonize locale names with CLDR (#1757354)\n\n[2.28-108]\n- Fix filter and auxiliary filter implementation (#1812756)\n\n[2.28-107]\n- Handle .dynstr located in separate segment (#1774114)\n\n[2.28-106]\n- Disable vtable validation for pre-2.1 interposed handles (#1775819)\n\n[2.28-105]\n- Define __CORRECT_ISO_CPP_STRING_H_PROTO for Clang. (#1784519)\n\n[2.28-104]\n- Math library optimizations for IBM Z (#1780204)\n\n[2.28-103]\n- Filter 'ignore' autofs mount entries in getmntent (#1743445)\n\n[2.28-102]\n- Fix /etc/resolv.conf reloading defects (#1810142)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2020-10029.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2020-1751.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2020-1752.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2020-4444.html"
+					}
+				],
+				"published": "2020-11-10T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2020-10029",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2020-10029.html"
-				}
+			"content": {
+				"id": "CVE-2020-10029",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2020-10029.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2020-1751",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2020-1751.html"
-				}
+			"content": {
+				"id": "CVE-2020-1751",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2020-1751.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2020-1752",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2020-1752.html"
-				}
+			"content": {
+				"id": "CVE-2020-1752",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2020-1752.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		}
 	],

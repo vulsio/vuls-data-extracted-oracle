@@ -2,76 +2,101 @@
 	"id": "ELSA-2022-5726",
 	"advisories": [
 		{
-			"id": "ELSA-2022-5726",
-			"title": "ELSA-2022-5726:  java-17-openjdk security, bug fix, and enhancement update (IMPORTANT)",
-			"description": "[1:17.0.4.0.8-0.2.ea]\n- Add rpminspect.yaml to turn off Java bytecode inspections\n- java-17-openjdk deliberately produces Java 17 bytecode, not the default Java 11 bytecode\n- Resolves: rhbz#2109106\n\n[1:17.0.4.0.8-0.2.ea]\n- Revert the following changes until copy-java-configs has adapted to relative symlinks:\n- * Move cacerts replacement to install section and retain original of this and tzdb.dat\n- * Run tests on the installed image, rather than the build image\n- * Introduce variables to refer to the static library installation directories\n- * Use relative symlinks so they work within the image\n- * Run debug symbols check during build stage, before the install strips them\n- The move of turning on system security properties is retained so we don't ship with them off\n- Related: rhbz#2084650\n\n[1:17.0.4.0.8-0.2.ea]\n- Returned absolute symlinks\n- Relative symlinks are breaking cjc, and deeper investigations are necessary\n-- why cjc intentionally skips relative symllinks\n- Images have to be workarounded differently\n- Related: rhbz#2084650\n\n[1:17.0.4.0.8-1]\n- Update to jdk-17.0.4.0+8\n- Update release notes to 17.0.4.0+8\n- Need to include the '.S' suffix in debuginfo checks after JDK-8284661\n- Print release file during build, which should now include a correct SOURCE value from .src-rev\n- Update tarball script with IcedTea GitHub URL and .src-rev generation\n- Include script to generate bug list for release notes\n- Update tzdata requirement to 2022a to match JDK-8283350\n- Move EA designator check to prep so failures can be caught earlier\n- Make EA designator check non-fatal while upstream is not maintaining it\n- Explicitly require crypto-policies during build and runtime for system security properties\n- Make use of the vendor version string to store our version & release rather than an upstream release date\n- Include a test in the RPM to check the build has the correct vendor information.\n- Rebase FIPS patches from fips-17u branch and simplify by using a single patch from that repository\n- * RH2094027: SunEC runtime permission for FIPS\n- * RH2036462: sun.security.pkcs11.wrapper.PKCS11.getInstance breakage\n- * RH2090378: Revert to disabling system security properties and FIPS mode support together\n- Rebase RH1648249 nss.cfg patch so it applies after the FIPS patch\n- Enable system security properties in the RPM (now disabled by default in the FIPS repo)\n- Improve security properties test to check both enabled and disabled behaviour\n- Run security properties test with property debugging on\n- Turn on system security properties as part of the build's install section\n- Move cacerts replacement to install section and retain original of this and tzdb.dat\n- Run tests on the installed image, rather than the build image\n- Introduce variables to refer to the static library installation directories\n- Use relative symlinks so they work within the image\n- Run debug symbols check during build stage, before the install strips them\n- Resolves: rhbz#2084650\n- Resolves: rhbz#2099913\n- Resolves: rhbz#2108206\n- Resolves: rhbz#2108209\n- Resolves: rhbz#2106521\n\n[1:17.0.4.0.1-0.2.ea]\n- Fix issue where CheckVendor.java test erroneously passes when it should fail.\n- Add proper quoting so '&' is not treated as a special character by the shell.\n- Related: rhbz#2084650",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "IMPORTANT"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-21540.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-21541.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-21549.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-34169.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2022-5726.html"
-				}
-			],
-			"published": "2022-07-27T00:00:00Z"
+			"content": {
+				"id": "ELSA-2022-5726",
+				"title": "ELSA-2022-5726:  java-17-openjdk security, bug fix, and enhancement update (IMPORTANT)",
+				"description": "[1:17.0.4.0.8-0.2.ea]\n- Add rpminspect.yaml to turn off Java bytecode inspections\n- java-17-openjdk deliberately produces Java 17 bytecode, not the default Java 11 bytecode\n- Resolves: rhbz#2109106\n\n[1:17.0.4.0.8-0.2.ea]\n- Revert the following changes until copy-java-configs has adapted to relative symlinks:\n- * Move cacerts replacement to install section and retain original of this and tzdb.dat\n- * Run tests on the installed image, rather than the build image\n- * Introduce variables to refer to the static library installation directories\n- * Use relative symlinks so they work within the image\n- * Run debug symbols check during build stage, before the install strips them\n- The move of turning on system security properties is retained so we don't ship with them off\n- Related: rhbz#2084650\n\n[1:17.0.4.0.8-0.2.ea]\n- Returned absolute symlinks\n- Relative symlinks are breaking cjc, and deeper investigations are necessary\n-- why cjc intentionally skips relative symllinks\n- Images have to be workarounded differently\n- Related: rhbz#2084650\n\n[1:17.0.4.0.8-1]\n- Update to jdk-17.0.4.0+8\n- Update release notes to 17.0.4.0+8\n- Need to include the '.S' suffix in debuginfo checks after JDK-8284661\n- Print release file during build, which should now include a correct SOURCE value from .src-rev\n- Update tarball script with IcedTea GitHub URL and .src-rev generation\n- Include script to generate bug list for release notes\n- Update tzdata requirement to 2022a to match JDK-8283350\n- Move EA designator check to prep so failures can be caught earlier\n- Make EA designator check non-fatal while upstream is not maintaining it\n- Explicitly require crypto-policies during build and runtime for system security properties\n- Make use of the vendor version string to store our version & release rather than an upstream release date\n- Include a test in the RPM to check the build has the correct vendor information.\n- Rebase FIPS patches from fips-17u branch and simplify by using a single patch from that repository\n- * RH2094027: SunEC runtime permission for FIPS\n- * RH2036462: sun.security.pkcs11.wrapper.PKCS11.getInstance breakage\n- * RH2090378: Revert to disabling system security properties and FIPS mode support together\n- Rebase RH1648249 nss.cfg patch so it applies after the FIPS patch\n- Enable system security properties in the RPM (now disabled by default in the FIPS repo)\n- Improve security properties test to check both enabled and disabled behaviour\n- Run security properties test with property debugging on\n- Turn on system security properties as part of the build's install section\n- Move cacerts replacement to install section and retain original of this and tzdb.dat\n- Run tests on the installed image, rather than the build image\n- Introduce variables to refer to the static library installation directories\n- Use relative symlinks so they work within the image\n- Run debug symbols check during build stage, before the install strips them\n- Resolves: rhbz#2084650\n- Resolves: rhbz#2099913\n- Resolves: rhbz#2108206\n- Resolves: rhbz#2108209\n- Resolves: rhbz#2106521\n\n[1:17.0.4.0.1-0.2.ea]\n- Fix issue where CheckVendor.java test erroneously passes when it should fail.\n- Add proper quoting so '&' is not treated as a special character by the shell.\n- Related: rhbz#2084650",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-21540.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-21541.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-21549.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-34169.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2022-5726.html"
+					}
+				],
+				"published": "2022-07-27T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2022-21540",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-21540.html"
-				}
+			"content": {
+				"id": "CVE-2022-21540",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-21540.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2022-21541",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-21541.html"
-				}
+			"content": {
+				"id": "CVE-2022-21541",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-21541.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2022-21549",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-21549.html"
-				}
+			"content": {
+				"id": "CVE-2022-21549",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-21549.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		},
 		{
-			"id": "CVE-2022-34169",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-34169.html"
-				}
+			"content": {
+				"id": "CVE-2022-34169",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-34169.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
 			]
 		}
 	],

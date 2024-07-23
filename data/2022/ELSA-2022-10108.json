@@ -2,102 +2,144 @@
 	"id": "ELSA-2022-10108",
 	"advisories": [
 		{
-			"id": "ELSA-2022-10108",
-			"title": "ELSA-2022-10108: Unbreakable Enterprise kernel security update (IMPORTANT)",
-			"description": "[4.1.12-124.70.2]\n- proc: proc_skip_spaces() shouldn't think it is working on C strings (Linus Torvalds)  [Orabug: 34882781]  {CVE-2022-4378}\n- proc: avoid integer type confusion in get_proc_long (Linus Torvalds)  [Orabug: 34882781]  {CVE-2022-4378}\n- netfilter: nf_conntrack_irc: Fix forged IP logic (David Leadbeater)  [Orabug: 34872056]  {CVE-2022-2663}\n- r8152: Rate limit overflow messages (Andrew Gaul)  [Orabug: 34719940]  {CVE-2022-3594}\n- HID: roccat: Fix use-after-free in roccat_read() (Hyunwoo Kim)  [Orabug: 34670789]  {CVE-2022-41850}\n\n[4.1.12-124.70.1]\n- usb: mon: make mmapped memory read only (Tadeusz Struk)  [Orabug: 34820828]  {CVE-2022-43750}\n- sch_sfb: Also store skb len before calling child enqueue (Toke Hoiland-Jorgensen)  [Orabug: 34731314]  {CVE-2022-3586}\n- sch_sfb: Don't assume the skb is still around after enqueueing to child (Toke Hoiland-Jorgensen)  [Orabug: 34731314]  {CVE-2022-3586}\n- sch_sfb: keep backlog updated with qlen (WANG Cong)  [Orabug: 34731314]",
-			"severity": [
-				{
-					"type": "vendor",
-					"source": "linux.oracle.com/security",
-					"vendor": "IMPORTANT"
-				}
-			],
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-2663.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-3586.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-3594.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-41850.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-43750.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-4378.html"
-				},
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/errata/ELSA-2022-10108.html"
-				}
-			],
-			"published": "2023-01-03T00:00:00Z"
+			"content": {
+				"id": "ELSA-2022-10108",
+				"title": "ELSA-2022-10108: Unbreakable Enterprise kernel security update (IMPORTANT)",
+				"description": "[4.1.12-124.70.2]\n- proc: proc_skip_spaces() shouldn't think it is working on C strings (Linus Torvalds)  [Orabug: 34882781]  {CVE-2022-4378}\n- proc: avoid integer type confusion in get_proc_long (Linus Torvalds)  [Orabug: 34882781]  {CVE-2022-4378}\n- netfilter: nf_conntrack_irc: Fix forged IP logic (David Leadbeater)  [Orabug: 34872056]  {CVE-2022-2663}\n- r8152: Rate limit overflow messages (Andrew Gaul)  [Orabug: 34719940]  {CVE-2022-3594}\n- HID: roccat: Fix use-after-free in roccat_read() (Hyunwoo Kim)  [Orabug: 34670789]  {CVE-2022-41850}\n\n[4.1.12-124.70.1]\n- usb: mon: make mmapped memory read only (Tadeusz Struk)  [Orabug: 34820828]  {CVE-2022-43750}\n- sch_sfb: Also store skb len before calling child enqueue (Toke Hoiland-Jorgensen)  [Orabug: 34731314]  {CVE-2022-3586}\n- sch_sfb: Don't assume the skb is still around after enqueueing to child (Toke Hoiland-Jorgensen)  [Orabug: 34731314]  {CVE-2022-3586}\n- sch_sfb: keep backlog updated with qlen (WANG Cong)  [Orabug: 34731314]",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-2663.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-3586.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-3594.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-41850.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-43750.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-4378.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2022-10108.html"
+					}
+				],
+				"published": "2023-01-03T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
+			]
 		}
 	],
 	"vulnerabilities": [
 		{
-			"id": "CVE-2022-2663",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-2663.html"
-				}
+			"content": {
+				"id": "CVE-2022-2663",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-2663.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2022-3586",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-3586.html"
-				}
+			"content": {
+				"id": "CVE-2022-3586",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-3586.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2022-3594",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-3594.html"
-				}
+			"content": {
+				"id": "CVE-2022-3594",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-3594.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2022-41850",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-41850.html"
-				}
+			"content": {
+				"id": "CVE-2022-41850",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-41850.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2022-43750",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-43750.html"
-				}
+			"content": {
+				"id": "CVE-2022-43750",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-43750.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		},
 		{
-			"id": "CVE-2022-4378",
-			"references": [
-				{
-					"source": "linux.oracle.com/security",
-					"url": "https://linux.oracle.com/cve/CVE-2022-4378.html"
-				}
+			"content": {
+				"id": "CVE-2022-4378",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-4378.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:6",
+				"oracle:7"
 			]
 		}
 	],
