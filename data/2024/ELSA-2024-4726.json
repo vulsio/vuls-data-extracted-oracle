@@ -1,0 +1,363 @@
+{
+	"id": "ELSA-2024-4726",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-4726",
+				"title": "ELSA-2024-4726:  httpd security update (IMPORTANT)",
+				"description": "[2.4.57-11.0.1]\n- Replace index.html with Oracle's index page oracle_index.html.\n\n[2.4.57-11]\n- Resolves: RHEL-45792 -  httpd: Encoding problem in\n  mod_proxy (CVE-2024-38473)\n\n[2.4.57-9]\n- Resolves: RHEL-45766 -  httpd: null pointer dereference in\n  mod_proxy (CVE-2024-38477)\n- Resolves: RHEL-45749 - httpd: Potential SSRF in mod_rewrite (CVE-2024-39573)\n- Resolves: RHEL-45818 - httpd: Substitution encoding issue in\n  mod_rewrite (CVE-2024-38474)\n- Resolves: RHEL-45771 - httpd: Improper escaping of output in\n  mod_rewrite (CVE-2024-38475)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38473.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38474.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38475.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38477.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-39573.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-4726.html"
+					}
+				],
+				"published": "2024-07-23T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-38473",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38473.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-38474",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38474.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-38475",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38475.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-38477",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38477.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-39573",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-39573.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.57-11.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:2.4.57-11.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.57-11.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:2.4.57-11.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.57-11.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:2.4.57-11.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-filesystem",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.57-11.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:2.4.57-11.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-manual",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.57-11.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:2.4.57-11.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "httpd-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.57-11.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:2.4.57-11.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_ldap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.57-11.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:2.4.57-11.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_lua",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.57-11.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:2.4.57-11.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_proxy_html",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.4.57-11.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"1:2.4.57-11.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_session",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.57-11.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:2.4.57-11.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "mod_ssl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.4.57-11.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"1:2.4.57-11.0.1.el9_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}
