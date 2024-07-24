@@ -1,0 +1,228 @@
+{
+	"id": "ELSA-2024-4776",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-4776",
+				"title": "ELSA-2024-4776:  cups security update (MODERATE)",
+				"description": "[1:2.3.3op2-27]\n- Revert the cups-libs license identifier to the 'legacy' format\n\n[1:2.3.3op2-26]\n- RHEL-40388 cups: Cupsd Listen arbitrary chmod 0140777\n- Delete the domain socket file after stopping the cups.socket service\n- Fix cupsd Listener checks\n\n[1:2.3.3op2-25]\n- CVE-2024-35235 cups: Cupsd Listen arbitrary chmod 0140777",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35235.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-4776.html"
+					}
+				],
+				"published": "2024-07-23T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-35235",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35235.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.3op2-27.el9_4"
+								}
+							],
+							"fixed": [
+								"1:2.3.3op2-27.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-client",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.3op2-27.el9_4"
+								}
+							],
+							"fixed": [
+								"1:2.3.3op2-27.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.3op2-27.el9_4"
+								}
+							],
+							"fixed": [
+								"1:2.3.3op2-27.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-filesystem",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.3op2-27.el9_4"
+								}
+							],
+							"fixed": [
+								"1:2.3.3op2-27.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-ipptool",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.3op2-27.el9_4"
+								}
+							],
+							"fixed": [
+								"1:2.3.3op2-27.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.3op2-27.el9_4"
+								}
+							],
+							"fixed": [
+								"1:2.3.3op2-27.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-lpd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.3op2-27.el9_4"
+								}
+							],
+							"fixed": [
+								"1:2.3.3op2-27.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "cups-printerapp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:2.3.3op2-27.el9_4"
+								}
+							],
+							"fixed": [
+								"1:2.3.3op2-27.el9_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}
