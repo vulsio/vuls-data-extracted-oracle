@@ -1,0 +1,118 @@
+{
+	"id": "ELSA-2024-12551",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-12551",
+				"title": "ELSA-2024-12551: Unbreakable Enterprise kernel-container security update (IMPORTANT)",
+				"description": "[5.4.17-2136.333.5.1.el7]\n- net/mlx5e: drop shorter ethernet frames (Manjunath Patil)  [Orabug: 36660755]\n- pci: add hotplug patch support for SOLIDIGM Aura10 AIC 0x025e:0x0b60 (Alan Adamson)  [Orabug: 36836653]",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41090.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41091.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-12551.html"
+					}
+				],
+				"published": "2024-07-23T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-41090",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41090.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-41091",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41091.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.4.17-2136.333.5.1.el7"
+								}
+							],
+							"fixed": [
+								"0:5.4.17-2136.333.5.1.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-container-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.4.17-2136.333.5.1.el7"
+								}
+							],
+							"fixed": [
+								"0:5.4.17-2136.333.5.1.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}
