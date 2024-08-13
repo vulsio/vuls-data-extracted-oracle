@@ -1,0 +1,303 @@
+{
+	"id": "ELSA-2024-12583",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-12583",
+				"title": "ELSA-2024-12583: Unbreakable Enterprise kernel security update (IMPORTANT)",
+				"description": "[4.14.35-2047.539.5]\n- Revert 'mm/writeback: fix possible divide-by-zero in wb_dirty_limits(), again' (Jan Kara)  \n- net/mlx5e: drop shorter ethernet frames (Manjunath Patil)  [Orabug: 36879158]  {CVE-2024-41090} {CVE-2024-41091}\n\n[4.14.35-2047.539.4]\n- Fix parsing error in UEK5 kernel-uek-spec (Yifei Liu)  [Orabug: 36847179]\n\n[4.14.35-2047.539.3]\n- nfc: nci: Fix handling of zero-length payload packets in nci_rx_work() (Ryosuke Yasuoka)  \n- nfc: nci: Fix uninit-value in nci_rx_work (Ryosuke Yasuoka)  \n- nfc: nci: Fix kcov check in nci_rx_work() (Tetsuo Handa)  \n- vxlan: Fix regression when dropping packets due to invalid src addresses (Daniel Borkmann)  \n- speakup: Fix sizeof() vs ARRAY_SIZE() bug (Dan Carpenter)  \n- rds/ib: decrement ib_rx_total_incs after releasing associated cache (Arumugam Kolappan)  [Orabug: 36760267] \n- rds/rdma: Send info to userspace, even if connnection is down. (Juan Garcia)  [Orabug: 36529474]\n\n[4.14.35-2047.539.2]\n- rds/rdma: Clear rds_info_socket before use (Juan Garcia)  [Orabug: 36613108]\n\n[4.14.35-2047.539.1]\n- xfs: make sure sb_fdblocks is non-negative (Wengang Wang)  [Orabug: 36759719] \n- xfs: fix sb write verify for lazysbcount (Wengang Wang)  [Orabug: 36759719] \n- rds/rdma: Track rds_message in send, retrans and recv queue (Juan Garcia)  [Orabug: 36529577]",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41090.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41091.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-12583.html"
+					}
+				],
+				"published": "2024-08-12T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-41090",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41090.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-41091",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41091.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.539.5.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.539.5.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.539.5.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.539.5.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-debug-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.539.5.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.539.5.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.539.5.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.539.5.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.539.5.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.539.5.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-headers",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.539.5.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.539.5.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.539.5.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.539.5.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools-libs",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.539.5.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.539.5.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uek-tools-libs-devel",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.539.5.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.539.5.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.539.5.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.539.5.el7uek"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python-perf",
+							"architectures": [
+								"aarch64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:4.14.35-2047.539.5.el7uek"
+								}
+							],
+							"fixed": [
+								"0:4.14.35-2047.539.5.el7uek"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}
