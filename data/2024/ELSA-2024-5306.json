@@ -1,0 +1,123 @@
+{
+	"id": "ELSA-2024-5306",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-5306",
+				"title": "ELSA-2024-5306:  orc security update (MODERATE)",
+				"description": "[0.4.28-4]\n- Add patch for CVE-2024-40897\n- Resolves: RHEL-50710",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40897.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-5306.html"
+					}
+				],
+				"published": "2024-08-13T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-40897",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40897.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "orc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.4.28-4.el8_10"
+								}
+							],
+							"fixed": [
+								"0:0.4.28-4.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "orc-compiler",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.4.28-4.el8_10"
+								}
+							],
+							"fixed": [
+								"0:0.4.28-4.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "orc-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.4.28-4.el8_10"
+								}
+							],
+							"fixed": [
+								"0:0.4.28-4.el8_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

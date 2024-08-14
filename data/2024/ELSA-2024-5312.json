@@ -1,0 +1,225 @@
+{
+	"id": "ELSA-2024-5312",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-5312",
+				"title": "ELSA-2024-5312:  krb5 security update (MODERATE)",
+				"description": "[1.18.2-29.0.1]\n- Fixed race condition in krb5_set_password() [Orabug: 33609767]\n\n[1.18.2-29]\n- CVE-2024-37370 CVE-2024-37371\n  Fix vulnerabilities in GSS message token handling\n  Resolves: RHEL-45398 RHEL-45386",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-37370.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-37371.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-5312.html"
+					}
+				],
+				"published": "2024-08-13T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-37370",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-37370.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-37371",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-37371.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.2-29.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:1.18.2-29.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.2-29.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:1.18.2-29.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-pkinit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.2-29.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:1.18.2-29.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.2-29.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:1.18.2-29.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-server-ldap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.2-29.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:1.18.2-29.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-workstation",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.2-29.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:1.18.2-29.0.1.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libkadm5",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.2-29.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:1.18.2-29.0.1.el8_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}
