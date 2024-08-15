@@ -1,0 +1,285 @@
+{
+	"id": "ELSA-2024-5390",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-5390",
+				"title": "ELSA-2024-5390:  bind9.16 security update (IMPORTANT)",
+				"description": "[32:9.16.23-0.22]\n- Minor fix of reclimit test backport (CVE-2024-1737)\n\n[32:9.16.23-0.21]\n- Backport addition of max-records-per-type and max-records-per-type options\n  (CVE-2024-1737)\n\n[32:9.16.23-0.20]\n- Resolve CVE-2024-1975\n- Resolve CVE-2024-1737\n- Resolve CVE-2024-4076\n- Add ability to change runtime limits for max types and records per name\n\n[32:9.16.23-0.19]\n- Add few more explicit conflicts with bind subpackages (RHEL-2208)\n\n[32:9.16.23-0.18]\n- Prevent crashing at masterformat system test (CVE-2023-6516)\n\n[32:9.16.23-0.17]\n- Prevent increased CPU load on large DNS messages (CVE-2023-4408)\n- Prevent assertion failure when nxdomain-redirect is used with\n RFC 1918 reverse zones (CVE-2023-5517)\n- Prevent assertion failure if DNS64 and serve-stale is used (CVE-2023-5679)\n- Specific recursive query patterns may lead to an out-of-memory\n  condition (CVE-2023-6516)\n- Prevent increased CPU consumption in DNSSEC validator (CVE-2023-50387\n  CVE-2023-50868)\n- Import tests for large DNS messages fix\n- Add downstream change complementing CVE-2023-50387",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-1737.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-1975.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-4076.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-5390.html"
+					}
+				],
+				"published": "2024-08-14T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-1737",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-1737.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-1975",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-1975.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-4076",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-4076.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind9.16",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.16.23-0.22.el8_10"
+								}
+							],
+							"fixed": [
+								"32:9.16.23-0.22.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind9.16-chroot",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.16.23-0.22.el8_10"
+								}
+							],
+							"fixed": [
+								"32:9.16.23-0.22.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind9.16-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.16.23-0.22.el8_10"
+								}
+							],
+							"fixed": [
+								"32:9.16.23-0.22.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind9.16-dnssec-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.16.23-0.22.el8_10"
+								}
+							],
+							"fixed": [
+								"32:9.16.23-0.22.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind9.16-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.16.23-0.22.el8_10"
+								}
+							],
+							"fixed": [
+								"32:9.16.23-0.22.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind9.16-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.16.23-0.22.el8_10"
+								}
+							],
+							"fixed": [
+								"32:9.16.23-0.22.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind9.16-license",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.16.23-0.22.el8_10"
+								}
+							],
+							"fixed": [
+								"32:9.16.23-0.22.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bind9.16-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.16.23-0.22.el8_10"
+								}
+							],
+							"fixed": [
+								"32:9.16.23-0.22.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-bind9.16",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "32:9.16.23-0.22.el8_10"
+								}
+							],
+							"fixed": [
+								"32:9.16.23-0.22.el8_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}

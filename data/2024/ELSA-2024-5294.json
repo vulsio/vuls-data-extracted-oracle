@@ -1,0 +1,141 @@
+{
+	"id": "ELSA-2024-5294",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-5294",
+				"title": "ELSA-2024-5294:  jose security update (MODERATE)",
+				"description": "[10-2.3]\n- Backport fix for CVE-2024-28176\n  Resolves: RHEL-28719\n\n[10-2.2]\n- Fix tests on s390x\n  Related: RHEL-29857\n\n[10-2.1]\n- Fixes CVE-2023-50967",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-50967.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-28176.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-5294.html"
+					}
+				],
+				"published": "2024-08-13T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2023-50967",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-50967.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-28176",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-28176.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "jose",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10-2.el8_10.3"
+								}
+							],
+							"fixed": [
+								"0:10-2.el8_10.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libjose",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10-2.el8_10.3"
+								}
+							],
+							"fixed": [
+								"0:10-2.el8_10.3"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libjose-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:10-2.el8_10.3"
+								}
+							],
+							"fixed": [
+								"0:10-2.el8_10.3"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}
