@@ -1,0 +1,123 @@
+{
+	"id": "ELSA-2024-5530",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-5530",
+				"title": "ELSA-2024-5530:  python-setuptools security update (IMPORTANT)",
+				"description": "[39.2.0-8]\n- Security fix for CVE-2024-6345\nResolves: RHEL-50470",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-6345.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-5530.html"
+					}
+				],
+				"published": "2024-08-18T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-6345",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-6345.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "platform-python-setuptools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:39.2.0-8.el8_10"
+								}
+							],
+							"fixed": [
+								"0:39.2.0-8.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-setuptools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:39.2.0-8.el8_10"
+								}
+							],
+							"fixed": [
+								"0:39.2.0-8.el8_10"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-setuptools-wheel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:39.2.0-8.el8_10"
+								}
+							],
+							"fixed": [
+								"0:39.2.0-8.el8_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}
