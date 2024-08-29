@@ -1,0 +1,1368 @@
+{
+	"id": "ELSA-2024-5928",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-5928",
+				"title": "ELSA-2024-5928:  kernel security update (IMPORTANT)",
+				"description": "[5.14.0-427.33.1_4.OL9]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n\n[5.14.0-427.33.1_4]\n- bnxt_re: avoid shift undefined behavior in bnxt_qplib_alloc_init_hwq (Kamal Heib) [RHEL-44287] {CVE-2024-38540}\n- netfilter: flowtable: validate pppoe header (Florian Westphal) [RHEL-44430 RHEL-33469] {CVE-2024-27016}\n- crypto: bcm - Fix pointer arithmetic (cki-backport-bot) [RHEL-44116] {CVE-2024-38579}\n- udp: Set SOCK_RCU_FREE earlier in udp_lib_get_port(). (CKI Backport Bot) [RHEL-51035 RHEL-51033] {CVE-2024-41041}\n- netfilter: nf_tables: Fix potential data-race in __nft_obj_type_get() (Florian Westphal) [RHEL-42832 RHEL-33985] {CVE-2024-27019}\n- netfilter: nf_tables: restrict tunnel object to NFPROTO_NETDEV (Florian Westphal) [RHEL-42832 RHEL-33985]\n- netfilter: nf_tables: NULL pointer dereference in nf_tables_updobj() (Florian Westphal) [RHEL-42832 RHEL-33985]\n- netfilter: nf_tables: release mutex after nft_gc_seq_end from abort path (Florian Westphal) [RHEL-41802 RHEL-33985] {CVE-2024-26925}\n- netfilter: nf_tables: discard table flag update with pending basechain deletion (Florian Westphal) [RHEL-40231 RHEL-33985] {CVE-2024-35897}\n- netfilter: nf_tables: reject table flag and netdev basechain updates (Florian Westphal) [RHEL-40231 RHEL-33985]\n- netfilter: bridge: replace physindev with physinif in nf_bridge_info (Florian Westphal) [RHEL-42966 RHEL-37040] {CVE-2024-35839}\n- netfilter: propagate net to nf_bridge_get_physindev (Florian Westphal) [RHEL-42966 RHEL-37040] {CVE-2024-35839}\n- netfilter: nfnetlink_log: use proper helper for fetching physinif (Florian Westphal) [RHEL-42966 RHEL-37040] {CVE-2024-35839}\n- netfilter: nf_queue: remove excess nf_bridge variable (Florian Westphal) [RHEL-42966 RHEL-37040] {CVE-2024-35839}\n- netfilter: nft_limit: reject configurations that cause integer overflow (Florian Westphal) [RHEL-40065 RHEL-33985] {CVE-2024-26668}\n- scsi: qedi: Fix crash while reading debugfs attribute (CKI Backport Bot) [RHEL-48339] {CVE-2024-40978}\n- mm/huge_memory: don't unpoison huge_zero_folio (Aristeu Rozanski) [RHEL-47804] {CVE-2024-40914}\n- tipc: force a dst refcount before doing decryption (Xin Long) [RHEL-48375 RHEL-6118] {CVE-2024-40983}\n- netfilter: nft_set_rbtree: skip end interval element from gc (Florian Westphal) [RHEL-41265] {CVE-2024-26581}\n- nvmet: fix a possible leak when destroy a ctrl during qp establishment (CKI Backport Bot) [RHEL-52021 RHEL-52019 RHEL-52020] {CVE-2024-42152}\n- net: ntb_netdev: Move ntb_netdev_rx_handler() to call netif_rx() from __netif_rx() (CKI Backport Bot) [RHEL-51756] {CVE-2024-42110}\n- netfilter: nf_tables: Fix potential data-race in __nft_flowtable_type_get() (Florian Westphal) [RHEL-40265 RHEL-33985] {CVE-2024-35898}\n- netfilter: br_netfilter: remove WARN traps (CKI Backport Bot) [RHEL-42882] {CVE-2024-27415}\n- netfilter: br_netfilter: skip conntrack input hook for promisc packets (CKI Backport Bot) [RHEL-42882] {CVE-2024-27415}\n- netfilter: bridge: confirm multicast packets before passing them up the stack (CKI Backport Bot) [RHEL-42882] {CVE-2024-27415}\n- netfilter: nf_conntrack_bridge: initialize err to 0 (CKI Backport Bot) [RHEL-42882] {CVE-2024-27415}\n- netfilter: nf_tables: Fix potential data-race in __nft_expr_type_get() (Florian Westphal) [RHEL-42842 RHEL-33985] {CVE-2024-27020}\n\n[5.14.0-427.32.1_4]\n- REDHAT: Makefile, dont reset dist-git-tmp if set (Lucas Zampieri)\n- net/mlx5e: Fix netif state handling (Benjamin Poirier) [RHEL-43872 RHEL-43870] {CVE-2024-38608}\n- net/mlx5e: Add wrapping for auxiliary_driver ops and remove unused args (Benjamin Poirier) [RHEL-43872 RHEL-43870] {CVE-2024-38608}\n- tun: add missing verification for short frame (Patrick Talbert) [RHEL-50202 RHEL-50203] {CVE-2024-41091}\n- tap: add missing verification for short frame (Patrick Talbert) [RHEL-50264 RHEL-50265] {CVE-2024-41090}\n- vfio/pci: Lock external INTx masking ops (Alex Williamson) [RHEL-43421 RHEL-30023] {CVE-2024-26810}\n- net: bridge: xmit: make sure we have at least eth header len bytes (cki-backport-bot) [RHEL-44299] {CVE-2024-38538}\n- KVM: arm64: Ensure target address is granule-aligned for range TLBI (Sebastian Ott) [RHEL-52248 RHEL-31215]\n- RDMA/rxe: Fix seg fault in rxe_comp_queue_pkt (cki-backport-bot) [RHEL-44250] {CVE-2024-38544}\n- NFSv4: Fix memory leak in nfs4_set_security_label (CKI Backport Bot) [RHEL-52082] {CVE-2024-41076}\n- md/raid5: fix deadlock that raid5d() wait for itself to clear MD_SB_CHANGE_PENDING (Nigel Croxon) [RHEL-46421 RHEL-35393] {CVE-2024-39476}\n- KVM: s390: fix LPSWEY handling (CKI Backport Bot) [RHEL-50074]\n- cxl/port: Fix delete_endpoint() vs parent unregistration race (John W. Linville) [RHEL-39290 RHEL-23582] {CVE-2023-52771}\n- net: ice: Fix potential NULL pointer dereference in ice_bridge_setlink() (Petr Oros) [RHEL-49862 RHEL-17486] {CVE-2024-26855}\n- ice: fix LAG and VF lock dependency in ice_reset_vf() (Petr Oros) [RHEL-49820 RHEL-17486] {CVE-2024-36003}\n- net: wwan: iosm: Fix tainted pointer delete is case of region creation fail (Jose Ignacio Tornos Martinez) [RHEL-47992 RHEL-9429] {CVE-2024-40939}\n- wifi: cfg80211: Lock wiphy in cfg80211_get_station (CKI Backport Bot) [RHEL-47770] {CVE-2024-40911}\n- wifi: mac80211: Fix deadlock in ieee80211_sta_ps_deliver_wakeup() (CKI Backport Bot) [RHEL-47788] {CVE-2024-40912}\n- wifi: iwlwifi: mvm: check n_ssids before accessing the ssids (CKI Backport Bot) [RHEL-47920] {CVE-2024-40929}\n- wifi: iwlwifi: mvm: don't read past the mfuart notifcation (CKI Backport Bot) [RHEL-48028] {CVE-2024-40941}\n- seg6: fix parameter passing when calling NF_HOOK() in End.DX4 and End.DX6 behaviors (Hangbin Liu) [RHEL-48098 RHEL-45826] {CVE-2024-40957}\n- ipv6: fix possible race in __fib6_drop_pcpu_from() (Hangbin Liu) [RHEL-47572 RHEL-45826] {CVE-2024-40905}\n- redhat/configs: Enable CONFIG_DRM_MGAG200_DISABLE_WRITECOMBINE (Jocelyn Falempe) [RHEL-39581 RHEL-28760]\n- drm/mgag200: Add an option to disable Write-Combine (Jocelyn Falempe) [RHEL-39581 RHEL-28760]\n- drm/mgag200: Fix caching setup for remapped video memory (Scott Weaver) [RHEL-39581 RHEL-24102]\n- Revert 'drm/mgag200: Flush the cache to improve latency' (Scott Weaver) [RHEL-39581 RHEL-28760]\n- net: psample: fix flag being set in wrong skb (Adrian Moreno) [RHEL-47275]\n- net: openvswitch: store sampling probability in cb. (Adrian Moreno) [RHEL-47275]\n- net: openvswitch: add psample action (Adrian Moreno) [RHEL-47275]\n- net: psample: allow using rate as probability (Adrian Moreno) [RHEL-47275]\n- net: psample: skip packet copy if no listeners (Adrian Moreno) [RHEL-47275]\n- net: psample: add user cookie (Adrian Moreno) [RHEL-47275]\n- i40e: fix: remove needless retries of NVM update (CKI Backport Bot) [RHEL-48169 RHEL-36692]\n- ice: Reject pin requests with unsupported flags (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: Don't process extts if PTP is disabled (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: Fix improper extts handling (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: stop destroying and reinitalizing Tx tracker during reset (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: factor out ice_ptp_rebuild_owner() (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: rename ice_ptp_tx_cfg_intr (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: don't check has_ready_bitmap in E810 functions (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: rename verify_cached to has_ready_bitmap (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: pass reset type to PTP reset functions (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: introduce PTP state machine (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: make RX HW timestamp reading code more reusable (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: Rename E822 to E82X (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: periodically kick Tx timestamp interrupt (Petr Oros) [RHEL-50388 RHEL-17486]\n- ice: Re-enable timestamping correctly after reset (Petr Oros) [RHEL-50388 RHEL-17486]\n- ptp: introduce helpers to adjust by scaled parts per million (Petr Oros) [RHEL-50388 RHEL-17486]\n- tty: n_gsm: require CAP_NET_ADMIN to attach N_GSM0710 ldisc (Andrew Halaney) [RHEL-42566 RHEL-24205] {CVE-2023-52880}\n- netfilter: complete validation of user input (Phil Sutter) [RHEL-47384 RHEL-37212] {CVE-2024-35962}\n- netfilter: validate user input for expected length (Phil Sutter) [RHEL-41668 RHEL-37212] {CVE-2024-35896}\n- scsi: qla2xxx: Fix off by one in qla_edif_app_getstats() (Ewan D. Milne) [RHEL-40051 RHEL-39719] {CVE-2024-36025}\n- x86/xen: Add some null pointer checking to smp.c (Vitaly Kuznetsov) [RHEL-37615 RHEL-33260] {CVE-2024-26908}\n- x86/xen: Fix memory leak in xen_smp_intr_init{_pv}() (Prarit Bhargava) [RHEL-37615 RHEL-25415]",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-52771.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-52880.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26581.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26668.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26810.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26855.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26908.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26925.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-27016.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-27019.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-27020.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-27415.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35839.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35896.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35897.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35898.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35962.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-36003.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-36025.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38538.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38540.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38544.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38579.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38608.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-39476.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40905.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40911.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40912.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40914.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40929.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40939.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40941.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40957.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40978.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40983.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41041.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41076.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41090.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41091.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-42110.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-42152.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-5928.html"
+					}
+				],
+				"published": "2024-08-28T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2023-52771",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-52771.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2023-52880",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-52880.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-26581",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26581.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-26668",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26668.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-26810",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26810.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-26855",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26855.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-26908",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26908.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-26925",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26925.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-27016",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-27016.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-27019",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-27019.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-27020",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-27020.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-27415",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-27415.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-35839",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35839.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-35896",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35896.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-35897",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35897.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-35898",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35898.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-35962",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-35962.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-36003",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-36003.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-36025",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-36025.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-38538",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38538.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-38540",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38540.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-38544",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38544.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-38579",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38579.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-38608",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-38608.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-39476",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-39476.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-40905",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40905.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-40911",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40911.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-40912",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40912.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-40914",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40914.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-40929",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40929.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-40939",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40939.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-40941",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40941.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-40957",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40957.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-40978",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40978.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-40983",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-40983.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-41041",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41041.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-41076",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41076.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-41090",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41090.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-41091",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-41091.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-42110",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-42110.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-42152",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-42152.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "bpftool",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.3.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:7.3.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-abi-stablelists",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-cross-headers",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-devel-matched",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-modules",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-modules-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-modules-extra",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-debug-uki-virt",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-devel-matched",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-modules",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-modules-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-modules-extra",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-tools-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-tools-libs-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "kernel-uki-virt",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libperf",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-perf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rtla",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "rv",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-427.33.1.el9_4"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-427.33.1.el9_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}
