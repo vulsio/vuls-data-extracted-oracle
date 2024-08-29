@@ -1,0 +1,456 @@
+{
+	"id": "ELSA-2024-5927",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-5927",
+				"title": "ELSA-2024-5927:  postgresql:16 security update (IMPORTANT)",
+				"description": "pgaudit\n[16.0-1]\n- Update to 16.0\n- Support postgresql 16\n- Initial import for PG 16 module\n- Resolves: RHEL-3636\n\npg_repack\npostgres-decoderbufs\n[2.4.0-1.Final]\n- Initial import for postgresql 16 stream\n- Related: RHEL-3636\n\npostgresql\n[16.4-1]\n- Update to 16.4\n- Fix CVE-2024-7348",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-4317.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-7348.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-5927.html"
+					}
+				],
+				"published": "2024-08-28T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-4317",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-4317.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-7348",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-7348.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::pg_repack",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.8-1.module+el8.10.0+90275+c15b12cb"
+								}
+							],
+							"fixed": [
+								"0:1.4.8-1.module+el8.10.0+90275+c15b12cb"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::pgaudit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.0-1.module+el8.10.0+90275+c15b12cb"
+								}
+							],
+							"fixed": [
+								"0:16.0-1.module+el8.10.0+90275+c15b12cb"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgres-decoderbufs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:2.4.0-1.Final.module+el8.10.0+90275+c15b12cb"
+								}
+							],
+							"fixed": [
+								"0:2.4.0-1.Final.module+el8.10.0+90275+c15b12cb"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-contrib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-plperl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-plpython3",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-pltcl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-private-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-private-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-server-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-test",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-test-rpm-macros",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-upgrade",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "postgresql:16::postgresql-upgrade-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:16.4-1.module+el8.10.0+90393+cf801dc8"
+								}
+							],
+							"fixed": [
+								"0:16.4-1.module+el8.10.0+90393+cf801dc8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": "oracle"
+}
