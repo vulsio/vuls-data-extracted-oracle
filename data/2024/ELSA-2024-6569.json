@@ -1,0 +1,221 @@
+{
+	"id": "ELSA-2024-6569",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-6569",
+				"title": "ELSA-2024-6569:  389-ds:1.4 security update (MODERATE)",
+				"description": "[1.4.3.39-8]\n- Bump version to 1.4.3.39-8\n- Resolves: RHEL-40943 - CVE-2024-5953 389-ds:1.4/389-ds-base: Malformed userPassword hash may cause Denial of Service [rhel-8.10.z]\n- Resolves: RHEL-58069 - perf search result investigation for many large static groups and members [rhel-8.10.0.z]",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-5953.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-6569.html"
+					}
+				],
+				"published": "2024-09-12T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-5953",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-5953.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.39-8.module+el8.10.0+90403+39ad56f1"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.39-8.module+el8.10.0+90403+39ad56f1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.39-8.module+el8.10.0+90403+39ad56f1"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.39-8.module+el8.10.0+90403+39ad56f1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base-legacy-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.39-8.module+el8.10.0+90403+39ad56f1"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.39-8.module+el8.10.0+90403+39ad56f1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.39-8.module+el8.10.0+90403+39ad56f1"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.39-8.module+el8.10.0+90403+39ad56f1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::389-ds-base-snmp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.39-8.module+el8.10.0+90403+39ad56f1"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.39-8.module+el8.10.0+90403+39ad56f1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "389-ds:1.4::python3-lib389",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.4.3.39-8.module+el8.10.0+90403+39ad56f1"
+								}
+							],
+							"fixed": [
+								"0:1.4.3.39-8.module+el8.10.0+90403+39ad56f1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20246569.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246569001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246569002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246569003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246569004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246569005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246569006.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246569007.json",
+			"vuls-data-raw-oracle/objects/textfilecontent54_object/oval:com.oracle.elsa:obj:20246569008.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246569001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246569003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246569004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246569005.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246569006.json",
+			"vuls-data-raw-oracle/states/textfilecontent54_state/oval:com.oracle.elsa:ste:20246569002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569013.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569014.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569015.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246569016.json",
+			"vuls-data-raw-oracle/tests/textfilecontent54_test/oval:com.oracle.elsa:tst:20246569003.json"
+		]
+	}
+}
