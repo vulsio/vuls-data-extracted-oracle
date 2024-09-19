@@ -1,0 +1,224 @@
+{
+	"id": "ELSA-2024-6682",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-6682",
+				"title": "ELSA-2024-6682:  firefox security update (IMPORTANT)",
+				"description": "[128.2.0-1.0.1]\n- Add firefox-oracle-default-prefs.js and remove the corresponding OpenELA file\n\n[128.2.0]\n- Add debranding patches (Mustafa Gezen)\n- Add OpenELA default preferences (Louis Abel)\n\n[128.2.0-1]\n- Update to 128.2.0",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-7652.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8381.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8382.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8383.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8384.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8385.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8386.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8387.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-6682.html"
+					}
+				],
+				"published": "2024-09-18T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-7652",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-7652.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-8381",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8381.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-8382",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8382.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-8383",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8383.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-8384",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8384.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-8385",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8385.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-8386",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8386.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-8387",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8387.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "firefox",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:128.2.0-1.0.1.el8_10"
+								}
+							],
+							"fixed": [
+								"0:128.2.0-1.0.1.el8_10"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20246682.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246682001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246682002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246682001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246682002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246682003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246682004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246682005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246682001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246682002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246682003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246682004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246682005.json"
+		]
+	}
+}
