@@ -1,0 +1,746 @@
+{
+	"id": "ELSA-2024-12673",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-12673",
+				"title": "ELSA-2024-12673: libvirt security update (IMPORTANT)",
+				"description": "libvirt\n[9.0.0-6.el9]\n- rpc: ensure temporary GSource is removed from client event loop (Daniel P. Berrange) [Orabug: 36821472] {CVE-2024-4418}\n- rpc: Don't warn about 'max_client_requests' in single-threaded daemons (Peter Krempa) [Orabug: 36422853]\n\nlibvirt-python\n[9.0.0-6.el9]\n- Update to libvirt 9.0.0-6 (Karl Heubaum)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-4418.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-12673.html"
+					}
+				],
+				"published": "2024-09-19T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-4418",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-4418.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-client",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-client-qemu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-config-network",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-config-nwfilter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-interface",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-network",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-nodedev",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-nwfilter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-qemu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-secret",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-disk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-iscsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-logical",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-mpath",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-rbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-driver-storage-scsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-daemon-kvm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-lock-sanlock",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-nss",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libvirt-wireshark",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "python3-libvirt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:9.0.0-6.el9"
+								}
+							],
+							"fixed": [
+								"30:9.0.0-6.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:202412673.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673006.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673007.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673008.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673009.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673010.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673011.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673012.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673013.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673014.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673015.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673016.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673017.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673018.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673019.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673020.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673021.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673022.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673023.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673024.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673025.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673026.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673027.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673028.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412673029.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412673001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412673002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412673003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412673004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412673005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673013.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673014.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673015.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673016.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673017.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673018.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673019.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673020.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673021.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673022.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673023.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673024.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673025.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673026.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673027.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673028.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673029.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673030.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673031.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673032.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673033.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673034.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673035.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673036.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673037.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673038.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673039.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673040.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673041.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673042.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673043.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673044.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673045.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673046.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673047.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673048.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673049.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673050.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673051.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673052.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673053.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673054.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673055.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673056.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673057.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673058.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412673059.json"
+		]
+	}
+}

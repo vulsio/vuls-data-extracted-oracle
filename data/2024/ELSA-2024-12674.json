@@ -1,0 +1,368 @@
+{
+	"id": "ELSA-2024-12674",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-12674",
+				"title": "ELSA-2024-12674: qemu-kvm security update (IMPORTANT)",
+				"description": "[7.2.0-15.el9]\n- migration: abort on destination if switchover limit exceeded (Elena Ufimtseva)\n- migration: introduce strict switchover SLA (Elena Ufimtseva)\n- migration: add error to MigrationIncomingState (Elena Ufimtseva)\n- migration: Set migration status early in incoming side (Fabiano Rosas)\n- tests/qtest: migration: Use migrate_incoming_qmp where appropriate (Fabiano Rosas)\n- tests/qtest: migration: Add migrate_incoming_qmp helper (Fabiano Rosas)\n- tests/qtest: migration: Expose migrate_set_capability (Fabiano Rosas)\n- vfio/migration: Multifd device state transfer support - send side (Maciej S. Szmigiero)\n- vfio/migration: Add x-orcl-migration-multifd-transfer VFIO property (Maciej S. Szmigiero)\n- vfio/migration: Multifd device state transfer support - receive side (Maciej S. Szmigiero)\n- migration/multifd: Add migration_has_device_state_support() (Maciej S. Szmigiero)\n- migration/multifd: Device state transfer support - send side (Maciej S. Szmigiero)\n- migration/multifd: Convert multifd_send_pages::next_channel to atomic (Maciej S. Szmigiero)\n- migration/multifd: Device state transfer support - receive side (Maciej S. Szmigiero)\n- migration: Add load_finish handler and associated functions (Maciej S. Szmigiero)\n- migration: Add qemu_loadvm_load_state_buffer() and its handler (Maciej S. Szmigiero)\n- migration: Add save_live_complete_precopy_{begin,end} handlers (Maciej S. Szmigiero)\n- migration/multifd: Zero p->flags before starting filling a packet (Maciej S. Szmigiero)\n- migration/ram: Add load start trace event (Maciej S. Szmigiero)\n- vfio/migration: Add save_{iterate,complete_precopy}_started trace events (Maciej S. Szmigiero)\n- hw/virtio/virtio-crypto: Protect from DMA re-entrancy bugs (Philippe Mathieu-Daude) [Orabug: 36869694] {CVE-2024-3446}\n- hw/char/virtio-serial-bus: Protect from DMA re-entrancy bugs (Philippe Mathieu-Daude) [Orabug: 36869694] {CVE-2024-3446}\n- hw/display/virtio-gpu: Protect from DMA re-entrancy bugs (Philippe Mathieu-Daude) [Orabug: 36869694] {CVE-2024-3446}\n- hw/virtio: Introduce virtio_bh_new_guarded() helper (Philippe Mathieu-Daude) [Orabug: 36869694] {CVE-2024-3446}\n- pcie_sriov: Validate NumVFs (Akihiko Odaki) [Orabug: 36314082] {CVE-2024-26327}\n- hw/nvme: Use pcie_sriov_num_vfs() (Akihiko Odaki) [Orabug: 36314111] {CVE-2024-26328}\n- pcie: Introduce pcie_sriov_num_vfs (Akihiko Odaki) [Orabug: 36314111] {CVE-2024-26328}\n- qcow2: Don't open data_file with BDRV_O_NO_IO (Kevin Wolf) [Orabug: 36801853] {CVE-2024-4467}\n- target/i386: drop AMD machine check bits from Intel CPUID (Paolo Bonzini) [Orabug: 36785079]\n- target/i386: pass X86CPU to x86_cpu_get_supported_feature_word (Paolo Bonzini) [Orabug: 36785079]\n- migration: prevent migration when VM has poisoned memory (William Roche) [Orabug: 35533097]\n- i386: Add support for overflow recovery (John Allen) [Orabug: 34691766]\n- i386: Add support for SUCCOR feature (John Allen) [Orabug: 34691766]\n- i386: Fix MCE support for AMD hosts (John Allen) [Orabug: 34691766]",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26327.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26328.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-3446.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-4467.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-12674.html"
+					}
+				],
+				"published": "2024-09-19T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-26327",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26327.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-26328",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26328.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-3446",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-3446.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-4467",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-4467.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-guest-agent",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:7.2.0-15.el9"
+								}
+							],
+							"fixed": [
+								"30:7.2.0-15.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-img",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:7.2.0-15.el9"
+								}
+							],
+							"fixed": [
+								"30:7.2.0-15.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:7.2.0-15.el9"
+								}
+							],
+							"fixed": [
+								"30:7.2.0-15.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-block-curl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:7.2.0-15.el9"
+								}
+							],
+							"fixed": [
+								"30:7.2.0-15.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-block-iscsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:7.2.0-15.el9"
+								}
+							],
+							"fixed": [
+								"30:7.2.0-15.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-block-rbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:7.2.0-15.el9"
+								}
+							],
+							"fixed": [
+								"30:7.2.0-15.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-block-ssh",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:7.2.0-15.el9"
+								}
+							],
+							"fixed": [
+								"30:7.2.0-15.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:7.2.0-15.el9"
+								}
+							],
+							"fixed": [
+								"30:7.2.0-15.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-kvm-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:7.2.0-15.el9"
+								}
+							],
+							"fixed": [
+								"30:7.2.0-15.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "qemu-virtiofsd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "30:7.2.0-15.el9"
+								}
+							],
+							"fixed": [
+								"30:7.2.0-15.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:202412674.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412674001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412674002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412674003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412674004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412674005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412674006.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412674007.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412674008.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412674009.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412674010.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412674011.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412674001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412674002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412674003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412674004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412674005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674013.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674014.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674015.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674016.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674017.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674018.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674019.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674020.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674021.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674022.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412674023.json"
+		]
+	}
+}
