@@ -1,0 +1,102 @@
+{
+	"id": "ELSA-2022-14549",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2022-14549",
+				"title": "ELSA-2022-14549:  podman security update (IMPORTANT)",
+				"description": "[1.6.4-32.0.1]\n- Reduce unnecessary writable mounts in NaiveDiffDriver [Orabug: 31025483]\n- handle redirect from the docker registry v2 [Orabug: 29874238] (nikita.gerasimov@oracle.com)\n- remove changes in NaiveDiffDriver\n\n[1.6.4-32]\n- update to the latest content of https://github.com/containers/podman/tree/v1.6.4-rhel\n  (https://github.com/containers/podman/commit/aba15dd)\n\n[1.6.4-31]\n- drop libseccomp dependency\n- Related: #2074089\n\n[1.6.4-30]\n- update to the latest content of https://github.com/containers/podman/tree/v1.6.4-rhel\n  (https://github.com/containers/podman/commit/c19e460)\n- Related: #2074089",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2022-14549.html"
+					}
+				],
+				"published": "2022-05-12T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.4-32.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"0:1.6.4-32.0.1.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-docker",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.4-32.0.1.el7_9"
+								}
+							],
+							"fixed": [
+								"0:1.6.4-32.0.1.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:202214549.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202214549001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202214549002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202214549003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202214549001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202214549002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202214549003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202214549004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202214549005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202214549001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202214549002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202214549003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202214549004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202214549005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202214549006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202214549007.json"
+		]
+	}
+}
