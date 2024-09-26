@@ -1,0 +1,3214 @@
+{
+	"id": "ELSA-2024-6964",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-6964",
+				"title": "ELSA-2024-6964:  virt:ol and virt-devel:rhel security update (MODERATE)",
+				"description": "hivex\nlibguestfs\nlibguestfs-winsupport\nlibiscsi\nlibnbd\n[1.6.0-6]\n- Fix CVE-2024-7383 NBD server improper certificate validation\n  resolves: RHEL-52728\n\nlibtpms\nlibvirt\nlibvirt-dbus\nlibvirt-python\nnbdkit\nnetcf\nperl-Sys-Virt\nqemu-kvm\n[6.2.0-53]\n- kvm-nbd-server-Favor-qemu_aio_context-over-iohandler-con.patch [RHEL-52611]\n- kvm-iotests-test-NBD-TLS-iothread.patch [RHEL-52611]\n- kvm-nbd-server-CVE-2024-7409-Avoid-use-after-free-when-c.patch [RHEL-52611]\n- Resolves: RHEL-52611\n  (CVE-2024-7409 virt:rhel/qemu-kvm: Denial of Service via Improper Synchronization in QEMU NBD Server During Socket Closure [rhel-8.10.z])\n\nseabios\nsgabios\nsupermin\nswtpm\nvirt-v2v",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-3446.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-7383.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-7409.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-6964.html"
+					}
+				],
+				"published": "2024-09-24T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-3446",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-3446.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-7383",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-7383.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-7409",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-7409.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libnbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libnbd-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-client",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-config-network",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-config-nwfilter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-interface",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-network",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-nodedev",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-nwfilter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-secret",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-disk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-iscsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-iscsi-direct",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-logical",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-mpath",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-daemon-driver-storage-scsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-nss",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::libvirt-wireshark",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::nbdfuse",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ocaml-hivex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.9.0+90075+85334608"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.9.0+90075+85334608"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ocaml-hivex-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.9.0+90075+85334608"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.9.0+90075+85334608"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ocaml-libguestfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ocaml-libguestfs-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ocaml-libnbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::ocaml-libnbd-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::python3-libnbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt-devel:ol::qemu-kvm-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::hivex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.9.0+90075+85334608"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.9.0+90075+85334608"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::hivex-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.9.0+90075+85334608"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.9.0+90075+85334608"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-appliance",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-bash-completion",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-gfs2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-gobject",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-gobject-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-inspect-icons",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-java",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-java-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-man-pages-ja",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-man-pages-uk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-rescue",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-rsync",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-tools-c",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-winsupport",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.10-1.module+el8.10.0+90308+7c659588"
+								}
+							],
+							"fixed": [
+								"0:8.10-1.module+el8.10.0+90308+7c659588"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libguestfs-xfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libiscsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.0-8.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.18.0-8.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libiscsi-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.0-8.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.18.0-8.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libiscsi-utils",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.18.0-8.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.18.0-8.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libnbd-bash-completion",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"0:1.6.0-6.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libtpms",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.1-2.20211126git1ff6fe1f43.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:0.9.1-2.20211126git1ff6fe1f43.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libtpms-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.9.1-2.20211126git1ff6fe1f43.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:0.9.1-2.20211126git1ff6fe1f43.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libvirt-daemon-driver-qemu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libvirt-daemon-driver-storage-gluster",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libvirt-daemon-driver-storage-rbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libvirt-daemon-kvm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libvirt-dbus",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.0-2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.3.0-2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::libvirt-lock-sanlock",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-23.2.0.1.module+el8.10.0+90363+955e9a81"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::lua-guestfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-bash-completion",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-basic-filters",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-basic-plugins",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-curl-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-example-plugins",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-gzip-filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-gzip-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-linuxdisk-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-nbd-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-python-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-server",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-ssh-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-tar-filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-tar-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-tmpdisk-plugin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-vddk-plugin",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::nbdkit-xz-filter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.24.0-5.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::netcf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.2.8-12.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:0.2.8-12.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::netcf-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.2.8-12.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:0.2.8-12.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::netcf-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.2.8-12.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:0.2.8-12.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::perl-Sys-Guestfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::perl-Sys-Virt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-1.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-1.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::perl-hivex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.9.0+90075+85334608"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.9.0+90075+85334608"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::python3-hivex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.9.0+90075+85334608"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.9.0+90075+85334608"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::python3-libguestfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::python3-libvirt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:8.0.0-2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:8.0.0-2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-guest-agent",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-img",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-block-curl",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-block-gluster",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-block-iscsi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-block-rbd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-block-ssh",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-common",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-core",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-hw-usbredir",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-ui-opengl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::qemu-kvm-ui-spice",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+								}
+							],
+							"fixed": [
+								"15:6.2.0-53.module+el8.10.0+90410+bcde3bf4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::ruby-hivex",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.3.18-23.module+el8.9.0+90075+85334608"
+								}
+							],
+							"fixed": [
+								"0:1.3.18-23.module+el8.9.0+90075+85334608"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::ruby-libguestfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::seabios",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.16.0-4.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.16.0-4.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::seabios-bin",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.16.0-4.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.16.0-4.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::seavgabios-bin",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.16.0-4.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:1.16.0-4.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::sgabios",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.20170427git-3.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:0.20170427git-3.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::sgabios-bin",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:0.20170427git-3.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:0.20170427git-3.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::supermin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.2.1-2.0.1.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:5.2.1-2.0.1.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::supermin-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.2.1-2.0.1.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:5.2.1-2.0.1.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::swtpm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.7.0-4.20211109gitb79fd91.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:0.7.0-4.20211109gitb79fd91.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::swtpm-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.7.0-4.20211109gitb79fd91.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:0.7.0-4.20211109gitb79fd91.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::swtpm-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.7.0-4.20211109gitb79fd91.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:0.7.0-4.20211109gitb79fd91.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::swtpm-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.7.0-4.20211109gitb79fd91.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:0.7.0-4.20211109gitb79fd91.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::swtpm-tools-pkcs11",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:0.7.0-4.20211109gitb79fd91.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"0:0.7.0-4.20211109gitb79fd91.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::virt-dib",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.44.0-9.0.2.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::virt-v2v",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.42.0-22.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.42.0-22.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::virt-v2v-bash-completion",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.42.0-22.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.42.0-22.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::virt-v2v-man-pages-ja",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.42.0-22.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.42.0-22.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "virt:ol::virt-v2v-man-pages-uk",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:1.42.0-22.module+el8.9.0+90052+d3bf71d8"
+								}
+							],
+							"fixed": [
+								"1:1.42.0-22.module+el8.9.0+90052+d3bf71d8"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20246964.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964006.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964007.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964008.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964009.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964010.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964011.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964012.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964013.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964014.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964015.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964016.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964017.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964018.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964019.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964020.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964021.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964022.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964023.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964024.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964025.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964026.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964027.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964028.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964029.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964030.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964031.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964032.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964033.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964034.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964035.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964036.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964037.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964038.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964039.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964040.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964041.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964042.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964043.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964044.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964045.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964046.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964047.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964048.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964049.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964050.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964051.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964052.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964053.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964054.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964055.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964056.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964057.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964058.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964059.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964060.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964061.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964062.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964063.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964064.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964065.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964066.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964067.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964068.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964069.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964070.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964071.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964072.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964073.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964074.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964075.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964076.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964077.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964078.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964079.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964080.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964081.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964082.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964083.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964084.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964085.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964086.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964087.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964088.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964089.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964090.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964091.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964092.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964093.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964094.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964095.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964096.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964097.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964098.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964099.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964100.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964101.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964102.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964103.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964104.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964105.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964106.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964107.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964108.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964109.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964110.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964111.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964112.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964113.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964114.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964115.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964116.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964117.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964118.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964119.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964120.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964121.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964122.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964123.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964124.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964125.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964126.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964127.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964128.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964129.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20246964130.json",
+			"vuls-data-raw-oracle/objects/textfilecontent54_object/oval:com.oracle.elsa:obj:20246964131.json",
+			"vuls-data-raw-oracle/objects/textfilecontent54_object/oval:com.oracle.elsa:obj:20246964132.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964005.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964006.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964007.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964008.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964009.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964010.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964011.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964012.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964013.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964014.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964015.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964016.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964017.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964018.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964019.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964020.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964021.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964022.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20246964023.json",
+			"vuls-data-raw-oracle/states/textfilecontent54_state/oval:com.oracle.elsa:ste:20246964002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964013.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964014.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964015.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964016.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964017.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964018.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964019.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964020.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964021.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964022.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964023.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964024.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964025.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964026.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964027.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964028.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964029.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964030.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964031.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964032.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964033.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964034.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964035.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964036.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964037.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964038.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964039.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964040.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964041.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964042.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964043.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964044.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964045.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964046.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964047.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964048.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964049.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964050.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964051.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964052.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964053.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964054.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964055.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964056.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964057.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964058.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964059.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964060.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964061.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964062.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964063.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964064.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964065.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964066.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964067.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964068.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964069.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964070.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964071.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964072.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964073.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964074.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964075.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964076.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964077.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964078.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964079.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964080.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964081.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964082.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964083.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964084.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964085.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964086.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964087.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964088.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964089.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964090.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964091.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964092.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964093.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964094.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964095.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964096.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964097.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964098.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964099.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964100.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964101.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964102.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964103.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964104.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964105.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964106.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964107.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964108.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964109.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964110.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964111.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964112.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964113.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964114.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964115.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964116.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964117.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964118.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964119.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964120.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964121.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964122.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964123.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964124.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964125.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964126.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964127.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964128.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964129.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964130.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964131.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964132.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964133.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964134.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964135.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964136.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964137.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964138.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964139.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964140.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964141.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964142.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964143.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964144.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964145.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964146.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964147.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964148.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964149.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964150.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964151.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964152.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964153.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964154.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964155.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964156.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964157.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964158.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964159.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964160.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964161.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964162.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964163.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964164.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964165.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964167.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964168.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964169.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964170.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964171.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964172.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964173.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964174.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964175.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964176.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964177.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964178.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964179.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964180.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964181.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964182.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964183.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964184.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964185.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964186.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964187.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964188.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964189.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964190.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964191.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964192.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964193.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964194.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964195.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964196.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964197.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964198.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964199.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964200.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964201.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964202.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964203.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964204.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964205.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964206.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964207.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964208.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964209.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964210.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964211.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964212.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964213.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964214.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964215.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964216.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964217.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964218.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964219.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964220.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964221.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964222.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964223.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964224.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964225.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964226.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964227.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964228.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964229.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964230.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964231.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964232.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964233.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964234.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964235.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964236.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964237.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964238.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964239.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964240.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964241.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964242.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964243.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964244.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964245.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964246.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964247.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964248.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964249.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964250.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964251.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964252.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964253.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964254.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964255.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964256.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964257.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964258.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964259.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964260.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964261.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964262.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20246964263.json",
+			"vuls-data-raw-oracle/tests/textfilecontent54_test/oval:com.oracle.elsa:tst:20246964003.json",
+			"vuls-data-raw-oracle/tests/textfilecontent54_test/oval:com.oracle.elsa:tst:20246964166.json"
+		]
+	}
+}
