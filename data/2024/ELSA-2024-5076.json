@@ -1,0 +1,251 @@
+{
+	"id": "ELSA-2024-5076",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-5076",
+				"title": "ELSA-2024-5076:  krb5 security update (MODERATE)",
+				"description": "[1.15.1-55.0.3]\n- Length check when parsing GSS token encapsulation [Orabug: 36927256]\n- Add a simple DER support header [Orabug: 36927256]\n- Fix vulnerabilities in GSS message token handling [Orabug: 36927256]",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-37370.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-37371.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-5076.html"
+					}
+				],
+				"published": "2024-09-30T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-37370",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-37370.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-37371",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-37371.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.1-55.0.3.el7_9"
+								}
+							],
+							"fixed": [
+								"0:1.15.1-55.0.3.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-libs",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.1-55.0.3.el7_9"
+								}
+							],
+							"fixed": [
+								"0:1.15.1-55.0.3.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-pkinit",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.1-55.0.3.el7_9"
+								}
+							],
+							"fixed": [
+								"0:1.15.1-55.0.3.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-server",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.1-55.0.3.el7_9"
+								}
+							],
+							"fixed": [
+								"0:1.15.1-55.0.3.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-server-ldap",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.1-55.0.3.el7_9"
+								}
+							],
+							"fixed": [
+								"0:1.15.1-55.0.3.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "krb5-workstation",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.1-55.0.3.el7_9"
+								}
+							],
+							"fixed": [
+								"0:1.15.1-55.0.3.el7_9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libkadm5",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.15.1-55.0.3.el7_9"
+								}
+							],
+							"fixed": [
+								"0:1.15.1-55.0.3.el7_9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20245076.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20245076001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20245076002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20245076003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20245076004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20245076005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20245076006.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20245076007.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20245076008.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20245076001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20245076002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20245076003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20245076004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076013.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076014.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076015.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20245076016.json"
+		]
+	}
+}
