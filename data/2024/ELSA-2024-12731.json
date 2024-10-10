@@ -1,0 +1,266 @@
+{
+	"id": "ELSA-2024-12731",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-12731",
+				"title": "ELSA-2024-12731: e2fsprogs security update (MODERATE)",
+				"description": "[1.45.4-3.0.7.el7]\n- libext2fs: add sanity check to extent manipulation (Srivathsa Dara)  [Orabug:\n  37095032]  {CVE-2022-1304}",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-1304.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-12731.html"
+					}
+				],
+				"published": "2024-10-10T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2022-1304",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2022-1304.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:7"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:7",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "e2fsprogs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.45.4-3.0.7.el7"
+								}
+							],
+							"fixed": [
+								"0:1.45.4-3.0.7.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "e2fsprogs-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.45.4-3.0.7.el7"
+								}
+							],
+							"fixed": [
+								"0:1.45.4-3.0.7.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "e2fsprogs-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.45.4-3.0.7.el7"
+								}
+							],
+							"fixed": [
+								"0:1.45.4-3.0.7.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "e2fsprogs-static",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.45.4-3.0.7.el7"
+								}
+							],
+							"fixed": [
+								"0:1.45.4-3.0.7.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcom_err",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.45.4-3.0.7.el7"
+								}
+							],
+							"fixed": [
+								"0:1.45.4-3.0.7.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libcom_err-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.45.4-3.0.7.el7"
+								}
+							],
+							"fixed": [
+								"0:1.45.4-3.0.7.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libss",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.45.4-3.0.7.el7"
+								}
+							],
+							"fixed": [
+								"0:1.45.4-3.0.7.el7"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "libss-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.45.4-3.0.7.el7"
+								}
+							],
+							"fixed": [
+								"0:1.45.4-3.0.7.el7"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:202412731.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412731001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412731002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412731003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412731004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412731005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412731006.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412731007.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412731008.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412731009.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412731001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412731002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412731003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412731004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412731005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731013.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731014.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731015.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731016.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731017.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731018.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412731019.json"
+		]
+	}
+}
