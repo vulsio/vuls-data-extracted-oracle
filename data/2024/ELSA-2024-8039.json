@@ -1,0 +1,248 @@
+{
+	"id": "ELSA-2024-8039",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-8039",
+				"title": "ELSA-2024-8039:  podman security update (IMPORTANT)",
+				"description": "[4.9.4-13.0.1]\n- Fixes issue of podman execvp error while using podmansh [Orabug: 36073625]\n- Improved saving remote build context to tarfile in Podman daemon [Orabug: 36495655]\n- Add devices on container startup, not on creation\n- Backport fast gzip for compression [Orabug: 36420418]\n- overlay: Put should ignore ENINVAL for Unmount [Orabug: 36234694]\n- Drop nmap-ncat requirement and skip ignore-socket test case [Orabug: 34117404]\n\n[4:4.9.4-13]\n- update to the latest content of https://github.com/containers/podman/tree/v4.9-rhel\n  (https://github.com/containers/podman/commit/6cf9920)\n- Resolves: RHEL-60964\n\n[4:4.9.4-12]\n- rebuild to address CVE-2024-34155 CVE-2024-34156 CVE-2024-34158\n- Resolves: RHEL-57980 RHEL-57950 RHEL-58203\n\n[4:4.9.4-11]\n- update to the latest content of https://github.com/containers/podman/tree/v4.9-rhel\n  (https://github.com/containers/podman/commit/e3221b5)\n- Resolves: RHEL-56327 RHEL-50231",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-34155.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-34156.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-34158.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-9341.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-8039.html"
+					}
+				],
+				"published": "2024-10-14T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-34155",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-34155.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-34156",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-34156.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-34158",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-34158.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-9341",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-9341.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:4.9.4-13.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"4:4.9.4-13.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-docker",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:4.9.4-13.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"4:4.9.4-13.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-plugins",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:4.9.4-13.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"4:4.9.4-13.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-remote",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:4.9.4-13.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"4:4.9.4-13.0.1.el9_4"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "podman-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "4:4.9.4-13.0.1.el9_4"
+								}
+							],
+							"fixed": [
+								"4:4.9.4-13.0.1.el9_4"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20248039.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248039001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248039002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248039003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248039004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248039005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248039006.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248039001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248039002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248039003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248039004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248039005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248039013.json"
+		]
+	}
+}
