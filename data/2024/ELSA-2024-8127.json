@@ -1,0 +1,698 @@
+{
+	"id": "ELSA-2024-8127",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-8127",
+				"title": "ELSA-2024-8127:  java-21-openjdk security update (MODERATE)",
+				"description": "[1:21.0.5.0.10-3.0.1]\n- Add Oracle vendor bug URL [Orabug: 34340155]\n\n[1:21.0.5.0.10-3]\n- Sync the copy of the portable specfile with the latest update\n- ** This tarball is embargoed until 2024-10-15 @ 1pm PT. **\n- Related: RHEL-61344\n\n[1:21.0.5.0.10-2]\n- Update to jdk-21.0.5+10 (GA)\n- Update release notes to 21.0.5+10\n- Switch to GA mode.\n- Revert JDK-8327501 & JDK-8328366 backport until more mature.\n- ** This tarball is embargoed until 2024-10-15 @ 1pm PT. **\n- Resolves: RHEL-61344\n\n[1:21.0.5.0.9-0.2.ea]\n- Update to jdk-21.0.5+9 (EA)\n- Update release notes to 21.0.5+9\n- Switch to EA mode\n- Bump giflib version to 5.2.2 following JDK-8328999\n- Bump libpng version to 1.6.43 following JDK-8329004\n- Sync with RHEL 7 portable build:\n  - Use ExclusiveArch over ExcludeArch\n  - pkgos definition needs to be early enough to be used in portablesuffix\n- Make build scripts executable\n- Sync the copy of the portable specfile with the latest update\n- Resolves: RHEL-58797\n- Resolves: RHEL-17191\n\n[1:21.0.4.0.7-2]\n- Vary portablesuffix depending on whether we are on RHEL ('el8') or CentOS ('el9')\n- Handle debugedit being a separate package installed in /usr on RHEL/CentOS 10\n- Add build scripts to repository to ease remembering all CentOS & RHEL targets and options\n- Related: RHEL-58797",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-48161.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-21208.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-21210.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-21217.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-21235.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-8127.html"
+					}
+				],
+				"published": "2024-10-17T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2023-48161",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-48161.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-21208",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-21208.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-21210",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-21210.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-21217",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-21217.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-21235",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-21235.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-demo",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-demo-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-demo-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-devel-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-devel-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-headless",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-headless-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-headless-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-javadoc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-javadoc-zip",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-jmods",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-jmods-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-jmods-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-src-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-src-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-static-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-static-libs-fastdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"package": {
+							"name": "java-21-openjdk-static-libs-slowdebug",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "1:21.0.5.0.10-3.0.1.el9"
+								}
+							],
+							"fixed": [
+								"1:21.0.5.0.10-3.0.1.el9"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20248127.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127006.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127007.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127008.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127009.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127010.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127011.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127012.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127013.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127014.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127015.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127016.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127017.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127018.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127019.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127020.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127021.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127022.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127023.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248127024.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248127001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248127002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248127003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248127004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248127005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127013.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127014.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127015.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127016.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127017.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127018.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127019.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127020.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127021.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127022.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127023.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127024.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127025.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127026.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127027.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127028.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127029.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127030.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127031.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127032.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127033.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127034.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127035.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127036.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127037.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127038.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127039.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127040.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127041.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127042.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127043.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127044.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127045.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127046.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127047.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127048.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248127049.json"
+		]
+	}
+}
