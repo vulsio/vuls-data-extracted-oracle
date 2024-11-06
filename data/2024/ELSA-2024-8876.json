@@ -1,0 +1,294 @@
+{
+	"id": "ELSA-2024-8876",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-8876",
+				"title": "ELSA-2024-8876:  go-toolset:ol8 security update (MODERATE)",
+				"description": "delve\n[1.22.1-1.0.1]\n- Disable DWARF compression which has issues (Alex Burmashev)\n\n[1.22.1-1]\n- Rebase to 1.22.1\n- Resolves: RHEL-54307\n\ngolang\n[1.22.7-1]\n- Update to Go 1.22.7\n- Resolves: RHEL-58223\n- Resolves: RHEL-57961\n- Resolves: RHEL-57847\n- Resolves: RHEL-57860\n\n[1.22.5-3]\n- Update fix that loads Openssl in FIPS mode if fips==1\n- Related: RHEL-52485\n\n[1.22.5-2]\n- Include fix that loads Openssl only in FIPS mode to avoid panic\n- Resolves: RHEL-52485\n\n[1.22.5-1]\n- Rebase to Go1.22.5 to fix CVE-2024-24791\n- Resolves: RHEL-46972\n\n[1.22.4-1]\n- Addresses CVEs-2024-24789 and CVE-2024-24790\n- Resolves: RHEL-40157\n\n[1.22.3-3]\n- Update openssl backend\n- Resolves: RHEL-36102\n\n[1.22.3-2]\n- Restore HashSign / HashVerify API\n- Resolves: RHEL-35884\n\n[1.22.3-1]\n- Update to Go 1.22.3\n- Resolves: RHEL-35884\n- Resolves: RHEL-35075\n- Resolves: RHEL-35632\n- Resolves: RHEL-35901\n\n[1.22.2-1]\n- Rebase to 1.22.2\n- Re-enable CGO\n- Skip TestCrashDumpsAllThreads\n- Resolves: RHEL-33157\n\ngo-toolset\n[1.22.7-1]\n- Update to Go 1.22.7\n- Resolves: RHEL-58223\n- Resolves: RHEL-57961\n- Resolves: RHEL-57847\n- Resolves: RHEL-57860\n\n[1.22.5-1]\n- Rebase to Go1.22.5 to fix CVE-2024-24791\n- Resolves: RHEL-46972\n\n[1.22.4-1]\n- Addresses CVEs-2024-24789 and CVE-2024-24790\n- Resolves: RHEL-40157\n\n[1.22.3-1]\n- Update to Go 1.22.3\n- Resolves: RHEL-35884\n- Resolves: RHEL-35075\n- Resolves: RHEL-35632\n- Resolves: RHEL-35901\n\n[1.22.2-1]\n- Update to Go 1.22.2\n- Resolves: RHEL-33157",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-24790.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-8876.html"
+					}
+				],
+				"published": "2024-11-05T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-24790",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-24790.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:8"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:8",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "go-toolset:ol8::delve",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.22.1-1.0.1.module+el8.10.0+90426+810ab996"
+								}
+							],
+							"fixed": [
+								"0:1.22.1-1.0.1.module+el8.10.0+90426+810ab996"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "go-toolset:ol8::go-toolset",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.22.7-1.module+el8.10.0+90426+810ab996"
+								}
+							],
+							"fixed": [
+								"0:1.22.7-1.module+el8.10.0+90426+810ab996"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "go-toolset:ol8::golang",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.22.7-1.module+el8.10.0+90426+810ab996"
+								}
+							],
+							"fixed": [
+								"0:1.22.7-1.module+el8.10.0+90426+810ab996"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "go-toolset:ol8::golang-bin",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.22.7-1.module+el8.10.0+90426+810ab996"
+								}
+							],
+							"fixed": [
+								"0:1.22.7-1.module+el8.10.0+90426+810ab996"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "go-toolset:ol8::golang-docs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.22.7-1.module+el8.10.0+90426+810ab996"
+								}
+							],
+							"fixed": [
+								"0:1.22.7-1.module+el8.10.0+90426+810ab996"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "go-toolset:ol8::golang-misc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.22.7-1.module+el8.10.0+90426+810ab996"
+								}
+							],
+							"fixed": [
+								"0:1.22.7-1.module+el8.10.0+90426+810ab996"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "go-toolset:ol8::golang-src",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.22.7-1.module+el8.10.0+90426+810ab996"
+								}
+							],
+							"fixed": [
+								"0:1.22.7-1.module+el8.10.0+90426+810ab996"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "go-toolset:ol8::golang-tests",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.22.7-1.module+el8.10.0+90426+810ab996"
+								}
+							],
+							"fixed": [
+								"0:1.22.7-1.module+el8.10.0+90426+810ab996"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20248876.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248876001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248876002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248876003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248876004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248876005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248876006.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248876007.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248876008.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20248876009.json",
+			"vuls-data-raw-oracle/objects/textfilecontent54_object/oval:com.oracle.elsa:obj:20248876010.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248876001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248876003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248876004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248876005.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248876006.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20248876007.json",
+			"vuls-data-raw-oracle/states/textfilecontent54_state/oval:com.oracle.elsa:ste:20248876002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876013.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876014.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876015.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876016.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876017.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876018.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876019.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20248876020.json",
+			"vuls-data-raw-oracle/tests/textfilecontent54_test/oval:com.oracle.elsa:tst:20248876003.json"
+		]
+	}
+}
