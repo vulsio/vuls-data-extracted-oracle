@@ -1,0 +1,128 @@
+{
+	"id": "ELSA-2024-9827",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-9827",
+				"title": "ELSA-2024-9827:  libvpx security update (MODERATE)",
+				"description": "[1.9.0-8]\n- Add patch to fix integer overflows.\n- Disable LTO to fix build\n- Resolves: RHEL-58144",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-5197.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-9827.html"
+					}
+				],
+				"published": "2024-11-18T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-5197",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-5197.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "libvpx",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.0-8.el9_5"
+								}
+							],
+							"fixed": [
+								"0:1.9.0-8.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "libvpx-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:1.9.0-8.el9_5"
+								}
+							],
+							"fixed": [
+								"0:1.9.0-8.el9_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20249827.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249827001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249827002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249827003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249827001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249827002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249827003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249827004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249827005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249827001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249827002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249827003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249827004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249827005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249827006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249827007.json"
+		]
+	}
+}

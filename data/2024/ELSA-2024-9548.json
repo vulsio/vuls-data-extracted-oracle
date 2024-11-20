@@ -1,0 +1,155 @@
+{
+	"id": "ELSA-2024-9548",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-9548",
+				"title": "ELSA-2024-9548:  openexr security update (IMPORTANT)",
+				"description": "[3.1.1-2.1]\n- fix CVE-2023-5481 (RHEL-64162)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-5841.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-9548.html"
+					}
+				],
+				"published": "2024-11-18T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2023-5841",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-5841.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "openexr",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.1.1-2.el9_5.1"
+								}
+							],
+							"fixed": [
+								"0:3.1.1-2.el9_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "openexr-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.1.1-2.el9_5.1"
+								}
+							],
+							"fixed": [
+								"0:3.1.1-2.el9_5.1"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "openexr-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:3.1.1-2.el9_5.1"
+								}
+							],
+							"fixed": [
+								"0:3.1.1-2.el9_5.1"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20249548.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249548001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249548002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249548003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249548004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249548001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249548002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249548003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249548004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249548005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249548001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249548002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249548003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249548004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249548005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249548006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249548007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249548008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249548009.json"
+		]
+	}
+}

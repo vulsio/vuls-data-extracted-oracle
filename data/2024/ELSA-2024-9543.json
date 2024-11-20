@@ -1,0 +1,498 @@
+{
+	"id": "ELSA-2024-9543",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-9543",
+				"title": "ELSA-2024-9543:  .NET 9.0 security update (IMPORTANT)",
+				"description": "[9.0.100-1.0.1]\n- Add support for Oracle Linux\n\n[9.0.100-1]\n- Update to .NET SDK 9.0.100 and Runtime 9.0.0\n- Resolves: RHEL-65539\n\n[9.0.100~rc.2.24474.1-0.7]\n- Disable bootstrap\n- Related: RHEL-62776\n\n[9.0.100~rc.2.24474.1-0.6]\n- Rebootstrap\n- Related: RHEL-62776\n\n[9.0.100~rc.2.24474.1-0.5]\n- Add missing runtime dependencies to -aot- subpackage\n- Related: RHEL-62776\n\n[9.0.100~rc.2.24474.1-0.4]\n- Update to .NET SDK 9.0.100-rc.2.24474.1 and Runtime 9.0.0-rc.2.24473.5\n- Resolves: RHEL-62776\n\n[9.0.100~rc.1.24452.12-0.3]\n- Update to .NET SDK 9.0.100-rc.1.24452.12 and Runtime 9.0.0-rc.1.24431.7\n- Resolves: RHEL-59026",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-43498.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-43499.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-9543.html"
+					}
+				],
+				"published": "2024-11-19T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-43498",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-43498.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-43499",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-43499.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "aspnetcore-runtime-9.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.0-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.0-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "aspnetcore-runtime-dbg-9.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.0-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.0-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "aspnetcore-targeting-pack-9.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.0-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.0-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "dotnet-apphost-pack-9.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.0-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.0-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "dotnet-host",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.0-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.0-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "dotnet-hostfxr-9.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.0-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.0-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "dotnet-runtime-9.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.0-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.0-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "dotnet-runtime-dbg-9.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.0-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.0-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "dotnet-sdk-9.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.100-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.100-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "dotnet-sdk-9.0-source-built-artifacts",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.100-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.100-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "dotnet-sdk-aot-9.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.100-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.100-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "dotnet-sdk-dbg-9.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.100-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.100-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "dotnet-targeting-pack-9.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.0-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.0-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "dotnet-templates-9.0",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.100-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.100-1.0.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "netstandard-targeting-pack-2.1",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:9.0.100-1.0.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:9.0.100-1.0.1.el9_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20249543.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543006.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543007.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543008.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543009.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543010.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543011.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543012.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543013.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543014.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543015.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249543016.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249543001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249543002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249543003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249543004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249543005.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249543006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543013.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543014.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543015.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543016.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543017.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543018.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543019.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543020.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543021.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543022.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543023.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543024.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543025.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543026.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543027.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543028.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543029.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543030.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543031.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543032.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249543033.json"
+		]
+	}
+}

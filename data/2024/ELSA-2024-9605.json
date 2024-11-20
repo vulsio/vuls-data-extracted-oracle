@@ -1,0 +1,901 @@
+{
+	"id": "ELSA-2024-9605",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-9605",
+				"title": "ELSA-2024-9605:  kernel security update (MODERATE)",
+				"description": "- [5.14.0-503.14.1_5.OL9]\n- Disable UKI signing [Orabug: 36571828]\n- Update Oracle Linux certificates (Kevin Lyons)\n- Disable signing for aarch64 (Ilya Okomin)\n- Oracle Linux RHCK Module Signing Key was added to the kernel trusted keys list (olkmod_signing_key.pem) [Orabug: 29539237]\n- Update x509.genkey [Orabug: 24817676]\n- Conflict with shim-ia32 and shim-x64 <= 15.3-1.0.5\n- Remove upstream reference during boot (Kevin Lyons) [Orabug: 34729535]\n- Add Oracle Linux IMA certificates\n\n[5.14.0-503.14.1_5]\n- ext4: fix off by one issue in alloc_flex_gd() (Pavel Reichl) [RHEL-65318]\n- ping: fix address binding wrt vrf (Antoine Tenart) [RHEL-57564 RHEL-50920]\n- smb: client: stop flooding dmesg in smb2_calc_signature() (Paulo Alcantara) [RHEL-36346 RHEL-61193]\n- smb: client: print failed session logoffs with FYI (Paulo Alcantara) [RHEL-36346 RHEL-61193]\n- smb: client: propagate error from cifs_construct_tcon() (Paulo Alcantara) [RHEL-36346 RHEL-61193]\n- smb: client: fix DFS failover in multiuser mounts (Paulo Alcantara) [RHEL-36346 RHEL-61193]\n- smb: client: fix DFS interlink failover (Paulo Alcantara) [RHEL-36346 RHEL-61193]\n- smb: client: improve purging of cached referrals (Paulo Alcantara) [RHEL-36346 RHEL-61193]\n- smb: client: avoid unnecessary reconnects when refreshing referrals (Paulo Alcantara) [RHEL-36346 RHEL-61193]\n- smb: client: handle lack of FSCTL_GET_REPARSE_POINT support (Paulo Alcantara) [RHEL-36346 RHEL-57983]\n- smb: client: fix deadlock in smb2_find_smb_tcon() (Paulo Alcantara) [RHEL-36346 RHEL-57983]\n- cifs: Fix reacquisition of volume cookie on still-live connection (Paulo Alcantara) [RHEL-36346 RHEL-57983]\n\n[5.14.0-503.13.1_5]\n- efi: libstub: Move screen_info handling to common code (Maxim Levitsky) [RHEL-65344]\n- mpls: Reduce skb re-allocations due to skb_cow() (Guillaume Nault) [RHEL-61697]\n- mptcp: pm: Fix uaf in __timer_delete_sync (CKI Backport Bot) [RHEL-64678 RHEL-60737] {CVE-2024-46858}\n- ceph: fix cap ref leak via netfs init_request (Patrick Donnelly) [RHEL-62667 RHEL-61459]\n- gitlab-ci: provide consistent kcidb_tree_name (Michael Hofmann)\n\n[5.14.0-503.12.1_5]\n- net: nexthop: Initialize all fields in dumped nexthops (Antoine Tenart) [RHEL-55080] {CVE-2024-42283}\n- tracing/osnoise: Fix build when timerlat is not enabled (Tomas Glozar) [RHEL-61870 RHEL-39968]\n- tracing/timerlat: Add interface_lock around clearing of kthread in stop_kthread() (Tomas Glozar) [RHEL-61870 RHEL-39968]\n- tracing/timerlat: Only clear timer if a kthread exists (Tomas Glozar) [RHEL-61870 RHEL-39968]\n- tracing/osnoise: Use a cpumask to know what threads are kthreads (Tomas Glozar) [RHEL-61870 RHEL-39968]\n- iommufd: Require drivers to supply the cache_invalidate_user ops (CKI Backport Bot) [RHEL-60681 RHEL-60761] {CVE-2024-46824}\n- Revert 'fw loader: Remove the now superfluous sentinel element from ctl_table array' (Eric Chanudet) [RHEL-62925 RHEL-50129]\n- smb: client: fix hang in wait_for_response() for negproto (Jay Shin) [RHEL-61607 RHEL-57983]",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-42283.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-46824.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-46858.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-9605.html"
+					}
+				],
+				"published": "2024-11-19T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-42283",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-42283.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-46824",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-46824.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-46858",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-46858.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "bpftool",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:7.4.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:7.4.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-abi-stablelists",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-cross-headers",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-debug",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-debug-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-debug-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-debug-devel-matched",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-debug-modules",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-debug-modules-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-debug-modules-extra",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-debug-uki-virt",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-devel",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-devel-matched",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-doc",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-headers",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-modules",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-modules-core",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-modules-extra",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-tools-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-tools-libs-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-uki-virt",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "kernel-uki-virt-addons",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "libperf",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "perf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "python3-perf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "rtla",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "rv",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:5.14.0-503.14.1.el9_5"
+								}
+							],
+							"fixed": [
+								"0:5.14.0-503.14.1.el9_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20249605.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605006.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605007.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605008.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605009.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605010.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605011.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605012.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605013.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605014.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605015.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605016.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605017.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605018.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605019.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605020.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605021.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605022.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605023.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605024.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605025.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605026.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605027.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605028.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605029.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605030.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249605031.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249605001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249605002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249605003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249605004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249605005.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249605006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605013.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605014.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605015.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605016.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605017.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605018.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605019.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605020.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605021.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605022.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605023.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605024.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605025.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605026.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605027.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605028.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605029.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605030.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605031.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605032.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605033.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605034.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605035.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605036.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605037.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605038.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605039.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605040.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605041.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605042.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605043.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605044.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605045.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605046.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605047.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605048.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605049.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605050.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605051.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605052.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605053.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605054.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605055.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605056.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605057.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605058.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605059.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605060.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605061.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605062.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249605063.json"
+		]
+	}
+}

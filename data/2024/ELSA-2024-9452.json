@@ -1,0 +1,2952 @@
+{
+	"id": "ELSA-2024-9452",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-9452",
+				"title": "ELSA-2024-9452:  pcp security update (MODERATE)",
+				"description": "[6.2.2-7]\n- Fix buffer sizing checks in pmstore PDU handling (RHEL-57809)\n- Guard against symlink attacks in pmpost program (RHEL-57814)\n- Fix libpcp_web webgroup slow request refcounting (RHEL-58307)\n- Updated pmdahacluster for newer crm_mon versions (RHEL-58303)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-45769.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-45770.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-9452.html"
+					}
+				],
+				"published": "2024-11-19T00:00:00Z"
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-45769",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-45769.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-45770",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-45770.html"
+					}
+				]
+			},
+			"ecosystems": [
+				"oracle:9"
+			]
+		}
+	],
+	"detection": [
+		{
+			"ecosystem": "oracle:9",
+			"criteria": {
+				"operator": "OR",
+				"criterions": [
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-conf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-doc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-export-pcp2elasticsearch",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-export-pcp2graphite",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-export-pcp2influxdb",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-export-pcp2json",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-export-pcp2openmetrics",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-export-pcp2spark",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-export-pcp2xml",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-export-pcp2zabbix",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-export-zabbix-agent",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-geolocate",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-gui",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-import-collectl2pcp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-import-ganglia2pcp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-import-iostat2pcp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-import-mrtg2pcp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-import-sar2pcp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-libs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-libs-devel",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-activemq",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-apache",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-bash",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-bcc",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-bind2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-bonding",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-bpf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-bpftrace",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-cifs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-cisco",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-dbping",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-denki",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-dm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-docker",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-ds389",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-ds389log",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-elasticsearch",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-farm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-gfs2",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-gluster",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-gpfs",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-gpsd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-hacluster",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-haproxy",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-infiniband",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-json",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-libvirt",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-lio",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-lmsensors",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-logger",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-lustre",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-lustrecomm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-mailq",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-memcache",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-mic",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-mongodb",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-mounts",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-mssql",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-mysql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-named",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-netcheck",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-netfilter",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-news",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-nfsclient",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-nginx",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-nvidia-gpu",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-openmetrics",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-openvswitch",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-oracle",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-pdns",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-perfevent",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-podman",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-postfix",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-postgresql",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-rabbitmq",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-redis",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-resctrl",
+							"architectures": [
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-roomtemp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-rsyslog",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-samba",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-sendmail",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-shping",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-slurm",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-smart",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-snmp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-sockets",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-statsd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-summary",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-systemd",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-trace",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-unbound",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-uwsgi",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-weblog",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-zimbra",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-pmda-zswap",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-selinux",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-system-tools",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-testsuite",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "pcp-zeroconf",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "perl-PCP-LogImport",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "perl-PCP-LogSummary",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "perl-PCP-MMV",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "perl-PCP-PMDA",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					},
+					{
+						"vulnerable": true,
+						"fix_status": {
+							"class": "fixed"
+						},
+						"package": {
+							"name": "python3-pcp",
+							"architectures": [
+								"aarch64",
+								"x86_64"
+							]
+						},
+						"affected": {
+							"type": "rpm",
+							"range": [
+								{
+									"lt": "0:6.2.2-7.el9_5"
+								}
+							],
+							"fixed": [
+								"0:6.2.2-7.el9_5"
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20249452.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452006.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452007.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452008.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452009.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452010.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452011.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452012.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452013.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452014.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452015.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452016.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452017.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452018.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452019.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452020.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452021.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452022.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452023.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452024.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452025.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452026.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452027.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452028.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452029.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452030.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452031.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452032.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452033.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452034.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452035.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452036.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452037.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452038.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452039.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452040.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452041.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452042.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452043.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452044.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452045.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452046.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452047.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452048.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452049.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452050.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452051.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452052.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452053.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452054.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452055.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452056.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452057.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452058.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452059.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452060.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452061.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452062.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452063.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452064.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452065.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452066.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452067.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452068.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452069.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452070.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452071.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452072.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452073.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452074.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452075.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452076.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452077.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452078.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452079.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452080.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452081.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452082.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452083.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452084.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452085.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452086.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452087.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452088.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452089.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452090.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452091.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452092.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452093.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452094.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452095.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452096.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452097.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452098.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452099.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452100.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452101.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452102.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452103.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452104.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452105.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452106.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20249452107.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249452001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249452002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249452003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249452004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20249452005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452013.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452014.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452015.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452016.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452017.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452018.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452019.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452020.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452021.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452022.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452023.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452024.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452025.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452026.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452027.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452028.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452029.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452030.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452031.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452032.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452033.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452034.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452035.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452036.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452037.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452038.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452039.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452040.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452041.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452042.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452043.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452044.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452045.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452046.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452047.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452048.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452049.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452050.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452051.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452052.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452053.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452054.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452055.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452056.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452057.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452058.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452059.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452060.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452061.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452062.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452063.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452064.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452065.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452066.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452067.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452068.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452069.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452070.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452071.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452072.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452073.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452074.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452075.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452076.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452077.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452078.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452079.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452080.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452081.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452082.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452083.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452084.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452085.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452086.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452087.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452088.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452089.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452090.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452091.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452092.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452093.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452094.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452095.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452096.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452097.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452098.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452099.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452100.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452101.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452102.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452103.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452104.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452105.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452106.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452107.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452108.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452109.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452110.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452111.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452112.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452113.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452114.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452115.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452116.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452117.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452118.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452119.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452120.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452121.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452122.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452123.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452124.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452125.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452126.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452127.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452128.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452129.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452130.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452131.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452132.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452133.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452134.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452135.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452136.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452137.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452138.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452139.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452140.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452141.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452142.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452143.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452144.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452145.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452146.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452147.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452148.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452149.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452150.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452151.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452152.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452153.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452154.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452155.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452156.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452157.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452158.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452159.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452160.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452161.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452162.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452163.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452164.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452165.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452166.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452167.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452168.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452169.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452170.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452171.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452172.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452173.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452174.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452175.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452176.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452177.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452178.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452179.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452180.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452181.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452182.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452183.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452184.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452185.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452186.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452187.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452188.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452189.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452190.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452191.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452192.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452193.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452194.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452195.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452196.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452197.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452198.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452199.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452200.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452201.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452202.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452203.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452204.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452205.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452206.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452207.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452208.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452209.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452210.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452211.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452212.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452213.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452214.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20249452215.json"
+		]
+	}
+}
