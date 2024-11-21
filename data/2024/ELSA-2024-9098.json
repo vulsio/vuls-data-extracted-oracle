@@ -37,8 +37,10 @@
 				],
 				"published": "2024-11-14T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		}
 	],
@@ -53,8 +55,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		},
 		{
@@ -67,8 +71,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		},
 		{
@@ -81,8 +87,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		},
 		{
@@ -95,67 +103,73 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:9",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "skopeo",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "2:1.16.1-1.el9"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "skopeo",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "2:1.16.1-1.el9"
+										}
+									],
+									"fixed": [
+										"2:1.16.1-1.el9"
+									]
 								}
-							],
-							"fixed": [
-								"2:1.16.1-1.el9"
-							]
-						}
-					},
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "skopeo-tests",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "2:1.16.1-1.el9"
+							},
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "skopeo-tests",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "2:1.16.1-1.el9"
+										}
+									],
+									"fixed": [
+										"2:1.16.1-1.el9"
+									]
 								}
-							],
-							"fixed": [
-								"2:1.16.1-1.el9"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

@@ -25,8 +25,10 @@
 				],
 				"published": "2009-02-11T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:5"
+			"segments": [
+				{
+					"ecosystem": "oracle:5"
+				}
 			]
 		}
 	],
@@ -41,69 +43,75 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:5"
+			"segments": [
+				{
+					"ecosystem": "oracle:5"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:5",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "vnc",
-							"architectures": [
-								"i386",
-								"ia64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:4.1.2-14.el5_3.1"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "vnc",
+									"architectures": [
+										"i386",
+										"ia64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:4.1.2-14.el5_3.1"
+										}
+									],
+									"fixed": [
+										"0:4.1.2-14.el5_3.1"
+									]
 								}
-							],
-							"fixed": [
-								"0:4.1.2-14.el5_3.1"
-							]
-						}
-					},
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "vnc-server",
-							"architectures": [
-								"i386",
-								"ia64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:4.1.2-14.el5_3.1"
+							},
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "vnc-server",
+									"architectures": [
+										"i386",
+										"ia64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:4.1.2-14.el5_3.1"
+										}
+									],
+									"fixed": [
+										"0:4.1.2-14.el5_3.1"
+									]
 								}
-							],
-							"fixed": [
-								"0:4.1.2-14.el5_3.1"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

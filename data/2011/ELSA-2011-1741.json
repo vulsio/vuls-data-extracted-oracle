@@ -25,8 +25,10 @@
 				],
 				"published": "2011-12-14T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:6"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				}
 			]
 		}
 	],
@@ -41,44 +43,50 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:6"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:6",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "php-pear",
-							"architectures": [
-								"i686",
-								"sparc64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "1:1.9.4-4.el6"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "php-pear",
+									"architectures": [
+										"i686",
+										"sparc64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "1:1.9.4-4.el6"
+										}
+									],
+									"fixed": [
+										"1:1.9.4-4.el6"
+									]
 								}
-							],
-							"fixed": [
-								"1:1.9.4-4.el6"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

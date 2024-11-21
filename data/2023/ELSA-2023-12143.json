@@ -25,9 +25,13 @@
 				],
 				"published": "2023-02-28T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:6",
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				},
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		}
 	],
@@ -42,99 +46,111 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:6",
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				},
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:6",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "sudo",
-							"architectures": [
-								"i686",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:1.8.6p3-29.0.4.el6_10.3"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "sudo",
+									"architectures": [
+										"i686",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:1.8.6p3-29.0.4.el6_10.3"
+										}
+									],
+									"fixed": [
+										"0:1.8.6p3-29.0.4.el6_10.3"
+									]
 								}
-							],
-							"fixed": [
-								"0:1.8.6p3-29.0.4.el6_10.3"
-							]
-						}
-					},
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "sudo-devel",
-							"architectures": [
-								"i686",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:1.8.6p3-29.0.4.el6_10.3"
+							},
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "sudo-devel",
+									"architectures": [
+										"i686",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:1.8.6p3-29.0.4.el6_10.3"
+										}
+									],
+									"fixed": [
+										"0:1.8.6p3-29.0.4.el6_10.3"
+									]
 								}
-							],
-							"fixed": [
-								"0:1.8.6p3-29.0.4.el6_10.3"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		},
 		{
 			"ecosystem": "oracle:8",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "sudo",
-							"architectures": [
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:1.8.6p3-29.0.4.el6_10.3"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "sudo",
+									"architectures": [
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:1.8.6p3-29.0.4.el6_10.3"
+										}
+									],
+									"fixed": [
+										"0:1.8.6p3-29.0.4.el6_10.3"
+									]
 								}
-							],
-							"fixed": [
-								"0:1.8.6p3-29.0.4.el6_10.3"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

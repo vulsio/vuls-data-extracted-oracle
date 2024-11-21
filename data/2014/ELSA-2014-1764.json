@@ -25,9 +25,13 @@
 				],
 				"published": "2014-10-30T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:6",
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				},
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		}
 	],
@@ -42,76 +46,88 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:6",
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				},
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:6",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "wget",
-							"architectures": [
-								"i686",
-								"sparc64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:1.12-5.el6_6.1"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "wget",
+									"architectures": [
+										"i686",
+										"sparc64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:1.12-5.el6_6.1"
+										}
+									],
+									"fixed": [
+										"0:1.12-5.el6_6.1"
+									]
 								}
-							],
-							"fixed": [
-								"0:1.12-5.el6_6.1"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		},
 		{
 			"ecosystem": "oracle:7",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "wget",
-							"architectures": [
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:1.14-10.el7_0.1"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "wget",
+									"architectures": [
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:1.14-10.el7_0.1"
+										}
+									],
+									"fixed": [
+										"0:1.14-10.el7_0.1"
+									]
 								}
-							],
-							"fixed": [
-								"0:1.14-10.el7_0.1"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

@@ -33,8 +33,10 @@
 				],
 				"published": "2022-10-03T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		}
 	],
@@ -49,8 +51,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		},
 		{
@@ -63,8 +67,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		},
 		{
@@ -77,43 +83,49 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:7",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "squid",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "7:4.11-3.0.1.el7"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "squid",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "7:4.11-3.0.1.el7"
+										}
+									],
+									"fixed": [
+										"7:4.11-3.0.1.el7"
+									]
 								}
-							],
-							"fixed": [
-								"7:4.11-3.0.1.el7"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

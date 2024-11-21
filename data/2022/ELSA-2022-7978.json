@@ -29,8 +29,10 @@
 				],
 				"published": "2022-11-22T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		}
 	],
@@ -45,8 +47,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		},
 		{
@@ -59,67 +63,73 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:9",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "gimp",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "2:2.99.8-3.el9"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "gimp",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "2:2.99.8-3.el9"
+										}
+									],
+									"fixed": [
+										"2:2.99.8-3.el9"
+									]
 								}
-							],
-							"fixed": [
-								"2:2.99.8-3.el9"
-							]
-						}
-					},
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "gimp-libs",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "2:2.99.8-3.el9"
+							},
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "gimp-libs",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "2:2.99.8-3.el9"
+										}
+									],
+									"fixed": [
+										"2:2.99.8-3.el9"
+									]
 								}
-							],
-							"fixed": [
-								"2:2.99.8-3.el9"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

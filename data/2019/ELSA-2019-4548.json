@@ -21,42 +21,48 @@
 				],
 				"published": "2019-02-19T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:7",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "oraclelinux-release-el7",
-							"architectures": [
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:1.0-5.el7"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "oraclelinux-release-el7",
+									"architectures": [
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:1.0-5.el7"
+										}
+									],
+									"fixed": [
+										"0:1.0-5.el7"
+									]
 								}
-							],
-							"fixed": [
-								"0:1.0-5.el7"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

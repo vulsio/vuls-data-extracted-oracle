@@ -29,9 +29,13 @@
 				],
 				"published": "2014-09-03T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:5",
-				"oracle:6"
+			"segments": [
+				{
+					"ecosystem": "oracle:5"
+				},
+				{
+					"ecosystem": "oracle:6"
+				}
 			]
 		}
 	],
@@ -46,9 +50,13 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:5",
-				"oracle:6"
+			"segments": [
+				{
+					"ecosystem": "oracle:5"
+				},
+				{
+					"ecosystem": "oracle:6"
+				}
 			]
 		},
 		{
@@ -61,77 +69,89 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:5",
-				"oracle:6"
+			"segments": [
+				{
+					"ecosystem": "oracle:5"
+				},
+				{
+					"ecosystem": "oracle:6"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:5",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "squid",
-							"architectures": [
-								"i386",
-								"ia64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "7:2.6.STABLE21-7.el5_10"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "squid",
+									"architectures": [
+										"i386",
+										"ia64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "7:2.6.STABLE21-7.el5_10"
+										}
+									],
+									"fixed": [
+										"7:2.6.STABLE21-7.el5_10"
+									]
 								}
-							],
-							"fixed": [
-								"7:2.6.STABLE21-7.el5_10"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		},
 		{
 			"ecosystem": "oracle:6",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "squid",
-							"architectures": [
-								"i686",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "7:3.1.10-22.el6_5"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "squid",
+									"architectures": [
+										"i686",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "7:3.1.10-22.el6_5"
+										}
+									],
+									"fixed": [
+										"7:3.1.10-22.el6_5"
+									]
 								}
-							],
-							"fixed": [
-								"7:3.1.10-22.el6_5"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

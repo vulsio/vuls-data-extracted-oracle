@@ -33,8 +33,10 @@
 				],
 				"published": "2023-12-14T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		}
 	],
@@ -49,8 +51,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		},
 		{
@@ -63,8 +67,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		},
 		{
@@ -77,43 +83,49 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:9",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "runc",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "4:1.1.9-2.el9_3"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "runc",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "4:1.1.9-2.el9_3"
+										}
+									],
+									"fixed": [
+										"4:1.1.9-2.el9_3"
+									]
 								}
-							],
-							"fixed": [
-								"4:1.1.9-2.el9_3"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

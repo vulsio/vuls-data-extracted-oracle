@@ -32,8 +32,10 @@
 				],
 				"published": "2021-02-17T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		}
 	],
@@ -48,8 +50,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		},
 		{
@@ -62,8 +66,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		},
 		{
@@ -76,42 +82,48 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:7",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "kernel-uek-container",
-							"architectures": [
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:4.14.35-2047.500.9.1.el7"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "kernel-uek-container",
+									"architectures": [
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:4.14.35-2047.500.9.1.el7"
+										}
+									],
+									"fixed": [
+										"0:4.14.35-2047.500.9.1.el7"
+									]
 								}
-							],
-							"fixed": [
-								"0:4.14.35-2047.500.9.1.el7"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

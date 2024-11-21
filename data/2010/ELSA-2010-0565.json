@@ -25,8 +25,10 @@
 				],
 				"published": "2010-07-27T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:5"
+			"segments": [
+				{
+					"ecosystem": "oracle:5"
+				}
 			]
 		}
 	],
@@ -41,69 +43,75 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:5"
+			"segments": [
+				{
+					"ecosystem": "oracle:5"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:5",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "w3m",
-							"architectures": [
-								"i386",
-								"ia64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:0.5.1-17.el5_5"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "w3m",
+									"architectures": [
+										"i386",
+										"ia64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:0.5.1-17.el5_5"
+										}
+									],
+									"fixed": [
+										"0:0.5.1-17.el5_5"
+									]
 								}
-							],
-							"fixed": [
-								"0:0.5.1-17.el5_5"
-							]
-						}
-					},
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "w3m-img",
-							"architectures": [
-								"i386",
-								"ia64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:0.5.1-17.el5_5"
+							},
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "w3m-img",
+									"architectures": [
+										"i386",
+										"ia64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:0.5.1-17.el5_5"
+										}
+									],
+									"fixed": [
+										"0:0.5.1-17.el5_5"
+									]
 								}
-							],
-							"fixed": [
-								"0:0.5.1-17.el5_5"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

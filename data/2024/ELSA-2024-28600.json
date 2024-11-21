@@ -36,8 +36,10 @@
 				],
 				"published": "2024-10-18T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		}
 	],
@@ -52,8 +54,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		},
 		{
@@ -66,8 +70,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		},
 		{
@@ -80,8 +86,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		},
 		{
@@ -94,43 +102,49 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:8",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "edk2-tools",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "1:20240909-2.el8"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "edk2-tools",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "1:20240909-2.el8"
+										}
+									],
+									"fixed": [
+										"1:20240909-2.el8"
+									]
 								}
-							],
-							"fixed": [
-								"1:20240909-2.el8"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

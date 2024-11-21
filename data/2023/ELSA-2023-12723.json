@@ -25,8 +25,10 @@
 				],
 				"published": "2023-08-15T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		}
 	],
@@ -41,42 +43,48 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:8",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "microcode_ctl",
-							"architectures": [
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "4:20230214-2.0.3.el8"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "microcode_ctl",
+									"architectures": [
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "4:20230214-2.0.3.el8"
+										}
+									],
+									"fixed": [
+										"4:20230214-2.0.3.el8"
+									]
 								}
-							],
-							"fixed": [
-								"4:20230214-2.0.3.el8"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

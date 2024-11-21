@@ -25,8 +25,10 @@
 				],
 				"published": "2023-10-13T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:6"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				}
 			]
 		}
 	],
@@ -41,67 +43,73 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:6"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:6",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "busybox",
-							"architectures": [
-								"i686",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "1:1.15.1-21.0.1.el6_10"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "busybox",
+									"architectures": [
+										"i686",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "1:1.15.1-21.0.1.el6_10"
+										}
+									],
+									"fixed": [
+										"1:1.15.1-21.0.1.el6_10"
+									]
 								}
-							],
-							"fixed": [
-								"1:1.15.1-21.0.1.el6_10"
-							]
-						}
-					},
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "busybox-petitboot",
-							"architectures": [
-								"i686",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "1:1.15.1-21.0.1.el6_10"
+							},
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "busybox-petitboot",
+									"architectures": [
+										"i686",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "1:1.15.1-21.0.1.el6_10"
+										}
+									],
+									"fixed": [
+										"1:1.15.1-21.0.1.el6_10"
+									]
 								}
-							],
-							"fixed": [
-								"1:1.15.1-21.0.1.el6_10"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

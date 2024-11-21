@@ -29,8 +29,10 @@
 				],
 				"published": "2024-09-05T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		}
 	],
@@ -45,8 +47,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		},
 		{
@@ -59,43 +63,49 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:8",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "resource-agents",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:4.9.0-54.el8_10.4"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "resource-agents",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:4.9.0-54.el8_10.4"
+										}
+									],
+									"fixed": [
+										"0:4.9.0-54.el8_10.4"
+									]
 								}
-							],
-							"fixed": [
-								"0:4.9.0-54.el8_10.4"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

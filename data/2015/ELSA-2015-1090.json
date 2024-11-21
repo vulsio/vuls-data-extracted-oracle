@@ -29,8 +29,10 @@
 				],
 				"published": "2015-06-11T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		}
 	],
@@ -45,8 +47,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		},
 		{
@@ -59,42 +63,48 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:7",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "wpa_supplicant",
-							"architectures": [
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "1:2.0-17.el7_1"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "wpa_supplicant",
+									"architectures": [
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "1:2.0-17.el7_1"
+										}
+									],
+									"fixed": [
+										"1:2.0-17.el7_1"
+									]
 								}
-							],
-							"fixed": [
-								"1:2.0-17.el7_1"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

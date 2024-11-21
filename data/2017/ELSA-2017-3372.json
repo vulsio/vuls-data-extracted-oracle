@@ -33,9 +33,13 @@
 				],
 				"published": "2017-12-04T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:6",
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				},
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		}
 	],
@@ -50,9 +54,13 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:6",
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				},
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		},
 		{
@@ -65,9 +73,13 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:6",
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				},
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		},
 		{
@@ -80,75 +92,87 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:6",
-				"oracle:7"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				},
+				{
+					"ecosystem": "oracle:7"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:6",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "thunderbird",
-							"architectures": [
-								"i686",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:52.5.0-1.0.1.el6_9"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "thunderbird",
+									"architectures": [
+										"i686",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:52.5.0-1.0.1.el6_9"
+										}
+									],
+									"fixed": [
+										"0:52.5.0-1.0.1.el6_9"
+									]
 								}
-							],
-							"fixed": [
-								"0:52.5.0-1.0.1.el6_9"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		},
 		{
 			"ecosystem": "oracle:7",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "thunderbird",
-							"architectures": [
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:52.5.0-1.0.1.el7_4"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "thunderbird",
+									"architectures": [
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:52.5.0-1.0.1.el7_4"
+										}
+									],
+									"fixed": [
+										"0:52.5.0-1.0.1.el7_4"
+									]
 								}
-							],
-							"fixed": [
-								"0:52.5.0-1.0.1.el7_4"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

@@ -37,8 +37,10 @@
 				],
 				"published": "2024-01-26T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		}
 	],
@@ -53,8 +55,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		},
 		{
@@ -67,8 +71,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		},
 		{
@@ -81,8 +87,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		},
 		{
@@ -95,67 +103,73 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:9"
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:9",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "frr",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:8.3.1-11.el9_3.2"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "frr",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:8.3.1-11.el9_3.2"
+										}
+									],
+									"fixed": [
+										"0:8.3.1-11.el9_3.2"
+									]
 								}
-							],
-							"fixed": [
-								"0:8.3.1-11.el9_3.2"
-							]
-						}
-					},
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "frr-selinux",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:8.3.1-11.el9_3.2"
+							},
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "frr-selinux",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:8.3.1-11.el9_3.2"
+										}
+									],
+									"fixed": [
+										"0:8.3.1-11.el9_3.2"
+									]
 								}
-							],
-							"fixed": [
-								"0:8.3.1-11.el9_3.2"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

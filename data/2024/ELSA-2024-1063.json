@@ -29,8 +29,10 @@
 				],
 				"published": "2024-03-05T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		}
 	],
@@ -45,8 +47,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		},
 		{
@@ -59,65 +63,71 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:8",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "edk2-aarch64",
-							"architectures": [
-								"aarch64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:20220126gitbb1bba3d77-6.el8_9.6"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "edk2-aarch64",
+									"architectures": [
+										"aarch64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:20220126gitbb1bba3d77-6.el8_9.6"
+										}
+									],
+									"fixed": [
+										"0:20220126gitbb1bba3d77-6.el8_9.6"
+									]
 								}
-							],
-							"fixed": [
-								"0:20220126gitbb1bba3d77-6.el8_9.6"
-							]
-						}
-					},
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "edk2-ovmf",
-							"architectures": [
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:20220126gitbb1bba3d77-6.el8_9.6"
+							},
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "edk2-ovmf",
+									"architectures": [
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:20220126gitbb1bba3d77-6.el8_9.6"
+										}
+									],
+									"fixed": [
+										"0:20220126gitbb1bba3d77-6.el8_9.6"
+									]
 								}
-							],
-							"fixed": [
-								"0:20220126gitbb1bba3d77-6.el8_9.6"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

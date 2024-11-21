@@ -29,8 +29,10 @@
 				],
 				"published": "2011-03-01T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:6"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				}
 			]
 		}
 	],
@@ -45,8 +47,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:6"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				}
 			]
 		},
 		{
@@ -59,43 +63,49 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:6"
+			"segments": [
+				{
+					"ecosystem": "oracle:6"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:6",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "mailman",
-							"architectures": [
-								"i686",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "3:2.1.12-14.el6_0.2"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "mailman",
+									"architectures": [
+										"i686",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "3:2.1.12-14.el6_0.2"
+										}
+									],
+									"fixed": [
+										"3:2.1.12-14.el6_0.2"
+									]
 								}
-							],
-							"fixed": [
-								"3:2.1.12-14.el6_0.2"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

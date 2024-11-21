@@ -25,8 +25,10 @@
 				],
 				"published": "2010-07-01T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:5"
+			"segments": [
+				{
+					"ecosystem": "oracle:5"
+				}
 			]
 		}
 	],
@@ -41,44 +43,50 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:5"
+			"segments": [
+				{
+					"ecosystem": "oracle:5"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:5",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "perl-Archive-Tar",
-							"architectures": [
-								"i386",
-								"ia64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "1:1.39.1-1.el5_5.1"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "perl-Archive-Tar",
+									"architectures": [
+										"i386",
+										"ia64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "1:1.39.1-1.el5_5.1"
+										}
+									],
+									"fixed": [
+										"1:1.39.1-1.el5_5.1"
+									]
 								}
-							],
-							"fixed": [
-								"1:1.39.1-1.el5_5.1"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {

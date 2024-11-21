@@ -29,8 +29,10 @@
 				],
 				"published": "2022-11-15T00:00:00Z"
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		}
 	],
@@ -45,8 +47,10 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		},
 		{
@@ -59,91 +63,97 @@
 					}
 				]
 			},
-			"ecosystems": [
-				"oracle:8"
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
 			]
 		}
 	],
-	"detection": [
+	"detections": [
 		{
 			"ecosystem": "oracle:8",
-			"criteria": {
-				"operator": "OR",
-				"criterions": [
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "redis:6::redis",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "redis:6::redis",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+										}
+									],
+									"fixed": [
+										"0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+									]
 								}
-							],
-							"fixed": [
-								"0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
-							]
-						}
-					},
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "redis:6::redis-devel",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+							},
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "redis:6::redis-devel",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+										}
+									],
+									"fixed": [
+										"0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+									]
 								}
-							],
-							"fixed": [
-								"0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
-							]
-						}
-					},
-					{
-						"vulnerable": true,
-						"fix_status": {
-							"class": "fixed"
-						},
-						"package": {
-							"name": "redis:6::redis-doc",
-							"architectures": [
-								"aarch64",
-								"x86_64"
-							]
-						},
-						"affected": {
-							"type": "rpm",
-							"range": [
-								{
-									"lt": "0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+							},
+							{
+								"vulnerable": true,
+								"fix_status": {
+									"class": "fixed"
+								},
+								"package": {
+									"name": "redis:6::redis-doc",
+									"architectures": [
+										"aarch64",
+										"x86_64"
+									]
+								},
+								"affected": {
+									"type": "rpm",
+									"range": [
+										{
+											"lt": "0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+										}
+									],
+									"fixed": [
+										"0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
+									]
 								}
-							],
-							"fixed": [
-								"0:6.2.7-1.module+el8.7.0+20764+cc495aeb"
-							]
-						}
+							}
+						]
 					}
-				]
-			}
+				}
+			]
 		}
 	],
 	"data_source": {
