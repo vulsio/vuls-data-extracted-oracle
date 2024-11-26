@@ -1,0 +1,655 @@
+{
+	"id": "ELSA-2024-12845",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-12845",
+				"title": "ELSA-2024-12845: Unbreakable Enterprise kernel security update (IMPORTANT)",
+				"description": "[5.4.17-2136.336.5.3.1.el8uek]\n- mm: avoid leaving partial pfn mappings around in error case (Linus Torvalds)  [Orabug: 37311329]  {CVE-2024-47674}\n- mm: add remap_pfn_range_notrack (Christoph Hellwig)  [Orabug: 37311329]  {CVE-2024-47674}\n- mm/memory.c: make remap_pfn_range() reject unaligned addr (Alex Zhang)  [Orabug: 37311329]  {CVE-2024-47674}\n- mm: fix ambiguous comments for better code readability (chenqiwu)  [Orabug: 37311329]  {CVE-2024-47674}\n- mm: clarify a confusing comment for remap_pfn_range() (WANG Wenhu)  [Orabug: 37311329]  {CVE-2024-47674}\n- devlink: fix possible use-after-free and memory leaks in devlink_init() (Vasiliy Kovalev)  [Orabug: 37311325]  {CVE-2024-26734}",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26734.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-47674.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-12845.html"
+					}
+				],
+				"published": "2024-11-25T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				},
+				{
+					"ecosystem": "oracle:8"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-26734",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-26734.html"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				},
+				{
+					"ecosystem": "oracle:8"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-47674",
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-47674.html"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:7"
+				},
+				{
+					"ecosystem": "oracle:8"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "oracle:7",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek",
+										"architectures": [
+											"aarch64",
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el7uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el7uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-container",
+										"architectures": [
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el7uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el7uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-container-debug",
+										"architectures": [
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el7uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el7uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-debug",
+										"architectures": [
+											"aarch64",
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el7uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el7uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-debug-devel",
+										"architectures": [
+											"aarch64",
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el7uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el7uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-devel",
+										"architectures": [
+											"aarch64",
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el7uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el7uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-doc",
+										"architectures": [
+											"aarch64",
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el7uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el7uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-tools",
+										"architectures": [
+											"aarch64",
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el7uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el7uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-tools-libs",
+										"architectures": [
+											"aarch64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el7uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el7uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "perf",
+										"architectures": [
+											"aarch64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el7uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el7uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "python-perf",
+										"architectures": [
+											"aarch64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el7uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el7uek"
+										]
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"ecosystem": "oracle:8",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek",
+										"architectures": [
+											"aarch64",
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el8uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el8uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-container",
+										"architectures": [
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el8uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el8uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-container-debug",
+										"architectures": [
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el8uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el8uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-debug",
+										"architectures": [
+											"aarch64",
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el8uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el8uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-debug-devel",
+										"architectures": [
+											"aarch64",
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el8uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el8uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-devel",
+										"architectures": [
+											"aarch64",
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el8uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el8uek"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "kernel-uek-doc",
+										"architectures": [
+											"aarch64",
+											"x86_64"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:5.4.17-2136.336.5.3.1.el8uek"
+											}
+										],
+										"fixed": [
+											"0:5.4.17-2136.336.5.3.1.el8uek"
+										]
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:202412845.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412845001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412845002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412845003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412845004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412845005.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412845006.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412845007.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412845008.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412845009.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412845010.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412845011.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202412845012.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412845001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412845002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412845003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412845004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412845005.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412845006.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412845007.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202412845008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845011.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845012.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845013.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845014.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845015.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845016.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845017.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845018.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845019.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845020.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845021.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845022.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845023.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845024.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845025.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845026.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845027.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845028.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845029.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845030.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845031.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845032.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845033.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845034.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845035.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845036.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845037.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845038.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845039.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845040.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845041.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202412845042.json"
+		]
+	}
+}
