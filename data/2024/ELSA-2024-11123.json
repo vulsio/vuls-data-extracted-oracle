@@ -1,0 +1,269 @@
+{
+	"id": "ELSA-2024-11123",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-11123",
+				"title": "ELSA-2024-11123:  gstreamer1-plugins-base security update (IMPORTANT)",
+				"description": "[1.22.1-3]\n- Fixes for CVE-2024-47538, CVE-2024-47607, CVE-2024-47615\n  Resolves: RHEL-70979, RHEL-71015, RHEL-70991",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-47538.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-47607.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-47615.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-11123.html"
+					}
+				],
+				"published": "2024-12-16T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-47538",
+				"severity": [
+					{
+						"type": "cvss_v31",
+						"source": "linux.oracle.com/security",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+							"base_score": 8.8,
+							"base_severity": "HIGH",
+							"temporal_score": 8.8,
+							"temporal_severity": "HIGH",
+							"environmental_score": 8.8,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-47538.html"
+					}
+				],
+				"published": "2024-12-11T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-47607",
+				"severity": [
+					{
+						"type": "cvss_v31",
+						"source": "linux.oracle.com/security",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+							"base_score": 8.4,
+							"base_severity": "HIGH",
+							"temporal_score": 8.4,
+							"temporal_severity": "HIGH",
+							"environmental_score": 8.4,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-47607.html"
+					}
+				],
+				"published": "2024-12-11T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-47615",
+				"severity": [
+					{
+						"type": "cvss_v31",
+						"source": "linux.oracle.com/security",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+							"base_score": 8.4,
+							"base_severity": "HIGH",
+							"temporal_score": 8.4,
+							"temporal_severity": "HIGH",
+							"environmental_score": 8.4,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-47615.html"
+					}
+				],
+				"published": "2024-12-11T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "oracle:9",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "gstreamer1-plugins-base",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.22.1-3.el9_5"
+											}
+										],
+										"fixed": [
+											"0:1.22.1-3.el9_5"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "gstreamer1-plugins-base-devel",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.22.1-3.el9_5"
+											}
+										],
+										"fixed": [
+											"0:1.22.1-3.el9_5"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "gstreamer1-plugins-base-tools",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.22.1-3.el9_5"
+											}
+										],
+										"fixed": [
+											"0:1.22.1-3.el9_5"
+										]
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:202411123.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411123001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411123002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411123003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411123004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411123001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411123002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411123003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411123004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411123005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411123001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411123002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411123003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411123004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411123005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411123006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411123007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411123008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411123009.json"
+		]
+	}
+}
