@@ -1,0 +1,230 @@
+{
+	"id": "ELSA-2024-11242",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-11242",
+				"title": "ELSA-2024-11242:  mpg123:1.32.9 security update (MODERATE)",
+				"description": "[1.32.9-1]\n- Rebase to 1.32.9, includes patch for CVE-2024-10573\n  Resolves: RHEL-65445\n\n[1.26.2-6]\n- Add patch for CVE-2024-10573\n  Resolves: RHEL-65445",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-10573.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-11242.html"
+					}
+				],
+				"published": "2024-12-19T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-10573",
+				"severity": [
+					{
+						"type": "cvss_v31",
+						"source": "linux.oracle.com/security",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+							"base_score": 6.7,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.7,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.7,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-10573.html"
+					}
+				],
+				"published": "2024-10-30T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "oracle:9",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "mpg123",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.32.9-1.el9_5"
+											}
+										],
+										"fixed": [
+											"0:1.32.9-1.el9_5"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "mpg123-devel",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.32.9-1.el9_5"
+											}
+										],
+										"fixed": [
+											"0:1.32.9-1.el9_5"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "mpg123-libs",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.32.9-1.el9_5"
+											}
+										],
+										"fixed": [
+											"0:1.32.9-1.el9_5"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "mpg123-plugins-pulseaudio",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.32.9-1.el9_5"
+											}
+										],
+										"fixed": [
+											"0:1.32.9-1.el9_5"
+										]
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:202411242.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411242001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411242002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411242003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411242004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411242005.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411242001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411242002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411242003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411242004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411242005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411242001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411242002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411242003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411242004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411242005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411242006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411242007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411242008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411242009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411242010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411242011.json"
+		]
+	}
+}

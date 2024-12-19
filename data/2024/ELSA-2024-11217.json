@@ -1,0 +1,164 @@
+{
+	"id": "ELSA-2024-11217",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-11217",
+				"title": "ELSA-2024-11217:  skopeo security update (IMPORTANT)",
+				"description": "[2:1.16.1-2]\n- rebuild to fix CVE-2024-34156",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-34156.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-11217.html"
+					}
+				],
+				"published": "2024-12-19T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-34156",
+				"severity": [
+					{
+						"type": "cvss_v31",
+						"source": "linux.oracle.com/security",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+							"base_score": 7.5,
+							"base_severity": "HIGH",
+							"temporal_score": 7.5,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.5,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-34156.html"
+					}
+				],
+				"published": "2024-09-06T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "oracle:9",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "skopeo",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "2:1.16.1-2.el9_5"
+											}
+										],
+										"fixed": [
+											"2:1.16.1-2.el9_5"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "skopeo-tests",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "2:1.16.1-2.el9_5"
+											}
+										],
+										"fixed": [
+											"2:1.16.1-2.el9_5"
+										]
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:202411217.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411217001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411217002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411217003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411217001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411217002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411217003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411217004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411217005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411217001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411217002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411217003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411217004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411217005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411217006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411217007.json"
+		]
+	}
+}
