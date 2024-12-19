@@ -1,0 +1,131 @@
+{
+	"id": "ELSA-2024-11238",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2024-11238",
+				"title": "ELSA-2024-11238:  python3.11-urllib3 security update (MODERATE)",
+				"description": "[1.26.12-2.2]\n- Security fix for CVE-2023-45803\nResolves: RHEL-66551",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "MODERATE"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-45803.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2024-11238.html"
+					}
+				],
+				"published": "2024-12-19T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2023-45803",
+				"severity": [
+					{
+						"type": "cvss_v31",
+						"source": "linux.oracle.com/security",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N",
+							"base_score": 4.2,
+							"base_severity": "MEDIUM",
+							"temporal_score": 4.2,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 4.2,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2023-45803.html"
+					}
+				],
+				"published": "2023-10-13T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:9"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "oracle:9",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "python3.11-urllib3",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.26.12-2.el9_5.2"
+											}
+										],
+										"fixed": [
+											"0:1.26.12-2.el9_5.2"
+										]
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:202411238.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411238001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:202411238002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411238001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411238002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411238003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411238004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:202411238005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411238001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411238002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411238003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411238004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:202411238005.json"
+		]
+	}
+}
