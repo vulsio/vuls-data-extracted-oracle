@@ -1,0 +1,266 @@
+{
+	"id": "ELSA-2025-0837",
+	"advisories": [
+		{
+			"content": {
+				"id": "ELSA-2025-0837",
+				"title": "ELSA-2025-0837:  unbound security update (IMPORTANT)",
+				"description": "[1.16.2-5.8]\n- Prevent unbounded name compression (CVE-2024-8508)\n\n[1.16.2-5.7]\n- Rebuild to propagate to CentOS Stream (RHEL-25500)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "linux.oracle.com/security",
+						"vendor": "IMPORTANT"
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-1488.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8508.html"
+					},
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/errata/ELSA-2025-0837.html"
+					}
+				],
+				"published": "2025-01-30T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-1488",
+				"severity": [
+					{
+						"type": "cvss_v31",
+						"source": "linux.oracle.com/security",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H",
+							"base_score": 8,
+							"base_severity": "HIGH",
+							"temporal_score": 8,
+							"temporal_severity": "HIGH",
+							"environmental_score": 8,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-1488.html"
+					}
+				],
+				"published": "2024-02-13T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-8508",
+				"severity": [
+					{
+						"type": "cvss_v31",
+						"source": "linux.oracle.com/security",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 5.3,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.3,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.3,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "linux.oracle.com/security",
+						"url": "https://linux.oracle.com/cve/CVE-2024-8508.html"
+					}
+				],
+				"published": "2024-10-03T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "oracle:8"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "oracle:8",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "python3-unbound",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.16.2-5.8.el8_10"
+											}
+										],
+										"fixed": [
+											"0:1.16.2-5.8.el8_10"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "unbound",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.16.2-5.8.el8_10"
+											}
+										],
+										"fixed": [
+											"0:1.16.2-5.8.el8_10"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "unbound-devel",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.16.2-5.8.el8_10"
+											}
+										],
+										"fixed": [
+											"0:1.16.2-5.8.el8_10"
+										]
+									}
+								}
+							},
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"type": "binary",
+										"binary": {
+											"name": "unbound-libs",
+											"architectures": [
+												"aarch64",
+												"x86_64"
+											]
+										}
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.16.2-5.8.el8_10"
+											}
+										],
+										"fixed": [
+											"0:1.16.2-5.8.el8_10"
+										]
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "oracle",
+		"raws": [
+			"vuls-data-raw-oracle/definitions/oval:com.oracle.elsa:def:20250837.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20250837001.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20250837002.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20250837003.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20250837004.json",
+			"vuls-data-raw-oracle/objects/rpminfo_object/oval:com.oracle.elsa:obj:20250837005.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20250837001.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20250837002.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20250837003.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20250837004.json",
+			"vuls-data-raw-oracle/states/rpminfo_state/oval:com.oracle.elsa:ste:20250837005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20250837001.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20250837002.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20250837003.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20250837004.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20250837005.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20250837006.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20250837007.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20250837008.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20250837009.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20250837010.json",
+			"vuls-data-raw-oracle/tests/rpminfo_test/oval:com.oracle.elsa:tst:20250837011.json"
+		]
+	}
+}
